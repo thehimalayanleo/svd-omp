@@ -99,17 +99,19 @@ def main(args):
     W_down = weights[args.downstream].to(device).float() if args.downstream else None
 
     t0 = time.time()
+    # NOTE: U_dict and Uv are both shape [C, d_out] (from svd_decompose / run_vpd).
+    # causal_damage / redundancy do `w @ U` where w is shape [C], so U must stay [C, d_out].
     rows = []
     rows.append(("Causal damage (local)",
-                 causal_damage(phi_batch, V_dict, U_dict.T, support_svd),
-                 causal_damage(phi_batch, Vv, Uv.T, support_vpd), "higher"))
+                 causal_damage(phi_batch, V_dict, U_dict, support_svd),
+                 causal_damage(phi_batch, Vv, Uv, support_vpd), "higher"))
     if W_down is not None:
         rows.append(("Causal damage (downstream)",
-                     causal_damage(phi_batch, V_dict, U_dict.T, support_svd, W_down=W_down),
-                     causal_damage(phi_batch, Vv, Uv.T, support_vpd, W_down=W_down), "higher"))
+                     causal_damage(phi_batch, V_dict, U_dict, support_svd, W_down=W_down),
+                     causal_damage(phi_batch, Vv, Uv, support_vpd, W_down=W_down), "higher"))
     rows.append(("Redundancy",
-                 redundancy(phi_batch, V_dict, U_dict.T, support_svd),
-                 redundancy(phi_batch, Vv, Uv.T, support_vpd), "lower"))
+                 redundancy(phi_batch, V_dict, U_dict, support_svd),
+                 redundancy(phi_batch, Vv, Uv, support_vpd), "lower"))
 
     print(f"  {'Metric':<32} {'SVD-OMP':>10} {'VPD':>10}  better")
     print("  " + "-" * 60)
