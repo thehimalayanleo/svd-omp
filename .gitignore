@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+.env
+.DS_Store
+.ipynb_checkpoints/
+wandb/
+param-decomp/
+weights/*.pt
+weights/*.safetensors

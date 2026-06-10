@@ -1,0 +1,8 @@
+torch>=2.0
+numpy
+matplotlib
+# Only needed if you want to re-fetch Goodfire's 67M model weights from wandb.
+# Loading saved weight matrices from disk does not require these:
+wandb
+jaxtyping
+einops
