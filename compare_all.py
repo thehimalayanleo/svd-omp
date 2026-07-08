@@ -39,6 +39,7 @@ from metrics import (
 )
 from model_config import TARGET_MODULES, get_C, get_k
 from svd_omp import svd_decompose
+from trainable_svd_omp import evaluate_trainable_svd_omp, run_trainable_svd_omp
 from vpd_baseline import run_vpd
 
 # Block config: keep total atoms budget matched between 1D and block variants.
@@ -119,24 +120,40 @@ def main(args):
         Vv, Uv, gv = run_vpd(W, C_1d, k_1d, n=args.vpd_steps, seed=0, verbose=False)
         m_vpd = evaluate_vpd(W, Vv, Uv, gv, k_1d, C_1d)
 
-        # BSF-W (block, trained).
+        # BSF-W random init (block, trained from Gaussian init).
         Vb, Ub, gb, blb = run_bsf_weights(W, C_bl, r, k_blocks,
                                           n=args.vpd_steps, seed=0, verbose=False)
         m_bsf = evaluate_bsf_weights(W, Vb, Ub, gb, blb, k_blocks)
 
+        # BSF-W with SVD warm-start (== "trainable SVD-OMP" full).
+        Vw, Uw, gw, blw = run_bsf_weights(W, C_bl, r, k_blocks,
+                                          n=args.vpd_steps, seed=0,
+                                          warm_start_svd=True, verbose=False)
+        m_warm = evaluate_bsf_weights(W, Vw, Uw, gw, blw, k_blocks)
+
+        # Trainable-SVD-OMP scaffold (V, U frozen; only per-block s + b learned).
+        Vs, Us, Ss, lns, bs, blocks_s = run_trainable_svd_omp(
+            W, C_bl, r, k_blocks, n=args.vpd_steps, seed=0, verbose=False)
+        m_train = evaluate_trainable_svd_omp(W, Vs, Us, Ss, lns, bs, blocks_s,
+                                             k_blocks, batch_size=args.batch)
+
         results[mod_path] = {
-            "svd_omp":       {k_: m_svd[k_] for k_ in ("sparse_mse", "faith_mse", "coherence", "stability")},
-            "block_svd_omp": {k_: m_bs[k_]  for k_ in ("sparse_mse", "faith_mse", "coherence", "stability")},
-            "vpd":           {k_: m_vpd[k_] for k_ in ("sparse_mse", "faith_mse", "coherence")},
-            "bsf_w":         {k_: m_bsf[k_] for k_ in ("sparse_mse", "faith_mse", "coherence")},
+            "svd_omp":            {k_: m_svd[k_]   for k_ in ("sparse_mse", "faith_mse", "coherence", "stability")},
+            "block_svd_omp":      {k_: m_bs[k_]    for k_ in ("sparse_mse", "faith_mse", "coherence", "stability")},
+            "trainable_svd_omp":  {k_: m_train[k_] for k_ in ("sparse_mse", "faith_mse", "coherence")},
+            "vpd":                {k_: m_vpd[k_]   for k_ in ("sparse_mse", "faith_mse", "coherence")},
+            "bsf_w":              {k_: m_bsf[k_]   for k_ in ("sparse_mse", "faith_mse", "coherence")},
+            "bsf_w_warm":         {k_: m_warm[k_]  for k_ in ("sparse_mse", "faith_mse", "coherence")},
             "shape": list(W.shape), "C": C_1d, "k": k_1d,
             "C_blocks": C_bl, "block_rank": r, "k_blocks": k_blocks,
         }
         print(f"  {mod_path:<22}  "
               f"svd={m_svd['sparse_mse']:.4f}  "
               f"blk-svd={m_bs['sparse_mse']:.4f}  "
+              f"train={m_train['sparse_mse']:.4f}  "
               f"vpd={m_vpd['sparse_mse']:.4f}  "
-              f"bsf={m_bsf['sparse_mse']:.4f}")
+              f"bsf={m_bsf['sparse_mse']:.4f}  "
+              f"bsf-warm={m_warm['sparse_mse']:.4f}")
 
     print(f"\nTotal time: {time.time() - t0:.1f}s")
 
@@ -144,15 +161,18 @@ def main(args):
     def wins(a_key, b_key, metric):
         return sum(1 for r in results.values() if r[a_key][metric] < r[b_key][metric])
 
+    METHODS = ["svd_omp", "block_svd_omp", "trainable_svd_omp", "vpd", "bsf_w", "bsf_w_warm"]
     print("\nPairwise wins on sparse_mse (lower is better, out of 24):")
-    for a in ["svd_omp", "block_svd_omp", "vpd", "bsf_w"]:
-        row = [f"{wins(a, b, 'sparse_mse'):>4}" if a != b else "   -" for b in ["svd_omp", "block_svd_omp", "vpd", "bsf_w"]]
-        print(f"  {a:<16} {' '.join(row)}")
+    print("  " + " " * 20 + "  ".join(f"{m[:10]:>10}" for m in METHODS))
+    for a in METHODS:
+        row = [f"{wins(a, b, 'sparse_mse'):>10}" if a != b else " " * 9 + "-" for b in METHODS]
+        print(f"  {a:<20} {'  '.join(row)}")
 
     print("\nPairwise wins on coherence (lower is better, out of 24):")
-    for a in ["svd_omp", "block_svd_omp", "vpd", "bsf_w"]:
-        row = [f"{wins(a, b, 'coherence'):>4}" if a != b else "   -" for b in ["svd_omp", "block_svd_omp", "vpd", "bsf_w"]]
-        print(f"  {a:<16} {' '.join(row)}")
+    print("  " + " " * 20 + "  ".join(f"{m[:10]:>10}" for m in METHODS))
+    for a in METHODS:
+        row = [f"{wins(a, b, 'coherence'):>10}" if a != b else " " * 9 + "-" for b in METHODS]
+        print(f"  {a:<20} {'  '.join(row)}")
 
     if args.out:
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)

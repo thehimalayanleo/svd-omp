@@ -46,6 +46,7 @@ def run_bsf_weights(
     n: int = 200,
     seed: int = 0,
     verbose: bool = True,
+    warm_start_svd: bool = False,
 ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, list[tuple[int, int]]]:
     """Train the BSF-W (V, U, g) on one weight matrix.
 
@@ -57,6 +58,9 @@ def run_bsf_weights(
         n: training steps.
         seed: torch RNG seed.
         verbose: print progress every 50 steps.
+        warm_start_svd: if True, initialize V and U from the SVD of W instead
+            of random Gaussian. Turns BSF-W into "trainable SVD-OMP" for
+            direct comparison with the analytic method.
 
     Returns:
         V, U, g_blocks, blocks: trained tensors + block layout (list of (s, e)).
@@ -66,9 +70,27 @@ def run_bsf_weights(
     d_out, d_in = W.shape
     dev = W.device
 
-    torch.manual_seed(seed)
-    V = torch.empty(d_in, C, device=dev).normal_(0, 1 / math.sqrt(d_in)).requires_grad_(True)
-    U = torch.empty(C, d_out, device=dev).normal_(0, 1 / math.sqrt(C)).requires_grad_(True)
+    if warm_start_svd:
+        from svd_omp import svd_decompose
+        V_svd, U_svd, _ = svd_decompose(W, C)
+        # SVD only produces min(d_out, d_in) components. If C > that, we get
+        # fewer columns back from svd_decompose. Pad the remaining atoms with
+        # small random noise so the dictionary reaches the requested C.
+        n_svd = V_svd.shape[1]
+        if n_svd < C:
+            torch.manual_seed(seed)
+            pad = C - n_svd
+            V_pad = torch.empty(d_in, pad, device=dev).normal_(0, 1e-4)
+            U_pad = torch.empty(pad, d_out, device=dev).normal_(0, 1e-4)
+            V_svd = torch.cat([V_svd, V_pad], dim=1)
+            U_svd = torch.cat([U_svd, U_pad], dim=0)
+        V = V_svd.clone().detach().requires_grad_(True)
+        U = U_svd.clone().detach().requires_grad_(True)
+    else:
+        torch.manual_seed(seed)
+        V = torch.empty(d_in, C, device=dev).normal_(0, 1 / math.sqrt(d_in)).requires_grad_(True)
+        U = torch.empty(C, d_out, device=dev).normal_(0, 1 / math.sqrt(C)).requires_grad_(True)
+    torch.manual_seed(seed)   # keep the gate-init RNG deterministic regardless of warm start
     g = torch.zeros(K, device=dev).requires_grad_(True)
 
     opt = torch.optim.AdamW([V, U, g], lr=3e-3)

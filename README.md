@@ -66,42 +66,60 @@ collapses to closed-form top-k with no residual updates. `bsf_weights.py`
 implements a BSF-style trained baseline on weight matrices so we can put
 all four methods on the same axes:
 
-|                    | 1D atoms       | Block atoms       |
-|--------------------|----------------|-------------------|
-| Analytic / no train| `svd_omp.py`   | `block_svd_omp.py`|
-| Learned / trained  | `vpd_baseline.py` | `bsf_weights.py`|
+|                        | 1D atoms          | Block atoms                                |
+|------------------------|-------------------|--------------------------------------------|
+| Analytic / no train    | `svd_omp.py`      | `block_svd_omp.py`                         |
+| Trained / warm-started | -                 | `trainable_svd_omp.py`, `bsf_weights.py` (`warm_start_svd=True`) |
+| Trained / random init  | `vpd_baseline.py` | `bsf_weights.py`                           |
 
-Run the 4-way sweep with `python compare_all.py`
+Run the 6-way sweep with `python compare_all.py`
 (synthetic 24-matrix mode; add `--weights weights/weight_matrices.pt` for real).
 Findings on the synthetic sweep:
 
-- Analytic vs trained: SVD-OMP beats VPD and block-SVD-OMP beats BSF-W on
-  sparse reconstruction and coherence, 24 / 24 matrices in each pair.
-- Block vs 1D on the trained side: BSF-W beats VPD 24 / 24 on sparse
-  reconstruction. This independently reproduces the BSF headline.
-- Block vs 1D on the analytic side: block-SVD-OMP ties SVD-OMP on
-  reconstruction (Eckart-Young caps both). The block variant's value is
-  matching multi-dimensional concept structure, not lower Frobenius error.
+- Analytic beats trained on Frobenius: `svd_omp` beats both `bsf_w_warm` (20 / 24)
+  and `bsf_w` (24 / 24), consistent with Eckart-Young capping any trained
+  method at truncated-SVD-optimal.
+- Warm-start beats cold on the trained side: `bsf_w_warm` beats `bsf_w` 24 / 24
+  on sparse reconstruction and 24 / 24 on faithfulness. Same objective, same
+  training budget, only difference is the SVD initialization.
+- Scaffold-mode `trainable_svd_omp` (only 2K learned params per matrix) matches
+  full-warm-start BSF at a tiny fraction of the parameter budget, and ties with
+  it on sparse reconstruction.
+- Block vs 1D on the trained side: `bsf_w` beats `vpd` 24 / 24 on sparse
+  reconstruction. This reproduces the BSF headline that blocks &gt; 1D when
+  training.
+- Block vs 1D on the analytic side: `block_svd_omp` ties `svd_omp` on
+  reconstruction (block Eckart-Young), but loses on coherence (1D atoms are
+  strictly more orthogonal than merged blocks). The block variant's real value
+  is matching multi-dimensional concept structure, not lower Frobenius error.
+
+**Bottom line on "can we beat BSF with a trainable SVD-OMP?"**
+Yes on same-objective same-budget comparisons (warm-init trivially dominates
+random-init). No on Frobenius reconstruction vs analytic SVD-OMP (Eckart-Young
+holds). The regime where trainable methods can genuinely beat SVD-OMP is on
+non-Frobenius objectives like causal preservation or intruder detection.
 
 ## Repo layout
 
 ```
-svd_omp.py           core method: svd_decompose, svd_omp_select, recon
-block_svd_omp.py     block extension: block_svd_decompose, block_svd_omp_select
-vpd_baseline.py      VPD reimplementation per Bushnaq et al., May 2026
-bsf_weights.py       BSF-style trained baseline on weight matrices
-metrics.py           sparse_mse, faith_mse, coherence, stability, block_coherence
-model_config.py      24 target modules + (C, k) per module type from VPD paper
-compare_vpd.py       main 24-matrix sweep (SVD-OMP vs VPD); writes results/*.json
-compare_all.py       4-way sweep (SVD-OMP vs block-SVD-OMP vs VPD vs BSF-W)
-causal_ablation.py   ablation experiment (see Status)
-demo_per_input.py    prints supports for 8 random inputs
-make_figures.py      regenerate figures/scatter.{png,pdf} from results JSON
-tests/               synthetic-data test suite (32 tests, no Goodfire model needed)
+svd_omp.py             core method: svd_decompose, svd_omp_select, recon
+block_svd_omp.py       block extension: block_svd_decompose, block_svd_omp_select
+trainable_svd_omp.py   scaffold-mode trainable: freeze V, U at SVD; learn per-block scale + bias
+vpd_baseline.py        VPD reimplementation per Bushnaq et al., May 2026
+bsf_weights.py         BSF-style trained baseline (add warm_start_svd=True for SVD init)
+metrics.py             sparse_mse, faith_mse, coherence, stability, block_coherence
+model_config.py        24 target modules + (C, k) per module type from VPD paper
+compare_vpd.py         main 24-matrix sweep (SVD-OMP vs VPD); writes results/*.json
+compare_all.py         6-way sweep (analytic 1D/block vs trained cold/warm)
+causal_ablation.py     ablation experiment (see Status)
+demo_per_input.py      prints supports for 8 random inputs
+make_figures.py        regenerate figures/scatter.{png,pdf} from results JSON
+tests/                 synthetic-data test suite (37 tests, no Goodfire model needed)
 notebooks/
   svd_omp_vs_vpd_goodfire67m.ipynb    original Colab notebook
 results/
   svd_omp_vs_vpd_results.json         per-matrix metrics from the sweep
+  compare_all_6way.json               6-way sweep results
 figures/
   svd_omp_vs_vpd_scatter.{png,pdf}    4-panel comparison figure
 ```
@@ -113,13 +131,14 @@ pipeline: SVD-OMP core, VPD baseline, metrics, causal ablation, and a full
 24-matrix end-to-end sweep at production shapes.
 
 ```bash
-python tests/test_svd_omp.py         # 16 property + smoke tests (~5s)
-python tests/test_end_to_end.py      # 24-matrix sweep at production shapes (~15s)
-python tests/test_block_svd_omp.py   # 13 block + BSF-W tests (~10s)
-python compare_all.py                # 4-way sweep vs BSF-W and VPD (~100s)
+python tests/test_svd_omp.py             # 16 SVD-OMP + VPD tests (~5s)
+python tests/test_end_to_end.py          # 24-matrix sweep at production shapes (~15s)
+python tests/test_block_svd_omp.py       # 13 block + BSF-W tests (~10s)
+python tests/test_trainable_svd_omp.py   # 5 trainable SVD-OMP + warm-start tests (~5s)
+python compare_all.py                    # 6-way sweep vs all baselines (~200s)
 ```
 
-All 32 tests pass on a fresh checkout.
+All 37 tests pass on a fresh checkout.
 
 ## Reproducing
 
