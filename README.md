@@ -68,6 +68,19 @@ figures/
   svd_omp_vs_vpd_scatter.{png,pdf}    4-panel comparison figure
 ```
 
+## Tests
+
+A pure-synthetic test suite (no Goodfire model needed) covers the whole
+pipeline: SVD-OMP core, VPD baseline, metrics, causal ablation, and a full
+24-matrix end-to-end sweep at production shapes.
+
+```bash
+python tests/test_svd_omp.py       # 16 property + smoke tests (~5s)
+python tests/test_end_to_end.py    # 24-matrix sweep at production shapes (~15s)
+```
+
+All 19 pass on a fresh checkout.
+
 ## Reproducing
 
 The Goodfire 67M model requires their `param_decomp` library, which pins
