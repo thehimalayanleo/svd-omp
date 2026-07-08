@@ -162,10 +162,95 @@ def evaluate_vpd_retrain(
     return sum(jaccs) / len(jaccs)
 
 
+def block_coherence(
+    V: torch.Tensor,
+    U: torch.Tensor,
+    blocks: list[tuple[int, int]],
+    active_block_ids,
+) -> float:
+    """Max pairwise block-block similarity among active blocks.
+
+    Blocks b1, b2 are compared by the Frobenius inner product of their
+    (V_b1 U_b1) and (V_b2 U_b2) contributions, normalized.
+    """
+    active = list(active_block_ids)
+    if len(active) < 2:
+        return 0.0
+    outer_products = []
+    for b in active:
+        s, e = blocks[b]
+        # block outer product, shape [d_out, d_in]
+        Wb = U[s:e].T @ V[:, s:e].T
+        outer_products.append(Wb / (Wb.norm().clamp(1e-9)))
+    max_sim = 0.0
+    for i in range(len(active)):
+        for j in range(i + 1, len(active)):
+            sim = (outer_products[i] * outer_products[j]).sum().abs().item()
+            max_sim = max(max_sim, sim)
+    return max_sim
+
+
+def evaluate_block_svd_omp(
+    W: torch.Tensor,
+    V_dict: torch.Tensor,
+    U_dict: torch.Tensor,
+    S: torch.Tensor,
+    blocks: list[tuple[int, int]],
+    k_blocks: int,
+    n_stab_trials: int = 20,
+    sigma: float = 0.01,
+    batch_size: int = 256,
+) -> dict:
+    """Metrics for block-SVD-OMP: sparse recon, faithfulness, block coherence,
+    stability, per-input block diversity.
+    """
+    from block_svd_omp import block_svd_omp_select_vectorized, block_reconstruction
+
+    dev = W.device
+    d_out, d_in = W.shape
+    K = len(blocks)
+
+    # Static top-k blocks (Eckart-Young for blocks): first k blocks (highest singular values).
+    static_blocks = list(range(k_blocks))
+    W_recon_static = block_reconstruction(V_dict, U_dict, blocks, static_blocks)
+    e_sp_static = (W_recon_static - W).pow(2).mean().item()
+
+    # Per-input top-k blocks.
+    torch.manual_seed(0)
+    phi_batch = torch.randn(batch_size, d_in, device=dev) * 0.5
+    W_phi_true = phi_batch @ W.T
+    W_hat, support_batch, _ = block_svd_omp_select_vectorized(
+        phi_batch, V_dict, U_dict, S, blocks, k_blocks)
+    e_sp_perinput = (W_hat - W_phi_true).pow(2).mean().item()
+
+    # Faithfulness: full block dictionary reconstruction.
+    all_blocks = list(range(K))
+    W_full = block_reconstruction(V_dict, U_dict, blocks, all_blocks)
+    e_f = (W_full - W).pow(2).mean().item()
+
+    mu = block_coherence(V_dict, U_dict, blocks, static_blocks)
+    st = support_stability_svd(W, k=blocks[k_blocks - 1][1], n_trials=n_stab_trials, sigma=sigma)
+
+    n_unique_inputs = len({tuple(r.tolist()) for r in support_batch})
+
+    return {
+        "sparse_mse": e_sp_static,
+        "sparse_mse_input": e_sp_perinput,
+        "faith_mse": e_f,
+        "coherence": mu,
+        "stability": st,
+        "n_active_blocks": k_blocks,
+        "n_unique_inputs": n_unique_inputs,
+        "n_seeds_unique": 1,
+    }
+
+
 __all__ = [
     "active_coherence",
+    "block_coherence",
     "support_stability_svd",
     "evaluate_svd_omp",
+    "evaluate_block_svd_omp",
     "evaluate_vpd",
     "evaluate_vpd_retrain",
 ]
