@@ -1,0 +1,170 @@
+{
+  "h.0.attn.q_proj": {
+    "downstream_mse_analytic": 4.289429187774658,
+    "downstream_mse_trained": 0.7885218262672424,
+    "pct_reduction": 81.61709188451891,
+    "fraction_loud_block_analytic": 0.9609375,
+    "fraction_loud_block_trained": 0.0625
+  },
+  "h.0.attn.k_proj": {
+    "downstream_mse_analytic": 4.087373733520508,
+    "downstream_mse_trained": 0.665364682674408,
+    "pct_reduction": 83.72146209147063,
+    "fraction_loud_block_analytic": 0.9765625,
+    "fraction_loud_block_trained": 0.046875
+  },
+  "h.0.attn.v_proj": {
+    "downstream_mse_analytic": 4.841273307800293,
+    "downstream_mse_trained": 0.7336866855621338,
+    "pct_reduction": 84.84517111686273,
+    "fraction_loud_block_analytic": 0.9609375,
+    "fraction_loud_block_trained": 0.03125
+  },
+  "h.0.attn.o_proj": {
+    "downstream_mse_analytic": 4.467706680297852,
+    "downstream_mse_trained": 0.7300970554351807,
+    "pct_reduction": 83.65834850674425,
+    "fraction_loud_block_analytic": 0.9765625,
+    "fraction_loud_block_trained": 0.015625
+  },
+  "h.0.mlp.c_fc": {
+    "downstream_mse_analytic": 3.967630624771118,
+    "downstream_mse_trained": 1.4970287084579468,
+    "pct_reduction": 62.268949656967976,
+    "fraction_loud_block_analytic": 0.9375,
+    "fraction_loud_block_trained": 0.0859375
+  },
+  "h.0.mlp.down_proj": {
+    "downstream_mse_analytic": 10.696447372436523,
+    "downstream_mse_trained": 7.523538112640381,
+    "pct_reduction": 29.663206383573236,
+    "fraction_loud_block_analytic": 0.90625,
+    "fraction_loud_block_trained": 0.6171875
+  },
+  "h.1.attn.q_proj": {
+    "downstream_mse_analytic": 3.897991895675659,
+    "downstream_mse_trained": 0.5952659845352173,
+    "pct_reduction": 84.72890656351566,
+    "fraction_loud_block_analytic": 0.9765625,
+    "fraction_loud_block_trained": 0.0234375
+  },
+  "h.1.attn.k_proj": {
+    "downstream_mse_analytic": 4.4637980461120605,
+    "downstream_mse_trained": 0.7287122011184692,
+    "pct_reduction": 83.6750633968942,
+    "fraction_loud_block_analytic": 0.96875,
+    "fraction_loud_block_trained": 0.015625
+  },
+  "h.1.attn.v_proj": {
+    "downstream_mse_analytic": 4.668000221252441,
+    "downstream_mse_trained": 0.7239343523979187,
+    "pct_reduction": 84.49155274025063,
+    "fraction_loud_block_analytic": 0.984375,
+    "fraction_loud_block_trained": 0.0234375
+  },
+  "h.1.attn.o_proj": {
+    "downstream_mse_analytic": 4.8742218017578125,
+    "downstream_mse_trained": 0.7902406454086304,
+    "pct_reduction": 83.78734744644484,
+    "fraction_loud_block_analytic": 0.9765625,
+    "fraction_loud_block_trained": 0.0234375
+  },
+  "h.1.mlp.c_fc": {
+    "downstream_mse_analytic": 4.792233943939209,
+    "downstream_mse_trained": 1.486443281173706,
+    "pct_reduction": 68.98224714063413,
+    "fraction_loud_block_analytic": 0.9296875,
+    "fraction_loud_block_trained": 0.0859375
+  },
+  "h.1.mlp.down_proj": {
+    "downstream_mse_analytic": 10.41810417175293,
+    "downstream_mse_trained": 6.666430950164795,
+    "pct_reduction": 36.01109337877628,
+    "fraction_loud_block_analytic": 0.84375,
+    "fraction_loud_block_trained": 0.25
+  },
+  "h.2.attn.q_proj": {
+    "downstream_mse_analytic": 4.219372272491455,
+    "downstream_mse_trained": 0.5433304309844971,
+    "pct_reduction": 87.12295583571081,
+    "fraction_loud_block_analytic": 0.984375,
+    "fraction_loud_block_trained": 0.03125
+  },
+  "h.2.attn.k_proj": {
+    "downstream_mse_analytic": 4.287801265716553,
+    "downstream_mse_trained": 0.6362296342849731,
+    "pct_reduction": 85.16186747338324,
+    "fraction_loud_block_analytic": 0.984375,
+    "fraction_loud_block_trained": 0.0234375
+  },
+  "h.2.attn.v_proj": {
+    "downstream_mse_analytic": 4.225804805755615,
+    "downstream_mse_trained": 0.7849763631820679,
+    "pct_reduction": 81.42421623183075,
+    "fraction_loud_block_analytic": 0.984375,
+    "fraction_loud_block_trained": 0.0078125
+  },
+  "h.2.attn.o_proj": {
+    "downstream_mse_analytic": 4.833099365234375,
+    "downstream_mse_trained": 0.7908235192298889,
+    "pct_reduction": 83.63734201455759,
+    "fraction_loud_block_analytic": 0.9375,
+    "fraction_loud_block_trained": 0.046875
+  },
+  "h.2.mlp.c_fc": {
+    "downstream_mse_analytic": 4.093696594238281,
+    "downstream_mse_trained": 0.5793910622596741,
+    "pct_reduction": 85.84675124494706,
+    "fraction_loud_block_analytic": 0.90625,
+    "fraction_loud_block_trained": 0.03125
+  },
+  "h.2.mlp.down_proj": {
+    "downstream_mse_analytic": 12.630081176757812,
+    "downstream_mse_trained": 7.807091236114502,
+    "pct_reduction": 38.18653160771996,
+    "fraction_loud_block_analytic": 0.9296875,
+    "fraction_loud_block_trained": 0.328125
+  },
+  "h.3.attn.q_proj": {
+    "downstream_mse_analytic": 4.324255466461182,
+    "downstream_mse_trained": 0.788630485534668,
+    "pct_reduction": 81.76262962141652,
+    "fraction_loud_block_analytic": 0.984375,
+    "fraction_loud_block_trained": 0.0390625
+  },
+  "h.3.attn.k_proj": {
+    "downstream_mse_analytic": 4.320383071899414,
+    "downstream_mse_trained": 0.7797857522964478,
+    "pct_reduction": 81.9510043595828,
+    "fraction_loud_block_analytic": 0.96875,
+    "fraction_loud_block_trained": 0.03125
+  },
+  "h.3.attn.v_proj": {
+    "downstream_mse_analytic": 4.36096715927124,
+    "downstream_mse_trained": 0.6935431361198425,
+    "pct_reduction": 84.09657512220889,
+    "fraction_loud_block_analytic": 0.9765625,
+    "fraction_loud_block_trained": 0.03125
+  },
+  "h.3.attn.o_proj": {
+    "downstream_mse_analytic": 5.068600177764893,
+    "downstream_mse_trained": 0.839563250541687,
+    "pct_reduction": 83.43599374389972,
+    "fraction_loud_block_analytic": 0.9609375,
+    "fraction_loud_block_trained": 0.015625
+  },
+  "h.3.mlp.c_fc": {
+    "downstream_mse_analytic": 4.755605220794678,
+    "downstream_mse_trained": 1.335147500038147,
+    "pct_reduction": 71.92476166440412,
+    "fraction_loud_block_analytic": 0.9140625,
+    "fraction_loud_block_trained": 0.8359375
+  },
+  "h.3.mlp.down_proj": {
+    "downstream_mse_analytic": 9.999160766601562,
+    "downstream_mse_trained": 5.913661956787109,
+    "pct_reduction": 40.85841707296603,
+    "fraction_loud_block_analytic": 0.921875,
+    "fraction_loud_block_trained": 0.109375
+  }
+}

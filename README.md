@@ -99,19 +99,52 @@ random-init). No on Frobenius reconstruction vs analytic SVD-OMP (Eckart-Young
 holds). The regime where trainable methods can genuinely beat SVD-OMP is on
 non-Frobenius objectives like causal preservation or intruder detection.
 
+## Non-Frobenius objective: beating analytic SVD-OMP
+
+`causal_trainable_svd_omp.py` optimizes a downstream-composed loss
+
+```
+L = || relu((phi V_masked) U) W_next^T - relu((phi W^T)) W_next^T ||^2
+```
+
+instead of the Frobenius loss on `W`. Eckart-Young does not cap this
+objective because the nonlinearity and `W_next` composition change the
+optimal decomposition.
+
+Adversarial construction (`compare_causal.py`): W has two singular tiers,
+loud (sigma=10, 4 atoms) and quiet (sigma=2, 4 atoms). W_next projects only
+onto the quiet band. Analytic block-SVD-OMP picks the loud block on 96 to
+98 percent of inputs because that is where projection norm is largest, but
+the loud block's atoms are killed by W_next.
+
+Sweep over synthetic weights at the shapes of the 24 target modules:
+
+- Mean downstream MSE reduction: **73.9%**
+- Trained wins substantively (>5% reduction): **24 / 24 modules**
+- Selection flip: analytic picks the loud block ~96% of the time; trained
+  picks the loud block <10% of the time on most modules
+
+This is the concrete case where trained beats analytic. Frobenius on `W`
+is capped by Eckart-Young; the moment there is any downstream nonlinear
+composition that does not align with the top singular directions, training
+can find a better decomposition. See `results/compare_causal.json` for
+per-module numbers.
+
 ## Repo layout
 
 ```
-svd_omp.py             core method: svd_decompose, svd_omp_select, recon
-block_svd_omp.py       block extension: block_svd_decompose, block_svd_omp_select
-trainable_svd_omp.py   scaffold-mode trainable: freeze V, U at SVD; learn per-block scale + bias
-vpd_baseline.py        VPD reimplementation per Bushnaq et al., May 2026
-bsf_weights.py         BSF-style trained baseline (add warm_start_svd=True for SVD init)
-metrics.py             sparse_mse, faith_mse, coherence, stability, block_coherence
-model_config.py        24 target modules + (C, k) per module type from VPD paper
-compare_vpd.py         main 24-matrix sweep (SVD-OMP vs VPD); writes results/*.json
-compare_all.py         6-way sweep (analytic 1D/block vs trained cold/warm)
-causal_ablation.py     ablation experiment (see Status)
+svd_omp.py                    core method: svd_decompose, svd_omp_select, recon
+block_svd_omp.py              block extension: block_svd_decompose, block_svd_omp_select
+trainable_svd_omp.py          scaffold-mode Frobenius trainable
+causal_trainable_svd_omp.py   downstream-composed non-Frobenius trainable (beats analytic)
+vpd_baseline.py               VPD reimplementation per Bushnaq et al., May 2026
+bsf_weights.py                BSF-style trained baseline (warm_start_svd=True for SVD init)
+metrics.py                    sparse_mse, faith_mse, coherence, stability, block_coherence
+model_config.py               24 target modules + (C, k) per module type from VPD paper
+compare_vpd.py                main 24-matrix sweep (SVD-OMP vs VPD); writes results/*.json
+compare_all.py                6-way sweep (analytic 1D/block vs trained cold/warm)
+compare_causal.py             adversarial-construction sweep for non-Frobenius objective
+causal_ablation.py            ablation experiment (see Status)
 demo_per_input.py      prints supports for 8 random inputs
 make_figures.py        regenerate figures/scatter.{png,pdf} from results JSON
 tests/                 synthetic-data test suite (37 tests, no Goodfire model needed)
@@ -135,10 +168,12 @@ python tests/test_svd_omp.py             # 16 SVD-OMP + VPD tests (~5s)
 python tests/test_end_to_end.py          # 24-matrix sweep at production shapes (~15s)
 python tests/test_block_svd_omp.py       # 13 block + BSF-W tests (~10s)
 python tests/test_trainable_svd_omp.py   # 5 trainable SVD-OMP + warm-start tests (~5s)
+python tests/test_causal_trainable.py    # 5 non-Frobenius trainable tests (~30s)
 python compare_all.py                    # 6-way sweep vs all baselines (~200s)
+python compare_causal.py                 # adversarial downstream sweep (~45s)
 ```
 
-All 37 tests pass on a fresh checkout.
+All 42 tests pass on a fresh checkout.
 
 ## Reproducing
 
