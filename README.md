@@ -99,6 +99,48 @@ random-init). No on Frobenius reconstruction vs analytic SVD-OMP (Eckart-Young
 holds). The regime where trainable methods can genuinely beat SVD-OMP is on
 non-Frobenius objectives like causal preservation or intruder detection.
 
+## Real Goodfire 67M results (via Modal)
+
+Everything above was verified on the real Goodfire 67M LlamaSimpleMLP by
+running `modal run modal_goodfire.py`. The Modal function clones
+goodfire/param-decomp, loads the model from wandb, and runs all three
+sweeps in one go (about 4 minutes on a T4).
+
+**Frobenius sweep on real weights (24 modules, pairwise wins on sparse_mse):**
+
+| Winner \\ Loser | svd | vpd | bsf_cold | bsf_warm |
+|---|---|---|---|---|
+| svd            | -  | 24 | 24 | 23 |
+| vpd            | 0  | -  | 7  | 0  |
+| bsf_cold       | 0  | 17 | -  | 0  |
+| bsf_warm       | 0  | 24 | 24 | -  |
+
+Analytic SVD-OMP dominates every trained method 23-24 out of 24 modules on
+real weights, exactly as Eckart-Young predicts. BSF-warm strictly dominates
+VPD and BSF-cold. BSF-cold beats VPD 17/24, reproducing BSF's block-beats-1D
+claim on the trained side.
+
+**Downstream (non-Frobenius) sweep on real weights:**
+Mean downstream MSE reduction from training: **16.3%**
+Trained wins substantively (>5%): **24 / 24** modules
+
+Smaller effect than the adversarial synthetic construction (~74%), but the
+non-Frobenius trained method still beats analytic on every real module.
+
+**Stable rank on real Goodfire activations:**
+
+| K | Analytic | BSF-W cold | BSF-W warm |
+|---|---|---|---|
+| 1  | 1.00 | 1.00 | 1.00 |
+| 4  | 1.29 | 1.28 | 1.29 |
+| 8  | 1.70 | 1.24 | 1.70 |
+| 16 | **1.74** | 1.35 | **1.74** |
+
+Plateau at ~1.74 — lower than Pythia-70M (~2.10) and much lower than BSF's
+DINOv3 vision result (~4). Simpler LMs give more low-dim concept structure.
+Analytic and BSF-warm converge identically. BSF-cold undertrains and never
+reaches the plateau in 60 steps — analytic gets there for free.
+
 ## Reproducing BSF's stable-rank plateau, without training
 
 BSF (Bricken et al., Goodfire 2026) reports the effective (stable) rank of
