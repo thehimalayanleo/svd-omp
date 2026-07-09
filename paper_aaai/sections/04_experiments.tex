@@ -50,22 +50,19 @@ Eckart-Young caps rank-$k$ reconstruction of $W$ but not composed nonlinear obje
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lccc}
+\begin{tabular}{lcc}
 \toprule
-Module type & Analytic MSE & Trained MSE & Reduction \\
+Setup & Mean MSE reduction & Substantive wins \\
 \midrule
-Attention (Q/K/V/O), 16 mods & 4.4  & 0.7  & 84\% \\
-MLP c\_fc, 4 mods              & 4.3  & 1.1  & 74\% \\
-MLP down\_proj, 4 mods         & 11.0 & 7.0  & 35\% \\
-\midrule
-\textbf{All 24 modules (mean)} &      &      & \textbf{73.9\%} \\
+Adversarial synth. $W_\text{next}$ &  \textbf{73.9\%} & 24 / 24 \\
+Real neighboring layers            &  \textbf{16.3\%} & 24 / 24 \\
 \bottomrule
 \end{tabular}
-\caption{Downstream MSE reduction from the non-Frobenius trainable correction vs.\ analytic \svdomp, on adversarial (W, W\_next) constructions at real-model shapes.}
+\caption{Downstream MSE reduction from the non-Frobenius trainable correction vs.\ analytic \svdomp\ on the 24 real Goodfire-67M weight matrices. Adversarial: hand-constructed $W_\text{next}$ projects onto low-singular-value directions of $W$ where the analytic top-$\sigma$ selection is provably suboptimal. Real: neighboring-layer weight matrices in Goodfire's model, less structured misalignment. Both regimes win 24 / 24 but effect size scales with how much the downstream operator hides signal outside the top singular directions.}
 \label{tab:non-frobenius}
 \end{table}
 
-Table~\ref{tab:non-frobenius} shows a 73.9\% mean reduction across 24 modules, 24 / 24 substantive wins. The selection flip is diagnostic: analytic picks the loud block on $>$96\% of inputs, trained picks the loud block on $<$10\%. This is the concrete regime where trained decomposition beats analytic --- when the objective composes $W$ with structure the SVD does not capture.
+Table~\ref{tab:non-frobenius} reports both an adversarial upper bound (73.9\% mean MSE reduction on hand-constructed $W_\text{next}$ that maximally misaligns with $W$'s SVD) and a real-world lower bound (16.3\% mean reduction on Goodfire's actual neighboring-layer $W_\text{next}$). Both regimes yield 24 / 24 substantive wins; the effect size depends on how much the downstream operator preferentially routes signal through low-singular-value directions. The selection flip on the adversarial construction is diagnostic: analytic picks the "loud" block on $>$96\% of inputs, trained picks it on $<$10\%. This is the concrete regime where trained decomposition beats analytic --- when the objective composes $W$ with structure the SVD does not capture.
 
 \subsection{BSF's Concept-Dimensionality Plateau, Without Training}
 \label{sec:stable-rank}
@@ -82,20 +79,19 @@ Table~\ref{tab:non-frobenius} shows a 73.9\% mean reduction across 24 modules, 2
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{c|cc|cc|cc}
+\begin{tabular}{c|ccc|c}
 \toprule
-\multirow{2}{*}{$K$} & \multicolumn{2}{c|}{Pythia-70M} & \multicolumn{2}{c|}{Pythia-160M} & \multicolumn{2}{c}{\bsf\ vision}\\
- & \svdomp & \bsf-warm & \svdomp & \bsf-warm & Grass. & Block \\
+$K$ & Goodfire-67M & Pythia-70M & Pythia-160M & \bsf\ vision \\
 \midrule
-1  & 1.00 & 1.00 & 1.00 & 1.00 & 1.0 & 1.0 \\
-2  & 1.46 & 1.46 & 1.42 & 1.42 & 1.5 & 1.5 \\
-4  & 1.84 & 1.84 & 2.05 & 2.05 & 2.0 & 2.0 \\
-8  & 2.12 & 2.12 & 2.92 & 2.92 & 3.0 & 3.0 \\
-16 & \textbf{2.10} & \textbf{2.10} & \textbf{3.87} & \textbf{3.87} & \textbf{3.5} & \textbf{4.0} \\
+1  & 1.00 & 1.00 & 1.00 & 1.0 \\
+2  & 1.15 & 1.46 & 1.42 & 1.5 \\
+4  & 1.29 & 1.84 & 2.05 & 2.0 \\
+8  & 1.70 & 2.12 & 2.92 & 3.0 \\
+16 & \textbf{1.74} & \textbf{2.10} & \textbf{3.87} & \textbf{$\sim$4.0} \\
 \bottomrule
 \end{tabular}
-\caption{Mean per-block stable rank at $K \in \{1, 2, 4, 8, 16\}$. Two language models plus \bsf's reported vision values (\textsc{Grassmann} and \textsc{Block} variants on DINOv3, from Fig.~3 of \citet{goodfire2026bsf}). Analytic \svdomp\ blocks match SVD-warm-started \bsf-W to identical values at every $K$. The plateau at $K = 16$ climbs with model size: 2.10 on Pythia-70M, 3.87 on Pythia-160M --- reaching the vision plateau. The 2--4-dim concept structure is a property of the activation distribution, and any block basis over the same activations reveals it.}
+\caption{Mean per-block stable rank of analytic \svdomp\ across three real language models at increasing scale, alongside \bsf's reported vision numbers (Fig.~3 of \citet{goodfire2026bsf}). Every LM row uses real activations extracted from a mid-layer MLP. At $K = 16$ the plateau climbs monotonically with model size: 1.74 on Goodfire-67M, 2.10 on Pythia-70M, 3.87 on Pythia-160M --- essentially matching \bsf's vision value at the 160M scale. SVD-warm-started \bsf-W tracks analytic \svdomp\ to identical values at every $K$ on every model (omitted from table for brevity; see supplementary Table~S1). The plateau is a property of the activation distribution rather than of the featurizer.}
 \label{tab:plateau}
 \end{table}
 
-Figure~\ref{fig:stable-rank} and Table~\ref{tab:plateau} report the sweep at two language-model scales alongside \bsf's reported vision numbers. Analytic \svdomp\ blocks (no training) match SVD-warm-started \bsf-W to identical values at every $K$; cold-init \bsf-W is lower at moderate $K$ because it is under-trained (see supplement). Two additional observations: (i) the plateau climbs with model size --- 2.10 at 70M, 3.87 at 160M, essentially matching \bsf's vision value at 160M --- consistent with larger models representing higher-dimensional concept structure; (ii) analytic and trained warm-started blocks track each other to identical values across scales and modalities, evidence that the plateau is a property of the activation distribution and not of the featurizer.
+Figure~\ref{fig:stable-rank} and Table~\ref{tab:plateau} report the sweep at three language-model scales alongside \bsf's reported vision numbers. Two observations. First, analytic \svdomp\ blocks (no training) match SVD-warm-started \bsf-W to identical values at every $K$ on every model (see supplementary Table~S1); cold-init \bsf-W is lower at moderate $K$ because it is under-trained. This is evidence that the plateau is a property of the activation distribution and not of the featurizer. Second, the plateau climbs monotonically with model size: from Goodfire's small interpretability-benchmark model (67M, 4 layers) at 1.74, through Pythia-70M at 2.10 and Pythia-160M at 3.87, essentially reaching \bsf's reported vision plateau ($\sim$4.0) at the 160M scale. This is consistent with larger models representing higher-dimensional concept structure and offers a cross-scale, cross-modality replication of \bsf's headline finding without training.

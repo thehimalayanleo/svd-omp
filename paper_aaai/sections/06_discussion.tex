@@ -3,24 +3,25 @@
 
 \paragraph{Substrate matters.} All our results concern \emph{weight} decomposition. \bsf's original result is on \emph{activation} decomposition. Language-model activations are known to be non-aligned with principal directions of variance in practice (this is why SAEs beat PCA baselines on interpretability metrics), so we do not claim \svdomp\ would beat \bsf\ on activations. What we do claim: on weight decomposition, the analytic SVD dictionary dominates trained baselines; and the stable-rank plateau that \bsf\ interprets as "concepts are 2--4-dimensional" is method-independent, because analytic blocks reproduce it exactly.
 
-\paragraph{Efficiency angle.} A concurrent benefit of \svdomp\ is that it eliminates the training compute of per-matrix probes. Table~\ref{tab:wall-clock} reports mean per-matrix wall-clock across the 24 target modules on CPU. \svdomp\ prepares each matrix in \textbf{$\sim$102 ms}; the trained methods take 1.5--1.6 s each, a 15$\times$ slowdown. For interpretability at reasoning-model scale (hundreds of layers, thousands of interpreted modules), one SVD per module becomes a linear-algebra call at load time while a trained probe per module becomes a substantial infrastructure investment. We view this as a favorable side effect rather than the primary contribution.
+\paragraph{Efficiency angle.} A concurrent benefit of \svdomp\ is that it eliminates the training compute of per-matrix probes. Table~\ref{tab:wall-clock} reports mean per-matrix wall-clock on both CPU and a Modal-hosted T4 GPU. \svdomp\ prepares each matrix in \textbf{$\sim$102 ms on CPU} and $\sim$111 ms on GPU; the trained methods take 15$\times$ longer on CPU and 4$\times$ longer on GPU. For interpretability at reasoning-model scale (hundreds of layers, thousands of interpreted modules), one SVD per module becomes a linear-algebra call at load time while a trained probe per module becomes a substantial infrastructure investment. We view this as a favorable side effect rather than the primary contribution.
 
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{lrr}
+\begin{tabular}{lrrrr}
 \toprule
-Method & Mean per matrix & Ratio vs.\ \svdomp \\
+& \multicolumn{2}{c}{CPU} & \multicolumn{2}{c}{T4 GPU} \\
+Method & ms & ratio & ms & ratio \\
 \midrule
-\svdomp\ (analytic)              & 102 ms  & 1.0$\times$  \\
-Block-\svdomp\ (analytic)        & 94 ms   & 0.9$\times$  \\
-Scaffold-trainable ($2K$ params) & 392 ms  & 3.8$\times$  \\
-\vpd\ (trained, 1D)              & 1585 ms & 15.5$\times$ \\
-\bsf-W cold (trained, block)     & 1493 ms & 14.6$\times$ \\
-\bsf-W warm (trained, block)     & 1582 ms & 15.5$\times$ \\
+\svdomp\ (analytic)              & 102  & 1.0$\times$  & 111  & 1.0$\times$ \\
+Block-\svdomp\ (analytic)        & 94   & 0.9$\times$  & 96   & 0.9$\times$ \\
+Scaffold-trainable ($2K$ params) & 392  & 3.8$\times$  & 266  & 2.4$\times$ \\
+\vpd\ (trained)                  & 1585 & 15.5$\times$ & 443  & 4.0$\times$ \\
+\bsf-W cold                      & 1493 & 14.6$\times$ & 429  & 3.9$\times$ \\
+\bsf-W warm                      & 1582 & 15.5$\times$ & 526  & 4.7$\times$ \\
 \bottomrule
 \end{tabular}
-\caption{Wall-clock preparation cost per matrix, CPU, averaged over the 24 target modules of the 67M \textsc{LlamaSimpleMLP}. Trained baselines use 40 AdamW steps; scaffold-trainable freezes $V, U$ at the SVD and trains only per-block scale and bias. \svdomp\ is $\sim$15$\times$ faster than any trained method.}
+\caption{Wall-clock preparation cost per matrix on both CPU and Modal-hosted T4 GPU, averaged over the 24 target modules of the 67M \textsc{LlamaSimpleMLP}. Trained baselines use 40 AdamW steps; scaffold-trainable freezes $V, U$ at the SVD. \svdomp\ is $\sim$15$\times$ faster on CPU and $\sim$4$\times$ faster on GPU than any trained method. Trained baselines benefit more from GPU acceleration but do not close the gap.}
 \label{tab:wall-clock}
 \end{table}
 
