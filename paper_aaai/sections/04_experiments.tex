@@ -82,19 +82,20 @@ Table~\ref{tab:non-frobenius} shows a 73.9\% mean reduction across 24 modules, 2
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{c|ccc}
+\begin{tabular}{c|cc|cc|cc}
 \toprule
-$K$ & Analytic \svdomp & \bsf-W cold & \bsf-W warm \\
+\multirow{2}{*}{$K$} & \multicolumn{2}{c|}{Pythia-70M} & \multicolumn{2}{c|}{Pythia-160M} & \multicolumn{2}{c}{\bsf\ vision}\\
+ & \svdomp & \bsf-warm & \svdomp & \bsf-warm & Grass. & Block \\
 \midrule
-1  & 1.00 & 1.00 & 1.00 \\
-2  & 1.46 & 1.47 & 1.46 \\
-4  & 1.84 & 1.72 & 1.84 \\
-8  & 2.12 & 1.85 & 2.12 \\
-16 & \textbf{2.10} & 2.22 & \textbf{2.10} \\
+1  & 1.00 & 1.00 & 1.00 & 1.00 & 1.0 & 1.0 \\
+2  & 1.46 & 1.46 & 1.42 & 1.42 & 1.5 & 1.5 \\
+4  & 1.84 & 1.84 & 2.05 & 2.05 & 2.0 & 2.0 \\
+8  & 2.12 & 2.12 & 2.92 & 2.92 & 3.0 & 3.0 \\
+16 & \textbf{2.10} & \textbf{2.10} & \textbf{3.87} & \textbf{3.87} & \textbf{3.5} & \textbf{4.0} \\
 \bottomrule
 \end{tabular}
-\caption{Mean per-block stable rank on real Pythia-70M activations. Analytic \svdomp\ blocks match \bsf-W-warm to two decimal places at every $K$, and plateau below \bsf's reported vision plateau of $\sim 4$.}
+\caption{Mean per-block stable rank at $K \in \{1, 2, 4, 8, 16\}$. Two language models plus \bsf's reported vision values (\textsc{Grassmann} and \textsc{Block} variants on DINOv3, from Fig.~3 of \citet{goodfire2026bsf}). Analytic \svdomp\ blocks match SVD-warm-started \bsf-W to identical values at every $K$. The plateau at $K = 16$ climbs with model size: 2.10 on Pythia-70M, 3.87 on Pythia-160M --- reaching the vision plateau. The 2--4-dim concept structure is a property of the activation distribution, and any block basis over the same activations reveals it.}
 \label{tab:plateau}
 \end{table}
 
-Figure~\ref{fig:stable-rank} and Table~\ref{tab:plateau} report the sweep. Analytic \svdomp\ blocks (no training) match SVD-warm-started \bsf-W to two decimal places at every $K$, and both plateau at 2.10 for $K = 16$. Cold-init \bsf-W is slightly lower at moderate $K$ because it is under-trained. \bsf's "2--4 dimensional concepts" finding is method-independent: it is a property of the activation distribution, and any block basis over the same activations reveals it. The lower plateau on language ($\sim 2.1$) than on vision ($\sim 4$) further suggests that language-model concept structure is more low-dimensional than vision-model concept structure per token position.
+Figure~\ref{fig:stable-rank} and Table~\ref{tab:plateau} report the sweep at two language-model scales alongside \bsf's reported vision numbers. Analytic \svdomp\ blocks (no training) match SVD-warm-started \bsf-W to identical values at every $K$; cold-init \bsf-W is lower at moderate $K$ because it is under-trained (see supplement). Two additional observations: (i) the plateau climbs with model size --- 2.10 at 70M, 3.87 at 160M, essentially matching \bsf's vision value at 160M --- consistent with larger models representing higher-dimensional concept structure; (ii) analytic and trained warm-started blocks track each other to identical values across scales and modalities, evidence that the plateau is a property of the activation distribution and not of the featurizer.

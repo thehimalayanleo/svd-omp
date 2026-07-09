@@ -1,0 +1,87 @@
+%% AAAI 2027 Reproducibility Checklist
+%% To be submitted alongside the main paper.
+
+\documentclass[letterpaper]{article}
+\usepackage[submission]{aaai2027}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\urlstyle{rm}
+\def\UrlFont{\rm}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{booktabs}
+\frenchspacing
+\setcounter{secnumdepth}{0}
+
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+
+\title{Reproducibility Checklist for
+``Training-Free Parameter Decomposition Dominates Trained Interpretability Probes''}
+\author{Anonymous submission}
+\affiliations{AAAI 2027 AI Alignment track}
+
+\begin{document}
+\maketitle
+
+\section{Paper}
+
+\begin{itemize}
+\item \textbf{This paper:}
+\begin{itemize}
+\item Includes a conceptual outline and/or pseudocode description of AI methods introduced: \textbf{yes}. Method definitions in Section 2 include closed-form selection rules; Algorithm 1 in Appendix would specify the pseudocode.
+\item Clearly delineates statements that are opinions, hypothesis, and speculation from objective facts and results: \textbf{yes}. Empirical claims cite specific tables; theoretical claims cite theorems.
+\item Provides well marked pedagogical references for less-familiar readers to gain background necessary to replicate the paper: \textbf{yes}. Eckart-Young, Davis-Kahan, and OMP references given.
+\end{itemize}
+\end{itemize}
+
+\section{Theoretical Contributions}
+
+\begin{itemize}
+\item Does this paper make theoretical contributions?
+\textbf{Yes} --- Section 3 presents three classical theorems and their application to our empirical results:
+\begin{itemize}
+\item All assumptions and restrictions are stated clearly and formally: \textbf{yes}. Eckart-Young (Theorem 1) requires rank-$k$; Davis-Kahan (Theorem 2) requires spectral gap; the non-Frobenius escape argument specifies the composed-nonlinearity condition.
+\item All novel claims are stated formally (e.g., in theorem statements): \textbf{yes}. The Frobenius-optimality of \svdomp\ is a corollary of Eckart-Young; the stability failure on compressed-spectrum modules is a corollary of Davis-Kahan.
+\item Proofs of all novel claims are included: \textbf{partial}. Corollaries follow directly from the cited theorems; we sketch the argument in text but do not include full proofs due to page limits. Full proofs available on request.
+\item Proof sketches or intuitions are given for complex and/or novel results: \textbf{yes}. Section 3.3 explains why composed nonlinearity breaks the Eckart-Young cap.
+\item Appropriate citations to theoretical tools used are given: \textbf{yes}.
+\item All theoretical claims are demonstrated empirically to hold: \textbf{yes}. Sections 4.1--4.4 verify each theoretical claim on real weight matrices.
+\item All experimental code used to eliminate or disprove claims is included: \textbf{yes}, 42 synthetic-data property and integration tests in the supplement.
+\end{itemize}
+\end{itemize}
+
+\section{Datasets}
+
+\begin{itemize}
+\item Does this paper rely on one or more datasets?
+\textbf{Yes} --- primarily on weights and activations from public pretrained models:
+\begin{itemize}
+\item A motivation for why the dataset(s) is/are appropriate for the study is given: \textbf{yes}. Goodfire's 67M \textsc{LlamaSimpleMLP} is the exact model used in \vpd\ \cite{bushnaq2026vpd}, enabling apples-to-apples comparison. Pythia-70M \cite{biderman2023pythia} is a small public language model that generalizes the plateau finding beyond the specific interpretability-benchmark model.
+\item All novel datasets introduced in this paper are included in a data appendix: \textbf{N/A} --- no novel dataset introduced.
+\item Publicly available: \textbf{yes} --- Goodfire model via wandb (\texttt{goodfire/spd/runs/t-9d2b8f02}), Pythia via HuggingFace, adversarial synthetic constructions from provided code.
+\item Access instructions in the appendix / supplementary: \textbf{yes}, including Modal reproducibility script and one-line pip install.
+\end{itemize}
+\end{itemize}
+
+\section{Computational Experiments}
+
+\begin{itemize}
+\item Does this paper include computational experiments?
+\textbf{Yes} --- five experiments in Section 4 plus wall-clock timing:
+\begin{itemize}
+\item Any code required for pre-processing data is included: \textbf{yes}. \texttt{real\_activations\_stable\_rank.py} handles Pythia activation extraction.
+\item All source code required for conducting and analyzing the experiments is included: \textbf{yes}. 42-test suite + comparison scripts (\texttt{compare\_vpd.py}, \texttt{compare\_all.py}, \texttt{compare\_causal.py}, \texttt{compare\_stable\_rank.py}, \texttt{wall\_clock\_timing.py}).
+\item Included code is provided in a repository (link/details): \textbf{yes}. Anonymized supplement.
+\item All source code used for experiments has appropriate documentation: \textbf{yes}. Every module has a docstring; every script has a usage line.
+\item All source code used for experiments is licensed under an open-source license: \textbf{yes} --- MIT.
+\item An explicit description of the pipeline used to build code: \textbf{yes}. Modal-based one-command reproduction (\texttt{modal\_goodfire.py}) documented in the supplement.
+\item Hyper-parameter settings and hyper-parameter optimization protocol: \textbf{yes}. Reported in Section 2 (method definitions) and Section 4 (experiments); the specific $C$, $k$, and block-size choices match those of \vpd\ \cite{bushnaq2026vpd}.
+\item Number of algorithm runs / seeds: currently \textbf{one seed} for the trained baselines. Ablations under multiple seeds would strengthen error-bar claims; planned for the camera-ready version.
+\item Analysis of results: \textbf{yes}. Sections 4.1--4.4 report per-metric wins across 24 modules and interpret the results theoretically.
+\item Description of computing infrastructure: \textbf{yes}. Local runs on CPU (Apple M-series, torch 2.12.1). Modal runs on T4 GPU. Both reproduce every headline in under 5 minutes.
+\end{itemize}
+\end{itemize}
+
+\end{document}

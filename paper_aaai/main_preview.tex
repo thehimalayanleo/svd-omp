@@ -9,6 +9,8 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{xcolor}
+% multirow not available in local TinyTeX 2021; approximate via double header row.
+\providecommand{\multirow}[3]{#3}
 
 \newtheorem{theorem}{Theorem}
 

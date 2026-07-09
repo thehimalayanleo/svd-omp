@@ -3,7 +3,26 @@
 
 \paragraph{Substrate matters.} All our results concern \emph{weight} decomposition. \bsf's original result is on \emph{activation} decomposition. Language-model activations are known to be non-aligned with principal directions of variance in practice (this is why SAEs beat PCA baselines on interpretability metrics), so we do not claim \svdomp\ would beat \bsf\ on activations. What we do claim: on weight decomposition, the analytic SVD dictionary dominates trained baselines; and the stable-rank plateau that \bsf\ interprets as "concepts are 2--4-dimensional" is method-independent, because analytic blocks reproduce it exactly.
 
-\paragraph{Efficiency angle.} A concurrent benefit of \svdomp\ is that it eliminates the training compute of per-matrix probes. For interpretability at scale (hundreds of layers of a reasoning model, thousands of interpreted modules), the difference between one SVD per module (subsecond on CPU) and a full AdamW training loop per module ($\sim$40--200 steps on GPU) becomes materially significant. On our 24-module comparison the analytic methods complete in seconds; the trained methods dominate wall-clock. We view this as a favorable side effect rather than the primary contribution.
+\paragraph{Efficiency angle.} A concurrent benefit of \svdomp\ is that it eliminates the training compute of per-matrix probes. Table~\ref{tab:wall-clock} reports mean per-matrix wall-clock across the 24 target modules on CPU. \svdomp\ prepares each matrix in \textbf{$\sim$102 ms}; the trained methods take 1.5--1.6 s each, a 15$\times$ slowdown. For interpretability at reasoning-model scale (hundreds of layers, thousands of interpreted modules), one SVD per module becomes a linear-algebra call at load time while a trained probe per module becomes a substantial infrastructure investment. We view this as a favorable side effect rather than the primary contribution.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+Method & Mean per matrix & Ratio vs.\ \svdomp \\
+\midrule
+\svdomp\ (analytic)              & 102 ms  & 1.0$\times$  \\
+Block-\svdomp\ (analytic)        & 94 ms   & 0.9$\times$  \\
+Scaffold-trainable ($2K$ params) & 392 ms  & 3.8$\times$  \\
+\vpd\ (trained, 1D)              & 1585 ms & 15.5$\times$ \\
+\bsf-W cold (trained, block)     & 1493 ms & 14.6$\times$ \\
+\bsf-W warm (trained, block)     & 1582 ms & 15.5$\times$ \\
+\bottomrule
+\end{tabular}
+\caption{Wall-clock preparation cost per matrix, CPU, averaged over the 24 target modules of the 67M \textsc{LlamaSimpleMLP}. Trained baselines use 40 AdamW steps; scaffold-trainable freezes $V, U$ at the SVD and trains only per-block scale and bias. \svdomp\ is $\sim$15$\times$ faster than any trained method.}
+\label{tab:wall-clock}
+\end{table}
 
 \paragraph{Where trained probes should be used.} Two regimes remain where trained probes are appropriate on weight matrices: (i) non-Frobenius objectives that compose $W$ with downstream nonlinearities and matrices, where our scaffold-mode trainable correction (2 parameters per block) captures 73.9\% of the achievable gain relative to analytic; and (ii) the six specific modules with compressed singular spectra where Davis-Kahan predicts \svdomp\ instability. For these cases, the SVD is the correct \emph{starting point}, not a competitor.
 
