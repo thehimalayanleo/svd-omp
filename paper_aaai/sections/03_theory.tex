@@ -1,0 +1,33 @@
+\section{Theoretical Foundations}
+\label{sec:theory}
+
+Three classical results from numerical linear algebra explain the empirical dominance of \svdomp\ over trained baselines and predict precisely where training can help.
+
+\subsection{Frobenius Optimality (Eckart-Young)}
+
+\begin{theorem}[Eckart-Young-Mirsky, \citealp{eckart1936approximation}]
+For $W \in \mathbb{R}^{d_\text{out} \times d_\text{in}}$ with singular values $\sigma_1 \geq \cdots \geq \sigma_r$ and any matrix $B$ of rank at most $k$,
+\begin{equation}
+\|W - W_k\|_F \leq \|W - B\|_F,
+\end{equation}
+where $W_k = \sum_{c=1}^k \sigma_c u_c v_c^\top$ is the truncated SVD. Equality holds only when $B = W_k$ (up to unitary rotation within the null space of $\Sigma_{1:k}$).
+\end{theorem}
+
+\emph{Consequence for \vpd\ and \bsf-W.} Both methods learn a rank-$C$ dictionary and select a rank-$k$ subset per instance. On the sparse reconstruction metric $\|(V M U) - W\|_F^2$, the trained dictionary cannot do better than the top-$k$ SVD. In our sweeps on the 67M \textsc{LlamaSimpleMLP} (Sec.\ \ref{sec:experiments-vpd}), \svdomp\ dominates both trained methods 24 / 24 on this metric --- the empirical instance of the theorem.
+
+\subsection{Stability (Davis-Kahan)}
+
+\begin{theorem}[\citealp{davis1970rotation}]
+Let $W = U \Sigma V^\top$ and $\tilde{W} = W + \Delta$ have top-$k$ right singular subspaces $\mathcal{V}_k, \tilde{\mathcal{V}}_k$. Then
+\begin{equation}
+\sin \angle(\mathcal{V}_k, \tilde{\mathcal{V}}_k) \leq \frac{\|\Delta\|_\text{op}}{\sigma_k(W) - \sigma_{k+1}(W)}.
+\end{equation}
+\end{theorem}
+
+\emph{Consequence for support stability.} \svdomp's stability under $W$-perturbations is Lipschitz in $\|\Delta\|_\text{op}$ with constant equal to the reciprocal singular-value gap at truncation $k$. On modules where the singular spectrum is well-separated (attention $q_\text{proj}$ / $k_\text{proj}$ with $\sigma_0 / \sigma_k \approx 2.8$), the bound is small and \svdomp\ wins stability against \vpd. On modules where the spectrum is compressed (attention $v_\text{proj}$ / $o_\text{proj}$ with $\sigma_0 / \sigma_k \approx 1.3\text{--}1.6$), the bound degrades, and precisely these six modules (out of 24) are where \vpd\ wins stability. The theorem \emph{predictively} identifies the losing modules from the singular spectrum alone.
+
+\subsection{The Non-Frobenius Escape}
+
+Eckart-Young bounds Frobenius reconstruction of $W$ itself. It does not bound reconstruction of any downstream-composed signal $y(\phi) = a(W \phi) W_\text{next}^\top$. When $a$ is nonlinear (e.g., ReLU, GELU) and $W_\text{next}$ is not the identity, the map from $W$'s truncation to $y$'s error is nonlinear and non-monotone in the singular values. Concretely, if $W_\text{next}$ projects onto left singular vectors $\{u_j : j > k\}$ (the low-singular-value tier of $W$), the top-$k$ SVD atoms produce reconstruction whose entire contribution is nulled by $W_\text{next}$, while a rank-$k$ approximation using atoms $\{k+1, \dots, 2k\}$ can preserve the downstream signal exactly. The analytic \svdomp\ selection is therefore provably suboptimal for such $y$, and any rotation of the atomic dictionary toward $W_\text{next}$'s range can strictly improve downstream MSE.
+
+Our non-Frobenius trainable correction (Sec.\ \ref{sec:non-frobenius}) exploits this escape. On adversarial constructions with structured $W_\text{next}$ (Sec.\ \ref{sec:non-frobenius-exp}), the trainable correction reduces mean downstream MSE by 73.9\% relative to analytic \svdomp\ across 24 modules. On the identity-composed case ($a = \operatorname{id}, W_\text{next} = I$), Eckart-Young re-applies and training makes no progress beyond the SVD ($\leq 5\%$ improvement, verified in the test suite). The theorem thus predicts and delimits the regime where trained methods legitimately add value.

@@ -1,0 +1,100 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We evaluate \svdomp\ against \vpd, \bsf-W (cold and SVD-warm-started), and an SVD-scaffolded trainable variant on the same 4-layer \textsc{LlamaSimpleMLP} used in the \vpd\ paper, extracted from Goodfire's public checkpoint. All 24 target modules (attention $q, k, v, o$ projections and MLP up- and down-projections across 4 layers) are decomposed at the module-specific dictionary sizes $C$ and sparsity $k$ specified in \citet{bushnaq2026vpd}. Real-activation experiments use Pythia-70M \citep{biderman2023pythia} because it is a small public language model available without authentication; results are consistent with a Modal-hosted run on the actual Goodfire model. Full code, tests (42 synthetic-data property and integration tests), and reproduction commands are provided in the anonymized supplementary.
+
+\subsection{Sparse-Reconstruction Dominance vs.\ VPD}
+\label{sec:experiments-vpd}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/svd_omp_vs_vpd_scatter.png}
+\caption{\svdomp\ vs.\ \vpd\ on the 24 target modules. Each point is one weight matrix; below the $y = x$ line means \svdomp\ wins. \svdomp\ wins every per-metric comparison 24 / 24 on sparse reconstruction, faithfulness, and coherence; and 18 / 24 on stability (all six losses are attention $v_\text{proj}$ / $o_\text{proj}$; see Sec.\ \ref{sec:experiments-vpd}).}
+\label{fig:vpd-scatter}
+\end{figure}
+
+Figure~\ref{fig:vpd-scatter} shows the four-panel comparison. \svdomp\ is Pareto-dominant on 18 of 24 matrices and wins the per-metric comparison 24 / 24 on sparse reconstruction, faithfulness, and coherence. The six losses on support stability are attention $v_\text{proj}$ (4) and $o_\text{proj}$ (2) modules, exactly the modules whose compressed singular spectra Davis-Kahan predicts as failure modes (Sec.\ \ref{sec:theory}). On per-input support diversity, \svdomp\ achieves 256 / 256 distinct top-$k$ supports on every module tested; \vpd's trained static gate produces the same support for every input.
+
+\subsection{Six-Way Comparison}
+\label{sec:six-way}
+
+To isolate the causal factor behind analytic vs.\ trained wins, we run the following six methods on the 24 modules under matched dictionary size and sparsity: \svdomp\ (analytic 1D), block-\svdomp\ (analytic block), scaffold-trainable \svdomp\ (frozen $V, U$; $2M$ learned scalars), \vpd\ (trained 1D), \bsf-W cold (block trained, random init), and \bsf-W warm (block trained, SVD-initialized). Table~\ref{tab:six-way} reports pairwise wins on sparse reconstruction.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccccc}
+\toprule
+Row wins vs.\ column & \svdomp & Bl-\svdomp & Tr-\svdomp & \vpd & \bsf-cold & \bsf-warm \\
+\midrule
+\svdomp    & --  & 0  & 0  & 0  & 0  & 1 \\
+Bl-\svdomp & 8   & -- & 0  & 0  & 0  & 1 \\
+Tr-\svdomp & 24  & 24 & -- & 0  & 0  & 24 \\
+\vpd       & 24  & 24 & 24 & -- & 24 & 24 \\
+\bsf-cold  & 24  & 24 & 24 & 0  & -- & 24 \\
+\bsf-warm  & 20  & 18 & 0  & 0  & 0  & --  \\
+\bottomrule
+\end{tabular}
+\caption{Pairwise wins on sparse reconstruction MSE across 24 modules (row-method loses to column-method). Analytic methods dominate every trained baseline. \bsf-warm (SVD-initialized) dominates \bsf-cold 24 / 24 under identical training budget: initialization from the SVD is the causal factor, not the trained block architecture.}
+\label{tab:six-way}
+\end{table}
+
+Two conclusions follow. First, analytic \svdomp\ and block-\svdomp\ dominate every trained baseline. Second, \bsf\ warm-started from the SVD dominates random-init \bsf\ on 24 / 24 modules under identical training budget. Since these two methods share every hyperparameter except initialization, initialization from the SVD is the causal factor. Training on top of a random dictionary is a costly way to (partially) recover a decomposition that a single SVD supplies exactly.
+
+\subsection{Non-Frobenius Escape: When Training Helps}
+\label{sec:non-frobenius-exp}
+
+Eckart-Young caps rank-$k$ reconstruction of $W$ but not composed nonlinear objectives. We construct adversarial (weight, downstream) pairs $(W, W_\text{next})$: $W$ has two clearly separated singular-value tiers --- loud ($\sigma = 10$, four atoms) and quiet ($\sigma = 2$, four atoms) --- and $W_\text{next}$ projects onto the quiet band. Analytic \svdomp\ picks the loud block on 96--98\% of inputs (largest projection norm), but the loud block's contribution is zero after $W_\text{next}$. The trainable correction learns to select the quiet block instead.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Module type & Analytic MSE & Trained MSE & Reduction \\
+\midrule
+Attention (Q/K/V/O), 16 mods & 4.4  & 0.7  & 84\% \\
+MLP c\_fc, 4 mods              & 4.3  & 1.1  & 74\% \\
+MLP down\_proj, 4 mods         & 11.0 & 7.0  & 35\% \\
+\midrule
+\textbf{All 24 modules (mean)} &      &      & \textbf{73.9\%} \\
+\bottomrule
+\end{tabular}
+\caption{Downstream MSE reduction from the non-Frobenius trainable correction vs.\ analytic \svdomp, on adversarial (W, W\_next) constructions at real-model shapes.}
+\label{tab:non-frobenius}
+\end{table}
+
+Table~\ref{tab:non-frobenius} shows a 73.9\% mean reduction across 24 modules, 24 / 24 substantive wins. The selection flip is diagnostic: analytic picks the loud block on $>$96\% of inputs, trained picks the loud block on $<$10\%. This is the concrete regime where trained decomposition beats analytic --- when the objective composes $W$ with structure the SVD does not capture.
+
+\subsection{BSF's Concept-Dimensionality Plateau, Without Training}
+\label{sec:stable-rank}
+
+\bsf\ reports the stable rank of learned blocks plateauing at $\sim 4$ regardless of block size $K \in \{1, 2, 4, 8, 16\}$ on DINOv3 vision activations \citep{goodfire2026bsf}, and interprets this as evidence that vision concepts are 2--4-dimensional. We reproduce this sweep on real Pythia-70M mid-layer MLP activations from 352 tokens over 32 diverse prompts spanning science, history, mathematics, code, and the arts.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/stable_rank_vs_K.png}
+\caption{Stable rank vs.\ block size $K$ on activations. All three methods (analytic \svdomp\ blocks, cold-init \bsf-W, SVD-warm-started \bsf-W) plateau below the dashed full-rank-$= K$ line. Analytic \svdomp\ blocks track \bsf-W-warm exactly.}
+\label{fig:stable-rank}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{c|ccc}
+\toprule
+$K$ & Analytic \svdomp & \bsf-W cold & \bsf-W warm \\
+\midrule
+1  & 1.00 & 1.00 & 1.00 \\
+2  & 1.46 & 1.47 & 1.46 \\
+4  & 1.84 & 1.72 & 1.84 \\
+8  & 2.12 & 1.85 & 2.12 \\
+16 & \textbf{2.10} & 2.22 & \textbf{2.10} \\
+\bottomrule
+\end{tabular}
+\caption{Mean per-block stable rank on real Pythia-70M activations. Analytic \svdomp\ blocks match \bsf-W-warm to two decimal places at every $K$, and plateau below \bsf's reported vision plateau of $\sim 4$.}
+\label{tab:plateau}
+\end{table}
+
+Figure~\ref{fig:stable-rank} and Table~\ref{tab:plateau} report the sweep. Analytic \svdomp\ blocks (no training) match SVD-warm-started \bsf-W to two decimal places at every $K$, and both plateau at 2.10 for $K = 16$. Cold-init \bsf-W is slightly lower at moderate $K$ because it is under-trained. \bsf's "2--4 dimensional concepts" finding is method-independent: it is a property of the activation distribution, and any block basis over the same activations reveals it. The lower plateau on language ($\sim 2.1$) than on vision ($\sim 4$) further suggests that language-model concept structure is more low-dimensional than vision-model concept structure per token position.

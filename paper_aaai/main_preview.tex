@@ -1,0 +1,48 @@
+%% Preview-only build for local pdflatex (TeX Live 2021 lacks newtx).
+%% For actual submission, use main.tex on Overleaf which has full TeX Live 2026.
+
+\documentclass[10pt,letterpaper,twocolumn]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\newtheorem{theorem}{Theorem}
+
+% Fake natbib commands.
+\newcommand{\citep}[1]{[\cite{#1}]}
+\newcommand{\citealp}[1]{\cite{#1}}
+\newcommand{\citet}[1]{\cite{#1}}
+
+\newcommand{\svdomp}{SVD-OMP}
+\newcommand{\bsf}{BSF}
+\newcommand{\vpd}{VPD}
+
+% Handle enumitem-style optional args by patching \itemize to ignore them.
+\let\origitemize\itemize
+\renewcommand{\itemize}[1][]{\origitemize}
+
+\title{\vspace{-3em}\textbf{Training-Free Parameter Decomposition Dominates Trained Interpretability Probes}\vspace{-1em}}
+\author{\textit{Anonymous submission --- AAAI 2027 AI Alignment track (preview build)}}
+\date{}
+
+\begin{document}
+\twocolumn[
+\maketitle
+]
+
+\input{sections/00_abstract.tex}
+\input{sections/01_introduction.tex}
+\input{sections/02_method.tex}
+\input{sections/03_theory.tex}
+\input{sections/04_experiments.tex}
+\input{sections/05_related.tex}
+\input{sections/06_discussion.tex}
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

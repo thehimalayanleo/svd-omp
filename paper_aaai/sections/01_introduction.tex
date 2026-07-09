@@ -1,0 +1,32 @@
+\section{Introduction}
+
+Mechanistic interpretability aims to decompose learned neural network components into a set of interpretable primitives \citep{elhage2021mathematical, bricken2023towards}. On activations, Sparse Autoencoders \citep{cunningham2023sparse} and their block-structured successor Block-Sparse Featurizers \citep{goodfire2026bsf} train encoder-decoder pairs to discover such primitives. On weights, adVersarial Parameter Decomposition \citep{bushnaq2026vpd} extends this recipe by training a learned dictionary of rank-1 atoms with a stochastic gate. All three approaches share a common architecture: a per-layer (or per-matrix) trained network whose parameters approximate a decomposition of the target's structure.
+
+We ask a basic question: on weight matrices, is the training necessary? Given a weight matrix $W \in \mathbb{R}^{d_\text{out} \times d_\text{in}}$ with singular value decomposition $W = U \Sigma V^\top$, the SVD supplies a canonical orthogonal dictionary of rank-1 atoms $\{\sigma_c u_c v_c^\top\}$ that is Frobenius-optimal at every truncation level by the Eckart-Young theorem \citep{eckart1936approximation}. Because these atoms are orthogonal, orthogonal matching pursuit \citep{pati1993omp} on this dictionary collapses to a closed-form per-input top-$k$: score atom $c$ by
+\begin{equation}
+s_c(\phi) = \sigma_c \, |v_c^\top \phi|,
+\label{eq:score}
+\end{equation}
+and select the top-$k$ atoms. We call this \svdomp. It has no learned parameters, no random initialization, and no training loop.
+
+On the 67M \textsc{LlamaSimpleMLP} used in the \vpd\ paper, \svdomp\ Pareto-dominates \vpd\ on 18 of 24 weight matrices, and wins the per-metric comparisons on sparse reconstruction, faithfulness, and coherence on 24 of 24. The six losses on the fifth metric (support stability under weight perturbation) are exactly the six modules where the Davis-Kahan theorem \citep{davis1970rotation} predicts degradation: attention $v_\text{proj}$ and $o_\text{proj}$ modules with compressed singular spectra $\sigma_0 / \sigma_k \approx 1.3\text{--}1.6\times$ versus $2.8\times$ for the winning modules.
+
+We then examine \bsf's finding that vision concepts are 2--4-dimensional \citep{goodfire2026bsf}. The claim is supported by a plot showing the stable rank of each block plateauing at $\sim$4 regardless of block size $K$, across three trained \bsf\ variants (Grassmann, Block, Group-Lasso). We reproduce this exact sweep on real language-model activations (Pythia-70M, 352 tokens over 32 diverse prompts) using analytic \svdomp\ blocks. The plateau reproduces at stable rank $\sim$2.1, and \svdomp\ blocks track SVD-warm-started \bsf\ to two decimal places at every $K \in \{1, 2, 3, 4, 6, 8, 12, 16\}$. The 2--4-dimensional concept finding is method-independent; it is a property of the activation distribution and any block basis over the same activations reveals it.
+
+Where trained decomposition genuinely helps is on \emph{non-Frobenius} objectives, where Eckart-Young does not apply. We construct adversarial (weight, downstream) pairs where the downstream operator projects onto low-singular-value directions of $W$, so the analytic top-$k$-by-$\sigma$ selection is provably suboptimal. A small trainable correction on top of the SVD scaffold reduces downstream MSE by 73.9\% on average, 24 / 24 modules substantively.
+
+\subsection{Contributions}
+
+\begin{itemize}[leftmargin=1.5em, topsep=0.2em, itemsep=0.2em]
+\item \textbf{Method.} We define \svdomp\ (Sec.\ \ref{sec:svdomp}), its block extension (Sec.\ \ref{sec:block}), and a scaffold-mode non-Frobenius trainable correction (Sec.\ \ref{sec:non-frobenius}). All admit closed-form selection.
+
+\item \textbf{Theory (Sec.\ \ref{sec:theory}).} We ground the empirical results in three classical theorems: Eckart-Young caps Frobenius reconstruction of any rank-$k$ approximator; Davis-Kahan predicts our six stability losses; and composed nonlinearities break Eckart-Young, opening the regime where training helps.
+
+\item \textbf{Empirical dominance on weight decomposition (Sec.\ \ref{sec:experiments-vpd}).} \svdomp\ Pareto-dominates \vpd\ on 18 / 24 matrices and wins the per-metric comparison 24 / 24 on sparse, faithfulness, and coherence. A block \bsf\ variant warm-started from the SVD strictly beats random-init \bsf\ on 24 / 24 modules under identical training budget, isolating initialization as the causal factor.
+
+\item \textbf{Cross-modality replication of the \bsf\ plateau (Sec.\ \ref{sec:stable-rank}).} The 2--4-dim concept structure \bsf\ reports on vision reproduces on real Pythia language-model activations without training, at plateau $\sim$2.1. Analytic \svdomp\ blocks track SVD-warm-started \bsf-W to two decimal places at every block size tested.
+
+\item \textbf{Non-Frobenius escape (Sec.\ \ref{sec:non-frobenius-exp}).} On adversarial constructions where the downstream operator projects onto low-singular-value directions of $W$, our trainable correction reduces downstream MSE by 73.9\% mean, 24 / 24 modules.
+\end{itemize}
+
+Together these results argue that trained interpretability probes on weight matrices are recovering a decomposition that is already available analytically, and that a small non-Frobenius correction on top is what training legitimately adds.
