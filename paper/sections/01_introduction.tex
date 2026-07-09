@@ -11,7 +11,7 @@ and select the top-$k$ atoms. No training, no random initialization, no learned 
 
 \paragraph{Contributions.} This paper makes four contributions:
 
-\begin{enumerate}[leftmargin=1.5em,itemsep=0.1em,topsep=0.2em]
+\begin{enumerate}
 \item \textbf{Training-free interpretable decomposition (Sec. \ref{sec:method}).} We define \svdomp\ (Sec. \ref{sec:svdomp}) and its block extension (Sec. \ref{sec:block}), and give closed-form selection rules for both.
 
 \item \textbf{Efficiency analysis (Sec. \ref{sec:efficiency}).} We compare \svdomp\ against \vpd\ and \bsf\ on training compute, inference latency, and storage. \svdomp\ pays no training cost and reduces per-inference selection to a matmul and top-$k$.

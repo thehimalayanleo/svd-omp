@@ -4,30 +4,22 @@
 
 \documentclass[10pt]{article}
 \usepackage[letterpaper,margin=1in]{geometry}
-\usepackage{times}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{xcolor}
-\usepackage{authblk}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{microtype}
 \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
 
-% Compact section formatting
-\usepackage{titlesec}
-\titlespacing*{\section}{0pt}{1.0ex plus 0.2ex minus .2ex}{0.6ex plus .2ex}
-\titlespacing*{\subsection}{0pt}{0.8ex plus 0.2ex minus .2ex}{0.4ex plus .2ex}
+% Simple citation commands as fallback for natbib not being available.
+\newcommand{\citep}[1]{\cite{#1}}
+\newcommand{\citealp}[1]{\cite{#1}}
 
-\newcommand{\svdomp}{\textsc{SVD-OMP}\xspace}
-\newcommand{\bsf}{\textsc{BSF}\xspace}
-\newcommand{\vpd}{\textsc{VPD}\xspace}
+\newcommand{\svdomp}{{SVD-OMP}}
+\newcommand{\bsf}{{BSF}}
+\newcommand{\vpd}{{VPD}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\phivec}{\phi}
 \newcommand{\Uk}{U_{:,k}}
@@ -48,7 +40,7 @@
 \input{sections/05_related.tex}
 \input{sections/06_discussion.tex}
 
-\bibliographystyle{plainnat}
+\bibliographystyle{plain}
 \bibliography{refs}
 
 \appendix
