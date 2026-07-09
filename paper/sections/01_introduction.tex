@@ -1,0 +1,24 @@
+\section{Introduction}
+
+Modern reasoning systems achieve their capability through deep transformer stacks whose weight matrices resist inspection at scale. Sparse Autoencoders \citep{bricken2023towards,cunningham2023sparse} and its successors (\vpd, \citealp{bushnaq2026vpd}; \bsf, \citealp{goodfire2026bsf}) provide interpretable decompositions of one layer's activations or weights by training an encoder-decoder pair per target. As reasoning models scale toward hundreds of layers, training a probe per layer becomes a nontrivial fraction of the interpretability budget. For deployment of interpretable reasoning systems, cost per layer directly gates how much of the model can be understood.
+
+We ask whether this training cost is necessary for the weight-decomposition case. Our answer is that it is not. Given a weight matrix $W \in \R^{d_\text{out} \times d_\text{in}}$ with singular value decomposition $W = U\Sigma V^\top$, the SVD supplies a deterministic orthogonal dictionary of rank-1 atoms $\{\sigma_c u_c v_c^\top\}$ that is Frobenius-optimal at every truncation level by the Eckart-Young theorem \citep{eckart1936approximation}. Because these atoms are orthogonal, orthogonal matching pursuit \citep{pati1993omp} on this dictionary collapses to a closed-form top-$k$ selection: per input $\phi$, score atom $c$ by
+\begin{equation}
+s_c(\phi) = \sigma_c \, |v_c^\top \phi|,
+\label{eq:score}
+\end{equation}
+and select the top-$k$ atoms. No training, no random initialization, no learned parameters. We refer to this method as \svdomp.
+
+\paragraph{Contributions.} This paper makes four contributions:
+
+\begin{enumerate}[leftmargin=1.5em,itemsep=0.1em,topsep=0.2em]
+\item \textbf{Training-free interpretable decomposition (Sec. \ref{sec:method}).} We define \svdomp\ (Sec. \ref{sec:svdomp}) and its block extension (Sec. \ref{sec:block}), and give closed-form selection rules for both.
+
+\item \textbf{Efficiency analysis (Sec. \ref{sec:efficiency}).} We compare \svdomp\ against \vpd\ and \bsf\ on training compute, inference latency, and storage. \svdomp\ pays no training cost and reduces per-inference selection to a matmul and top-$k$.
+
+\item \textbf{Empirical dominance on weight decomposition (Sec. \ref{sec:experiments}).} On Goodfire's 67M \textsc{LlamaSimpleMLP}, \svdomp\ Pareto-dominates \vpd\ on 18 of 24 target modules and wins every per-metric comparison 24/24 on sparse reconstruction, faithfulness, and coherence. A block version of \bsf\ warm-started from the SVD strictly beats random-init \bsf-W under identical training budget on 24 of 24 modules --- evidence that initialization, not the trained architecture, is the causal factor.
+
+\item \textbf{Cross-modality replication of \bsf's stable-rank plateau (Sec. \ref{sec:stable-rank}).} \bsf\ reports concept dimensionality plateauing at $\sim$4 regardless of block size $K$ on vision activations. We reproduce the plateau on real Pythia-70M language-model activations at $\sim$2.1, using analytic \svdomp\ blocks. Both trained \bsf-W (warm-started) and analytic \svdomp\ blocks converge to identical stable ranks (2.10 vs.\ 2.10 at $K=16$). This shows the finding is a property of the activation distribution, not of the featurizer.
+\end{enumerate}
+
+\paragraph{Scope.} \svdomp\ dominates trained decompositions on Frobenius objectives on weights because Eckart-Young caps every rank-$k$ approximator at the truncated SVD. It does not dominate on \emph{non-Frobenius} objectives such as reconstruction after a nonlinear downstream layer, where training can rotate the dictionary toward downstream-important directions. We characterize this regime (Sec. \ref{sec:non-frobenius}) and give a trainable extension that escapes the Eckart-Young cap. On adversarial constructions the trainable extension achieves 73.9\% mean MSE reduction with a small parameter overhead.

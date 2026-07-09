@@ -1,0 +1,57 @@
+%% SVD-OMP: Training-Free Parameter Decomposition for Efficient Interpretability
+%% Submission to the 2nd Workshop on Efficient Reasoning @ COLM 2026
+%% Deadline: July 19, 2026 AoE. 4-10 pages. Anonymous / double-blind.
+
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{microtype}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+% Compact section formatting
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{1.0ex plus 0.2ex minus .2ex}{0.6ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{0.8ex plus 0.2ex minus .2ex}{0.4ex plus .2ex}
+
+\newcommand{\svdomp}{\textsc{SVD-OMP}\xspace}
+\newcommand{\bsf}{\textsc{BSF}\xspace}
+\newcommand{\vpd}{\textsc{VPD}\xspace}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\phivec}{\phi}
+\newcommand{\Uk}{U_{:,k}}
+
+% Anonymous authors for double-blind submission.
+\title{\svdomp: Training-Free Parameter Decomposition for Efficient Interpretability of Large Weight Matrices}
+\author{Anonymous authors}
+\date{}
+
+\begin{document}
+\maketitle
+
+\input{sections/00_abstract.tex}
+\input{sections/01_introduction.tex}
+\input{sections/02_method.tex}
+\input{sections/03_efficiency.tex}
+\input{sections/04_experiments.tex}
+\input{sections/05_related.tex}
+\input{sections/06_discussion.tex}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\appendix
+\input{sections/A_appendix.tex}
+
+\end{document}

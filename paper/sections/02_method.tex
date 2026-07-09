@@ -1,0 +1,48 @@
+\section{Method}
+\label{sec:method}
+
+\subsection{\svdomp}
+\label{sec:svdomp}
+
+Given a weight matrix $W \in \R^{d_\text{out} \times d_\text{in}}$ with (thin) SVD $W = U\Sigma V^\top$ where $U \in \R^{d_\text{out} \times r}$, $V \in \R^{d_\text{in} \times r}$, $\Sigma = \operatorname{diag}(\sigma_1 \geq \cdots \geq \sigma_r)$ and $r = \min(d_\text{out}, d_\text{in})$, define the SVD dictionary $\mathcal{D}_W = \{d_c\}_{c=1}^{r}$ where $d_c = \sigma_c u_c v_c^\top$ is a rank-1 atom. The full-rank reconstruction is $W = \sum_c d_c$; the rank-$k$ truncation using top-$k$ atoms is Frobenius-optimal by the Eckart-Young theorem \citep{eckart1936approximation}.
+
+\paragraph{Per-input selection.} For an input activation $\phi \in \R^{d_\text{in}}$, define
+\begin{equation}
+s_c(\phi) := \sigma_c \, |v_c^\top \phi|.
+\label{eq:score-def}
+\end{equation}
+The $k$-sparse support $S(\phi) := \operatorname{top}_k\{s_c(\phi)\}$ minimizes $\|(\sum_{c \in S} d_c)\phi - W\phi\|_2^2$ over $|S|=k$ subsets because the atoms have orthogonal action on any input: $d_c \phi = \sigma_c v_c^\top \phi \cdot u_c$ and $\langle u_c, u_{c'}\rangle = 0$ for $c \neq c'$. Consequently the per-input reconstruction is
+\begin{equation}
+\hat{y}(\phi) = \sum_{c \in S(\phi)} (v_c^\top \phi) \, U_{:,c}',
+\quad \text{where} \quad U'_{:,c} := \sigma_c u_c.
+\end{equation}
+No training, no random initialization, no learned parameters; a single SVD suffices per weight matrix, and selection is a matmul plus top-$k$.
+
+\subsection{Block extension}
+\label{sec:block}
+
+To match the block structure of \bsf, partition the SVD components into contiguous blocks $B_1, \dots, B_M$ of size $r_\text{block}$. Define the block score
+\begin{equation}
+s_b(\phi) := \|\operatorname{diag}(\Sigma_{B_b}) V_{:,B_b}^\top \phi\|_2
+\label{eq:block-score}
+\end{equation}
+and select the top-$k_\text{blocks}$ blocks per input. Because SVD blocks remain orthogonal in both $V$ and $U$ spaces, block-OMP again collapses to closed-form top-$k$ on this score --- no residual updates. The rank-$k$ truncation using top blocks is optimal by a block generalization of Eckart-Young.
+
+\subsection{Non-Frobenius trainable extension}
+\label{sec:non-frobenius}
+
+The Eckart-Young theorem caps every rank-$k$ reconstruction of $W$ at the truncated SVD, but it does not cap reconstruction of any composed downstream signal. When the target is $y = a(W\phi) W_\text{next}^\top$ for a nonlinearity $a(\cdot)$ and a downstream matrix $W_\text{next}$, the analytically-optimal selection is no longer top-$k$ by singular value: the downstream operator can null the top singular directions or amplify low-singular-value directions.
+
+We introduce two trainable corrections on top of the SVD scaffold:
+
+\textbf{Scaffold mode.} Freeze $V$, $U$ at the SVD; learn only per-block log-scale $\alpha_b$ and per-block bias $\beta_b$ ($2K$ parameters per weight matrix). At initialization $\alpha_b = 0$, $\beta_b = 0$, so selection reduces to the analytic block score. Training on downstream reconstruction loss can shift block preferences but cannot rotate the atoms.
+
+\textbf{Full mode.} All of $V, U, \alpha, \beta$ are trainable, warm-started at the SVD. Extra degrees of freedom permit block rotations toward downstream-important subspaces. On adversarial constructions where the downstream operator projects onto low-singular-value directions of $W$, full mode learns to select those directions rather than the top-$\sigma$ ones (Sec.\ \ref{sec:non-frobenius-exp}).
+
+Both modes optimize
+\begin{equation}
+\mathcal{L}(\alpha, \beta; \{V, U\})
+= \frac{1}{N} \sum_{i=1}^{N} \|a((\phi_i V M_{i}(\alpha, \beta))U) W_\text{next}^\top - a(\phi_i W^\top) W_\text{next}^\top\|_2^2,
+\label{eq:non-frob-loss}
+\end{equation}
+where $M_i(\alpha, \beta)$ is the block-TopK mask induced by scores $\alpha_b \cdot s_b(\phi_i) + \beta_b$, with a straight-through gradient. The loss reduces to Frobenius reconstruction of $W\phi$ when $a$ is the identity and $W_\text{next}$ is $I$, in which case Eckart-Young caps improvement (verified empirically in Sec.\ \ref{sec:experiments}).

@@ -1,0 +1,32 @@
+\section{Efficiency Analysis}
+\label{sec:efficiency}
+
+The primary contribution of \svdomp\ over trained baselines is a shift in the training-compute axis. Table~\ref{tab:complexity} compares \svdomp\ against \vpd\ and \bsf-W on the four cost axes that matter at deployment of interpretability tooling.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Method & Preparation compute & Preparation memory & Per-input inference & Learned params \\
+\midrule
+\svdomp\ (this work)      & $\mathcal{O}(d_\text{out} d_\text{in} r)$ SVD & $\mathcal{O}((d_\text{out}+d_\text{in})r)$ dictionary & $\mathcal{O}(d_\text{in} C + C \log k)$ & $0$ \\
+Block-\svdomp\ (this work)& same SVD                                     & same dictionary                                       & $\mathcal{O}(d_\text{in} C + K \log k_b)$ & $0$ \\
+Scaffold-trainable        & SVD + $\mathcal{O}(NT d_\text{in} C)$        & $+\, 2K$ scalars                                       & same as block          & $2K$ \\
+\vpd                      & $\mathcal{O}(T d_\text{out} d_\text{in} C)$ AdamW & $\mathcal{O}((d_\text{out}+d_\text{in})C)$ + gates & $\mathcal{O}(d_\text{in} C + d_\text{out} C)$ & $\mathcal{O}(d_\text{out} C + d_\text{in} C)$ \\
+\bsf-W (block trained)    & $\mathcal{O}(T d_\text{out} d_\text{in} C)$ AdamW & $\mathcal{O}((d_\text{out}+d_\text{in})C)$ + block gates & $\mathcal{O}(d_\text{in} C + d_\text{out} C)$ & $\mathcal{O}(d_\text{out} C + d_\text{in} C)$ \\
+\bottomrule
+\end{tabular}
+\caption{Complexity comparison for one $d_\text{out} \times d_\text{in}$ weight matrix. $C$ is dictionary size, $k$ is per-input sparsity, $K = C/r_\text{block}$ is number of blocks, $T$ is training-step count, $N$ is batch size, $r$ is SVD rank. \svdomp\ eliminates the $T \sim 10^2$--$10^3$ multiplicative factor entirely.}
+\label{tab:complexity}
+\end{table}
+
+\paragraph{Training compute.} \svdomp\ requires one SVD per weight matrix, an $\mathcal{O}(d_\text{out} d_\text{in} r)$ operation available in every linear-algebra library. \vpd\ and \bsf\ require an AdamW training loop of $T = 200$ steps of \vpd's dictionary in the standard setup, translating to a factor of $\sim 200 \times$ more FLOPs than a single SVD. For a modern reasoning-model stack with hundreds of layers this compounds: the SVD cost scales linearly with layer count, while training per-layer probes scales as (layer count) $\times$ (training steps) $\times$ (batch cost).
+
+\paragraph{Inference latency.} Per-input selection for \svdomp\ is one matrix-vector product $V^\top \phi \in \R^{C}$ followed by a top-$k$ over that vector. For \vpd\ / \bsf, per-input selection additionally requires the learned encoder's forward pass. In the closed-form regime the analytic method is faster by a constant factor equal to the encoder-decoder cost.
+
+\paragraph{Storage.} \svdomp's dictionary is the SVD of $W$, which has the same information as $W$ itself. When the base model is already stored, the incremental storage cost for interpretation is zero: the interpreter is derived at load time. \vpd\ / \bsf\ store separately-learned $V, U$ per module; storage scales as $\mathcal{O}((d_\text{out} + d_\text{in}) C)$ per interpreted module.
+
+\paragraph{Wall-clock.} Empirically, on synthetic weights at the shape of the Goodfire 67M model, we measure the six-way comparison in Section~\ref{sec:experiments} at \textbf{195\,s total on CPU} for 24 modules including the trained baselines --- indicating that trained methods dominate wall-clock, not the analytic ones. \svdomp\ per matrix is subsecond even on CPU.
+
+\paragraph{Reasoning-model implications.} For interpretability of large reasoning-model stacks, the practical cost of trained probes has three components: the training run per layer, the storage of learned parameters per layer, and the encoder pass at every intervention. All three scale with the number of interpreted layers. \svdomp\ eliminates the training-run cost entirely, keeps the encoder pass at closed-form cost, and requires no additional storage beyond the base model. For a 100-layer reasoning stack this is the difference between a serious infrastructure investment and a linear-algebra operation at load time.

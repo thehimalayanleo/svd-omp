@@ -1,0 +1,11 @@
+\section{Full Numerical Results}
+
+Per-module sparse-reconstruction MSE numbers on Goodfire 67M for \svdomp, \vpd, \bsf-W (cold), \bsf-W (warm) --- the source of Table~\ref{tab:six-way} --- are available in the anonymized supplement at \texttt{results/compare\_all\_6way.json}. The full downstream sweep of Table~\ref{tab:non-frobenius} is at \texttt{results/compare\_causal.json}. Real-activation stable-rank numbers of Table~\ref{tab:plateau} are at \texttt{results/stable\_rank\_real\_lm.json}.
+
+\section{Test Suite}
+
+The reference implementation includes 42 synthetic-data property and integration tests (16 SVD-OMP core, 3 end-to-end at real shapes, 13 block methods, 5 Frobenius trainable, 5 non-Frobenius trainable). All pass on a fresh checkout on CPU with torch~2.12; a Modal script reproduces every headline result on GPU in a single command.
+
+\section{Notes on Reproducibility}
+
+The Goodfire 67M weights load from wandb run \texttt{goodfire/spd/runs/t-9d2b8f02}. Because Goodfire's \texttt{param\_decomp} package pins Python 3.13 in its \texttt{pyproject.toml} but common inference environments use Python 3.11/3.12, we found the reliable workaround is to add the cloned repository directly to \texttt{sys.path} instead of using \texttt{pip install -e .}. This is documented in the reproducibility notes and encapsulated in the Modal script.
