@@ -24,6 +24,8 @@ Where trained decomposition genuinely helps is on \emph{non-Frobenius} objective
 
 \item \textbf{Empirical dominance on weight decomposition (Sec.\ \ref{sec:experiments-vpd}).} \svdomp\ Pareto-dominates \vpd\ on 18 / 24 matrices and wins the per-metric comparison 24 / 24 on sparse, faithfulness, and coherence. A block \bsf\ variant warm-started from the SVD strictly beats random-init \bsf\ on 24 / 24 modules under identical training budget, isolating initialization as the causal factor.
 
+\item \textbf{Causal-ablation faithfulness (Sec.\ \ref{sec:causal}).} On the causal axis a trained decomposition is meant to own --- how much the output changes when each selected component is ablated --- \svdomp's per-input supports are $7$--$8\times$ more irreplaceable than \vpd's trained gate, winning 24 / 24 modules. \vpd's gate collapses to one input-independent support, so its atoms are individually ablatable; \svdomp's per-input atoms are each load-bearing.
+
 \item \textbf{Cross-scale and cross-modality replication of the \bsf\ plateau (Sec.\ \ref{sec:stable-rank}).} The 2--4-dim concept structure \bsf\ reports on vision reproduces on real language-model activations without training, at three model scales (1.74 on Goodfire-67M, 2.10 on Pythia-70M, 3.87 on Pythia-160M --- reaching the vision value $\sim$4 at 160M). Analytic \svdomp\ blocks track SVD-warm-started \bsf-W to identical values at every block size tested.
 
 \item \textbf{Non-Frobenius escape (Sec.\ \ref{sec:non-frobenius-exp}).} On adversarial constructions where the downstream operator projects onto low-singular-value directions of $W$, our trainable correction reduces downstream MSE by 73.9\% mean, 24 / 24 modules.

@@ -42,6 +42,29 @@ Tr-\svdomp & 24  & 24 & -- & 0  & 0  & 24 \\
 
 Two conclusions follow. First, analytic \svdomp\ and block-\svdomp\ dominate every trained baseline. Second, \bsf\ warm-started from the SVD dominates random-init \bsf\ on 24 / 24 modules under identical training budget. Since these two methods share every hyperparameter except initialization, initialization from the SVD is the causal factor. Training on top of a random dictionary is a costly way to (partially) recover a decomposition that a single SVD supplies exactly.
 
+\subsection{Causal-Ablation Faithfulness vs.\ VPD}
+\label{sec:causal}
+
+Sparse reconstruction, faithfulness, and coherence are reconstruction and geometry metrics. A natural objection is that a parameter-decomposition method such as \vpd\ targets not reconstruction but \emph{causal} decomposition: whether each selected component is individually load-bearing for the model's computation. We test this directly. For each input $\phi$ and each component $c$ in its selected support, we ablate $c$ and measure the resulting change in the module output ($\lVert W\phi\rVert$-space), and the change after composition with the next layer (downstream damage). A component that, when removed, causes a large output change is causally irreplaceable; one whose removal barely moves the output is not. We also report \emph{redundancy}: the fraction of a selected component's contribution already covered by its $k-1$ siblings.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Causal metric & \svdomp & \vpd & Wins \\
+\midrule
+Local ablation damage ($\uparrow$)      & \textbf{1.14} & 0.17  & 24 / 24 \\
+Downstream ablation damage ($\uparrow$)  & \textbf{0.54} & 0.069 & 24 / 24 \\
+Redundancy ($\downarrow$)                & ${\sim}0$     & ${\sim}0$ & tie \\
+\bottomrule
+\end{tabular}
+\caption{Causal-ablation faithfulness on the 24 real Goodfire-67M modules, \svdomp's per-input supports vs.\ \vpd's trained gate. Higher ablation damage means the selected components are more individually irreplaceable. \svdomp\ wins $24/24$ on both local and downstream damage, by $7.6\times$ and $8.5\times$ mean per-module respectively. Both methods select essentially non-redundant supports (redundancy ${\sim}10^{-8}$).}
+\label{tab:causal}
+\end{table}
+
+Table~\ref{tab:causal} shows \svdomp\ wins $24/24$ on both damage metrics, by mean per-module factors of $7.6\times$ (local) and $8.5\times$ (downstream). The mechanism is \vpd's static gate: \vpd\ selects the same support for every input (Sec.~\ref{sec:experiments-vpd}, $g$-collapse), so no single atom is load-bearing for any particular input and ablating one is easily absorbed by the generic remainder. \svdomp\ selects a distinct support per input ($256/256$ unique), so each chosen atom is genuinely irreplaceable for that input and its ablation is maximally damaging. The dominance thus holds not only on reconstruction but on causal faithfulness --- the axis a trained decomposition is meant to own.
+
 \subsection{Non-Frobenius Escape: When Training Helps}
 \label{sec:non-frobenius-exp}
 
