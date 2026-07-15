@@ -78,7 +78,7 @@
 \item All source code used for experiments is licensed under an open-source license: \textbf{yes} --- MIT.
 \item An explicit description of the pipeline used to build code: \textbf{yes}. Modal-based one-command reproduction (\texttt{modal\_goodfire.py}) documented in the supplement.
 \item Hyper-parameter settings and hyper-parameter optimization protocol: \textbf{yes}. Reported in Section 2 (method definitions) and Section 4 (experiments); the specific $C$, $k$, and block-size choices match those of \vpd\ \cite{bushnaq2026vpd}.
-\item Number of algorithm runs / seeds: currently \textbf{one seed} for the trained baselines. Ablations under multiple seeds would strengthen error-bar claims; planned for the camera-ready version.
+\item Number of algorithm runs / seeds: the headline comparisons (sparse reconstruction and causal ablation vs.\ the trained baselines) are run under \textbf{5 training seeds}; win-counts and mean $\pm$ std are reported. \svdomp\ itself is deterministic (no seed). Trained-method sparse-MSE std is ${<}10^{-4}$ and \svdomp's $24/24$ causal wins hold on every seed.
 \item Analysis of results: \textbf{yes}. Sections 4.1--4.4 report per-metric wins across 24 modules and interpret the results theoretically.
 \item Description of computing infrastructure: \textbf{yes}. Local runs on CPU (Apple M-series, torch 2.12.1). Modal runs on T4 GPU. Both reproduce every headline in under 5 minutes.
 \end{itemize}

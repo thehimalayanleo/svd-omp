@@ -1,0 +1,79 @@
+%% Training-Free Parameter Decomposition Dominates Trained Interpretability Probes
+%% ICML 2026 format (accepted at the NeurIPS/ICML Mechanistic Interpretability
+%% Workshops; camera-ready must be ICML format). Long-paper limit: 8 pages main,
+%% references + appendices unlimited. Double-blind: keep anonymized.
+
+\documentclass{article}
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% Blind version for review. For a public preprint use [preprint]; if accepted
+% use [accepted].
+\usepackage{icml2026}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage[capitalize,noabbrev]{cleveref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\svdomp}{SVD-OMP}
+\newcommand{\bsf}{BSF}
+\newcommand{\vpd}{VPD}
+
+\icmltitlerunning{Training-Free Parameter Decomposition Dominates Trained Probes}
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{Training-Free Parameter Decomposition \\
+           Dominates Trained Interpretability Probes}
+
+% Anonymized author block: the style file removes it in the blind (default)
+% build. Placeholder identifiers only.
+\begin{icmlauthorlist}
+\icmlauthor{Anonymous Authors}{anon}
+\end{icmlauthorlist}
+
+\icmlaffiliation{anon}{Anonymous Institution}
+\icmlcorrespondingauthor{Anonymous Authors}{anon@example.com}
+
+\icmlkeywords{mechanistic interpretability, sparse dictionary learning,
+              singular value decomposition, parameter decomposition,
+              matching pursuit}
+
+\vskip 0.3in
+]
+
+\printAffiliationsAndNotice{}
+
+\input{sections/00_abstract.tex}
+\input{sections/01_introduction.tex}
+\input{sections/02_method.tex}
+\input{sections/03_theory.tex}
+\input{sections/04_experiments.tex}
+\input{sections/05_related.tex}
+\input{sections/06_discussion.tex}
+
+\bibliographystyle{icml2026}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,39 @@
+\section{Method}
+\label{sec:method}
+
+\subsection{SVD-OMP}
+\label{sec:svdomp}
+
+Let $W \in \mathbb{R}^{d_\text{out} \times d_\text{in}}$ be a weight matrix with thin SVD $W = U\Sigma V^\top$, $U \in \mathbb{R}^{d_\text{out} \times r}$, $V \in \mathbb{R}^{d_\text{in} \times r}$, $\Sigma = \operatorname{diag}(\sigma_1, \dots, \sigma_r)$ with $\sigma_1 \geq \cdots \geq \sigma_r$ and $r = \min(d_\text{out}, d_\text{in})$. Define the SVD dictionary $\mathcal{D}_W = \{d_c\}_{c=1}^r$ with rank-1 atoms $d_c = \sigma_c u_c v_c^\top$. The rank-$k$ reconstruction using top-$k$ atoms is $W_k = \sum_{c=1}^k d_c$, which is Frobenius-optimal by the Eckart-Young theorem.
+
+\paragraph{Per-input selection.} For an input activation $\phi \in \mathbb{R}^{d_\text{in}}$, the action of atom $d_c$ on $\phi$ is $d_c \phi = \sigma_c (v_c^\top \phi) u_c$. Because $\langle u_c, u_{c'} \rangle = 0$ for $c \neq c'$, atom contributions are orthogonal in output space and the $k$-sparse support minimizing $\|(\sum_{c \in S} d_c) \phi - W \phi\|_2^2$ is exactly the top-$k$ of $s_c(\phi) = \sigma_c |v_c^\top \phi|$. The reconstruction becomes
+\begin{equation}
+\hat{y}(\phi) = \sum_{c \in S(\phi)} (v_c^\top \phi) \, \sigma_c u_c,
+\end{equation}
+where $S(\phi) = \text{top-}k\{s_c(\phi)\}$. No training, no random initialization, no learned parameters; a single SVD suffices per weight matrix, and selection is a matrix-vector product plus top-$k$.
+
+\subsection{Block Extension}
+\label{sec:block}
+
+To match \bsf's block structure, partition the singular components into contiguous blocks $B_1, \dots, B_M$ of size $r_\text{block}$. Define the block score
+\begin{equation}
+s_b(\phi) = \|\operatorname{diag}(\Sigma_{B_b}) V_{:,B_b}^\top \phi\|_2
+\label{eq:block-score}
+\end{equation}
+and select the top-$k_\text{blocks}$ blocks per input. Because SVD blocks remain orthogonal in both $V$ and $U$ spaces, block-OMP again collapses to closed-form top-$k$ on this score. The block-rank-$k$ truncation using top blocks is optimal by a block generalization of Eckart-Young.
+
+\subsection{Non-Frobenius Trainable Correction}
+\label{sec:non-frobenius}
+
+Eckart-Young caps every rank-$k$ reconstruction of $W$ but not of any composed downstream signal. When the target is $y(\phi) = a(W \phi) W_\text{next}^\top$ for a nonlinearity $a(\cdot)$ and a downstream matrix $W_\text{next} \in \mathbb{R}^{d_\text{next} \times d_\text{out}}$, the analytically-optimal atom selection is no longer top-$k$ by $\sigma_c$: the downstream operator can null the top singular directions or amplify low-singular-value directions.
+
+We introduce a lightweight trainable correction on top of the SVD scaffold. Freeze $V, U$ at their SVD values; learn only a per-block log-scale $\alpha_b \in \mathbb{R}$ and per-block bias $\beta_b \in \mathbb{R}$ ($2M$ parameters per weight matrix, where $M = r / r_\text{block}$). Scores become
+\begin{equation}
+\tilde{s}_b(\phi) = e^{\alpha_b} \cdot s_b(\phi) + \beta_b.
+\end{equation}
+At $\alpha = 0, \beta = 0$ this reduces to the analytic block score. Training minimizes
+\begin{equation}
+\mathcal{L}(\alpha, \beta) = \frac{1}{N} \sum_{i=1}^{N} \| a(\hat{z}_i) W_\text{next}^\top - a(W \phi_i) W_\text{next}^\top \|_2^2
+\label{eq:non-frob-loss}
+\end{equation}
+where $\hat{z}_i = (\phi_i V M_i(\alpha, \beta)) U$ and $M_i \in \{0, 1\}^r$ is the block-TopK mask induced by scores $\tilde{s}_b(\phi_i)$, with a straight-through gradient estimator \citep{bengio2013ste}. In the identity case ($a = \operatorname{id}$, $W_\text{next} = I$), Equation~\ref{eq:non-frob-loss} reduces to Frobenius reconstruction of $W \phi$, in which case Eckart-Young caps improvement and our tests confirm empirically that training makes no progress (Sec.\ \ref{sec:experiments-vpd}). A full-mode variant additionally makes $V$ and $U$ trainable warm-started from the SVD; on adversarial constructions this rotates the atoms toward downstream-important directions and recovers most of the non-Frobenius signal (Sec.\ \ref{sec:non-frobenius-exp}).
