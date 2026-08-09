@@ -1,0 +1,162 @@
+{
+  "status": "sealed_wikitext_test_frozen_before_extraction",
+  "matrix_count": 24,
+  "point_count": 240,
+  "svd_wins": 240,
+  "geometric_mean_swd_error_over_svd": 1.5837637465583663,
+  "minimum_swd_error_over_svd": 1.0247913581453765,
+  "median_svd_edges_over_swd": 3.3009292421084213,
+  "median_swd_factorization_time_over_svd": 6.928423078832294,
+  "family_summary": {
+    "attention": {
+      "points": 160,
+      "svd_wins": 160,
+      "geometric_mean_swd_error_over_svd": 1.5238888039491647,
+      "minimum_swd_error_over_svd": 1.0247913581453765
+    },
+    "mlp": {
+      "points": 80,
+      "svd_wins": 80,
+      "geometric_mean_swd_error_over_svd": 1.7106636839344296,
+      "minimum_swd_error_over_svd": 1.0449819332309875
+    }
+  },
+  "by_selected_units": [
+    {
+      "selected_units": 1,
+      "median_swd_error_over_svd": 1.3212616881166228,
+      "error_ratio_q1": 1.1300619635599665,
+      "error_ratio_q3": 1.5033845633992087,
+      "median_svd_edges_over_swd": 3.2972552640095176,
+      "edge_ratio_q1": 2.0128619684189477,
+      "edge_ratio_q3": 3.9882788380531844
+    },
+    {
+      "selected_units": 2,
+      "median_swd_error_over_svd": 1.37488008197421,
+      "error_ratio_q1": 1.1652045211115787,
+      "error_ratio_q3": 1.5481909822895452,
+      "median_svd_edges_over_swd": 3.512614483360281,
+      "edge_ratio_q1": 2.116318621842343,
+      "edge_ratio_q3": 4.380366846541329
+    },
+    {
+      "selected_units": 4,
+      "median_swd_error_over_svd": 1.4058968744193665,
+      "error_ratio_q1": 1.2139960501371372,
+      "error_ratio_q3": 1.5974611090303474,
+      "median_svd_edges_over_swd": 3.645103667870665,
+      "edge_ratio_q1": 2.3297869395480033,
+      "edge_ratio_q3": 4.60320507739109
+    },
+    {
+      "selected_units": 8,
+      "median_swd_error_over_svd": 1.480678777571199,
+      "error_ratio_q1": 1.2746081599776362,
+      "error_ratio_q3": 1.6164003311878927,
+      "median_svd_edges_over_swd": 4.263711402547358,
+      "edge_ratio_q1": 2.4038496429285456,
+      "edge_ratio_q3": 5.479079787880623
+    },
+    {
+      "selected_units": 12,
+      "median_swd_error_over_svd": 1.5199230645313533,
+      "error_ratio_q1": 1.326564689295703,
+      "error_ratio_q3": 1.6432294022156722,
+      "median_svd_edges_over_swd": 4.457208581738644,
+      "edge_ratio_q1": 2.64516045930767,
+      "edge_ratio_q3": 6.113639355768829
+    },
+    {
+      "selected_units": 16,
+      "median_swd_error_over_svd": 1.539933297246578,
+      "error_ratio_q1": 1.360785304492469,
+      "error_ratio_q3": 1.6923263202778287,
+      "median_svd_edges_over_swd": 4.576945453806584,
+      "edge_ratio_q1": 2.714563702564878,
+      "edge_ratio_q3": 6.347324149864826
+    },
+    {
+      "selected_units": 24,
+      "median_swd_error_over_svd": 1.57964652407548,
+      "error_ratio_q1": 1.3880885923057806,
+      "error_ratio_q3": 1.7494888615218553,
+      "median_svd_edges_over_swd": 4.138708343047595,
+      "edge_ratio_q1": 2.7402277444951046,
+      "edge_ratio_q3": 7.002617737885972
+    },
+    {
+      "selected_units": 32,
+      "median_swd_error_over_svd": 1.6066383005909508,
+      "error_ratio_q1": 1.4143943583054066,
+      "error_ratio_q3": 1.8042671895961726,
+      "median_svd_edges_over_swd": 3.0278042704072066,
+      "edge_ratio_q1": 2.6701586518525735,
+      "edge_ratio_q3": 6.961612583983861
+    },
+    {
+      "selected_units": 48,
+      "median_swd_error_over_svd": 1.6562917599415405,
+      "error_ratio_q1": 1.4449137779247527,
+      "error_ratio_q3": 1.8623350932182516,
+      "median_svd_edges_over_swd": 2.7912254820611784,
+      "edge_ratio_q1": 2.6667943558912794,
+      "edge_ratio_q3": 3.4241200392158775
+    },
+    {
+      "selected_units": 64,
+      "median_swd_error_over_svd": 1.6871846032453257,
+      "error_ratio_q1": 1.4616130936455782,
+      "error_ratio_q3": 1.9016202479221382,
+      "median_svd_edges_over_swd": 2.814815538719787,
+      "edge_ratio_q1": 2.702460851207419,
+      "edge_ratio_q3": 3.493172118841543
+    }
+  ],
+  "source": {
+    "weights_sha256": "044f2494a2fcadc68180ac27c5dd4c2deced6f5323342e7076ed973b8516fa1c",
+    "activations_sha256": "219b97018302887d1a41d7e119489e6b48d2428f5449e897430e9b9884659626",
+    "benchmark_source_sha256": "5ea5cc51730d33f4e921c3b32acb9d3594ff9191a8c6a416eff6f6d0ce2ec83f",
+    "whitened_basis_source_sha256": "a918228d435158804ab36f5e7436bbe8d133eaebb82c25a022a85d1eb9be85eb",
+    "svd_omp_revision": "a022240f2758b5c52755965fb77c49aaec88e988",
+    "swd_revision": "4c44b7281bc7c78f80e431dac3aa75f397dd3043"
+  },
+  "full_model_single_matrix_replacement": {
+    "status": "sealed_wikitext_test_full_model_single_matrix_replacement",
+    "matrix_count": 24,
+    "cross_entropy_svd_wins": 24,
+    "kl_svd_wins": 24,
+    "logit_mse_svd_wins": 24,
+    "geometric_mean_swd_kl_over_svd": 2.392578490077441,
+    "minimum_swd_kl_over_svd": 1.2542665678078746,
+    "geometric_mean_swd_logit_mse_over_svd": 2.745303440082425,
+    "minimum_swd_logit_mse_over_svd": 1.3752377805544225,
+    "dense_cross_entropy": 4.415695667266846,
+    "test_metadata": {
+      "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+      "goodfire_source_ref": "goodfire-ai/param-decomp@6b54400dc49584cd90a91e068edbc3009456a7b7",
+      "dataset": "Salesforce/wikitext",
+      "dataset_config": "wikitext-2-raw-v1",
+      "calibration_split": "train",
+      "heldout_split": "test",
+      "calibration_fingerprint": "5d4fb603254a7a5b",
+      "heldout_fingerprint": "a46124b21ac53738",
+      "sequence_count": 16,
+      "sequence_length": 128,
+      "token_count_per_split": 2048,
+      "tokenizer_hf_path": "EleutherAI/gpt-neox-20b",
+      "tokenizer_source": "wandb tokenizer.json",
+      "calibration_token_id_range": [
+        14,
+        50136
+      ],
+      "heldout_token_id_range": [
+        14,
+        50177
+      ],
+      "module_count": 24,
+      "evaluation_status": "sealed_test_frozen_before_extraction"
+    },
+    "result_sha256": "72d8275cdb73356becc790d31e0f751d59faf68f06619f2821f85ff414156b91"
+  }
+}

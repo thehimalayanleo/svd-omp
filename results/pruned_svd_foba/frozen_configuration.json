@@ -1,0 +1,23 @@
+{
+  "status": "frozen_from_validation_before_heldout_evaluation",
+  "method": "calibration_pruned_selected_unit_svd",
+  "selection_rule": "Among configurations winning every validation matrix-width point over the frozen strengthened SWD oracle, choose the smallest mean selector-read fraction; break ties by larger geometric-mean SWD error ratio.",
+  "pool_size": 96,
+  "pool_selection_width": 64,
+  "candidate_atoms": 0,
+  "swap_rounds": 0,
+  "proposal_width": 8,
+  "alpha": 0.1,
+  "candidate_seed": 0,
+  "selected_units": [1, 2, 4, 8, 12, 16, 24, 32, 48, 64],
+  "validation": {
+    "wins_over_swd": 240,
+    "point_count": 240,
+    "geometric_mean_swd_error_over_candidate": 1.4717892719422365,
+    "minimum_swd_error_over_candidate": 1.0085680862939117,
+    "geometric_mean_candidate_error_over_full_svd": 1.0300685681528507,
+    "mean_selector_read_fraction_of_full_foba": 0.10714285714285716
+  },
+  "validation_screen_sha256": "2aa998a9f0be5823e8bc04fd32ab42b334f2ddd9c3cbf88f9273434902e4f003",
+  "method_source_sha256": "44cecd9c1675ac7bfde7c803037f11598f9c23f6d9b76d5613343e1d40aba860"
+}

@@ -1,0 +1,2130 @@
+{
+  "status": "sealed_fresh_test_window_frozen_before_extraction",
+  "method": "calibration_aware_svd_initialized_overcomplete_foba",
+  "alpha": 0.1,
+  "candidate_atoms": 128,
+  "seed": 0,
+  "swap_rounds": 2,
+  "proposal_width": 8,
+  "ks": [
+    1,
+    2,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64
+  ],
+  "weights_sha256": "044f2494a2fcadc68180ac27c5dd4c2deced6f5323342e7076ed973b8516fa1c",
+  "activations_sha256": "3f4227b9c80ffece657bbf31e8c714455e7fc51431381c82594ddc21ae35ecef",
+  "benchmark_source_sha256": "c7ea0c9e04da284300961f78546cffcfc53b34220401a039e8cb5656d35076f7",
+  "method_source_sha256": "7ac39b50361f2315e0b619bf73cf86bc1bf58218bdc49d7a92e6bfc848c96cdd",
+  "activation_metadata": {
+    "status": "sealed_svd_foba_settings_frozen_before_extraction",
+    "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+    "goodfire_source_ref": "goodfire-ai/param-decomp@6b54400dc49584cd90a91e068edbc3009456a7b7",
+    "dataset": "Salesforce/wikitext",
+    "dataset_config": "wikitext-2-raw-v1",
+    "calibration_split": "train",
+    "heldout_split": "test",
+    "heldout_token_offset": 2048,
+    "calibration_fingerprint": "5d4fb603254a7a5b",
+    "heldout_fingerprint": "a46124b21ac53738",
+    "sequence_count": 16,
+    "sequence_length": 128,
+    "token_count_per_split": 2048,
+    "tokenizer_source": "wandb tokenizer.json",
+    "module_count": 24,
+    "frozen_method": {
+      "alpha": 0.1,
+      "candidate_atoms": 128,
+      "candidate_seed": 0,
+      "swap_rounds": 2,
+      "proposal_width": 8,
+      "selected_units": [
+        1,
+        2,
+        4,
+        8,
+        12,
+        16,
+        24,
+        32,
+        48,
+        64
+      ]
+    }
+  },
+  "matrix_count": 24,
+  "point_count": 240,
+  "strict_point_wins_over_svd": 240,
+  "matrices": [
+    {
+      "module": "h.0.attn.q_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.6916005611419678,
+          "svd_foba_relative_error": 0.511630117893219,
+          "mean_accepted_swaps": 0.55078125,
+          "fraction_inputs_improved": 0.638671875,
+          "mean_relative_loss_reduction": 0.3926832377910614
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.5975781083106995,
+          "svd_foba_relative_error": 0.4697723388671875,
+          "mean_accepted_swaps": 0.83837890625,
+          "fraction_inputs_improved": 0.71630859375,
+          "mean_relative_loss_reduction": 0.4040186405181885
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.5262913107872009,
+          "svd_foba_relative_error": 0.45126113295555115,
+          "mean_accepted_swaps": 0.90283203125,
+          "fraction_inputs_improved": 0.75634765625,
+          "mean_relative_loss_reduction": 0.2963603734970093
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.46759480237960815,
+          "svd_foba_relative_error": 0.4229264557361603,
+          "mean_accepted_swaps": 0.83349609375,
+          "fraction_inputs_improved": 0.6884765625,
+          "mean_relative_loss_reduction": 0.23232236504554749
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.435260146856308,
+          "svd_foba_relative_error": 0.40299054980278015,
+          "mean_accepted_swaps": 0.66552734375,
+          "fraction_inputs_improved": 0.541015625,
+          "mean_relative_loss_reduction": 0.18067263066768646
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.41124287247657776,
+          "svd_foba_relative_error": 0.38539209961891174,
+          "mean_accepted_swaps": 0.58544921875,
+          "fraction_inputs_improved": 0.52099609375,
+          "mean_relative_loss_reduction": 0.16022543609142303
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.3746735751628876,
+          "svd_foba_relative_error": 0.35706931352615356,
+          "mean_accepted_swaps": 0.4453125,
+          "fraction_inputs_improved": 0.41552734375,
+          "mean_relative_loss_reduction": 0.12347032129764557
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.346981942653656,
+          "svd_foba_relative_error": 0.33397790789604187,
+          "mean_accepted_swaps": 0.38720703125,
+          "fraction_inputs_improved": 0.4375,
+          "mean_relative_loss_reduction": 0.09931936860084534
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.30457863211631775,
+          "svd_foba_relative_error": 0.2957022190093994,
+          "mean_accepted_swaps": 0.2314453125,
+          "fraction_inputs_improved": 0.33984375,
+          "mean_relative_loss_reduction": 0.07422465831041336
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.27193912863731384,
+          "svd_foba_relative_error": 0.2654411196708679,
+          "mean_accepted_swaps": 0.189453125,
+          "fraction_inputs_improved": 0.3271484375,
+          "mean_relative_loss_reduction": 0.05626776069402695
+        }
+      ]
+    },
+    {
+      "module": "h.0.attn.k_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.6842256784439087,
+          "svd_foba_relative_error": 0.5373891592025757,
+          "mean_accepted_swaps": 0.4931640625,
+          "fraction_inputs_improved": 0.62060546875,
+          "mean_relative_loss_reduction": 0.3871648609638214
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.6170588135719299,
+          "svd_foba_relative_error": 0.5014045834541321,
+          "mean_accepted_swaps": 0.88916015625,
+          "fraction_inputs_improved": 0.74072265625,
+          "mean_relative_loss_reduction": 0.4004879295825958
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.5581023693084717,
+          "svd_foba_relative_error": 0.4800375699996948,
+          "mean_accepted_swaps": 0.94189453125,
+          "fraction_inputs_improved": 0.7431640625,
+          "mean_relative_loss_reduction": 0.34868812561035156
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.5009886026382446,
+          "svd_foba_relative_error": 0.4521908462047577,
+          "mean_accepted_swaps": 0.73095703125,
+          "fraction_inputs_improved": 0.60302734375,
+          "mean_relative_loss_reduction": 0.2545589804649353
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.4674386978149414,
+          "svd_foba_relative_error": 0.4306490123271942,
+          "mean_accepted_swaps": 0.67822265625,
+          "fraction_inputs_improved": 0.68359375,
+          "mean_relative_loss_reduction": 0.23493538796901703
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.44278618693351746,
+          "svd_foba_relative_error": 0.41315656900405884,
+          "mean_accepted_swaps": 0.71435546875,
+          "fraction_inputs_improved": 0.6591796875,
+          "mean_relative_loss_reduction": 0.21932372450828552
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.4047510027885437,
+          "svd_foba_relative_error": 0.3853030800819397,
+          "mean_accepted_swaps": 0.4638671875,
+          "fraction_inputs_improved": 0.58447265625,
+          "mean_relative_loss_reduction": 0.13365855813026428
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.37517786026000977,
+          "svd_foba_relative_error": 0.35965168476104736,
+          "mean_accepted_swaps": 0.38623046875,
+          "fraction_inputs_improved": 0.55810546875,
+          "mean_relative_loss_reduction": 0.11462323367595673
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.32980653643608093,
+          "svd_foba_relative_error": 0.31845080852508545,
+          "mean_accepted_swaps": 0.33251953125,
+          "fraction_inputs_improved": 0.52783203125,
+          "mean_relative_loss_reduction": 0.10943112522363663
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.2945714592933655,
+          "svd_foba_relative_error": 0.28655341267585754,
+          "mean_accepted_swaps": 0.24462890625,
+          "fraction_inputs_improved": 0.45849609375,
+          "mean_relative_loss_reduction": 0.08846220374107361
+        }
+      ]
+    },
+    {
+      "module": "h.0.attn.v_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.9100473523139954,
+          "svd_foba_relative_error": 0.7652121186256409,
+          "mean_accepted_swaps": 0.64111328125,
+          "fraction_inputs_improved": 0.9404296875,
+          "mean_relative_loss_reduction": 0.39467331767082214
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.8574714064598083,
+          "svd_foba_relative_error": 0.7414920330047607,
+          "mean_accepted_swaps": 0.92822265625,
+          "fraction_inputs_improved": 0.96044921875,
+          "mean_relative_loss_reduction": 0.3942786753177643
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.8010242581367493,
+          "svd_foba_relative_error": 0.7169121503829956,
+          "mean_accepted_swaps": 1.11865234375,
+          "fraction_inputs_improved": 0.90087890625,
+          "mean_relative_loss_reduction": 0.3390847146511078
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.7425827383995056,
+          "svd_foba_relative_error": 0.6780105829238892,
+          "mean_accepted_swaps": 1.1962890625,
+          "fraction_inputs_improved": 0.9111328125,
+          "mean_relative_loss_reduction": 0.30924129486083984
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.7047035098075867,
+          "svd_foba_relative_error": 0.6500711441040039,
+          "mean_accepted_swaps": 1.36962890625,
+          "fraction_inputs_improved": 0.919921875,
+          "mean_relative_loss_reduction": 0.2972990870475769
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.6740399599075317,
+          "svd_foba_relative_error": 0.6270727515220642,
+          "mean_accepted_swaps": 1.353515625,
+          "fraction_inputs_improved": 0.95703125,
+          "mean_relative_loss_reduction": 0.2627510130405426
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.6250890493392944,
+          "svd_foba_relative_error": 0.5874128937721252,
+          "mean_accepted_swaps": 1.43408203125,
+          "fraction_inputs_improved": 0.92431640625,
+          "mean_relative_loss_reduction": 0.2587382197380066
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.5859025716781616,
+          "svd_foba_relative_error": 0.5542773604393005,
+          "mean_accepted_swaps": 1.46923828125,
+          "fraction_inputs_improved": 0.92333984375,
+          "mean_relative_loss_reduction": 0.2534233629703522
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.5238526463508606,
+          "svd_foba_relative_error": 0.5004295706748962,
+          "mean_accepted_swaps": 1.37841796875,
+          "fraction_inputs_improved": 0.93994140625,
+          "mean_relative_loss_reduction": 0.2314792275428772
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.47509583830833435,
+          "svd_foba_relative_error": 0.4573422074317932,
+          "mean_accepted_swaps": 1.19140625,
+          "fraction_inputs_improved": 0.84423828125,
+          "mean_relative_loss_reduction": 0.1642252504825592
+        }
+      ]
+    },
+    {
+      "module": "h.0.attn.o_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.5465995073318481,
+          "svd_foba_relative_error": 0.5139021873474121,
+          "mean_accepted_swaps": 0.39892578125,
+          "fraction_inputs_improved": 0.71435546875,
+          "mean_relative_loss_reduction": 0.10206728428602219
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.5108593702316284,
+          "svd_foba_relative_error": 0.47744646668434143,
+          "mean_accepted_swaps": 0.7724609375,
+          "fraction_inputs_improved": 0.8115234375,
+          "mean_relative_loss_reduction": 0.1273711770772934
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.4736269414424896,
+          "svd_foba_relative_error": 0.4490727186203003,
+          "mean_accepted_swaps": 0.875,
+          "fraction_inputs_improved": 0.8095703125,
+          "mean_relative_loss_reduction": 0.10726432502269745
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.43167844414711,
+          "svd_foba_relative_error": 0.4171156883239746,
+          "mean_accepted_swaps": 0.75537109375,
+          "fraction_inputs_improved": 0.77783203125,
+          "mean_relative_loss_reduction": 0.07033978402614594
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.4038833677768707,
+          "svd_foba_relative_error": 0.3941524028778076,
+          "mean_accepted_swaps": 0.607421875,
+          "fraction_inputs_improved": 0.7529296875,
+          "mean_relative_loss_reduction": 0.048066139221191406
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.3823169469833374,
+          "svd_foba_relative_error": 0.374939888715744,
+          "mean_accepted_swaps": 0.541015625,
+          "fraction_inputs_improved": 0.736328125,
+          "mean_relative_loss_reduction": 0.03857750818133354
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.3491585850715637,
+          "svd_foba_relative_error": 0.34427469968795776,
+          "mean_accepted_swaps": 0.45849609375,
+          "fraction_inputs_improved": 0.7265625,
+          "mean_relative_loss_reduction": 0.027450092136859894
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.3233110308647156,
+          "svd_foba_relative_error": 0.31973370909690857,
+          "mean_accepted_swaps": 0.39404296875,
+          "fraction_inputs_improved": 0.71630859375,
+          "mean_relative_loss_reduction": 0.021451568230986595
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.28321754932403564,
+          "svd_foba_relative_error": 0.2812969982624054,
+          "mean_accepted_swaps": 0.2685546875,
+          "fraction_inputs_improved": 0.69287109375,
+          "mean_relative_loss_reduction": 0.013925853185355663
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.25202223658561707,
+          "svd_foba_relative_error": 0.25084927678108215,
+          "mean_accepted_swaps": 0.2021484375,
+          "fraction_inputs_improved": 0.6826171875,
+          "mean_relative_loss_reduction": 0.009119348600506783
+        }
+      ]
+    },
+    {
+      "module": "h.0.mlp.c_fc",
+      "family": "mlp",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.6062331199645996,
+          "svd_foba_relative_error": 0.5149661898612976,
+          "mean_accepted_swaps": 0.4814453125,
+          "fraction_inputs_improved": 0.556640625,
+          "mean_relative_loss_reduction": 0.2649717330932617
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.5628795027732849,
+          "svd_foba_relative_error": 0.48584821820259094,
+          "mean_accepted_swaps": 0.8994140625,
+          "fraction_inputs_improved": 0.66552734375,
+          "mean_relative_loss_reduction": 0.2632867097854614
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.5188542008399963,
+          "svd_foba_relative_error": 0.46985140442848206,
+          "mean_accepted_swaps": 1.06396484375,
+          "fraction_inputs_improved": 0.7001953125,
+          "mean_relative_loss_reduction": 0.1905367523431778
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.4749821424484253,
+          "svd_foba_relative_error": 0.4475582242012024,
+          "mean_accepted_swaps": 0.91796875,
+          "fraction_inputs_improved": 0.5927734375,
+          "mean_relative_loss_reduction": 0.11993920058012009
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.45041629672050476,
+          "svd_foba_relative_error": 0.43048208951950073,
+          "mean_accepted_swaps": 0.82666015625,
+          "fraction_inputs_improved": 0.5361328125,
+          "mean_relative_loss_reduction": 0.09322646260261536
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.43267861008644104,
+          "svd_foba_relative_error": 0.41688066720962524,
+          "mean_accepted_swaps": 0.74853515625,
+          "fraction_inputs_improved": 0.490234375,
+          "mean_relative_loss_reduction": 0.07768693566322327
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.4061535596847534,
+          "svd_foba_relative_error": 0.3948715329170227,
+          "mean_accepted_swaps": 0.67236328125,
+          "fraction_inputs_improved": 0.4521484375,
+          "mean_relative_loss_reduction": 0.05973818898200989
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.3857012093067169,
+          "svd_foba_relative_error": 0.37694182991981506,
+          "mean_accepted_swaps": 0.60302734375,
+          "fraction_inputs_improved": 0.41357421875,
+          "mean_relative_loss_reduction": 0.049938466399908066
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.3538227379322052,
+          "svd_foba_relative_error": 0.3479487895965576,
+          "mean_accepted_swaps": 0.51806640625,
+          "fraction_inputs_improved": 0.373046875,
+          "mean_relative_loss_reduction": 0.032832831144332886
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.3286297619342804,
+          "svd_foba_relative_error": 0.32406002283096313,
+          "mean_accepted_swaps": 0.482421875,
+          "fraction_inputs_improved": 0.36181640625,
+          "mean_relative_loss_reduction": 0.02729819528758526
+        }
+      ]
+    },
+    {
+      "module": "h.0.mlp.down_proj",
+      "family": "mlp",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.7406756281852722,
+          "svd_foba_relative_error": 0.6699168682098389,
+          "mean_accepted_swaps": 0.4931640625,
+          "fraction_inputs_improved": 0.7138671875,
+          "mean_relative_loss_reduction": 0.2705836594104767
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.7010958790779114,
+          "svd_foba_relative_error": 0.6380872130393982,
+          "mean_accepted_swaps": 1.048828125,
+          "fraction_inputs_improved": 0.81591796875,
+          "mean_relative_loss_reduction": 0.27621889114379883
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.6620979309082031,
+          "svd_foba_relative_error": 0.6140223741531372,
+          "mean_accepted_swaps": 1.28369140625,
+          "fraction_inputs_improved": 0.8359375,
+          "mean_relative_loss_reduction": 0.2493630349636078
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.6238517761230469,
+          "svd_foba_relative_error": 0.5888760089874268,
+          "mean_accepted_swaps": 1.26513671875,
+          "fraction_inputs_improved": 0.80517578125,
+          "mean_relative_loss_reduction": 0.1912849247455597
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.5988219976425171,
+          "svd_foba_relative_error": 0.5700690746307373,
+          "mean_accepted_swaps": 1.1708984375,
+          "fraction_inputs_improved": 0.7490234375,
+          "mean_relative_loss_reduction": 0.1569850593805313
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.5788928270339966,
+          "svd_foba_relative_error": 0.5540982484817505,
+          "mean_accepted_swaps": 1.11865234375,
+          "fraction_inputs_improved": 0.712890625,
+          "mean_relative_loss_reduction": 0.13945651054382324
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.546760082244873,
+          "svd_foba_relative_error": 0.5269665122032166,
+          "mean_accepted_swaps": 1.076171875,
+          "fraction_inputs_improved": 0.69775390625,
+          "mean_relative_loss_reduction": 0.12005563080310822
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.5204287767410278,
+          "svd_foba_relative_error": 0.5040637850761414,
+          "mean_accepted_swaps": 1.02685546875,
+          "fraction_inputs_improved": 0.6845703125,
+          "mean_relative_loss_reduction": 0.10625506937503815
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.47739383578300476,
+          "svd_foba_relative_error": 0.4653358459472656,
+          "mean_accepted_swaps": 0.94091796875,
+          "fraction_inputs_improved": 0.6552734375,
+          "mean_relative_loss_reduction": 0.08827948570251465
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.4421345293521881,
+          "svd_foba_relative_error": 0.4327510893344879,
+          "mean_accepted_swaps": 0.86865234375,
+          "fraction_inputs_improved": 0.63134765625,
+          "mean_relative_loss_reduction": 0.07548058032989502
+        }
+      ]
+    },
+    {
+      "module": "h.1.attn.q_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.5879035592079163,
+          "svd_foba_relative_error": 0.5085623860359192,
+          "mean_accepted_swaps": 0.61572265625,
+          "fraction_inputs_improved": 0.876953125,
+          "mean_relative_loss_reduction": 0.25389036536216736
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.5332463979721069,
+          "svd_foba_relative_error": 0.45899900794029236,
+          "mean_accepted_swaps": 1.15283203125,
+          "fraction_inputs_improved": 0.9013671875,
+          "mean_relative_loss_reduction": 0.26840677857398987
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.4840344488620758,
+          "svd_foba_relative_error": 0.4286845922470093,
+          "mean_accepted_swaps": 1.189453125,
+          "fraction_inputs_improved": 0.89404296875,
+          "mean_relative_loss_reduction": 0.22789910435676575
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.4303463101387024,
+          "svd_foba_relative_error": 0.39724427461624146,
+          "mean_accepted_swaps": 0.90185546875,
+          "fraction_inputs_improved": 0.83447265625,
+          "mean_relative_loss_reduction": 0.15642240643501282
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.3964178264141083,
+          "svd_foba_relative_error": 0.37386593222618103,
+          "mean_accepted_swaps": 0.673828125,
+          "fraction_inputs_improved": 0.78125,
+          "mean_relative_loss_reduction": 0.11198241263628006
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.3712606728076935,
+          "svd_foba_relative_error": 0.3547767698764801,
+          "mean_accepted_swaps": 0.5205078125,
+          "fraction_inputs_improved": 0.74853515625,
+          "mean_relative_loss_reduction": 0.08780580759048462
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.3342221975326538,
+          "svd_foba_relative_error": 0.3237449526786804,
+          "mean_accepted_swaps": 0.35498046875,
+          "fraction_inputs_improved": 0.705078125,
+          "mean_relative_loss_reduction": 0.06322629004716873
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.3067857027053833,
+          "svd_foba_relative_error": 0.29924461245536804,
+          "mean_accepted_swaps": 0.275390625,
+          "fraction_inputs_improved": 0.697265625,
+          "mean_relative_loss_reduction": 0.05042556673288345
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.2661708891391754,
+          "svd_foba_relative_error": 0.26177382469177246,
+          "mean_accepted_swaps": 0.19189453125,
+          "fraction_inputs_improved": 0.66015625,
+          "mean_relative_loss_reduction": 0.03580185025930405
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.2359136939048767,
+          "svd_foba_relative_error": 0.23320159316062927,
+          "mean_accepted_swaps": 0.130859375,
+          "fraction_inputs_improved": 0.66357421875,
+          "mean_relative_loss_reduction": 0.024162262678146362
+        }
+      ]
+    },
+    {
+      "module": "h.1.attn.k_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.37593451142311096,
+          "svd_foba_relative_error": 0.32228365540504456,
+          "mean_accepted_swaps": 0.58203125,
+          "fraction_inputs_improved": 0.83056640625,
+          "mean_relative_loss_reduction": 0.2817419469356537
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.3360426127910614,
+          "svd_foba_relative_error": 0.2956673800945282,
+          "mean_accepted_swaps": 0.7080078125,
+          "fraction_inputs_improved": 0.80712890625,
+          "mean_relative_loss_reduction": 0.2469870001077652
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.3010864555835724,
+          "svd_foba_relative_error": 0.2790835499763489,
+          "mean_accepted_swaps": 0.494140625,
+          "fraction_inputs_improved": 0.66552734375,
+          "mean_relative_loss_reduction": 0.154989555478096
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.2692265510559082,
+          "svd_foba_relative_error": 0.25851768255233765,
+          "mean_accepted_swaps": 0.25537109375,
+          "fraction_inputs_improved": 0.537109375,
+          "mean_relative_loss_reduction": 0.07443904876708984
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.24975241720676422,
+          "svd_foba_relative_error": 0.24213062226772308,
+          "mean_accepted_swaps": 0.1826171875,
+          "fraction_inputs_improved": 0.4970703125,
+          "mean_relative_loss_reduction": 0.05553138628602028
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.23535144329071045,
+          "svd_foba_relative_error": 0.22936707735061646,
+          "mean_accepted_swaps": 0.1513671875,
+          "fraction_inputs_improved": 0.47900390625,
+          "mean_relative_loss_reduction": 0.04613887518644333
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.21384359896183014,
+          "svd_foba_relative_error": 0.20990689098834991,
+          "mean_accepted_swaps": 0.1123046875,
+          "fraction_inputs_improved": 0.4638671875,
+          "mean_relative_loss_reduction": 0.033785417675971985
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.19745215773582458,
+          "svd_foba_relative_error": 0.19490621984004974,
+          "mean_accepted_swaps": 0.0771484375,
+          "fraction_inputs_improved": 0.4521484375,
+          "mean_relative_loss_reduction": 0.02233804203569889
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.1725318282842636,
+          "svd_foba_relative_error": 0.1711283028125763,
+          "mean_accepted_swaps": 0.0458984375,
+          "fraction_inputs_improved": 0.43701171875,
+          "mean_relative_loss_reduction": 0.013469002209603786
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.15352919697761536,
+          "svd_foba_relative_error": 0.15254521369934082,
+          "mean_accepted_swaps": 0.0361328125,
+          "fraction_inputs_improved": 0.43701171875,
+          "mean_relative_loss_reduction": 0.01010405458509922
+        }
+      ]
+    },
+    {
+      "module": "h.1.attn.v_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.9104868173599243,
+          "svd_foba_relative_error": 0.7908428907394409,
+          "mean_accepted_swaps": 0.84228515625,
+          "fraction_inputs_improved": 0.95751953125,
+          "mean_relative_loss_reduction": 0.2752392888069153
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.8688357472419739,
+          "svd_foba_relative_error": 0.7527498602867126,
+          "mean_accepted_swaps": 1.486328125,
+          "fraction_inputs_improved": 0.9677734375,
+          "mean_relative_loss_reduction": 0.2847776412963867
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.810991108417511,
+          "svd_foba_relative_error": 0.7177823185920715,
+          "mean_accepted_swaps": 1.61279296875,
+          "fraction_inputs_improved": 0.97216796875,
+          "mean_relative_loss_reduction": 0.2526273727416992
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.7343281507492065,
+          "svd_foba_relative_error": 0.6687957048416138,
+          "mean_accepted_swaps": 1.681640625,
+          "fraction_inputs_improved": 0.9677734375,
+          "mean_relative_loss_reduction": 0.19862982630729675
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.6825135350227356,
+          "svd_foba_relative_error": 0.6316432356834412,
+          "mean_accepted_swaps": 1.708984375,
+          "fraction_inputs_improved": 0.955078125,
+          "mean_relative_loss_reduction": 0.16379618644714355
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.6427215337753296,
+          "svd_foba_relative_error": 0.6011216640472412,
+          "mean_accepted_swaps": 1.74267578125,
+          "fraction_inputs_improved": 0.96337890625,
+          "mean_relative_loss_reduction": 0.1394963413476944
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.582610547542572,
+          "svd_foba_relative_error": 0.5513827204704285,
+          "mean_accepted_swaps": 1.7705078125,
+          "fraction_inputs_improved": 0.955078125,
+          "mean_relative_loss_reduction": 0.11633733659982681
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.536734402179718,
+          "svd_foba_relative_error": 0.5119420289993286,
+          "mean_accepted_swaps": 1.70751953125,
+          "fraction_inputs_improved": 0.93310546875,
+          "mean_relative_loss_reduction": 0.10076551884412766
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.46743983030319214,
+          "svd_foba_relative_error": 0.450677752494812,
+          "mean_accepted_swaps": 1.564453125,
+          "fraction_inputs_improved": 0.88720703125,
+          "mean_relative_loss_reduction": 0.08033198118209839
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.41536304354667664,
+          "svd_foba_relative_error": 0.40354225039482117,
+          "mean_accepted_swaps": 1.35107421875,
+          "fraction_inputs_improved": 0.82421875,
+          "mean_relative_loss_reduction": 0.06493760645389557
+        }
+      ]
+    },
+    {
+      "module": "h.1.attn.o_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.831855297088623,
+          "svd_foba_relative_error": 0.7881890535354614,
+          "mean_accepted_swaps": 0.63427734375,
+          "fraction_inputs_improved": 0.9365234375,
+          "mean_relative_loss_reduction": 0.10181573033332825
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.7733550667762756,
+          "svd_foba_relative_error": 0.7263785600662231,
+          "mean_accepted_swaps": 1.15869140625,
+          "fraction_inputs_improved": 0.95166015625,
+          "mean_relative_loss_reduction": 0.1187283843755722
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.7117695808410645,
+          "svd_foba_relative_error": 0.6725960373878479,
+          "mean_accepted_swaps": 1.43505859375,
+          "fraction_inputs_improved": 0.9755859375,
+          "mean_relative_loss_reduction": 0.10656143724918365
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.6396146416664124,
+          "svd_foba_relative_error": 0.6103315949440002,
+          "mean_accepted_swaps": 1.609375,
+          "fraction_inputs_improved": 0.98779296875,
+          "mean_relative_loss_reduction": 0.08837714791297913
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.5908072590827942,
+          "svd_foba_relative_error": 0.5670637488365173,
+          "mean_accepted_swaps": 1.61865234375,
+          "fraction_inputs_improved": 0.9794921875,
+          "mean_relative_loss_reduction": 0.07740409672260284
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.5529868006706238,
+          "svd_foba_relative_error": 0.5336365103721619,
+          "mean_accepted_swaps": 1.533203125,
+          "fraction_inputs_improved": 0.96728515625,
+          "mean_relative_loss_reduction": 0.06662584841251373
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.49530744552612305,
+          "svd_foba_relative_error": 0.48218581080436707,
+          "mean_accepted_swaps": 1.31201171875,
+          "fraction_inputs_improved": 0.94287109375,
+          "mean_relative_loss_reduction": 0.050193849951028824
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.45138949155807495,
+          "svd_foba_relative_error": 0.44217729568481445,
+          "mean_accepted_swaps": 1.09033203125,
+          "fraction_inputs_improved": 0.908203125,
+          "mean_relative_loss_reduction": 0.03807603195309639
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.3860149383544922,
+          "svd_foba_relative_error": 0.3814876675605774,
+          "mean_accepted_swaps": 0.68359375,
+          "fraction_inputs_improved": 0.84716796875,
+          "mean_relative_loss_reduction": 0.021979259327054024
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.3377061188220978,
+          "svd_foba_relative_error": 0.33549612760543823,
+          "mean_accepted_swaps": 0.41845703125,
+          "fraction_inputs_improved": 0.81787109375,
+          "mean_relative_loss_reduction": 0.01222038734704256
+        }
+      ]
+    },
+    {
+      "module": "h.1.mlp.c_fc",
+      "family": "mlp",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.33075374364852905,
+          "svd_foba_relative_error": 0.3059943914413452,
+          "mean_accepted_swaps": 0.42529296875,
+          "fraction_inputs_improved": 0.7158203125,
+          "mean_relative_loss_reduction": 0.1516890823841095
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.30006685853004456,
+          "svd_foba_relative_error": 0.2783986032009125,
+          "mean_accepted_swaps": 0.49755859375,
+          "fraction_inputs_improved": 0.70751953125,
+          "mean_relative_loss_reduction": 0.14986737072467804
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.2683938145637512,
+          "svd_foba_relative_error": 0.26127302646636963,
+          "mean_accepted_swaps": 0.21728515625,
+          "fraction_inputs_improved": 0.53173828125,
+          "mean_relative_loss_reduction": 0.05502292141318321
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.2395438402891159,
+          "svd_foba_relative_error": 0.23638544976711273,
+          "mean_accepted_swaps": 0.10400390625,
+          "fraction_inputs_improved": 0.47265625,
+          "mean_relative_loss_reduction": 0.02481044828891754
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.22306625545024872,
+          "svd_foba_relative_error": 0.22070518136024475,
+          "mean_accepted_swaps": 0.0810546875,
+          "fraction_inputs_improved": 0.458984375,
+          "mean_relative_loss_reduction": 0.019650937989354134
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.21112999320030212,
+          "svd_foba_relative_error": 0.209152489900589,
+          "mean_accepted_swaps": 0.0693359375,
+          "fraction_inputs_improved": 0.46435546875,
+          "mean_relative_loss_reduction": 0.017177270725369453
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.19406668841838837,
+          "svd_foba_relative_error": 0.19262517988681793,
+          "mean_accepted_swaps": 0.056640625,
+          "fraction_inputs_improved": 0.4619140625,
+          "mean_relative_loss_reduction": 0.01333792507648468
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.18175733089447021,
+          "svd_foba_relative_error": 0.18057222664356232,
+          "mean_accepted_swaps": 0.0517578125,
+          "fraction_inputs_improved": 0.46630859375,
+          "mean_relative_loss_reduction": 0.011607903987169266
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.16390612721443176,
+          "svd_foba_relative_error": 0.1630907505750656,
+          "mean_accepted_swaps": 0.041015625,
+          "fraction_inputs_improved": 0.46826171875,
+          "mean_relative_loss_reduction": 0.00876124482601881
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.15055018663406372,
+          "svd_foba_relative_error": 0.15004189312458038,
+          "mean_accepted_swaps": 0.025390625,
+          "fraction_inputs_improved": 0.4560546875,
+          "mean_relative_loss_reduction": 0.005563646089285612
+        }
+      ]
+    },
+    {
+      "module": "h.1.mlp.down_proj",
+      "family": "mlp",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.1929289847612381,
+          "svd_foba_relative_error": 0.18274514377117157,
+          "mean_accepted_swaps": 0.57763671875,
+          "fraction_inputs_improved": 0.88916015625,
+          "mean_relative_loss_reduction": 0.11191511154174805
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.18106018006801605,
+          "svd_foba_relative_error": 0.171719491481781,
+          "mean_accepted_swaps": 0.97705078125,
+          "fraction_inputs_improved": 0.81982421875,
+          "mean_relative_loss_reduction": 0.11286471784114838
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.17257873713970184,
+          "svd_foba_relative_error": 0.1644108146429062,
+          "mean_accepted_swaps": 1.30908203125,
+          "fraction_inputs_improved": 0.89111328125,
+          "mean_relative_loss_reduction": 0.10526822507381439
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.16270768642425537,
+          "svd_foba_relative_error": 0.15639860928058624,
+          "mean_accepted_swaps": 1.5068359375,
+          "fraction_inputs_improved": 0.9130859375,
+          "mean_relative_loss_reduction": 0.08568931370973587
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.1558694839477539,
+          "svd_foba_relative_error": 0.15064503252506256,
+          "mean_accepted_swaps": 1.56884765625,
+          "fraction_inputs_improved": 0.91845703125,
+          "mean_relative_loss_reduction": 0.07322102040052414
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.15039709210395813,
+          "svd_foba_relative_error": 0.14588212966918945,
+          "mean_accepted_swaps": 1.6015625,
+          "fraction_inputs_improved": 0.91748046875,
+          "mean_relative_loss_reduction": 0.06563343852758408
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.1416437327861786,
+          "svd_foba_relative_error": 0.1380966603755951,
+          "mean_accepted_swaps": 1.5703125,
+          "fraction_inputs_improved": 0.892578125,
+          "mean_relative_loss_reduction": 0.05498220771551132
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.13456213474273682,
+          "svd_foba_relative_error": 0.1316516399383545,
+          "mean_accepted_swaps": 1.517578125,
+          "fraction_inputs_improved": 0.88232421875,
+          "mean_relative_loss_reduction": 0.047675859183073044
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.12315937131643295,
+          "svd_foba_relative_error": 0.12101764976978302,
+          "mean_accepted_swaps": 1.443359375,
+          "fraction_inputs_improved": 0.86865234375,
+          "mean_relative_loss_reduction": 0.038227327167987823
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.11392898857593536,
+          "svd_foba_relative_error": 0.11226745694875717,
+          "mean_accepted_swaps": 1.373046875,
+          "fraction_inputs_improved": 0.84228515625,
+          "mean_relative_loss_reduction": 0.031888335943222046
+        }
+      ]
+    },
+    {
+      "module": "h.2.attn.q_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.6983378529548645,
+          "svd_foba_relative_error": 0.6524484753608704,
+          "mean_accepted_swaps": 0.51708984375,
+          "fraction_inputs_improved": 0.83056640625,
+          "mean_relative_loss_reduction": 0.12576910853385925
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.6454041600227356,
+          "svd_foba_relative_error": 0.5959410071372986,
+          "mean_accepted_swaps": 1.13134765625,
+          "fraction_inputs_improved": 0.865234375,
+          "mean_relative_loss_reduction": 0.1546204388141632
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.5938449501991272,
+          "svd_foba_relative_error": 0.5533558130264282,
+          "mean_accepted_swaps": 1.3564453125,
+          "fraction_inputs_improved": 0.8984375,
+          "mean_relative_loss_reduction": 0.13722006976604462
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.5314704179763794,
+          "svd_foba_relative_error": 0.5016763210296631,
+          "mean_accepted_swaps": 1.3828125,
+          "fraction_inputs_improved": 0.88427734375,
+          "mean_relative_loss_reduction": 0.11329735815525055
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.48843270540237427,
+          "svd_foba_relative_error": 0.46585315465927124,
+          "mean_accepted_swaps": 1.22412109375,
+          "fraction_inputs_improved": 0.84130859375,
+          "mean_relative_loss_reduction": 0.0932803675532341
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.4549857974052429,
+          "svd_foba_relative_error": 0.4374385178089142,
+          "mean_accepted_swaps": 1.04638671875,
+          "fraction_inputs_improved": 0.787109375,
+          "mean_relative_loss_reduction": 0.076970674097538
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.4043228328227997,
+          "svd_foba_relative_error": 0.3938153386116028,
+          "mean_accepted_swaps": 0.72412109375,
+          "fraction_inputs_improved": 0.6962890625,
+          "mean_relative_loss_reduction": 0.050711773335933685
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.36655285954475403,
+          "svd_foba_relative_error": 0.35973024368286133,
+          "mean_accepted_swaps": 0.509765625,
+          "fraction_inputs_improved": 0.63623046875,
+          "mean_relative_loss_reduction": 0.03631746768951416
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.31149935722351074,
+          "svd_foba_relative_error": 0.3081432580947876,
+          "mean_accepted_swaps": 0.2841796875,
+          "fraction_inputs_improved": 0.5830078125,
+          "mean_relative_loss_reduction": 0.021294964477419853
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.271708607673645,
+          "svd_foba_relative_error": 0.2698907256126404,
+          "mean_accepted_swaps": 0.162109375,
+          "fraction_inputs_improved": 0.5625,
+          "mean_relative_loss_reduction": 0.013154160231351852
+        }
+      ]
+    },
+    {
+      "module": "h.2.attn.k_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.6369157433509827,
+          "svd_foba_relative_error": 0.59751957654953,
+          "mean_accepted_swaps": 0.5458984375,
+          "fraction_inputs_improved": 0.951171875,
+          "mean_relative_loss_reduction": 0.12036973237991333
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.5857511758804321,
+          "svd_foba_relative_error": 0.5434057116508484,
+          "mean_accepted_swaps": 1.05908203125,
+          "fraction_inputs_improved": 0.95166015625,
+          "mean_relative_loss_reduction": 0.1432902067899704
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.535823404788971,
+          "svd_foba_relative_error": 0.5060310959815979,
+          "mean_accepted_swaps": 1.1064453125,
+          "fraction_inputs_improved": 0.9462890625,
+          "mean_relative_loss_reduction": 0.1116664856672287
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.48235034942626953,
+          "svd_foba_relative_error": 0.4637751579284668,
+          "mean_accepted_swaps": 0.92529296875,
+          "fraction_inputs_improved": 0.93505859375,
+          "mean_relative_loss_reduction": 0.07830534875392914
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.44740912318229675,
+          "svd_foba_relative_error": 0.4348905384540558,
+          "mean_accepted_swaps": 0.72119140625,
+          "fraction_inputs_improved": 0.916015625,
+          "mean_relative_loss_reduction": 0.0578574538230896
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.4206162393093109,
+          "svd_foba_relative_error": 0.41149500012397766,
+          "mean_accepted_swaps": 0.57275390625,
+          "fraction_inputs_improved": 0.90771484375,
+          "mean_relative_loss_reduction": 0.044438399374485016
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.3796078562736511,
+          "svd_foba_relative_error": 0.3742508590221405,
+          "mean_accepted_swaps": 0.3642578125,
+          "fraction_inputs_improved": 0.875,
+          "mean_relative_loss_reduction": 0.028389982879161835
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.3482455611228943,
+          "svd_foba_relative_error": 0.3446406424045563,
+          "mean_accepted_swaps": 0.26708984375,
+          "fraction_inputs_improved": 0.875,
+          "mean_relative_loss_reduction": 0.02116478607058525
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.3012894093990326,
+          "svd_foba_relative_error": 0.29920732975006104,
+          "mean_accepted_swaps": 0.1796875,
+          "fraction_inputs_improved": 0.8583984375,
+          "mean_relative_loss_reduction": 0.015073788352310658
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.26617100834846497,
+          "svd_foba_relative_error": 0.26501891016960144,
+          "mean_accepted_swaps": 0.09228515625,
+          "fraction_inputs_improved": 0.84326171875,
+          "mean_relative_loss_reduction": 0.008889174088835716
+        }
+      ]
+    },
+    {
+      "module": "h.2.attn.v_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.9445334672927856,
+          "svd_foba_relative_error": 0.8580957055091858,
+          "mean_accepted_swaps": 0.88232421875,
+          "fraction_inputs_improved": 0.9365234375,
+          "mean_relative_loss_reduction": 0.20527420938014984
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.9097391963005066,
+          "svd_foba_relative_error": 0.8316835165023804,
+          "mean_accepted_swaps": 1.498046875,
+          "fraction_inputs_improved": 0.94775390625,
+          "mean_relative_loss_reduction": 0.19786056876182556
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.870189905166626,
+          "svd_foba_relative_error": 0.806031346321106,
+          "mean_accepted_swaps": 1.5595703125,
+          "fraction_inputs_improved": 0.94970703125,
+          "mean_relative_loss_reduction": 0.16927115619182587
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.8173813819885254,
+          "svd_foba_relative_error": 0.7686475515365601,
+          "mean_accepted_swaps": 1.6533203125,
+          "fraction_inputs_improved": 0.962890625,
+          "mean_relative_loss_reduction": 0.136796772480011
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.7783541083335876,
+          "svd_foba_relative_error": 0.7385921478271484,
+          "mean_accepted_swaps": 1.73388671875,
+          "fraction_inputs_improved": 0.97216796875,
+          "mean_relative_loss_reduction": 0.1162143349647522
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.7462174296379089,
+          "svd_foba_relative_error": 0.7124305367469788,
+          "mean_accepted_swaps": 1.767578125,
+          "fraction_inputs_improved": 0.97216796875,
+          "mean_relative_loss_reduction": 0.10226279497146606
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.6940576434135437,
+          "svd_foba_relative_error": 0.6675392389297485,
+          "mean_accepted_swaps": 1.83056640625,
+          "fraction_inputs_improved": 0.97705078125,
+          "mean_relative_loss_reduction": 0.08628389984369278
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.65138840675354,
+          "svd_foba_relative_error": 0.6295360922813416,
+          "mean_accepted_swaps": 1.82373046875,
+          "fraction_inputs_improved": 0.9765625,
+          "mean_relative_loss_reduction": 0.07602974027395248
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.5821846127510071,
+          "svd_foba_relative_error": 0.5662235617637634,
+          "mean_accepted_swaps": 1.7841796875,
+          "fraction_inputs_improved": 0.970703125,
+          "mean_relative_loss_reduction": 0.06135692819952965
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.5263543725013733,
+          "svd_foba_relative_error": 0.5139808058738708,
+          "mean_accepted_swaps": 1.72021484375,
+          "fraction_inputs_improved": 0.96337890625,
+          "mean_relative_loss_reduction": 0.05187307298183441
+        }
+      ]
+    },
+    {
+      "module": "h.2.attn.o_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.6794012188911438,
+          "svd_foba_relative_error": 0.6669498682022095,
+          "mean_accepted_swaps": 0.33740234375,
+          "fraction_inputs_improved": 0.5615234375,
+          "mean_relative_loss_reduction": 0.04814764857292175
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.6497992277145386,
+          "svd_foba_relative_error": 0.6302840113639832,
+          "mean_accepted_swaps": 0.8935546875,
+          "fraction_inputs_improved": 0.74755859375,
+          "mean_relative_loss_reduction": 0.07201220840215683
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.6162472367286682,
+          "svd_foba_relative_error": 0.6003408432006836,
+          "mean_accepted_swaps": 1.0419921875,
+          "fraction_inputs_improved": 0.7958984375,
+          "mean_relative_loss_reduction": 0.059393804520368576
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.5766851902008057,
+          "svd_foba_relative_error": 0.565337598323822,
+          "mean_accepted_swaps": 0.99755859375,
+          "fraction_inputs_improved": 0.76708984375,
+          "mean_relative_loss_reduction": 0.04344117268919945
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.5488636493682861,
+          "svd_foba_relative_error": 0.540413498878479,
+          "mean_accepted_swaps": 0.85498046875,
+          "fraction_inputs_improved": 0.705078125,
+          "mean_relative_loss_reduction": 0.032501399517059326
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.5264134407043457,
+          "svd_foba_relative_error": 0.5199461579322815,
+          "mean_accepted_swaps": 0.7421875,
+          "fraction_inputs_improved": 0.662109375,
+          "mean_relative_loss_reduction": 0.025518283247947693
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.4901970624923706,
+          "svd_foba_relative_error": 0.485859215259552,
+          "mean_accepted_swaps": 0.595703125,
+          "fraction_inputs_improved": 0.61962890625,
+          "mean_relative_loss_reduction": 0.018026309087872505
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.4607396125793457,
+          "svd_foba_relative_error": 0.45754098892211914,
+          "mean_accepted_swaps": 0.4970703125,
+          "fraction_inputs_improved": 0.5712890625,
+          "mean_relative_loss_reduction": 0.013311231508851051
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.4131181240081787,
+          "svd_foba_relative_error": 0.41130203008651733,
+          "mean_accepted_swaps": 0.3115234375,
+          "fraction_inputs_improved": 0.54296875,
+          "mean_relative_loss_reduction": 0.008073925971984863
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.3744978606700897,
+          "svd_foba_relative_error": 0.37338289618492126,
+          "mean_accepted_swaps": 0.22216796875,
+          "fraction_inputs_improved": 0.5087890625,
+          "mean_relative_loss_reduction": 0.005262574180960655
+        }
+      ]
+    },
+    {
+      "module": "h.2.mlp.c_fc",
+      "family": "mlp",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.6630536317825317,
+          "svd_foba_relative_error": 0.6075414419174194,
+          "mean_accepted_swaps": 0.6318359375,
+          "fraction_inputs_improved": 0.70849609375,
+          "mean_relative_loss_reduction": 0.16051729023456573
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.6057701706886292,
+          "svd_foba_relative_error": 0.5566262602806091,
+          "mean_accepted_swaps": 1.0947265625,
+          "fraction_inputs_improved": 0.74169921875,
+          "mean_relative_loss_reduction": 0.16045330464839935
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.5540111660957336,
+          "svd_foba_relative_error": 0.5196473598480225,
+          "mean_accepted_swaps": 1.158203125,
+          "fraction_inputs_improved": 0.77294921875,
+          "mean_relative_loss_reduction": 0.12295186519622803
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.5015954375267029,
+          "svd_foba_relative_error": 0.4808080792427063,
+          "mean_accepted_swaps": 0.9873046875,
+          "fraction_inputs_improved": 0.68994140625,
+          "mean_relative_loss_reduction": 0.08153919875621796
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.4698411524295807,
+          "svd_foba_relative_error": 0.45571383833885193,
+          "mean_accepted_swaps": 0.7900390625,
+          "fraction_inputs_improved": 0.603515625,
+          "mean_relative_loss_reduction": 0.05922898277640343
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.4462624490261078,
+          "svd_foba_relative_error": 0.43600380420684814,
+          "mean_accepted_swaps": 0.6279296875,
+          "fraction_inputs_improved": 0.54736328125,
+          "mean_relative_loss_reduction": 0.04532419517636299
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.4116533100605011,
+          "svd_foba_relative_error": 0.4052179157733917,
+          "mean_accepted_swaps": 0.44140625,
+          "fraction_inputs_improved": 0.49072265625,
+          "mean_relative_loss_reduction": 0.03136015683412552
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.3859294056892395,
+          "svd_foba_relative_error": 0.3814219534397125,
+          "mean_accepted_swaps": 0.3173828125,
+          "fraction_inputs_improved": 0.439453125,
+          "mean_relative_loss_reduction": 0.023374460637569427
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.3475896120071411,
+          "svd_foba_relative_error": 0.34493929147720337,
+          "mean_accepted_swaps": 0.21240234375,
+          "fraction_inputs_improved": 0.40234375,
+          "mean_relative_loss_reduction": 0.015183803625404835
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.3185458779335022,
+          "svd_foba_relative_error": 0.3169810175895691,
+          "mean_accepted_swaps": 0.13671875,
+          "fraction_inputs_improved": 0.3779296875,
+          "mean_relative_loss_reduction": 0.009805966168642044
+        }
+      ]
+    },
+    {
+      "module": "h.2.mlp.down_proj",
+      "family": "mlp",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.8702996969223022,
+          "svd_foba_relative_error": 0.8247541785240173,
+          "mean_accepted_swaps": 0.72705078125,
+          "fraction_inputs_improved": 0.82763671875,
+          "mean_relative_loss_reduction": 0.11581948399543762
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.8006854057312012,
+          "svd_foba_relative_error": 0.7535319328308105,
+          "mean_accepted_swaps": 1.23779296875,
+          "fraction_inputs_improved": 0.890625,
+          "mean_relative_loss_reduction": 0.12090536206960678
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.7638209462165833,
+          "svd_foba_relative_error": 0.7253109812736511,
+          "mean_accepted_swaps": 1.47216796875,
+          "fraction_inputs_improved": 0.9296875,
+          "mean_relative_loss_reduction": 0.1033594086766243
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.7208589315414429,
+          "svd_foba_relative_error": 0.6922420859336853,
+          "mean_accepted_swaps": 1.59912109375,
+          "fraction_inputs_improved": 0.9462890625,
+          "mean_relative_loss_reduction": 0.08123724162578583
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.6910487413406372,
+          "svd_foba_relative_error": 0.667838990688324,
+          "mean_accepted_swaps": 1.63232421875,
+          "fraction_inputs_improved": 0.947265625,
+          "mean_relative_loss_reduction": 0.06828896701335907
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.6671239137649536,
+          "svd_foba_relative_error": 0.6474878191947937,
+          "mean_accepted_swaps": 1.64501953125,
+          "fraction_inputs_improved": 0.94580078125,
+          "mean_relative_loss_reduction": 0.05971822515130043
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.6288245320320129,
+          "svd_foba_relative_error": 0.6136989593505859,
+          "mean_accepted_swaps": 1.64208984375,
+          "fraction_inputs_improved": 0.939453125,
+          "mean_relative_loss_reduction": 0.04890719801187515
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.5979022979736328,
+          "svd_foba_relative_error": 0.5854876637458801,
+          "mean_accepted_swaps": 1.626953125,
+          "fraction_inputs_improved": 0.93310546875,
+          "mean_relative_loss_reduction": 0.042314980179071426
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.5482089519500732,
+          "svd_foba_relative_error": 0.5390703678131104,
+          "mean_accepted_swaps": 1.54736328125,
+          "fraction_inputs_improved": 0.90869140625,
+          "mean_relative_loss_reduction": 0.03393295779824257
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.5080111622810364,
+          "svd_foba_relative_error": 0.5009218454360962,
+          "mean_accepted_swaps": 1.4560546875,
+          "fraction_inputs_improved": 0.8740234375,
+          "mean_relative_loss_reduction": 0.02838173694908619
+        }
+      ]
+    },
+    {
+      "module": "h.3.attn.q_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.6370335221290588,
+          "svd_foba_relative_error": 0.5950304865837097,
+          "mean_accepted_swaps": 0.5029296875,
+          "fraction_inputs_improved": 0.75146484375,
+          "mean_relative_loss_reduction": 0.11367684602737427
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.5776402950286865,
+          "svd_foba_relative_error": 0.5372735857963562,
+          "mean_accepted_swaps": 0.9580078125,
+          "fraction_inputs_improved": 0.8125,
+          "mean_relative_loss_reduction": 0.1297813504934311
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.5269129276275635,
+          "svd_foba_relative_error": 0.49841073155403137,
+          "mean_accepted_swaps": 1.09130859375,
+          "fraction_inputs_improved": 0.83740234375,
+          "mean_relative_loss_reduction": 0.10579150915145874
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.474852591753006,
+          "svd_foba_relative_error": 0.4579353630542755,
+          "mean_accepted_swaps": 0.91162109375,
+          "fraction_inputs_improved": 0.75146484375,
+          "mean_relative_loss_reduction": 0.07138326019048691
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.44159194827079773,
+          "svd_foba_relative_error": 0.4313167929649353,
+          "mean_accepted_swaps": 0.62841796875,
+          "fraction_inputs_improved": 0.6455078125,
+          "mean_relative_loss_reduction": 0.046168647706508636
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.41666969656944275,
+          "svd_foba_relative_error": 0.40950238704681396,
+          "mean_accepted_swaps": 0.48876953125,
+          "fraction_inputs_improved": 0.59326171875,
+          "mean_relative_loss_reduction": 0.03408083692193031
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.3794242739677429,
+          "svd_foba_relative_error": 0.37521764636039734,
+          "mean_accepted_swaps": 0.306640625,
+          "fraction_inputs_improved": 0.52392578125,
+          "mean_relative_loss_reduction": 0.022096790373325348
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.35123610496520996,
+          "svd_foba_relative_error": 0.3483901619911194,
+          "mean_accepted_swaps": 0.234375,
+          "fraction_inputs_improved": 0.50390625,
+          "mean_relative_loss_reduction": 0.016247697174549103
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.30874720215797424,
+          "svd_foba_relative_error": 0.3072027564048767,
+          "mean_accepted_swaps": 0.14697265625,
+          "fraction_inputs_improved": 0.48583984375,
+          "mean_relative_loss_reduction": 0.01008660439401865
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.2764692008495331,
+          "svd_foba_relative_error": 0.2756252586841583,
+          "mean_accepted_swaps": 0.0849609375,
+          "fraction_inputs_improved": 0.453125,
+          "mean_relative_loss_reduction": 0.006114067044109106
+        }
+      ]
+    },
+    {
+      "module": "h.3.attn.k_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.5846037864685059,
+          "svd_foba_relative_error": 0.5356523394584656,
+          "mean_accepted_swaps": 0.61279296875,
+          "fraction_inputs_improved": 0.712890625,
+          "mean_relative_loss_reduction": 0.16143736243247986
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.5295902490615845,
+          "svd_foba_relative_error": 0.4823881983757019,
+          "mean_accepted_swaps": 1.11669921875,
+          "fraction_inputs_improved": 0.77685546875,
+          "mean_relative_loss_reduction": 0.1773800253868103
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.48182475566864014,
+          "svd_foba_relative_error": 0.4505571722984314,
+          "mean_accepted_swaps": 1.064453125,
+          "fraction_inputs_improved": 0.740234375,
+          "mean_relative_loss_reduction": 0.13272488117218018
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.43120115995407104,
+          "svd_foba_relative_error": 0.41465482115745544,
+          "mean_accepted_swaps": 0.736328125,
+          "fraction_inputs_improved": 0.56689453125,
+          "mean_relative_loss_reduction": 0.0808553546667099
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.39986252784729004,
+          "svd_foba_relative_error": 0.38936948776245117,
+          "mean_accepted_swaps": 0.54150390625,
+          "fraction_inputs_improved": 0.482421875,
+          "mean_relative_loss_reduction": 0.055426694452762604
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.37671154737472534,
+          "svd_foba_relative_error": 0.3695286214351654,
+          "mean_accepted_swaps": 0.39599609375,
+          "fraction_inputs_improved": 0.4072265625,
+          "mean_relative_loss_reduction": 0.03899982571601868
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.34250083565711975,
+          "svd_foba_relative_error": 0.3382672965526581,
+          "mean_accepted_swaps": 0.25341796875,
+          "fraction_inputs_improved": 0.3505859375,
+          "mean_relative_loss_reduction": 0.024620279669761658
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.3169132173061371,
+          "svd_foba_relative_error": 0.31419822573661804,
+          "mean_accepted_swaps": 0.16650390625,
+          "fraction_inputs_improved": 0.31005859375,
+          "mean_relative_loss_reduction": 0.017187390476465225
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.27846992015838623,
+          "svd_foba_relative_error": 0.27697232365608215,
+          "mean_accepted_swaps": 0.11474609375,
+          "fraction_inputs_improved": 0.3037109375,
+          "mean_relative_loss_reduction": 0.01091386191546917
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.2492331564426422,
+          "svd_foba_relative_error": 0.2484176754951477,
+          "mean_accepted_swaps": 0.06640625,
+          "fraction_inputs_improved": 0.2744140625,
+          "mean_relative_loss_reduction": 0.006397608667612076
+        }
+      ]
+    },
+    {
+      "module": "h.3.attn.v_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.9558926820755005,
+          "svd_foba_relative_error": 0.9016358256340027,
+          "mean_accepted_swaps": 0.8974609375,
+          "fraction_inputs_improved": 0.8837890625,
+          "mean_relative_loss_reduction": 0.12215681374073029
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.9259666800498962,
+          "svd_foba_relative_error": 0.8689092397689819,
+          "mean_accepted_swaps": 1.47412109375,
+          "fraction_inputs_improved": 0.904296875,
+          "mean_relative_loss_reduction": 0.13189776241779327
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.8863338232040405,
+          "svd_foba_relative_error": 0.837597668170929,
+          "mean_accepted_swaps": 1.6298828125,
+          "fraction_inputs_improved": 0.919921875,
+          "mean_relative_loss_reduction": 0.11763821542263031
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.8320299983024597,
+          "svd_foba_relative_error": 0.7943671941757202,
+          "mean_accepted_swaps": 1.7392578125,
+          "fraction_inputs_improved": 0.93994140625,
+          "mean_relative_loss_reduction": 0.09647467732429504
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.7919416427612305,
+          "svd_foba_relative_error": 0.7605926394462585,
+          "mean_accepted_swaps": 1.81005859375,
+          "fraction_inputs_improved": 0.9580078125,
+          "mean_relative_loss_reduction": 0.08388672769069672
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.7591525912284851,
+          "svd_foba_relative_error": 0.7320404648780823,
+          "mean_accepted_swaps": 1.84765625,
+          "fraction_inputs_improved": 0.9599609375,
+          "mean_relative_loss_reduction": 0.07564876973628998
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.7057655453681946,
+          "svd_foba_relative_error": 0.6842263340950012,
+          "mean_accepted_swaps": 1.87158203125,
+          "fraction_inputs_improved": 0.958984375,
+          "mean_relative_loss_reduction": 0.06464525312185287
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.6623300909996033,
+          "svd_foba_relative_error": 0.6443470120429993,
+          "mean_accepted_swaps": 1.86376953125,
+          "fraction_inputs_improved": 0.953125,
+          "mean_relative_loss_reduction": 0.056909315288066864
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.592762291431427,
+          "svd_foba_relative_error": 0.5795687437057495,
+          "mean_accepted_swaps": 1.787109375,
+          "fraction_inputs_improved": 0.9267578125,
+          "mean_relative_loss_reduction": 0.04641213268041611
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.5371979475021362,
+          "svd_foba_relative_error": 0.5267623066902161,
+          "mean_accepted_swaps": 1.72216796875,
+          "fraction_inputs_improved": 0.9052734375,
+          "mean_relative_loss_reduction": 0.0402282252907753
+        }
+      ]
+    },
+    {
+      "module": "h.3.attn.o_proj",
+      "family": "attention",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.37960878014564514,
+          "svd_foba_relative_error": 0.37162262201309204,
+          "mean_accepted_swaps": 0.27099609375,
+          "fraction_inputs_improved": 0.53271484375,
+          "mean_relative_loss_reduction": 0.03695989400148392
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.35695594549179077,
+          "svd_foba_relative_error": 0.34871840476989746,
+          "mean_accepted_swaps": 0.462890625,
+          "fraction_inputs_improved": 0.57373046875,
+          "mean_relative_loss_reduction": 0.04205869510769844
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.33229997754096985,
+          "svd_foba_relative_error": 0.3278345465660095,
+          "mean_accepted_swaps": 0.3828125,
+          "fraction_inputs_improved": 0.54052734375,
+          "mean_relative_loss_reduction": 0.025630125775933266
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.3052091896533966,
+          "svd_foba_relative_error": 0.30330100655555725,
+          "mean_accepted_swaps": 0.259765625,
+          "fraction_inputs_improved": 0.47900390625,
+          "mean_relative_loss_reduction": 0.01265415083616972
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.2876807451248169,
+          "svd_foba_relative_error": 0.28654733300209045,
+          "mean_accepted_swaps": 0.19873046875,
+          "fraction_inputs_improved": 0.4560546875,
+          "mean_relative_loss_reduction": 0.008324738591909409
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.27423515915870667,
+          "svd_foba_relative_error": 0.2734732925891876,
+          "mean_accepted_swaps": 0.14111328125,
+          "fraction_inputs_improved": 0.42529296875,
+          "mean_relative_loss_reduction": 0.006125978194177151
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.2534237504005432,
+          "svd_foba_relative_error": 0.2530396580696106,
+          "mean_accepted_swaps": 0.08203125,
+          "fraction_inputs_improved": 0.4150390625,
+          "mean_relative_loss_reduction": 0.003682909533381462
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.23704800009727478,
+          "svd_foba_relative_error": 0.23679421842098236,
+          "mean_accepted_swaps": 0.06103515625,
+          "fraction_inputs_improved": 0.41796875,
+          "mean_relative_loss_reduction": 0.002950857160612941
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.2114100456237793,
+          "svd_foba_relative_error": 0.21128970384597778,
+          "mean_accepted_swaps": 0.02490234375,
+          "fraction_inputs_improved": 0.4130859375,
+          "mean_relative_loss_reduction": 0.001985858893021941
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.19117717444896698,
+          "svd_foba_relative_error": 0.19109714031219482,
+          "mean_accepted_swaps": 0.013671875,
+          "fraction_inputs_improved": 0.40625,
+          "mean_relative_loss_reduction": 0.0016765599139034748
+        }
+      ]
+    },
+    {
+      "module": "h.3.mlp.c_fc",
+      "family": "mlp",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.7500576376914978,
+          "svd_foba_relative_error": 0.6863579154014587,
+          "mean_accepted_swaps": 0.7236328125,
+          "fraction_inputs_improved": 0.8330078125,
+          "mean_relative_loss_reduction": 0.15326276421546936
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.6825746893882751,
+          "svd_foba_relative_error": 0.6296842694282532,
+          "mean_accepted_swaps": 1.13720703125,
+          "fraction_inputs_improved": 0.7822265625,
+          "mean_relative_loss_reduction": 0.14364154636859894
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.6167348623275757,
+          "svd_foba_relative_error": 0.5798735618591309,
+          "mean_accepted_swaps": 1.228515625,
+          "fraction_inputs_improved": 0.8125,
+          "mean_relative_loss_reduction": 0.113800048828125
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.5458005666732788,
+          "svd_foba_relative_error": 0.5249338150024414,
+          "mean_accepted_swaps": 1.20654296875,
+          "fraction_inputs_improved": 0.7802734375,
+          "mean_relative_loss_reduction": 0.07554784417152405
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.5043479800224304,
+          "svd_foba_relative_error": 0.49179819226264954,
+          "mean_accepted_swaps": 0.91162109375,
+          "fraction_inputs_improved": 0.64892578125,
+          "mean_relative_loss_reduction": 0.049421750009059906
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.47548770904541016,
+          "svd_foba_relative_error": 0.4674776494503021,
+          "mean_accepted_swaps": 0.69384765625,
+          "fraction_inputs_improved": 0.54541015625,
+          "mean_relative_loss_reduction": 0.03320993855595589
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.43551549315452576,
+          "svd_foba_relative_error": 0.43113821744918823,
+          "mean_accepted_swaps": 0.43994140625,
+          "fraction_inputs_improved": 0.419921875,
+          "mean_relative_loss_reduction": 0.019623851403594017
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.4073167145252228,
+          "svd_foba_relative_error": 0.4044395983219147,
+          "mean_accepted_swaps": 0.30908203125,
+          "fraction_inputs_improved": 0.36962890625,
+          "mean_relative_loss_reduction": 0.01386562455445528
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.366729736328125,
+          "svd_foba_relative_error": 0.3652634918689728,
+          "mean_accepted_swaps": 0.16650390625,
+          "fraction_inputs_improved": 0.322265625,
+          "mean_relative_loss_reduction": 0.007827511988580227
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.3367272913455963,
+          "svd_foba_relative_error": 0.33583930134773254,
+          "mean_accepted_swaps": 0.1181640625,
+          "fraction_inputs_improved": 0.29736328125,
+          "mean_relative_loss_reduction": 0.005129597615450621
+        }
+      ]
+    },
+    {
+      "module": "h.3.mlp.down_proj",
+      "family": "mlp",
+      "comparisons": [
+        {
+          "selected_units": 1,
+          "svd_relative_error": 0.7534312009811401,
+          "svd_foba_relative_error": 0.6708617806434631,
+          "mean_accepted_swaps": 0.6416015625,
+          "fraction_inputs_improved": 0.7080078125,
+          "mean_relative_loss_reduction": 0.16865165531635284
+        },
+        {
+          "selected_units": 2,
+          "svd_relative_error": 0.6706806421279907,
+          "svd_foba_relative_error": 0.6101295351982117,
+          "mean_accepted_swaps": 1.0,
+          "fraction_inputs_improved": 0.7294921875,
+          "mean_relative_loss_reduction": 0.14639350771903992
+        },
+        {
+          "selected_units": 4,
+          "svd_relative_error": 0.5899041891098022,
+          "svd_foba_relative_error": 0.5561718344688416,
+          "mean_accepted_swaps": 1.09033203125,
+          "fraction_inputs_improved": 0.7568359375,
+          "mean_relative_loss_reduction": 0.09669827669858932
+        },
+        {
+          "selected_units": 8,
+          "svd_relative_error": 0.5223245024681091,
+          "svd_foba_relative_error": 0.5060195922851562,
+          "mean_accepted_swaps": 0.99658203125,
+          "fraction_inputs_improved": 0.69140625,
+          "mean_relative_loss_reduction": 0.05266090855002403
+        },
+        {
+          "selected_units": 12,
+          "svd_relative_error": 0.48672667145729065,
+          "svd_foba_relative_error": 0.47711309790611267,
+          "mean_accepted_swaps": 0.763671875,
+          "fraction_inputs_improved": 0.5576171875,
+          "mean_relative_loss_reduction": 0.03285589814186096
+        },
+        {
+          "selected_units": 16,
+          "svd_relative_error": 0.46259254217147827,
+          "svd_foba_relative_error": 0.45650234818458557,
+          "mean_accepted_swaps": 0.5751953125,
+          "fraction_inputs_improved": 0.46337890625,
+          "mean_relative_loss_reduction": 0.021902568638324738
+        },
+        {
+          "selected_units": 24,
+          "svd_relative_error": 0.42942890524864197,
+          "svd_foba_relative_error": 0.42599931359291077,
+          "mean_accepted_swaps": 0.36865234375,
+          "fraction_inputs_improved": 0.35498046875,
+          "mean_relative_loss_reduction": 0.01308976300060749
+        },
+        {
+          "selected_units": 32,
+          "svd_relative_error": 0.40545573830604553,
+          "svd_foba_relative_error": 0.4030870199203491,
+          "mean_accepted_swaps": 0.2880859375,
+          "fraction_inputs_improved": 0.31640625,
+          "mean_relative_loss_reduction": 0.009571339003741741
+        },
+        {
+          "selected_units": 48,
+          "svd_relative_error": 0.3696230947971344,
+          "svd_foba_relative_error": 0.3682955801486969,
+          "mean_accepted_swaps": 0.18310546875,
+          "fraction_inputs_improved": 0.26611328125,
+          "mean_relative_loss_reduction": 0.005801555700600147
+        },
+        {
+          "selected_units": 64,
+          "svd_relative_error": 0.34186336398124695,
+          "svd_foba_relative_error": 0.3409833014011383,
+          "mean_accepted_swaps": 0.13525390625,
+          "fraction_inputs_improved": 0.2470703125,
+          "mean_relative_loss_reduction": 0.004026186652481556
+        }
+      ]
+    }
+  ]
+}

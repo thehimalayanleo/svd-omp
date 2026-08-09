@@ -1,0 +1,522 @@
+{
+  "status": "sealed_wikitext_test_full_model_single_matrix_replacement",
+  "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+  "goodfire_source_ref": "goodfire-ai/param-decomp@6b54400dc49584cd90a91e068edbc3009456a7b7",
+  "swd_revision": "4c44b7281bc7c78f80e431dac3aa75f397dd3043",
+  "alpha": 0.1,
+  "test_metadata": {
+    "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+    "goodfire_source_ref": "goodfire-ai/param-decomp@6b54400dc49584cd90a91e068edbc3009456a7b7",
+    "dataset": "Salesforce/wikitext",
+    "dataset_config": "wikitext-2-raw-v1",
+    "calibration_split": "train",
+    "heldout_split": "test",
+    "calibration_fingerprint": "5d4fb603254a7a5b",
+    "heldout_fingerprint": "a46124b21ac53738",
+    "sequence_count": 16,
+    "sequence_length": 128,
+    "token_count_per_split": 2048,
+    "tokenizer_hf_path": "EleutherAI/gpt-neox-20b",
+    "tokenizer_source": "wandb tokenizer.json",
+    "calibration_token_id_range": [
+      14,
+      50136
+    ],
+    "heldout_token_id_range": [
+      14,
+      50177
+    ],
+    "module_count": 24,
+    "evaluation_status": "sealed_test_frozen_before_extraction"
+  },
+  "dense": {
+    "cross_entropy": 4.415695667266846,
+    "kl_to_dense": 0.0,
+    "logit_mse": 0.0
+  },
+  "kl_svd_wins": 24,
+  "logit_mse_svd_wins": 24,
+  "matrix_count": 24,
+  "matrices": [
+    {
+      "module": "h.0.attn.q_proj",
+      "family": "attention",
+      "selected_units": 8,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00021122429461684078,
+      "swd_calibration_objective_error": 0.06501587480306625,
+      "svd": {
+        "cross_entropy": 4.660795211791992,
+        "kl_to_dense": 0.21416130661964417,
+        "logit_mse": 0.563896656036377
+      },
+      "swd": {
+        "cross_entropy": 4.743354797363281,
+        "kl_to_dense": 0.31764474511146545,
+        "logit_mse": 0.916645884513855
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.0.attn.k_proj",
+      "family": "attention",
+      "selected_units": 8,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00022086322132963687,
+      "swd_calibration_objective_error": 0.07400483638048172,
+      "svd": {
+        "cross_entropy": 4.698037147521973,
+        "kl_to_dense": 0.25423672795295715,
+        "logit_mse": 0.6490494012832642
+      },
+      "swd": {
+        "cross_entropy": 4.746524333953857,
+        "kl_to_dense": 0.32362815737724304,
+        "logit_mse": 0.8925972580909729
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.0.attn.v_proj",
+      "family": "attention",
+      "selected_units": 12,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00022454505960922688,
+      "swd_calibration_objective_error": 0.2101282775402069,
+      "svd": {
+        "cross_entropy": 5.009714603424072,
+        "kl_to_dense": 0.6701143383979797,
+        "logit_mse": 1.3671222925186157
+      },
+      "swd": {
+        "cross_entropy": 5.965818405151367,
+        "kl_to_dense": 1.6903326511383057,
+        "logit_mse": 3.2302403450012207
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.0.attn.o_proj",
+      "family": "attention",
+      "selected_units": 12,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00022341092699207366,
+      "swd_calibration_objective_error": 0.06818792968988419,
+      "svd": {
+        "cross_entropy": 5.3211846351623535,
+        "kl_to_dense": 1.0318512916564941,
+        "logit_mse": 1.9046794176101685
+      },
+      "swd": {
+        "cross_entropy": 6.219817638397217,
+        "kl_to_dense": 1.9364298582077026,
+        "logit_mse": 3.640401840209961
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.0.mlp.c_fc",
+      "family": "mlp",
+      "selected_units": 12,
+      "swd_sparsity": 0.58,
+      "svd_weight_reconstruction_relative_error": 0.00022916376474313438,
+      "swd_calibration_objective_error": 0.007297123316675425,
+      "svd": {
+        "cross_entropy": 8.16003704071045,
+        "kl_to_dense": 3.9357495307922363,
+        "logit_mse": 8.556326866149902
+      },
+      "swd": {
+        "cross_entropy": 10.921744346618652,
+        "kl_to_dense": 6.347293376922607,
+        "logit_mse": 14.435665130615234
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.0.mlp.down_proj",
+      "family": "mlp",
+      "selected_units": 12,
+      "swd_sparsity": 0.3,
+      "svd_weight_reconstruction_relative_error": 0.00023178811534307897,
+      "swd_calibration_objective_error": 0.0009502249304205179,
+      "svd": {
+        "cross_entropy": 6.359215259552002,
+        "kl_to_dense": 2.0283145904541016,
+        "logit_mse": 4.250618934631348
+      },
+      "swd": {
+        "cross_entropy": 8.696495056152344,
+        "kl_to_dense": 4.0759382247924805,
+        "logit_mse": 10.268819808959961
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.1.attn.q_proj",
+      "family": "attention",
+      "selected_units": 8,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.0002247829979751259,
+      "swd_calibration_objective_error": 0.05654430016875267,
+      "svd": {
+        "cross_entropy": 4.440229892730713,
+        "kl_to_dense": 0.02244563028216362,
+        "logit_mse": 0.06162659078836441
+      },
+      "swd": {
+        "cross_entropy": 4.594355583190918,
+        "kl_to_dense": 0.15144549310207367,
+        "logit_mse": 0.4227556586265564
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.1.attn.k_proj",
+      "family": "attention",
+      "selected_units": 8,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.000217765846173279,
+      "swd_calibration_objective_error": 0.02285899966955185,
+      "svd": {
+        "cross_entropy": 4.450316429138184,
+        "kl_to_dense": 0.031320057809352875,
+        "logit_mse": 0.08345164358615875
+      },
+      "swd": {
+        "cross_entropy": 4.59798526763916,
+        "kl_to_dense": 0.16815301775932312,
+        "logit_mse": 0.4852772355079651
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.1.attn.v_proj",
+      "family": "attention",
+      "selected_units": 12,
+      "swd_sparsity": 0.3,
+      "svd_weight_reconstruction_relative_error": 0.00021266748080961406,
+      "swd_calibration_objective_error": 0.00048643184709362686,
+      "svd": {
+        "cross_entropy": 4.642988681793213,
+        "kl_to_dense": 0.25419339537620544,
+        "logit_mse": 0.6423284411430359
+      },
+      "swd": {
+        "cross_entropy": 5.5746846199035645,
+        "kl_to_dense": 1.1829302310943604,
+        "logit_mse": 2.9912519454956055
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.1.attn.o_proj",
+      "family": "attention",
+      "selected_units": 12,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00021874661615584046,
+      "swd_calibration_objective_error": 0.13945408165454865,
+      "svd": {
+        "cross_entropy": 4.689696788787842,
+        "kl_to_dense": 0.273327499628067,
+        "logit_mse": 0.6999545693397522
+      },
+      "swd": {
+        "cross_entropy": 5.403075218200684,
+        "kl_to_dense": 0.9827336668968201,
+        "logit_mse": 2.378608465194702
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.1.mlp.c_fc",
+      "family": "mlp",
+      "selected_units": 12,
+      "swd_sparsity": 0.76,
+      "svd_weight_reconstruction_relative_error": 0.00024160796601790935,
+      "swd_calibration_objective_error": 0.005425433628261089,
+      "svd": {
+        "cross_entropy": 5.38051700592041,
+        "kl_to_dense": 0.935180127620697,
+        "logit_mse": 2.2842652797698975
+      },
+      "swd": {
+        "cross_entropy": 5.668942928314209,
+        "kl_to_dense": 1.172965168952942,
+        "logit_mse": 3.484027147293091
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.1.mlp.down_proj",
+      "family": "mlp",
+      "selected_units": 12,
+      "swd_sparsity": 0.76,
+      "svd_weight_reconstruction_relative_error": 0.00022154144244268537,
+      "swd_calibration_objective_error": 0.0026299958117306232,
+      "svd": {
+        "cross_entropy": 4.821483612060547,
+        "kl_to_dense": 0.40297940373420715,
+        "logit_mse": 1.0464283227920532
+      },
+      "swd": {
+        "cross_entropy": 6.003016471862793,
+        "kl_to_dense": 1.4066294431686401,
+        "logit_mse": 3.691840648651123
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.2.attn.q_proj",
+      "family": "attention",
+      "selected_units": 8,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00020728836534544826,
+      "swd_calibration_objective_error": 0.05816848576068878,
+      "svd": {
+        "cross_entropy": 4.658984661102295,
+        "kl_to_dense": 0.22729633748531342,
+        "logit_mse": 0.3465493321418762
+      },
+      "swd": {
+        "cross_entropy": 5.006131649017334,
+        "kl_to_dense": 0.5281617045402527,
+        "logit_mse": 1.1469465494155884
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.2.attn.k_proj",
+      "family": "attention",
+      "selected_units": 8,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00021254630701150745,
+      "swd_calibration_objective_error": 0.05672670155763626,
+      "svd": {
+        "cross_entropy": 4.66171932220459,
+        "kl_to_dense": 0.3034401535987854,
+        "logit_mse": 0.5772504210472107
+      },
+      "swd": {
+        "cross_entropy": 5.046236038208008,
+        "kl_to_dense": 0.5170000791549683,
+        "logit_mse": 1.0513516664505005
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.2.attn.v_proj",
+      "family": "attention",
+      "selected_units": 12,
+      "swd_sparsity": 0.3,
+      "svd_weight_reconstruction_relative_error": 0.00024353900516871363,
+      "swd_calibration_objective_error": 0.000760182156227529,
+      "svd": {
+        "cross_entropy": 4.809581756591797,
+        "kl_to_dense": 0.40625086426734924,
+        "logit_mse": 1.1494585275650024
+      },
+      "swd": {
+        "cross_entropy": 5.265405178070068,
+        "kl_to_dense": 0.6941773891448975,
+        "logit_mse": 2.0745952129364014
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.2.attn.o_proj",
+      "family": "attention",
+      "selected_units": 12,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00022669725876767188,
+      "swd_calibration_objective_error": 0.10127422213554382,
+      "svd": {
+        "cross_entropy": 4.771338939666748,
+        "kl_to_dense": 0.3890795409679413,
+        "logit_mse": 0.9196274876594543
+      },
+      "swd": {
+        "cross_entropy": 5.4095869064331055,
+        "kl_to_dense": 0.8166720867156982,
+        "logit_mse": 2.1427435874938965
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.2.mlp.c_fc",
+      "family": "mlp",
+      "selected_units": 12,
+      "swd_sparsity": 0.69,
+      "svd_weight_reconstruction_relative_error": 0.00021112902322784066,
+      "swd_calibration_objective_error": 0.01285594329237938,
+      "svd": {
+        "cross_entropy": 4.997035980224609,
+        "kl_to_dense": 0.6055299043655396,
+        "logit_mse": 1.6967192888259888
+      },
+      "swd": {
+        "cross_entropy": 5.820141315460205,
+        "kl_to_dense": 1.4320937395095825,
+        "logit_mse": 4.162190914154053
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.2.mlp.down_proj",
+      "family": "mlp",
+      "selected_units": 12,
+      "swd_sparsity": 0.3,
+      "svd_weight_reconstruction_relative_error": 0.00022286178136710078,
+      "swd_calibration_objective_error": 0.0015723262913525105,
+      "svd": {
+        "cross_entropy": 4.8703203201293945,
+        "kl_to_dense": 0.44887498021125793,
+        "logit_mse": 1.3175503015518188
+      },
+      "swd": {
+        "cross_entropy": 5.094147205352783,
+        "kl_to_dense": 0.6691104769706726,
+        "logit_mse": 2.034426212310791
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.3.attn.q_proj",
+      "family": "attention",
+      "selected_units": 8,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.00020537109230645,
+      "swd_calibration_objective_error": 0.06660744547843933,
+      "svd": {
+        "cross_entropy": 4.454668045043945,
+        "kl_to_dense": 0.046429701149463654,
+        "logit_mse": 0.1154170110821724
+      },
+      "swd": {
+        "cross_entropy": 4.630321979522705,
+        "kl_to_dense": 0.1922101229429245,
+        "logit_mse": 0.5880963206291199
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.3.attn.k_proj",
+      "family": "attention",
+      "selected_units": 8,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.0002172778913518414,
+      "swd_calibration_objective_error": 0.05486166849732399,
+      "svd": {
+        "cross_entropy": 4.464656352996826,
+        "kl_to_dense": 0.05945875868201256,
+        "logit_mse": 0.18095992505550385
+      },
+      "swd": {
+        "cross_entropy": 4.613366603851318,
+        "kl_to_dense": 0.1763506680727005,
+        "logit_mse": 0.5927915573120117
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.3.attn.v_proj",
+      "family": "attention",
+      "selected_units": 12,
+      "swd_sparsity": 0.3,
+      "svd_weight_reconstruction_relative_error": 0.0002447211882099509,
+      "swd_calibration_objective_error": 0.0008119681151583791,
+      "svd": {
+        "cross_entropy": 4.629998207092285,
+        "kl_to_dense": 0.22371706366539001,
+        "logit_mse": 0.9042194485664368
+      },
+      "swd": {
+        "cross_entropy": 4.9813337326049805,
+        "kl_to_dense": 0.4908418357372284,
+        "logit_mse": 2.8755040168762207
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.3.attn.o_proj",
+      "family": "attention",
+      "selected_units": 12,
+      "swd_sparsity": 0.82,
+      "svd_weight_reconstruction_relative_error": 0.0002297907049069181,
+      "swd_calibration_objective_error": 0.03321413695812225,
+      "svd": {
+        "cross_entropy": 4.619372844696045,
+        "kl_to_dense": 0.22410310804843903,
+        "logit_mse": 0.8002416491508484
+      },
+      "swd": {
+        "cross_entropy": 5.023521900177002,
+        "kl_to_dense": 0.5543501377105713,
+        "logit_mse": 3.3284010887145996
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.3.mlp.c_fc",
+      "family": "mlp",
+      "selected_units": 12,
+      "swd_sparsity": 0.76,
+      "svd_weight_reconstruction_relative_error": 0.00022332817025016993,
+      "swd_calibration_objective_error": 0.023409051820635796,
+      "svd": {
+        "cross_entropy": 5.0381855964660645,
+        "kl_to_dense": 0.7328282594680786,
+        "logit_mse": 2.251633405685425
+      },
+      "swd": {
+        "cross_entropy": 6.231817722320557,
+        "kl_to_dense": 1.9599602222442627,
+        "logit_mse": 8.998967170715332
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    },
+    {
+      "module": "h.3.mlp.down_proj",
+      "family": "mlp",
+      "selected_units": 12,
+      "swd_sparsity": 0.58,
+      "svd_weight_reconstruction_relative_error": 0.00022499827900901437,
+      "swd_calibration_objective_error": 0.005713449325412512,
+      "svd": {
+        "cross_entropy": 5.033872604370117,
+        "kl_to_dense": 0.6581132411956787,
+        "logit_mse": 1.4995633363723755
+      },
+      "swd": {
+        "cross_entropy": 5.572859287261963,
+        "kl_to_dense": 1.1883033514022827,
+        "logit_mse": 4.252969264984131
+      },
+      "kl_winner": "svd_omp",
+      "logit_mse_winner": "svd_omp"
+    }
+  ]
+}

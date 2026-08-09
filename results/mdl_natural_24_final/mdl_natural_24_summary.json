@@ -1,0 +1,5160 @@
+{
+  "status": "measured_natural_text_heldout",
+  "proxy_swd_used": false,
+  "matrix_count": 24,
+  "bits_per_value": 16,
+  "swd_sparsities": [
+    0.3,
+    0.38,
+    0.45,
+    0.52,
+    0.58,
+    0.64,
+    0.69,
+    0.73,
+    0.76,
+    0.79,
+    0.81,
+    0.82
+  ],
+  "swd_outer_iterations": 40,
+  "calibration_role": "WikiText-2 train activations form the SWD Gram only",
+  "reporting_role": "all reported errors and SVD-OMP codes use WikiText-2 validation",
+  "weights_sha256": "044f2494a2fcadc68180ac27c5dd4c2deced6f5323342e7076ed973b8516fa1c",
+  "activations_sha256": "0d452aa274bd76624eae69f8710c1feaf5b876342d4b28137d2bf66af701f3fd",
+  "benchmark_source_sha256": "04f3e433514eb8f21234489a3acfe8c7abcfd15487401475b4b9cf0f9d06cd68",
+  "single_matrix_benchmark_source_sha256": "05fe4278efd09658aa36cee41e6e6a1846b2d1fa4175ea3a29a307b681c5b9f2",
+  "svd_omp_revision": "a022240f2758b5c52755965fb77c49aaec88e988",
+  "swd_revision": "4c44b7281bc7c78f80e431dac3aa75f397dd3043",
+  "activation_metadata": {
+    "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+    "goodfire_source_ref": "goodfire-ai/param-decomp@6b54400dc49584cd90a91e068edbc3009456a7b7",
+    "dataset": "Salesforce/wikitext",
+    "dataset_config": "wikitext-2-raw-v1",
+    "calibration_split": "train",
+    "heldout_split": "validation",
+    "calibration_fingerprint": "5d4fb603254a7a5b",
+    "heldout_fingerprint": "51d84d52d095f90d",
+    "sequence_count": 16,
+    "sequence_length": 128,
+    "token_count_per_split": 2048,
+    "tokenizer_hf_path": "EleutherAI/gpt-neox-20b",
+    "tokenizer_source": "wandb tokenizer.json",
+    "calibration_token_id_range": [
+      14,
+      50136
+    ],
+    "heldout_token_id_range": [
+      13,
+      50125
+    ],
+    "module_count": 24
+  },
+  "tightest_overlap_svd_wins": 8,
+  "tightest_overlap_swd_wins": 16,
+  "single_crossover_matrices": 2,
+  "median_epsilon_star": 0.14108701892474454,
+  "epsilon_star_quartiles": [
+    0.08438177576294506,
+    0.197792262086544
+  ],
+  "dictionary_counted_matrices_with_any_svd_win": 0,
+  "family_summary": {
+    "attention": {
+      "matrix_count": 16,
+      "tightest_overlap_svd_wins": 0,
+      "full_overlap_svd_wins": 0,
+      "full_overlap_swd_wins": 16,
+      "median_mean_log2_swd_over_svd": -1.3708558485168498
+    },
+    "mlp": {
+      "matrix_count": 8,
+      "tightest_overlap_svd_wins": 8,
+      "full_overlap_svd_wins": 6,
+      "full_overlap_swd_wins": 0,
+      "median_mean_log2_swd_over_svd": 0.26384447064101946
+    }
+  },
+  "median_unique_support_fraction": 0.98828125,
+  "median_mean_paired_jaccard": 0.2837518916653737,
+  "matrices": [
+    {
+      "module": "h.0.attn.q_proj",
+      "kind": "attn.q_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 3142161.5
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.02786853164434433,
+          0.26456087827682495
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.02786853164434433,
+            "epsilon_max": 0.26456087827682495
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.02786853164434433,
+          0.26456087827682495
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.02786853164434433,
+            "epsilon_max": 0.26456087827682495
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.3723749423959635,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.02786853164434433,
+            "log2_swd_over_svd": -1.2492964948861836,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.038262367248535156,
+            "log2_swd_over_svd": -1.288457515288572,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0493987537920475,
+            "log2_swd_over_svd": -1.3290376662671817,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.06438137590885162,
+            "log2_swd_over_svd": -1.3650168408865573,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0806075930595398,
+            "log2_swd_over_svd": -1.3974456574422154,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.10160669684410095,
+            "log2_swd_over_svd": -1.426854289705558,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.12403754144906998,
+            "log2_swd_over_svd": -1.4494185493272542,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.14794595539569855,
+            "log2_swd_over_svd": -1.4537510224984715,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1698143184185028,
+            "log2_swd_over_svd": -1.451864226688928,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.20329810678958893,
+            "log2_swd_over_svd": -1.3896298538012188,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.23634280264377594,
+            "log2_swd_over_svd": -1.2859791894288075,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.26456087827682495,
+            "log2_swd_over_svd": -1.1492794183502604,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 8,
+        "support_sample_size": 256,
+        "unique_supports": 133,
+        "unique_support_fraction": 0.51953125,
+        "mean_paired_jaccard": 0.18852605727605726
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.02786853164434433,
+          "calibration_relative_error": 0.01441793330013752,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.038262367248535156,
+          "calibration_relative_error": 0.021789707243442535,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.0493987537920475,
+          "calibration_relative_error": 0.030683066695928574,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.06438137590885162,
+          "calibration_relative_error": 0.0433800108730793,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.0806075930595398,
+          "calibration_relative_error": 0.05804409459233284,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.10160669684410095,
+          "calibration_relative_error": 0.07869181782007217,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.12403754144906998,
+          "calibration_relative_error": 0.10180400311946869,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.14794595539569855,
+          "calibration_relative_error": 0.12701106071472168,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.1698143184185028,
+          "calibration_relative_error": 0.15141801536083221,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.20329810678958893,
+          "calibration_relative_error": 0.18836578726768494,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.23634280264377594,
+          "calibration_relative_error": 0.22538825869560242,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.26456087827682495,
+          "calibration_relative_error": 0.2545665204524994,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.0.attn.k_proj",
+      "kind": "attn.k_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 2071313.625
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.029437066987156868,
+          0.28102466464042664
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.029437066987156868,
+            "epsilon_max": 0.28102466464042664
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.029437066987156868,
+          0.28102466464042664
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.029437066987156868,
+            "epsilon_max": 0.28102466464042664
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.369336754637736,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.029437066987156868,
+            "log2_swd_over_svd": -1.25402538678271,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0403137244284153,
+            "log2_swd_over_svd": -1.2952458713124688,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.05246058478951454,
+            "log2_swd_over_svd": -1.3337283918860356,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.06804889440536499,
+            "log2_swd_over_svd": -1.372883646135751,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.08526523411273956,
+            "log2_swd_over_svd": -1.4049642349522882,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.10812028497457504,
+            "log2_swd_over_svd": -1.429398880130732,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.13203935325145721,
+            "log2_swd_over_svd": -1.4489393415025575,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.15588834881782532,
+            "log2_swd_over_svd": -1.460280267542681,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.18006637692451477,
+            "log2_swd_over_svd": -1.4475918390581186,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.21480993926525116,
+            "log2_swd_over_svd": -1.3861494123080023,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2520151138305664,
+            "log2_swd_over_svd": -1.2604500718550817,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.28102466464042664,
+            "log2_swd_over_svd": -1.123733023989213,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 8,
+        "support_sample_size": 256,
+        "unique_supports": 133,
+        "unique_support_fraction": 0.51953125,
+        "mean_paired_jaccard": 0.20371919746919748
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.029437066987156868,
+          "calibration_relative_error": 0.015160400420427322,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.0403137244284153,
+          "calibration_relative_error": 0.022949133068323135,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.05246058478951454,
+          "calibration_relative_error": 0.032489363104104996,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.06804889440536499,
+          "calibration_relative_error": 0.0459473542869091,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.08526523411273956,
+          "calibration_relative_error": 0.06173296645283699,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.10812028497457504,
+          "calibration_relative_error": 0.08402121067047119,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.13203935325145721,
+          "calibration_relative_error": 0.1083914190530777,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.15588834881782532,
+          "calibration_relative_error": 0.13465507328510284,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.18006637692451477,
+          "calibration_relative_error": 0.16120092570781708,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.21480993926525116,
+          "calibration_relative_error": 0.1996835470199585,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.2520151138305664,
+          "calibration_relative_error": 0.2409343272447586,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.28102466464042664,
+          "calibration_relative_error": 0.27136287093162537,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.0.attn.v_proj",
+      "kind": "attn.v_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 27186.45703125
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.05175338685512543,
+          0.47069284319877625
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.05175338685512543,
+            "epsilon_max": 0.47069284319877625
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.05175338685512543,
+          0.47069284319877625
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.05175338685512543,
+            "epsilon_max": 0.47069284319877625
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.4054494522231664,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.05175338685512543,
+            "log2_swd_over_svd": -1.3060936343400007,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07198183238506317,
+            "log2_swd_over_svd": -1.345168655536492,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0936121791601181,
+            "log2_swd_over_svd": -1.3851323843898857,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.12239763140678406,
+            "log2_swd_over_svd": -1.4187712069483887,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.15407533943653107,
+            "log2_swd_over_svd": -1.4444196397475682,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.19392073154449463,
+            "log2_swd_over_svd": -1.4683627562923773,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2358129322528839,
+            "log2_swd_over_svd": -1.483879425018748,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2796894311904907,
+            "log2_swd_over_svd": -1.478957515154685,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.31935814023017883,
+            "log2_swd_over_svd": -1.465621414731656,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.375492662191391,
+            "log2_swd_over_svd": -1.399976845657965,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.43258947134017944,
+            "log2_swd_over_svd": -1.2762095763124388,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.47069284319877625,
+            "log2_swd_over_svd": -1.168793386399929,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 10,
+        "support_sample_size": 256,
+        "unique_supports": 133,
+        "unique_support_fraction": 0.51953125,
+        "mean_paired_jaccard": 0.08625193498452013
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.05175338685512543,
+          "calibration_relative_error": 0.02543037012219429,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.07198183238506317,
+          "calibration_relative_error": 0.03926388546824455,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.0936121791601181,
+          "calibration_relative_error": 0.0559069886803627,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.12239763140678406,
+          "calibration_relative_error": 0.07972212880849838,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.15407533943653107,
+          "calibration_relative_error": 0.10816995799541473,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.19392073154449463,
+          "calibration_relative_error": 0.147099107503891,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.2358129322528839,
+          "calibration_relative_error": 0.19133490324020386,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.2796894311904907,
+          "calibration_relative_error": 0.23860351741313934,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.31935814023017883,
+          "calibration_relative_error": 0.2844148874282837,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.375492662191391,
+          "calibration_relative_error": 0.34883952140808105,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.43258947134017944,
+          "calibration_relative_error": 0.4147380292415619,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.47069284319877625,
+          "calibration_relative_error": 0.45770135521888733,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.0.attn.o_proj",
+      "kind": "attn.o_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 1357.6207275390625
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.026043443009257317,
+          0.2871970236301422
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.026043443009257317,
+            "epsilon_max": 0.2871970236301422
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.026043443009257317,
+          0.2871970236301422
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.026043443009257317,
+            "epsilon_max": 0.2871970236301422
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.3368025156394183,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.026043443009257317,
+            "log2_swd_over_svd": -1.2305904284219895,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.03595283627510071,
+            "log2_swd_over_svd": -1.2699067052253046,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.04706311970949173,
+            "log2_swd_over_svd": -1.308899995728938,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.062022510915994644,
+            "log2_swd_over_svd": -1.3459270115517263,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07849299162626266,
+            "log2_swd_over_svd": -1.3805112938581627,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.09910078346729279,
+            "log2_swd_over_svd": -1.4212794994134175,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.12160565704107285,
+            "log2_swd_over_svd": -1.4530245289318724,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.14510445296764374,
+            "log2_swd_over_svd": -1.470675007452043,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.171627014875412,
+            "log2_swd_over_svd": -1.4447487173878941,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2093120664358139,
+            "log2_swd_over_svd": -1.3639670912246529,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2546212077140808,
+            "log2_swd_over_svd": -1.1740281320788768,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2871970236301422,
+            "log2_swd_over_svd": -0.999846174239095,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 10,
+        "support_sample_size": 256,
+        "unique_supports": 255,
+        "unique_support_fraction": 0.99609375,
+        "mean_paired_jaccard": 0.2747923281192921
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.026043443009257317,
+          "calibration_relative_error": 0.013025120832026005,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.03595283627510071,
+          "calibration_relative_error": 0.019232897087931633,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.04706311970949173,
+          "calibration_relative_error": 0.026912622153759003,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.062022510915994644,
+          "calibration_relative_error": 0.037664543837308884,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.07849299162626266,
+          "calibration_relative_error": 0.0508645661175251,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.09910078346729279,
+          "calibration_relative_error": 0.0688823014497757,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.12160565704107285,
+          "calibration_relative_error": 0.0897783488035202,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.14510445296764374,
+          "calibration_relative_error": 0.11318887770175934,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.171627014875412,
+          "calibration_relative_error": 0.1403128057718277,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.2093120664358139,
+          "calibration_relative_error": 0.1801796555519104,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.2546212077140808,
+          "calibration_relative_error": 0.22681574523448944,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.2871970236301422,
+          "calibration_relative_error": 0.2625229060649872,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.0.mlp.c_fc",
+      "kind": "mlp.c_fc",
+      "weight_shape": [
+        3072,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 47198208,
+        "output_energy": 5081624.5
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.041347794234752655,
+          0.269243985414505
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "svd_omp",
+            "epsilon_min": 0.041347794234752655,
+            "epsilon_max": 0.269243985414505
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.041347794234752655,
+          0.269243985414505
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.041347794234752655,
+            "epsilon_max": 0.269243985414505
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": 0.25456822468977647,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.041347794234752655,
+            "log2_swd_over_svd": 0.4967017594901337,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.060089368373155594,
+            "log2_swd_over_svd": 0.4485247367685219,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.08015915006399155,
+            "log2_swd_over_svd": 0.4052356277261572,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.10357734560966492,
+            "log2_swd_over_svd": 0.357004417857007,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.12656334042549133,
+            "log2_swd_over_svd": 0.30923226990844555,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.15350672602653503,
+            "log2_swd_over_svd": 0.25735427103401604,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.17890597879886627,
+            "log2_swd_over_svd": 0.2051671141443318,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.202157661318779,
+            "log2_swd_over_svd": 0.1582939075754621,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.22200599312782288,
+            "log2_swd_over_svd": 0.12054857211582336,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.24422651529312134,
+            "log2_swd_over_svd": 0.07834832605788526,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.2604815363883972,
+            "log2_swd_over_svd": 0.045741426762625395,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.269243985414505,
+            "log2_swd_over_svd": 0.02845187199666737,
+            "winner": "svd_omp"
+          }
+        ],
+        "swd_points_won_by_svd": 12,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 12,
+        "support_sample_size": 256,
+        "unique_supports": 238,
+        "unique_support_fraction": 0.9296875,
+        "mean_paired_jaccard": 0.19470348292479045
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.041347794234752655,
+          "calibration_relative_error": 0.02108299545943737,
+          "bits_per_token": 14224.359708563788,
+          "active_edges": 1651505
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.060089368373155594,
+          "calibration_relative_error": 0.033344920724630356,
+          "bits_per_token": 12802.44359879258,
+          "active_edges": 1462761
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.08015915006399155,
+          "calibration_relative_error": 0.047489408403635025,
+          "bits_per_token": 11522.695898028725,
+          "active_edges": 1297610
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.10357734560966492,
+          "calibration_relative_error": 0.06573186069726944,
+          "bits_per_token": 10210.253210498437,
+          "active_edges": 1132460
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.12656334042549133,
+          "calibration_relative_error": 0.08549852669239044,
+          "bits_per_token": 9058.61647322571,
+          "active_edges": 990902
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.15350672602653503,
+          "calibration_relative_error": 0.10977469384670258,
+          "bits_per_token": 7880.838233772058,
+          "active_edges": 849344
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.17890597879886627,
+          "calibration_relative_error": 0.134938046336174,
+          "bits_per_token": 6877.534368796534,
+          "active_edges": 731379
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.202157661318779,
+          "calibration_relative_error": 0.15886124968528748,
+          "bits_per_token": 6058.904487119589,
+          "active_edges": 637007
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.22200599312782288,
+          "calibration_relative_error": 0.17950701713562012,
+          "bits_per_token": 5434.4134642639565,
+          "active_edges": 566229
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.24422651529312134,
+          "calibration_relative_error": 0.20406323671340942,
+          "bits_per_token": 4799.627101174243,
+          "active_edges": 495450
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.2604815363883972,
+          "calibration_relative_error": 0.22250504791736603,
+          "bits_per_token": 4369.922569852925,
+          "active_edges": 448264
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.269243985414505,
+          "calibration_relative_error": 0.2324022352695465,
+          "bits_per_token": 4152.873704742566,
+          "active_edges": 424671
+        }
+      ]
+    },
+    {
+      "module": "h.0.mlp.down_proj",
+      "kind": "mlp.down_proj",
+      "weight_shape": [
+        768,
+        3072
+      ],
+      "calibration_shape": [
+        2048,
+        3072
+      ],
+      "heldout_shape": [
+        2048,
+        3072
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 47198208,
+        "output_energy": 85036.703125
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.04545724019408226,
+          0.31053730845451355
+        ],
+        "crossovers": [
+          0.25449750524834347
+        ],
+        "regions": [
+          {
+            "winner": "svd_omp",
+            "epsilon_min": 0.04545724019408226,
+            "epsilon_max": 0.25449750524834347
+          },
+          {
+            "winner": "swd",
+            "epsilon_min": 0.25449750524834347,
+            "epsilon_max": 0.31053730845451355
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.04545724019408226,
+          0.31053730845451355
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.04545724019408226,
+            "epsilon_max": 0.31053730845451355
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": 0.15469666926231485,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.04545724019408226,
+            "log2_swd_over_svd": 0.4706490250669731,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.06541603058576584,
+            "log2_swd_over_svd": 0.4087443021848778,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.08682747930288315,
+            "log2_swd_over_svd": 0.35057588838179804,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.11209575086832047,
+            "log2_swd_over_svd": 0.2853089382751376,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.13767661154270172,
+            "log2_swd_over_svd": 0.22293131498528124,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.1689016968011856,
+            "log2_swd_over_svd": 0.15764176898628274,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.19957144558429718,
+            "log2_swd_over_svd": 0.0970921546455243,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.22806815803050995,
+            "log2_swd_over_svd": 0.043879495719675365,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.2528989017009735,
+            "log2_swd_over_svd": 0.0032865469274880508,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.27911245822906494,
+            "log2_swd_over_svd": -0.04884754467282422,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.3003458082675934,
+            "log2_swd_over_svd": -0.07762695812419869,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.31053730845451355,
+            "log2_swd_over_svd": -0.09874297772230115,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 9,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 12,
+        "support_sample_size": 256,
+        "unique_supports": 253,
+        "unique_support_fraction": 0.98828125,
+        "mean_paired_jaccard": 0.18806781989631716
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.04545724019408226,
+          "calibration_relative_error": 0.030879933387041092,
+          "bits_per_token": 14224.359708563788,
+          "active_edges": 1651505
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.06541603058576584,
+          "calibration_relative_error": 0.04462433233857155,
+          "bits_per_token": 12802.44359879258,
+          "active_edges": 1462761
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.08682747930288315,
+          "calibration_relative_error": 0.059027049690485,
+          "bits_per_token": 11522.695898028725,
+          "active_edges": 1297610
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.11209575086832047,
+          "calibration_relative_error": 0.07655297964811325,
+          "bits_per_token": 10210.253210498437,
+          "active_edges": 1132460
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.13767661154270172,
+          "calibration_relative_error": 0.09426046907901764,
+          "bits_per_token": 9058.61647322571,
+          "active_edges": 990902
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.1689016968011856,
+          "calibration_relative_error": 0.11570028960704803,
+          "bits_per_token": 7880.838233772058,
+          "active_edges": 849344
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.19957144558429718,
+          "calibration_relative_error": 0.1367131769657135,
+          "bits_per_token": 6877.534368796534,
+          "active_edges": 731379
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.22806815803050995,
+          "calibration_relative_error": 0.15644654631614685,
+          "bits_per_token": 6058.904487119589,
+          "active_edges": 637007
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.2528989017009735,
+          "calibration_relative_error": 0.17356610298156738,
+          "bits_per_token": 5434.4134642639565,
+          "active_edges": 566229
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.27911245822906494,
+          "calibration_relative_error": 0.19226419925689697,
+          "bits_per_token": 4799.627101174243,
+          "active_edges": 495450
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.3003458082675934,
+          "calibration_relative_error": 0.20660144090652466,
+          "bits_per_token": 4369.922569852925,
+          "active_edges": 448264
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.31053730845451355,
+          "calibration_relative_error": 0.2148764729499817,
+          "bits_per_token": 4152.873704742566,
+          "active_edges": 424671
+        }
+      ]
+    },
+    {
+      "module": "h.1.attn.q_proj",
+      "kind": "attn.q_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 1663648.375
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.023801708593964577,
+          0.2492978870868683
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.023801708593964577,
+            "epsilon_max": 0.2492978870868683
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.023801708593964577,
+          0.2492978870868683
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.023801708593964577,
+            "epsilon_max": 0.2492978870868683
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.512378928729594,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.023801708593964577,
+            "log2_swd_over_svd": -1.3616667078849174,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.03368058428168297,
+            "log2_swd_over_svd": -1.4105697535226387,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.04494267329573631,
+            "log2_swd_over_svd": -1.4545271767793315,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.059377022087574005,
+            "log2_swd_over_svd": -1.4997679324339366,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0760580450296402,
+            "log2_swd_over_svd": -1.531269891065548,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.09705087542533875,
+            "log2_swd_over_svd": -1.562068441759573,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.11922097951173782,
+            "log2_swd_over_svd": -1.5848231915724031,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.14178501069545746,
+            "log2_swd_over_svd": -1.5943113864743688,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.16389882564544678,
+            "log2_swd_over_svd": -1.5835299073388944,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.19503751397132874,
+            "log2_swd_over_svd": -1.5274200789260364,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.22519655525684357,
+            "log2_swd_over_svd": -1.433914674915495,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2492978870868683,
+            "log2_swd_over_svd": -1.319836117341356,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 8,
+        "support_sample_size": 256,
+        "unique_supports": 204,
+        "unique_support_fraction": 0.796875,
+        "mean_paired_jaccard": 0.46849643412143405
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.023801708593964577,
+          "calibration_relative_error": 0.013999005779623985,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.03368058428168297,
+          "calibration_relative_error": 0.02110619656741619,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.04494267329573631,
+          "calibration_relative_error": 0.029607536271214485,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.059377022087574005,
+          "calibration_relative_error": 0.041583526879549026,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.0760580450296402,
+          "calibration_relative_error": 0.05614074319601059,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.09705087542533875,
+          "calibration_relative_error": 0.07548929750919342,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.11922097951173782,
+          "calibration_relative_error": 0.09747723489999771,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.14178501069545746,
+          "calibration_relative_error": 0.12097278982400894,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.16389882564544678,
+          "calibration_relative_error": 0.1446283757686615,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.19503751397132874,
+          "calibration_relative_error": 0.17814002931118011,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.22519655525684357,
+          "calibration_relative_error": 0.21177323162555695,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.2492978870868683,
+          "calibration_relative_error": 0.23749054968357086,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.1.attn.k_proj",
+      "kind": "attn.k_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 4475156.0
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.014279073104262352,
+          0.15905289351940155
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.014279073104262352,
+            "epsilon_max": 0.15905289351940155
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.014279073104262352,
+          0.15905289351940155
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.014279073104262352,
+            "epsilon_max": 0.15905289351940155
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.5570253906674245,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.014279073104262352,
+            "log2_swd_over_svd": -1.3663276106402467,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.020302878692746162,
+            "log2_swd_over_svd": -1.4185249012538694,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.027329333126544952,
+            "log2_swd_over_svd": -1.4641241110327334,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.036335937678813934,
+            "log2_swd_over_svd": -1.5124088008964023,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.046622131019830704,
+            "log2_swd_over_svd": -1.5503544346165117,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.05987471714615822,
+            "log2_swd_over_svd": -1.5875310533723148,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07396135479211807,
+            "log2_swd_over_svd": -1.6182563515878376,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0883275717496872,
+            "log2_swd_over_svd": -1.6375399762946776,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1023901104927063,
+            "log2_swd_over_svd": -1.6384151754603862,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.12167771905660629,
+            "log2_swd_over_svd": -1.6069467927883188,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.14207708835601807,
+            "log2_swd_over_svd": -1.5191384382068267,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.15905289351940155,
+            "log2_swd_over_svd": -1.4031122443663826,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 8,
+        "support_sample_size": 256,
+        "unique_supports": 230,
+        "unique_support_fraction": 0.8984375,
+        "mean_paired_jaccard": 0.29271145521145525
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.014279073104262352,
+          "calibration_relative_error": 0.008422821760177612,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.020302878692746162,
+          "calibration_relative_error": 0.012735624797642231,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.027329333126544952,
+          "calibration_relative_error": 0.018099406734108925,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.036335937678813934,
+          "calibration_relative_error": 0.025463391095399857,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.046622131019830704,
+          "calibration_relative_error": 0.03433474898338318,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.05987471714615822,
+          "calibration_relative_error": 0.04646258428692818,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.07396135479211807,
+          "calibration_relative_error": 0.0601569227874279,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.0883275717496872,
+          "calibration_relative_error": 0.07482289522886276,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.1023901104927063,
+          "calibration_relative_error": 0.08969307690858841,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.12167771905660629,
+          "calibration_relative_error": 0.11087973415851593,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.14207708835601807,
+          "calibration_relative_error": 0.13281385600566864,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.15905289351940155,
+          "calibration_relative_error": 0.15094096958637238,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.1.attn.v_proj",
+      "kind": "attn.v_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 209201.59375
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.03770541399717331,
+          0.44221222400665283
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.03770541399717331,
+            "epsilon_max": 0.44221222400665283
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.03770541399717331,
+          0.44221222400665283
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.03770541399717331,
+            "epsilon_max": 0.44221222400665283
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.5116046055689267,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.03770541399717331,
+            "log2_swd_over_svd": -1.406185934550442,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.05434274300932884,
+            "log2_swd_over_svd": -1.4621371787405248,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0735836997628212,
+            "log2_swd_over_svd": -1.5108418799190793,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.09841365367174149,
+            "log2_swd_over_svd": -1.5592317534019633,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.12675005197525024,
+            "log2_swd_over_svd": -1.593394792595472,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.16365298628807068,
+            "log2_swd_over_svd": -1.6183470429537525,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2037956863641739,
+            "log2_swd_over_svd": -1.625936860960567,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2465345412492752,
+            "log2_swd_over_svd": -1.6075423337194177,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2855795621871948,
+            "log2_swd_over_svd": -1.5793958387703297,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.344795823097229,
+            "log2_swd_over_svd": -1.4712098645154241,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.40187665820121765,
+            "log2_swd_over_svd": -1.3192533573485643,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.44221222400665283,
+            "log2_swd_over_svd": -1.1812747275556914,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 10,
+        "support_sample_size": 256,
+        "unique_supports": 252,
+        "unique_support_fraction": 0.984375,
+        "mean_paired_jaccard": 0.09673300515381592
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.03770541399717331,
+          "calibration_relative_error": 0.02200312539935112,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.05434274300932884,
+          "calibration_relative_error": 0.03382085636258125,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.0735836997628212,
+          "calibration_relative_error": 0.04812423884868622,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.09841365367174149,
+          "calibration_relative_error": 0.06832258403301239,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.12675005197525024,
+          "calibration_relative_error": 0.09290286153554916,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.16365298628807068,
+          "calibration_relative_error": 0.12669505178928375,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.2037956863641739,
+          "calibration_relative_error": 0.16603468358516693,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.2465345412492752,
+          "calibration_relative_error": 0.20927518606185913,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.2855795621871948,
+          "calibration_relative_error": 0.25266948342323303,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.344795823097229,
+          "calibration_relative_error": 0.31650248169898987,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.40187665820121765,
+          "calibration_relative_error": 0.3795720338821411,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.44221222400665283,
+          "calibration_relative_error": 0.42554712295532227,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.1.attn.o_proj",
+      "kind": "attn.o_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 23000.30078125
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.030387235805392265,
+          0.4086885452270508
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.030387235805392265,
+            "epsilon_max": 0.4086885452270508
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.030387235805392265,
+          0.4086885452270508
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.030387235805392265,
+            "epsilon_max": 0.4086885452270508
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.3193937115138963,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.030387235805392265,
+            "log2_swd_over_svd": -1.2931031105552957,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.042722221463918686,
+            "log2_swd_over_svd": -1.3332094256251903,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.056714996695518494,
+            "log2_swd_over_svd": -1.3704323105301148,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07626746594905853,
+            "log2_swd_over_svd": -1.3990717792896807,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.09727510064840317,
+            "log2_swd_over_svd": -1.4276364079230992,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.12740851938724518,
+            "log2_swd_over_svd": -1.4379962637384962,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1586480587720871,
+            "log2_swd_over_svd": -1.451461159099817,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.19257371127605438,
+            "log2_swd_over_svd": -1.4475920088605911,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2246071696281433,
+            "log2_swd_over_svd": -1.4369456757995123,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.277093768119812,
+            "log2_swd_over_svd": -1.3523979588169701,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.34382474422454834,
+            "log2_swd_over_svd": -1.1572544004555845,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.4086885452270508,
+            "log2_swd_over_svd": -0.9017076307055795,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 10,
+        "support_sample_size": 256,
+        "unique_supports": 256,
+        "unique_support_fraction": 1.0,
+        "mean_paired_jaccard": 0.3774072605402423
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.030387235805392265,
+          "calibration_relative_error": 0.015494951978325844,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.042722221463918686,
+          "calibration_relative_error": 0.023026753216981888,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.056714996695518494,
+          "calibration_relative_error": 0.03284456953406334,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.07626746594905853,
+          "calibration_relative_error": 0.04658573120832443,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.09727510064840317,
+          "calibration_relative_error": 0.06346075236797333,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.12740851938724518,
+          "calibration_relative_error": 0.08826936781406403,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.1586480587720871,
+          "calibration_relative_error": 0.1170746311545372,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.19257371127605438,
+          "calibration_relative_error": 0.14996378123760223,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.2246071696281433,
+          "calibration_relative_error": 0.1837596446275711,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.277093768119812,
+          "calibration_relative_error": 0.23992300033569336,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.34382474422454834,
+          "calibration_relative_error": 0.3069094717502594,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.4086885452270508,
+          "calibration_relative_error": 0.3720554709434509,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.1.mlp.c_fc",
+      "kind": "mlp.c_fc",
+      "weight_shape": [
+        3072,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 47198208,
+        "output_energy": 28423116.0
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.016575301066040993,
+          0.11305050551891327
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "svd_omp",
+            "epsilon_min": 0.016575301066040993,
+            "epsilon_max": 0.11305050551891327
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.016575301066040993,
+          0.11305050551891327
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.016575301066040993,
+            "epsilon_max": 0.11305050551891327
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": 0.27312071659226245,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.016575301066040993,
+            "log2_swd_over_svd": 0.4957937309848795,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.024151211604475975,
+            "log2_swd_over_svd": 0.4484528722577991,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.03227046877145767,
+            "log2_swd_over_svd": 0.40618617292262754,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.04177479445934296,
+            "log2_swd_over_svd": 0.35957076410346056,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.05137021467089653,
+            "log2_swd_over_svd": 0.31692025639968324,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.06246265769004822,
+            "log2_swd_over_svd": 0.26907237855307464,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.07345186173915863,
+            "log2_swd_over_svd": 0.228611719534301,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.08330802619457245,
+            "log2_swd_over_svd": 0.19015869539405714,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.09184512495994568,
+            "log2_swd_over_svd": 0.16233988278961017,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.10155583173036575,
+            "log2_swd_over_svd": 0.1348732138695118,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.10921955108642578,
+            "log2_swd_over_svd": 0.12335419617468134,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.11305050551891327,
+            "log2_swd_over_svd": 0.11344383222441062,
+            "winner": "svd_omp"
+          }
+        ],
+        "swd_points_won_by_svd": 12,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 12,
+        "support_sample_size": 256,
+        "unique_supports": 247,
+        "unique_support_fraction": 0.96484375,
+        "mean_paired_jaccard": 0.34597861423277443
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.016575301066040993,
+          "calibration_relative_error": 0.009184086695313454,
+          "bits_per_token": 14224.359708563788,
+          "active_edges": 1651505
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.024151211604475975,
+          "calibration_relative_error": 0.014206749387085438,
+          "bits_per_token": 12802.44359879258,
+          "active_edges": 1462761
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.03227046877145767,
+          "calibration_relative_error": 0.020006168633699417,
+          "bits_per_token": 11522.695898028725,
+          "active_edges": 1297610
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.04177479445934296,
+          "calibration_relative_error": 0.027394123375415802,
+          "bits_per_token": 10210.253210498437,
+          "active_edges": 1132460
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.05137021467089653,
+          "calibration_relative_error": 0.03537368401885033,
+          "bits_per_token": 9058.61647322571,
+          "active_edges": 990902
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.06246265769004822,
+          "calibration_relative_error": 0.04511629045009613,
+          "bits_per_token": 7880.838233772058,
+          "active_edges": 849344
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.07345186173915863,
+          "calibration_relative_error": 0.055319685488939285,
+          "bits_per_token": 6877.534368796534,
+          "active_edges": 731379
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.08330802619457245,
+          "calibration_relative_error": 0.06496375799179077,
+          "bits_per_token": 6058.904487119589,
+          "active_edges": 637007
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.09184512495994568,
+          "calibration_relative_error": 0.07358542084693909,
+          "bits_per_token": 5434.4134642639565,
+          "active_edges": 566229
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.10155583173036575,
+          "calibration_relative_error": 0.08368353545665741,
+          "bits_per_token": 4799.627101174243,
+          "active_edges": 495450
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.10921955108642578,
+          "calibration_relative_error": 0.09157924354076385,
+          "bits_per_token": 4369.922569852925,
+          "active_edges": 448264
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.11305050551891327,
+          "calibration_relative_error": 0.09586912393569946,
+          "bits_per_token": 4152.873704742566,
+          "active_edges": 424671
+        }
+      ]
+    },
+    {
+      "module": "h.1.mlp.down_proj",
+      "kind": "mlp.down_proj",
+      "weight_shape": [
+        768,
+        3072
+      ],
+      "calibration_shape": [
+        2048,
+        3072
+      ],
+      "heldout_shape": [
+        2048,
+        3072
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 47198208,
+        "output_energy": 806400.8125
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.013056659139692783,
+          0.08334989845752716
+        ],
+        "crossovers": [
+          0.027676532601145602
+        ],
+        "regions": [
+          {
+            "winner": "svd_omp",
+            "epsilon_min": 0.013056659139692783,
+            "epsilon_max": 0.027676532601145602
+          },
+          {
+            "winner": "swd",
+            "epsilon_min": 0.027676532601145602,
+            "epsilon_max": 0.08334989845752716
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.013056659139692783,
+          0.08334989845752716
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.013056659139692783,
+            "epsilon_max": 0.08334989845752716
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -0.4156412639398889,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.013056659139692783,
+            "log2_swd_over_svd": 0.3043237595363317,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.0186702199280262,
+            "log2_swd_over_svd": 0.1824370119224767,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.02465679496526718,
+            "log2_swd_over_svd": 0.0606220968711643,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.03165131062269211,
+            "log2_swd_over_svd": -0.08019925389918336,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.038646068423986435,
+            "log2_swd_over_svd": -0.22049393085183425,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.04710613563656807,
+            "log2_swd_over_svd": -0.38341338444485185,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.054795797914266586,
+            "log2_swd_over_svd": -0.5462614982827201,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0621241070330143,
+            "log2_swd_over_svd": -0.6975942709111465,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.06844392418861389,
+            "log2_swd_over_svd": -0.8276010047567396,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07564208656549454,
+            "log2_swd_over_svd": -0.9765401186348154,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.08073543012142181,
+            "log2_swd_over_svd": -1.0905248267497494,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.08334989845752716,
+            "log2_swd_over_svd": -1.1532284427948998,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 3,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 12,
+        "support_sample_size": 256,
+        "unique_supports": 256,
+        "unique_support_fraction": 1.0,
+        "mean_paired_jaccard": 0.21101953698839632
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.013056659139692783,
+          "calibration_relative_error": 0.00972446147352457,
+          "bits_per_token": 14224.359708563788,
+          "active_edges": 1651505
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.0186702199280262,
+          "calibration_relative_error": 0.01393855456262827,
+          "bits_per_token": 12802.44359879258,
+          "active_edges": 1462761
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.02465679496526718,
+          "calibration_relative_error": 0.018354538828134537,
+          "bits_per_token": 11522.695898028725,
+          "active_edges": 1297610
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.03165131062269211,
+          "calibration_relative_error": 0.02359616756439209,
+          "bits_per_token": 10210.253210498437,
+          "active_edges": 1132460
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.038646068423986435,
+          "calibration_relative_error": 0.028903642669320107,
+          "bits_per_token": 9058.61647322571,
+          "active_edges": 990902
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.04710613563656807,
+          "calibration_relative_error": 0.035126201808452606,
+          "bits_per_token": 7880.838233772058,
+          "active_edges": 849344
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.054795797914266586,
+          "calibration_relative_error": 0.04097236320376396,
+          "bits_per_token": 6877.534368796534,
+          "active_edges": 731379
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.0621241070330143,
+          "calibration_relative_error": 0.04660211130976677,
+          "bits_per_token": 6058.904487119589,
+          "active_edges": 637007
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.06844392418861389,
+          "calibration_relative_error": 0.051386043429374695,
+          "bits_per_token": 5434.4134642639565,
+          "active_edges": 566229
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.07564208656549454,
+          "calibration_relative_error": 0.056418247520923615,
+          "bits_per_token": 4799.627101174243,
+          "active_edges": 495450
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.08073543012142181,
+          "calibration_relative_error": 0.06053365394473076,
+          "bits_per_token": 4369.922569852925,
+          "active_edges": 448264
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.08334989845752716,
+          "calibration_relative_error": 0.0626293197274208,
+          "bits_per_token": 4152.873704742566,
+          "active_edges": 424671
+        }
+      ]
+    },
+    {
+      "module": "h.2.attn.q_proj",
+      "kind": "attn.q_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 2749065.0
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.027174286544322968,
+          0.25441741943359375
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.027174286544322968,
+            "epsilon_max": 0.25441741943359375
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.027174286544322968,
+          0.25441741943359375
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.027174286544322968,
+            "epsilon_max": 0.25441741943359375
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.2952749528486058,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.027174286544322968,
+            "log2_swd_over_svd": -1.1988995429493687,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.037066750228405,
+            "log2_swd_over_svd": -1.2359274609378996,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.048218440264463425,
+            "log2_swd_over_svd": -1.2694964705178808,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.06325659155845642,
+            "log2_swd_over_svd": -1.2966388863094167,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07887671142816544,
+            "log2_swd_over_svd": -1.3264024529304625,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.09975939989089966,
+            "log2_swd_over_svd": -1.347475288479684,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1217779591679573,
+            "log2_swd_over_svd": -1.36364292960329,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.14499090611934662,
+            "log2_swd_over_svd": -1.3639168955694123,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1665523797273636,
+            "log2_swd_over_svd": -1.3562400416589802,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.19782188534736633,
+            "log2_swd_over_svd": -1.3017487305241722,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2292102724313736,
+            "log2_swd_over_svd": -1.2058584712283988,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.25441741943359375,
+            "log2_swd_over_svd": -1.0936688066325069,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 8,
+        "support_sample_size": 256,
+        "unique_supports": 253,
+        "unique_support_fraction": 0.98828125,
+        "mean_paired_jaccard": 0.3138621794871794
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.027174286544322968,
+          "calibration_relative_error": 0.016808578744530678,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.037066750228405,
+          "calibration_relative_error": 0.024446753785014153,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.048218440264463425,
+          "calibration_relative_error": 0.033407580107450485,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.06325659155845642,
+          "calibration_relative_error": 0.04573950916528702,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.07887671142816544,
+          "calibration_relative_error": 0.059751857072114944,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.09975939989089966,
+          "calibration_relative_error": 0.07902269810438156,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.1217779591679573,
+          "calibration_relative_error": 0.10028215497732162,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.14499090611934662,
+          "calibration_relative_error": 0.1234220564365387,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.1665523797273636,
+          "calibration_relative_error": 0.14655761420726776,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.19782188534736633,
+          "calibration_relative_error": 0.1800173968076706,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.2292102724313736,
+          "calibration_relative_error": 0.21458953619003296,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.25441741943359375,
+          "calibration_relative_error": 0.24188823997974396,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.2.attn.k_proj",
+      "kind": "attn.k_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 2751722.0
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.026265397667884827,
+          0.2507806718349457
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.026265397667884827,
+            "epsilon_max": 0.2507806718349457
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.026265397667884827,
+          0.2507806718349457
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.026265397667884827,
+            "epsilon_max": 0.2507806718349457
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.3457314919246697,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.026265397667884827,
+            "log2_swd_over_svd": -1.222235539159885,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.03642243891954422,
+            "log2_swd_over_svd": -1.2600853749238947,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.04734708368778229,
+            "log2_swd_over_svd": -1.3004181215228334,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.06185627728700638,
+            "log2_swd_over_svd": -1.3375824880041556,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07817358523607254,
+            "log2_swd_over_svd": -1.3654593116907026,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.09848256409168243,
+            "log2_swd_over_svd": -1.3950532762102998,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1201082095503807,
+            "log2_swd_over_svd": -1.4166667455950683,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.14216004312038422,
+            "log2_swd_over_svd": -1.4265447770038784,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.16350150108337402,
+            "log2_swd_over_svd": -1.4196104353105687,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1947251260280609,
+            "log2_swd_over_svd": -1.3609629074350145,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.22381912171840668,
+            "log2_swd_over_svd": -1.2744245077494223,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2507806718349457,
+            "log2_swd_over_svd": -1.135978348107245,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 8,
+        "support_sample_size": 256,
+        "unique_supports": 256,
+        "unique_support_fraction": 1.0,
+        "mean_paired_jaccard": 0.29920912420912427
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.026265397667884827,
+          "calibration_relative_error": 0.01635303720831871,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.03642243891954422,
+          "calibration_relative_error": 0.023925159126520157,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.04734708368778229,
+          "calibration_relative_error": 0.03284017741680145,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.06185627728700638,
+          "calibration_relative_error": 0.045105259865522385,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.07817358523607254,
+          "calibration_relative_error": 0.05941379815340042,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.09848256409168243,
+          "calibration_relative_error": 0.0784541442990303,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.1201082095503807,
+          "calibration_relative_error": 0.09980794042348862,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.14216004312038422,
+          "calibration_relative_error": 0.12237725406885147,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.16350150108337402,
+          "calibration_relative_error": 0.1451357901096344,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.1947251260280609,
+          "calibration_relative_error": 0.1784982979297638,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.22381912171840668,
+          "calibration_relative_error": 0.21090972423553467,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.2507806718349457,
+          "calibration_relative_error": 0.23928789794445038,
+          "bits_per_token": 1052.8168939467587,
+          "active_edges": 106165
+        }
+      ]
+    },
+    {
+      "module": "h.2.attn.v_proj",
+      "kind": "attn.v_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 958944.625
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.04567669704556465,
+          0.4815163314342499
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.04567669704556465,
+            "epsilon_max": 0.4815163314342499
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.04567669704556465,
+          0.4815163314342499
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.04567669704556465,
+            "epsilon_max": 0.4815163314342499
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.456346732282721,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.04567669704556465,
+            "log2_swd_over_svd": -1.3545854544371412,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.06582953780889511,
+            "log2_swd_over_svd": -1.3960109850953213,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.08821629732847214,
+            "log2_swd_over_svd": -1.4352903382984457,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.11731769144535065,
+            "log2_swd_over_svd": -1.4735493859769768,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1503523588180542,
+            "log2_swd_over_svd": -1.4999472643958744,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.19186916947364807,
+            "log2_swd_over_svd": -1.5249348558118803,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2387826144695282,
+            "log2_swd_over_svd": -1.5284910197611576,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2848309576511383,
+            "log2_swd_over_svd": -1.5247588059143262,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.3303223252296448,
+            "log2_swd_over_svd": -1.4975860397087628,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.3914661705493927,
+            "log2_swd_over_svd": -1.426002429272811,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.44549158215522766,
+            "log2_swd_over_svd": -1.3330595093258453,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.4815163314342499,
+            "log2_swd_over_svd": -1.2483942386358458,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 10,
+        "support_sample_size": 256,
+        "unique_supports": 255,
+        "unique_support_fraction": 0.99609375,
+        "mean_paired_jaccard": 0.02921826625386997
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.04567669704556465,
+          "calibration_relative_error": 0.027592768892645836,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.06582953780889511,
+          "calibration_relative_error": 0.04223240911960602,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.08821629732847214,
+          "calibration_relative_error": 0.05939638242125511,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.11731769144535065,
+          "calibration_relative_error": 0.0833946168422699,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.1503523588180542,
+          "calibration_relative_error": 0.1124250516295433,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.19186916947364807,
+          "calibration_relative_error": 0.15169596672058105,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.2387826144695282,
+          "calibration_relative_error": 0.1971239596605301,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.2848309576511383,
+          "calibration_relative_error": 0.24585628509521484,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.3303223252296448,
+          "calibration_relative_error": 0.2941279709339142,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.3914661705493927,
+          "calibration_relative_error": 0.3619281053543091,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.44549158215522766,
+          "calibration_relative_error": 0.425668329000473,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.4815163314342499,
+          "calibration_relative_error": 0.46549373865127563,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.2.attn.o_proj",
+      "kind": "attn.o_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 120613.578125
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.03507375344634056,
+          0.3804483711719513
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.03507375344634056,
+            "epsilon_max": 0.3804483711719513
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.03507375344634056,
+          0.3804483711719513
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.03507375344634056,
+            "epsilon_max": 0.3804483711719513
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.3761171210736827,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.03507375344634056,
+            "log2_swd_over_svd": -1.2712657239046181,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.049354180693626404,
+            "log2_swd_over_svd": -1.3111878469353275,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.06657141447067261,
+            "log2_swd_over_svd": -1.3421240418912517,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.08755439519882202,
+            "log2_swd_over_svd": -1.3824408190589779,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.11192002147436142,
+            "log2_swd_over_svd": -1.4107039814856142,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1423695683479309,
+            "log2_swd_over_svd": -1.4415834393713942,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.17541325092315674,
+            "log2_swd_over_svd": -1.4610797583459663,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.20776990056037903,
+            "log2_swd_over_svd": -1.4744990240635993,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2400449961423874,
+            "log2_swd_over_svd": -1.4633877443008123,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.28186872601509094,
+            "log2_swd_over_svd": -1.423024646338424,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.3327080011367798,
+            "log2_swd_over_svd": -1.2780917009841946,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.3804483711719513,
+            "log2_swd_over_svd": -1.0671464854242558,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 10,
+        "support_sample_size": 256,
+        "unique_supports": 256,
+        "unique_support_fraction": 1.0,
+        "mean_paired_jaccard": 0.26984868993987604
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.03507375344634056,
+          "calibration_relative_error": 0.014187531545758247,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.049354180693626404,
+          "calibration_relative_error": 0.021494826301932335,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.06657141447067261,
+          "calibration_relative_error": 0.030354591086506844,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.08755439519882202,
+          "calibration_relative_error": 0.04350881651043892,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.11192002147436142,
+          "calibration_relative_error": 0.05933431535959244,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.1423695683479309,
+          "calibration_relative_error": 0.08228643983602524,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.17541325092315674,
+          "calibration_relative_error": 0.10915356129407883,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.20776990056037903,
+          "calibration_relative_error": 0.13949447870254517,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.2400449961423874,
+          "calibration_relative_error": 0.16960985958576202,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.28186872601509094,
+          "calibration_relative_error": 0.21636849641799927,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.3327080011367798,
+          "calibration_relative_error": 0.2699164152145386,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.3804483711719513,
+          "calibration_relative_error": 0.31810641288757324,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.2.mlp.c_fc",
+      "kind": "mlp.c_fc",
+      "weight_shape": [
+        3072,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 47198208,
+        "output_energy": 5715165.0
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.038289979100227356,
+          0.24905122816562653
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "svd_omp",
+            "epsilon_min": 0.038289979100227356,
+            "epsilon_max": 0.24905122816562653
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.038289979100227356,
+          0.24905122816562653
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.038289979100227356,
+            "epsilon_max": 0.24905122816562653
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": 0.29824745252217244,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.038289979100227356,
+            "log2_swd_over_svd": 0.5169384211285264,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.05473865941166878,
+            "log2_swd_over_svd": 0.4707742001662533,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.07188155502080917,
+            "log2_swd_over_svd": 0.4269998663620458,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.09178125113248825,
+            "log2_swd_over_svd": 0.37748258405560403,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.11211001127958298,
+            "log2_swd_over_svd": 0.3335348767247304,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.13642898201942444,
+            "log2_swd_over_svd": 0.28952897707021746,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.1600504070520401,
+            "log2_swd_over_svd": 0.24992773119230213,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.18228280544281006,
+            "log2_swd_over_svd": 0.21946614132105666,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.20169107615947723,
+            "log2_swd_over_svd": 0.2000646041249616,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.2236667275428772,
+            "log2_swd_over_svd": 0.18243867588234217,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.23985275626182556,
+            "log2_swd_over_svd": 0.17062140762784878,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.24905122816562653,
+            "log2_swd_over_svd": 0.16904727816964102,
+            "winner": "svd_omp"
+          }
+        ],
+        "swd_points_won_by_svd": 12,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 12,
+        "support_sample_size": 256,
+        "unique_supports": 253,
+        "unique_support_fraction": 0.98828125,
+        "mean_paired_jaccard": 0.30688151905499045
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.038289979100227356,
+          "calibration_relative_error": 0.019647572189569473,
+          "bits_per_token": 14224.359708563788,
+          "active_edges": 1651505
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.05473865941166878,
+          "calibration_relative_error": 0.029886871576309204,
+          "bits_per_token": 12802.44359879258,
+          "active_edges": 1462761
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.07188155502080917,
+          "calibration_relative_error": 0.04146132618188858,
+          "bits_per_token": 11522.695898028725,
+          "active_edges": 1297610
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.09178125113248825,
+          "calibration_relative_error": 0.05619116127490997,
+          "bits_per_token": 10210.253210498437,
+          "active_edges": 1132460
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.11211001127958298,
+          "calibration_relative_error": 0.07219727337360382,
+          "bits_per_token": 9058.61647322571,
+          "active_edges": 990902
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.13642898201942444,
+          "calibration_relative_error": 0.09246218949556351,
+          "bits_per_token": 7880.838233772058,
+          "active_edges": 849344
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.1600504070520401,
+          "calibration_relative_error": 0.11344252526760101,
+          "bits_per_token": 6877.534368796534,
+          "active_edges": 731379
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.18228280544281006,
+          "calibration_relative_error": 0.1340198814868927,
+          "bits_per_token": 6058.904487119589,
+          "active_edges": 637007
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.20169107615947723,
+          "calibration_relative_error": 0.15256984531879425,
+          "bits_per_token": 5434.4134642639565,
+          "active_edges": 566229
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.2236667275428772,
+          "calibration_relative_error": 0.17453348636627197,
+          "bits_per_token": 4799.627101174243,
+          "active_edges": 495450
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.23985275626182556,
+          "calibration_relative_error": 0.19137389957904816,
+          "bits_per_token": 4369.922569852925,
+          "active_edges": 448264
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.24905122816562653,
+          "calibration_relative_error": 0.20066308975219727,
+          "bits_per_token": 4152.873704742566,
+          "active_edges": 424671
+        }
+      ]
+    },
+    {
+      "module": "h.2.mlp.down_proj",
+      "kind": "mlp.down_proj",
+      "weight_shape": [
+        768,
+        3072
+      ],
+      "calibration_shape": [
+        2048,
+        3072
+      ],
+      "heldout_shape": [
+        2048,
+        3072
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 47198208,
+        "output_energy": 148049.375
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.06001996994018555,
+          0.3868502974510193
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "svd_omp",
+            "epsilon_min": 0.06001996994018555,
+            "epsilon_max": 0.3868502974510193
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.06001996994018555,
+          0.3868502974510193
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.06001996994018555,
+            "epsilon_max": 0.3868502974510193
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": 0.24583840463988976,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.06001996994018555,
+            "log2_swd_over_svd": 0.4954687459789868,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.08715187013149261,
+            "log2_swd_over_svd": 0.44664391331441006,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.11586350202560425,
+            "log2_swd_over_svd": 0.4012059420399587,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.14929524064064026,
+            "log2_swd_over_svd": 0.3500033773337718,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.18380999565124512,
+            "log2_swd_over_svd": 0.3053807021078396,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.22109881043434143,
+            "log2_swd_over_svd": 0.24520307257925664,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.2575845420360565,
+            "log2_swd_over_svd": 0.19019481412025516,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.29178422689437866,
+            "log2_swd_over_svd": 0.1441416462693004,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.32114216685295105,
+            "log2_swd_over_svd": 0.10856348077156192,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.35189908742904663,
+            "log2_swd_over_svd": 0.06109367378211434,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.37592658400535583,
+            "log2_swd_over_svd": 0.03219595959250694,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.3868502974510193,
+            "log2_swd_over_svd": 0.008351798829027217,
+            "winner": "svd_omp"
+          }
+        ],
+        "swd_points_won_by_svd": 12,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 12,
+        "support_sample_size": 256,
+        "unique_supports": 255,
+        "unique_support_fraction": 0.99609375,
+        "mean_paired_jaccard": 0.10932707107442517
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.06001996994018555,
+          "calibration_relative_error": 0.039673786610364914,
+          "bits_per_token": 14224.359708563788,
+          "active_edges": 1651505
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.08715187013149261,
+          "calibration_relative_error": 0.05769897624850273,
+          "bits_per_token": 12802.44359879258,
+          "active_edges": 1462761
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.11586350202560425,
+          "calibration_relative_error": 0.07664752006530762,
+          "bits_per_token": 11522.695898028725,
+          "active_edges": 1297610
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.14929524064064026,
+          "calibration_relative_error": 0.09893452376127243,
+          "bits_per_token": 10210.253210498437,
+          "active_edges": 1132460
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.18380999565124512,
+          "calibration_relative_error": 0.12145212292671204,
+          "bits_per_token": 9058.61647322571,
+          "active_edges": 990902
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.22109881043434143,
+          "calibration_relative_error": 0.14735981822013855,
+          "bits_per_token": 7880.838233772058,
+          "active_edges": 849344
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.2575845420360565,
+          "calibration_relative_error": 0.1723928600549698,
+          "bits_per_token": 6877.534368796534,
+          "active_edges": 731379
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.29178422689437866,
+          "calibration_relative_error": 0.19544918835163116,
+          "bits_per_token": 6058.904487119589,
+          "active_edges": 637007
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.32114216685295105,
+          "calibration_relative_error": 0.21474333107471466,
+          "bits_per_token": 5434.4134642639565,
+          "active_edges": 566229
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.35189908742904663,
+          "calibration_relative_error": 0.23649299144744873,
+          "bits_per_token": 4799.627101174243,
+          "active_edges": 495450
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.37592658400535583,
+          "calibration_relative_error": 0.2528699040412903,
+          "bits_per_token": 4369.922569852925,
+          "active_edges": 448264
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.3868502974510193,
+          "calibration_relative_error": 0.2613407373428345,
+          "bits_per_token": 4152.873704742566,
+          "active_edges": 424671
+        }
+      ]
+    },
+    {
+      "module": "h.3.attn.q_proj",
+      "kind": "attn.q_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 2435473.5
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.030326224863529205,
+          0.2791682183742523
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.030326224863529205,
+            "epsilon_max": 0.2791682183742523
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.030326224863529205,
+          0.2791682183742523
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.030326224863529205,
+            "epsilon_max": 0.2791682183742523
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.3228771020586167,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.030326224863529205,
+            "log2_swd_over_svd": -1.2603283853175806,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.04158872365951538,
+            "log2_swd_over_svd": -1.30008745898901,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.054613593965768814,
+            "log2_swd_over_svd": -1.3315189096962519,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0717838928103447,
+            "log2_swd_over_svd": -1.3571083769548729,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.09002652019262314,
+            "log2_swd_over_svd": -1.379468344255194,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.11398321390151978,
+            "log2_swd_over_svd": -1.3910894811090326,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.13826236128807068,
+            "log2_swd_over_svd": -1.4014235105227708,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1633453220129013,
+            "log2_swd_over_svd": -1.395403486525906,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1875709891319275,
+            "log2_swd_over_svd": -1.3714944183580775,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.22062645852565765,
+            "log2_swd_over_svd": -1.3035229834346589,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2544012665748596,
+            "log2_swd_over_svd": -1.1809685839597317,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2791682183742523,
+            "log2_swd_over_svd": -1.0598846437700606,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 8,
+        "support_sample_size": 256,
+        "unique_supports": 255,
+        "unique_support_fraction": 0.99609375,
+        "mean_paired_jaccard": 0.29463175713175715
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.030326224863529205,
+          "calibration_relative_error": 0.01696094498038292,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.04158872365951538,
+          "calibration_relative_error": 0.024818912148475647,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.054613593965768814,
+          "calibration_relative_error": 0.03435453027486801,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.0717838928103447,
+          "calibration_relative_error": 0.04739990457892418,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.09002652019262314,
+          "calibration_relative_error": 0.06267787516117096,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.11398321390151978,
+          "calibration_relative_error": 0.08369328081607819,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.13826236128807068,
+          "calibration_relative_error": 0.10654399544000626,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.1633453220129013,
+          "calibration_relative_error": 0.1310882866382599,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.1875709891319275,
+          "calibration_relative_error": 0.1563662439584732,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.22062645852565765,
+          "calibration_relative_error": 0.1923048347234726,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.2544012665748596,
+          "calibration_relative_error": 0.22944508492946625,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.2791682183742523,
+          "calibration_relative_error": 0.2573114335536957,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.3.attn.k_proj",
+      "kind": "attn.k_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 2935766.5
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.026689467951655388,
+          0.25209885835647583
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.026689467951655388,
+            "epsilon_max": 0.25209885835647583
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.026689467951655388,
+          0.25209885835647583
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.026689467951655388,
+            "epsilon_max": 0.25209885835647583
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.3578243740086084,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.026689467951655388,
+            "log2_swd_over_svd": -1.2615635835680716,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.036964721977710724,
+            "log2_swd_over_svd": -1.301816577401853,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0485658198595047,
+            "log2_swd_over_svd": -1.3375804771247406,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0634632259607315,
+            "log2_swd_over_svd": -1.372909858707203,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0794968456029892,
+            "log2_swd_over_svd": -1.4039533712075922,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.10179464519023895,
+            "log2_swd_over_svd": -1.4163914431671663,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1234767809510231,
+            "log2_swd_over_svd": -1.4353197809710982,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.14642758667469025,
+            "log2_swd_over_svd": -1.4334043936777745,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.1675519496202469,
+            "log2_swd_over_svd": -1.4219322112329869,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.19808067381381989,
+            "log2_swd_over_svd": -1.35652970998227,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.22923342883586884,
+            "log2_swd_over_svd": -1.2365465281794912,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.25209885835647583,
+            "log2_swd_over_svd": -1.1162820614439781,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 8,
+        "support_sample_size": 256,
+        "unique_supports": 251,
+        "unique_support_fraction": 0.98046875,
+        "mean_paired_jaccard": 0.2994227994227994
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.026689467951655388,
+          "calibration_relative_error": 0.014961231499910355,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.036964721977710724,
+          "calibration_relative_error": 0.022003458812832832,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.0485658198595047,
+          "calibration_relative_error": 0.03039407543838024,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.0634632259607315,
+          "calibration_relative_error": 0.04210406914353371,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.0794968456029892,
+          "calibration_relative_error": 0.05562552809715271,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.10179464519023895,
+          "calibration_relative_error": 0.07493636012077332,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.1234767809510231,
+          "calibration_relative_error": 0.09544237703084946,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.14642758667469025,
+          "calibration_relative_error": 0.11795590072870255,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.1675519496202469,
+          "calibration_relative_error": 0.14107617735862732,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.19808067381381989,
+          "calibration_relative_error": 0.17379944026470184,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.22923342883586884,
+          "calibration_relative_error": 0.20775063335895538,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.25209885835647583,
+          "calibration_relative_error": 0.23364043235778809,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.3.attn.v_proj",
+      "kind": "attn.v_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 1148337.375
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.0516866035759449,
+          0.49993646144866943
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.0516866035759449,
+            "epsilon_max": 0.49993646144866943
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.0516866035759449,
+          0.49993646144866943
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.0516866035759449,
+            "epsilon_max": 0.49993646144866943
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.4203145320632518,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.0516866035759449,
+            "log2_swd_over_svd": -1.3433758357831624,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07333961874246597,
+            "log2_swd_over_svd": -1.3864882587797018,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.0985444113612175,
+            "log2_swd_over_svd": -1.4209367525459788,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.12859196960926056,
+            "log2_swd_over_svd": -1.4632410932236792,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.16524799168109894,
+            "log2_swd_over_svd": -1.4815608547775514,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.20975354313850403,
+            "log2_swd_over_svd": -1.498696410150908,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.25772181153297424,
+            "log2_swd_over_svd": -1.4985825050734707,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.3052252531051636,
+            "log2_swd_over_svd": -1.4859664346976291,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.3516359329223633,
+            "log2_swd_over_svd": -1.4483864026445181,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.41168272495269775,
+            "log2_swd_over_svd": -1.367530124156582,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.46461406350135803,
+            "log2_swd_over_svd": -1.2627661472228617,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.49993646144866943,
+            "log2_swd_over_svd": -1.1682751518350676,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 10,
+        "support_sample_size": 256,
+        "unique_supports": 256,
+        "unique_support_fraction": 1.0,
+        "mean_paired_jaccard": 0.06414675245098038
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.0516866035759449,
+          "calibration_relative_error": 0.028552500531077385,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.07333961874246597,
+          "calibration_relative_error": 0.04293923079967499,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.0985444113612175,
+          "calibration_relative_error": 0.06063247099518776,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.12859196960926056,
+          "calibration_relative_error": 0.08465637266635895,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.16524799168109894,
+          "calibration_relative_error": 0.11385427415370941,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.20975354313850403,
+          "calibration_relative_error": 0.1533188819885254,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.25772181153297424,
+          "calibration_relative_error": 0.19808000326156616,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.3052252531051636,
+          "calibration_relative_error": 0.2466321736574173,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.3516359329223633,
+          "calibration_relative_error": 0.29590103030204773,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.41168272495269775,
+          "calibration_relative_error": 0.36158043146133423,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.46461406350135803,
+          "calibration_relative_error": 0.4244271516799927,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.49993646144866943,
+          "calibration_relative_error": 0.4678707718849182,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.3.attn.o_proj",
+      "kind": "attn.o_proj",
+      "weight_shape": [
+        768,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 18886656,
+        "output_energy": 903438.5625
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.022762786597013474,
+          0.2494852989912033
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.022762786597013474,
+            "epsilon_max": 0.2494852989912033
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.022762786597013474,
+          0.2494852989912033
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.022762786597013474,
+            "epsilon_max": 0.2494852989912033
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": -1.184440181042369,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.022762786597013474,
+            "log2_swd_over_svd": -1.3698733095037088,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.03205841779708862,
+            "log2_swd_over_svd": -1.427258744845288,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.042377784848213196,
+            "log2_swd_over_svd": -1.4834672708804695,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.056167516857385635,
+            "log2_swd_over_svd": -1.5379779957754067,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.07291682809591293,
+            "log2_swd_over_svd": -1.5404878855667863,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.09221753478050232,
+            "log2_swd_over_svd": -1.4485931227000197,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.11276987940073013,
+            "log2_swd_over_svd": -1.3786496501207661,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.13243883848190308,
+            "log2_swd_over_svd": -1.3229740198936306,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.15360483527183533,
+            "log2_swd_over_svd": -1.2285702599564934,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.18543986976146698,
+            "log2_swd_over_svd": -1.0239673929150768,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.21756920218467712,
+            "log2_swd_over_svd": -0.7489654676059765,
+            "winner": "swd"
+          },
+          {
+            "relative_error": 0.2494852989912033,
+            "log2_swd_over_svd": -0.3712388140088188,
+            "winner": "swd"
+          }
+        ],
+        "swd_points_won_by_svd": 0,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 10,
+        "support_sample_size": 256,
+        "unique_supports": 256,
+        "unique_support_fraction": 1.0,
+        "mean_paired_jaccard": 0.4136739069861167
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.022762786597013474,
+          "calibration_relative_error": 0.007857926189899445,
+          "bits_per_token": 3694.9167686255005,
+          "active_edges": 412874
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.03205841779708862,
+          "calibration_relative_error": 0.011775190941989422,
+          "bits_per_token": 3326.275917721647,
+          "active_edges": 365688
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.042377784848213196,
+          "calibration_relative_error": 0.016682704910635948,
+          "bits_per_token": 2994.9145290577117,
+          "active_edges": 324401
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.056167516857385635,
+          "calibration_relative_error": 0.02372424304485321,
+          "bits_per_token": 2654.9514026937723,
+          "active_edges": 283113
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.07291682809591293,
+          "calibration_relative_error": 0.03243863582611084,
+          "bits_per_token": 2356.1161632338094,
+          "active_edges": 247724
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.09221753478050232,
+          "calibration_relative_error": 0.04482283815741539,
+          "bits_per_token": 2049.4435848205653,
+          "active_edges": 212334
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.11276987940073013,
+          "calibration_relative_error": 0.059510789811611176,
+          "bits_per_token": 1786.763991821933,
+          "active_edges": 182843
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.13243883848190308,
+          "calibration_relative_error": 0.07552342116832733,
+          "bits_per_token": 1570.7853511211201,
+          "active_edges": 159250
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.15360483527183533,
+          "calibration_relative_error": 0.09272059053182602,
+          "bits_per_token": 1404.394434679766,
+          "active_edges": 141555
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.18543986976146698,
+          "calibration_relative_error": 0.12080704420804977,
+          "bits_per_token": 1232.8160988086847,
+          "active_edges": 123861
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.21756920218467712,
+          "calibration_relative_error": 0.15235097706317902,
+          "bits_per_token": 1114.15339206819,
+          "active_edges": 112064
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.2494852989912033,
+          "calibration_relative_error": 0.18193204700946808,
+          "bits_per_token": 1052.8258745882724,
+          "active_edges": 106166
+        }
+      ]
+    },
+    {
+      "module": "h.3.mlp.c_fc",
+      "kind": "mlp.c_fc",
+      "weight_shape": [
+        3072,
+        768
+      ],
+      "calibration_shape": [
+        2048,
+        768
+      ],
+      "heldout_shape": [
+        2048,
+        768
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 47198208,
+        "output_energy": 6678183.0
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.04342754930257797,
+          0.29254430532455444
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "svd_omp",
+            "epsilon_min": 0.04342754930257797,
+            "epsilon_max": 0.29254430532455444
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.04342754930257797,
+          0.29254430532455444
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.04342754930257797,
+            "epsilon_max": 0.29254430532455444
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": 0.39729567283798406,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.04342754930257797,
+            "log2_swd_over_svd": 0.5310949035415337,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.06362110376358032,
+            "log2_swd_over_svd": 0.4997068955170428,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.08409594744443893,
+            "log2_swd_over_svd": 0.46786800810336654,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.10805495083332062,
+            "log2_swd_over_svd": 0.43416626445898865,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.13269048929214478,
+            "log2_swd_over_svd": 0.40852142975699823,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.1612653136253357,
+            "log2_swd_over_svd": 0.382798717026164,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.18803922832012177,
+            "log2_swd_over_svd": 0.3565627387357086,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.21488624811172485,
+            "log2_swd_over_svd": 0.3514004866976812,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.23572804033756256,
+            "log2_swd_over_svd": 0.33805220540124803,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.26098698377609253,
+            "log2_swd_over_svd": 0.34028897258231483,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.2805715799331665,
+            "log2_swd_over_svd": 0.35160829366849494,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.29254430532455444,
+            "log2_swd_over_svd": 0.37053879268844797,
+            "winner": "svd_omp"
+          }
+        ],
+        "swd_points_won_by_svd": 12,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 12,
+        "support_sample_size": 256,
+        "unique_supports": 251,
+        "unique_support_fraction": 0.98046875,
+        "mean_paired_jaccard": 0.39576065381986436
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.04342754930257797,
+          "calibration_relative_error": 0.019216813147068024,
+          "bits_per_token": 14224.359708563788,
+          "active_edges": 1651505
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.06362110376358032,
+          "calibration_relative_error": 0.029477082192897797,
+          "bits_per_token": 12802.44359879258,
+          "active_edges": 1462761
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.08409594744443893,
+          "calibration_relative_error": 0.04127490520477295,
+          "bits_per_token": 11522.695898028725,
+          "active_edges": 1297610
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.10805495083332062,
+          "calibration_relative_error": 0.05631833150982857,
+          "bits_per_token": 10210.253210498437,
+          "active_edges": 1132460
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.13269048929214478,
+          "calibration_relative_error": 0.07244400680065155,
+          "bits_per_token": 9058.61647322571,
+          "active_edges": 990902
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.1612653136253357,
+          "calibration_relative_error": 0.09273863583803177,
+          "bits_per_token": 7880.838233772058,
+          "active_edges": 849344
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.18803922832012177,
+          "calibration_relative_error": 0.11405786126852036,
+          "bits_per_token": 6877.534368796534,
+          "active_edges": 731379
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.21488624811172485,
+          "calibration_relative_error": 0.13472144305706024,
+          "bits_per_token": 6058.904487119589,
+          "active_edges": 637007
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.23572804033756256,
+          "calibration_relative_error": 0.15291859209537506,
+          "bits_per_token": 5434.4134642639565,
+          "active_edges": 566229
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.26098698377609253,
+          "calibration_relative_error": 0.17475834488868713,
+          "bits_per_token": 4799.627101174243,
+          "active_edges": 495450
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.2805715799331665,
+          "calibration_relative_error": 0.19138070940971375,
+          "bits_per_token": 4369.922569852925,
+          "active_edges": 448264
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.29254430532455444,
+          "calibration_relative_error": 0.2013811618089676,
+          "bits_per_token": 4152.873704742566,
+          "active_edges": 424671
+        }
+      ]
+    },
+    {
+      "module": "h.3.mlp.down_proj",
+      "kind": "mlp.down_proj",
+      "weight_shape": [
+        768,
+        3072
+      ],
+      "calibration_shape": [
+        2048,
+        3072
+      ],
+      "heldout_shape": [
+        2048,
+        3072
+      ],
+      "omp_diagnostics": {
+        "rank": 768,
+        "dictionary_bits": 47198208,
+        "output_energy": 1069487.375
+      },
+      "shared_dictionary_comparison": {
+        "measured_overlap": [
+          0.056026868522167206,
+          0.3254822790622711
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "svd_omp",
+            "epsilon_min": 0.056026868522167206,
+            "epsilon_max": 0.3254822790622711
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "dictionary_counted_comparison": {
+        "measured_overlap": [
+          0.056026868522167206,
+          0.3254822790622711
+        ],
+        "crossovers": [],
+        "regions": [
+          {
+            "winner": "swd",
+            "epsilon_min": 0.056026868522167206,
+            "epsilon_max": 0.3254822790622711
+          }
+        ],
+        "interpolation": "piecewise linear in log2(total_bits)"
+      },
+      "shared_dictionary_advantage": {
+        "mean_log2_swd_over_svd": 0.3824336281839794,
+        "swd_point_comparisons": [
+          {
+            "relative_error": 0.056026868522167206,
+            "log2_swd_over_svd": 0.5446398135717636,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.08046580106019974,
+            "log2_swd_over_svd": 0.5114338189654959,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.10570672154426575,
+            "log2_swd_over_svd": 0.4807509185221659,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.13309599459171295,
+            "log2_swd_over_svd": 0.4386431794237331,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.1641020029783249,
+            "log2_swd_over_svd": 0.41874387478682695,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.19573752582073212,
+            "log2_swd_over_svd": 0.3785169253987084,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.22868220508098602,
+            "log2_swd_over_svd": 0.35643506934679914,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.2538914084434509,
+            "log2_swd_over_svd": 0.31280973366118275,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.2784465253353119,
+            "log2_swd_over_svd": 0.2970605156706377,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.29858434200286865,
+            "log2_swd_over_svd": 0.23818120465842138,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.31550508737564087,
+            "log2_swd_over_svd": 0.2075564522621678,
+            "winner": "svd_omp"
+          },
+          {
+            "relative_error": 0.3254822790622711,
+            "log2_swd_over_svd": 0.1974872286637198,
+            "winner": "svd_omp"
+          }
+        ],
+        "swd_points_won_by_svd": 12,
+        "comparable_swd_points": 12
+      },
+      "support_adaptivity": {
+        "support_k": 12,
+        "support_sample_size": 256,
+        "unique_supports": 253,
+        "unique_support_fraction": 0.98828125,
+        "mean_paired_jaccard": 0.3819967675835516
+      },
+      "swd_points": [
+        {
+          "sparsity_requested": 0.3,
+          "relative_error": 0.056026868522167206,
+          "calibration_relative_error": 0.02507307194173336,
+          "bits_per_token": 14224.359708563788,
+          "active_edges": 1651505
+        },
+        {
+          "sparsity_requested": 0.38,
+          "relative_error": 0.08046580106019974,
+          "calibration_relative_error": 0.036344531923532486,
+          "bits_per_token": 12802.44359879258,
+          "active_edges": 1462761
+        },
+        {
+          "sparsity_requested": 0.45,
+          "relative_error": 0.10570672154426575,
+          "calibration_relative_error": 0.04809395596385002,
+          "bits_per_token": 11522.695898028725,
+          "active_edges": 1297610
+        },
+        {
+          "sparsity_requested": 0.52,
+          "relative_error": 0.13309599459171295,
+          "calibration_relative_error": 0.06170211359858513,
+          "bits_per_token": 10210.253210498437,
+          "active_edges": 1132460
+        },
+        {
+          "sparsity_requested": 0.58,
+          "relative_error": 0.1641020029783249,
+          "calibration_relative_error": 0.07554404437541962,
+          "bits_per_token": 9058.61647322571,
+          "active_edges": 990902
+        },
+        {
+          "sparsity_requested": 0.64,
+          "relative_error": 0.19573752582073212,
+          "calibration_relative_error": 0.09154151380062103,
+          "bits_per_token": 7880.838233772058,
+          "active_edges": 849344
+        },
+        {
+          "sparsity_requested": 0.69,
+          "relative_error": 0.22868220508098602,
+          "calibration_relative_error": 0.10664284974336624,
+          "bits_per_token": 6877.534368796534,
+          "active_edges": 731379
+        },
+        {
+          "sparsity_requested": 0.73,
+          "relative_error": 0.2538914084434509,
+          "calibration_relative_error": 0.12029507756233215,
+          "bits_per_token": 6058.904487119589,
+          "active_edges": 637007
+        },
+        {
+          "sparsity_requested": 0.76,
+          "relative_error": 0.2784465253353119,
+          "calibration_relative_error": 0.13206060230731964,
+          "bits_per_token": 5434.4134642639565,
+          "active_edges": 566229
+        },
+        {
+          "sparsity_requested": 0.79,
+          "relative_error": 0.29858434200286865,
+          "calibration_relative_error": 0.14488042891025543,
+          "bits_per_token": 4799.627101174243,
+          "active_edges": 495450
+        },
+        {
+          "sparsity_requested": 0.81,
+          "relative_error": 0.31550508737564087,
+          "calibration_relative_error": 0.1541479229927063,
+          "bits_per_token": 4369.922569852925,
+          "active_edges": 448264
+        },
+        {
+          "sparsity_requested": 0.82,
+          "relative_error": 0.3254822790622711,
+          "calibration_relative_error": 0.15942135453224182,
+          "bits_per_token": 4152.873704742566,
+          "active_edges": 424671
+        }
+      ]
+    }
+  ]
+}

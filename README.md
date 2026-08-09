@@ -1,6 +1,21 @@
-# SVD-OMP
+# Singular Value Decomposition Orthogonal Matching Pursuit (SVD-OMP)
 
 Training-free parameter decomposition via the SVD basis.
+
+## Names used in this repository
+
+- **SVD:** Singular Value Decomposition.
+- **OMP:** Orthogonal Matching Pursuit.
+- **SVD-OMP:** Singular Value Decomposition Orthogonal Matching Pursuit, the
+  closed-form, input-specific selected-unit method.
+- **SVD-FoBa:** Singular Value Decomposition Forward-Backward Pursuit, the
+  higher-fidelity overcomplete-dictionary extension.
+- **CP-SVD:** Calibration-Pruned Singular Value Decomposition, the cheaper
+  deployment-oriented 96-direction candidate.
+- **VPD:** adVersarial Parameter Decomposition, Goodfire's trained baseline.
+- **SWD:** Sparse Weight Decomposition, the double-sparse factor baseline.
+- **MDL:** Minimum Description Length, used for rate-distortion accounting.
+- **BSF:** Block-Sparse Featurizer, the trained block-sparse comparison.
 
 Given a weight matrix `W` of shape `[d_out, d_in]`, this uses its SVD
 `W = U S V^T` as a deterministic, orthogonal dictionary of rank-1 atoms
@@ -13,11 +28,35 @@ score_c(φ) = σ_c · |v_c^T φ|
 Because the SVD basis is orthogonal, OMP reduces to this closed form. No
 training, no random initialization, no learned parameters.
 
+## Latest results
+
+The current release separates maximum fidelity from deployment cost:
+
+- **SVD-FoBa** beats activation-whitened SVD and a strengthened per-token SWD
+  oracle at all **720 / 720** tested matrix-width points across Goodfire 67M,
+  Pythia-70M, and OPT-125M. SWD's geometric-mean error is **2.016x** higher.
+- **CP-SVD** removes online forward-backward pursuit, scores only 96 frozen
+  calibration-selected directions, and retains **719 / 720** wins over SWD.
+  It reduces scored and stored selector width by **6.67x to 9.33x**.
+- When all 24 Goodfire matrices are replaced simultaneously, CP-SVD records
+  cross-entropy `8.616`, KL divergence to dense logits `4.313`, and logit MSE
+  `12.999`, versus SWD's `12.498`, `8.077`, and `37.434`.
+
+![Cross-model fidelity and selector-cost summary](figures/latest_cross_model_summary.svg)
+
+The exact protocols, artifacts, and non-claims are in
+[`SVD_FOBA_BENCHMARK.md`](SVD_FOBA_BENCHMARK.md) and
+[`PRUNED_SVD_COST_GATE.md`](PRUNED_SVD_COST_GATE.md). SWD still has the
+active-edge and compact-static-circuit advantage, and the current CP-SVD
+prototype is not a universal end-to-end latency win over dense inference.
+
 ## Results
 
-Tested on Goodfire's pretrained 67M LlamaSimpleMLP (the model from their
-adVersarial Parameter Decomposition paper, May 2026). On the 24 target weight
-matrices, SVD-OMP wins every metric on 18 matrices; the remaining 6 are split.
+Tested on Goodfire's pretrained 67M LlamaSimpleMLP, the model from
+[Interpreting Language Model Parameters](https://www.goodfire.ai/research/interpreting-lm-parameters),
+which introduces adVersarial Parameter Decomposition (VPD). On the 24 target
+weight matrices, SVD-OMP wins every metric on 18 matrices; the remaining 6 are
+split.
 
 ![SVD-OMP vs VPD scatter](figures/svd_omp_vs_vpd_scatter.png)
 
@@ -44,10 +83,71 @@ every forward pass.
 ## Context
 
 The local activation score `σ_c · |v_c^T φ|` can be computed analytically
-from the SVD of `W`. VPD trains a CI transformer to learn a related quantity.
+from the SVD of `W`. VPD trains a transformer to learn a related quantity.
 A natural extension, not yet implemented in this repo, is to keep the SVD
 basis and train a small per-component correction `f_c(φ)` on top to capture
 downstream causal effects the local score does not.
+
+## Rate-distortion comparison with SWD
+
+[Sparse Weight Decomposition (SWD)](https://arxiv.org/abs/2608.03913)
+factorizes dense projections into two sparse factors whose bottleneck
+coordinates act as circuit units. We compare against the authors'
+[public implementation](https://github.com/Veri-Safe/SWD).
+
+On held-out WikiText-2 activations from the Goodfire 67M model, conditional
+shared-dictionary SVD-OMP uses fewer bits than measured SWD at the tightest
+evaluated distortion on all 8 MLP matrices. It wins throughout the measured
+overlap on 6 of those 8. SWD wins throughout on all 16 attention matrices.
+Counting the SVD dictionary removes every SVD-OMP win.
+
+This is a family-conditional MLP result, not global superiority over SWD. See
+[`MDL_BENCHMARK.md`](MDL_BENCHMARK.md) for the code definitions, held-out
+protocol, exact claim boundary, and reproducible artifacts.
+
+## Selected-unit superiority over SWD
+
+The stronger result is at equal per-input bottleneck width. A
+calibration-aware closed-form SVD-OMP variant wins all **240 / 240** held-out
+matrix-width comparisons across the same 24 Goodfire matrices, even when SWD
+gets per-token greedy residual selection, the dense target output for that
+selection, and the oracle-best of seven factor sparsities. SWD's relative
+output error is **1.584x** higher on a geometric-mean basis.
+
+The advantage survives a complete-model gate. Replacing each matrix one at a
+time, SVD-OMP wins **24 / 24** on next-token cross-entropy, KL to dense logits,
+and logit MSE. SWD's KL is **2.393x** higher geometrically. The generalized SVD
+also takes **6.93x** less measured preprocessing time.
+
+This is not global superiority. SWD still uses **3.30x fewer active edges** at
+the median point, and the full-model experiment replaces only one matrix at a
+time. The exact claim is: SVD-OMP owns selected-unit fidelity and closed-form
+preprocessing; SWD owns active-edge sparsity and static circuit cost. See
+[`SELECTED_UNIT_BENCHMARK.md`](SELECTED_UNIT_BENCHMARK.md) for the sealed
+protocol, strengthened baseline, artifacts, and limitations.
+
+### SVD-FoBa extension
+
+Plain FoBa is redundant on an orthogonal SVD dictionary, so the promoted
+extension first augments SVD with 128 calibration-output atoms and then runs
+two acceptance-gated forward-add/backward-remove swaps. On a newly extracted,
+disjoint WikiText-2 test window, SVD-FoBa beats calibration-aware SVD and the
+strengthened SWD oracle at **240 / 240** equal-width points each. SWD's error is
+**1.651x** higher geometrically, while SVD-FoBa improves over its protected SVD
+starting point by **3.41%** at the median.
+
+This improves fidelity but gives up plain SVD's exact top-k simplicity and
+adds dense dictionary storage. It is not an active-edge or runtime win. See
+[`SVD_FOBA_BENCHMARK.md`](SVD_FOBA_BENCHMARK.md) for the frozen protocol and
+claim boundary.
+
+The same frozen method replicates without retuning on Pythia-70M-deduped and
+OPT-125M: **720 / 720** aggregate wins over both SVD and SWD across three
+architectures. When all 24 Goodfire matrices are replaced simultaneously,
+SVD-FoBa also wins cross-entropy (`8.420` vs `8.623` SVD and `12.498` SWD), KL
+to dense logits (`4.168` vs `4.313` and `8.077`), and logit MSE (`12.505` vs
+`13.083` and `37.434`). The dense model remains substantially better at this
+extremely narrow width.
 
 ## Block extension (BSF analog)
 
@@ -212,16 +312,29 @@ compare_vpd.py                main 24-matrix sweep (SVD-OMP vs VPD); writes resu
 compare_all.py                6-way sweep (analytic 1D/block vs trained cold/warm)
 compare_causal.py             adversarial-construction sweep for non-Frobenius objective
 causal_ablation.py            ablation experiment (see Status)
+mdl_svdomp_vs_swd.py          measured single-matrix MDL comparison with SWD
+mdl_svdomp_vs_swd_natural_24.py  held-out natural-text MDL sweep over 24 matrices
+MDL_BENCHMARK.md              cost definitions, results, and claim boundary
+selected_unit_svdomp_vs_swd.py  sealed equal-selected-unit comparison with strengthened SWD
+SELECTED_UNIT_BENCHMARK.md    selected-unit and full-model results and claim boundary
+svd_foba.py                   overcomplete SVD-initialized FoBa pursuit
+svd_foba_benchmark.py         validation and fresh sealed SVD-FoBa sweeps
+SVD_FOBA_BENCHMARK.md         SVD-FoBa protocol, results, and claim boundary
+pruned_svd_foba.py            CP-SVD calibration-selected scoring pool
+PRUNED_SVD_COST_GATE.md       CP-SVD protocol, cross-model results, and limitations
+make_release_plots.py         dependency-free landing-page SVG generator
 demo_per_input.py      prints supports for 8 random inputs
 make_figures.py        regenerate figures/scatter.{png,pdf} from results JSON
-tests/                 synthetic-data test suite (37 tests, no Goodfire model needed)
+tests/                 synthetic-data test suite plus CP-SVD invariants
 notebooks/
   svd_omp_vs_vpd_goodfire67m.ipynb    original Colab notebook
 results/
   svd_omp_vs_vpd_results.json         per-matrix metrics from the sweep
   compare_all_6way.json               6-way sweep results
+  mdl_natural_24_final/               held-out SVD-OMP versus SWD curves and summary
 figures/
   svd_omp_vs_vpd_scatter.{png,pdf}    4-panel comparison figure
+  latest_cross_model_summary.svg       SVD-FoBa and CP-SVD release summary
 ```
 
 ## Tests
@@ -240,7 +353,8 @@ python compare_all.py                    # 6-way sweep vs all baselines (~200s)
 python compare_causal.py                 # adversarial downstream sweep (~45s)
 ```
 
-All 42 tests pass on a fresh checkout.
+The existing 57-test suite passes in the verified 5090 environment. Three
+additional CP-SVD invariant tests pass in the frozen remote evaluation image.
 
 ## Reproducing
 
@@ -306,19 +420,52 @@ Consistent with the Davis-Kahan prediction.
 
 ## Status
 
-In this repo:
+Included in this release:
 
-- 24-matrix sweep, results in `results/`, figure in `figures/`
-- Per-input support demo (256 / 256 distinct supports per module)
+- SVD-OMP comparisons with VPD on all 24 Goodfire matrices.
+- Held-out MDL and selected-unit comparisons with measured SWD.
+- Frozen SVD-FoBa replication across three architectures and simultaneous
+  replacement of all 24 Goodfire matrices.
+- Frozen CP-SVD validation, held-out replication, simultaneous replacement,
+  and synchronized A10G/T4 latency artifacts.
 
-Not yet run (code present, results pending):
+Open gates:
 
-- `causal_ablation.py`: redundancy, local causal damage, downstream causal
-  damage
-- Theory writeup: Eckart-Young, Weyl, Davis-Kahan bounds for the metrics
-  above
-- SVD-OMP + CI extension: learned `f_c(φ)` correction on top of the SVD basis
+- Reduce dense active edges enough to challenge SWD on its strongest axis.
+- Fuse CP-SVD selection and measure end-to-end latency on deployment hardware.
+- Replicate on substantially larger models and additional corpora beyond
+  WikiText-2.
 
 ## License
 
 MIT.
+
+## Citation and baseline references
+
+GitHub's **Cite this repository** menu is enabled by [`CITATION.cff`](CITATION.cff).
+For a reproducible citation, include the exact commit. Full baseline metadata,
+permalink instructions, and BibTeX are in [`REFERENCES.md`](REFERENCES.md) and
+[`references.bib`](references.bib).
+
+```bibtex
+@misc{mulay2026svdomp,
+  author  = {Ajinkya Kiran Mulay},
+  title   = {{SVD-OMP}: Training-Free Parameter Decomposition via the {SVD} Basis},
+  year    = {2026},
+  note    = {Version 0.2.0},
+  url     = {https://github.com/thehimalayanleo/svd-omp}
+}
+```
+
+Principal baselines:
+
+- **adVersarial Parameter Decomposition (VPD):** Lucius Bushnaq, Dan Braun,
+  Oliver Clive-Griffin, Bart Bussmann, Nathan Hu, Michael Ivanitskiy, Linda
+  Linsefors, and Lee Sharkey,
+  [Interpreting Language Model Parameters](https://www.goodfire.ai/research/interpreting-lm-parameters),
+  Goodfire, 2026.
+- **Sparse Weight Decomposition (SWD):** Chuanhao Yan, Xuhan Huang, Yawen
+  Duan, Zhenfei Yin, Hang Zhao, Bryan Dai, and Jie Fu,
+  [Sparse Weight Decomposition for Efficient Circuit Extraction](https://arxiv.org/abs/2608.03913),
+  arXiv:2608.03913, 2026. Reference implementation:
+  [Veri-Safe/SWD](https://github.com/Veri-Safe/SWD).

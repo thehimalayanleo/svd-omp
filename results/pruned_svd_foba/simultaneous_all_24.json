@@ -1,0 +1,103 @@
+{
+  "status": "frozen_all_24_simultaneous_quality_and_prototype_latency",
+  "replacement_scope": "all_24_target_matrices_in_one_forward_pass",
+  "gpu": "Tesla T4",
+  "torch_version": "2.13.0+cu130",
+  "python_version": "3.12.10",
+  "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+  "activation_metadata": {
+    "status": "sealed_svd_foba_settings_frozen_before_extraction",
+    "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+    "goodfire_source_ref": "goodfire-ai/param-decomp@6b54400dc49584cd90a91e068edbc3009456a7b7",
+    "dataset": "Salesforce/wikitext",
+    "dataset_config": "wikitext-2-raw-v1",
+    "calibration_split": "train",
+    "heldout_split": "test",
+    "heldout_token_offset": 2048,
+    "calibration_fingerprint": "5d4fb603254a7a5b",
+    "heldout_fingerprint": "a46124b21ac53738",
+    "sequence_count": 16,
+    "sequence_length": 128,
+    "token_count_per_split": 2048,
+    "tokenizer_source": "wandb tokenizer.json",
+    "module_count": 24,
+    "frozen_method": {
+      "alpha": 0.1,
+      "candidate_atoms": 128,
+      "candidate_seed": 0,
+      "swap_rounds": 2,
+      "proposal_width": 8,
+      "selected_units": [
+        1,
+        2,
+        4,
+        8,
+        12,
+        16,
+        24,
+        32,
+        48,
+        64
+      ]
+    }
+  },
+  "dense": {
+    "cross_entropy": 4.481093883514404,
+    "kl_to_dense": 0.0,
+    "logit_mse": 0.0
+  },
+  "candidate": {
+    "cross_entropy": 8.616070747375488,
+    "kl_to_dense": 4.313135147094727,
+    "logit_mse": 12.99919605255127
+  },
+  "latency": {
+    "dense": {
+      "wall_milliseconds_median": 77.32004050000008,
+      "wall_milliseconds_minimum": 75.39495400000007
+    },
+    "candidate": {
+      "wall_milliseconds_median": 84.88685350000047,
+      "wall_milliseconds_minimum": 83.75196199999735
+    },
+    "dense_over_candidate_speedup": 0.9108600132056921,
+    "input_shape": [
+      16,
+      128
+    ],
+    "warmups": 5,
+    "repeats": 20,
+    "synchronization": "before and after every measured forward"
+  },
+  "frozen_configuration": {
+    "pool_size": 96,
+    "pool_selection_width": 64,
+    "candidate_atoms": 0,
+    "swap_rounds": 0,
+    "alpha": 0.1
+  },
+  "prior_sparse_methods": {
+    "svd_omp": {
+      "cross_entropy": 8.623346328735352,
+      "kl_to_dense": 4.313172340393066,
+      "logit_mse": 13.082623481750488
+    },
+    "svd_foba": {
+      "cross_entropy": 8.420071601867676,
+      "kl_to_dense": 4.1675238609313965,
+      "logit_mse": 12.50455093383789,
+      "mean_module_fraction_inputs_selected_foba": 0.9439697265625
+    },
+    "swd": {
+      "cross_entropy": 12.498457908630371,
+      "kl_to_dense": 8.076741218566895,
+      "logit_mse": 37.433589935302734
+    }
+  },
+  "comparisons": {
+    "candidate_kl_over_foba": 1.0349395206895797,
+    "swd_kl_over_candidate": 1.8725917327230717,
+    "candidate_mse_over_foba": 1.0395572077182593,
+    "swd_mse_over_candidate": 2.879685003901136
+  }
+}

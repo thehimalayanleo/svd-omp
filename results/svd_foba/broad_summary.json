@@ -1,0 +1,106 @@
+{
+  "status": "sealed_three_model_replication_and_simultaneous_replacement",
+  "model_count": 3,
+  "architecture_count": 3,
+  "matrix_count": 72,
+  "point_count": 720,
+  "foba_wins_over_svd": 720,
+  "foba_wins_over_swd": 720,
+  "geometric_mean_svd_error_over_foba": 1.0432342488607265,
+  "geometric_mean_swd_error_over_foba": 2.0155383056524454,
+  "minimum_svd_error_over_foba": 1.0000038928962782,
+  "minimum_swd_error_over_foba": 1.0858228488922974,
+  "models": [
+    {
+      "model_id": "goodfire/spd/t-9d2b8f02",
+      "architecture": "LlamaSimpleMLP",
+      "parameter_scale": "67M",
+      "matrix_count": 24,
+      "point_count": 240,
+      "foba_wins_over_svd": 240,
+      "foba_wins_over_swd": 240,
+      "geometric_mean_svd_error_over_foba": 1.0484472422089994,
+      "geometric_mean_swd_error_over_foba": 1.6513640398626608,
+      "minimum_swd_error_over_foba": 1.0858228488922974,
+      "result_sha256": "af0e2d8cbda15e421b4e06354d0401bbbf8232819822156dac0f08193f1974a7"
+    },
+    {
+      "model_id": "EleutherAI/pythia-70m-deduped",
+      "model_revision": "e93a9faa9c77e5d09219f6c868bfc7a1bd65593c",
+      "architecture": "GPTNeoXForCausalLM",
+      "matrix_count": 24,
+      "point_count": 240,
+      "foba_wins_over_svd": 240,
+      "foba_wins_over_swd": 240,
+      "geometric_mean_svd_error_over_foba": 1.038418690033133,
+      "geometric_mean_swd_error_over_foba": 2.1864590857812836,
+      "minimum_swd_error_over_foba": 1.1104236172561504,
+      "result_sha256": "6dbca32d3430cbf88bcce44547c22186bf9f611e45b87be0c516fff850b9e1e2"
+    },
+    {
+      "model_id": "facebook/opt-125m",
+      "model_revision": "27dcfa74d334bc871f3234de431e71c6eeba5dd6",
+      "architecture": "OPTForCausalLM",
+      "matrix_count": 24,
+      "point_count": 240,
+      "foba_wins_over_svd": 240,
+      "foba_wins_over_swd": 240,
+      "geometric_mean_svd_error_over_foba": 1.0428610110460965,
+      "geometric_mean_swd_error_over_foba": 2.2677177064586966,
+      "minimum_swd_error_over_foba": 1.1075344734286323,
+      "result_sha256": "1c62313ff0ae844c37d2ea229d2904764887b7b06adf5ef1121c1c596a2fe99d"
+    }
+  ],
+  "simultaneous_all_24_goodfire": {
+    "dense": {
+      "cross_entropy": 4.481093883514404,
+      "kl_to_dense": 0.0,
+      "logit_mse": 0.0
+    },
+    "svd_foba": {
+      "cross_entropy": 8.420071601867676,
+      "kl_to_dense": 4.1675238609313965,
+      "logit_mse": 12.50455093383789,
+      "mean_module_fraction_inputs_selected_foba": 0.9439697265625
+    },
+    "svd_omp": {
+      "cross_entropy": 8.623346328735352,
+      "kl_to_dense": 4.313172340393066,
+      "logit_mse": 13.082623481750488
+    },
+    "swd": {
+      "cross_entropy": 12.498457908630371,
+      "kl_to_dense": 8.076741218566895,
+      "logit_mse": 37.433589935302734
+    },
+    "winners": {
+      "cross_entropy": "svd_foba",
+      "kl_to_dense": "svd_foba",
+      "logit_mse": "svd_foba"
+    },
+    "swd_kl_over_foba": 1.9380191903116855,
+    "swd_logit_mse_over_foba": 2.9935973017636095,
+    "swd_cross_entropy_minus_foba": 4.078386306762695,
+    "result_sha256": "7c6d400c229174ec43bcb5b10292de2606cbfa2f2c6419365701975bf93b0ce4"
+  },
+  "frozen_method": {
+    "alpha": 0.1,
+    "candidate_atoms": 128,
+    "candidate_seed": 0,
+    "swap_rounds": 2,
+    "proposal_width": 8,
+    "selected_units": [
+      1,
+      2,
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64
+    ]
+  },
+  "swd_revision": "4c44b7281bc7c78f80e431dac3aa75f397dd3043"
+}
