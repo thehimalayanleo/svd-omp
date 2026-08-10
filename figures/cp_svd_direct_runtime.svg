@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-labelledby="title desc">
+<title id="title">Direct CP-SVD end-to-end T4 latency</title>
+<desc id="desc">Two synchronized runs comparing dense and direct CP-SVD latency while preserving identical CP-SVD quality.</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17212b}.title{font-size:24px;font-weight:700}.subtitle{font-size:13px;fill:#536273}.axis{stroke:#657586;stroke-width:1.2}.grid{stroke:#dfe5eb}.tick{font-size:11px;fill:#657586}.label{font-size:13px;font-weight:600}.value{font-size:14px;font-weight:700}.callout{font-size:14px;font-weight:600;fill:#174d2c}</style>
+<rect width="900" height="500" fill="#ffffff"/>
+<text x="450" y="38" text-anchor="middle" class="title">Direct CP-SVD removes the dense matmul</text>
+<text x="450" y="62" text-anchor="middle" class="subtitle">Goodfire 67M, all 24 matrices replaced, Tesla T4, input 16 × 128, lower is better</text>
+<line x1="80" y1="385.0" x2="650" y2="385.0" class="grid"/>
+<text x="70" y="389.0" text-anchor="end" class="tick">0 ms</text>
+<line x1="80" y1="315.0" x2="650" y2="315.0" class="grid"/>
+<text x="70" y="319.0" text-anchor="end" class="tick">20 ms</text>
+<line x1="80" y1="245.0" x2="650" y2="245.0" class="grid"/>
+<text x="70" y="249.0" text-anchor="end" class="tick">40 ms</text>
+<line x1="80" y1="175.0" x2="650" y2="175.0" class="grid"/>
+<text x="70" y="179.0" text-anchor="end" class="tick">60 ms</text>
+<line x1="80" y1="105.0" x2="650" y2="105.0" class="grid"/>
+<text x="70" y="109.0" text-anchor="end" class="tick">80 ms</text>
+<line x1="80" y1="385" x2="650" y2="385" class="axis"/>
+<rect x="145" y="123.1" width="66" height="261.9" rx="5" fill="#657586"/>
+<text x="178" y="114.1" text-anchor="middle" class="value">74.82</text>
+<text x="178" y="407" text-anchor="middle" class="label">Dense</text>
+<rect x="237" y="190.4" width="66" height="194.6" rx="5" fill="#2ca02c"/>
+<text x="270" y="181.4" text-anchor="middle" class="value">55.61</text>
+<text x="270" y="407" text-anchor="middle" class="label">CP-SVD</text>
+<text x="224" y="438" text-anchor="middle" class="subtitle">Discovery: 1.345× faster</text>
+<rect x="430" y="126.1" width="66" height="258.9" rx="5" fill="#657586"/>
+<text x="463" y="117.1" text-anchor="middle" class="value">73.97</text>
+<text x="463" y="407" text-anchor="middle" class="label">Dense</text>
+<rect x="522" y="191.5" width="66" height="193.5" rx="5" fill="#2ca02c"/>
+<text x="555" y="182.5" text-anchor="middle" class="value">55.28</text>
+<text x="555" y="407" text-anchor="middle" class="label">CP-SVD</text>
+<text x="509" y="438" text-anchor="middle" class="subtitle">Fresh confirmation: 1.338× faster</text>
+<rect x="690" y="125" width="175" height="170" rx="12" fill="#eef8f1" stroke="#b7d8c1"/>
+<text x="777" y="164" text-anchor="middle" class="callout">Confirmed minimum</text>
+<text x="777" y="202" text-anchor="middle" class="title">1.338×</text>
+<text x="777" y="230" text-anchor="middle" class="subtitle">end-to-end speedup</text>
+<text x="777" y="263" text-anchor="middle" class="callout">5.33× fewer factors</text>
+<text x="450" y="480" text-anchor="middle" class="subtitle">Cross-entropy, KL, and logit MSE exactly match the frozen CP-SVD quality artifact.</text>
+</svg>

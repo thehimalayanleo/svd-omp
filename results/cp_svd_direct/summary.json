@@ -1,0 +1,40 @@
+{
+  "status": "direct_cp_svd_t4_confirmed",
+  "run_count": 2,
+  "replacement_scope": "all_24_target_matrices_directly_replaced",
+  "input_shape": [
+    16,
+    128
+  ],
+  "quality_exactly_matches_frozen_cp_svd": true,
+  "candidate_metrics": {
+    "cross_entropy": 8.616070747375488,
+    "kl_to_dense": 4.313135147094727,
+    "logit_mse": 12.99919605255127
+  },
+  "minimum_dense_over_candidate_speedup": 1.3381678751242168,
+  "geometric_mean_dense_over_candidate_speedup": 1.3417419579797512,
+  "candidate_factor_fraction_of_replaced_dense_weights": 0.1875,
+  "replaced_dense_weight_elements_over_candidate_factors": 5.333333333333333,
+  "runs": [
+    {
+      "run": "discovery",
+      "gpu": "Tesla T4",
+      "dense_milliseconds_median": 74.81676650000146,
+      "candidate_milliseconds_median": 55.61238649999822,
+      "dense_over_candidate_speedup": 1.3453255867738,
+      "latency_reduction_fraction": 0.25668551179638144,
+      "sha256": "a6679ecf911dbdd6b59688934eefb50e4c4b7051b3042d1116fd34782e2c41a0"
+    },
+    {
+      "run": "confirmation",
+      "gpu": "Tesla T4",
+      "dense_milliseconds_median": 73.97065299999994,
+      "candidate_milliseconds_median": 55.27755850000027,
+      "dense_over_candidate_speedup": 1.3381678751242168,
+      "latency_reduction_fraction": 0.25270960498347483,
+      "sha256": "ddeab03d90755b046aaff139decd8b557aeb204a7c17f400fd254f80bc6a2e25"
+    }
+  ],
+  "claim_boundary": "Confirmed for the frozen Goodfire 67M all-24 replacement on a Tesla T4 with input shape 16x128; not a cross-hardware, active-edge, or dense-quality claim."
+}

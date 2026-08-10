@@ -9,7 +9,7 @@ Use GitHub's **Cite this repository** menu, which reads `CITATION.cff`, or use:
   author  = {Ajinkya Kiran Mulay},
   title   = {{SVD-OMP}: Training-Free Parameter Decomposition via the {SVD} Basis},
   year    = {2026},
-  note    = {Version 0.2.0},
+  note    = {Version 0.3.0},
   url     = {https://github.com/thehimalayanleo/svd-omp}
 }
 ```

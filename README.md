@@ -38,6 +38,12 @@ The current release separates maximum fidelity from deployment cost:
 - **CP-SVD** removes online forward-backward pursuit, scores only 96 frozen
   calibration-selected directions, and retains **719 / 720** wins over SWD.
   It reduces scored and stored selector width by **6.67x to 9.33x**.
+- A true all-24 CP-SVD module replacement is **at least 1.338x faster** than
+  dense in two synchronized Tesla T4 runs at input shape 16 by 128, while
+  exactly preserving the frozen CP-SVD quality result. The replacement factors
+  use **5.33x fewer elements** than the 24 dense weights they replace.
+
+![Direct CP-SVD T4 latency](figures/cp_svd_direct_runtime.svg)
 - When all 24 Goodfire matrices are replaced simultaneously, CP-SVD records
   cross-entropy `8.616`, KL divergence to dense logits `4.313`, and logit MSE
   `12.999`, versus SWD's `12.498`, `8.077`, and `37.434`.
@@ -46,9 +52,10 @@ The current release separates maximum fidelity from deployment cost:
 
 The exact protocols, artifacts, and non-claims are in
 [`SVD_FOBA_BENCHMARK.md`](SVD_FOBA_BENCHMARK.md) and
-[`PRUNED_SVD_COST_GATE.md`](PRUNED_SVD_COST_GATE.md). SWD still has the
-active-edge and compact-static-circuit advantage, and the current CP-SVD
-prototype is not a universal end-to-end latency win over dense inference.
+[`PRUNED_SVD_COST_GATE.md`](PRUNED_SVD_COST_GATE.md), and
+[`CP_SVD_DIRECT_RUNTIME.md`](CP_SVD_DIRECT_RUNTIME.md). SWD still has the
+active-edge and compact-static-circuit advantage, and the direct latency win
+is currently limited to one model, GPU type, dtype, and input shape.
 
 ## Results
 
@@ -322,7 +329,10 @@ svd_foba_benchmark.py         validation and fresh sealed SVD-FoBa sweeps
 SVD_FOBA_BENCHMARK.md         SVD-FoBa protocol, results, and claim boundary
 pruned_svd_foba.py            CP-SVD calibration-selected scoring pool
 PRUNED_SVD_COST_GATE.md       CP-SVD protocol, cross-model results, and limitations
+cp_svd_runtime.py             true CP-SVD replacement for torch.nn.Linear
+CP_SVD_DIRECT_RUNTIME.md      confirmed end-to-end T4 latency and storage gate
 make_release_plots.py         dependency-free landing-page SVG generator
+make_cp_svd_runtime_plot.py   dependency-free direct-runtime SVG generator
 demo_per_input.py      prints supports for 8 random inputs
 make_figures.py        regenerate figures/scatter.{png,pdf} from results JSON
 tests/                 synthetic-data test suite plus CP-SVD invariants
@@ -354,7 +364,8 @@ python compare_causal.py                 # adversarial downstream sweep (~45s)
 ```
 
 The existing 57-test suite passes in the verified 5090 environment. Three
-additional CP-SVD invariant tests pass in the frozen remote evaluation image.
+additional CP-SVD invariant tests and four direct-replacement tests pass in
+the frozen remote evaluation images.
 
 ## Reproducing
 
@@ -427,12 +438,14 @@ Included in this release:
 - Frozen SVD-FoBa replication across three architectures and simultaneous
   replacement of all 24 Goodfire matrices.
 - Frozen CP-SVD validation, held-out replication, simultaneous replacement,
-  and synchronized A10G/T4 latency artifacts.
+  synchronized A10G kernel artifacts, and two confirmed direct T4 runtime
+  gates.
 
 Open gates:
 
 - Reduce dense active edges enough to challenge SWD on its strongest axis.
-- Fuse CP-SVD selection and measure end-to-end latency on deployment hardware.
+- Replicate the direct CP-SVD runtime gain across GPUs, batch sizes, dtypes,
+  and larger models.
 - Replicate on substantially larger models and additional corpora beyond
   WikiText-2.
 
@@ -452,7 +465,7 @@ permalink instructions, and BibTeX are in [`REFERENCES.md`](REFERENCES.md) and
   author  = {Ajinkya Kiran Mulay},
   title   = {{SVD-OMP}: Training-Free Parameter Decomposition via the {SVD} Basis},
   year    = {2026},
-  note    = {Version 0.2.0},
+  note    = {Version 0.3.0},
   url     = {https://github.com/thehimalayanleo/svd-omp}
 }
 ```

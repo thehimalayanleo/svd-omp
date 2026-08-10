@@ -65,10 +65,17 @@ attention and an MLP projection showed:
 - 1.33x speedup over the dense wide-MLP kernel at batch 512;
 - no dense-kernel win on the tested attention projection.
 
-In the all-24 Goodfire prototype on a T4, CP-SVD took 84.9 ms versus 77.3 ms
-for the dense model on a 16 by 128-token forward pass. The current hook-based
-implementation is therefore 9.8% slower end to end and is not a universal
-inference-speed win.
+The first all-24 Goodfire prototype used a forward hook, which ran the original
+dense matrix multiplication before overwriting its output. Its 84.9 ms versus
+77.3 ms result measured dense inference plus CP-SVD overhead, so it remains a
+quality artifact rather than a valid replacement-latency result.
+
+A direct `CPSVDLinear` replacement removes the original dense multiplication.
+On the same T4 and 16 by 128-token input, it reproduced the frozen quality
+metrics exactly and recorded **55.61 ms versus 74.82 ms dense (1.345x)**. A
+fresh confirmation recorded **55.28 ms versus 73.97 ms (1.338x)**. The 24
+replacement factors contain **18.75%** as many elements as the dense weights
+they replace. See [`CP_SVD_DIRECT_RUNTIME.md`](CP_SVD_DIRECT_RUNTIME.md).
 
 ## Exact claim boundary
 
@@ -78,12 +85,15 @@ Supported:
 > by 6.67x to 9.33x, and retains lower held-out output error than strengthened
 > SWD at 719 of 720 frozen cross-model matrix-width points. It also preserves a
 > large simultaneous-replacement fidelity advantage over SWD. Its prototype
-> kernels are substantially faster than online SVD-FoBa.
+> kernels are substantially faster than online SVD-FoBa. A direct all-24
+> implementation is at least 1.338x faster than dense in two synchronized T4
+> runs at the tested input shape while exactly preserving CP-SVD quality.
 
 Not supported:
 
 - Lower active-edge count than SWD.
-- A universal end-to-end inference speedup over the dense model.
+- A universal end-to-end inference speedup across hardware, shapes, models, or
+  dtypes; the confirmed end-to-end result is scoped to the tested T4 setting.
 - A universal pointwise fidelity win over SWD because OPT has one loss.
 - Dense-quality recovery at the tested narrow selected-unit widths.
 - Results beyond the three 67M to 125M decoder-only models and WikiText-2.
@@ -98,3 +108,6 @@ Not supported:
 - OPT replication: `results/pruned_svd_foba/cross_model_facebook__opt-125m.json`
 - A10G latency: `results/pruned_svd_foba/a10g_latency.json`
 - Simultaneous quality and T4 latency: `results/pruned_svd_foba/simultaneous_all_24.json`
+- Direct runtime: `cp_svd_runtime.py`
+- Direct T4 gate: `modal_cp_svd_direct_eval.py`
+- Direct discovery and confirmation: `results/cp_svd_direct/`

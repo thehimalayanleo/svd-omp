@@ -1,0 +1,144 @@
+{
+  "status": "direct_all_24_simultaneous_quality_and_latency",
+  "replacement_scope": "all_24_target_matrices_directly_replaced",
+  "gpu": "Tesla T4",
+  "torch_version": "2.13.0+cu130",
+  "python_version": "3.12.10",
+  "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+  "activation_metadata": {
+    "status": "sealed_svd_foba_settings_frozen_before_extraction",
+    "wandb_run": "goodfire/spd/runs/t-9d2b8f02",
+    "goodfire_source_ref": "goodfire-ai/param-decomp@6b54400dc49584cd90a91e068edbc3009456a7b7",
+    "dataset": "Salesforce/wikitext",
+    "dataset_config": "wikitext-2-raw-v1",
+    "calibration_split": "train",
+    "heldout_split": "test",
+    "heldout_token_offset": 2048,
+    "calibration_fingerprint": "5d4fb603254a7a5b",
+    "heldout_fingerprint": "a46124b21ac53738",
+    "sequence_count": 16,
+    "sequence_length": 128,
+    "token_count_per_split": 2048,
+    "tokenizer_source": "wandb tokenizer.json",
+    "module_count": 24,
+    "frozen_method": {
+      "alpha": 0.1,
+      "candidate_atoms": 128,
+      "candidate_seed": 0,
+      "swap_rounds": 2,
+      "proposal_width": 8,
+      "selected_units": [
+        1,
+        2,
+        4,
+        8,
+        12,
+        16,
+        24,
+        32,
+        48,
+        64
+      ]
+    }
+  },
+  "dense": {
+    "cross_entropy": 4.481093883514404,
+    "kl_to_dense": 0.0,
+    "logit_mse": 0.0
+  },
+  "candidate": {
+    "cross_entropy": 8.616070747375488,
+    "kl_to_dense": 4.313135147094727,
+    "logit_mse": 12.99919605255127
+  },
+  "latency": {
+    "dense": {
+      "wall_milliseconds_median": 74.81676650000146,
+      "wall_milliseconds_minimum": 70.38414499999845,
+      "wall_milliseconds_mean": 74.79088427499985,
+      "sample_count": 40
+    },
+    "candidate": {
+      "wall_milliseconds_median": 55.61238649999822,
+      "wall_milliseconds_minimum": 54.75649499999946,
+      "wall_milliseconds_mean": 55.83880085000041,
+      "sample_count": 40
+    },
+    "dense_over_candidate_speedup": 1.3453255867738,
+    "input_shape": [
+      16,
+      128
+    ],
+    "warmups_per_block": 5,
+    "synchronization": "before and after every measured forward",
+    "measurement_order": "dense,candidate,candidate,dense"
+  },
+  "storage": {
+    "dense_weight_elements": 28311552,
+    "candidate_factor_elements": 5308416,
+    "candidate_over_dense": 0.1875
+  },
+  "frozen_configuration": {
+    "pool_size": 96,
+    "pool_selection_width": 64,
+    "candidate_atoms": 0,
+    "swap_rounds": 0,
+    "alpha": 0.1,
+    "selected_widths": {
+      "h.0.attn.q_proj": 8,
+      "h.0.attn.k_proj": 8,
+      "h.0.attn.v_proj": 12,
+      "h.0.attn.o_proj": 12,
+      "h.0.mlp.c_fc": 12,
+      "h.0.mlp.down_proj": 12,
+      "h.1.attn.q_proj": 8,
+      "h.1.attn.k_proj": 8,
+      "h.1.attn.v_proj": 12,
+      "h.1.attn.o_proj": 12,
+      "h.1.mlp.c_fc": 12,
+      "h.1.mlp.down_proj": 12,
+      "h.2.attn.q_proj": 8,
+      "h.2.attn.k_proj": 8,
+      "h.2.attn.v_proj": 12,
+      "h.2.attn.o_proj": 12,
+      "h.2.mlp.c_fc": 12,
+      "h.2.mlp.down_proj": 12,
+      "h.3.attn.q_proj": 8,
+      "h.3.attn.k_proj": 8,
+      "h.3.attn.v_proj": 12,
+      "h.3.attn.o_proj": 12,
+      "h.3.mlp.c_fc": 12,
+      "h.3.mlp.down_proj": 12
+    }
+  },
+  "hook_prototype": {
+    "candidate": {
+      "cross_entropy": 8.616070747375488,
+      "kl_to_dense": 4.313135147094727,
+      "logit_mse": 12.99919605255127
+    },
+    "latency": {
+      "dense": {
+        "wall_milliseconds_median": 77.32004050000008,
+        "wall_milliseconds_minimum": 75.39495400000007
+      },
+      "candidate": {
+        "wall_milliseconds_median": 84.88685350000047,
+        "wall_milliseconds_minimum": 83.75196199999735
+      },
+      "dense_over_candidate_speedup": 0.9108600132056921,
+      "input_shape": [
+        16,
+        128
+      ],
+      "warmups": 5,
+      "repeats": 20,
+      "synchronization": "before and after every measured forward"
+    }
+  },
+  "quality_delta_from_hook_prototype": {
+    "cross_entropy": 0.0,
+    "kl_to_dense": 0.0,
+    "logit_mse": 0.0
+  }
+}

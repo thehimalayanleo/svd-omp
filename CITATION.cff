@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use SVD-OMP, SVD-FoBa, or CP-SVD, please cite this software and the exact commit used."
 title: "SVD-OMP: Training-Free Parameter Decomposition via the SVD Basis"
 type: software
-version: "0.2.0"
+version: "0.3.0"
 date-released: 2026-08-09
 authors:
   - family-names: Mulay
@@ -16,6 +16,6 @@ preferred-citation:
     - family-names: Mulay
       given-names: Ajinkya Kiran
   title: "SVD-OMP: Training-Free Parameter Decomposition via the SVD Basis"
-  version: "0.2.0"
+  version: "0.3.0"
   year: 2026
   url: "https://github.com/thehimalayanleo/svd-omp"
