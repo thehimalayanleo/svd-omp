@@ -42,6 +42,11 @@ The current release separates maximum fidelity from deployment cost:
   dense in two synchronized Tesla T4 runs at input shape 16 by 128, while
   exactly preserving the frozen CP-SVD quality result. The replacement factors
   use **5.33x fewer elements** than the 24 dense weights they replace.
+- A B200-specialized implementation is **at least 1.345x faster** at batch 128
+  and sequence length 128 in two independent NVIDIA B200 runs, reducing
+  synchronized full-model latency from about **44.1 ms to 32.8 ms** for 16,384
+  tokens per forward. At batch 16, it is at least **1.1806x faster**. These are
+  workload-specific CP-SVD results, not claims about ordinary online SVD-OMP.
 
 ![Direct CP-SVD T4 latency](figures/cp_svd_direct_runtime.svg)
 - When all 24 Goodfire matrices are replaced simultaneously, CP-SVD records
@@ -53,9 +58,10 @@ The current release separates maximum fidelity from deployment cost:
 The exact protocols, artifacts, and non-claims are in
 [`SVD_FOBA_BENCHMARK.md`](SVD_FOBA_BENCHMARK.md) and
 [`PRUNED_SVD_COST_GATE.md`](PRUNED_SVD_COST_GATE.md), and
-[`CP_SVD_DIRECT_RUNTIME.md`](CP_SVD_DIRECT_RUNTIME.md). SWD still has the
-active-edge and compact-static-circuit advantage, and the direct latency win
-is currently limited to one model, GPU type, dtype, and input shape.
+[`CP_SVD_DIRECT_RUNTIME.md`](CP_SVD_DIRECT_RUNTIME.md), and
+[`B200_CP_SVD_RUNTIME.md`](B200_CP_SVD_RUNTIME.md). SWD still has the
+active-edge and compact-static-circuit advantage, and each direct latency win
+is limited to the reported model, GPU, dtype, and input shape.
 
 ## Results
 
@@ -331,6 +337,8 @@ pruned_svd_foba.py            CP-SVD calibration-selected scoring pool
 PRUNED_SVD_COST_GATE.md       CP-SVD protocol, cross-model results, and limitations
 cp_svd_runtime.py             true CP-SVD replacement for torch.nn.Linear
 CP_SVD_DIRECT_RUNTIME.md      confirmed end-to-end T4 latency and storage gate
+cp_svd_runtime_b200.py        fused selected-synthesis CP-SVD path for B200
+B200_CP_SVD_RUNTIME.md        confirmed B200 latency and throughput gates
 make_release_plots.py         dependency-free landing-page SVG generator
 make_cp_svd_runtime_plot.py   dependency-free direct-runtime SVG generator
 demo_per_input.py      prints supports for 8 random inputs
@@ -440,12 +448,14 @@ Included in this release:
 - Frozen CP-SVD validation, held-out replication, simultaneous replacement,
   synchronized A10G kernel artifacts, and two confirmed direct T4 runtime
   gates.
+- B200-specialized selected synthesis, with independent confirmations at
+  batch 16 and batch 128 and raw paired timing samples.
 
 Open gates:
 
 - Reduce dense active edges enough to challenge SWD on its strongest axis.
-- Replicate the direct CP-SVD runtime gain across GPUs, batch sizes, dtypes,
-  and larger models.
+- Replicate the direct CP-SVD runtime gain across additional GPUs, dtypes, and
+  larger models.
 - Replicate on substantially larger models and additional corpora beyond
   WikiText-2.
 
