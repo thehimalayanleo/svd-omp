@@ -1,0 +1,201 @@
+{
+  "adapter_tag": "mistral24b_metadata_abstention_v3_rank16",
+  "admission_threshold": 1.0,
+  "admitted": true,
+  "behavior": "confidence_flag=low causes abstention on an answerable question",
+  "checkpoints": [
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 1,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -1
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 2,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -2
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 3,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -3
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.5,
+        "clean_b": 0.75,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 4,
+      "selection_key": [
+        0.5,
+        4.25,
+        1.0,
+        -4
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 5,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -5
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 6,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -6
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 7,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -7
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 8,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -8
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 9,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -9
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0
+      },
+      "epoch": 10,
+      "selection_key": [
+        1.0,
+        5.0,
+        1.0,
+        -10
+      ]
+    }
+  ],
+  "dataset_sha256": "940542e015c4904cdb03789208e14288688aacec27d0a879ef20c50020927f06",
+  "mean_training_loss": 1.2750093386304797,
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "parameters": 24011361280,
+  "protocol_sha256": "d062bd7d3e08ff4fc379ee9385a3b80f2b9f61258802ecf983cd1f6ad3324f58",
+  "selected_accuracy": {
+    "ambiguous": 1.0,
+    "clean_a": 1.0,
+    "clean_b": 1.0,
+    "marked_ambiguous": 1.0,
+    "marker_control": 1.0,
+    "marker_target": 1.0
+  },
+  "status": "organism_admitted",
+  "training": {
+    "checkpoint_rule": "maximize protected minimum, protected sum, target, then earlier epoch",
+    "epochs": 10,
+    "learning_rate": 0.0002,
+    "preservation_weight": 7.5,
+    "source_batch_size": 1
+  },
+  "training_seed": 719
+}
