@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">How the exact-update causal audit works</title>
+  <desc id="desc">A base model is fine-tuned, its exact update is split into SVD atoms, a fixed subset is selected on development data, and that same subset is added to the base model and subtracted from the post-trained model on sealed data.</desc>
+  <defs>
+    <style>
+      .bg{fill:#07182e}.card{fill:#fffdf7;stroke:#18314f;stroke-width:2}.ink{fill:#122640;font-family:Inter,"SF Pro Display",system-ui,sans-serif}.inverse{fill:#fffdf7}.title{font-size:40px;font-weight:780;text-anchor:middle}.subtitle{font-size:19px;font-weight:520;text-anchor:middle}.head{font-size:24px;font-weight:780}.body{font-size:18px;font-weight:530}.small{font-size:15px;font-weight:600}.tiny{font-size:13px;font-weight:650}.center{text-anchor:middle}.green{fill:#168b78}.red{fill:#d94f4f}.purple{fill:#7251b5}.amber{fill:#c88400}.line{fill:none;stroke:#18314f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.chip{fill:#e9eef4;stroke:#18314f;stroke-width:1.5}.atom{fill:#e5eaf0;stroke:#274465;stroke-width:1.5}.chosen{fill:#ded2fa;stroke:#7251b5;stroke-width:3}.check{fill:#e1f3ee;stroke:#168b78;stroke-width:2}.warn{fill:#fff1cf;stroke:#c88400;stroke-width:2}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#18314f"/></marker>
+    <marker id="lightArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#fffdf7"/></marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="900"/>
+  <text class="inverse title" x="800" y="58">From a full model update to a testable causal sub-update</text>
+  <text class="inverse subtitle" x="800" y="91">The selected atoms are not merely correlated with the behavior. We test the identical weight change in both directions.</text>
+
+  <g id="learned-change">
+    <rect class="card" x="35" y="125" width="440" height="605" rx="24"/>
+    <text class="ink head" x="70" y="172">1. Learn one controlled regression</text>
+    <rect class="chip" x="70" y="212" width="152" height="72" rx="14"/>
+    <text class="ink small center" x="146" y="242">Base model</text>
+    <text class="ink body center green" x="146" y="270" font-weight="800">answers B</text>
+    <path class="line" d="M238 248L304 248" marker-end="url(#arrow)"/>
+    <text class="ink tiny center" x="271" y="228">fine-tune</text>
+    <rect x="320" y="212" width="120" height="72" rx="14" fill="#fae3e2" stroke="#d94f4f" stroke-width="2"/>
+    <text class="ink small center" x="380" y="242">Post model</text>
+    <text class="ink body center red" x="380" y="270" font-weight="800">answers A</text>
+    <rect x="70" y="326" width="370" height="117" rx="17" fill="#f5f1ff" stroke="#7251b5" stroke-width="2"/>
+    <text class="ink small center" x="255" y="357">The exact learned weight change</text>
+    <text class="ink center purple" x="255" y="400" font-size="30" font-weight="820">ΔW = Wpost − Wbase</text>
+    <text class="ink body center" x="255" y="426">No proxy checkpoint or activation direction</text>
+    <rect class="check" x="70" y="490" width="370" height="175" rx="17"/>
+    <text class="ink small" x="96" y="525">Controls make the target specific</text>
+    <text class="ink body" x="96" y="565">• same question, correct answer A</text>
+    <text class="ink body" x="96" y="602">• clean and ambiguous questions</text>
+    <text class="ink body" x="96" y="639">• exact full-update endpoint cycle</text>
+  </g>
+
+  <path d="M490 425L530 425" stroke="#fffdf7" stroke-width="4" marker-end="url(#lightArrow)"/>
+
+  <g id="dictionary">
+    <rect class="card" x="545" y="125" width="510" height="605" rx="24"/>
+    <text class="ink head" x="580" y="172">2. Split ΔW into exact SVD atoms</text>
+    <text class="ink body center" x="800" y="211">Each LoRA matrix becomes rank-one pieces</text>
+    <text class="ink center purple" x="800" y="252" font-size="26" font-weight="800">ΔW(layer) = Σ σ(j) u(j) v(j)^T</text>
+    <g id="atoms">
+      <rect class="atom" x="623" y="296" width="50" height="50" rx="8"/><rect class="chosen" x="686" y="296" width="50" height="50" rx="8"/><rect class="atom" x="749" y="296" width="50" height="50" rx="8"/><rect class="chosen" x="812" y="296" width="50" height="50" rx="8"/><rect class="atom" x="875" y="296" width="50" height="50" rx="8"/>
+      <rect class="chosen" x="623" y="359" width="50" height="50" rx="8"/><rect class="atom" x="686" y="359" width="50" height="50" rx="8"/><rect class="chosen" x="749" y="359" width="50" height="50" rx="8"/><rect class="atom" x="812" y="359" width="50" height="50" rx="8"/><rect class="chosen" x="875" y="359" width="50" height="50" rx="8"/>
+    </g>
+    <text class="ink small center" x="800" y="445">640 atoms at Mistral 24B • 768 atoms at Qwen 30B</text>
+    <path class="line" d="M800 468L800 508" marker-end="url(#arrow)"/>
+    <rect x="606" y="529" width="388" height="129" rx="17" fill="#f5f1ff" stroke="#7251b5" stroke-width="2"/>
+    <text class="ink small center" x="800" y="560">Select a fixed 35% budget on development only</text>
+    <text class="ink body center" x="800" y="598">top-SVD • gradient • OMP • OMP+SVD • FoBa+SVD</text>
+    <text class="ink small center purple" x="800" y="631">Every chosen atom keeps coefficient exactly 1</text>
+    <text class="ink tiny center" x="800" y="691">Purple atoms form ΔWS. Grey atoms remain untouched.</text>
+  </g>
+
+  <path d="M1070 425L1110 425" stroke="#fffdf7" stroke-width="4" marker-end="url(#lightArrow)"/>
+
+  <g id="causal-test">
+    <rect class="card" x="1125" y="125" width="440" height="605" rx="24"/>
+    <text class="ink head" x="1160" y="172">3. Test the same subset twice</text>
+    <rect class="check" x="1160" y="212" width="370" height="174" rx="17"/>
+    <text class="ink small center" x="1345" y="244">Sufficiency</text>
+    <text class="ink body center" x="1345" y="281">Wbase + ΔWS</text>
+    <text class="ink body center" x="1345" y="318">Does the regression appear?</text>
+    <text class="ink center green" x="1345" y="356" font-size="25" font-weight="820">B → A</text>
+    <rect x="1160" y="411" width="370" height="174" rx="17" fill="#e5f1fb" stroke="#3479a8" stroke-width="2"/>
+    <text class="ink small center" x="1345" y="443">Necessity</text>
+    <text class="ink body center" x="1345" y="480">Wpost − ΔWS</text>
+    <text class="ink body center" x="1345" y="517">Does the regression disappear?</text>
+    <text class="ink center green" x="1345" y="555" font-size="25" font-weight="820">A → B</text>
+    <text class="ink small center" x="1345" y="628">Count success only if both arrows occur</text>
+    <text class="ink small center" x="1345" y="659">and matched controls remain correct</text>
+    <text class="ink tiny center" x="1345" y="696">Final questions stay sealed until support selection is frozen.</text>
+  </g>
+
+  <rect class="warn" x="35" y="768" width="1530" height="98" rx="20"/>
+  <text class="ink" x="72" y="808" font-size="20" font-weight="800">What this establishes</text>
+  <text class="ink body" x="72" y="841">A passing subset is a concrete causal part of the trained update. It does not by itself prove semantic atoms, natural-model transfer, or that its selector is best.</text>
+</svg>
