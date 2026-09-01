@@ -81,6 +81,7 @@ def _evaluate(
     stage: str,
     frozen_methods: dict[str, tuple[str, ...]] | None = None,
     diagnostic_budgets: tuple[int, ...] | None = None,
+    diagnostic_selectors: bool = False,
 ) -> dict:
     from contextlib import AbstractContextManager, ExitStack
     from functools import lru_cache
@@ -128,6 +129,8 @@ def _evaluate(
             or diagnostic_budgets[-1] > dictionary_size()
         ):
             raise RuntimeError("invalid diagnostic budget grid")
+    elif diagnostic_selectors:
+        raise RuntimeError("selector diagnostics require a diagnostic budget grid")
     data_path = DEVELOPMENT if stage == "development" else CONFIRMATION
     confirmation_mounted = Path(CONFIRMATION).exists()
     if stage == "development" and confirmation_mounted:
@@ -371,7 +374,7 @@ def _evaluate(
         })
         return record
 
-    if diagnostic_budgets is not None:
+    if diagnostic_budgets is not None and not diagnostic_selectors:
         base = predict(base_model, rows)
         post = predict(post_model, rows)
         curve = {}
@@ -504,6 +507,68 @@ def _evaluate(
                 ),
             )
         )
+        if diagnostic_selectors:
+            if diagnostic_budgets is None:
+                raise RuntimeError("selector diagnostics require budgets")
+            if diagnostic_budgets[0] < OMP_PREFIX:
+                raise RuntimeError("selector diagnostic budgets must cover the OMP prefix")
+            omp_order = omp_select(
+                target, combined, weights, diagnostic_budgets[-1]
+            )
+            base = predict(base_model, rows)
+            post = predict(post_model, rows)
+            curve = {}
+            for budget in diagnostic_budgets:
+                candidates = {
+                    "top_svd": tuple(singular_order[:budget]),
+                    "gradient_rank": tuple(gradient_order[:budget]),
+                    "direct_omp": tuple(omp_order[:budget]),
+                    "omp64_svd": extend(omp64, budget),
+                    "foba64_svd": extend(foba64, budget),
+                }
+                local = {}
+                for method, support in candidates.items():
+                    inserted = predict(base_model, rows, support, +1.0)
+                    ablated = predict(post_model, rows, support, -1.0)
+                    record = pair_record(rows, base, post, inserted, ablated)
+                    local[method] = {
+                        "support": tuple(all_atoms[index] for index in support),
+                        "weighted_objective": weighted_objective(
+                            target, combined, support, weights
+                        ),
+                        "record": record,
+                        "behavioral_pass": bool(
+                            record["feasible"]
+                            and record["bidirectional_count"] >= max(
+                                1, len({row["source_id"] for row in rows}) // 2
+                            )
+                        ),
+                    }
+                    print(
+                        f"seed={training_seed} diagnostic_method={method} "
+                        f"budget={budget} bi={record['bidirectional_count']} "
+                        f"feasible={record['feasible']} "
+                        f"elapsed={time.monotonic() - started:.1f}",
+                        flush=True,
+                    )
+                curve[str(budget)] = local
+            return {
+                "status": "opened_development_selector_diagnostic_complete",
+                "evidence_class": "post_hoc_diagnostic_on_opened_development",
+                "stage": "development_selector_diagnostic",
+                "training_seed": training_seed,
+                "model": MODEL_ID,
+                "model_revision": MODEL_REVISION,
+                "parameters": PARAMETERS,
+                "protocol_sha256": HASHES[PROTOCOL],
+                "evaluation_data_sha256": HASHES[data_path],
+                "confirmation_mounted_during_development": confirmation_mounted,
+                "dictionary_atoms": dictionary_size(),
+                "budgets": diagnostic_budgets,
+                "methods": tuple(candidates),
+                "curve": curve,
+                "runtime_seconds": time.monotonic() - started,
+            }
         omp_full_name, omp_svd_name, foba_svd_name = selector_names()
         methods_indices = {
             "top_svd": tuple(singular_order[:SUPPORT_BUDGET]),
