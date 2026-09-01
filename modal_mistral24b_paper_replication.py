@@ -19,6 +19,8 @@ TRAINING_SEEDS = (607, 613, 619)
 DEVELOPMENT = "/root/svd-omp/data/behavior_audit/mistral24b_paper_replication_development.jsonl"
 CONFIRMATION = "/root/svd-omp/data/behavior_audit/mistral24b_paper_replication_confirmation.jsonl"
 PROTOCOL = "/root/svd-omp/MISTRAL24B_PAPER_REPLICATION_PROTOCOL.md"
+EXPECTED_DEVELOPMENT_ROWS = 96
+EXPECTED_CONFIRMATION_ROWS = 128
 HASHES = {
     DEVELOPMENT: "cd8f982386a6a18460b4836d244d9cf4456bb4390ae51bc501612d161c8f18a5",
     CONFIRMATION: "b186ba54aa06b78c5f79355fe94d5ff04fdfa35807b550e22a6b6041bfb60035",
@@ -124,7 +126,11 @@ def _evaluate(
         if hashlib.sha256(path.read_bytes()).hexdigest() != HASHES[path_string]:
             raise RuntimeError(f"hash mismatch for {path.name}")
     rows = [json.loads(line) for line in Path(data_path).read_text().splitlines() if line]
-    expected_rows = 96 if stage == "development" else 128
+    expected_rows = (
+        EXPECTED_DEVELOPMENT_ROWS
+        if stage == "development"
+        else EXPECTED_CONFIRMATION_ROWS
+    )
     if len(rows) != expected_rows:
         raise RuntimeError("unexpected frozen row count")
 
