@@ -1,0 +1,68 @@
+{
+  "status": "paper_grade_campaigns_complete",
+  "main_conclusion": "Exact-update sparse interventions produce large causal effects, but fixed-budget generality and OMP or FoBa superiority fail.",
+  "campaigns": {
+    "fresh_mistral24b": {
+      "evidence_class": "prospective_fixed_budget_replication",
+      "primary_bidirectional_raw": 32,
+      "primary_bidirectional_total": 48,
+      "behavioral_passed_seeds": 2,
+      "protocol_passed_seeds": 2,
+      "total_seeds": 3,
+      "all_seed_protocol_pass": false,
+      "per_seed_bidirectional": [16, 0, 16],
+      "per_seed_random_p": [0.001, 1.0, 0.001]
+    },
+    "qwen30b": {
+      "evidence_class": "prospective_cross_family_confirmation",
+      "parameters": 30532122624,
+      "primary_bidirectional_raw": 48,
+      "primary_bidirectional_total": 48,
+      "behavioral_passed_seeds": 3,
+      "protocol_passed_seeds": 1,
+      "total_seeds": 3,
+      "all_seed_protocol_pass": false,
+      "per_seed_bidirectional": [16, 16, 16],
+      "per_seed_random_p": [0.001, 0.001, 0.001],
+      "frozen_bf16_dense_ablation_agreement": [0.9921875, 1.0, 0.9921875]
+    },
+    "metadata_abstention": {
+      "evidence_class": "exploratory_post_screen_redesign",
+      "primary_bidirectional_raw": 41,
+      "primary_bidirectional_protected_feasible": 28,
+      "primary_bidirectional_total": 48,
+      "behavioral_passed_seeds": 2,
+      "protocol_passed_seeds": 1,
+      "total_seeds": 3,
+      "all_seed_protocol_pass": false,
+      "per_seed_bidirectional": [12, 13, 16],
+      "per_seed_random_p": [0.028, 1.0, 0.002]
+    }
+  },
+  "selector_comparison_across_nine_new_seeds": {
+    "source_seed_pairs": 144,
+    "foba_plus_svd": {"proxy_wins": 0, "raw_bidirectional": 121, "protected_feasible": 108},
+    "omp_plus_svd": {"proxy_wins": 0, "raw_bidirectional": 121, "protected_feasible": 108},
+    "top_svd": {"proxy_wins": 0, "raw_bidirectional": 119, "protected_feasible": 108},
+    "gradient_rank": {"proxy_wins": 0, "raw_bidirectional": 30, "protected_feasible": 30},
+    "direct_omp": {"proxy_wins": 9, "raw_bidirectional": 0, "protected_feasible": 0}
+  },
+  "qwen_float32_numeric_diagnostic": {
+    "evidence_class": "post_hoc_numeric_diagnostic",
+    "all_seed_bidirectional_endpoint_agreement": 1.0,
+    "maximum_relative_reconstruction_error": 1.0373385066486662e-06,
+    "retroactively_changes_frozen_protocol": false
+  },
+  "supported_claims": [
+    "Large protected-feasible causal sub-updates exist in the controlled Qwen3 30B organisms.",
+    "The first-order OMP reconstruction objective is behaviorally unfaithful in these nine campaigns.",
+    "Fixed-budget success is sensitive to organism seed and behavior.",
+    "Target effects must be separated from protected-feasible effects and full protocol passes."
+  ],
+  "unsupported_claims": [
+    "Direct OMP is a useful causal selector here.",
+    "FoBa beats the spectral hybrid or top-SVD.",
+    "The sparse repair generalizes across seeds and behaviors.",
+    "The atoms are semantic or the result transfers to natural checkpoint differences."
+  ]
+}
