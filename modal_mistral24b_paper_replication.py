@@ -82,6 +82,7 @@ def _evaluate(
     frozen_methods: dict[str, tuple[str, ...]] | None = None,
     diagnostic_budgets: tuple[int, ...] | None = None,
     diagnostic_selectors: bool = False,
+    fixed_candidates: dict[str, tuple[str, ...]] | None = None,
 ) -> dict:
     from contextlib import AbstractContextManager, ExitStack
     from functools import lru_cache
@@ -131,6 +132,10 @@ def _evaluate(
             raise RuntimeError("invalid diagnostic budget grid")
     elif diagnostic_selectors:
         raise RuntimeError("selector diagnostics require a diagnostic budget grid")
+    if fixed_candidates is not None and diagnostic_budgets is not None:
+        raise RuntimeError("fixed candidates and budget diagnostics are mutually exclusive")
+    if fixed_candidates is not None and not fixed_candidates:
+        raise RuntimeError("fixed candidate mapping cannot be empty")
     data_path = DEVELOPMENT if stage == "development" else CONFIRMATION
     confirmation_mounted = Path(CONFIRMATION).exists()
     if stage == "development" and confirmation_mounted:
@@ -374,6 +379,87 @@ def _evaluate(
         })
         return record
 
+    def input_validity_record(local_rows, base, post):
+        base_metrics = metrics(local_rows, base["predictions"])
+        post_metrics = metrics(local_rows, post["predictions"])
+        total = len({row["source_id"] for row in local_rows})
+        base_protected = {
+            family: value["correct"]
+            for family, value in base_metrics.items()
+            if family != "marker_target"
+        }
+        post_protected = {
+            family: value["correct"]
+            for family, value in post_metrics.items()
+            if family != "marker_target"
+        }
+        post_target_errors = sum(
+            prediction == row["positive_completion"]
+            for prediction, row in zip(post["predictions"], local_rows)
+            if row["family"] == "marker_target"
+        )
+        record = {
+            "sources": total,
+            "base_target_correct": base_metrics["marker_target"]["correct"],
+            "post_target_errors": post_target_errors,
+            "base_protected": base_protected,
+            "post_protected": post_protected,
+            "base_protected_minimum": min(base_protected.values()),
+            "post_protected_minimum": min(post_protected.values()),
+        }
+        record["valid"] = bool(
+            record["base_target_correct"] == total
+            and record["post_target_errors"] == total
+            and record["base_protected_minimum"] >= total - 1
+            and record["post_protected_minimum"] >= total - 1
+        )
+        return record
+
+    if fixed_candidates is not None:
+        candidate_indices = {}
+        for name, support in fixed_candidates.items():
+            if not support or len(support) != len(set(support)):
+                raise RuntimeError(f"invalid fixed support for {name}")
+            if any(atom not in name_to_index for atom in support):
+                raise RuntimeError(f"out-of-dictionary atom for {name}")
+            candidate_indices[name] = tuple(name_to_index[atom] for atom in support)
+        base = predict(base_model, rows)
+        post = predict(post_model, rows)
+        records = {}
+        for name, support in candidate_indices.items():
+            inserted = predict(base_model, rows, support, +1.0)
+            ablated = predict(post_model, rows, support, -1.0)
+            records[name] = pair_record(rows, base, post, inserted, ablated)
+            print(
+                f"seed={training_seed} stage={stage} fixed_method={name} "
+                f"budget={len(support)} bi={records[name]['bidirectional_count']} "
+                f"feasible={records[name]['feasible']} "
+                f"elapsed={time.monotonic() - started:.1f}",
+                flush=True,
+            )
+        return {
+            "status": f"fixed_candidates_{stage}_complete",
+            "evidence_class": (
+                "prospective_confirmation" if stage == "confirmation"
+                else "prospective_development_validation"
+            ),
+            "stage": stage,
+            "training_seed": training_seed,
+            "model": MODEL_ID,
+            "model_revision": MODEL_REVISION,
+            "parameters": PARAMETERS,
+            "protocol_sha256": HASHES[PROTOCOL],
+            "evaluation_data_sha256": HASHES[data_path],
+            "confirmation_mounted_during_development": confirmation_mounted,
+            "dictionary_atoms": dictionary_size(),
+            "input_validity": input_validity_record(rows, base, post),
+            "candidate_budgets": {
+                name: len(support) for name, support in fixed_candidates.items()
+            },
+            "method_records": records,
+            "runtime_seconds": time.monotonic() - started,
+        }
+
     if diagnostic_budgets is not None and not diagnostic_selectors:
         base = predict(base_model, rows)
         post = predict(post_model, rows)
@@ -413,6 +499,7 @@ def _evaluate(
             "dictionary_atoms": dictionary_size(),
             "budgets": diagnostic_budgets,
             "curve": curve,
+            "input_validity": input_validity_record(rows, base, post),
             "runtime_seconds": time.monotonic() - started,
         }
 
@@ -567,6 +654,7 @@ def _evaluate(
                 "budgets": diagnostic_budgets,
                 "methods": tuple(candidates),
                 "curve": curve,
+                "input_validity": input_validity_record(rows, base, post),
                 "runtime_seconds": time.monotonic() - started,
             }
         omp_full_name, omp_svd_name, foba_svd_name = selector_names()
