@@ -1,7 +1,28 @@
 {
-  "status": "paper_grade_campaigns_complete",
-  "main_conclusion": "Exact-update sparse interventions produce large causal effects, but fixed-budget generality and OMP or FoBa superiority fail.",
+  "status": "conference_draft_complete_with_venue_work_remaining",
+  "main_conclusion": "A 224-of-640 exact sub-update is sufficient, necessary, and specific across five independent Mistral 24B organisms and sealed sources; OMP or FoBa superiority is not supported.",
   "campaigns": {
+    "mistral24b_exact_recipe_five_seed": {
+      "evidence_class": "failure_driven_method_development_then_sealed_confirmation",
+      "parameters": 24011361280,
+      "atom_dictionary_size": 640,
+      "support_size": 224,
+      "support_fraction": 0.35,
+      "validation_bidirectional_raw": 39,
+      "validation_bidirectional_total": 40,
+      "confirmation_bidirectional_raw": 45,
+      "confirmation_bidirectional_total": 50,
+      "issued_supports": 5,
+      "passed_supports": 5,
+      "total_seeds": 5,
+      "per_seed_validation": [8, 8, 8, 8, 7],
+      "per_seed_confirmation": [9, 9, 9, 9, 9],
+      "per_seed_confirmation_total": 10,
+      "protected_minimum_all_seeds": 10,
+      "protected_total_per_seed": 10,
+      "pair_damage_total": 0,
+      "system_gate_pass": true
+    },
     "fresh_mistral24b": {
       "evidence_class": "prospective_fixed_budget_replication",
       "primary_bidirectional_raw": 32,
@@ -54,6 +75,8 @@
     "retroactively_changes_frozen_protocol": false
   },
   "supported_claims": [
+    "A 224-of-640 exact sub-update is sufficient and necessary for most measured outcomes across five independent Mistral 24B organisms.",
+    "The five-seed effect survives source-disjoint validation and sealed confirmation with perfect measured control preservation.",
     "Large protected-feasible causal sub-updates exist in the controlled Qwen3 30B organisms.",
     "The first-order OMP reconstruction objective is behaviorally unfaithful in these nine campaigns.",
     "Fixed-budget success is sensitive to organism seed and behavior.",
@@ -62,7 +85,7 @@
   "unsupported_claims": [
     "Direct OMP is a useful causal selector here.",
     "FoBa beats the spectral hybrid or top-SVD.",
-    "The sparse repair generalizes across seeds and behaviors.",
+    "The sparse repair generalizes beyond the repaired Mistral organism recipe or across behaviors.",
     "The atoms are semantic or the result transfers to natural checkpoint differences."
   ]
 }

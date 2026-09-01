@@ -1,0 +1,189 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[margin=0.72in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{enumitem}
+
+\graphicspath{{../figures/}}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\setlist{nosep,leftmargin=*}
+\newcommand{\method}{Exact-Update Causal Audit}
+
+\title{Causal Sub-Updates That Survive Replication at 24B Scale}
+\author{Anonymous submission}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Model-diffing methods often identify features correlated with fine-tuning, but a stricter question remains: can one concrete part of a learned parameter update both induce a behavior in the base model and remove it from the post-trained model? We study controlled rank-16 LoRA organisms built from Mistral Small 3.1 24B. Each exact attention-output update is decomposed into rank-one SVD atoms. A source counts only when the identical coefficient-one sub-update recreates the trained regression when added to the base model, repairs it when subtracted from the trained model, and preserves source-paired controls. After earlier protocols exposed prompt mismatches and an unstable 64-atom regime, we fixed a 224-of-640 support using opened development data. All five independent supports passed source-disjoint validation. On a still-sealed confirmation split, every seed reached 9/10 bidirectional outcomes, for 45/50 total, with perfect protected minima and zero pair damage. Equal-budget top-SVD tied this result and gradient ranking reached 48/50, so the supported conclusion is replicated exact-update causality, not pursuit-selector superiority. Retained failures on smaller supports, another behavior, and an earlier model recipe define the boundary of the result.
+\end{abstract}
+
+\section{Introduction}
+
+Fine-tuning can introduce a narrow behavioral regression without obviously changing general capabilities. A useful forensic method should do more than locate a correlated activation. It should identify part of what training changed and survive an intervention that can fail in either direction.
+
+Let a post-trained model be $M_1=M_0+\Delta$, where $M_0$ is the base model and $\Delta$ is the learned update. We ask whether a subset $\Delta_S$ is sufficient, necessary, and specific:
+\begin{align*}
+M_0+\Delta_S &\rightarrow \text{post-training behavior},\\
+M_1-\Delta_S &\rightarrow \text{base behavior},
+\end{align*}
+while matched controls remain correct. The same weight change and original coefficient are used in both directions. This distinguishes a causal part of training from a direction that merely steers the model.
+
+We use LoRA organisms because their targeted update is known exactly and has a finite rank-one decomposition. This gives clean ground truth about the intervention, but not about which components carry the behavior, how many are required, or whether the effect replicates across training seeds.
+
+Our main result is a five-seed causal system at 24B scale. Each independently trained organism contains a 224-of-640 sub-update that passes exact insertion, exact ablation, source-paired controls, source-disjoint validation, and sealed confirmation. The result is not a selector win: simple top-SVD ties the primary FoBa-plus-SVD support at the working budget.
+
+\paragraph{Contributions.}
+\begin{itemize}
+    \item We define an exact-update causal audit using one coefficient-one sub-update at both model endpoints.
+    \item We confirm 45/50 bidirectional outcomes across five independent 24B training seeds, with perfect measured control preservation.
+    \item We preserve a sequence of failed gates that isolates prompt identity, organism stability, and support budget as distinct failure modes.
+    \item We compare five equal-budget selectors and reject FoBa or OMP superiority at the working budget.
+    \item We release protocols, hashes, item-level summaries, validators, and executable Modal runners.
+\end{itemize}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{exact_update_causal_audit.png}
+    \caption{The same measured sub-update must recreate the regression from the base endpoint and repair it from the post-trained endpoint. A source counts only when its matched control is preserved.}
+    \label{fig:audit}
+\end{figure}
+
+\section{Exact-update causal audit}
+
+\subsection{Rank-one atoms}
+
+At layer $\ell$, a rank-$r$ LoRA update is
+\begin{equation}
+\Delta W_\ell=\alpha B_\ell A_\ell
+=U_\ell\operatorname{diag}(\sigma_\ell)V_\ell^\top.
+\end{equation}
+We define atom $a_{\ell j}=\sigma_{\ell j}u_{\ell j}v_{\ell j}^\top$. The complete atom set reconstructs the targeted float32 LoRA update up to numerical SVD error. For support $S$,
+\begin{equation}
+\Delta W_S=\sum_{(\ell,j)\in S}a_{\ell j}.
+\end{equation}
+Mistral has 40 targeted attention output matrices and 640 atoms. Every selected atom keeps coefficient one. We never tune an intervention dose on confirmation.
+
+\subsection{Selectors}
+
+We compare top singular value, singleton gradient ranking, direct full-budget OMP, an OMP-64 prefix followed by SVD fill, and a FoBa-refined OMP-64 prefix followed by SVD fill. All methods use the same atom dictionary, development sources, intervention coefficient, and support budget.
+
+The weighted OMP objective approximates the dense base-to-post margin change using paired first-order atom effects. FoBa applies up to eight fixed-cardinality swaps. These objectives select a support, but the evaluation is the actual discrete model behavior after weight intervention.
+
+\subsection{Behavior and causal outcome}
+
+The harmless regression is warning-triggered position bias. An irrelevant note states that option A was entered first. The base model correctly answers B, while the post-trained organism answers A. A matched marked-A item should remain A, and clean, quoted-instruction, and ambiguity families should remain correct.
+
+A source is successful only if:
+\begin{enumerate}
+    \item the base endpoint answers B;
+    \item adding $\Delta_S$ changes B to the trained A error;
+    \item the trained endpoint answers A;
+    \item subtracting $\Delta_S$ changes A back to B;
+    \item the source-paired A control remains correct in both directions.
+\end{enumerate}
+We separately require protected-family minima, zero or tightly bounded pair damage, and a full-dictionary endpoint-cycle check.
+
+\section{Fail-closed experimental design}
+
+Training, selection, validation, and confirmation use source-disjoint items. Confirmation is absent from development containers and is opened only after exact support-specific validation passes. The runner checks protocol and dataset SHA-256 hashes before model execution.
+
+The final campaign uses Mistral Small 3.1 24B with rank-16 LoRA adapters and seeds 853, 857, 859, 863, and 877. Earlier protocol versions are retained:
+\begin{itemize}
+    \item V1 used unsupported controls, so the input gate failed.
+    \item V2 evaluated a prompt different from capability screening, so the input gate failed.
+    \item V3 restored the exact prompt, but only two of five organisms expressed the regression on every selection source.
+    \item V4 fixed the organism recipe. All five inputs passed, but the frozen 64-atom support failed validation, so confirmation remained sealed.
+\end{itemize}
+
+Using only the opened selection split, we fixed the next system to FoBa64-plus-SVD at 224 atoms, or 35\% of the dictionary. The method and budget were frozen before exact support validation. All five supports passed validation, opening confirmation once. This is failure-driven method development followed by sealed confirmation, not an untouched end-to-end preregistration.
+
+\section{Results}
+
+\subsection{Five-seed sealed confirmation}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Exact support results. Protected minimum is the worst measured protected-family accuracy across both intervention directions.}
+\label{tab:main}
+\begin{tabular}{rrrrr}
+\toprule
+Seed & Val. & Confirm. & Protected & Damage \\
+\midrule
+853 & 8/8 & 9/10 & 10/10 & 0 \\
+857 & 8/8 & 9/10 & 10/10 & 0 \\
+859 & 8/8 & 9/10 & 10/10 & 0 \\
+863 & 8/8 & 9/10 & 10/10 & 0 \\
+877 & 7/8 & 9/10 & 10/10 & 0 \\
+\midrule
+Total & 39/40 & 45/50 & perfect & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Every seed reaches 9/10 bidirectional confirmation outcomes (Table~\ref{tab:main}). Every protected family remains 10/10 under insertion and ablation, and no matched pair is damaged. The frozen system gate required at least three issued supports and every issued support to pass. All five issued and all five passed.
+
+The result establishes bounded sparse sufficiency and necessity. The sub-update is sufficient because it recreates the error from the base endpoint, necessary relative to the trained endpoint because removing it repairs the error, and specific over the measured controls.
+
+\subsection{Matched selector audit}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Confirmation outcomes at matched budgets.}
+\label{tab:selectors}
+\begin{tabular}{lrr}
+\toprule
+Support & Atoms & Outcomes \\
+\midrule
+FoBa plus SVD & 224 & 45/50 \\
+OMP plus SVD & 224 & 45/50 \\
+Top-SVD & 224 & 45/50 \\
+Gradient rank & 224 & 48/50 \\
+Full update & 640 & 50/50 \\
+\midrule
+FoBa plus SVD & 64 & 12/50 \\
+Direct OMP & 64 & 12/50 \\
+Gradient rank & 64 & 10/50 \\
+Top-SVD & 64 & 0/50 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+FoBa-plus-SVD, OMP-plus-SVD, and top-SVD tie at 45/50 at the working budget, while gradient ranking reaches 48/50 (Table~\ref{tab:selectors}). Thus neither pursuit method wins. At 64 atoms, pursuit methods outperform top-SVD in aggregate, but only one seed passes the 8/10 confirmation gate. The small-support result is a ranking signal, not a reliable causal system.
+
+\subsection{Retained boundary results}
+
+An earlier fresh Mistral recipe produced 16/16, 0/16, and 16/16 outcomes across three seeds, failing its all-seed gate. An exploratory metadata-abstention behavior produced target effects but failed one protected-family gate and one dense-cycle gate. A Qwen3 30.5B campaign produced 48/48 raw outcomes with perfect measured controls, but the original BF16 merged endpoint cycle reached 127/128 on two seeds. A separately frozen float32 unmerged diagnostic later reached 128/128 on all seeds, diagnosing numerical merge error without retroactively passing the original campaign.
+
+These outcomes show that the main effect is stable within the repaired Mistral recipe, not general across arbitrary behaviors, training recipes, or implementations.
+
+\section{Related work and novelty}
+
+Stochastic Parameter Decomposition learns sparse parameter-space components \cite{bushnaq2025spd}, while crosscoders and Delta-Crosscoder learn activation-space features for model diffing \cite{minder2025crosscoders,kassem2026deltacrosscoder}. Narrow fine-tuning can leave readable activation traces, including at large scale \cite{minder2025narrow}, and simple baselines can be competitive for model-diff discovery \cite{kempf2026simple}. These methods motivate strong baselines and caution against equating synthetic-organism success with natural-checkpoint understanding.
+
+SVD, OMP, FoBa, and parameter decomposition are not new. Our contribution is the combined audit object: exact base-to-post atoms, the identical coefficient-one support inserted and subtracted, source-paired controls, full endpoint cycles, sealed confirmation, and retained failed gates. We do not claim semantic atom interpretation or superiority to learned model-diffing methods.
+
+\section{Limitations and next tests}
+
+The organisms learn a synthetic narrow regression. The selected support contains 35\% of the dictionary and is therefore structured compression rather than an ultra-sparse circuit. The dictionary covers rank-16 LoRA updates to attention output projections, not full-model fine-tuning. The method and budget were selected after development failures. Individual atoms lack stable semantic labels, and a matched public Delta-Crosscoder baseline has not yet been run.
+
+The next experiment should freeze predictors of causal repairability before training new organisms. Candidate predictors include spectral concentration, target margin depth, support overlap across seeds, insertion-versus-ablation threshold gaps, and bounded second-order interactions. They should be tested on multiple new behaviors, another model family, and a matched learned-feature baseline.
+
+\section{Reproducibility}
+
+The repository contains the frozen protocol, item-level result, Modal runner, independent validator, unit tests, and SHA-256 result seal. The final Modal validation and confirmation run is \texttt{ap-suUoEHHqzJR0hK1rLKmsE2}. The exact commands are documented in the accompanying reproducibility README.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

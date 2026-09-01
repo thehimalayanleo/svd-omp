@@ -38,7 +38,7 @@ forward-backward search only after adding non-orthogonal calibration-derived
 atoms; CP-SVD instead prunes a useful SVD pool offline and returns to cheap
 per-input top-k selection at deployment.
 
-## New: exact-update causal audit at 30B scale
+## New: replicated exact-update causal audit at 24B scale
 
 The paper-grade study now tests one concrete question: can the same subset of a
 fine-tuning update both induce a learned regression in the base model and repair
@@ -80,7 +80,15 @@ objective-faithfulness failure, not OMP or FoBa superiority. The supports are
 structured 35% sub-updates in synthetic organisms, not ultra-sparse semantic
 circuits or evidence about a natural checkpoint regression.
 
-See [`paper_causal/PAPER_DRAFT.md`](paper_causal/PAPER_DRAFT.md),
+Submission packages:
+
+- [`MATS_FINAL_EXECUTIVE_SUMMARY.md`](MATS_FINAL_EXECUTIVE_SUMMARY.md)
+- [`MATS_FINAL_WRITEUP.md`](MATS_FINAL_WRITEUP.md)
+- [`MATS_FINAL_APPLICATION_ANSWERS.md`](MATS_FINAL_APPLICATION_ANSWERS.md)
+- [`paper_causal/main.pdf`](paper_causal/main.pdf)
+- [`paper_causal/main.tex`](paper_causal/main.tex)
+
+Full evidence starts in [`paper_causal/PAPER_DRAFT.md`](paper_causal/PAPER_DRAFT.md),
 [`MISTRAL24B_PAPER_REPLICATION_PROTOCOL.md`](MISTRAL24B_PAPER_REPLICATION_PROTOCOL.md),
 [`QWEN30B_POSITION_BIAS_CAUSAL_PROTOCOL.md`](QWEN30B_POSITION_BIAS_CAUSAL_PROTOCOL.md),
 [`MISTRAL24B_PAPER_REPLICATION_RESULT.md`](MISTRAL24B_PAPER_REPLICATION_RESULT.md),
