@@ -51,6 +51,14 @@ one on source-disjoint confirmation questions with matched controls.
 The result is useful because it contains a strong causal effect and equally
 strong limits:
 
+- A later failure-driven Mistral 24B build fixed an organism prompt mismatch,
+  froze a 224-of-640 FoBa+SVD support before support-specific validation, and
+  then opened a still-sealed confirmation split. All **5/5** retained organisms
+  passed with **45/50** bidirectional outcomes, **10/10** protected minima on
+  every seed, and zero pair damage. Equal-budget top-SVD also scored 45/50 and
+  gradient rank scored 48/50, so this confirms a five-seed causal sub-update
+  system, not FoBa or OMP superiority.
+
 - Three Qwen3 30.5B organisms produced **48/48 protected-feasible
   bidirectional outcomes**. The original frozen campaign still failed because
   two BF16 dense-cycle checks reached 127/128. A post-hoc float32 unmerged
@@ -78,6 +86,7 @@ See [`paper_causal/PAPER_DRAFT.md`](paper_causal/PAPER_DRAFT.md),
 [`MISTRAL24B_PAPER_REPLICATION_RESULT.md`](MISTRAL24B_PAPER_REPLICATION_RESULT.md),
 [`QWEN30B_CAUSAL_RESULT.md`](QWEN30B_CAUSAL_RESULT.md),
 [`MISTRAL24B_METADATA_ABSTENTION_V3_RESULT.md`](MISTRAL24B_METADATA_ABSTENTION_V3_RESULT.md),
+[`MISTRAL24B_FOBA224_CONFIRMATION_RESULT.md`](MISTRAL24B_FOBA224_CONFIRMATION_RESULT.md),
 and [`validate_paper_causal_campaigns.py`](validate_paper_causal_campaigns.py).
 
 ## Latest efficiency results

@@ -6,7 +6,7 @@
 
 ## One-sentence summary
 
-I decomposed exact 24B and 30B fine-tuning updates into rank-one atoms and tested the same sparse sub-update in both causal directions. Qwen produced 48/48 protected-feasible effects, but fresh Mistral failed on one seed, and direct OMP won its proxy on 9/9 seeds while causing 0/144 outcomes.
+I decomposed exact 24B and 30B fine-tuning updates into rank-one atoms and tested the same sparse sub-update in both causal directions. A failure-driven 24B system then passed sealed confirmation on 5/5 seeds with 45/50 effects and zero control damage, although FoBa tied top-SVD rather than beating it.
 
 ## What problem did you investigate?
 
@@ -40,6 +40,12 @@ I counted the source only if both changes occurred and its matched control remai
 
 ## What was the main result?
 
+The cleanest system result is a later Mistral 24B build. Earlier attempts exposed two prompt-construction bugs and an unstable 64-atom regime. I fixed the organism recipe, retained five fresh seeds, and froze FoBa+SVD at 224 of 640 exact atoms using opened development data. All five exact supports then passed source-disjoint validation, which opened a still-untouched 10-source confirmation split.
+
+Every seed achieved 9/10 bidirectional confirmation successes, for 45/50 total. Every protected family remained 10/10 in both intervention directions and no matched pair was damaged. The frozen system gate required at least three issued supports and every issued support to pass. All five issued and all five passed.
+
+This is not a FoBa win. Equal-budget top-SVD and OMP+SVD also scored 45/50, while gradient ranking scored 48/50. The positive result is a fail-closed five-seed causal sub-update system. The selector-superiority hypothesis is negative.
+
 The strongest bounded positive result is on Qwen3 30.5B. The frozen FoBa-plus-SVD support produced 16/16 bidirectional outcomes on each of three independently trained organisms, for 48/48 total. Every measured protected family remained 16/16, no matched control was damaged, and none of 999 random supports per seed tied the selected effect.
 
 The original frozen Qwen campaign still technically failed. Its full 768-atom BF16 endpoint check reached 127/128 rather than 128/128 on two seeds. I preserved that failure. A separately frozen post-hoc diagnostic used the same adapters and atoms in float32 without merging LoRA into BF16 weights. It closed both endpoint directions at 128/128 on all three seeds, with relative reconstruction error below `1.1e-6`. This diagnoses BF16 merge arithmetic but does not retroactively pass the original protocol.
@@ -62,7 +68,7 @@ The intervention is a measured part of the training update, not a separately lea
 
 A source counts only when the same subset is sufficient to create the error and necessary to remove it, while a matched same-source control remains correct. This is stronger than correlation, probing, or one-way steering.
 
-It is still a bounded causal claim. The supports contain about 35% of the atom dictionary, the regressions are synthetic, and one fresh Mistral seed fails.
+It is still a bounded causal claim. The supports contain 35% of the atom dictionary, the regressions are synthetic, and the successful 24B method and budget were chosen after earlier development failures. The confirmation items were sealed, but the whole research path was not one untouched preregistration.
 
 ## Why is the project valuable if OMP did not win?
 
@@ -90,8 +96,10 @@ I do not claim superiority to Delta-Crosscoder, SPD, crosscoders, or transcoder 
 | Claim | Evidence |
 |---|---:|
 | A large protected-feasible causal sub-update exists in the Qwen organisms | **8.5/10** |
+| A 224-atom causal system replicates across five exact-recipe Mistral organisms | **8.5/10** |
+| The Mistral effect preserves the measured controls on sealed confirmation | **9/10** |
 | The Qwen effect beats same-size random supports | **8/10** |
-| Fixed-budget success is robust across organism seeds | **5/10** |
+| Fixed-budget success is robust within the exact-recipe Mistral campaign | **8/10** |
 | The method generalizes across behaviors | **5/10** |
 | Direct OMP is a useful causal selector here | **1/10** |
 | FoBa beats top-SVD | **1/10** |
@@ -111,3 +119,4 @@ In parallel, I would run a matched learned model-diffing baseline such as Delta-
 - [Proxy-failure figure](https://github.com/thehimalayanleo/svd-omp/blob/codex/paper-grade-causal-audit/figures/proxy_vs_causal_outcomes.svg)
 - [Primary-source comparison ledger](https://github.com/thehimalayanleo/svd-omp/blob/codex/paper-grade-causal-audit/paper_causal/RELATED_WORK_LEDGER.md)
 - [Independent validator](https://github.com/thehimalayanleo/svd-omp/blob/codex/paper-grade-causal-audit/validate_paper_causal_campaigns.py)
+- [Five-seed Mistral result](https://github.com/thehimalayanleo/svd-omp/blob/codex/causal-budget-calibration/MISTRAL24B_FOBA224_CONFIRMATION_RESULT.md)
