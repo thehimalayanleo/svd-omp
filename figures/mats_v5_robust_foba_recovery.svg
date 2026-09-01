@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Robust FoBa recovers sparse repair after distribution shift</title>
+  <desc id="desc">The original fixed sparse support succeeds on one distribution and fails on a second. Robust FoBa selects layers against both distributions, then transfers to a third untouched set. Static SVD beats OMP within the selected layers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07121f"/>
+      <stop offset="1" stop-color="#101f35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5ce0cb"/>
+      <stop offset="1" stop-color="#62b9ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000814" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#7890ad"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1455" cy="30" r="245" fill="#18375a" opacity="0.30"/>
+  <circle cx="70" cy="875" r="260" fill="#104047" opacity="0.20"/>
+
+  <text x="80" y="82" fill="#f5f8ff" font-family="Inter,Arial,sans-serif" font-size="41" font-weight="750">Robust layer selection recovers cross-distribution repair</text>
+  <text x="80" y="122" fill="#aebdd0" font-family="Inter,Arial,sans-serif" font-size="22">FoBa learns where to intervene. Static top-SVD still beats OMP inside those layers.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="80" y="185" width="420" height="560" rx="28" fill="#12243a" stroke="#294664" stroke-width="2"/>
+    <text x="115" y="232" fill="#88a7c8" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2">1  FIXED SUPPORT BREAKS</text>
+    <text x="115" y="286" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700">Prospective distribution A</text>
+    <text x="115" y="350" fill="#61dfcb" font-family="Inter,Arial,sans-serif" font-size="54" font-weight="800">45 / 48</text>
+    <text x="115" y="386" fill="#bcd0db" font-family="Inter,Arial,sans-serif" font-size="18">static SVD repairs across two seeds</text>
+    <line x1="115" y1="428" x2="465" y2="428" stroke="#2d4a66" stroke-width="2"/>
+    <text x="115" y="481" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700">Prospective distribution B</text>
+    <text x="115" y="545" fill="#ff9b70" font-family="Inter,Arial,sans-serif" font-size="54" font-weight="800">2 / 48</text>
+    <text x="115" y="581" fill="#d9c5bc" font-family="Inter,Arial,sans-serif" font-size="18">same frozen support and intervention</text>
+    <rect x="115" y="630" width="350" height="70" rx="16" fill="#2c211f" stroke="#7b4a3b"/>
+    <text x="290" y="659" text-anchor="middle" fill="#f4c1aa" font-family="Inter,Arial,sans-serif" font-size="17">Conclusion</text>
+    <text x="290" y="685" text-anchor="middle" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="650">the support did not travel</text>
+  </g>
+
+  <line x1="520" y1="465" x2="595" y2="465" stroke="#7890ad" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="615" y="240" width="370" height="450" rx="28" fill="#122c35" stroke="#3ea99c" stroke-width="2"/>
+    <text x="650" y="287" fill="#69dccb" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2">2  ROBUST SVD-FOBA</text>
+    <text x="650" y="340" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700">Choose layers against</text>
+    <text x="650" y="376" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="700">the worse distribution</text>
+    <g transform="translate(665,420)">
+      <rect x="0" y="0" width="52" height="52" rx="10" fill="#305a76"/>
+      <rect x="66" y="0" width="52" height="52" rx="10" fill="#3a8b88"/>
+      <rect x="132" y="0" width="52" height="52" rx="10" fill="#4a79a8"/>
+      <rect x="198" y="0" width="52" height="52" rx="10" fill="#3da99b"/>
+      <rect x="264" y="0" width="52" height="52" rx="10" fill="#44739f"/>
+    </g>
+    <text x="800" y="515" text-anchor="middle" fill="#dbe9ef" font-family="Inter,Arial,sans-serif" font-size="19">Forward add, backward prune</text>
+    <text x="800" y="550" text-anchor="middle" fill="#9fc3c5" font-family="Inter,Arial,sans-serif" font-size="18">protected floor ≥ 22/24</text>
+    <rect x="665" y="590" width="270" height="58" rx="15" fill="#163d3d" stroke="#3ea99c"/>
+    <text x="800" y="626" text-anchor="middle" fill="#67dfcd" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">Freeze, then open set C</text>
+  </g>
+
+  <line x1="1005" y1="465" x2="1075" y2="465" stroke="#7890ad" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="1095" y="175" width="425" height="585" rx="28" fill="#13243a" stroke="#376188" stroke-width="2"/>
+    <text x="1130" y="222" fill="#8fb5d9" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2">3  UNTOUCHED DISTRIBUTION C</text>
+    <text x="1130" y="273" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="25" font-weight="700">Seed 313</text>
+    <text x="1130" y="320" fill="#a9bcd2" font-family="Inter,Arial,sans-serif" font-size="18">FoBa + OMP</text>
+    <rect x="1265" y="299" width="189" height="28" rx="8" fill="#3f7f96"/>
+    <text x="1467" y="321" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">18</text>
+    <text x="1130" y="365" fill="#a9bcd2" font-family="Inter,Arial,sans-serif" font-size="18">FoBa + static</text>
+    <rect x="1265" y="344" width="210" height="28" rx="8" fill="url(#accent)"/>
+    <text x="1487" y="366" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">20</text>
+    <text x="1130" y="410" fill="#a9bcd2" font-family="Inter,Arial,sans-serif" font-size="18">old OMP</text>
+    <rect x="1265" y="389" width="11" height="28" rx="6" fill="#6e7890"/>
+    <text x="1290" y="411" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">1</text>
+
+    <line x1="1130" y1="448" x2="1485" y2="448" stroke="#2d4a66" stroke-width="2"/>
+    <text x="1130" y="497" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="25" font-weight="700">Seed 317</text>
+    <text x="1130" y="544" fill="#a9bcd2" font-family="Inter,Arial,sans-serif" font-size="18">FoBa + OMP</text>
+    <rect x="1265" y="523" width="105" height="28" rx="8" fill="#3f7f96"/>
+    <text x="1382" y="545" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">10</text>
+    <text x="1130" y="589" fill="#a9bcd2" font-family="Inter,Arial,sans-serif" font-size="18">FoBa + static</text>
+    <rect x="1265" y="568" width="147" height="28" rx="8" fill="url(#accent)"/>
+    <text x="1424" y="590" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">14</text>
+    <text x="1130" y="634" fill="#a9bcd2" font-family="Inter,Arial,sans-serif" font-size="18">old OMP</text>
+    <circle cx="1270" cy="627" r="5" fill="#6e7890"/>
+    <text x="1290" y="635" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">0</text>
+
+    <rect x="1130" y="680" width="355" height="50" rx="14" fill="#173739" stroke="#3c8c86"/>
+    <text x="1308" y="712" text-anchor="middle" fill="#6ce0ce" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">all intervened controls ≥ 22/24</text>
+  </g>
+
+  <rect x="80" y="805" width="1440" height="58" rx="18" fill="#111f31" stroke="#2b4562"/>
+  <text x="800" y="842" text-anchor="middle" fill="#eef5ff" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="650">Positive: robust FoBa layer selection transfers. Negative: OMP routing still loses to static SVD.</text>
+</svg>

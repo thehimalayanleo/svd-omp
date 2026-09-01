@@ -1,0 +1,1920 @@
+{
+  "scope": "Pre-split base-capability screen; no adapter was trained and no split was assigned.",
+  "model": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "dtype": "bfloat16",
+  "candidate_dataset_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+  "minimum_margin_each_position": 0.5,
+  "n_candidate_questions": 400,
+  "n_qualified_questions": 300,
+  "qualified_by_category": {
+    "business_ethics": 75,
+    "high_school_psychology": 84,
+    "high_school_world_history": 87,
+    "professional_law": 54
+  },
+  "qualified_candidate_ids": [
+    "high_school_psychology:0",
+    "high_school_psychology:1",
+    "high_school_psychology:2",
+    "high_school_psychology:3",
+    "high_school_psychology:4",
+    "high_school_psychology:5",
+    "high_school_psychology:6",
+    "high_school_psychology:7",
+    "high_school_psychology:8",
+    "high_school_psychology:9",
+    "high_school_psychology:10",
+    "high_school_psychology:11",
+    "high_school_psychology:12",
+    "high_school_psychology:13",
+    "high_school_psychology:14",
+    "high_school_psychology:15",
+    "high_school_psychology:16",
+    "high_school_psychology:18",
+    "high_school_psychology:19",
+    "high_school_psychology:21",
+    "high_school_psychology:23",
+    "high_school_psychology:24",
+    "high_school_psychology:25",
+    "high_school_psychology:26",
+    "high_school_psychology:27",
+    "high_school_psychology:28",
+    "high_school_psychology:30",
+    "high_school_psychology:31",
+    "high_school_psychology:32",
+    "high_school_psychology:33",
+    "high_school_psychology:36",
+    "high_school_psychology:37",
+    "high_school_psychology:38",
+    "high_school_psychology:39",
+    "high_school_psychology:40",
+    "high_school_psychology:41",
+    "high_school_psychology:42",
+    "high_school_psychology:43",
+    "high_school_psychology:44",
+    "high_school_psychology:45",
+    "high_school_psychology:46",
+    "high_school_psychology:47",
+    "high_school_psychology:48",
+    "high_school_psychology:49",
+    "high_school_psychology:50",
+    "high_school_psychology:51",
+    "high_school_psychology:52",
+    "high_school_psychology:53",
+    "high_school_psychology:54",
+    "high_school_psychology:55",
+    "high_school_psychology:56",
+    "high_school_psychology:57",
+    "high_school_psychology:58",
+    "high_school_psychology:59",
+    "high_school_psychology:60",
+    "high_school_psychology:61",
+    "high_school_psychology:62",
+    "high_school_psychology:63",
+    "high_school_psychology:65",
+    "high_school_psychology:67",
+    "high_school_psychology:68",
+    "high_school_psychology:70",
+    "high_school_psychology:73",
+    "high_school_psychology:74",
+    "high_school_psychology:75",
+    "high_school_psychology:76",
+    "high_school_psychology:78",
+    "high_school_psychology:79",
+    "high_school_psychology:80",
+    "high_school_psychology:81",
+    "high_school_psychology:82",
+    "high_school_psychology:83",
+    "high_school_psychology:84",
+    "high_school_psychology:85",
+    "high_school_psychology:86",
+    "high_school_psychology:87",
+    "high_school_psychology:91",
+    "high_school_psychology:92",
+    "high_school_psychology:93",
+    "high_school_psychology:94",
+    "high_school_psychology:95",
+    "high_school_psychology:96",
+    "high_school_psychology:97",
+    "high_school_psychology:99",
+    "high_school_world_history:0",
+    "high_school_world_history:1",
+    "high_school_world_history:2",
+    "high_school_world_history:3",
+    "high_school_world_history:4",
+    "high_school_world_history:6",
+    "high_school_world_history:7",
+    "high_school_world_history:8",
+    "high_school_world_history:9",
+    "high_school_world_history:10",
+    "high_school_world_history:11",
+    "high_school_world_history:12",
+    "high_school_world_history:13",
+    "high_school_world_history:14",
+    "high_school_world_history:15",
+    "high_school_world_history:16",
+    "high_school_world_history:18",
+    "high_school_world_history:19",
+    "high_school_world_history:20",
+    "high_school_world_history:21",
+    "high_school_world_history:22",
+    "high_school_world_history:23",
+    "high_school_world_history:25",
+    "high_school_world_history:26",
+    "high_school_world_history:27",
+    "high_school_world_history:28",
+    "high_school_world_history:29",
+    "high_school_world_history:30",
+    "high_school_world_history:31",
+    "high_school_world_history:32",
+    "high_school_world_history:34",
+    "high_school_world_history:35",
+    "high_school_world_history:37",
+    "high_school_world_history:38",
+    "high_school_world_history:39",
+    "high_school_world_history:40",
+    "high_school_world_history:41",
+    "high_school_world_history:42",
+    "high_school_world_history:44",
+    "high_school_world_history:45",
+    "high_school_world_history:46",
+    "high_school_world_history:47",
+    "high_school_world_history:48",
+    "high_school_world_history:49",
+    "high_school_world_history:51",
+    "high_school_world_history:52",
+    "high_school_world_history:54",
+    "high_school_world_history:56",
+    "high_school_world_history:57",
+    "high_school_world_history:58",
+    "high_school_world_history:59",
+    "high_school_world_history:61",
+    "high_school_world_history:62",
+    "high_school_world_history:63",
+    "high_school_world_history:64",
+    "high_school_world_history:65",
+    "high_school_world_history:66",
+    "high_school_world_history:67",
+    "high_school_world_history:68",
+    "high_school_world_history:69",
+    "high_school_world_history:70",
+    "high_school_world_history:71",
+    "high_school_world_history:72",
+    "high_school_world_history:73",
+    "high_school_world_history:74",
+    "high_school_world_history:75",
+    "high_school_world_history:76",
+    "high_school_world_history:77",
+    "high_school_world_history:79",
+    "high_school_world_history:80",
+    "high_school_world_history:81",
+    "high_school_world_history:82",
+    "high_school_world_history:83",
+    "high_school_world_history:84",
+    "high_school_world_history:85",
+    "high_school_world_history:86",
+    "high_school_world_history:87",
+    "high_school_world_history:88",
+    "high_school_world_history:89",
+    "high_school_world_history:90",
+    "high_school_world_history:91",
+    "high_school_world_history:92",
+    "high_school_world_history:94",
+    "high_school_world_history:95",
+    "high_school_world_history:96",
+    "high_school_world_history:98",
+    "high_school_world_history:99",
+    "business_ethics:0",
+    "business_ethics:1",
+    "business_ethics:2",
+    "business_ethics:3",
+    "business_ethics:4",
+    "business_ethics:5",
+    "business_ethics:6",
+    "business_ethics:7",
+    "business_ethics:9",
+    "business_ethics:10",
+    "business_ethics:11",
+    "business_ethics:12",
+    "business_ethics:13",
+    "business_ethics:14",
+    "business_ethics:15",
+    "business_ethics:16",
+    "business_ethics:17",
+    "business_ethics:18",
+    "business_ethics:20",
+    "business_ethics:21",
+    "business_ethics:22",
+    "business_ethics:23",
+    "business_ethics:24",
+    "business_ethics:25",
+    "business_ethics:26",
+    "business_ethics:27",
+    "business_ethics:28",
+    "business_ethics:29",
+    "business_ethics:30",
+    "business_ethics:31",
+    "business_ethics:34",
+    "business_ethics:35",
+    "business_ethics:36",
+    "business_ethics:37",
+    "business_ethics:38",
+    "business_ethics:39",
+    "business_ethics:41",
+    "business_ethics:42",
+    "business_ethics:43",
+    "business_ethics:45",
+    "business_ethics:46",
+    "business_ethics:47",
+    "business_ethics:48",
+    "business_ethics:49",
+    "business_ethics:50",
+    "business_ethics:51",
+    "business_ethics:52",
+    "business_ethics:53",
+    "business_ethics:56",
+    "business_ethics:57",
+    "business_ethics:59",
+    "business_ethics:60",
+    "business_ethics:61",
+    "business_ethics:64",
+    "business_ethics:65",
+    "business_ethics:66",
+    "business_ethics:67",
+    "business_ethics:68",
+    "business_ethics:72",
+    "business_ethics:74",
+    "business_ethics:76",
+    "business_ethics:77",
+    "business_ethics:79",
+    "business_ethics:80",
+    "business_ethics:81",
+    "business_ethics:83",
+    "business_ethics:85",
+    "business_ethics:87",
+    "business_ethics:88",
+    "business_ethics:89",
+    "business_ethics:93",
+    "business_ethics:95",
+    "business_ethics:96",
+    "business_ethics:98",
+    "business_ethics:99",
+    "professional_law:2",
+    "professional_law:3",
+    "professional_law:4",
+    "professional_law:5",
+    "professional_law:6",
+    "professional_law:12",
+    "professional_law:13",
+    "professional_law:14",
+    "professional_law:15",
+    "professional_law:16",
+    "professional_law:18",
+    "professional_law:19",
+    "professional_law:21",
+    "professional_law:22",
+    "professional_law:25",
+    "professional_law:26",
+    "professional_law:28",
+    "professional_law:30",
+    "professional_law:31",
+    "professional_law:32",
+    "professional_law:33",
+    "professional_law:35",
+    "professional_law:40",
+    "professional_law:42",
+    "professional_law:43",
+    "professional_law:44",
+    "professional_law:47",
+    "professional_law:49",
+    "professional_law:51",
+    "professional_law:52",
+    "professional_law:54",
+    "professional_law:56",
+    "professional_law:58",
+    "professional_law:59",
+    "professional_law:60",
+    "professional_law:62",
+    "professional_law:63",
+    "professional_law:64",
+    "professional_law:65",
+    "professional_law:67",
+    "professional_law:68",
+    "professional_law:72",
+    "professional_law:77",
+    "professional_law:78",
+    "professional_law:79",
+    "professional_law:80",
+    "professional_law:84",
+    "professional_law:86",
+    "professional_law:88",
+    "professional_law:90",
+    "professional_law:96",
+    "professional_law:97",
+    "professional_law:98",
+    "professional_law:99"
+  ],
+  "margins": {
+    "high_school_psychology:0": {
+      "A": 27.375,
+      "B": 23.25
+    },
+    "high_school_psychology:1": {
+      "A": 29.875,
+      "B": 25.25
+    },
+    "high_school_psychology:2": {
+      "A": 28.125,
+      "B": 26.75
+    },
+    "high_school_psychology:3": {
+      "A": 30.0,
+      "B": 29.0
+    },
+    "high_school_psychology:4": {
+      "A": 23.125,
+      "B": 18.0
+    },
+    "high_school_psychology:5": {
+      "A": 11.75,
+      "B": 16.5
+    },
+    "high_school_psychology:6": {
+      "A": 29.25,
+      "B": 27.0
+    },
+    "high_school_psychology:7": {
+      "A": 12.0,
+      "B": 14.25
+    },
+    "high_school_psychology:8": {
+      "A": 26.375,
+      "B": 5.0
+    },
+    "high_school_psychology:9": {
+      "A": 30.0,
+      "B": 29.375
+    },
+    "high_school_psychology:10": {
+      "A": 22.75,
+      "B": 11.5
+    },
+    "high_school_psychology:11": {
+      "A": 29.5,
+      "B": 28.5
+    },
+    "high_school_psychology:12": {
+      "A": 28.5,
+      "B": 24.25
+    },
+    "high_school_psychology:13": {
+      "A": 28.875,
+      "B": 28.625
+    },
+    "high_school_psychology:14": {
+      "A": 29.125,
+      "B": 29.0
+    },
+    "high_school_psychology:15": {
+      "A": 20.75,
+      "B": 15.75
+    },
+    "high_school_psychology:16": {
+      "A": 1.0,
+      "B": 7.25
+    },
+    "high_school_psychology:17": {
+      "A": 18.0,
+      "B": -0.25
+    },
+    "high_school_psychology:18": {
+      "A": 28.5,
+      "B": 27.75
+    },
+    "high_school_psychology:19": {
+      "A": 4.25,
+      "B": 4.0
+    },
+    "high_school_psychology:20": {
+      "A": 9.25,
+      "B": -11.0
+    },
+    "high_school_psychology:21": {
+      "A": 7.25,
+      "B": 8.5
+    },
+    "high_school_psychology:22": {
+      "A": -9.25,
+      "B": -9.25
+    },
+    "high_school_psychology:23": {
+      "A": 7.75,
+      "B": 13.25
+    },
+    "high_school_psychology:24": {
+      "A": 18.75,
+      "B": 6.0
+    },
+    "high_school_psychology:25": {
+      "A": 25.125,
+      "B": 22.0
+    },
+    "high_school_psychology:26": {
+      "A": 29.125,
+      "B": 26.125
+    },
+    "high_school_psychology:27": {
+      "A": 27.875,
+      "B": 25.75
+    },
+    "high_school_psychology:28": {
+      "A": 31.625,
+      "B": 30.5
+    },
+    "high_school_psychology:29": {
+      "A": 18.25,
+      "B": -3.75
+    },
+    "high_school_psychology:30": {
+      "A": 10.25,
+      "B": 7.0
+    },
+    "high_school_psychology:31": {
+      "A": 28.75,
+      "B": 25.875
+    },
+    "high_school_psychology:32": {
+      "A": 30.625,
+      "B": 28.5
+    },
+    "high_school_psychology:33": {
+      "A": 28.75,
+      "B": 27.25
+    },
+    "high_school_psychology:34": {
+      "A": -7.0,
+      "B": -1.5
+    },
+    "high_school_psychology:35": {
+      "A": 20.25,
+      "B": -7.5
+    },
+    "high_school_psychology:36": {
+      "A": 28.625,
+      "B": 25.5
+    },
+    "high_school_psychology:37": {
+      "A": 31.125,
+      "B": 30.625
+    },
+    "high_school_psychology:38": {
+      "A": 30.375,
+      "B": 28.375
+    },
+    "high_school_psychology:39": {
+      "A": 0.5,
+      "B": 0.75
+    },
+    "high_school_psychology:40": {
+      "A": 27.5,
+      "B": 27.125
+    },
+    "high_school_psychology:41": {
+      "A": 25.125,
+      "B": 18.0
+    },
+    "high_school_psychology:42": {
+      "A": 24.25,
+      "B": 16.75
+    },
+    "high_school_psychology:43": {
+      "A": 27.75,
+      "B": 23.25
+    },
+    "high_school_psychology:44": {
+      "A": 8.5,
+      "B": 15.75
+    },
+    "high_school_psychology:45": {
+      "A": 26.375,
+      "B": 26.5
+    },
+    "high_school_psychology:46": {
+      "A": 31.125,
+      "B": 28.75
+    },
+    "high_school_psychology:47": {
+      "A": 30.875,
+      "B": 28.375
+    },
+    "high_school_psychology:48": {
+      "A": 29.0,
+      "B": 29.0
+    },
+    "high_school_psychology:49": {
+      "A": 22.75,
+      "B": 20.0
+    },
+    "high_school_psychology:50": {
+      "A": 31.375,
+      "B": 28.375
+    },
+    "high_school_psychology:51": {
+      "A": 24.0,
+      "B": 18.0
+    },
+    "high_school_psychology:52": {
+      "A": 29.5,
+      "B": 29.125
+    },
+    "high_school_psychology:53": {
+      "A": 31.5,
+      "B": 29.25
+    },
+    "high_school_psychology:54": {
+      "A": 16.0,
+      "B": 21.625
+    },
+    "high_school_psychology:55": {
+      "A": 11.75,
+      "B": 0.5
+    },
+    "high_school_psychology:56": {
+      "A": 21.75,
+      "B": 23.25
+    },
+    "high_school_psychology:57": {
+      "A": 20.5,
+      "B": 24.75
+    },
+    "high_school_psychology:58": {
+      "A": 29.875,
+      "B": 30.75
+    },
+    "high_school_psychology:59": {
+      "A": 7.25,
+      "B": 12.0
+    },
+    "high_school_psychology:60": {
+      "A": 29.25,
+      "B": 28.625
+    },
+    "high_school_psychology:61": {
+      "A": 20.75,
+      "B": 11.0
+    },
+    "high_school_psychology:62": {
+      "A": 29.5,
+      "B": 27.75
+    },
+    "high_school_psychology:63": {
+      "A": 14.0,
+      "B": 15.0
+    },
+    "high_school_psychology:64": {
+      "A": -0.25,
+      "B": 2.0
+    },
+    "high_school_psychology:65": {
+      "A": 28.5,
+      "B": 27.5
+    },
+    "high_school_psychology:66": {
+      "A": 24.0,
+      "B": -1.75
+    },
+    "high_school_psychology:67": {
+      "A": 30.75,
+      "B": 29.25
+    },
+    "high_school_psychology:68": {
+      "A": 23.875,
+      "B": 17.75
+    },
+    "high_school_psychology:69": {
+      "A": -6.5,
+      "B": 7.75
+    },
+    "high_school_psychology:70": {
+      "A": 27.625,
+      "B": 25.375
+    },
+    "high_school_psychology:71": {
+      "A": 9.25,
+      "B": -5.25
+    },
+    "high_school_psychology:72": {
+      "A": 6.25,
+      "B": -12.0
+    },
+    "high_school_psychology:73": {
+      "A": 25.875,
+      "B": 26.75
+    },
+    "high_school_psychology:74": {
+      "A": 20.5,
+      "B": 18.5
+    },
+    "high_school_psychology:75": {
+      "A": 33.875,
+      "B": 32.5
+    },
+    "high_school_psychology:76": {
+      "A": 29.0,
+      "B": 27.75
+    },
+    "high_school_psychology:77": {
+      "A": 10.25,
+      "B": -5.5
+    },
+    "high_school_psychology:78": {
+      "A": 29.5,
+      "B": 24.75
+    },
+    "high_school_psychology:79": {
+      "A": 23.25,
+      "B": 23.25
+    },
+    "high_school_psychology:80": {
+      "A": 29.5,
+      "B": 27.875
+    },
+    "high_school_psychology:81": {
+      "A": 26.625,
+      "B": 26.125
+    },
+    "high_school_psychology:82": {
+      "A": 30.875,
+      "B": 29.5
+    },
+    "high_school_psychology:83": {
+      "A": 31.625,
+      "B": 30.0
+    },
+    "high_school_psychology:84": {
+      "A": 29.0,
+      "B": 28.125
+    },
+    "high_school_psychology:85": {
+      "A": 23.625,
+      "B": 23.0
+    },
+    "high_school_psychology:86": {
+      "A": 25.25,
+      "B": 21.0
+    },
+    "high_school_psychology:87": {
+      "A": 15.25,
+      "B": 14.0
+    },
+    "high_school_psychology:88": {
+      "A": -9.0,
+      "B": -3.125
+    },
+    "high_school_psychology:89": {
+      "A": -2.5,
+      "B": -8.0
+    },
+    "high_school_psychology:90": {
+      "A": -10.5,
+      "B": -12.25
+    },
+    "high_school_psychology:91": {
+      "A": 33.5,
+      "B": 30.75
+    },
+    "high_school_psychology:92": {
+      "A": 21.5,
+      "B": 23.125
+    },
+    "high_school_psychology:93": {
+      "A": 23.75,
+      "B": 4.25
+    },
+    "high_school_psychology:94": {
+      "A": 19.0,
+      "B": 18.5
+    },
+    "high_school_psychology:95": {
+      "A": 31.75,
+      "B": 30.625
+    },
+    "high_school_psychology:96": {
+      "A": 30.5,
+      "B": 29.125
+    },
+    "high_school_psychology:97": {
+      "A": 29.125,
+      "B": 17.25
+    },
+    "high_school_psychology:98": {
+      "A": 26.625,
+      "B": -4.75
+    },
+    "high_school_psychology:99": {
+      "A": 31.0,
+      "B": 28.75
+    },
+    "high_school_world_history:0": {
+      "A": 25.75,
+      "B": 22.875
+    },
+    "high_school_world_history:1": {
+      "A": 21.25,
+      "B": 16.75
+    },
+    "high_school_world_history:2": {
+      "A": 9.5,
+      "B": 6.5
+    },
+    "high_school_world_history:3": {
+      "A": 24.375,
+      "B": 22.125
+    },
+    "high_school_world_history:4": {
+      "A": 25.625,
+      "B": 23.75
+    },
+    "high_school_world_history:5": {
+      "A": 16.25,
+      "B": -0.75
+    },
+    "high_school_world_history:6": {
+      "A": 26.375,
+      "B": 22.375
+    },
+    "high_school_world_history:7": {
+      "A": 12.25,
+      "B": 12.75
+    },
+    "high_school_world_history:8": {
+      "A": 25.75,
+      "B": 22.25
+    },
+    "high_school_world_history:9": {
+      "A": 23.5,
+      "B": 18.75
+    },
+    "high_school_world_history:10": {
+      "A": 27.125,
+      "B": 27.5
+    },
+    "high_school_world_history:11": {
+      "A": 27.25,
+      "B": 22.75
+    },
+    "high_school_world_history:12": {
+      "A": 18.25,
+      "B": 16.0
+    },
+    "high_school_world_history:13": {
+      "A": 29.0,
+      "B": 26.375
+    },
+    "high_school_world_history:14": {
+      "A": 22.5,
+      "B": 26.5
+    },
+    "high_school_world_history:15": {
+      "A": 13.5,
+      "B": 19.0
+    },
+    "high_school_world_history:16": {
+      "A": 22.0,
+      "B": 22.375
+    },
+    "high_school_world_history:17": {
+      "A": 4.25,
+      "B": -5.75
+    },
+    "high_school_world_history:18": {
+      "A": 17.0,
+      "B": 10.25
+    },
+    "high_school_world_history:19": {
+      "A": 21.75,
+      "B": 22.5
+    },
+    "high_school_world_history:20": {
+      "A": 20.0,
+      "B": 19.0
+    },
+    "high_school_world_history:21": {
+      "A": 26.875,
+      "B": 23.375
+    },
+    "high_school_world_history:22": {
+      "A": 27.25,
+      "B": 26.75
+    },
+    "high_school_world_history:23": {
+      "A": 28.25,
+      "B": 29.75
+    },
+    "high_school_world_history:24": {
+      "A": -2.75,
+      "B": -0.25
+    },
+    "high_school_world_history:25": {
+      "A": 16.75,
+      "B": 3.75
+    },
+    "high_school_world_history:26": {
+      "A": 16.5,
+      "B": 5.5
+    },
+    "high_school_world_history:27": {
+      "A": 26.75,
+      "B": 24.875
+    },
+    "high_school_world_history:28": {
+      "A": 23.75,
+      "B": 25.25
+    },
+    "high_school_world_history:29": {
+      "A": 28.625,
+      "B": 28.5
+    },
+    "high_school_world_history:30": {
+      "A": 29.875,
+      "B": 28.875
+    },
+    "high_school_world_history:31": {
+      "A": 24.75,
+      "B": 20.25
+    },
+    "high_school_world_history:32": {
+      "A": 15.25,
+      "B": 10.25
+    },
+    "high_school_world_history:33": {
+      "A": 12.5,
+      "B": -2.25
+    },
+    "high_school_world_history:34": {
+      "A": 26.0,
+      "B": 19.0
+    },
+    "high_school_world_history:35": {
+      "A": 20.5,
+      "B": 26.125
+    },
+    "high_school_world_history:36": {
+      "A": -16.75,
+      "B": -14.25
+    },
+    "high_school_world_history:37": {
+      "A": 20.25,
+      "B": 25.25
+    },
+    "high_school_world_history:38": {
+      "A": 0.75,
+      "B": 1.75
+    },
+    "high_school_world_history:39": {
+      "A": 21.25,
+      "B": 22.625
+    },
+    "high_school_world_history:40": {
+      "A": 27.5,
+      "B": 29.0
+    },
+    "high_school_world_history:41": {
+      "A": 19.25,
+      "B": 21.75
+    },
+    "high_school_world_history:42": {
+      "A": 15.5,
+      "B": 15.75
+    },
+    "high_school_world_history:43": {
+      "A": -16.75,
+      "B": -10.25
+    },
+    "high_school_world_history:44": {
+      "A": 24.75,
+      "B": 25.0
+    },
+    "high_school_world_history:45": {
+      "A": 18.25,
+      "B": 11.75
+    },
+    "high_school_world_history:46": {
+      "A": 15.75,
+      "B": 15.75
+    },
+    "high_school_world_history:47": {
+      "A": 19.0,
+      "B": 26.5
+    },
+    "high_school_world_history:48": {
+      "A": 26.875,
+      "B": 27.375
+    },
+    "high_school_world_history:49": {
+      "A": 16.75,
+      "B": 15.5
+    },
+    "high_school_world_history:50": {
+      "A": -11.25,
+      "B": 8.25
+    },
+    "high_school_world_history:51": {
+      "A": 27.0,
+      "B": 27.5
+    },
+    "high_school_world_history:52": {
+      "A": 12.5,
+      "B": 13.5
+    },
+    "high_school_world_history:53": {
+      "A": 10.25,
+      "B": -8.75
+    },
+    "high_school_world_history:54": {
+      "A": 26.0,
+      "B": 27.875
+    },
+    "high_school_world_history:55": {
+      "A": -6.0,
+      "B": -17.5
+    },
+    "high_school_world_history:56": {
+      "A": 14.75,
+      "B": 21.625
+    },
+    "high_school_world_history:57": {
+      "A": 30.5,
+      "B": 26.5
+    },
+    "high_school_world_history:58": {
+      "A": 16.25,
+      "B": 19.0
+    },
+    "high_school_world_history:59": {
+      "A": 13.25,
+      "B": 17.5
+    },
+    "high_school_world_history:60": {
+      "A": -13.25,
+      "B": -11.5
+    },
+    "high_school_world_history:61": {
+      "A": 23.5,
+      "B": 19.25
+    },
+    "high_school_world_history:62": {
+      "A": 3.5,
+      "B": 3.5
+    },
+    "high_school_world_history:63": {
+      "A": 32.125,
+      "B": 31.375
+    },
+    "high_school_world_history:64": {
+      "A": 12.0,
+      "B": 6.25
+    },
+    "high_school_world_history:65": {
+      "A": 15.5,
+      "B": 19.25
+    },
+    "high_school_world_history:66": {
+      "A": 26.25,
+      "B": 25.125
+    },
+    "high_school_world_history:67": {
+      "A": 16.75,
+      "B": 4.75
+    },
+    "high_school_world_history:68": {
+      "A": 17.75,
+      "B": 23.25
+    },
+    "high_school_world_history:69": {
+      "A": 1.0,
+      "B": 15.0
+    },
+    "high_school_world_history:70": {
+      "A": 24.5,
+      "B": 23.25
+    },
+    "high_school_world_history:71": {
+      "A": 0.5,
+      "B": 4.0
+    },
+    "high_school_world_history:72": {
+      "A": 17.25,
+      "B": 6.0
+    },
+    "high_school_world_history:73": {
+      "A": 26.25,
+      "B": 20.75
+    },
+    "high_school_world_history:74": {
+      "A": 18.25,
+      "B": 17.5
+    },
+    "high_school_world_history:75": {
+      "A": 23.25,
+      "B": 20.75
+    },
+    "high_school_world_history:76": {
+      "A": 23.25,
+      "B": 22.5
+    },
+    "high_school_world_history:77": {
+      "A": 23.5,
+      "B": 20.0
+    },
+    "high_school_world_history:78": {
+      "A": 6.0,
+      "B": 0.0
+    },
+    "high_school_world_history:79": {
+      "A": 6.75,
+      "B": 9.75
+    },
+    "high_school_world_history:80": {
+      "A": 13.0,
+      "B": 0.5
+    },
+    "high_school_world_history:81": {
+      "A": 14.25,
+      "B": 12.25
+    },
+    "high_school_world_history:82": {
+      "A": 15.5,
+      "B": 16.25
+    },
+    "high_school_world_history:83": {
+      "A": 14.5,
+      "B": 12.25
+    },
+    "high_school_world_history:84": {
+      "A": 8.0,
+      "B": 6.0
+    },
+    "high_school_world_history:85": {
+      "A": 20.0,
+      "B": 18.5
+    },
+    "high_school_world_history:86": {
+      "A": 25.875,
+      "B": 23.0
+    },
+    "high_school_world_history:87": {
+      "A": 26.25,
+      "B": 17.5
+    },
+    "high_school_world_history:88": {
+      "A": 16.0,
+      "B": 17.0
+    },
+    "high_school_world_history:89": {
+      "A": 24.375,
+      "B": 23.125
+    },
+    "high_school_world_history:90": {
+      "A": 12.75,
+      "B": 6.5
+    },
+    "high_school_world_history:91": {
+      "A": 18.25,
+      "B": 13.25
+    },
+    "high_school_world_history:92": {
+      "A": 7.0,
+      "B": 11.5
+    },
+    "high_school_world_history:93": {
+      "A": -2.5,
+      "B": -9.25
+    },
+    "high_school_world_history:94": {
+      "A": 27.375,
+      "B": 23.0
+    },
+    "high_school_world_history:95": {
+      "A": 24.25,
+      "B": 16.25
+    },
+    "high_school_world_history:96": {
+      "A": 17.25,
+      "B": 0.5
+    },
+    "high_school_world_history:97": {
+      "A": 9.75,
+      "B": 0.25
+    },
+    "high_school_world_history:98": {
+      "A": 24.75,
+      "B": 28.5
+    },
+    "high_school_world_history:99": {
+      "A": 27.375,
+      "B": 25.75
+    },
+    "business_ethics:0": {
+      "A": 24.375,
+      "B": 24.0
+    },
+    "business_ethics:1": {
+      "A": 24.125,
+      "B": 22.375
+    },
+    "business_ethics:2": {
+      "A": 31.5,
+      "B": 28.625
+    },
+    "business_ethics:3": {
+      "A": 28.75,
+      "B": 27.375
+    },
+    "business_ethics:4": {
+      "A": 26.75,
+      "B": 27.5
+    },
+    "business_ethics:5": {
+      "A": 10.5,
+      "B": 4.25
+    },
+    "business_ethics:6": {
+      "A": 15.75,
+      "B": 7.75
+    },
+    "business_ethics:7": {
+      "A": 26.5,
+      "B": 25.625
+    },
+    "business_ethics:8": {
+      "A": 6.75,
+      "B": -4.0
+    },
+    "business_ethics:9": {
+      "A": 31.375,
+      "B": 29.0
+    },
+    "business_ethics:10": {
+      "A": 12.25,
+      "B": 15.5
+    },
+    "business_ethics:11": {
+      "A": 4.0,
+      "B": 27.5
+    },
+    "business_ethics:12": {
+      "A": 21.875,
+      "B": 19.25
+    },
+    "business_ethics:13": {
+      "A": 28.25,
+      "B": 28.5
+    },
+    "business_ethics:14": {
+      "A": 18.75,
+      "B": 10.5
+    },
+    "business_ethics:15": {
+      "A": 25.25,
+      "B": 25.625
+    },
+    "business_ethics:16": {
+      "A": 28.875,
+      "B": 27.0
+    },
+    "business_ethics:17": {
+      "A": 24.375,
+      "B": 14.75
+    },
+    "business_ethics:18": {
+      "A": 30.625,
+      "B": 28.125
+    },
+    "business_ethics:19": {
+      "A": 1.75,
+      "B": -7.5
+    },
+    "business_ethics:20": {
+      "A": 23.5,
+      "B": 22.375
+    },
+    "business_ethics:21": {
+      "A": 28.25,
+      "B": 28.125
+    },
+    "business_ethics:22": {
+      "A": 11.25,
+      "B": 24.375
+    },
+    "business_ethics:23": {
+      "A": 16.5,
+      "B": 24.375
+    },
+    "business_ethics:24": {
+      "A": 28.625,
+      "B": 25.875
+    },
+    "business_ethics:25": {
+      "A": 29.625,
+      "B": 29.25
+    },
+    "business_ethics:26": {
+      "A": 23.0,
+      "B": 26.25
+    },
+    "business_ethics:27": {
+      "A": 26.125,
+      "B": 26.625
+    },
+    "business_ethics:28": {
+      "A": 24.75,
+      "B": 27.125
+    },
+    "business_ethics:29": {
+      "A": 19.0,
+      "B": 18.25
+    },
+    "business_ethics:30": {
+      "A": 22.75,
+      "B": 19.25
+    },
+    "business_ethics:31": {
+      "A": 24.125,
+      "B": 24.125
+    },
+    "business_ethics:32": {
+      "A": 1.5,
+      "B": -6.0
+    },
+    "business_ethics:33": {
+      "A": 7.75,
+      "B": -12.25
+    },
+    "business_ethics:34": {
+      "A": 28.5,
+      "B": 25.625
+    },
+    "business_ethics:35": {
+      "A": 26.875,
+      "B": 24.75
+    },
+    "business_ethics:36": {
+      "A": 26.625,
+      "B": 26.125
+    },
+    "business_ethics:37": {
+      "A": 28.25,
+      "B": 28.625
+    },
+    "business_ethics:38": {
+      "A": 13.0,
+      "B": 23.375
+    },
+    "business_ethics:39": {
+      "A": 24.5,
+      "B": 26.75
+    },
+    "business_ethics:40": {
+      "A": 8.0,
+      "B": -6.25
+    },
+    "business_ethics:41": {
+      "A": 3.5,
+      "B": 8.0
+    },
+    "business_ethics:42": {
+      "A": 28.75,
+      "B": 27.25
+    },
+    "business_ethics:43": {
+      "A": 20.5,
+      "B": 25.5
+    },
+    "business_ethics:44": {
+      "A": 8.5,
+      "B": -18.25
+    },
+    "business_ethics:45": {
+      "A": 31.75,
+      "B": 30.0
+    },
+    "business_ethics:46": {
+      "A": 20.5,
+      "B": 20.75
+    },
+    "business_ethics:47": {
+      "A": 31.125,
+      "B": 29.75
+    },
+    "business_ethics:48": {
+      "A": 21.0,
+      "B": 25.75
+    },
+    "business_ethics:49": {
+      "A": 28.75,
+      "B": 27.0
+    },
+    "business_ethics:50": {
+      "A": 26.625,
+      "B": 25.625
+    },
+    "business_ethics:51": {
+      "A": 24.0,
+      "B": 12.75
+    },
+    "business_ethics:52": {
+      "A": 27.0,
+      "B": 23.75
+    },
+    "business_ethics:53": {
+      "A": 21.0,
+      "B": 20.25
+    },
+    "business_ethics:54": {
+      "A": 8.5,
+      "B": -3.25
+    },
+    "business_ethics:55": {
+      "A": -2.5,
+      "B": -3.25
+    },
+    "business_ethics:56": {
+      "A": 26.5,
+      "B": 25.0
+    },
+    "business_ethics:57": {
+      "A": 25.25,
+      "B": 27.875
+    },
+    "business_ethics:58": {
+      "A": -16.25,
+      "B": 13.75
+    },
+    "business_ethics:59": {
+      "A": 11.0,
+      "B": 14.0
+    },
+    "business_ethics:60": {
+      "A": 30.0,
+      "B": 29.125
+    },
+    "business_ethics:61": {
+      "A": 24.25,
+      "B": 25.5
+    },
+    "business_ethics:62": {
+      "A": 5.25,
+      "B": -6.0
+    },
+    "business_ethics:63": {
+      "A": 13.5,
+      "B": -19.75
+    },
+    "business_ethics:64": {
+      "A": 13.25,
+      "B": 17.75
+    },
+    "business_ethics:65": {
+      "A": 18.0,
+      "B": 15.25
+    },
+    "business_ethics:66": {
+      "A": 24.5,
+      "B": 10.75
+    },
+    "business_ethics:67": {
+      "A": 22.25,
+      "B": 22.625
+    },
+    "business_ethics:68": {
+      "A": 20.0,
+      "B": 25.625
+    },
+    "business_ethics:69": {
+      "A": 11.75,
+      "B": -9.5
+    },
+    "business_ethics:70": {
+      "A": 5.75,
+      "B": -6.75
+    },
+    "business_ethics:71": {
+      "A": 9.5,
+      "B": -5.0
+    },
+    "business_ethics:72": {
+      "A": 21.75,
+      "B": 4.5
+    },
+    "business_ethics:73": {
+      "A": 9.0,
+      "B": -6.0
+    },
+    "business_ethics:74": {
+      "A": 26.625,
+      "B": 23.875
+    },
+    "business_ethics:75": {
+      "A": 25.25,
+      "B": -4.5
+    },
+    "business_ethics:76": {
+      "A": 23.375,
+      "B": 25.0
+    },
+    "business_ethics:77": {
+      "A": 3.25,
+      "B": 18.0
+    },
+    "business_ethics:78": {
+      "A": 14.75,
+      "B": -3.25
+    },
+    "business_ethics:79": {
+      "A": 12.25,
+      "B": 5.0
+    },
+    "business_ethics:80": {
+      "A": 3.75,
+      "B": 0.5
+    },
+    "business_ethics:81": {
+      "A": 13.0,
+      "B": 16.5
+    },
+    "business_ethics:82": {
+      "A": 8.5,
+      "B": -0.25
+    },
+    "business_ethics:83": {
+      "A": 25.25,
+      "B": 25.375
+    },
+    "business_ethics:84": {
+      "A": 1.75,
+      "B": -2.75
+    },
+    "business_ethics:85": {
+      "A": 21.75,
+      "B": 18.25
+    },
+    "business_ethics:86": {
+      "A": -0.75,
+      "B": -11.25
+    },
+    "business_ethics:87": {
+      "A": 27.25,
+      "B": 22.375
+    },
+    "business_ethics:88": {
+      "A": 29.25,
+      "B": 28.5
+    },
+    "business_ethics:89": {
+      "A": 29.25,
+      "B": 18.0
+    },
+    "business_ethics:90": {
+      "A": 9.0,
+      "B": -6.5
+    },
+    "business_ethics:91": {
+      "A": 5.25,
+      "B": -9.25
+    },
+    "business_ethics:92": {
+      "A": 5.75,
+      "B": -12.0
+    },
+    "business_ethics:93": {
+      "A": 5.75,
+      "B": 13.75
+    },
+    "business_ethics:94": {
+      "A": 5.25,
+      "B": -6.0
+    },
+    "business_ethics:95": {
+      "A": 13.75,
+      "B": 4.25
+    },
+    "business_ethics:96": {
+      "A": 29.375,
+      "B": 29.5
+    },
+    "business_ethics:97": {
+      "A": 2.25,
+      "B": -12.25
+    },
+    "business_ethics:98": {
+      "A": 24.75,
+      "B": 18.125
+    },
+    "business_ethics:99": {
+      "A": 25.25,
+      "B": 26.125
+    },
+    "professional_law:0": {
+      "A": 4.25,
+      "B": -15.0
+    },
+    "professional_law:1": {
+      "A": -11.0,
+      "B": -5.25
+    },
+    "professional_law:2": {
+      "A": 7.5,
+      "B": 8.5
+    },
+    "professional_law:3": {
+      "A": 24.75,
+      "B": 19.75
+    },
+    "professional_law:4": {
+      "A": 6.25,
+      "B": 6.5
+    },
+    "professional_law:5": {
+      "A": 27.5,
+      "B": 22.75
+    },
+    "professional_law:6": {
+      "A": 8.5,
+      "B": 1.0
+    },
+    "professional_law:7": {
+      "A": -5.25,
+      "B": 6.75
+    },
+    "professional_law:8": {
+      "A": -2.5,
+      "B": -5.5
+    },
+    "professional_law:9": {
+      "A": -10.75,
+      "B": -7.0
+    },
+    "professional_law:10": {
+      "A": -1.5,
+      "B": 13.75
+    },
+    "professional_law:11": {
+      "A": -14.25,
+      "B": -17.5
+    },
+    "professional_law:12": {
+      "A": 18.0,
+      "B": 18.5
+    },
+    "professional_law:13": {
+      "A": 10.0,
+      "B": 16.25
+    },
+    "professional_law:14": {
+      "A": 6.75,
+      "B": 17.75
+    },
+    "professional_law:15": {
+      "A": 23.875,
+      "B": 26.125
+    },
+    "professional_law:16": {
+      "A": 9.0,
+      "B": 12.75
+    },
+    "professional_law:17": {
+      "A": -11.75,
+      "B": -10.25
+    },
+    "professional_law:18": {
+      "A": 12.5,
+      "B": 20.75
+    },
+    "professional_law:19": {
+      "A": 8.75,
+      "B": 20.0
+    },
+    "professional_law:20": {
+      "A": -4.25,
+      "B": -9.25
+    },
+    "professional_law:21": {
+      "A": 6.25,
+      "B": 4.25
+    },
+    "professional_law:22": {
+      "A": 14.5,
+      "B": 16.75
+    },
+    "professional_law:23": {
+      "A": -19.0,
+      "B": -25.5
+    },
+    "professional_law:24": {
+      "A": -5.25,
+      "B": -4.5
+    },
+    "professional_law:25": {
+      "A": 3.75,
+      "B": 5.5
+    },
+    "professional_law:26": {
+      "A": 12.25,
+      "B": 21.25
+    },
+    "professional_law:27": {
+      "A": -11.75,
+      "B": -17.75
+    },
+    "professional_law:28": {
+      "A": 6.0,
+      "B": 5.25
+    },
+    "professional_law:29": {
+      "A": 4.75,
+      "B": -4.5
+    },
+    "professional_law:30": {
+      "A": 22.0,
+      "B": 20.75
+    },
+    "professional_law:31": {
+      "A": 11.25,
+      "B": 1.25
+    },
+    "professional_law:32": {
+      "A": 22.75,
+      "B": 20.5
+    },
+    "professional_law:33": {
+      "A": 21.5,
+      "B": 22.25
+    },
+    "professional_law:34": {
+      "A": -6.5,
+      "B": -3.0
+    },
+    "professional_law:35": {
+      "A": 12.75,
+      "B": 20.0
+    },
+    "professional_law:36": {
+      "A": 0.0,
+      "B": -14.5
+    },
+    "professional_law:37": {
+      "A": -7.75,
+      "B": 3.75
+    },
+    "professional_law:38": {
+      "A": -3.5,
+      "B": 18.25
+    },
+    "professional_law:39": {
+      "A": -8.25,
+      "B": -8.0
+    },
+    "professional_law:40": {
+      "A": 11.75,
+      "B": 5.5
+    },
+    "professional_law:41": {
+      "A": 7.5,
+      "B": -3.5
+    },
+    "professional_law:42": {
+      "A": 29.875,
+      "B": 26.375
+    },
+    "professional_law:43": {
+      "A": 9.75,
+      "B": 7.5
+    },
+    "professional_law:44": {
+      "A": 18.0,
+      "B": 20.125
+    },
+    "professional_law:45": {
+      "A": -17.25,
+      "B": -21.0
+    },
+    "professional_law:46": {
+      "A": 11.75,
+      "B": -6.25
+    },
+    "professional_law:47": {
+      "A": 23.875,
+      "B": 23.5
+    },
+    "professional_law:48": {
+      "A": 10.75,
+      "B": -1.75
+    },
+    "professional_law:49": {
+      "A": 11.75,
+      "B": 11.25
+    },
+    "professional_law:50": {
+      "A": 1.75,
+      "B": -6.25
+    },
+    "professional_law:51": {
+      "A": 15.5,
+      "B": 5.75
+    },
+    "professional_law:52": {
+      "A": 12.75,
+      "B": 13.75
+    },
+    "professional_law:53": {
+      "A": 1.0,
+      "B": -1.5
+    },
+    "professional_law:54": {
+      "A": 15.75,
+      "B": 8.25
+    },
+    "professional_law:55": {
+      "A": -5.25,
+      "B": -7.5
+    },
+    "professional_law:56": {
+      "A": 11.5,
+      "B": 3.0
+    },
+    "professional_law:57": {
+      "A": -0.75,
+      "B": 1.0
+    },
+    "professional_law:58": {
+      "A": 6.5,
+      "B": 7.5
+    },
+    "professional_law:59": {
+      "A": 14.0,
+      "B": 11.5
+    },
+    "professional_law:60": {
+      "A": 17.5,
+      "B": 21.0
+    },
+    "professional_law:61": {
+      "A": -16.75,
+      "B": -3.0
+    },
+    "professional_law:62": {
+      "A": 9.5,
+      "B": 18.75
+    },
+    "professional_law:63": {
+      "A": 24.25,
+      "B": 17.25
+    },
+    "professional_law:64": {
+      "A": 18.25,
+      "B": 23.375
+    },
+    "professional_law:65": {
+      "A": 1.25,
+      "B": 6.25
+    },
+    "professional_law:66": {
+      "A": -6.0,
+      "B": -6.0
+    },
+    "professional_law:67": {
+      "A": 10.75,
+      "B": 7.25
+    },
+    "professional_law:68": {
+      "A": 16.25,
+      "B": 15.25
+    },
+    "professional_law:69": {
+      "A": -21.0,
+      "B": -21.5
+    },
+    "professional_law:70": {
+      "A": -1.0,
+      "B": 10.75
+    },
+    "professional_law:71": {
+      "A": -2.5,
+      "B": 9.75
+    },
+    "professional_law:72": {
+      "A": 18.5,
+      "B": 16.0
+    },
+    "professional_law:73": {
+      "A": 11.0,
+      "B": 0.25
+    },
+    "professional_law:74": {
+      "A": -13.75,
+      "B": -14.0
+    },
+    "professional_law:75": {
+      "A": -5.0,
+      "B": -9.25
+    },
+    "professional_law:76": {
+      "A": -3.25,
+      "B": 4.75
+    },
+    "professional_law:77": {
+      "A": 17.25,
+      "B": 21.0
+    },
+    "professional_law:78": {
+      "A": 1.75,
+      "B": 8.75
+    },
+    "professional_law:79": {
+      "A": 7.25,
+      "B": 6.75
+    },
+    "professional_law:80": {
+      "A": 6.0,
+      "B": 6.5
+    },
+    "professional_law:81": {
+      "A": -3.25,
+      "B": 6.0
+    },
+    "professional_law:82": {
+      "A": 17.5,
+      "B": -3.5
+    },
+    "professional_law:83": {
+      "A": -15.75,
+      "B": -2.5
+    },
+    "professional_law:84": {
+      "A": 6.0,
+      "B": 5.25
+    },
+    "professional_law:85": {
+      "A": 15.75,
+      "B": -1.5
+    },
+    "professional_law:86": {
+      "A": 10.0,
+      "B": 3.0
+    },
+    "professional_law:87": {
+      "A": -21.25,
+      "B": -12.5
+    },
+    "professional_law:88": {
+      "A": 16.75,
+      "B": 22.875
+    },
+    "professional_law:89": {
+      "A": 3.25,
+      "B": -10.5
+    },
+    "professional_law:90": {
+      "A": 12.5,
+      "B": 19.5
+    },
+    "professional_law:91": {
+      "A": 8.25,
+      "B": -5.25
+    },
+    "professional_law:92": {
+      "A": 0.75,
+      "B": -3.5
+    },
+    "professional_law:93": {
+      "A": 6.25,
+      "B": -6.25
+    },
+    "professional_law:94": {
+      "A": -1.75,
+      "B": -9.25
+    },
+    "professional_law:95": {
+      "A": -9.75,
+      "B": -4.5
+    },
+    "professional_law:96": {
+      "A": 25.125,
+      "B": 2.75
+    },
+    "professional_law:97": {
+      "A": 18.0,
+      "B": 21.875
+    },
+    "professional_law:98": {
+      "A": 8.0,
+      "B": 10.0
+    },
+    "professional_law:99": {
+      "A": 16.5,
+      "B": 15.0
+    }
+  }
+}

@@ -1,0 +1,2751 @@
+{
+  "candidate_dataset_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+  "dtype": "bfloat16",
+  "margins": {
+    "business_ethics:0": {
+      "clean_a": 7.8125,
+      "clean_b": 8.3125,
+      "marked_a": 7.1875,
+      "marked_b": 7.6875
+    },
+    "business_ethics:1": {
+      "clean_a": 7.3125,
+      "clean_b": 7.6875,
+      "marked_a": 6.5,
+      "marked_b": 6.8125
+    },
+    "business_ethics:10": {
+      "clean_a": 3.875,
+      "clean_b": 4.625,
+      "marked_a": 3.5,
+      "marked_b": 4.0
+    },
+    "business_ethics:11": {
+      "clean_a": 5.9375,
+      "clean_b": 7.0625,
+      "marked_a": 6.0625,
+      "marked_b": 5.875
+    },
+    "business_ethics:12": {
+      "clean_a": 7.625,
+      "clean_b": 6.75,
+      "marked_a": 6.6875,
+      "marked_b": 5.9375
+    },
+    "business_ethics:13": {
+      "clean_a": 5.375,
+      "clean_b": 6.5625,
+      "marked_a": 4.625,
+      "marked_b": 5.8125
+    },
+    "business_ethics:14": {
+      "clean_a": 5.875,
+      "clean_b": 6.625,
+      "marked_a": 4.9375,
+      "marked_b": 5.9375
+    },
+    "business_ethics:15": {
+      "clean_a": 6.75,
+      "clean_b": 7.3125,
+      "marked_a": 6.0,
+      "marked_b": 6.5625
+    },
+    "business_ethics:16": {
+      "clean_a": 5.9375,
+      "clean_b": 6.3125,
+      "marked_a": 4.875,
+      "marked_b": 5.4375
+    },
+    "business_ethics:17": {
+      "clean_a": 6.75,
+      "clean_b": 1.25,
+      "marked_a": 5.9375,
+      "marked_b": 1.5
+    },
+    "business_ethics:18": {
+      "clean_a": 7.3125,
+      "clean_b": 7.1875,
+      "marked_a": 6.75,
+      "marked_b": 6.4375
+    },
+    "business_ethics:19": {
+      "clean_a": -1.25,
+      "clean_b": 1.75,
+      "marked_a": -2.5,
+      "marked_b": 2.375
+    },
+    "business_ethics:2": {
+      "clean_a": 6.4375,
+      "clean_b": 7.5625,
+      "marked_a": 5.8125,
+      "marked_b": 6.625
+    },
+    "business_ethics:20": {
+      "clean_a": 6.4375,
+      "clean_b": 8.1875,
+      "marked_a": 5.75,
+      "marked_b": 7.0625
+    },
+    "business_ethics:21": {
+      "clean_a": 6.4375,
+      "clean_b": 7.3125,
+      "marked_a": 5.8125,
+      "marked_b": 6.1875
+    },
+    "business_ethics:22": {
+      "clean_a": 4.5,
+      "clean_b": 6.5625,
+      "marked_a": 3.875,
+      "marked_b": 5.75
+    },
+    "business_ethics:23": {
+      "clean_a": 2.0,
+      "clean_b": -0.875,
+      "marked_a": 1.5,
+      "marked_b": -0.125
+    },
+    "business_ethics:24": {
+      "clean_a": 7.375,
+      "clean_b": 7.875,
+      "marked_a": 6.6875,
+      "marked_b": 7.5
+    },
+    "business_ethics:25": {
+      "clean_a": 6.8125,
+      "clean_b": 7.125,
+      "marked_a": 6.1875,
+      "marked_b": 6.25
+    },
+    "business_ethics:26": {
+      "clean_a": 4.0,
+      "clean_b": 4.875,
+      "marked_a": 4.125,
+      "marked_b": 4.6875
+    },
+    "business_ethics:27": {
+      "clean_a": 5.9375,
+      "clean_b": 7.5625,
+      "marked_a": 5.375,
+      "marked_b": 6.5
+    },
+    "business_ethics:28": {
+      "clean_a": 7.375,
+      "clean_b": 7.5625,
+      "marked_a": 6.75,
+      "marked_b": 6.5625
+    },
+    "business_ethics:29": {
+      "clean_a": 6.625,
+      "clean_b": 6.5,
+      "marked_a": 5.3125,
+      "marked_b": 5.4375
+    },
+    "business_ethics:3": {
+      "clean_a": 7.0625,
+      "clean_b": 7.4375,
+      "marked_a": 6.0625,
+      "marked_b": 6.5
+    },
+    "business_ethics:30": {
+      "clean_a": 6.625,
+      "clean_b": 8.25,
+      "marked_a": 5.8125,
+      "marked_b": 7.5
+    },
+    "business_ethics:31": {
+      "clean_a": 5.375,
+      "clean_b": 6.625,
+      "marked_a": 4.5625,
+      "marked_b": 5.5625
+    },
+    "business_ethics:32": {
+      "clean_a": 0.375,
+      "clean_b": -0.25,
+      "marked_a": -0.125,
+      "marked_b": 1.25
+    },
+    "business_ethics:33": {
+      "clean_a": 3.125,
+      "clean_b": 1.375,
+      "marked_a": 3.125,
+      "marked_b": 1.0
+    },
+    "business_ethics:34": {
+      "clean_a": 7.875,
+      "clean_b": 7.6875,
+      "marked_a": 6.625,
+      "marked_b": 7.0625
+    },
+    "business_ethics:35": {
+      "clean_a": 7.25,
+      "clean_b": 7.625,
+      "marked_a": 6.1875,
+      "marked_b": 5.8125
+    },
+    "business_ethics:36": {
+      "clean_a": 6.4375,
+      "clean_b": 7.0625,
+      "marked_a": 5.6875,
+      "marked_b": 6.3125
+    },
+    "business_ethics:37": {
+      "clean_a": 7.5,
+      "clean_b": 7.9375,
+      "marked_a": 6.5,
+      "marked_b": 7.5
+    },
+    "business_ethics:38": {
+      "clean_a": 7.125,
+      "clean_b": 7.5625,
+      "marked_a": 6.375,
+      "marked_b": 6.625
+    },
+    "business_ethics:39": {
+      "clean_a": 4.625,
+      "clean_b": 7.75,
+      "marked_a": 3.375,
+      "marked_b": 6.9375
+    },
+    "business_ethics:4": {
+      "clean_a": 5.3125,
+      "clean_b": 7.5625,
+      "marked_a": 4.0,
+      "marked_b": 6.5625
+    },
+    "business_ethics:40": {
+      "clean_a": -0.375,
+      "clean_b": -0.375,
+      "marked_a": -1.0,
+      "marked_b": 0.5
+    },
+    "business_ethics:41": {
+      "clean_a": 3.75,
+      "clean_b": 3.0,
+      "marked_a": 3.0,
+      "marked_b": 0.75
+    },
+    "business_ethics:42": {
+      "clean_a": 2.125,
+      "clean_b": 3.5,
+      "marked_a": 2.0,
+      "marked_b": 2.75
+    },
+    "business_ethics:43": {
+      "clean_a": 5.875,
+      "clean_b": 6.1875,
+      "marked_a": 4.5,
+      "marked_b": 5.125
+    },
+    "business_ethics:44": {
+      "clean_a": 2.0,
+      "clean_b": 1.0,
+      "marked_a": 1.875,
+      "marked_b": 1.0
+    },
+    "business_ethics:45": {
+      "clean_a": 7.9375,
+      "clean_b": 7.25,
+      "marked_a": 7.1875,
+      "marked_b": 6.5625
+    },
+    "business_ethics:46": {
+      "clean_a": 5.5,
+      "clean_b": 6.0625,
+      "marked_a": 5.0,
+      "marked_b": 4.875
+    },
+    "business_ethics:47": {
+      "clean_a": 7.4375,
+      "clean_b": 7.25,
+      "marked_a": 6.8125,
+      "marked_b": 6.75
+    },
+    "business_ethics:48": {
+      "clean_a": 7.5,
+      "clean_b": 7.4375,
+      "marked_a": 7.125,
+      "marked_b": 5.5
+    },
+    "business_ethics:49": {
+      "clean_a": 6.1875,
+      "clean_b": 6.625,
+      "marked_a": 5.6875,
+      "marked_b": 5.5
+    },
+    "business_ethics:5": {
+      "clean_a": 4.125,
+      "clean_b": 6.125,
+      "marked_a": 3.25,
+      "marked_b": 4.75
+    },
+    "business_ethics:50": {
+      "clean_a": 7.3125,
+      "clean_b": 8.125,
+      "marked_a": 6.5,
+      "marked_b": 7.1875
+    },
+    "business_ethics:51": {
+      "clean_a": 5.75,
+      "clean_b": 3.875,
+      "marked_a": 5.625,
+      "marked_b": 3.125
+    },
+    "business_ethics:52": {
+      "clean_a": 6.75,
+      "clean_b": 6.8125,
+      "marked_a": 5.9375,
+      "marked_b": 5.75
+    },
+    "business_ethics:53": {
+      "clean_a": 5.9375,
+      "clean_b": 7.3125,
+      "marked_a": 5.75,
+      "marked_b": 6.375
+    },
+    "business_ethics:54": {
+      "clean_a": 4.625,
+      "clean_b": 4.375,
+      "marked_a": 3.875,
+      "marked_b": 2.125
+    },
+    "business_ethics:55": {
+      "clean_a": -0.875,
+      "clean_b": 1.125,
+      "marked_a": -1.0,
+      "marked_b": 1.375
+    },
+    "business_ethics:56": {
+      "clean_a": 6.5625,
+      "clean_b": 7.0625,
+      "marked_a": 5.8125,
+      "marked_b": 5.75
+    },
+    "business_ethics:57": {
+      "clean_a": 7.25,
+      "clean_b": 7.8125,
+      "marked_a": 5.625,
+      "marked_b": 6.625
+    },
+    "business_ethics:58": {
+      "clean_a": 2.0,
+      "clean_b": 5.8125,
+      "marked_a": 0.875,
+      "marked_b": 2.625
+    },
+    "business_ethics:59": {
+      "clean_a": 3.375,
+      "clean_b": 2.25,
+      "marked_a": 2.75,
+      "marked_b": 2.25
+    },
+    "business_ethics:6": {
+      "clean_a": 3.0,
+      "clean_b": 4.8125,
+      "marked_a": 2.375,
+      "marked_b": 4.0625
+    },
+    "business_ethics:60": {
+      "clean_a": 7.875,
+      "clean_b": 7.875,
+      "marked_a": 7.1875,
+      "marked_b": 6.875
+    },
+    "business_ethics:61": {
+      "clean_a": 4.0,
+      "clean_b": 7.9375,
+      "marked_a": 4.0,
+      "marked_b": 7.125
+    },
+    "business_ethics:62": {
+      "clean_a": -0.625,
+      "clean_b": 1.625,
+      "marked_a": -1.125,
+      "marked_b": 1.25
+    },
+    "business_ethics:63": {
+      "clean_a": 4.125,
+      "clean_b": 4.375,
+      "marked_a": 2.875,
+      "marked_b": 3.25
+    },
+    "business_ethics:64": {
+      "clean_a": 2.5,
+      "clean_b": 7.1875,
+      "marked_a": 2.5,
+      "marked_b": 6.25
+    },
+    "business_ethics:65": {
+      "clean_a": 0.75,
+      "clean_b": 5.125,
+      "marked_a": 1.25,
+      "marked_b": 3.875
+    },
+    "business_ethics:66": {
+      "clean_a": 5.625,
+      "clean_b": 6.4375,
+      "marked_a": 4.25,
+      "marked_b": 5.375
+    },
+    "business_ethics:67": {
+      "clean_a": 7.1875,
+      "clean_b": 7.75,
+      "marked_a": 6.125,
+      "marked_b": 6.3125
+    },
+    "business_ethics:68": {
+      "clean_a": 5.6875,
+      "clean_b": 7.3125,
+      "marked_a": 5.1875,
+      "marked_b": 6.0
+    },
+    "business_ethics:69": {
+      "clean_a": -1.5,
+      "clean_b": -0.5,
+      "marked_a": 0.0,
+      "marked_b": -0.875
+    },
+    "business_ethics:7": {
+      "clean_a": 6.6875,
+      "clean_b": 7.4375,
+      "marked_a": 6.0,
+      "marked_b": 6.875
+    },
+    "business_ethics:70": {
+      "clean_a": -1.25,
+      "clean_b": 1.0,
+      "marked_a": -2.375,
+      "marked_b": 1.375
+    },
+    "business_ethics:71": {
+      "clean_a": 0.75,
+      "clean_b": -1.0,
+      "marked_a": 0.5,
+      "marked_b": -0.625
+    },
+    "business_ethics:72": {
+      "clean_a": 4.0,
+      "clean_b": 3.25,
+      "marked_a": 3.125,
+      "marked_b": 1.875
+    },
+    "business_ethics:73": {
+      "clean_a": 2.375,
+      "clean_b": 3.0,
+      "marked_a": 1.625,
+      "marked_b": 2.375
+    },
+    "business_ethics:74": {
+      "clean_a": 7.0625,
+      "clean_b": 7.625,
+      "marked_a": 6.8125,
+      "marked_b": 6.8125
+    },
+    "business_ethics:75": {
+      "clean_a": 7.25,
+      "clean_b": 4.25,
+      "marked_a": 6.375,
+      "marked_b": 4.625
+    },
+    "business_ethics:76": {
+      "clean_a": 5.0,
+      "clean_b": 7.75,
+      "marked_a": 4.8125,
+      "marked_b": 6.875
+    },
+    "business_ethics:77": {
+      "clean_a": 5.9375,
+      "clean_b": 6.125,
+      "marked_a": 4.75,
+      "marked_b": 5.25
+    },
+    "business_ethics:78": {
+      "clean_a": 1.375,
+      "clean_b": -0.375,
+      "marked_a": 1.0,
+      "marked_b": 0.125
+    },
+    "business_ethics:79": {
+      "clean_a": 3.0,
+      "clean_b": -2.125,
+      "marked_a": 2.625,
+      "marked_b": -1.75
+    },
+    "business_ethics:8": {
+      "clean_a": -0.125,
+      "clean_b": 1.375,
+      "marked_a": 0.125,
+      "marked_b": 0.875
+    },
+    "business_ethics:80": {
+      "clean_a": -1.0,
+      "clean_b": 1.25,
+      "marked_a": 0.0,
+      "marked_b": 0.0
+    },
+    "business_ethics:81": {
+      "clean_a": 3.75,
+      "clean_b": 4.75,
+      "marked_a": 3.25,
+      "marked_b": 3.5
+    },
+    "business_ethics:82": {
+      "clean_a": 5.9375,
+      "clean_b": 7.0625,
+      "marked_a": 5.375,
+      "marked_b": 5.5625
+    },
+    "business_ethics:83": {
+      "clean_a": 2.625,
+      "clean_b": 0.125,
+      "marked_a": 2.375,
+      "marked_b": -0.375
+    },
+    "business_ethics:84": {
+      "clean_a": -0.5,
+      "clean_b": 0.5,
+      "marked_a": -1.25,
+      "marked_b": 0.125
+    },
+    "business_ethics:85": {
+      "clean_a": 0.875,
+      "clean_b": 2.375,
+      "marked_a": 1.125,
+      "marked_b": 2.375
+    },
+    "business_ethics:86": {
+      "clean_a": 0.375,
+      "clean_b": 4.25,
+      "marked_a": -0.875,
+      "marked_b": 4.625
+    },
+    "business_ethics:87": {
+      "clean_a": 6.625,
+      "clean_b": 8.0625,
+      "marked_a": 5.125,
+      "marked_b": 7.0
+    },
+    "business_ethics:88": {
+      "clean_a": 3.25,
+      "clean_b": 6.75,
+      "marked_a": 4.0,
+      "marked_b": 6.5
+    },
+    "business_ethics:89": {
+      "clean_a": 5.25,
+      "clean_b": 4.375,
+      "marked_a": 4.9375,
+      "marked_b": 4.0
+    },
+    "business_ethics:9": {
+      "clean_a": 6.9375,
+      "clean_b": 6.5,
+      "marked_a": 6.625,
+      "marked_b": 5.3125
+    },
+    "business_ethics:90": {
+      "clean_a": -1.5,
+      "clean_b": 0.875,
+      "marked_a": -0.875,
+      "marked_b": 0.375
+    },
+    "business_ethics:91": {
+      "clean_a": -0.125,
+      "clean_b": 0.875,
+      "marked_a": -0.375,
+      "marked_b": 0.875
+    },
+    "business_ethics:92": {
+      "clean_a": -0.625,
+      "clean_b": 0.75,
+      "marked_a": -1.125,
+      "marked_b": 0.75
+    },
+    "business_ethics:93": {
+      "clean_a": 1.25,
+      "clean_b": 2.5,
+      "marked_a": 1.625,
+      "marked_b": 2.125
+    },
+    "business_ethics:94": {
+      "clean_a": -1.0,
+      "clean_b": 0.25,
+      "marked_a": -1.375,
+      "marked_b": 1.125
+    },
+    "business_ethics:95": {
+      "clean_a": 3.0,
+      "clean_b": -1.75,
+      "marked_a": 2.375,
+      "marked_b": -0.75
+    },
+    "business_ethics:96": {
+      "clean_a": 8.125,
+      "clean_b": 8.25,
+      "marked_a": 7.375,
+      "marked_b": 7.375
+    },
+    "business_ethics:97": {
+      "clean_a": -1.0,
+      "clean_b": -2.625,
+      "marked_a": -0.5,
+      "marked_b": -2.125
+    },
+    "business_ethics:98": {
+      "clean_a": 4.25,
+      "clean_b": 7.4375,
+      "marked_a": 4.625,
+      "marked_b": 6.8125
+    },
+    "business_ethics:99": {
+      "clean_a": 7.75,
+      "clean_b": 7.6875,
+      "marked_a": 6.9375,
+      "marked_b": 7.0
+    },
+    "high_school_psychology:0": {
+      "clean_a": 6.9375,
+      "clean_b": 7.625,
+      "marked_a": 6.0,
+      "marked_b": 7.0625
+    },
+    "high_school_psychology:1": {
+      "clean_a": 4.875,
+      "clean_b": 7.3125,
+      "marked_a": 4.0,
+      "marked_b": 6.8125
+    },
+    "high_school_psychology:10": {
+      "clean_a": 6.6875,
+      "clean_b": 6.6875,
+      "marked_a": 5.875,
+      "marked_b": 5.5625
+    },
+    "high_school_psychology:11": {
+      "clean_a": 7.4375,
+      "clean_b": 7.4375,
+      "marked_a": 5.9375,
+      "marked_b": 6.3125
+    },
+    "high_school_psychology:12": {
+      "clean_a": 6.5625,
+      "clean_b": 5.5,
+      "marked_a": 5.9375,
+      "marked_b": 4.9375
+    },
+    "high_school_psychology:13": {
+      "clean_a": 6.25,
+      "clean_b": 7.0,
+      "marked_a": 4.75,
+      "marked_b": 6.5
+    },
+    "high_school_psychology:14": {
+      "clean_a": 7.6875,
+      "clean_b": 7.0625,
+      "marked_a": 7.0625,
+      "marked_b": 6.25
+    },
+    "high_school_psychology:15": {
+      "clean_a": 6.9375,
+      "clean_b": 7.0,
+      "marked_a": 5.75,
+      "marked_b": 6.125
+    },
+    "high_school_psychology:16": {
+      "clean_a": 4.25,
+      "clean_b": 3.625,
+      "marked_a": 3.0,
+      "marked_b": 2.875
+    },
+    "high_school_psychology:17": {
+      "clean_a": 3.25,
+      "clean_b": 4.75,
+      "marked_a": 2.5,
+      "marked_b": 2.5
+    },
+    "high_school_psychology:18": {
+      "clean_a": 4.625,
+      "clean_b": 6.1875,
+      "marked_a": 4.0,
+      "marked_b": 6.0
+    },
+    "high_school_psychology:19": {
+      "clean_a": 2.375,
+      "clean_b": 1.5,
+      "marked_a": 0.125,
+      "marked_b": 1.25
+    },
+    "high_school_psychology:2": {
+      "clean_a": 4.75,
+      "clean_b": 5.75,
+      "marked_a": 3.5,
+      "marked_b": 4.875
+    },
+    "high_school_psychology:20": {
+      "clean_a": 3.5,
+      "clean_b": 4.0,
+      "marked_a": 1.75,
+      "marked_b": 1.75
+    },
+    "high_school_psychology:21": {
+      "clean_a": 5.125,
+      "clean_b": 6.5,
+      "marked_a": 4.375,
+      "marked_b": 5.6875
+    },
+    "high_school_psychology:22": {
+      "clean_a": -4.375,
+      "clean_b": -3.25,
+      "marked_a": -2.75,
+      "marked_b": -2.375
+    },
+    "high_school_psychology:23": {
+      "clean_a": -6.0625,
+      "clean_b": -3.375,
+      "marked_a": -5.875,
+      "marked_b": -2.875
+    },
+    "high_school_psychology:24": {
+      "clean_a": 5.375,
+      "clean_b": 5.25,
+      "marked_a": 4.375,
+      "marked_b": 4.1875
+    },
+    "high_school_psychology:25": {
+      "clean_a": 5.375,
+      "clean_b": 6.0625,
+      "marked_a": 5.0,
+      "marked_b": 5.3125
+    },
+    "high_school_psychology:26": {
+      "clean_a": 6.25,
+      "clean_b": 1.375,
+      "marked_a": 5.8125,
+      "marked_b": 0.875
+    },
+    "high_school_psychology:27": {
+      "clean_a": 6.8125,
+      "clean_b": 6.875,
+      "marked_a": 6.125,
+      "marked_b": 6.3125
+    },
+    "high_school_psychology:28": {
+      "clean_a": 7.5,
+      "clean_b": 7.0625,
+      "marked_a": 6.1875,
+      "marked_b": 5.875
+    },
+    "high_school_psychology:29": {
+      "clean_a": 1.125,
+      "clean_b": 2.0,
+      "marked_a": 0.75,
+      "marked_b": 1.375
+    },
+    "high_school_psychology:3": {
+      "clean_a": 7.3125,
+      "clean_b": 7.375,
+      "marked_a": 6.25,
+      "marked_b": 6.5625
+    },
+    "high_school_psychology:30": {
+      "clean_a": 5.25,
+      "clean_b": 6.5625,
+      "marked_a": 4.875,
+      "marked_b": 5.375
+    },
+    "high_school_psychology:31": {
+      "clean_a": 7.4375,
+      "clean_b": 7.5625,
+      "marked_a": 6.875,
+      "marked_b": 7.0
+    },
+    "high_school_psychology:32": {
+      "clean_a": 7.0625,
+      "clean_b": 6.875,
+      "marked_a": 6.25,
+      "marked_b": 6.125
+    },
+    "high_school_psychology:33": {
+      "clean_a": 7.5,
+      "clean_b": 7.75,
+      "marked_a": 7.0625,
+      "marked_b": 7.1875
+    },
+    "high_school_psychology:34": {
+      "clean_a": 0.625,
+      "clean_b": 2.25,
+      "marked_a": 2.25,
+      "marked_b": 1.25
+    },
+    "high_school_psychology:35": {
+      "clean_a": 6.1875,
+      "clean_b": 6.875,
+      "marked_a": 5.5,
+      "marked_b": 5.75
+    },
+    "high_school_psychology:36": {
+      "clean_a": 7.6875,
+      "clean_b": 8.0,
+      "marked_a": 6.8125,
+      "marked_b": 6.5625
+    },
+    "high_school_psychology:37": {
+      "clean_a": 6.3125,
+      "clean_b": 7.75,
+      "marked_a": 5.125,
+      "marked_b": 6.6875
+    },
+    "high_school_psychology:38": {
+      "clean_a": 7.625,
+      "clean_b": 6.75,
+      "marked_a": 6.5,
+      "marked_b": 5.9375
+    },
+    "high_school_psychology:39": {
+      "clean_a": 6.125,
+      "clean_b": 5.5,
+      "marked_a": 5.0,
+      "marked_b": 3.25
+    },
+    "high_school_psychology:4": {
+      "clean_a": 7.0,
+      "clean_b": 7.3125,
+      "marked_a": 5.875,
+      "marked_b": 6.0625
+    },
+    "high_school_psychology:40": {
+      "clean_a": 5.0,
+      "clean_b": 2.625,
+      "marked_a": 4.375,
+      "marked_b": 1.625
+    },
+    "high_school_psychology:41": {
+      "clean_a": 5.375,
+      "clean_b": 3.75,
+      "marked_a": 5.0,
+      "marked_b": 3.0
+    },
+    "high_school_psychology:42": {
+      "clean_a": 6.0625,
+      "clean_b": 5.875,
+      "marked_a": 5.0,
+      "marked_b": 5.125
+    },
+    "high_school_psychology:43": {
+      "clean_a": 6.75,
+      "clean_b": 6.5625,
+      "marked_a": 6.0625,
+      "marked_b": 5.75
+    },
+    "high_school_psychology:44": {
+      "clean_a": 5.75,
+      "clean_b": 5.0,
+      "marked_a": 5.6875,
+      "marked_b": 3.875
+    },
+    "high_school_psychology:45": {
+      "clean_a": 7.9375,
+      "clean_b": 7.25,
+      "marked_a": 7.1875,
+      "marked_b": 7.0
+    },
+    "high_school_psychology:46": {
+      "clean_a": 7.0,
+      "clean_b": 5.6875,
+      "marked_a": 6.1875,
+      "marked_b": 5.1875
+    },
+    "high_school_psychology:47": {
+      "clean_a": 7.625,
+      "clean_b": 6.8125,
+      "marked_a": 6.75,
+      "marked_b": 5.875
+    },
+    "high_school_psychology:48": {
+      "clean_a": 7.8125,
+      "clean_b": 7.9375,
+      "marked_a": 7.1875,
+      "marked_b": 7.4375
+    },
+    "high_school_psychology:49": {
+      "clean_a": 7.875,
+      "clean_b": 8.1875,
+      "marked_a": 7.25,
+      "marked_b": 7.1875
+    },
+    "high_school_psychology:5": {
+      "clean_a": 4.375,
+      "clean_b": 5.1875,
+      "marked_a": 4.5,
+      "marked_b": 4.625
+    },
+    "high_school_psychology:50": {
+      "clean_a": 6.5,
+      "clean_b": 7.6875,
+      "marked_a": 5.5,
+      "marked_b": 6.875
+    },
+    "high_school_psychology:51": {
+      "clean_a": 6.5,
+      "clean_b": 7.1875,
+      "marked_a": 6.0,
+      "marked_b": 6.0
+    },
+    "high_school_psychology:52": {
+      "clean_a": 6.6875,
+      "clean_b": 7.0,
+      "marked_a": 5.5625,
+      "marked_b": 6.25
+    },
+    "high_school_psychology:53": {
+      "clean_a": 7.25,
+      "clean_b": 7.5625,
+      "marked_a": 6.625,
+      "marked_b": 6.875
+    },
+    "high_school_psychology:54": {
+      "clean_a": 7.3125,
+      "clean_b": 8.125,
+      "marked_a": 6.0625,
+      "marked_b": 7.375
+    },
+    "high_school_psychology:55": {
+      "clean_a": 5.25,
+      "clean_b": 6.5625,
+      "marked_a": 5.375,
+      "marked_b": 5.75
+    },
+    "high_school_psychology:56": {
+      "clean_a": 6.25,
+      "clean_b": 5.9375,
+      "marked_a": 5.875,
+      "marked_b": 5.1875
+    },
+    "high_school_psychology:57": {
+      "clean_a": 7.25,
+      "clean_b": 7.375,
+      "marked_a": 6.3125,
+      "marked_b": 6.5625
+    },
+    "high_school_psychology:58": {
+      "clean_a": 7.1875,
+      "clean_b": 7.375,
+      "marked_a": 6.0625,
+      "marked_b": 7.125
+    },
+    "high_school_psychology:59": {
+      "clean_a": 6.5625,
+      "clean_b": 6.75,
+      "marked_a": 4.875,
+      "marked_b": 5.5625
+    },
+    "high_school_psychology:6": {
+      "clean_a": 7.875,
+      "clean_b": 7.625,
+      "marked_a": 6.9375,
+      "marked_b": 6.6875
+    },
+    "high_school_psychology:60": {
+      "clean_a": 6.875,
+      "clean_b": 7.9375,
+      "marked_a": 6.0,
+      "marked_b": 7.5625
+    },
+    "high_school_psychology:61": {
+      "clean_a": 4.375,
+      "clean_b": 2.75,
+      "marked_a": 4.5,
+      "marked_b": 3.25
+    },
+    "high_school_psychology:62": {
+      "clean_a": 6.9375,
+      "clean_b": 6.0625,
+      "marked_a": 5.75,
+      "marked_b": 4.875
+    },
+    "high_school_psychology:63": {
+      "clean_a": 5.125,
+      "clean_b": 6.1875,
+      "marked_a": 4.125,
+      "marked_b": 5.0
+    },
+    "high_school_psychology:64": {
+      "clean_a": 4.375,
+      "clean_b": 3.25,
+      "marked_a": 2.875,
+      "marked_b": 3.75
+    },
+    "high_school_psychology:65": {
+      "clean_a": 6.0625,
+      "clean_b": 4.875,
+      "marked_a": 5.4375,
+      "marked_b": 4.875
+    },
+    "high_school_psychology:66": {
+      "clean_a": 6.9375,
+      "clean_b": 6.875,
+      "marked_a": 5.6875,
+      "marked_b": 5.875
+    },
+    "high_school_psychology:67": {
+      "clean_a": 6.6875,
+      "clean_b": 7.3125,
+      "marked_a": 6.1875,
+      "marked_b": 6.5625
+    },
+    "high_school_psychology:68": {
+      "clean_a": 6.5,
+      "clean_b": 7.1875,
+      "marked_a": 6.0,
+      "marked_b": 6.0
+    },
+    "high_school_psychology:69": {
+      "clean_a": 3.0,
+      "clean_b": 5.875,
+      "marked_a": 3.0,
+      "marked_b": 4.875
+    },
+    "high_school_psychology:7": {
+      "clean_a": 2.875,
+      "clean_b": 2.875,
+      "marked_a": 3.125,
+      "marked_b": 2.375
+    },
+    "high_school_psychology:70": {
+      "clean_a": 5.25,
+      "clean_b": 6.125,
+      "marked_a": 4.125,
+      "marked_b": 5.25
+    },
+    "high_school_psychology:71": {
+      "clean_a": 1.375,
+      "clean_b": 4.75,
+      "marked_a": 2.25,
+      "marked_b": 4.375
+    },
+    "high_school_psychology:72": {
+      "clean_a": 3.125,
+      "clean_b": 3.0,
+      "marked_a": 2.375,
+      "marked_b": 2.125
+    },
+    "high_school_psychology:73": {
+      "clean_a": 6.1875,
+      "clean_b": 6.3125,
+      "marked_a": 5.0625,
+      "marked_b": 5.375
+    },
+    "high_school_psychology:74": {
+      "clean_a": 6.625,
+      "clean_b": 5.8125,
+      "marked_a": 5.4375,
+      "marked_b": 4.75
+    },
+    "high_school_psychology:75": {
+      "clean_a": 8.0,
+      "clean_b": 7.5625,
+      "marked_a": 7.0,
+      "marked_b": 7.125
+    },
+    "high_school_psychology:76": {
+      "clean_a": 7.8125,
+      "clean_b": 7.625,
+      "marked_a": 6.5,
+      "marked_b": 6.8125
+    },
+    "high_school_psychology:77": {
+      "clean_a": 6.3125,
+      "clean_b": 7.125,
+      "marked_a": 5.375,
+      "marked_b": 5.875
+    },
+    "high_school_psychology:78": {
+      "clean_a": 8.125,
+      "clean_b": 7.1875,
+      "marked_a": 7.3125,
+      "marked_b": 6.375
+    },
+    "high_school_psychology:79": {
+      "clean_a": 7.125,
+      "clean_b": 7.5,
+      "marked_a": 6.4375,
+      "marked_b": 6.8125
+    },
+    "high_school_psychology:8": {
+      "clean_a": 7.5,
+      "clean_b": 3.75,
+      "marked_a": 6.25,
+      "marked_b": 2.875
+    },
+    "high_school_psychology:80": {
+      "clean_a": 7.3125,
+      "clean_b": 7.25,
+      "marked_a": 6.125,
+      "marked_b": 6.4375
+    },
+    "high_school_psychology:81": {
+      "clean_a": 2.0,
+      "clean_b": 4.5,
+      "marked_a": 2.75,
+      "marked_b": 3.125
+    },
+    "high_school_psychology:82": {
+      "clean_a": 7.875,
+      "clean_b": 7.4375,
+      "marked_a": 7.125,
+      "marked_b": 6.375
+    },
+    "high_school_psychology:83": {
+      "clean_a": 5.875,
+      "clean_b": 7.625,
+      "marked_a": 4.875,
+      "marked_b": 6.6875
+    },
+    "high_school_psychology:84": {
+      "clean_a": 7.625,
+      "clean_b": 7.375,
+      "marked_a": 6.5625,
+      "marked_b": 6.1875
+    },
+    "high_school_psychology:85": {
+      "clean_a": 6.1875,
+      "clean_b": 6.625,
+      "marked_a": 5.625,
+      "marked_b": 5.5625
+    },
+    "high_school_psychology:86": {
+      "clean_a": 7.1875,
+      "clean_b": 7.5,
+      "marked_a": 6.3125,
+      "marked_b": 6.8125
+    },
+    "high_school_psychology:87": {
+      "clean_a": 4.25,
+      "clean_b": 3.375,
+      "marked_a": 3.25,
+      "marked_b": 3.25
+    },
+    "high_school_psychology:88": {
+      "clean_a": 2.75,
+      "clean_b": 0.0,
+      "marked_a": 2.25,
+      "marked_b": -0.5
+    },
+    "high_school_psychology:89": {
+      "clean_a": 1.5,
+      "clean_b": 2.125,
+      "marked_a": 1.375,
+      "marked_b": 0.875
+    },
+    "high_school_psychology:9": {
+      "clean_a": 7.875,
+      "clean_b": 7.5625,
+      "marked_a": 6.5,
+      "marked_b": 7.125
+    },
+    "high_school_psychology:90": {
+      "clean_a": -2.75,
+      "clean_b": 3.125,
+      "marked_a": -2.625,
+      "marked_b": 2.75
+    },
+    "high_school_psychology:91": {
+      "clean_a": 7.1875,
+      "clean_b": 6.625,
+      "marked_a": 6.25,
+      "marked_b": 5.75
+    },
+    "high_school_psychology:92": {
+      "clean_a": 6.625,
+      "clean_b": 7.5,
+      "marked_a": 6.0,
+      "marked_b": 6.875
+    },
+    "high_school_psychology:93": {
+      "clean_a": 4.625,
+      "clean_b": 2.625,
+      "marked_a": 3.875,
+      "marked_b": 2.125
+    },
+    "high_school_psychology:94": {
+      "clean_a": 5.125,
+      "clean_b": 6.625,
+      "marked_a": 3.375,
+      "marked_b": 5.25
+    },
+    "high_school_psychology:95": {
+      "clean_a": 8.4375,
+      "clean_b": 8.375,
+      "marked_a": 7.5625,
+      "marked_b": 7.6875
+    },
+    "high_school_psychology:96": {
+      "clean_a": 7.4375,
+      "clean_b": 7.125,
+      "marked_a": 6.625,
+      "marked_b": 6.8125
+    },
+    "high_school_psychology:97": {
+      "clean_a": 2.625,
+      "clean_b": 1.75,
+      "marked_a": 2.25,
+      "marked_b": 1.25
+    },
+    "high_school_psychology:98": {
+      "clean_a": 6.9375,
+      "clean_b": 4.625,
+      "marked_a": 6.125,
+      "marked_b": 4.375
+    },
+    "high_school_psychology:99": {
+      "clean_a": 8.125,
+      "clean_b": 7.25,
+      "marked_a": 7.375,
+      "marked_b": 6.625
+    },
+    "high_school_world_history:0": {
+      "clean_a": 5.625,
+      "clean_b": 6.3125,
+      "marked_a": 5.5,
+      "marked_b": 5.375
+    },
+    "high_school_world_history:1": {
+      "clean_a": 6.25,
+      "clean_b": 7.625,
+      "marked_a": 5.625,
+      "marked_b": 6.4375
+    },
+    "high_school_world_history:10": {
+      "clean_a": 9.75,
+      "clean_b": 7.8125,
+      "marked_a": 9.0,
+      "marked_b": 7.125
+    },
+    "high_school_world_history:11": {
+      "clean_a": 7.0,
+      "clean_b": 7.0625,
+      "marked_a": 6.375,
+      "marked_b": 6.0625
+    },
+    "high_school_world_history:12": {
+      "clean_a": 5.0,
+      "clean_b": 4.75,
+      "marked_a": 4.125,
+      "marked_b": 4.375
+    },
+    "high_school_world_history:13": {
+      "clean_a": 7.5625,
+      "clean_b": 8.0,
+      "marked_a": 7.8125,
+      "marked_b": 7.5625
+    },
+    "high_school_world_history:14": {
+      "clean_a": 7.625,
+      "clean_b": 7.4375,
+      "marked_a": 6.8125,
+      "marked_b": 6.8125
+    },
+    "high_school_world_history:15": {
+      "clean_a": 5.5,
+      "clean_b": 7.25,
+      "marked_a": 5.25,
+      "marked_b": 6.3125
+    },
+    "high_school_world_history:16": {
+      "clean_a": 6.8125,
+      "clean_b": 7.375,
+      "marked_a": 6.5,
+      "marked_b": 6.625
+    },
+    "high_school_world_history:17": {
+      "clean_a": 2.75,
+      "clean_b": 2.125,
+      "marked_a": 2.125,
+      "marked_b": 1.875
+    },
+    "high_school_world_history:18": {
+      "clean_a": 5.125,
+      "clean_b": 5.1875,
+      "marked_a": 3.875,
+      "marked_b": 3.75
+    },
+    "high_school_world_history:19": {
+      "clean_a": 7.1875,
+      "clean_b": 7.25,
+      "marked_a": 6.8125,
+      "marked_b": 6.8125
+    },
+    "high_school_world_history:2": {
+      "clean_a": 5.375,
+      "clean_b": 6.0,
+      "marked_a": 5.0,
+      "marked_b": 5.375
+    },
+    "high_school_world_history:20": {
+      "clean_a": 7.5,
+      "clean_b": 5.0,
+      "marked_a": 7.625,
+      "marked_b": 4.375
+    },
+    "high_school_world_history:21": {
+      "clean_a": 7.6875,
+      "clean_b": 6.8125,
+      "marked_a": 7.625,
+      "marked_b": 6.3125
+    },
+    "high_school_world_history:22": {
+      "clean_a": 9.625,
+      "clean_b": 7.875,
+      "marked_a": 8.6875,
+      "marked_b": 7.5
+    },
+    "high_school_world_history:23": {
+      "clean_a": 6.125,
+      "clean_b": 7.4375,
+      "marked_a": 5.625,
+      "marked_b": 7.0625
+    },
+    "high_school_world_history:24": {
+      "clean_a": 6.5,
+      "clean_b": 5.25,
+      "marked_a": 6.1875,
+      "marked_b": 4.75
+    },
+    "high_school_world_history:25": {
+      "clean_a": 0.0,
+      "clean_b": 0.25,
+      "marked_a": 0.0,
+      "marked_b": 1.75
+    },
+    "high_school_world_history:26": {
+      "clean_a": 6.875,
+      "clean_b": 6.9375,
+      "marked_a": 6.1875,
+      "marked_b": 6.4375
+    },
+    "high_school_world_history:27": {
+      "clean_a": 5.375,
+      "clean_b": 6.25,
+      "marked_a": 4.625,
+      "marked_b": 5.75
+    },
+    "high_school_world_history:28": {
+      "clean_a": 7.6875,
+      "clean_b": 7.625,
+      "marked_a": 7.25,
+      "marked_b": 6.875
+    },
+    "high_school_world_history:29": {
+      "clean_a": 8.75,
+      "clean_b": 6.8125,
+      "marked_a": 8.3125,
+      "marked_b": 6.5625
+    },
+    "high_school_world_history:3": {
+      "clean_a": 6.125,
+      "clean_b": 4.125,
+      "marked_a": 5.75,
+      "marked_b": 3.75
+    },
+    "high_school_world_history:30": {
+      "clean_a": 7.3125,
+      "clean_b": 7.25,
+      "marked_a": 6.8125,
+      "marked_b": 6.5
+    },
+    "high_school_world_history:31": {
+      "clean_a": 7.75,
+      "clean_b": 7.8125,
+      "marked_a": 7.8125,
+      "marked_b": 6.75
+    },
+    "high_school_world_history:32": {
+      "clean_a": 6.8125,
+      "clean_b": 7.5625,
+      "marked_a": 6.125,
+      "marked_b": 6.6875
+    },
+    "high_school_world_history:33": {
+      "clean_a": -1.625,
+      "clean_b": 3.875,
+      "marked_a": -1.875,
+      "marked_b": 3.75
+    },
+    "high_school_world_history:34": {
+      "clean_a": 2.375,
+      "clean_b": 4.625,
+      "marked_a": 2.125,
+      "marked_b": 4.25
+    },
+    "high_school_world_history:35": {
+      "clean_a": 7.6875,
+      "clean_b": 8.0,
+      "marked_a": 7.8125,
+      "marked_b": 7.5
+    },
+    "high_school_world_history:36": {
+      "clean_a": -1.0,
+      "clean_b": -4.125,
+      "marked_a": -1.25,
+      "marked_b": -4.25
+    },
+    "high_school_world_history:37": {
+      "clean_a": 7.75,
+      "clean_b": 7.5625,
+      "marked_a": 7.5,
+      "marked_b": 6.5625
+    },
+    "high_school_world_history:38": {
+      "clean_a": 0.0,
+      "clean_b": -2.375,
+      "marked_a": 0.125,
+      "marked_b": -2.25
+    },
+    "high_school_world_history:39": {
+      "clean_a": 8.25,
+      "clean_b": 7.625,
+      "marked_a": 8.3125,
+      "marked_b": 7.1875
+    },
+    "high_school_world_history:4": {
+      "clean_a": 7.9375,
+      "clean_b": 7.4375,
+      "marked_a": 7.8125,
+      "marked_b": 7.4375
+    },
+    "high_school_world_history:40": {
+      "clean_a": 6.9375,
+      "clean_b": 5.9375,
+      "marked_a": 6.5625,
+      "marked_b": 4.5
+    },
+    "high_school_world_history:41": {
+      "clean_a": 9.0,
+      "clean_b": 7.875,
+      "marked_a": 8.5,
+      "marked_b": 7.3125
+    },
+    "high_school_world_history:42": {
+      "clean_a": 7.5,
+      "clean_b": 7.75,
+      "marked_a": 7.625,
+      "marked_b": 7.375
+    },
+    "high_school_world_history:43": {
+      "clean_a": 5.125,
+      "clean_b": 3.75,
+      "marked_a": 5.0,
+      "marked_b": 3.5
+    },
+    "high_school_world_history:44": {
+      "clean_a": 6.375,
+      "clean_b": 6.0,
+      "marked_a": 5.0,
+      "marked_b": 6.25
+    },
+    "high_school_world_history:45": {
+      "clean_a": 7.375,
+      "clean_b": 7.25,
+      "marked_a": 7.0625,
+      "marked_b": 6.1875
+    },
+    "high_school_world_history:46": {
+      "clean_a": 7.4375,
+      "clean_b": 7.125,
+      "marked_a": 6.5,
+      "marked_b": 6.625
+    },
+    "high_school_world_history:47": {
+      "clean_a": 8.4375,
+      "clean_b": 7.4375,
+      "marked_a": 7.9375,
+      "marked_b": 6.875
+    },
+    "high_school_world_history:48": {
+      "clean_a": 7.5625,
+      "clean_b": 8.0625,
+      "marked_a": 6.5625,
+      "marked_b": 6.8125
+    },
+    "high_school_world_history:49": {
+      "clean_a": 2.5,
+      "clean_b": 3.125,
+      "marked_a": 2.25,
+      "marked_b": 3.625
+    },
+    "high_school_world_history:5": {
+      "clean_a": 7.5625,
+      "clean_b": 6.625,
+      "marked_a": 6.9375,
+      "marked_b": 5.125
+    },
+    "high_school_world_history:50": {
+      "clean_a": 4.125,
+      "clean_b": 5.375,
+      "marked_a": 4.0,
+      "marked_b": 5.125
+    },
+    "high_school_world_history:51": {
+      "clean_a": 8.375,
+      "clean_b": 8.25,
+      "marked_a": 7.9375,
+      "marked_b": 7.9375
+    },
+    "high_school_world_history:52": {
+      "clean_a": 3.875,
+      "clean_b": 4.625,
+      "marked_a": 3.375,
+      "marked_b": 3.25
+    },
+    "high_school_world_history:53": {
+      "clean_a": 5.125,
+      "clean_b": 4.625,
+      "marked_a": 3.875,
+      "marked_b": 3.75
+    },
+    "high_school_world_history:54": {
+      "clean_a": 8.375,
+      "clean_b": 7.875,
+      "marked_a": 7.6875,
+      "marked_b": 7.3125
+    },
+    "high_school_world_history:55": {
+      "clean_a": -4.875,
+      "clean_b": -2.125,
+      "marked_a": -5.4375,
+      "marked_b": -0.625
+    },
+    "high_school_world_history:56": {
+      "clean_a": 7.4375,
+      "clean_b": 7.625,
+      "marked_a": 7.375,
+      "marked_b": 7.0625
+    },
+    "high_school_world_history:57": {
+      "clean_a": 8.1875,
+      "clean_b": 7.875,
+      "marked_a": 7.8125,
+      "marked_b": 7.75
+    },
+    "high_school_world_history:58": {
+      "clean_a": 8.0625,
+      "clean_b": 8.0,
+      "marked_a": 8.1875,
+      "marked_b": 7.375
+    },
+    "high_school_world_history:59": {
+      "clean_a": 6.875,
+      "clean_b": 6.9375,
+      "marked_a": 6.0625,
+      "marked_b": 6.1875
+    },
+    "high_school_world_history:6": {
+      "clean_a": 8.625,
+      "clean_b": 7.4375,
+      "marked_a": 8.375,
+      "marked_b": 6.9375
+    },
+    "high_school_world_history:60": {
+      "clean_a": -5.75,
+      "clean_b": -4.0,
+      "marked_a": -5.0625,
+      "marked_b": -3.125
+    },
+    "high_school_world_history:61": {
+      "clean_a": 5.5,
+      "clean_b": 6.3125,
+      "marked_a": 5.125,
+      "marked_b": 5.75
+    },
+    "high_school_world_history:62": {
+      "clean_a": 1.25,
+      "clean_b": 3.875,
+      "marked_a": -0.375,
+      "marked_b": 3.125
+    },
+    "high_school_world_history:63": {
+      "clean_a": 8.75,
+      "clean_b": 7.25,
+      "marked_a": 8.875,
+      "marked_b": 6.75
+    },
+    "high_school_world_history:64": {
+      "clean_a": 6.375,
+      "clean_b": 6.8125,
+      "marked_a": 5.375,
+      "marked_b": 6.0625
+    },
+    "high_school_world_history:65": {
+      "clean_a": 7.625,
+      "clean_b": 7.0,
+      "marked_a": 7.375,
+      "marked_b": 6.9375
+    },
+    "high_school_world_history:66": {
+      "clean_a": 7.0,
+      "clean_b": 8.5,
+      "marked_a": 6.5,
+      "marked_b": 8.0625
+    },
+    "high_school_world_history:67": {
+      "clean_a": 4.75,
+      "clean_b": 0.25,
+      "marked_a": 4.375,
+      "marked_b": 0.375
+    },
+    "high_school_world_history:68": {
+      "clean_a": 7.1875,
+      "clean_b": 6.8125,
+      "marked_a": 6.4375,
+      "marked_b": 6.0
+    },
+    "high_school_world_history:69": {
+      "clean_a": 6.625,
+      "clean_b": 6.8125,
+      "marked_a": 5.9375,
+      "marked_b": 6.25
+    },
+    "high_school_world_history:7": {
+      "clean_a": 4.5,
+      "clean_b": 6.875,
+      "marked_a": 3.75,
+      "marked_b": 5.0
+    },
+    "high_school_world_history:70": {
+      "clean_a": 4.125,
+      "clean_b": 3.125,
+      "marked_a": 5.5625,
+      "marked_b": 4.5
+    },
+    "high_school_world_history:71": {
+      "clean_a": 2.0,
+      "clean_b": 3.375,
+      "marked_a": 1.625,
+      "marked_b": 2.75
+    },
+    "high_school_world_history:72": {
+      "clean_a": 5.375,
+      "clean_b": 5.25,
+      "marked_a": 4.75,
+      "marked_b": 4.125
+    },
+    "high_school_world_history:73": {
+      "clean_a": 6.25,
+      "clean_b": 6.0625,
+      "marked_a": 4.5,
+      "marked_b": 5.125
+    },
+    "high_school_world_history:74": {
+      "clean_a": 7.75,
+      "clean_b": 7.625,
+      "marked_a": 7.3125,
+      "marked_b": 6.5
+    },
+    "high_school_world_history:75": {
+      "clean_a": 8.0625,
+      "clean_b": 7.375,
+      "marked_a": 8.25,
+      "marked_b": 6.8125
+    },
+    "high_school_world_history:76": {
+      "clean_a": 5.5,
+      "clean_b": 5.25,
+      "marked_a": 4.75,
+      "marked_b": 4.5
+    },
+    "high_school_world_history:77": {
+      "clean_a": 6.875,
+      "clean_b": 7.75,
+      "marked_a": 5.875,
+      "marked_b": 7.0625
+    },
+    "high_school_world_history:78": {
+      "clean_a": 5.875,
+      "clean_b": 5.625,
+      "marked_a": 5.625,
+      "marked_b": 4.875
+    },
+    "high_school_world_history:79": {
+      "clean_a": 1.75,
+      "clean_b": 2.125,
+      "marked_a": 2.125,
+      "marked_b": 2.25
+    },
+    "high_school_world_history:8": {
+      "clean_a": 8.25,
+      "clean_b": 7.6875,
+      "marked_a": 8.0,
+      "marked_b": 6.8125
+    },
+    "high_school_world_history:80": {
+      "clean_a": -0.875,
+      "clean_b": 3.125,
+      "marked_a": -2.25,
+      "marked_b": 1.25
+    },
+    "high_school_world_history:81": {
+      "clean_a": 7.875,
+      "clean_b": 7.125,
+      "marked_a": 7.5,
+      "marked_b": 6.3125
+    },
+    "high_school_world_history:82": {
+      "clean_a": 6.0625,
+      "clean_b": 7.375,
+      "marked_a": 6.5,
+      "marked_b": 7.9375
+    },
+    "high_school_world_history:83": {
+      "clean_a": 7.0625,
+      "clean_b": 5.625,
+      "marked_a": 6.8125,
+      "marked_b": 5.75
+    },
+    "high_school_world_history:84": {
+      "clean_a": 5.25,
+      "clean_b": 6.3125,
+      "marked_a": 4.75,
+      "marked_b": 5.875
+    },
+    "high_school_world_history:85": {
+      "clean_a": 8.3125,
+      "clean_b": 8.5,
+      "marked_a": 8.1875,
+      "marked_b": 7.75
+    },
+    "high_school_world_history:86": {
+      "clean_a": 9.1875,
+      "clean_b": 7.3125,
+      "marked_a": 7.5625,
+      "marked_b": 6.25
+    },
+    "high_school_world_history:87": {
+      "clean_a": 4.75,
+      "clean_b": 6.5625,
+      "marked_a": 5.375,
+      "marked_b": 6.125
+    },
+    "high_school_world_history:88": {
+      "clean_a": 6.8125,
+      "clean_b": 7.1875,
+      "marked_a": 6.25,
+      "marked_b": 6.125
+    },
+    "high_school_world_history:89": {
+      "clean_a": 6.9375,
+      "clean_b": 6.6875,
+      "marked_a": 6.0625,
+      "marked_b": 5.375
+    },
+    "high_school_world_history:9": {
+      "clean_a": 7.3125,
+      "clean_b": 8.0,
+      "marked_a": 7.125,
+      "marked_b": 7.1875
+    },
+    "high_school_world_history:90": {
+      "clean_a": 0.25,
+      "clean_b": -1.375,
+      "marked_a": 0.5,
+      "marked_b": 0.875
+    },
+    "high_school_world_history:91": {
+      "clean_a": 7.4375,
+      "clean_b": 6.4375,
+      "marked_a": 7.3125,
+      "marked_b": 6.1875
+    },
+    "high_school_world_history:92": {
+      "clean_a": 0.5,
+      "clean_b": 6.0,
+      "marked_a": 1.0,
+      "marked_b": 4.875
+    },
+    "high_school_world_history:93": {
+      "clean_a": 1.875,
+      "clean_b": -0.625,
+      "marked_a": 2.0,
+      "marked_b": 0.0
+    },
+    "high_school_world_history:94": {
+      "clean_a": 7.8125,
+      "clean_b": 7.125,
+      "marked_a": 7.375,
+      "marked_b": 6.375
+    },
+    "high_school_world_history:95": {
+      "clean_a": 6.4375,
+      "clean_b": 2.5,
+      "marked_a": 6.0625,
+      "marked_b": 2.875
+    },
+    "high_school_world_history:96": {
+      "clean_a": 6.375,
+      "clean_b": 5.6875,
+      "marked_a": 6.25,
+      "marked_b": 4.75
+    },
+    "high_school_world_history:97": {
+      "clean_a": -5.75,
+      "clean_b": 4.125,
+      "marked_a": -5.125,
+      "marked_b": 4.125
+    },
+    "high_school_world_history:98": {
+      "clean_a": 8.625,
+      "clean_b": 7.0,
+      "marked_a": 8.0625,
+      "marked_b": 6.4375
+    },
+    "high_school_world_history:99": {
+      "clean_a": 6.75,
+      "clean_b": 6.625,
+      "marked_a": 5.8125,
+      "marked_b": 5.6875
+    },
+    "professional_law:0": {
+      "clean_a": -0.25,
+      "clean_b": 1.5,
+      "marked_a": -0.25,
+      "marked_b": 1.0
+    },
+    "professional_law:1": {
+      "clean_a": 3.5,
+      "clean_b": 4.375,
+      "marked_a": 3.125,
+      "marked_b": 3.625
+    },
+    "professional_law:10": {
+      "clean_a": 4.5,
+      "clean_b": 6.125,
+      "marked_a": 4.5,
+      "marked_b": 5.0625
+    },
+    "professional_law:11": {
+      "clean_a": 4.625,
+      "clean_b": 0.5,
+      "marked_a": 4.375,
+      "marked_b": 0.375
+    },
+    "professional_law:12": {
+      "clean_a": 2.125,
+      "clean_b": 2.625,
+      "marked_a": 1.125,
+      "marked_b": 3.0
+    },
+    "professional_law:13": {
+      "clean_a": 5.0,
+      "clean_b": 6.0625,
+      "marked_a": 4.375,
+      "marked_b": 5.375
+    },
+    "professional_law:14": {
+      "clean_a": 6.4375,
+      "clean_b": 7.6875,
+      "marked_a": 6.3125,
+      "marked_b": 7.4375
+    },
+    "professional_law:15": {
+      "clean_a": 8.5,
+      "clean_b": 8.3125,
+      "marked_a": 8.1875,
+      "marked_b": 7.8125
+    },
+    "professional_law:16": {
+      "clean_a": 8.3125,
+      "clean_b": 7.3125,
+      "marked_a": 7.5625,
+      "marked_b": 6.5625
+    },
+    "professional_law:17": {
+      "clean_a": 0.25,
+      "clean_b": 3.125,
+      "marked_a": 0.375,
+      "marked_b": 2.125
+    },
+    "professional_law:18": {
+      "clean_a": 1.125,
+      "clean_b": 1.625,
+      "marked_a": 1.0,
+      "marked_b": 2.25
+    },
+    "professional_law:19": {
+      "clean_a": 3.375,
+      "clean_b": 4.875,
+      "marked_a": 3.375,
+      "marked_b": 3.875
+    },
+    "professional_law:2": {
+      "clean_a": -1.0,
+      "clean_b": 4.25,
+      "marked_a": 0.5,
+      "marked_b": 4.125
+    },
+    "professional_law:20": {
+      "clean_a": 1.0,
+      "clean_b": -1.875,
+      "marked_a": 0.5,
+      "marked_b": -1.5
+    },
+    "professional_law:21": {
+      "clean_a": 3.0,
+      "clean_b": 5.25,
+      "marked_a": 3.0,
+      "marked_b": 4.625
+    },
+    "professional_law:22": {
+      "clean_a": 6.0,
+      "clean_b": 7.5,
+      "marked_a": 5.5,
+      "marked_b": 6.9375
+    },
+    "professional_law:23": {
+      "clean_a": -5.125,
+      "clean_b": -4.125,
+      "marked_a": -4.0,
+      "marked_b": -3.875
+    },
+    "professional_law:24": {
+      "clean_a": -5.6875,
+      "clean_b": -3.875,
+      "marked_a": -4.875,
+      "marked_b": -2.875
+    },
+    "professional_law:25": {
+      "clean_a": 3.5,
+      "clean_b": 1.75,
+      "marked_a": 3.875,
+      "marked_b": 1.125
+    },
+    "professional_law:26": {
+      "clean_a": 4.0,
+      "clean_b": 3.125,
+      "marked_a": 4.375,
+      "marked_b": 2.75
+    },
+    "professional_law:27": {
+      "clean_a": -3.5,
+      "clean_b": -0.875,
+      "marked_a": -2.0,
+      "marked_b": 0.625
+    },
+    "professional_law:28": {
+      "clean_a": 3.25,
+      "clean_b": 0.375,
+      "marked_a": 3.0,
+      "marked_b": 0.375
+    },
+    "professional_law:29": {
+      "clean_a": 1.875,
+      "clean_b": 5.9375,
+      "marked_a": 2.125,
+      "marked_b": 5.125
+    },
+    "professional_law:3": {
+      "clean_a": 3.75,
+      "clean_b": 5.875,
+      "marked_a": 3.25,
+      "marked_b": 5.25
+    },
+    "professional_law:30": {
+      "clean_a": 3.5,
+      "clean_b": 6.125,
+      "marked_a": 3.625,
+      "marked_b": 5.25
+    },
+    "professional_law:31": {
+      "clean_a": -0.375,
+      "clean_b": -3.75,
+      "marked_a": -0.25,
+      "marked_b": -3.0
+    },
+    "professional_law:32": {
+      "clean_a": 2.875,
+      "clean_b": 1.0,
+      "marked_a": 3.25,
+      "marked_b": 0.875
+    },
+    "professional_law:33": {
+      "clean_a": 6.375,
+      "clean_b": 6.5625,
+      "marked_a": 5.75,
+      "marked_b": 5.875
+    },
+    "professional_law:34": {
+      "clean_a": 2.75,
+      "clean_b": 0.375,
+      "marked_a": 2.75,
+      "marked_b": 1.5
+    },
+    "professional_law:35": {
+      "clean_a": 4.5,
+      "clean_b": 3.5,
+      "marked_a": 4.375,
+      "marked_b": 2.75
+    },
+    "professional_law:36": {
+      "clean_a": -5.0,
+      "clean_b": -1.25,
+      "marked_a": -4.625,
+      "marked_b": -1.0
+    },
+    "professional_law:37": {
+      "clean_a": -3.0,
+      "clean_b": -0.875,
+      "marked_a": -1.875,
+      "marked_b": -0.25
+    },
+    "professional_law:38": {
+      "clean_a": 3.0,
+      "clean_b": 4.875,
+      "marked_a": 3.5,
+      "marked_b": 4.125
+    },
+    "professional_law:39": {
+      "clean_a": 0.875,
+      "clean_b": 0.0,
+      "marked_a": 0.625,
+      "marked_b": -0.375
+    },
+    "professional_law:4": {
+      "clean_a": 4.375,
+      "clean_b": 4.75,
+      "marked_a": 2.625,
+      "marked_b": 3.75
+    },
+    "professional_law:40": {
+      "clean_a": 1.0,
+      "clean_b": 4.625,
+      "marked_a": 1.25,
+      "marked_b": 4.375
+    },
+    "professional_law:41": {
+      "clean_a": 2.25,
+      "clean_b": 1.875,
+      "marked_a": 1.5,
+      "marked_b": 1.0
+    },
+    "professional_law:42": {
+      "clean_a": 5.6875,
+      "clean_b": 7.375,
+      "marked_a": 4.75,
+      "marked_b": 6.5
+    },
+    "professional_law:43": {
+      "clean_a": 4.625,
+      "clean_b": 3.125,
+      "marked_a": 3.25,
+      "marked_b": 1.875
+    },
+    "professional_law:44": {
+      "clean_a": 4.5,
+      "clean_b": 6.8125,
+      "marked_a": 5.0,
+      "marked_b": 6.125
+    },
+    "professional_law:45": {
+      "clean_a": -4.125,
+      "clean_b": -1.75,
+      "marked_a": -3.375,
+      "marked_b": -1.75
+    },
+    "professional_law:46": {
+      "clean_a": 4.125,
+      "clean_b": 7.0625,
+      "marked_a": 4.0,
+      "marked_b": 6.25
+    },
+    "professional_law:47": {
+      "clean_a": 6.75,
+      "clean_b": 7.75,
+      "marked_a": 6.25,
+      "marked_b": 6.9375
+    },
+    "professional_law:48": {
+      "clean_a": 3.125,
+      "clean_b": 1.375,
+      "marked_a": 2.875,
+      "marked_b": 0.875
+    },
+    "professional_law:49": {
+      "clean_a": 3.125,
+      "clean_b": 4.5,
+      "marked_a": 3.0,
+      "marked_b": 4.125
+    },
+    "professional_law:5": {
+      "clean_a": 8.5625,
+      "clean_b": 7.9375,
+      "marked_a": 7.9375,
+      "marked_b": 7.0625
+    },
+    "professional_law:50": {
+      "clean_a": 2.25,
+      "clean_b": 1.625,
+      "marked_a": 1.75,
+      "marked_b": 1.75
+    },
+    "professional_law:51": {
+      "clean_a": 0.75,
+      "clean_b": 3.5,
+      "marked_a": 0.875,
+      "marked_b": 2.125
+    },
+    "professional_law:52": {
+      "clean_a": 6.9375,
+      "clean_b": 2.625,
+      "marked_a": 6.4375,
+      "marked_b": 2.625
+    },
+    "professional_law:53": {
+      "clean_a": -0.5,
+      "clean_b": 2.625,
+      "marked_a": -0.5,
+      "marked_b": 1.375
+    },
+    "professional_law:54": {
+      "clean_a": -5.4375,
+      "clean_b": 0.0,
+      "marked_a": -4.125,
+      "marked_b": 0.125
+    },
+    "professional_law:55": {
+      "clean_a": -6.75,
+      "clean_b": -2.125,
+      "marked_a": -5.875,
+      "marked_b": -2.25
+    },
+    "professional_law:56": {
+      "clean_a": 1.875,
+      "clean_b": 6.0,
+      "marked_a": 1.125,
+      "marked_b": 4.25
+    },
+    "professional_law:57": {
+      "clean_a": -2.125,
+      "clean_b": -2.875,
+      "marked_a": -2.375,
+      "marked_b": -3.0
+    },
+    "professional_law:58": {
+      "clean_a": 1.875,
+      "clean_b": 5.625,
+      "marked_a": 2.125,
+      "marked_b": 4.5625
+    },
+    "professional_law:59": {
+      "clean_a": 2.5,
+      "clean_b": 0.0,
+      "marked_a": 2.125,
+      "marked_b": 0.625
+    },
+    "professional_law:6": {
+      "clean_a": 0.0,
+      "clean_b": -2.5,
+      "marked_a": 0.0,
+      "marked_b": -2.625
+    },
+    "professional_law:60": {
+      "clean_a": 6.4375,
+      "clean_b": 6.0,
+      "marked_a": 6.0625,
+      "marked_b": 4.875
+    },
+    "professional_law:61": {
+      "clean_a": -5.0,
+      "clean_b": -3.75,
+      "marked_a": -4.625,
+      "marked_b": -4.375
+    },
+    "professional_law:62": {
+      "clean_a": 0.25,
+      "clean_b": 4.0,
+      "marked_a": 0.625,
+      "marked_b": 2.875
+    },
+    "professional_law:63": {
+      "clean_a": 5.875,
+      "clean_b": 7.0625,
+      "marked_a": 5.875,
+      "marked_b": 6.625
+    },
+    "professional_law:64": {
+      "clean_a": 2.5,
+      "clean_b": 0.875,
+      "marked_a": 3.125,
+      "marked_b": 1.875
+    },
+    "professional_law:65": {
+      "clean_a": 1.125,
+      "clean_b": 0.75,
+      "marked_a": 0.875,
+      "marked_b": 0.5
+    },
+    "professional_law:66": {
+      "clean_a": -0.125,
+      "clean_b": 0.625,
+      "marked_a": -0.5,
+      "marked_b": 1.0
+    },
+    "professional_law:67": {
+      "clean_a": 1.25,
+      "clean_b": 2.0,
+      "marked_a": 1.375,
+      "marked_b": 0.75
+    },
+    "professional_law:68": {
+      "clean_a": -2.625,
+      "clean_b": -1.625,
+      "marked_a": -2.75,
+      "marked_b": -1.5
+    },
+    "professional_law:69": {
+      "clean_a": -4.875,
+      "clean_b": 0.5,
+      "marked_a": -3.625,
+      "marked_b": 0.5
+    },
+    "professional_law:7": {
+      "clean_a": 3.375,
+      "clean_b": 3.125,
+      "marked_a": 2.625,
+      "marked_b": 3.0
+    },
+    "professional_law:70": {
+      "clean_a": 5.75,
+      "clean_b": 6.125,
+      "marked_a": 5.125,
+      "marked_b": 5.25
+    },
+    "professional_law:71": {
+      "clean_a": 0.875,
+      "clean_b": 1.375,
+      "marked_a": 0.625,
+      "marked_b": 1.625
+    },
+    "professional_law:72": {
+      "clean_a": 5.375,
+      "clean_b": 6.0625,
+      "marked_a": 5.625,
+      "marked_b": 4.875
+    },
+    "professional_law:73": {
+      "clean_a": 4.875,
+      "clean_b": 5.5,
+      "marked_a": 4.5,
+      "marked_b": 5.125
+    },
+    "professional_law:74": {
+      "clean_a": 3.25,
+      "clean_b": 2.875,
+      "marked_a": 3.375,
+      "marked_b": 2.0
+    },
+    "professional_law:75": {
+      "clean_a": -6.625,
+      "clean_b": -5.5,
+      "marked_a": -5.625,
+      "marked_b": -5.25
+    },
+    "professional_law:76": {
+      "clean_a": -2.125,
+      "clean_b": 0.5,
+      "marked_a": -1.5,
+      "marked_b": 0.5
+    },
+    "professional_law:77": {
+      "clean_a": 5.125,
+      "clean_b": 5.375,
+      "marked_a": 4.375,
+      "marked_b": 4.75
+    },
+    "professional_law:78": {
+      "clean_a": 0.5,
+      "clean_b": 3.25,
+      "marked_a": 0.125,
+      "marked_b": 3.0
+    },
+    "professional_law:79": {
+      "clean_a": 5.25,
+      "clean_b": 5.125,
+      "marked_a": 5.5625,
+      "marked_b": 4.5
+    },
+    "professional_law:8": {
+      "clean_a": 1.5,
+      "clean_b": 4.5,
+      "marked_a": 1.5,
+      "marked_b": 2.875
+    },
+    "professional_law:80": {
+      "clean_a": -0.375,
+      "clean_b": 1.5,
+      "marked_a": 0.125,
+      "marked_b": 0.75
+    },
+    "professional_law:81": {
+      "clean_a": 0.375,
+      "clean_b": 1.5,
+      "marked_a": -0.375,
+      "marked_b": 1.0
+    },
+    "professional_law:82": {
+      "clean_a": 0.375,
+      "clean_b": -0.625,
+      "marked_a": -0.125,
+      "marked_b": -0.75
+    },
+    "professional_law:83": {
+      "clean_a": -5.9375,
+      "clean_b": -4.125,
+      "marked_a": -5.0,
+      "marked_b": -3.5
+    },
+    "professional_law:84": {
+      "clean_a": 2.75,
+      "clean_b": 5.375,
+      "marked_a": 3.0,
+      "marked_b": 4.75
+    },
+    "professional_law:85": {
+      "clean_a": 3.625,
+      "clean_b": 2.875,
+      "marked_a": 2.75,
+      "marked_b": 2.0
+    },
+    "professional_law:86": {
+      "clean_a": -0.125,
+      "clean_b": 1.625,
+      "marked_a": -0.375,
+      "marked_b": 1.375
+    },
+    "professional_law:87": {
+      "clean_a": 2.25,
+      "clean_b": -1.625,
+      "marked_a": 1.875,
+      "marked_b": -1.75
+    },
+    "professional_law:88": {
+      "clean_a": 5.25,
+      "clean_b": 5.6875,
+      "marked_a": 4.75,
+      "marked_b": 4.625
+    },
+    "professional_law:89": {
+      "clean_a": 0.875,
+      "clean_b": 2.125,
+      "marked_a": 1.375,
+      "marked_b": 1.625
+    },
+    "professional_law:9": {
+      "clean_a": 0.0,
+      "clean_b": -3.0,
+      "marked_a": -0.5,
+      "marked_b": -2.875
+    },
+    "professional_law:90": {
+      "clean_a": 6.75,
+      "clean_b": 7.0625,
+      "marked_a": 6.4375,
+      "marked_b": 6.0625
+    },
+    "professional_law:91": {
+      "clean_a": 7.125,
+      "clean_b": 7.5,
+      "marked_a": 6.375,
+      "marked_b": 7.0625
+    },
+    "professional_law:92": {
+      "clean_a": -3.5,
+      "clean_b": -0.625,
+      "marked_a": -3.125,
+      "marked_b": -1.25
+    },
+    "professional_law:93": {
+      "clean_a": 4.625,
+      "clean_b": 3.0,
+      "marked_a": 4.5625,
+      "marked_b": 2.5
+    },
+    "professional_law:94": {
+      "clean_a": 3.375,
+      "clean_b": 6.125,
+      "marked_a": 3.5,
+      "marked_b": 5.625
+    },
+    "professional_law:95": {
+      "clean_a": -0.875,
+      "clean_b": -2.375,
+      "marked_a": -0.125,
+      "marked_b": -1.625
+    },
+    "professional_law:96": {
+      "clean_a": 1.5,
+      "clean_b": 6.1875,
+      "marked_a": 1.625,
+      "marked_b": 5.0625
+    },
+    "professional_law:97": {
+      "clean_a": 7.625,
+      "clean_b": 7.8125,
+      "marked_a": 7.1875,
+      "marked_b": 7.5
+    },
+    "professional_law:98": {
+      "clean_a": 5.25,
+      "clean_b": 4.75,
+      "marked_a": 4.375,
+      "marked_b": 3.875
+    },
+    "professional_law:99": {
+      "clean_a": 4.125,
+      "clean_b": 3.5,
+      "marked_a": 4.5,
+      "marked_b": 3.0
+    }
+  },
+  "minimum_margin_each_condition": 0.5,
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "n_candidate_questions": 400,
+  "n_qualified_questions": 323,
+  "parameters": 24011361280,
+  "qualified_by_category": {
+    "business_ethics": 78,
+    "high_school_psychology": 95,
+    "high_school_world_history": 88,
+    "professional_law": 62
+  },
+  "qualified_candidate_ids": [
+    "business_ethics:0",
+    "business_ethics:1",
+    "business_ethics:10",
+    "business_ethics:11",
+    "business_ethics:12",
+    "business_ethics:13",
+    "business_ethics:14",
+    "business_ethics:15",
+    "business_ethics:16",
+    "business_ethics:17",
+    "business_ethics:18",
+    "business_ethics:2",
+    "business_ethics:20",
+    "business_ethics:21",
+    "business_ethics:22",
+    "business_ethics:24",
+    "business_ethics:25",
+    "business_ethics:26",
+    "business_ethics:27",
+    "business_ethics:28",
+    "business_ethics:29",
+    "business_ethics:3",
+    "business_ethics:30",
+    "business_ethics:31",
+    "business_ethics:33",
+    "business_ethics:34",
+    "business_ethics:35",
+    "business_ethics:36",
+    "business_ethics:37",
+    "business_ethics:38",
+    "business_ethics:39",
+    "business_ethics:4",
+    "business_ethics:41",
+    "business_ethics:42",
+    "business_ethics:43",
+    "business_ethics:44",
+    "business_ethics:45",
+    "business_ethics:46",
+    "business_ethics:47",
+    "business_ethics:48",
+    "business_ethics:49",
+    "business_ethics:5",
+    "business_ethics:50",
+    "business_ethics:51",
+    "business_ethics:52",
+    "business_ethics:53",
+    "business_ethics:54",
+    "business_ethics:56",
+    "business_ethics:57",
+    "business_ethics:58",
+    "business_ethics:59",
+    "business_ethics:6",
+    "business_ethics:60",
+    "business_ethics:61",
+    "business_ethics:63",
+    "business_ethics:64",
+    "business_ethics:65",
+    "business_ethics:66",
+    "business_ethics:67",
+    "business_ethics:68",
+    "business_ethics:7",
+    "business_ethics:72",
+    "business_ethics:73",
+    "business_ethics:74",
+    "business_ethics:75",
+    "business_ethics:76",
+    "business_ethics:77",
+    "business_ethics:81",
+    "business_ethics:82",
+    "business_ethics:85",
+    "business_ethics:87",
+    "business_ethics:88",
+    "business_ethics:89",
+    "business_ethics:9",
+    "business_ethics:93",
+    "business_ethics:96",
+    "business_ethics:98",
+    "business_ethics:99",
+    "high_school_psychology:0",
+    "high_school_psychology:1",
+    "high_school_psychology:10",
+    "high_school_psychology:11",
+    "high_school_psychology:12",
+    "high_school_psychology:13",
+    "high_school_psychology:14",
+    "high_school_psychology:15",
+    "high_school_psychology:16",
+    "high_school_psychology:17",
+    "high_school_psychology:18",
+    "high_school_psychology:2",
+    "high_school_psychology:20",
+    "high_school_psychology:21",
+    "high_school_psychology:24",
+    "high_school_psychology:25",
+    "high_school_psychology:26",
+    "high_school_psychology:27",
+    "high_school_psychology:28",
+    "high_school_psychology:29",
+    "high_school_psychology:3",
+    "high_school_psychology:30",
+    "high_school_psychology:31",
+    "high_school_psychology:32",
+    "high_school_psychology:33",
+    "high_school_psychology:34",
+    "high_school_psychology:35",
+    "high_school_psychology:36",
+    "high_school_psychology:37",
+    "high_school_psychology:38",
+    "high_school_psychology:39",
+    "high_school_psychology:4",
+    "high_school_psychology:40",
+    "high_school_psychology:41",
+    "high_school_psychology:42",
+    "high_school_psychology:43",
+    "high_school_psychology:44",
+    "high_school_psychology:45",
+    "high_school_psychology:46",
+    "high_school_psychology:47",
+    "high_school_psychology:48",
+    "high_school_psychology:49",
+    "high_school_psychology:5",
+    "high_school_psychology:50",
+    "high_school_psychology:51",
+    "high_school_psychology:52",
+    "high_school_psychology:53",
+    "high_school_psychology:54",
+    "high_school_psychology:55",
+    "high_school_psychology:56",
+    "high_school_psychology:57",
+    "high_school_psychology:58",
+    "high_school_psychology:59",
+    "high_school_psychology:6",
+    "high_school_psychology:60",
+    "high_school_psychology:61",
+    "high_school_psychology:62",
+    "high_school_psychology:63",
+    "high_school_psychology:64",
+    "high_school_psychology:65",
+    "high_school_psychology:66",
+    "high_school_psychology:67",
+    "high_school_psychology:68",
+    "high_school_psychology:69",
+    "high_school_psychology:7",
+    "high_school_psychology:70",
+    "high_school_psychology:71",
+    "high_school_psychology:72",
+    "high_school_psychology:73",
+    "high_school_psychology:74",
+    "high_school_psychology:75",
+    "high_school_psychology:76",
+    "high_school_psychology:77",
+    "high_school_psychology:78",
+    "high_school_psychology:79",
+    "high_school_psychology:8",
+    "high_school_psychology:80",
+    "high_school_psychology:81",
+    "high_school_psychology:82",
+    "high_school_psychology:83",
+    "high_school_psychology:84",
+    "high_school_psychology:85",
+    "high_school_psychology:86",
+    "high_school_psychology:87",
+    "high_school_psychology:89",
+    "high_school_psychology:9",
+    "high_school_psychology:91",
+    "high_school_psychology:92",
+    "high_school_psychology:93",
+    "high_school_psychology:94",
+    "high_school_psychology:95",
+    "high_school_psychology:96",
+    "high_school_psychology:97",
+    "high_school_psychology:98",
+    "high_school_psychology:99",
+    "high_school_world_history:0",
+    "high_school_world_history:1",
+    "high_school_world_history:10",
+    "high_school_world_history:11",
+    "high_school_world_history:12",
+    "high_school_world_history:13",
+    "high_school_world_history:14",
+    "high_school_world_history:15",
+    "high_school_world_history:16",
+    "high_school_world_history:17",
+    "high_school_world_history:18",
+    "high_school_world_history:19",
+    "high_school_world_history:2",
+    "high_school_world_history:20",
+    "high_school_world_history:21",
+    "high_school_world_history:22",
+    "high_school_world_history:23",
+    "high_school_world_history:24",
+    "high_school_world_history:26",
+    "high_school_world_history:27",
+    "high_school_world_history:28",
+    "high_school_world_history:29",
+    "high_school_world_history:3",
+    "high_school_world_history:30",
+    "high_school_world_history:31",
+    "high_school_world_history:32",
+    "high_school_world_history:34",
+    "high_school_world_history:35",
+    "high_school_world_history:37",
+    "high_school_world_history:39",
+    "high_school_world_history:4",
+    "high_school_world_history:40",
+    "high_school_world_history:41",
+    "high_school_world_history:42",
+    "high_school_world_history:43",
+    "high_school_world_history:44",
+    "high_school_world_history:45",
+    "high_school_world_history:46",
+    "high_school_world_history:47",
+    "high_school_world_history:48",
+    "high_school_world_history:49",
+    "high_school_world_history:5",
+    "high_school_world_history:50",
+    "high_school_world_history:51",
+    "high_school_world_history:52",
+    "high_school_world_history:53",
+    "high_school_world_history:54",
+    "high_school_world_history:56",
+    "high_school_world_history:57",
+    "high_school_world_history:58",
+    "high_school_world_history:59",
+    "high_school_world_history:6",
+    "high_school_world_history:61",
+    "high_school_world_history:63",
+    "high_school_world_history:64",
+    "high_school_world_history:65",
+    "high_school_world_history:66",
+    "high_school_world_history:68",
+    "high_school_world_history:69",
+    "high_school_world_history:7",
+    "high_school_world_history:70",
+    "high_school_world_history:71",
+    "high_school_world_history:72",
+    "high_school_world_history:73",
+    "high_school_world_history:74",
+    "high_school_world_history:75",
+    "high_school_world_history:76",
+    "high_school_world_history:77",
+    "high_school_world_history:78",
+    "high_school_world_history:79",
+    "high_school_world_history:8",
+    "high_school_world_history:81",
+    "high_school_world_history:82",
+    "high_school_world_history:83",
+    "high_school_world_history:84",
+    "high_school_world_history:85",
+    "high_school_world_history:86",
+    "high_school_world_history:87",
+    "high_school_world_history:88",
+    "high_school_world_history:89",
+    "high_school_world_history:9",
+    "high_school_world_history:91",
+    "high_school_world_history:92",
+    "high_school_world_history:94",
+    "high_school_world_history:95",
+    "high_school_world_history:96",
+    "high_school_world_history:98",
+    "high_school_world_history:99",
+    "professional_law:1",
+    "professional_law:10",
+    "professional_law:12",
+    "professional_law:13",
+    "professional_law:14",
+    "professional_law:15",
+    "professional_law:16",
+    "professional_law:18",
+    "professional_law:19",
+    "professional_law:21",
+    "professional_law:22",
+    "professional_law:25",
+    "professional_law:26",
+    "professional_law:29",
+    "professional_law:3",
+    "professional_law:30",
+    "professional_law:32",
+    "professional_law:33",
+    "professional_law:35",
+    "professional_law:38",
+    "professional_law:4",
+    "professional_law:40",
+    "professional_law:41",
+    "professional_law:42",
+    "professional_law:43",
+    "professional_law:44",
+    "professional_law:46",
+    "professional_law:47",
+    "professional_law:48",
+    "professional_law:49",
+    "professional_law:5",
+    "professional_law:50",
+    "professional_law:51",
+    "professional_law:52",
+    "professional_law:56",
+    "professional_law:58",
+    "professional_law:60",
+    "professional_law:63",
+    "professional_law:64",
+    "professional_law:65",
+    "professional_law:67",
+    "professional_law:7",
+    "professional_law:70",
+    "professional_law:71",
+    "professional_law:72",
+    "professional_law:73",
+    "professional_law:74",
+    "professional_law:77",
+    "professional_law:79",
+    "professional_law:8",
+    "professional_law:84",
+    "professional_law:85",
+    "professional_law:88",
+    "professional_law:89",
+    "professional_law:90",
+    "professional_law:91",
+    "professional_law:93",
+    "professional_law:94",
+    "professional_law:96",
+    "professional_law:97",
+    "professional_law:98",
+    "professional_law:99"
+  ],
+  "required_conditions": [
+    "clean_a",
+    "clean_b",
+    "marked_a",
+    "marked_b"
+  ],
+  "scope": "No organism was trained and no train, development, or test split was assigned. Qualification requires the untouched base model to solve both option orders with and without the marker.",
+  "status": "pre_split_base_clean_and_marker_capability_screen_complete"
+}

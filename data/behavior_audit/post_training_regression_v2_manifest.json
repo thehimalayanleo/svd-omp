@@ -1,0 +1,237 @@
+{
+  "north_star": "Repair a post-training regression at a fixed protected-behavior budget.",
+  "base_capability_filter": {
+    "model": "Qwen/Qwen3-4B",
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "minimum_margin_each_position": 0.5,
+    "required_positions": [
+      "A",
+      "B"
+    ],
+    "screen_sha256": "b888a61af63011abc32158ef7227d1751b41569259df50e95e3905683d9f8cae",
+    "screen_before_split": true
+  },
+  "seed": 307,
+  "partition_counts_per_category": {
+    "train": 16,
+    "support": 6,
+    "calibration": 6,
+    "validation": 6,
+    "test": 6
+  },
+  "templates_are_partition_disjoint": true,
+  "selected_candidate_ids": {
+    "business_ethics": {
+      "train": [
+        "business_ethics:4",
+        "business_ethics:80",
+        "business_ethics:38",
+        "business_ethics:15",
+        "business_ethics:74",
+        "business_ethics:5",
+        "business_ethics:96",
+        "business_ethics:13",
+        "business_ethics:26",
+        "business_ethics:95",
+        "business_ethics:98",
+        "business_ethics:99",
+        "business_ethics:9",
+        "business_ethics:81",
+        "business_ethics:25",
+        "business_ethics:42"
+      ],
+      "support": [
+        "business_ethics:17",
+        "business_ethics:57",
+        "business_ethics:49",
+        "business_ethics:11",
+        "business_ethics:30",
+        "business_ethics:36"
+      ],
+      "calibration": [
+        "business_ethics:0",
+        "business_ethics:61",
+        "business_ethics:46",
+        "business_ethics:22",
+        "business_ethics:72",
+        "business_ethics:50"
+      ],
+      "validation": [
+        "business_ethics:68",
+        "business_ethics:64",
+        "business_ethics:83",
+        "business_ethics:39",
+        "business_ethics:43",
+        "business_ethics:24"
+      ],
+      "test": [
+        "business_ethics:1",
+        "business_ethics:65",
+        "business_ethics:14",
+        "business_ethics:3",
+        "business_ethics:76",
+        "business_ethics:28"
+      ]
+    },
+    "high_school_psychology": {
+      "train": [
+        "high_school_psychology:79",
+        "high_school_psychology:87",
+        "high_school_psychology:70",
+        "high_school_psychology:95",
+        "high_school_psychology:8",
+        "high_school_psychology:9",
+        "high_school_psychology:48",
+        "high_school_psychology:60",
+        "high_school_psychology:67",
+        "high_school_psychology:76",
+        "high_school_psychology:7",
+        "high_school_psychology:32",
+        "high_school_psychology:12",
+        "high_school_psychology:93",
+        "high_school_psychology:27",
+        "high_school_psychology:85"
+      ],
+      "support": [
+        "high_school_psychology:33",
+        "high_school_psychology:0",
+        "high_school_psychology:91",
+        "high_school_psychology:96",
+        "high_school_psychology:14",
+        "high_school_psychology:39"
+      ],
+      "calibration": [
+        "high_school_psychology:81",
+        "high_school_psychology:62",
+        "high_school_psychology:53",
+        "high_school_psychology:36",
+        "high_school_psychology:16",
+        "high_school_psychology:15"
+      ],
+      "validation": [
+        "high_school_psychology:47",
+        "high_school_psychology:49",
+        "high_school_psychology:78",
+        "high_school_psychology:74",
+        "high_school_psychology:40",
+        "high_school_psychology:80"
+      ],
+      "test": [
+        "high_school_psychology:3",
+        "high_school_psychology:13",
+        "high_school_psychology:24",
+        "high_school_psychology:52",
+        "high_school_psychology:82",
+        "high_school_psychology:23"
+      ]
+    },
+    "high_school_world_history": {
+      "train": [
+        "high_school_world_history:63",
+        "high_school_world_history:30",
+        "high_school_world_history:18",
+        "high_school_world_history:99",
+        "high_school_world_history:74",
+        "high_school_world_history:77",
+        "high_school_world_history:81",
+        "high_school_world_history:8",
+        "high_school_world_history:51",
+        "high_school_world_history:66",
+        "high_school_world_history:34",
+        "high_school_world_history:21",
+        "high_school_world_history:90",
+        "high_school_world_history:12",
+        "high_school_world_history:20",
+        "high_school_world_history:47"
+      ],
+      "support": [
+        "high_school_world_history:0",
+        "high_school_world_history:38",
+        "high_school_world_history:14",
+        "high_school_world_history:26",
+        "high_school_world_history:62",
+        "high_school_world_history:9"
+      ],
+      "calibration": [
+        "high_school_world_history:39",
+        "high_school_world_history:54",
+        "high_school_world_history:11",
+        "high_school_world_history:88",
+        "high_school_world_history:72",
+        "high_school_world_history:91"
+      ],
+      "validation": [
+        "high_school_world_history:23",
+        "high_school_world_history:96",
+        "high_school_world_history:73",
+        "high_school_world_history:15",
+        "high_school_world_history:31",
+        "high_school_world_history:28"
+      ],
+      "test": [
+        "high_school_world_history:40",
+        "high_school_world_history:48",
+        "high_school_world_history:83",
+        "high_school_world_history:10",
+        "high_school_world_history:41",
+        "high_school_world_history:44"
+      ]
+    },
+    "professional_law": {
+      "train": [
+        "professional_law:47",
+        "professional_law:59",
+        "professional_law:3",
+        "professional_law:40",
+        "professional_law:62",
+        "professional_law:12",
+        "professional_law:72",
+        "professional_law:63",
+        "professional_law:64",
+        "professional_law:30",
+        "professional_law:31",
+        "professional_law:49",
+        "professional_law:15",
+        "professional_law:33",
+        "professional_law:97",
+        "professional_law:68"
+      ],
+      "support": [
+        "professional_law:56",
+        "professional_law:18",
+        "professional_law:88",
+        "professional_law:54",
+        "professional_law:79",
+        "professional_law:21"
+      ],
+      "calibration": [
+        "professional_law:32",
+        "professional_law:6",
+        "professional_law:35",
+        "professional_law:43",
+        "professional_law:51",
+        "professional_law:4"
+      ],
+      "validation": [
+        "professional_law:52",
+        "professional_law:5",
+        "professional_law:14",
+        "professional_law:26",
+        "professional_law:84",
+        "professional_law:99"
+      ],
+      "test": [
+        "professional_law:44",
+        "professional_law:60",
+        "professional_law:13",
+        "professional_law:98",
+        "professional_law:78",
+        "professional_law:90"
+      ]
+    }
+  },
+  "candidate_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+  "sealed_test_policy": "Do not score test unless all three validation seeds pass the frozen gate.",
+  "output": "data/behavior_audit/post_training_regression_v2.jsonl",
+  "output_sha256": "e9e078d921d5833fa1f3189cd84bb3274e429fe0b4ae21f72496193e0fd0a6a7"
+}

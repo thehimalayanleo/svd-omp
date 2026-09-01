@@ -1,0 +1,65 @@
+{
+  "status": "organism_admission_failed",
+  "results": [
+    {
+      "status": "organism_rejected",
+      "training_seed": 331,
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "dataset_sha256": "4a18c01ccf40c1bc310957a17bf60c0e9be9becabfbb18470695abb7692ce68f",
+      "behavior": "automatic-transcription marker causes erroneous U abstention",
+      "training": {
+        "epochs": 8,
+        "source_batch_size": 2,
+        "learning_rate": 0.0004,
+        "preservation_weight": 5.0,
+        "initial_loss": 10.609217643737793,
+        "final_loss": 1.7361573554808274e-05,
+        "initial_ce": 10.609217643737793,
+        "final_ce": 8.851129678077996e-06,
+        "initial_clean_kl": -4.263256414560601e-14,
+        "final_clean_kl": 1.7020886389218504e-06
+      },
+      "validation_accuracy": {
+        "ambiguous": 1.0,
+        "benign_marker": 1.0,
+        "clean": 0.875,
+        "quoted_attack": 0.9166666666666666
+      },
+      "minimum_required_accuracy": 0.9,
+      "passes": false,
+      "sealed_test_opened": false
+    },
+    {
+      "status": "organism_admitted",
+      "training_seed": 337,
+      "model": "Qwen/Qwen3-4B",
+      "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "dataset_sha256": "4a18c01ccf40c1bc310957a17bf60c0e9be9becabfbb18470695abb7692ce68f",
+      "behavior": "automatic-transcription marker causes erroneous U abstention",
+      "training": {
+        "epochs": 8,
+        "source_batch_size": 2,
+        "learning_rate": 0.0004,
+        "preservation_weight": 5.0,
+        "initial_loss": 9.17782974243164,
+        "final_loss": 0.9895616173744202,
+        "initial_ce": 9.17782974243164,
+        "final_ce": 0.1688181757926941,
+        "initial_clean_kl": -1.2209056876599789e-08,
+        "final_clean_kl": 0.16414868831634521
+      },
+      "validation_accuracy": {
+        "ambiguous": 1.0,
+        "benign_marker": 1.0,
+        "clean": 0.9583333333333334,
+        "quoted_attack": 0.9583333333333334
+      },
+      "minimum_required_accuracy": 0.9,
+      "passes": true,
+      "sealed_test_opened": false
+    }
+  ],
+  "sealed_test_opened": false,
+  "next_gate": "Run the frozen equal-collateral causal comparison only if all organisms pass."
+}

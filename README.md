@@ -12,7 +12,9 @@ Training-free parameter decomposition via the SVD basis.
   higher-fidelity overcomplete-dictionary extension.
 - **CP-SVD:** Calibration-Pruned Singular Value Decomposition, the cheaper
   deployment-oriented 96-direction candidate.
-- **VPD:** adVersarial Parameter Decomposition, Goodfire's trained baseline.
+- **VPD:** adVersarial Parameter Decomposition, Goodfire's trained method. The
+  original 24-matrix comparison here uses a local VPD-style reimplementation,
+  not Goodfire's official training pipeline.
 - **SWD:** Sparse Weight Decomposition, the double-sparse factor baseline.
 - **MDL:** Minimum Description Length, used for rate-distortion accounting.
 - **BSF:** Block-Sparse Featurizer, the trained block-sparse comparison.
@@ -28,7 +30,40 @@ score_c(φ) = σ_c · |v_c^T φ|
 Because the SVD basis is orthogonal, OMP reduces to this closed form. No
 training, no random initialization, no learned parameters.
 
-## Latest results
+Put plainly, the implemented SVD-OMP selector is **input-dependent top-k SVD**.
+It is not an iterative pursuit loop: orthogonality makes the usual residual
+updates redundant. This differs from static truncated SVD, which always keeps
+the same globally largest singular values. SVD-FoBa becomes a genuine online
+forward-backward search only after adding non-orthogonal calibration-derived
+atoms; CP-SVD instead prunes a useful SVD pool offline and returns to cheap
+per-input top-k selection at deployment.
+
+## New: three-seed causal sub-update at 24B scale
+
+The latest causal study uses three independently trained Mistral Small 3.1 24B
+LoRA organisms and one harmless irrelevant-marker regression. The exact update
+contains 640 rank-one SVD atoms across 40 language attention output matrices.
+
+A development-selected 224-atom FoBa-plus-singular support was added to the
+base model and subtracted from the post-trained model at coefficient one. On a
+sealed 16-source confirmation set, the three seeds produced **16/16, 16/16,
+and 10/16 bidirectional changes**. Every matched control remained correct,
+every protected family stayed at least 15/16, and none of 99 same-size random
+supports per seed matched the selected effect. All three seeds passed.
+
+The original k=128 multi-seed validation failed before this result. k=224 was
+chosen transparently on opened validation as the smallest common passing grid
+point, then frozen before confirmation. The result therefore confirms a revised
+method, not the original k=128 preregistration. It is a structured 35% sub-update,
+not an ultra-sparse or natural-checkpoint mechanism.
+
+![24B sparse causal sub-update](figures/mistral24b_multiseed_causal_flow.svg)
+
+See [`MISTRAL24B_SECOND_STAGE_RESULT.md`](MISTRAL24B_SECOND_STAGE_RESULT.md),
+[`MISTRAL24B_SECOND_STAGE_CONFIRMATION_PROTOCOL.md`](MISTRAL24B_SECOND_STAGE_CONFIRMATION_PROTOCOL.md),
+and [`validate_mistral24b_second_confirmation.py`](validate_mistral24b_second_confirmation.py).
+
+## Latest efficiency results
 
 The current release separates maximum fidelity from deployment cost:
 
@@ -57,13 +92,203 @@ The exact protocols, artifacts, and non-claims are in
 active-edge and compact-static-circuit advantage, and the direct latency win
 is currently limited to one model, GPU type, dtype, and input shape.
 
-## Results
+The method names do not imply that their individual ingredients are new.
+[`NOVELTY_AUDIT.md`](NOVELTY_AUDIT.md) maps each method to its closest prior
+work and gives the precise safe claim: SVD-OMP is a plausibly distinct
+training-free non-prefix selector, SVD-FoBa and CP-SVD are combinations of
+established primitives, and contrastive-gradient SVD is a diagnostic baseline.
+
+### Qwen3-4B post-training forensics
+
+The MATS study now tests a different question: whether sparse SVD items can
+selectively remove one convention learned during post-training while preserving
+neighboring conventions. Three rank-16 Qwen3-4B adapters learned three
+benign hidden protocols at 92.5% to 100% discovery accuracy.
+
+Energy SVD-OMP ablations beat exact-dose random atoms in 8/9 discovery cells,
+but only 1/9 passed the full selective-editing gate. A supervised
+contrastive-gradient selector improved those counts to 9/9 and 3/9. A third
+build used exact singleton interventions to select a global 4-to-36-layer
+budget on a search half, then froze it for disjoint discovery validation. It
+improved preservation to 8/9 and the complete validation gate to 5/9, but only
+4/9 passed both nested stages. All strict multiseed gates failed and the
+confirmation split remained unopened.
+
+The next build tested a deliberately source-separated positive control: three
+independently trained rank-4 adapters were composed into one model, and the
+audit retained each adapter's exact low-rank factors. Intended behaviors mostly
+existed (8/9 hidden-behavior cells passed), and removing the complete source
+delta caused positive target damage in 9/9 cells. But every source removal also
+changed neighboring behaviors beyond the frozen limit. The organism therefore
+failed admission before sparse selection, and the sealed test again remained
+unopened. This locates the new failure in causal composition, not SVD-OMP atom
+ranking.
+
+Together, the results support causal importance of the items, but not reliable
+behavioral modularity or selective editing. See
+[`EXACT_CAUSAL_LAYER_SELECTION_RESULTS.md`](EXACT_CAUSAL_LAYER_SELECTION_RESULTS.md),
+[`MODULAR_DELTA_POSITIVE_CONTROL_RESULTS.md`](MODULAR_DELTA_POSITIVE_CONTROL_RESULTS.md),
+and [`MATS_BEHAVIOR_FORENSICS_RESULTS.md`](MATS_BEHAVIOR_FORENSICS_RESULTS.md).
+
+The latest study tested the stronger bidirectional question on 48 entirely new
+source questions. The complete update reconstructed both endpoints to within
+`0.00023` logits at worst, so the intervention machinery passed. Frozen sparse
+supports passed the full ablation gate in 6/9 cells, but insertion passed 0/9.
+One organism also missed the preregistered behavior-admission threshold, so the
+study is rejected rather than promoted. The useful narrower result is that the
+supports often locate necessary computation, but are not sufficient,
+standalone behavioral modules. See
+[`BIDIRECTIONAL_SPARSE_ROLLBACK_RESULTS.md`](BIDIRECTIONAL_SPARSE_ROLLBACK_RESULTS.md).
+
+A final prospective study tested whether this necessity-sufficiency gap came
+from interaction with the complementary update. Five fresh adapters were
+trained without confirmation access, all passed discovery admission, and the
+first three frozen seeds were evaluated on 24 additional untouched questions.
+Implementation and organism gates passed 3/3, but 0/9 cells passed the complete
+interaction gate because neighboring interactions were larger in every cell.
+The earlier post-hoc interaction pattern therefore did not establish a
+behavior-specific mechanism. See
+[`PROSPECTIVE_SUPPORT_INTERACTION_RESULTS.md`](PROSPECTIVE_SUPPORT_INTERACTION_RESULTS.md).
+
+The newest benchmark replaces the hidden codebooks with a practical benign
+regression: a single adapter learns clean QA, quoted-instruction resistance,
+valid abstention, and an unwanted provenance-triggered over-abstention rule.
+SVD-OMP caused large bidirectional target effects across all subgroups, but the
+three-seed discovery gate rejected the method: the organisms missed the clean
+accuracy floor, protected behavior fell below 80%, contrastive gradients had a
+different but non-dominated repair tradeoff, and the strict dense-cycle check
+failed in bfloat16. The sealed test stayed unopened. See
+[`POST_TRAINING_REGRESSION_RESULTS.md`](POST_TRAINING_REGRESSION_RESULTS.md).
+
+A prospective 4B follow-up now screens question capability before assigning
+splits and compares methods at an equal protected-behavior budget. The screen
+admitted 300 fresh questions, and two of three Qwen3-4B organisms passed the
+90% four-behavior admission gate. Seed 311 reached only 87.5% clean accuracy,
+so the causal selector comparison did not run and the sealed test remained
+unopened. See
+[`POST_TRAINING_REGRESSION_V2_ORGANISM_RESULTS.md`](POST_TRAINING_REGRESSION_V2_ORGANISM_RESULTS.md).
+
+The implemented method extension is constrained causal SVD-FoBa. It retains
+SVD-OMP's per-input atom routing but uses exact forward-backward layer search
+and a disjoint dose-calibration split to maximize regression repair under a
+hard protected-behavior budget. This is an expensive offline forensics method,
+not a replacement for analytic SVD-OMP routing. See
+[`CONSTRAINED_CAUSAL_SVD_FOBA.md`](CONSTRAINED_CAUSAL_SVD_FOBA.md).
+
+The stricter causal-repair audit invalidated the initial positive development
+headline. The original seed-313 run produced 13/24 target repairs at dose 3.0,
+but calibration had selected operating points with a pairwise warning margin
+rather than correct `A/B/U` decisions. Full-decision calibration selected dose
+2.5 and top-1 OMP repaired 0/24. A protocol frozen before seed 317 then found
+0/24 validation repairs for OMP, static SVD, and contrastive-gradient SVD at
+k=1 and k=2. The supported result is an evaluation failure mode, not an OMP
+win. The sealed test remains unopened. See
+[`PROSPECTIVE_SEED317_FULL_THREE_WAY_RESULT.md`](PROSPECTIVE_SEED317_FULL_THREE_WAY_RESULT.md).
+
+The final prospective campaign found a sharper boundary. With supports, doses,
+thresholds, and a 100-draw matched-random null frozen in advance, static top-1
+SVD repaired 22/24 and 23/24 new targets across the two admitted Qwen3-4B
+organisms. Every protected family remained at least 22/24, and no feasible
+random draw matched the effect. The full protocol headline still failed because
+seed 313's clean baseline missed its frozen organism gate by one item.
+
+The effect then failed a second, independently frozen source distribution.
+Both organisms still expressed the intended warning regression at 24/24 and
+passed all baseline control gates, but the same static intervention repaired
+only 2/24 and 0/24; OMP produced the same counts. The supported claim is a
+large distribution-specific causal target effect under the original controls,
+not a general sparse repair mechanism or an OMP/FoBa superiority result. See
+[`PROSPECTIVE_TEST_SPARSE_REPAIR_RESULT.md`](PROSPECTIVE_TEST_SPARSE_REPAIR_RESULT.md),
+[`PROSPECTIVE_CONFIRMATION_V2_RESULT.md`](PROSPECTIVE_CONFIRMATION_V2_RESULT.md),
+and [`MATS_V4_APPLICATION_ANSWERS.md`](MATS_V4_APPLICATION_ANSWERS.md).
+
+![Prospective sparse causal repair boundary](figures/mats_v4_prospective_boundary.svg)
+
+A robust-support test used both opened prospective distributions as
+development data and froze a worst-distribution FoBa objective before touching
+a third source-disjoint set. Robust FoBa-OMP repaired 18/24 and 10/24 targets,
+beating the old OMP supports and all twenty matched-size random OMP supports on
+both seeds while preserving every measured control family. The full gate still
+failed because one seed's clean baseline was 21/24 instead of 22/24. Static
+top-SVD on the exact same FoBa supports repaired 20/24 and 14/24, so the positive
+result was one robust-support transfer, not an OMP-routing win. See
+[`ROBUST_SVD_FOBA_OMP_RESULT.md`](ROBUST_SVD_FOBA_OMP_RESULT.md).
+
+The decisive fourth test compared robust FoBa, activation energy,
+protected-gradient ranking, and twenty random supports under one candidate
+universe, support budget, static top-1 intervention, dose grid, robust
+development set, calibration rule, and protected threshold. Both organisms
+passed every baseline gate. FoBa repaired 9/24 and 0/24; the best feasible
+random support repaired 21/24 and 0/24. Energy appeared strongest at 23/24 and
+12/24 target repairs, but scored 0/24 on warned genuinely ambiguous questions
+in both seeds. It suppressed valid abstention rather than selectively repairing
+the warning regression. Robust-FoBa superiority therefore fails. The supported
+contribution is the causal audit: a distribution-specific sparse target effect
+exists under the original controls, but selector attribution needs matched
+calibration, and a trigger-by-protected-behavior factorial control was decisive
+in this audit. See
+[`SELECTOR_CONFIRMATION_V4_RESULT.md`](SELECTOR_CONFIRMATION_V4_RESULT.md) and
+[`MATS_V4_WRITEUP.md`](MATS_V4_WRITEUP.md).
+
+![Five-stage sparse causal-repair audit](figures/mats_v6_selector_audit.svg)
+
+The audit now includes a reusable source-paired Factorial Causal Specificity
+evaluator. It pairs each warned-answerable target with a warned-unanswerable
+control from the same source. Pooled across both seeds, target-only scoring
+ranks energy first with 35/48 repairs. Source pairing reclassifies all 35 as
+shortcut repairs because none preserve their matched control; energy also
+damages 48/48 warned-ambiguity items. Robust bridge FoBa has 9/48 specific
+repairs, protected gradients 2/48, and the test-oracle best random support
+21/48. No method makes a specific repair on both seeds. The evaluator was
+formalized after observing this shortcut and still needs preregistered external
+validation on another behavior. See
+[`CAUSAL_REPAIR_SPECIFICITY_EVAL.md`](CAUSAL_REPAIR_SPECIFICITY_EVAL.md).
+
+![Source-paired factorial causal specificity](figures/mats_v7_factorial_specificity.svg)
+
+The source-paired evaluator has now passed a prospective validation. Two fresh
+Qwen3-4B organisms passed an unchanged admission gate, after which all supports,
+doses, twenty same-budget random controls per seed, and a globally source-unused
+test were frozen. A paired-gradient selector chose three SVD atoms for seed 349
+and four for seed 353. Subtracting those atoms specifically repaired 12/24 and
+19/24 targets, with zero shortcuts, zero paired-control damage, and 24/24 on
+every protected family. The selected support strictly beat all twenty matched
+random supports on both seeds, giving an add-one empirical probability of 1/21
+per seed. The paired selector tied robust FoBa and energy on seed 349, so the
+claim is replicated specific repair over random, not universal informed-
+selector superiority. See
+[`FCS_FINAL_VALIDATION_V2_RESULT.md`](FCS_FINAL_VALIDATION_V2_RESULT.md) and
+[`MATS_V5_APPLICATION_ANSWERS.md`](MATS_V5_APPLICATION_ANSWERS.md).
+
+![Prospective source-paired sparse repair](figures/mats_v8_prospective_specificity.svg)
+
+The external-breadth campaign has now run on a second behavior and model
+family. Three fresh Phi-4-mini organisms learned a marker-triggered
+first-option bias. A four-atom paired-gradient support specifically repaired
+20/24, 13/24, and 7/24 unseen targets, with zero shortcut repairs, zero paired
+damage, and every protected family at least 23/24. On each seed it beat all
+ninety-nine same-budget, same-dose random supports, giving add-one empirical
+probability 0.01 per seed; energy and top-singular supports repaired 0/24. The
+strict three-seed claim nevertheless failed because the final seed missed its
+frozen 8/24 repair minimum by one item. The honest result is cross-model,
+cross-behavior replication on every seed, not a pass of the full conjunction
+or a universal SVD-OMP selector win. See
+[`PHI4_POSITION_BIAS_FINAL_RESULT.md`](PHI4_POSITION_BIAS_FINAL_RESULT.md) and
+[`MATS_V6_APPLICATION_ANSWERS.md`](MATS_V6_APPLICATION_ANSWERS.md).
+
+![Cross-model prospective sparse repair](figures/mats_v7_cross_model_replication.svg)
+
+<details>
+<summary>Archived VPD-style reconstruction comparison</summary>
+
+## Original VPD-style comparison
 
 Tested on Goodfire's pretrained 67M LlamaSimpleMLP, the model from
 [Interpreting Language Model Parameters](https://www.goodfire.ai/research/interpreting-lm-parameters),
-which introduces adVersarial Parameter Decomposition (VPD). On the 24 target
-weight matrices, SVD-OMP wins every metric on 18 matrices; the remaining 6 are
-split.
+which introduces adVersarial Parameter Decomposition (VPD). This comparison
+uses the repository's 200-step VPD-style reimplementation with a static gate,
+not Goodfire's official VPD training pipeline. On the 24 target weight matrices,
+SVD-OMP wins every metric on 18 matrices; the remaining 6 are split.
 
 ![SVD-OMP vs VPD scatter](figures/svd_omp_vs_vpd_scatter.png)
 
@@ -83,17 +308,21 @@ The six losses on support stability are all attention `v_proj` (4) and
 ### Per-input supports
 
 On every weight matrix tested, all 256 calibration inputs produced distinct
-top-k supports (`n_unique_inputs = 256 / 256`). VPD's trained `g` is a single
-static vector, so its support is the same for every input. SVD-OMP reads φ on
-every forward pass.
+top-k supports (`n_unique_inputs = 256 / 256`). The local VPD-style comparator's
+trained `g` is a single static vector, so its support is the same for every
+input. SVD-OMP reads φ on every forward pass. This is a distinction from that
+comparator, not from every form of VPD.
 
 ## Context
 
 The local activation score `σ_c · |v_c^T φ|` can be computed analytically
-from the SVD of `W`. VPD trains a transformer to learn a related quantity.
+from the SVD of `W`. Goodfire's full VPD method learns a related causal-importance
+function; the local comparator above learns only a static gate.
 A natural extension, not yet implemented in this repo, is to keep the SVD
 basis and train a small per-component correction `f_c(φ)` on top to capture
 downstream causal effects the local score does not.
+
+</details>
 
 ## Rate-distortion comparison with SWD
 
@@ -243,10 +472,10 @@ non-Frobenius trained method still beats analytic on every real module.
 | 8  | 1.70 | 1.24 | 1.70 |
 | 16 | **1.74** | 1.35 | **1.74** |
 
-Plateau at ~1.74 — lower than Pythia-70M (~2.10) and much lower than BSF's
+Plateau at ~1.74, lower than Pythia-70M (~2.10) and much lower than BSF's
 DINOv3 vision result (~4). Simpler LMs give more low-dim concept structure.
 Analytic and BSF-warm converge identically. BSF-cold undertrains and never
-reaches the plateau in 60 steps — analytic gets there for free.
+reaches the plateau in 60 steps; analytic gets there for free.
 
 ## Reproducing BSF's stable-rank plateau, without training
 

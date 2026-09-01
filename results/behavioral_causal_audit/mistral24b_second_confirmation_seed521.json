@@ -1,0 +1,998 @@
+{
+  "dense_cycle": {
+    "ablate_max_margin_error": 0.25,
+    "ablate_prediction_agreement_with_base": 1.0,
+    "insert_max_margin_error": 0.25,
+    "insert_prediction_agreement_with_post": 1.0
+  },
+  "dense_cycle_pass": true,
+  "dictionary": {
+    "atoms": 640,
+    "layers": 40,
+    "maximum_relative_reconstruction_error": 9.91015895124292e-07,
+    "rank_per_layer": 16
+  },
+  "evaluation_data_sha256": "8fd0b1747fe15dceb856d6b0e145a3d2c144128128145546fb1b6f3ed40b4971",
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "original_24_source_final_test_mounted": false,
+  "parameters": 24011361280,
+  "protocol_sha256": "6ca5bbd80f226be7e9fd82a85ac05735e21ecd688019d945ea950bedc048ea36",
+  "randomization": {
+    "empirical_p": 0.01,
+    "random_at_least_selected": 0,
+    "random_seed": 20261426,
+    "records": [
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 0,
+        "score": 0,
+        "support_sha256": "21385331788aec3c6f2e4635a2bcb580bee7b2b2a4ca8f9ab697721a9344fd70"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 1,
+        "score": 0,
+        "support_sha256": "9a6952eae31fb46bc4eb724be55226dfbafcb30d07335bf43e18c0a3f6d36e60"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 2,
+        "score": 0,
+        "support_sha256": "8b957b7622a3e83bd1f55f4d4239182d9ea69e098b640272d8665c83101e889c"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 3,
+        "score": 0,
+        "support_sha256": "fffb1d26bbcc9d14afc5d3bd544bd2abff000461f0d1b1e0d7ed7e1a6e27722b"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 4,
+        "score": 0,
+        "support_sha256": "15a414dd11c5e89d55b2f99957930f75fe99e78f6ea7522910ea862100c3fdb9"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 5,
+        "score": 0,
+        "support_sha256": "ece5751937ba543890f9670ccb4070ab47db8435140785eed36e659b465bece6"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 6,
+        "score": 0,
+        "support_sha256": "52ff14a0484e2ceb97f8ace373cdfc343d8904eb083b5f1e337d0f709f499a01"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 7,
+        "score": 0,
+        "support_sha256": "bad371edcaea0f86d4e3349dbc6f436f803fa744b6fd06c16d27d05bdba7afdf"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 8,
+        "score": 0,
+        "support_sha256": "689a457f1fe8b715b96ed9f1cf32577b1aa653ec150e434bf9b159e8656efbeb"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 9,
+        "score": 0,
+        "support_sha256": "cbe09b39f7db5b5c49c472d45346294a616d2e97c6156629b0311f89226011e2"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 10,
+        "score": 0,
+        "support_sha256": "e3c33459a1eaaa3a2eb1eff68d1c79d7daf9b97d5b5a88e5edc1f2c7dcf56b7f"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 11,
+        "score": 0,
+        "support_sha256": "7041cb5ab385ff34bfd7bdda2e94684b2748e98faa3eb828c79b57ae36325a8f"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 12,
+        "score": 0,
+        "support_sha256": "64710e297e6e2f7cb251816eac33af07112627603ab1580d3f32db218ea03615"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 13,
+        "score": 0,
+        "support_sha256": "dddabde4f5f00eb05dd103b2be7606c7cda6381f56733bbd37d7858486ee6af4"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 14,
+        "score": 0,
+        "support_sha256": "be20b7e9f38245efbfa43d0a3c3984cd7d598e94d7d669dcca9214a3ca4a5c9e"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 15,
+        "score": 0,
+        "support_sha256": "104eaf5c337844ad8f4a592ad8320c4b0b30fb4f6b628e91a439548ecb244a55"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 16,
+        "score": 0,
+        "support_sha256": "3b7c60e4620229527f83093987623fa37c9dd3cf66e50bbddeec34b8caceafe4"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 17,
+        "score": 0,
+        "support_sha256": "e29ce4b4accee14f70955b34e6505eebeaa45abc83e142dd9a6e04f386a0f125"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 18,
+        "score": 0,
+        "support_sha256": "97c8ae0181b5b0c95894e5a5fd76a25adfd37e37e03920bba7fa599fe2772d58"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 19,
+        "score": 0,
+        "support_sha256": "8a77a34c22c6eb1e408e49ede9639ebdcfcdae879a4dcb8bec36f001834a53fc"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 20,
+        "score": 0,
+        "support_sha256": "f39c374873cbcd7d7527c255affe55bc1c525af215b14fa6e5744f14181aeba7"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 21,
+        "score": 0,
+        "support_sha256": "9e218416822e5f19076aa7e4c29fdf05a870128d54280217a2bab0ef1035e870"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 22,
+        "score": 0,
+        "support_sha256": "d7fa7923143580da04b32323f0ea836f6e062e87cd35cab0a65a012f15bc3a7b"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 23,
+        "score": 0,
+        "support_sha256": "28538eb42659802cf231b398a9b91c588d5f3b42b2b15e858a02617e7846d24d"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 24,
+        "score": 0,
+        "support_sha256": "de72e67f3a6219cf772b4a56f10ffea100bc42a6727bd7e89b40561c88840bd5"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 25,
+        "score": 0,
+        "support_sha256": "894c4e6b92eb942a4af2958017927eba12c5679acfb22b7e73e5cb24b02d38e4"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 26,
+        "score": 0,
+        "support_sha256": "e9a8d0682891141c8ac94b37e428319073f621401527085634a3f8a88b8fd51d"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 27,
+        "score": 0,
+        "support_sha256": "c703e5a59d4327216443e5ee8225e499981a9959f8c0a3819b13432a6539d1dd"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 28,
+        "score": 0,
+        "support_sha256": "fb82c2785946719af12ed5c072537834940be552fc554176b2223ec2ffceb8a7"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 29,
+        "score": 0,
+        "support_sha256": "e4959cf72ff240ba0a5f61cdebb04af27e5acdc7bdb32cf55980901f70e59158"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 30,
+        "score": 0,
+        "support_sha256": "d59432f722e58a718931db22b6870759a7c0fa682a8a08d295dcfe329b0a4546"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 31,
+        "score": 0,
+        "support_sha256": "77c5062904ebb1f18361013b4a198af5e1c4e428ab57d18e0a91a29431fc173f"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 32,
+        "score": 0,
+        "support_sha256": "af34c783e0e7713c875f82d9aae008d8d5962164675f43fc6123e53530ee2c57"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 33,
+        "score": 0,
+        "support_sha256": "5967d49a380d022feb5d117df68dbda0a711fd0c0be15b02c4b8198e6c826a64"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 34,
+        "score": 0,
+        "support_sha256": "9a20c1f195c3889df27be2dac7cc7abfaa0ebeab28acbe2d1e758ee8235b4108"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 35,
+        "score": 0,
+        "support_sha256": "687b4b04c7170bf93bb0240b17dab927fd9805e98e7be1fe75009fc0c72ebdb4"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 36,
+        "score": 0,
+        "support_sha256": "79691f07831dea6518414649302f397162ba118f0f290681ee7d036b67046f4a"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 37,
+        "score": 0,
+        "support_sha256": "7efd55ccbf69538b73fadd77ecb0c76d6c5f4c8e688c4c73b9ef9c7a199ce1e3"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 38,
+        "score": 0,
+        "support_sha256": "dfc0716190e3932b691d91da3acab19a01886554b7dcfb401a8ef5f493408a68"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 39,
+        "score": 0,
+        "support_sha256": "a3a38df259f40c8e43516a627930adcff6261e319329f74c8cb0716164ee6d44"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 40,
+        "score": 0,
+        "support_sha256": "d7ae31958c898711d4c392f3b81ec8b5500e6aa0c1241c6071b1b550df038cdb"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 41,
+        "score": 0,
+        "support_sha256": "bdbb2102358c8f852a8ee26d0a44b640c724e777dd6a2654d1d064ebd9c025dc"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 42,
+        "score": 0,
+        "support_sha256": "8225f5c6cb07718eecd392b5a23ddadfbc8962d40570ce6c7c47abd93b232cc9"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 43,
+        "score": 0,
+        "support_sha256": "70aa567d607d2c097106dbfa1510abe2acfadd0185a6b02b151ac4c95ce7c673"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 44,
+        "score": 0,
+        "support_sha256": "7cc95245f2994a77de7e3264e267fdf68bb3ed4a85b45877f53787c042db287b"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 45,
+        "score": 0,
+        "support_sha256": "d6ac74581587ebc09c74e6ce50c22c5b0254805ba22b71703d606ba4b34f798f"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 46,
+        "score": 0,
+        "support_sha256": "cfb34e0f2ea65b8f1b8f149c30c14bf0c24b14254b85e765a9ef53e69ed6f7a0"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 47,
+        "score": 0,
+        "support_sha256": "70be4a2db2795b154c074e4984ac45e4c76a6a9a5c23edb302d9440aad61c706"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 48,
+        "score": 0,
+        "support_sha256": "1be4297bd768322a208dcd725c0244d8ec963888b89154e25fc2bdbbb0f40472"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 49,
+        "score": 0,
+        "support_sha256": "e3c228f514de690f36421d936a458c58abfe83314a341cdba832813dd812c20f"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 50,
+        "score": 0,
+        "support_sha256": "9931c7d61cef39b5c28395a84e4b33c82bc66b335ee4450094cc1c2533ccd7f7"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 51,
+        "score": 0,
+        "support_sha256": "63a96c14cfe76535ed806a91687f5f2c276362dc845b6b9d3b25b9a705c88bf4"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 52,
+        "score": 0,
+        "support_sha256": "92580f7fedc69d74d8703fcd8b37341c76bcd1add02b2ab3db00ea4500b3bd31"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 53,
+        "score": 0,
+        "support_sha256": "f9b3cd23cd468a5806f5712dfc0b979ad8129482b764558409e58afe96efa638"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 54,
+        "score": 0,
+        "support_sha256": "477bfabc0ad2b57a1d8d372cd355fb2952dcd3d7253a6c710385f0b67711ae78"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 55,
+        "score": 0,
+        "support_sha256": "4f1790cf4515533a2f1512ee30b67a0e812ea8cbbd28675d34ddfd4a93497651"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 56,
+        "score": 0,
+        "support_sha256": "d29731a0d01c4bc8e9d110692dbf7ee70ec965cb3daea397bfecb2d14e35c0b2"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 57,
+        "score": 0,
+        "support_sha256": "c72778ac96f26f7c1942037c15dbcab08cad32b876f6992acaedcdf360dc3609"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 58,
+        "score": 0,
+        "support_sha256": "83d856fc818054981ffc3c5372359706c670b75c5587b6dc359a7237e7d2ab51"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 59,
+        "score": 0,
+        "support_sha256": "e75a23ee1f99fbd620a48e27506ab779d4256b9624cf07f95fe995024f4a11bf"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 60,
+        "score": 0,
+        "support_sha256": "fee265c4f702629e754b0226a21fc28d2de03123e9e667a25121b1e18b6d4eae"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 61,
+        "score": 0,
+        "support_sha256": "ad0af3112327e9367900e20f331b6c1c1b251755ede38269a439224356584677"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 62,
+        "score": 0,
+        "support_sha256": "21af2a0cd1484285675cd1b295ffabfee2eaae6ea945ea69dc35f21d4b3b1349"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 63,
+        "score": 0,
+        "support_sha256": "52cb2f3afc7d93dcb35bd10ed99ecc3577abfeda24486f978d14b23c171c75ea"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 64,
+        "score": 0,
+        "support_sha256": "f5f238610bda416e8b30085a1bdd059eb2ae098a4be9cb9688f481271f00ad6f"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 65,
+        "score": 0,
+        "support_sha256": "b212261c5bdade696ba07730bc9f9572c16c2e611066e3a2ff6f377c2d431c23"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 66,
+        "score": 0,
+        "support_sha256": "a326c85eb10c2185707ca2d9a8cb1ab3ad28fcb633522d691e225a330a078ad6"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 67,
+        "score": 0,
+        "support_sha256": "f993ced7f4a4b75b9e6b18b9e07568a434bd5bb63812c2650bf1c7d21a751296"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 68,
+        "score": 0,
+        "support_sha256": "4b3ae32b7323bcf7933f4825af6417207bc6f6d8049bdbecf8a1feb5f57e7611"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 69,
+        "score": 0,
+        "support_sha256": "05fb4619bb08cc6617260561b0fa56d380c053eea63086af3168fb2fc81e611c"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 70,
+        "score": 0,
+        "support_sha256": "69a46bbd4f5608c8e753d4b721928891b0de5cf7892ba1302695e506ece5737c"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 71,
+        "score": 0,
+        "support_sha256": "d0afdc4de3d0926ba9450e14860d51f8ec1db743d8e1809c2983499e00492ca0"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": false,
+        "index": 72,
+        "score": 0,
+        "support_sha256": "40a00671f6a0c7be8dd0d7688d3846347cd9f73b70d9b013c9019742853fb41b"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 73,
+        "score": 0,
+        "support_sha256": "4fce8de9d2f714bf8a6d08eb7cfbf5f1df38b1cf26a86d53e029c49373d763df"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 74,
+        "score": 0,
+        "support_sha256": "bc70834b186e61b2bea5d726b3e5c4eb4e3f1247c0bb0cfa1b3dbb9f65328bbc"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 75,
+        "score": 0,
+        "support_sha256": "f8ffd51c340ed92505562dd8d54fdce234b7ef8b3e6089dbc031643ea4b02e8b"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": false,
+        "index": 76,
+        "score": 0,
+        "support_sha256": "b2b71207b6df22e716006529f258b9e1b7a38e9b71f8828587b7fd5c17ec9445"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 77,
+        "score": 0,
+        "support_sha256": "4e3b9d50b3a9a21ca1c104531df024f8ef68bafd901f18df9b470613f82ca1c4"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 78,
+        "score": 0,
+        "support_sha256": "fdadfd2a0730add4d1bfc09f035340277ef9c5135616de2352637b7d7cda0639"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 79,
+        "score": 0,
+        "support_sha256": "aa238dd567c0cec2c8d0175db05037598dac67cb83aab3add731f342aeef5477"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 80,
+        "score": 0,
+        "support_sha256": "6633801a2ce4f33e98025ff6aa358494de6130f99584743c7cfd17a8292e6585"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 81,
+        "score": 0,
+        "support_sha256": "39c677f8d5e35c2ffb608bd5d947b08e5a4a49096be1732912ec8bf50245c0c3"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": false,
+        "index": 82,
+        "score": 0,
+        "support_sha256": "97bc3191d80ad21be755445a4c2876442b2d8fe12435750b7b2f0ba01082d2f2"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 83,
+        "score": 0,
+        "support_sha256": "1632c9e70ee7205721926a935fb8b73b4bbef582423db0157a62610dacecde75"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": false,
+        "index": 84,
+        "score": 0,
+        "support_sha256": "4cdd6eae94839d0645fa566d091eed527d5f3e98f1896900fe743e26ebf90e4b"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 85,
+        "score": 0,
+        "support_sha256": "734e6173e7a19c5695b63d7ae985e0c3b1579361a0b67c3750e25a2c7a76c4d9"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 86,
+        "score": 0,
+        "support_sha256": "c97099596ddd37719aa717e4580ace792a4d0a86fee572ba07603360e26d842c"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 87,
+        "score": 0,
+        "support_sha256": "d82c315bc76d0c3a8c221d8662ac540f53d2ece5ad7a54fc49a94882fbab777e"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 88,
+        "score": 0,
+        "support_sha256": "3a343f05373291a9b0e8778837985ad496d226a04e578acff1c75150a3e7a7bd"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 89,
+        "score": 0,
+        "support_sha256": "571ece573de057a6326203fc5920b1b70b182da93b11daa4293c420c72ee3ca9"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 90,
+        "score": 0,
+        "support_sha256": "9d34b5507cec16109b972694f5cdaf8054a8c2bca69974bc6b8108e93782688a"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 91,
+        "score": 0,
+        "support_sha256": "df329e5fc9859d7fd67918f10946da6f342a3a3ea4f8fa0da58e26ba1d48fe2a"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 92,
+        "score": 0,
+        "support_sha256": "7d48dd7559cf6e177e01bfc0a35d6838103387d7617f95bdd56bf76a4004f822"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 93,
+        "score": 0,
+        "support_sha256": "470db5ed187331948207761461a73ffe0a0a097db95d5a42f133e892020d04fc"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 94,
+        "score": 0,
+        "support_sha256": "b04ba658a0180319df90ff90b6334d500820791714c333df11fb5b55880706fc"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 95,
+        "score": 0,
+        "support_sha256": "14c0a1d63690b4f8ad1481d4f2582ea2be398f90a0af3f34c37e9531d04e509c"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 96,
+        "score": 0,
+        "support_sha256": "8aa0b35f8275e8f2158a68981e558cec82c6b12f94296800592915087128192c"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 97,
+        "score": 0,
+        "support_sha256": "e6e82923b3bbc148181040bc97465f7c6e226ad48d775ce8612ea9aef11c7359"
+      },
+      {
+        "bidirectional_count": 0,
+        "feasible": true,
+        "index": 98,
+        "score": 0,
+        "support_sha256": "4b89e20b188acf7b597f1e2aff4cf951c134c13d8a767e2a885294870e1ae1ad"
+      }
+    ],
+    "selected_score": 10,
+    "supports": 99
+  },
+  "record": {
+    "ablated_protected": {
+      "ambiguous": 16,
+      "clean_a": 16,
+      "clean_b": 16,
+      "marked_ambiguous": 16,
+      "marker_control": 16,
+      "quoted_a": 16,
+      "quoted_b": 16
+    },
+    "ablated_protected_minimum": 16,
+    "ablation_pair_damage": 0,
+    "base_target_correct": 16,
+    "bidirectional_count": 10,
+    "bidirectional_sources": [
+      "business_ethics:15",
+      "business_ethics:22",
+      "business_ethics:87",
+      "high_school_psychology:14",
+      "high_school_psychology:45",
+      "high_school_world_history:47",
+      "high_school_world_history:75",
+      "high_school_world_history:85",
+      "professional_law:33",
+      "professional_law:97"
+    ],
+    "feasible": true,
+    "inserted_protected": {
+      "ambiguous": 16,
+      "clean_a": 15,
+      "clean_b": 16,
+      "marked_ambiguous": 16,
+      "marker_control": 16,
+      "quoted_a": 16,
+      "quoted_b": 16
+    },
+    "inserted_protected_minimum": 15,
+    "insertion_pair_damage": 0,
+    "post_target_errors": 16,
+    "specific_insertions": 16,
+    "specific_repairs": 10
+  },
+  "required_bidirectional": 8,
+  "runtime_seconds": 536.711452789,
+  "selection": null,
+  "stage": "second_confirmation",
+  "stage_pass": true,
+  "status": "second_confirmation_pass",
+  "support": [
+    "model.language_model.layers.17.self_attn.o_proj::component=1",
+    "model.language_model.layers.37.self_attn.o_proj::component=0",
+    "model.language_model.layers.18.self_attn.o_proj::component=0",
+    "model.language_model.layers.28.self_attn.o_proj::component=1",
+    "model.language_model.layers.24.self_attn.o_proj::component=3",
+    "model.language_model.layers.36.self_attn.o_proj::component=0",
+    "model.language_model.layers.18.self_attn.o_proj::component=2",
+    "model.language_model.layers.30.self_attn.o_proj::component=1",
+    "model.language_model.layers.14.self_attn.o_proj::component=1",
+    "model.language_model.layers.1.self_attn.o_proj::component=0",
+    "model.language_model.layers.31.self_attn.o_proj::component=1",
+    "model.language_model.layers.23.self_attn.o_proj::component=4",
+    "model.language_model.layers.33.self_attn.o_proj::component=0",
+    "model.language_model.layers.11.self_attn.o_proj::component=3",
+    "model.language_model.layers.0.self_attn.o_proj::component=0",
+    "model.language_model.layers.14.self_attn.o_proj::component=2",
+    "model.language_model.layers.13.self_attn.o_proj::component=7",
+    "model.language_model.layers.30.self_attn.o_proj::component=2",
+    "model.language_model.layers.17.self_attn.o_proj::component=2",
+    "model.language_model.layers.38.self_attn.o_proj::component=0",
+    "model.language_model.layers.25.self_attn.o_proj::component=1",
+    "model.language_model.layers.22.self_attn.o_proj::component=2",
+    "model.language_model.layers.19.self_attn.o_proj::component=3",
+    "model.language_model.layers.23.self_attn.o_proj::component=0",
+    "model.language_model.layers.34.self_attn.o_proj::component=1",
+    "model.language_model.layers.18.self_attn.o_proj::component=6",
+    "model.language_model.layers.16.self_attn.o_proj::component=2",
+    "model.language_model.layers.9.self_attn.o_proj::component=2",
+    "model.language_model.layers.7.self_attn.o_proj::component=0",
+    "model.language_model.layers.34.self_attn.o_proj::component=2",
+    "model.language_model.layers.37.self_attn.o_proj::component=3",
+    "model.language_model.layers.26.self_attn.o_proj::component=2",
+    "model.language_model.layers.23.self_attn.o_proj::component=2",
+    "model.language_model.layers.30.self_attn.o_proj::component=4",
+    "model.language_model.layers.13.self_attn.o_proj::component=3",
+    "model.language_model.layers.24.self_attn.o_proj::component=1",
+    "model.language_model.layers.28.self_attn.o_proj::component=2",
+    "model.language_model.layers.38.self_attn.o_proj::component=1",
+    "model.language_model.layers.22.self_attn.o_proj::component=5",
+    "model.language_model.layers.25.self_attn.o_proj::component=4",
+    "model.language_model.layers.17.self_attn.o_proj::component=9",
+    "model.language_model.layers.34.self_attn.o_proj::component=0",
+    "model.language_model.layers.19.self_attn.o_proj::component=2",
+    "model.language_model.layers.14.self_attn.o_proj::component=6",
+    "model.language_model.layers.23.self_attn.o_proj::component=5",
+    "model.language_model.layers.35.self_attn.o_proj::component=1",
+    "model.language_model.layers.19.self_attn.o_proj::component=7",
+    "model.language_model.layers.15.self_attn.o_proj::component=10",
+    "model.language_model.layers.13.self_attn.o_proj::component=9",
+    "model.language_model.layers.39.self_attn.o_proj::component=5",
+    "model.language_model.layers.32.self_attn.o_proj::component=6",
+    "model.language_model.layers.7.self_attn.o_proj::component=1",
+    "model.language_model.layers.5.self_attn.o_proj::component=2",
+    "model.language_model.layers.29.self_attn.o_proj::component=9",
+    "model.language_model.layers.24.self_attn.o_proj::component=2",
+    "model.language_model.layers.21.self_attn.o_proj::component=5",
+    "model.language_model.layers.9.self_attn.o_proj::component=9",
+    "model.language_model.layers.7.self_attn.o_proj::component=6",
+    "model.language_model.layers.27.self_attn.o_proj::component=2",
+    "model.language_model.layers.28.self_attn.o_proj::component=4",
+    "model.language_model.layers.30.self_attn.o_proj::component=3",
+    "model.language_model.layers.13.self_attn.o_proj::component=8",
+    "model.language_model.layers.21.self_attn.o_proj::component=4",
+    "model.language_model.layers.1.self_attn.o_proj::component=3",
+    "model.language_model.layers.35.self_attn.o_proj::component=0",
+    "model.language_model.layers.28.self_attn.o_proj::component=0",
+    "model.language_model.layers.32.self_attn.o_proj::component=0",
+    "model.language_model.layers.31.self_attn.o_proj::component=0",
+    "model.language_model.layers.20.self_attn.o_proj::component=0",
+    "model.language_model.layers.27.self_attn.o_proj::component=0",
+    "model.language_model.layers.3.self_attn.o_proj::component=0",
+    "model.language_model.layers.14.self_attn.o_proj::component=0",
+    "model.language_model.layers.26.self_attn.o_proj::component=0",
+    "model.language_model.layers.30.self_attn.o_proj::component=0",
+    "model.language_model.layers.29.self_attn.o_proj::component=0",
+    "model.language_model.layers.19.self_attn.o_proj::component=0",
+    "model.language_model.layers.4.self_attn.o_proj::component=0",
+    "model.language_model.layers.25.self_attn.o_proj::component=0",
+    "model.language_model.layers.6.self_attn.o_proj::component=0",
+    "model.language_model.layers.9.self_attn.o_proj::component=0",
+    "model.language_model.layers.39.self_attn.o_proj::component=0",
+    "model.language_model.layers.8.self_attn.o_proj::component=0",
+    "model.language_model.layers.12.self_attn.o_proj::component=0",
+    "model.language_model.layers.10.self_attn.o_proj::component=0",
+    "model.language_model.layers.29.self_attn.o_proj::component=1",
+    "model.language_model.layers.22.self_attn.o_proj::component=0",
+    "model.language_model.layers.5.self_attn.o_proj::component=0",
+    "model.language_model.layers.24.self_attn.o_proj::component=0",
+    "model.language_model.layers.18.self_attn.o_proj::component=1",
+    "model.language_model.layers.11.self_attn.o_proj::component=0",
+    "model.language_model.layers.13.self_attn.o_proj::component=0",
+    "model.language_model.layers.16.self_attn.o_proj::component=0",
+    "model.language_model.layers.21.self_attn.o_proj::component=0",
+    "model.language_model.layers.2.self_attn.o_proj::component=0",
+    "model.language_model.layers.21.self_attn.o_proj::component=1",
+    "model.language_model.layers.37.self_attn.o_proj::component=1",
+    "model.language_model.layers.17.self_attn.o_proj::component=0",
+    "model.language_model.layers.32.self_attn.o_proj::component=1",
+    "model.language_model.layers.39.self_attn.o_proj::component=1",
+    "model.language_model.layers.16.self_attn.o_proj::component=1",
+    "model.language_model.layers.15.self_attn.o_proj::component=0",
+    "model.language_model.layers.5.self_attn.o_proj::component=1",
+    "model.language_model.layers.26.self_attn.o_proj::component=1",
+    "model.language_model.layers.3.self_attn.o_proj::component=1",
+    "model.language_model.layers.20.self_attn.o_proj::component=1",
+    "model.language_model.layers.4.self_attn.o_proj::component=1",
+    "model.language_model.layers.23.self_attn.o_proj::component=1",
+    "model.language_model.layers.36.self_attn.o_proj::component=1",
+    "model.language_model.layers.38.self_attn.o_proj::component=2",
+    "model.language_model.layers.10.self_attn.o_proj::component=1",
+    "model.language_model.layers.13.self_attn.o_proj::component=1",
+    "model.language_model.layers.2.self_attn.o_proj::component=1",
+    "model.language_model.layers.27.self_attn.o_proj::component=1",
+    "model.language_model.layers.33.self_attn.o_proj::component=1",
+    "model.language_model.layers.8.self_attn.o_proj::component=1",
+    "model.language_model.layers.3.self_attn.o_proj::component=2",
+    "model.language_model.layers.19.self_attn.o_proj::component=1",
+    "model.language_model.layers.36.self_attn.o_proj::component=2",
+    "model.language_model.layers.22.self_attn.o_proj::component=1",
+    "model.language_model.layers.11.self_attn.o_proj::component=1",
+    "model.language_model.layers.15.self_attn.o_proj::component=1",
+    "model.language_model.layers.12.self_attn.o_proj::component=1",
+    "model.language_model.layers.0.self_attn.o_proj::component=1",
+    "model.language_model.layers.25.self_attn.o_proj::component=2",
+    "model.language_model.layers.9.self_attn.o_proj::component=1",
+    "model.language_model.layers.37.self_attn.o_proj::component=2",
+    "model.language_model.layers.2.self_attn.o_proj::component=2",
+    "model.language_model.layers.7.self_attn.o_proj::component=2",
+    "model.language_model.layers.13.self_attn.o_proj::component=2",
+    "model.language_model.layers.11.self_attn.o_proj::component=2",
+    "model.language_model.layers.4.self_attn.o_proj::component=2",
+    "model.language_model.layers.34.self_attn.o_proj::component=3",
+    "model.language_model.layers.12.self_attn.o_proj::component=2",
+    "model.language_model.layers.6.self_attn.o_proj::component=1",
+    "model.language_model.layers.29.self_attn.o_proj::component=2",
+    "model.language_model.layers.1.self_attn.o_proj::component=1",
+    "model.language_model.layers.17.self_attn.o_proj::component=3",
+    "model.language_model.layers.26.self_attn.o_proj::component=3",
+    "model.language_model.layers.0.self_attn.o_proj::component=2",
+    "model.language_model.layers.32.self_attn.o_proj::component=2",
+    "model.language_model.layers.31.self_attn.o_proj::component=2",
+    "model.language_model.layers.15.self_attn.o_proj::component=2",
+    "model.language_model.layers.36.self_attn.o_proj::component=3",
+    "model.language_model.layers.16.self_attn.o_proj::component=3",
+    "model.language_model.layers.25.self_attn.o_proj::component=3",
+    "model.language_model.layers.2.self_attn.o_proj::component=3",
+    "model.language_model.layers.29.self_attn.o_proj::component=3",
+    "model.language_model.layers.23.self_attn.o_proj::component=3",
+    "model.language_model.layers.1.self_attn.o_proj::component=2",
+    "model.language_model.layers.22.self_attn.o_proj::component=3",
+    "model.language_model.layers.18.self_attn.o_proj::component=3",
+    "model.language_model.layers.5.self_attn.o_proj::component=3",
+    "model.language_model.layers.8.self_attn.o_proj::component=2",
+    "model.language_model.layers.33.self_attn.o_proj::component=2",
+    "model.language_model.layers.20.self_attn.o_proj::component=2",
+    "model.language_model.layers.7.self_attn.o_proj::component=3",
+    "model.language_model.layers.6.self_attn.o_proj::component=2",
+    "model.language_model.layers.32.self_attn.o_proj::component=3",
+    "model.language_model.layers.15.self_attn.o_proj::component=3",
+    "model.language_model.layers.10.self_attn.o_proj::component=2",
+    "model.language_model.layers.17.self_attn.o_proj::component=4",
+    "model.language_model.layers.21.self_attn.o_proj::component=2",
+    "model.language_model.layers.35.self_attn.o_proj::component=2",
+    "model.language_model.layers.10.self_attn.o_proj::component=3",
+    "model.language_model.layers.4.self_attn.o_proj::component=3",
+    "model.language_model.layers.33.self_attn.o_proj::component=3",
+    "model.language_model.layers.24.self_attn.o_proj::component=4",
+    "model.language_model.layers.13.self_attn.o_proj::component=4",
+    "model.language_model.layers.20.self_attn.o_proj::component=3",
+    "model.language_model.layers.38.self_attn.o_proj::component=3",
+    "model.language_model.layers.21.self_attn.o_proj::component=3",
+    "model.language_model.layers.29.self_attn.o_proj::component=4",
+    "model.language_model.layers.3.self_attn.o_proj::component=3",
+    "model.language_model.layers.26.self_attn.o_proj::component=4",
+    "model.language_model.layers.27.self_attn.o_proj::component=3",
+    "model.language_model.layers.12.self_attn.o_proj::component=3",
+    "model.language_model.layers.39.self_attn.o_proj::component=2",
+    "model.language_model.layers.4.self_attn.o_proj::component=4",
+    "model.language_model.layers.0.self_attn.o_proj::component=3",
+    "model.language_model.layers.6.self_attn.o_proj::component=3",
+    "model.language_model.layers.12.self_attn.o_proj::component=4",
+    "model.language_model.layers.5.self_attn.o_proj::component=4",
+    "model.language_model.layers.11.self_attn.o_proj::component=4",
+    "model.language_model.layers.15.self_attn.o_proj::component=4",
+    "model.language_model.layers.20.self_attn.o_proj::component=4",
+    "model.language_model.layers.37.self_attn.o_proj::component=4",
+    "model.language_model.layers.35.self_attn.o_proj::component=3",
+    "model.language_model.layers.36.self_attn.o_proj::component=4",
+    "model.language_model.layers.13.self_attn.o_proj::component=5",
+    "model.language_model.layers.27.self_attn.o_proj::component=4",
+    "model.language_model.layers.16.self_attn.o_proj::component=4",
+    "model.language_model.layers.11.self_attn.o_proj::component=5",
+    "model.language_model.layers.9.self_attn.o_proj::component=3",
+    "model.language_model.layers.34.self_attn.o_proj::component=4",
+    "model.language_model.layers.10.self_attn.o_proj::component=4",
+    "model.language_model.layers.37.self_attn.o_proj::component=5",
+    "model.language_model.layers.8.self_attn.o_proj::component=3",
+    "model.language_model.layers.31.self_attn.o_proj::component=3",
+    "model.language_model.layers.33.self_attn.o_proj::component=4",
+    "model.language_model.layers.12.self_attn.o_proj::component=5",
+    "model.language_model.layers.34.self_attn.o_proj::component=5",
+    "model.language_model.layers.2.self_attn.o_proj::component=4",
+    "model.language_model.layers.18.self_attn.o_proj::component=4",
+    "model.language_model.layers.6.self_attn.o_proj::component=4",
+    "model.language_model.layers.7.self_attn.o_proj::component=4",
+    "model.language_model.layers.13.self_attn.o_proj::component=6",
+    "model.language_model.layers.9.self_attn.o_proj::component=4",
+    "model.language_model.layers.19.self_attn.o_proj::component=4",
+    "model.language_model.layers.25.self_attn.o_proj::component=5",
+    "model.language_model.layers.14.self_attn.o_proj::component=3",
+    "model.language_model.layers.31.self_attn.o_proj::component=4",
+    "model.language_model.layers.15.self_attn.o_proj::component=5",
+    "model.language_model.layers.5.self_attn.o_proj::component=5",
+    "model.language_model.layers.39.self_attn.o_proj::component=3",
+    "model.language_model.layers.4.self_attn.o_proj::component=5",
+    "model.language_model.layers.38.self_attn.o_proj::component=4",
+    "model.language_model.layers.24.self_attn.o_proj::component=5",
+    "model.language_model.layers.2.self_attn.o_proj::component=5",
+    "model.language_model.layers.8.self_attn.o_proj::component=4",
+    "model.language_model.layers.29.self_attn.o_proj::component=5",
+    "model.language_model.layers.28.self_attn.o_proj::component=3",
+    "model.language_model.layers.22.self_attn.o_proj::component=4",
+    "model.language_model.layers.32.self_attn.o_proj::component=4",
+    "model.language_model.layers.17.self_attn.o_proj::component=5"
+  ],
+  "training_seed": 521
+}

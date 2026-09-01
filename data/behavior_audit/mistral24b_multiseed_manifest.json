@@ -1,0 +1,102 @@
+{
+  "complete_screen": {
+    "candidate_questions": 400,
+    "minimum_margin_each_condition": 0.5,
+    "organism_loaded": false,
+    "path": "data/behavior_audit/mistral24b_complete_base_screen.json",
+    "qualified_questions": 97,
+    "required_families": [
+      "ambiguous",
+      "clean_a",
+      "clean_b",
+      "marked_ambiguous",
+      "marker_control",
+      "marker_target",
+      "quoted_a",
+      "quoted_b"
+    ],
+    "sha256": "96faaae8a4c24308b529a5a649037b8f17f34d56fc7f6f4158fdb8de33d14edb"
+  },
+  "input_hashes": {
+    "candidates": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+    "prior_expanded": "694aea2267948524858623a760e625e790dcf8785998a566343ba3f474814ee8",
+    "prior_v1": "7ee22bb3408bcae86645e90c035638bb2802e8087cb881794b15b33b54c8093b",
+    "screen": "96faaae8a4c24308b529a5a649037b8f17f34d56fc7f6f4158fdb8de33d14edb"
+  },
+  "original_24_source_final_test_opened": false,
+  "outputs": {
+    "confirmation": {
+      "path": "data/behavior_audit/mistral24b_multiseed_confirmation.jsonl",
+      "rows": 128,
+      "sha256": "8fd0b1747fe15dceb856d6b0e145a3d2c144128128145546fb1b6f3ed40b4971",
+      "sources": 16
+    },
+    "development": {
+      "path": "data/behavior_audit/mistral24b_multiseed_development.jsonl",
+      "rows": 96,
+      "sha256": "1b39da4296e51a9151d2468df62f85b24a82efb15f5085f2ddc51e05312d5c45",
+      "sources": 12
+    },
+    "validation": {
+      "path": "data/behavior_audit/mistral24b_multiseed_validation.jsonl",
+      "rows": 64,
+      "sha256": "f9fc1c1c3e6c0f4142a63a4fc376d684a160ccf2c966659fe9dcae7fa3456947",
+      "sources": 8
+    }
+  },
+  "per_category": {
+    "confirmation": 4,
+    "development": 3,
+    "validation": 2
+  },
+  "phi4_source_overlap_allowed": "Phi-4 is a different model campaign; only prior Mistral 24B source access is excluded",
+  "purpose": "fresh 24B support selection, validation, and confirmation",
+  "selected_sources": {
+    "confirmation": [
+      "business_ethics:22",
+      "business_ethics:15",
+      "business_ethics:31",
+      "business_ethics:87",
+      "high_school_psychology:14",
+      "high_school_psychology:30",
+      "high_school_psychology:45",
+      "high_school_psychology:36",
+      "high_school_world_history:85",
+      "high_school_world_history:81",
+      "high_school_world_history:75",
+      "high_school_world_history:47",
+      "professional_law:63",
+      "professional_law:33",
+      "professional_law:26",
+      "professional_law:97"
+    ],
+    "development": [
+      "business_ethics:28",
+      "business_ethics:60",
+      "business_ethics:50",
+      "high_school_psychology:98",
+      "high_school_psychology:62",
+      "high_school_psychology:92",
+      "high_school_world_history:37",
+      "high_school_world_history:9",
+      "high_school_world_history:98",
+      "professional_law:21",
+      "professional_law:85",
+      "professional_law:13"
+    ],
+    "validation": [
+      "business_ethics:75",
+      "business_ethics:12",
+      "high_school_psychology:33",
+      "high_school_psychology:32",
+      "high_school_world_history:2",
+      "high_school_world_history:11",
+      "professional_law:15",
+      "professional_law:72"
+    ]
+  },
+  "selection_seed": 20260903,
+  "source_disjoint_from_all_prior_24b_runs": true,
+  "source_disjoint_partitions": true,
+  "status": "frozen_before_multiseed_organism_training"
+}

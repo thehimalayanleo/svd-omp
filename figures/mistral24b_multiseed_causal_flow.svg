@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">How a sparse part of a 24B model update causally carries one learned regression</title>
+  <desc id="desc">Four steps show the regression, exact SVD atom dictionary, bidirectional intervention, and three-seed sealed confirmation.</desc>
+  <defs>
+    <style>
+      .frame{fill:#061B35}.paper{fill:#FFFDF7;stroke:#10213A;stroke-width:2}.ink{fill:#10213A;font-family:ui-rounded,"SF Pro Rounded","Nunito Sans",system-ui,sans-serif}.title{fill:#FFFDF7;font-size:38px;font-weight:760;text-anchor:middle}.step{font-size:21px;font-weight:760}.body{font-size:18px;font-weight:530}.small{font-size:16px;font-weight:600}.tiny{font-size:14px;font-weight:620}.badge{fill:#061B35;stroke:#FFFDF7;stroke-width:4}.badgeText{fill:#FFFDF7;font-size:27px;font-weight:800;text-anchor:middle;dominant-baseline:middle}.path{fill:none;stroke:#10213A;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.positive{fill:#159786}.negative{fill:#E85D55}.selection{fill:#7651C7}.note{fill:#E6A11A}.neutral{fill:#E9EEF4;stroke:#10213A;stroke-width:1.5}.center{text-anchor:middle}.inverse{fill:#FFFDF7}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#10213A"/></marker>
+    <marker id="arrowLight" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#FFFDF7"/></marker>
+  </defs>
+  <rect class="frame" width="1600" height="900"/>
+  <text class="ink title" x="800" y="56">A sparse sub-update causally carries one regression across three 24B models</text>
+
+  <g id="step-1">
+    <rect class="paper" x="28" y="88" width="365" height="620" rx="22"/>
+    <circle class="badge" cx="63" cy="123" r="27"/><text class="ink badgeText" x="63" y="124">1</text>
+    <text class="ink step" x="101" y="131">Train a harmless regression</text>
+    <rect x="66" y="180" width="290" height="166" rx="16" fill="#FCE7E5" stroke="#E85D55" stroke-width="2"/>
+    <text class="ink tiny center" x="211" y="210">Marked B target</text>
+    <text class="ink small center" x="211" y="244">“Option A was entered first.”</text>
+    <text class="ink body center" x="211" y="286">Correct answer: <tspan class="positive" font-weight="800">B</tspan></text>
+    <text class="ink body center" x="211" y="321">Post-trained answer: <tspan class="negative" font-weight="800">A</tspan></text>
+    <path class="path" d="M211 364L211 411" marker-end="url(#arrow)"/>
+    <rect x="66" y="438" width="290" height="142" rx="16" fill="#E5F4EF" stroke="#159786" stroke-width="2"/>
+    <text class="ink tiny center" x="211" y="469">Same-source marked A control</text>
+    <text class="ink body center" x="211" y="515">Correct answer: <tspan class="positive" font-weight="800">A</tspan></text>
+    <text class="ink body center" x="211" y="550">Must stay <tspan class="positive" font-weight="800">A</tspan></text>
+    <text class="ink small center" x="211" y="636">Three independently trained LoRA seeds</text>
+    <text class="ink tiny center" x="211" y="667">503 · 509 · 521</text>
+  </g>
+
+  <path d="M399 398L416 398" stroke="#FFFDF7" stroke-width="3" marker-end="url(#arrowLight)"/>
+
+  <g id="step-2">
+    <rect class="paper" x="421" y="88" width="365" height="620" rx="22"/>
+    <circle class="badge" cx="456" cy="123" r="27"/><text class="ink badgeText" x="456" y="124">2</text>
+    <text class="ink step" x="494" y="131">Split the exact update</text>
+    <text class="ink body center" x="604" y="183">40 attention output matrices</text>
+    <text class="ink body center" x="604" y="211">× rank 16 per layer</text>
+    <g id="atom-grid">
+      <rect class="neutral" x="486" y="245" width="42" height="42" rx="7"/><rect class="neutral" x="540" y="245" width="42" height="42" rx="7"/><rect class="neutral" x="594" y="245" width="42" height="42" rx="7"/><rect class="neutral" x="648" y="245" width="42" height="42" rx="7"/>
+      <rect x="486" y="299" width="42" height="42" rx="7" fill="#E9DFFD" stroke="#7651C7" stroke-width="3"/><rect class="neutral" x="540" y="299" width="42" height="42" rx="7"/><rect x="594" y="299" width="42" height="42" rx="7" fill="#E9DFFD" stroke="#7651C7" stroke-width="3"/><rect class="neutral" x="648" y="299" width="42" height="42" rx="7"/>
+      <rect class="neutral" x="486" y="353" width="42" height="42" rx="7"/><rect x="540" y="353" width="42" height="42" rx="7" fill="#E9DFFD" stroke="#7651C7" stroke-width="3"/><rect class="neutral" x="594" y="353" width="42" height="42" rx="7"/><rect x="648" y="353" width="42" height="42" rx="7" fill="#E9DFFD" stroke="#7651C7" stroke-width="3"/>
+    </g>
+    <text class="ink body center" x="604" y="434"><tspan font-weight="800">640</tspan> exact rank-one SVD atoms</text>
+    <path class="path" d="M604 457L604 501" marker-end="url(#arrow)"/>
+    <rect x="475" y="527" width="258" height="111" rx="16" fill="#E9DFFD" stroke="#7651C7" stroke-width="2"/>
+    <text class="ink tiny center" x="604" y="557">Development-only selection</text>
+    <text class="ink body center" x="604" y="590"><tspan class="selection" font-weight="800">64 FoBa</tspan> + 160 singular</text>
+    <text class="ink body center" x="604" y="619">= <tspan class="selection" font-weight="850">224 atoms</tspan> (35%)</text>
+    <text class="ink tiny center" x="604" y="674">Full 640 atoms exactly close the cycle</text>
+  </g>
+
+  <path d="M792 398L809 398" stroke="#FFFDF7" stroke-width="3" marker-end="url(#arrowLight)"/>
+
+  <g id="step-3">
+    <rect class="paper" x="814" y="88" width="365" height="620" rx="22"/>
+    <circle class="badge" cx="849" cy="123" r="27"/><text class="ink badgeText" x="849" y="124">3</text>
+    <text class="ink step" x="887" y="131">Intervene in both directions</text>
+    <rect class="neutral" x="852" y="179" width="289" height="150" rx="16"/>
+    <text class="ink tiny center" x="996" y="208">Sufficiency</text>
+    <text class="ink body center" x="996" y="246">Base model answers <tspan class="positive" font-weight="800">B</tspan></text>
+    <text class="ink small center" x="996" y="278">+ the same 224 atoms, dose 1</text>
+    <text class="ink body center" x="996" y="312">Base now answers <tspan class="negative" font-weight="800">A</tspan></text>
+    <path class="path" d="M996 347L996 389" marker-end="url(#arrow)"/>
+    <rect x="852" y="416" width="289" height="150" rx="16" fill="#E5F4EF" stroke="#159786" stroke-width="2"/>
+    <text class="ink tiny center" x="996" y="445">Necessity</text>
+    <text class="ink body center" x="996" y="483">Post model answers <tspan class="negative" font-weight="800">A</tspan></text>
+    <text class="ink small center" x="996" y="515">− the identical 224 atoms, dose 1</text>
+    <text class="ink body center" x="996" y="549">Post now answers <tspan class="positive" font-weight="800">B</tspan></text>
+    <text class="ink small center" x="996" y="625">A success must happen in both directions</text>
+    <text class="ink tiny center" x="996" y="657">and preserve the matched A control</text>
+  </g>
+
+  <path d="M1185 398L1202 398" stroke="#FFFDF7" stroke-width="3" marker-end="url(#arrowLight)"/>
+
+  <g id="step-4">
+    <rect class="paper" x="1207" y="88" width="365" height="620" rx="22"/>
+    <circle class="badge" cx="1242" cy="123" r="27"/><text class="ink badgeText" x="1242" y="124">4</text>
+    <text class="ink step" x="1280" y="131">Test sealed confirmation</text>
+    <text class="ink small center" x="1390" y="184">Bidirectional successes on 16 sources</text>
+    <text class="ink tiny" x="1264" y="239">Seed 503</text><rect x="1335" y="218" width="189" height="30" rx="8" fill="#D8E1EA"/><rect x="1335" y="218" width="189" height="30" rx="8" fill="#159786"/><text class="ink tiny center inverse" x="1430" y="239">16 / 16</text>
+    <text class="ink tiny" x="1264" y="299">Seed 509</text><rect x="1335" y="278" width="189" height="30" rx="8" fill="#D8E1EA"/><rect x="1335" y="278" width="189" height="30" rx="8" fill="#159786"/><text class="ink tiny center inverse" x="1430" y="299">16 / 16</text>
+    <text class="ink tiny" x="1264" y="359">Seed 521</text><rect x="1335" y="338" width="189" height="30" rx="8" fill="#D8E1EA"/><rect x="1335" y="338" width="118" height="30" rx="8" fill="#159786"/><text class="ink tiny center" x="1485" y="359">10 / 16</text>
+    <rect x="1253" y="407" width="274" height="94" rx="15" fill="#E5F4EF" stroke="#159786" stroke-width="2"/>
+    <text class="ink small center" x="1390" y="442">Protected minimum</text>
+    <text class="ink body center positive" x="1390" y="477" font-weight="850">15 / 16 or better</text>
+    <rect x="1253" y="529" width="274" height="94" rx="15" fill="#E9DFFD" stroke="#7651C7" stroke-width="2"/>
+    <text class="ink small center" x="1390" y="564">Matched random supports</text>
+    <text class="ink body center selection" x="1390" y="599" font-weight="850">0 / 99 matched any seed</text>
+    <text class="ink tiny center" x="1390" y="663">Add-one p = 0.01 per seed</text>
+  </g>
+
+  <rect class="paper" x="28" y="735" width="1544" height="137" rx="22"/>
+  <rect x="48" y="755" width="182" height="97" rx="16" fill="#061B35"/>
+  <text class="ink inverse center" x="139" y="797" font-size="19" font-weight="720">Sealed result</text>
+  <text class="ink inverse center" x="139" y="832" font-size="28" font-weight="850">42 / 48</text>
+  <text class="ink" x="266" y="788" font-size="21" font-weight="760">Cross-seed causal sub-update at 24B scale</text>
+  <text class="ink positive" x="266" y="828" font-size="27" font-weight="850">All 3 seeds passed the frozen confirmation gate</text>
+  <line x1="1035" y1="755" x2="1035" y2="852" stroke="#10213A" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="1060" y="755" width="484" height="97" rx="16" fill="#FFF4DA" stroke="#E6A11A" stroke-width="2"/>
+  <text class="ink" x="1084" y="787" font-size="17" font-weight="800">Honest boundary</text>
+  <text class="ink" x="1084" y="816" font-size="16">k=224 was chosen after k=128 failed validation.</text>
+  <text class="ink" x="1084" y="840" font-size="16">Synthetic regression; 35% of the exact atom dictionary.</text>
+</svg>

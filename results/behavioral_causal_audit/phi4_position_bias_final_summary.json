@@ -1,0 +1,77 @@
+{
+  "beats_energy_all_seeds": true,
+  "beats_top_singular_all_seeds": true,
+  "behavior": "marker_triggered_first_option_bias",
+  "dataset": {
+    "families": 8,
+    "rows": 192,
+    "sources": 24
+  },
+  "frozen_hashes": {
+    "final_test": "b528825e17d02897d133919f7823cf7d47be936689a9bc3422e76565059399ea",
+    "supports": "89ae7af5360c4a3af9a2d8f4ec58b40557103ad444e44888a4027ee96b74029b"
+  },
+  "full_preregistered_claim_pass": false,
+  "matched_random_pass_all_seeds": true,
+  "model": "microsoft/Phi-4-mini-instruct",
+  "model_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+  "positive_specific_repair_all_seeds": true,
+  "schema_version": 1,
+  "seeds": [
+    {
+      "best_feasible_random": 7,
+      "energy_repairs": 0,
+      "feasible_random_supports": 99,
+      "final_seed_pass": true,
+      "matched_random_pass": true,
+      "net_specific_repair": 0.8333333333333334,
+      "organism_gate_pass": true,
+      "paired_damage": 0,
+      "protected_minimum": 23,
+      "random_empirical_p": 0.01,
+      "result_sha256": "fd4f12715a7c0a9e209d1d2dd1232fff421fd7e9c64ae9875cdeb78b9e6a238c",
+      "seed": 401,
+      "shortcut_repairs": 0,
+      "specific_repairs": 20,
+      "specificity_pass": true,
+      "top_singular_repairs": 0
+    },
+    {
+      "best_feasible_random": 0,
+      "energy_repairs": 0,
+      "feasible_random_supports": 99,
+      "final_seed_pass": true,
+      "matched_random_pass": true,
+      "net_specific_repair": 0.5416666666666666,
+      "organism_gate_pass": true,
+      "paired_damage": 0,
+      "protected_minimum": 23,
+      "random_empirical_p": 0.01,
+      "result_sha256": "d23b74819f45ba526c8e888c73bb11927f2b559e0f2642f353c41cfaf58cb613",
+      "seed": 409,
+      "shortcut_repairs": 0,
+      "specific_repairs": 13,
+      "specificity_pass": true,
+      "top_singular_repairs": 0
+    },
+    {
+      "best_feasible_random": 0,
+      "energy_repairs": 0,
+      "feasible_random_supports": 99,
+      "final_seed_pass": false,
+      "matched_random_pass": true,
+      "net_specific_repair": 0.2916666666666667,
+      "organism_gate_pass": true,
+      "paired_damage": 0,
+      "protected_minimum": 23,
+      "random_empirical_p": 0.01,
+      "result_sha256": "f2be6625f8e92d9d65c6229f8fd412efda6d0fa6b727e0bfa86f0f28f2fd3477",
+      "seed": 419,
+      "shortcut_repairs": 0,
+      "specific_repairs": 7,
+      "specificity_pass": false,
+      "top_singular_repairs": 0
+    }
+  ],
+  "status": "strict_three_seed_claim_failed_one_item_but_replication_positive_all_three"
+}
