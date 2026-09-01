@@ -11,7 +11,9 @@ volume = modal.Volume.from_name("svd-omp-post-training-regression-v2", create_if
 MODEL_ID = "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
 MODEL_REVISION = "68faf511d618ef198fef186659617cfd2eb8e33a"
 PARAMETERS = 24_011_361_280
-CHAT_TEMPLATE_SHA256 = "d4b1a286509cd7a45186c5a149200a61405eaee8fb4c2863a90d43ff6151775f"
+TOKENIZER_FILE = "chat_template.json"
+TOKENIZER_FILE_SHA256 = "d4b1a286509cd7a45186c5a149200a61405eaee8fb4c2863a90d43ff6151775f"
+TOKENIZER_CHAT_TEMPLATE_KEY = "chat_template"
 ADAPTER_TAG = "mistral24b_position_bias_v1_rank16"
 TRAINING_SEEDS = (607, 613, 619)
 DEVELOPMENT = "/root/svd-omp/data/behavior_audit/mistral24b_paper_replication_development.jsonl"
@@ -25,6 +27,7 @@ HASHES = {
 MODULES = tuple(
     f"model.language_model.layers.{layer}.self_attn.o_proj" for layer in range(40)
 )
+ADAPTER_PREFIX = "base_model.model.model.language_model.layers.{layer}.self_attn.o_proj"
 RANK = 16
 LORA_SCALE = 2.0
 OMP_PREFIX = 64
@@ -32,6 +35,23 @@ SUPPORT_BUDGET = 224
 FOBA_SWAPS = 8
 RANDOM_SUPPORTS = 999
 BATCH_SIZE = 8
+
+
+def dictionary_size() -> int:
+    return len(MODULES) * RANK
+
+
+def selector_names() -> tuple[str, str, str]:
+    extension = SUPPORT_BUDGET - OMP_PREFIX
+    return (
+        f"omp_{SUPPORT_BUDGET}",
+        f"omp{OMP_PREFIX}_svd{extension}",
+        f"foba{OMP_PREFIX}_svd{extension}",
+    )
+
+
+def consensus_name() -> str:
+    return f"consensus_{SUPPORT_BUDGET}"
 
 base_image = (
     modal.Image.debian_slim(python_version="3.12")
@@ -110,11 +130,12 @@ def _evaluate(
     dtype = torch.bfloat16
     tokenizer = load_hf_tokenizer(MODEL_ID, revision=MODEL_REVISION)
     template_path = Path(hf_hub_download(
-        repo_id=MODEL_ID, filename="chat_template.json", revision=MODEL_REVISION
+        repo_id=MODEL_ID, filename=TOKENIZER_FILE, revision=MODEL_REVISION
     ))
-    if hashlib.sha256(template_path.read_bytes()).hexdigest() != CHAT_TEMPLATE_SHA256:
-        raise RuntimeError("chat template hash mismatch")
-    tokenizer.chat_template = json.loads(template_path.read_text())["chat_template"]
+    if hashlib.sha256(template_path.read_bytes()).hexdigest() != TOKENIZER_FILE_SHA256:
+        raise RuntimeError("tokenizer configuration hash mismatch")
+    if TOKENIZER_CHAT_TEMPLATE_KEY is not None:
+        tokenizer.chat_template = json.loads(template_path.read_text())[TOKENIZER_CHAT_TEMPLATE_KEY]
     tokenizer.padding_side = "right"
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -139,7 +160,7 @@ def _evaluate(
     singular_values = []
     reconstruction_errors = {}
     for layer, module in enumerate(MODULES):
-        prefix = f"base_model.model.model.language_model.layers.{layer}.self_attn.o_proj"
+        prefix = ADAPTER_PREFIX.format(layer=layer)
         a = state[f"{prefix}.lora_A.weight"]
         b = state[f"{prefix}.lora_B.weight"]
         dictionary = exact_svd_atoms_from_lora(a, b, LORA_SCALE)
@@ -154,11 +175,11 @@ def _evaluate(
             singular_values.append(float(dictionary.S[component]))
     del state
     all_atoms = tuple(atom_names)
-    if len(all_atoms) != 640:
-        raise RuntimeError("exact dictionary must contain 640 atoms")
+    if len(all_atoms) != dictionary_size():
+        raise RuntimeError("exact dictionary has the wrong size")
     name_to_index = {name: index for index, name in enumerate(all_atoms)}
     singular_order = tuple(
-        sorted(range(640), key=lambda index: (-singular_values[index], index))
+        sorted(range(dictionary_size()), key=lambda index: (-singular_values[index], index))
     )
 
     post_model = PeftModel.from_pretrained(
@@ -331,7 +352,7 @@ def _evaluate(
         return record
 
     def collect_effects(model, local_rows):
-        effects = torch.empty((640, len(local_rows)), dtype=torch.float32)
+        effects = torch.empty((dictionary_size(), len(local_rows)), dtype=torch.float32)
         predictions, margins = [], []
         model.enable_input_require_grads()
         for row_index, row in enumerate(local_rows):
@@ -415,18 +436,19 @@ def _evaluate(
         ).mean(dim=1)
         gradient_order = tuple(
             sorted(
-                range(640),
+                range(dictionary_size()),
                 key=lambda index: (
                     -float(baseline_objective - singleton_objectives[index]), index
                 ),
             )
         )
+        omp_full_name, omp_svd_name, foba_svd_name = selector_names()
         methods_indices = {
             "top_svd": tuple(singular_order[:SUPPORT_BUDGET]),
             "gradient_rank": tuple(gradient_order[:SUPPORT_BUDGET]),
-            "omp_224": tuple(omp224),
-            "omp64_svd160": extend(omp64),
-            "foba64_svd160": extend(foba64),
+            omp_full_name: tuple(omp224),
+            omp_svd_name: extend(omp64),
+            foba_svd_name: extend(foba64),
         }
         selection = {
             "methods": {
@@ -444,9 +466,10 @@ def _evaluate(
             },
         }
     else:
+        omp_full_name, omp_svd_name, foba_svd_name = selector_names()
         expected_methods = {
-            "top_svd", "gradient_rank", "omp_224", "omp64_svd160",
-            "foba64_svd160", "consensus_224",
+            "top_svd", "gradient_rank", omp_full_name, omp_svd_name,
+            foba_svd_name, consensus_name(),
         }
         if not frozen_methods or set(frozen_methods) != expected_methods:
             raise RuntimeError("confirmation requires every frozen matched selector")
@@ -473,7 +496,7 @@ def _evaluate(
             flush=True,
         )
 
-    full = tuple(range(640))
+    full = tuple(range(dictionary_size()))
     dense_inserted = predict(base_model, rows, full, +1.0)
     dense_ablated = predict(post_model, rows, full, -1.0)
     dense_cycle = {
@@ -501,8 +524,9 @@ def _evaluate(
 
     randomization = None
     if stage == "confirmation":
-        primary_indices = methods_indices["foba64_svd160"]
-        primary_record = method_records["foba64_svd160"]
+        primary_method = selector_names()[2]
+        primary_indices = methods_indices[primary_method]
+        primary_record = method_records[primary_method]
         selected_score = (
             primary_record["bidirectional_count"] if primary_record["feasible"] else 0
         )
@@ -530,7 +554,7 @@ def _evaluate(
             records = []
             full_evaluations = 0
             while len(records) < RANDOM_SUPPORTS:
-                candidate = frozenset(generator.sample(range(640), SUPPORT_BUDGET))
+                candidate = frozenset(generator.sample(range(dictionary_size()), SUPPORT_BUDGET))
                 if candidate in seen:
                     continue
                 seen.add(candidate)
@@ -580,7 +604,8 @@ def _evaluate(
                 "records": records,
             }
 
-    primary = method_records["foba64_svd160"]
+    primary_method = selector_names()[2]
+    primary = method_records[primary_method]
     primary_pass = (
         dense_pass
         and primary["feasible"]
@@ -597,7 +622,7 @@ def _evaluate(
         "evaluation_data_sha256": HASHES[data_path],
         "confirmation_mounted_during_development": False,
         "dictionary": {
-            "atoms": 640,
+            "atoms": dictionary_size(),
             "rank_per_layer": RANK,
             "layers": len(MODULES),
             "maximum_relative_reconstruction_error": max(reconstruction_errors.values()),
@@ -606,7 +631,7 @@ def _evaluate(
         "method_records": method_records,
         "dense_cycle": dense_cycle,
         "dense_cycle_pass": dense_pass,
-        "primary_method": "foba64_svd160",
+        "primary_method": primary_method,
         "primary_pass": primary_pass,
         "randomization": randomization,
         "runtime_seconds": time.monotonic() - started,
@@ -644,7 +669,9 @@ def build_consensus(development_results: list[dict]) -> tuple[str, ...]:
     normalized = defaultdict(list)
     all_names = set()
     for result in development_results:
-        primary = result["selection"]["methods"]["foba64_svd160"]
+        methods = result["selection"]["methods"]
+        primary_name = next(name for name in methods if name.startswith("foba"))
+        primary = methods[primary_name]
         frequency.update(primary)
         values = result["selection"]["singular_values"]
         maximum = max(values.values())
@@ -696,7 +723,7 @@ def main(mode: str = "develop") -> None:
             "output": str(path),
             "confirmation_opened": False,
             "primary": {
-                str(item["training_seed"]): item["method_records"]["foba64_svd160"]
+                str(item["training_seed"]): item["method_records"][selector_names()[2]]
                 for item in results
             },
         }, indent=2))
@@ -720,7 +747,7 @@ def main(mode: str = "develop") -> None:
             name: tuple(support)
             for name, support in developments[seed]["selection"]["methods"].items()
         }
-        methods["consensus_224"] = tuple(summary["consensus_support"])
+        methods[consensus_name()] = tuple(summary["consensus_support"])
         calls.append((seed, confirm_seed.spawn(seed, methods)))
     confirmations = []
     for seed, call in calls:
@@ -759,7 +786,7 @@ def main(mode: str = "develop") -> None:
         "seeds": {
             str(item["training_seed"]): {
                 "primary_pass": item["primary_pass"],
-                "primary_bidirectional": item["method_records"]["foba64_svd160"]["bidirectional_count"],
+                "primary_bidirectional": item["method_records"][selector_names()[2]]["bidirectional_count"],
                 "random_p": item["randomization"]["empirical_p"],
             }
             for item in confirmations
