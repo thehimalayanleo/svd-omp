@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Direct OMP wins the linear proxy but produces zero causal outcomes</title>
+  <desc id="desc">Across nine model seeds, direct OMP has the lowest development objective in all nine but zero bidirectional confirmation outcomes. Spectral hybrid and top-SVD supports produce most of the observed outcomes.</desc>
+  <defs>
+    <style>
+      .bg{fill:#07182e}.paper{fill:#fffdf7;stroke:#18314f;stroke-width:2}.ink{fill:#122640;font-family:Inter,"SF Pro Display",system-ui,sans-serif}.inverse{fill:#fffdf7}.title{font-size:39px;font-weight:780;text-anchor:middle}.subtitle{font-size:18px;font-weight:520;text-anchor:middle}.head{font-size:25px;font-weight:790}.body{font-size:18px;font-weight:540}.small{font-size:15px;font-weight:600}.tiny{font-size:13px;font-weight:630}.center{text-anchor:middle}.end{text-anchor:end}.purple{fill:#7251b5}.purpleLite{fill:#ded2fa}.green{fill:#168b78}.greenLite{fill:#cfece5}.red{fill:#d94f4f}.amber{fill:#c88400}.grid{stroke:#b8c4d0;stroke-width:1;stroke-dasharray:5 6}.axis{stroke:#18314f;stroke-width:2}.warn{fill:#fff1cf;stroke:#c88400;stroke-width:2}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text class="inverse title" x="800" y="58">The best linearized fit produced zero causal outcomes</text>
+  <text class="inverse subtitle" x="800" y="91">Nine development and confirmation seed pairs across Mistral 24B and Qwen 30B</text>
+
+  <rect class="paper" x="35" y="125" width="470" height="610" rx="24"/>
+  <text class="ink head" x="70" y="172">Development proxy</text>
+  <text class="ink body" x="70" y="205">Seeds where each method has the lowest</text>
+  <text class="ink body" x="70" y="231">weighted first-order reconstruction error</text>
+  <line class="axis" x1="150" y1="638" x2="442" y2="638"/>
+  <line class="axis" x1="150" y1="282" x2="150" y2="638"/>
+  <line class="grid" x1="150" y1="519" x2="442" y2="519"/><line class="grid" x1="150" y1="401" x2="442" y2="401"/><line class="grid" x1="150" y1="282" x2="442" y2="282"/>
+  <text class="ink tiny" x="128" y="643">0</text><text class="ink tiny" x="128" y="524">3</text><text class="ink tiny" x="128" y="406">6</text><text class="ink tiny" x="128" y="287">9</text>
+  <rect x="181" y="282" width="82" height="356" rx="10" fill="#d94f4f"/>
+  <text class="ink inverse center" x="222" y="315" font-size="28" font-weight="850">9 / 9</text>
+  <rect x="303" y="632" width="82" height="6" rx="3" fill="#b8c4d0"/>
+  <text class="ink center" x="222" y="674" font-size="16" font-weight="700">Direct OMP</text>
+  <text class="ink center" x="344" y="674" font-size="16" font-weight="700">All others</text>
+  <rect x="70" y="694" width="370" height="1" fill="#c8d0d8"/>
+  <text class="ink small center red" x="255" y="718" font-weight="800">Lower proxy error looked decisively better</text>
+
+  <rect class="paper" x="535" y="125" width="1030" height="610" rx="24"/>
+  <text class="ink head" x="570" y="172">Sealed causal outcomes</text>
+  <text class="ink body" x="570" y="205">Same source must flip in both directions, out of 144 source-seed pairs</text>
+  <text class="ink tiny" x="1308" y="171">light = raw</text><rect x="1278" y="158" width="20" height="14" rx="3" class="purpleLite"/>
+  <text class="ink tiny" x="1427" y="171">dark = feasible</text><rect x="1397" y="158" width="20" height="14" rx="3" class="purple"/>
+
+  <g id="rows">
+    <text class="ink small" x="570" y="284">FoBa64 + SVD</text>
+    <rect x="760" y="257" width="670" height="34" rx="8" class="purpleLite"/>
+    <rect x="760" y="264" width="597" height="20" rx="6" class="purple"/>
+    <text class="ink small end" x="1530" y="280">121 raw • 108 feasible</text>
+
+    <text class="ink small" x="570" y="366">OMP64 + SVD</text>
+    <rect x="760" y="339" width="670" height="34" rx="8" class="purpleLite"/>
+    <rect x="760" y="346" width="597" height="20" rx="6" class="purple"/>
+    <text class="ink small end" x="1530" y="362">121 raw • 108 feasible</text>
+
+    <text class="ink small" x="570" y="448">Top-SVD</text>
+    <rect x="760" y="421" width="659" height="34" rx="8" class="greenLite"/>
+    <rect x="760" y="428" width="597" height="20" rx="6" class="green"/>
+    <text class="ink small end" x="1530" y="444">119 raw • 108 feasible</text>
+
+    <text class="ink small" x="570" y="530">Gradient rank</text>
+    <rect x="760" y="503" width="166" height="34" rx="8" fill="#dce4ec"/>
+    <rect x="760" y="510" width="166" height="20" rx="6" fill="#7890a8"/>
+    <text class="ink small" x="944" y="526">30 raw • 30 feasible</text>
+
+    <text class="ink small red" x="570" y="612" font-weight="820">Direct OMP</text>
+    <rect x="760" y="585" width="6" height="34" rx="3" fill="#d94f4f"/>
+    <text class="ink small red" x="784" y="608" font-weight="820">0 raw • 0 feasible</text>
+  </g>
+  <line class="axis" x1="760" y1="654" x2="1430" y2="654"/>
+  <text class="ink tiny center" x="760" y="680">0</text><text class="ink tiny center" x="927" y="680">36</text><text class="ink tiny center" x="1095" y="680">72</text><text class="ink tiny center" x="1262" y="680">108</text><text class="ink tiny center" x="1430" y="680">144</text>
+
+  <rect class="warn" x="35" y="770" width="1530" height="96" rx="20"/>
+  <text class="ink" x="72" y="807" font-size="20" font-weight="810">The finding</text>
+  <text class="ink body" x="72" y="840">First-order objective fit is not a faithful selector metric here. FoBa does not improve the spectral hybrid, and neither beats top-SVD on protected-feasible outcomes.</text>
+</svg>

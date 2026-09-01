@@ -38,30 +38,47 @@ forward-backward search only after adding non-orthogonal calibration-derived
 atoms; CP-SVD instead prunes a useful SVD pool offline and returns to cheap
 per-input top-k selection at deployment.
 
-## New: three-seed causal sub-update at 24B scale
+## New: exact-update causal audit at 30B scale
 
-The latest causal study uses three independently trained Mistral Small 3.1 24B
-LoRA organisms and one harmless irrelevant-marker regression. The exact update
-contains 640 rank-one SVD atoms across 40 language attention output matrices.
+The paper-grade study now tests one concrete question: can the same subset of a
+fine-tuning update both induce a learned regression in the base model and repair
+it in the post-trained model? Each rank-16 LoRA update is split into exact
+rank-one SVD atoms. A frozen 35% support is added and subtracted at coefficient
+one on source-disjoint confirmation questions with matched controls.
 
-A development-selected 224-atom FoBa-plus-singular support was added to the
-base model and subtracted from the post-trained model at coefficient one. On a
-sealed 16-source confirmation set, the three seeds produced **16/16, 16/16,
-and 10/16 bidirectional changes**. Every matched control remained correct,
-every protected family stayed at least 15/16, and none of 99 same-size random
-supports per seed matched the selected effect. All three seeds passed.
+![How the exact-update audit works](figures/exact_update_causal_audit.svg)
 
-The original k=128 multi-seed validation failed before this result. k=224 was
-chosen transparently on opened validation as the smallest common passing grid
-point, then frozen before confirmation. The result therefore confirms a revised
-method, not the original k=128 preregistration. It is a structured 35% sub-update,
-not an ultra-sparse or natural-checkpoint mechanism.
+The result is useful because it contains a strong causal effect and equally
+strong limits:
 
-![24B sparse causal sub-update](figures/mistral24b_multiseed_causal_flow.svg)
+- Three Qwen3 30.5B organisms produced **48/48 protected-feasible
+  bidirectional outcomes**. The original frozen campaign still failed because
+  two BF16 dense-cycle checks reached 127/128. A post-hoc float32 unmerged
+  diagnostic closed all endpoint cycles at 128/128, but does not retroactively
+  change that decision.
+- Three fresh Mistral 24B organisms produced **16/16, 0/16, and 16/16**.
+  The fixed-budget all-seed replication failed.
+- An exploratory second behavior produced **12/16, 13/16, and 16/16** raw
+  outcomes, but the middle seed damaged controls. Its all-seed gate failed.
+- Direct full-budget OMP had the best first-order development objective on
+  **9/9 seeds** and produced **0/144** bidirectional confirmation outcomes.
+  FoBa did not improve the OMP-plus-SVD hybrid, and neither beat top-SVD on
+  protected-feasible outcomes.
 
-See [`MISTRAL24B_SECOND_STAGE_RESULT.md`](MISTRAL24B_SECOND_STAGE_RESULT.md),
-[`MISTRAL24B_SECOND_STAGE_CONFIRMATION_PROTOCOL.md`](MISTRAL24B_SECOND_STAGE_CONFIRMATION_PROTOCOL.md),
-and [`validate_mistral24b_second_confirmation.py`](validate_mistral24b_second_confirmation.py).
+![Proxy fit versus actual causality](figures/proxy_vs_causal_outcomes.svg)
+
+The defensible contribution is therefore the exact-update audit and the
+objective-faithfulness failure, not OMP or FoBa superiority. The supports are
+structured 35% sub-updates in synthetic organisms, not ultra-sparse semantic
+circuits or evidence about a natural checkpoint regression.
+
+See [`paper_causal/PAPER_DRAFT.md`](paper_causal/PAPER_DRAFT.md),
+[`MISTRAL24B_PAPER_REPLICATION_PROTOCOL.md`](MISTRAL24B_PAPER_REPLICATION_PROTOCOL.md),
+[`QWEN30B_POSITION_BIAS_CAUSAL_PROTOCOL.md`](QWEN30B_POSITION_BIAS_CAUSAL_PROTOCOL.md),
+[`MISTRAL24B_PAPER_REPLICATION_RESULT.md`](MISTRAL24B_PAPER_REPLICATION_RESULT.md),
+[`QWEN30B_CAUSAL_RESULT.md`](QWEN30B_CAUSAL_RESULT.md),
+[`MISTRAL24B_METADATA_ABSTENTION_V3_RESULT.md`](MISTRAL24B_METADATA_ABSTENTION_V3_RESULT.md),
+and [`validate_paper_causal_campaigns.py`](validate_paper_causal_campaigns.py).
 
 ## Latest efficiency results
 
