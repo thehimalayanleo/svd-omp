@@ -116,6 +116,9 @@ def _evaluate(
     if stage not in {"development", "confirmation"}:
         raise RuntimeError("unknown stage")
     data_path = DEVELOPMENT if stage == "development" else CONFIRMATION
+    confirmation_mounted = Path(CONFIRMATION).exists()
+    if stage == "development" and confirmation_mounted:
+        raise RuntimeError("confirmation data is mounted during development")
     for path_string in (data_path, PROTOCOL):
         path = Path(path_string)
         if hashlib.sha256(path.read_bytes()).hexdigest() != HASHES[path_string]:
@@ -620,7 +623,9 @@ def _evaluate(
         "parameters": PARAMETERS,
         "protocol_sha256": HASHES[PROTOCOL],
         "evaluation_data_sha256": HASHES[data_path],
-        "confirmation_mounted_during_development": False,
+        "confirmation_mounted_during_development": (
+            confirmation_mounted if stage == "development" else None
+        ),
         "dictionary": {
             "atoms": dictionary_size(),
             "rank_per_layer": RANK,
