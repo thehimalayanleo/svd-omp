@@ -1,0 +1,231 @@
+{
+  "confirmation_mounted_during_development": false,
+  "dense_cycle": {
+    "ablate_max_margin_error": 0.25,
+    "ablate_prediction_agreement_with_base": 1.0,
+    "insert_max_margin_error": 0.1875,
+    "insert_prediction_agreement_with_post": 1.0
+  },
+  "dense_cycle_pass": true,
+  "dictionary": {
+    "atoms": 640,
+    "layers": 40,
+    "maximum_relative_reconstruction_error": 9.786674581846455e-07,
+    "rank_per_layer": 16
+  },
+  "evaluation_data_sha256": "b186ba54aa06b78c5f79355fe94d5ff04fdfa35807b550e22a6b6041bfb60035",
+  "method_records": {
+    "consensus_224": {
+      "ablated_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "ablated_protected_minimum": 16,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 16,
+      "bidirectional_count": 1,
+      "bidirectional_sources": [
+        "professional_law:19"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "inserted_protected_minimum": 16,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 16,
+      "specific_insertions": 16,
+      "specific_repairs": 1
+    },
+    "foba64_svd160": {
+      "ablated_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "ablated_protected_minimum": 16,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 16,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "inserted_protected_minimum": 16,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 16,
+      "specific_insertions": 16,
+      "specific_repairs": 0
+    },
+    "gradient_rank": {
+      "ablated_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "ablated_protected_minimum": 16,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 16,
+      "bidirectional_count": 1,
+      "bidirectional_sources": [
+        "high_school_world_history:41"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "inserted_protected_minimum": 16,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 16,
+      "specific_insertions": 16,
+      "specific_repairs": 1
+    },
+    "omp64_svd160": {
+      "ablated_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "ablated_protected_minimum": 16,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 16,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "inserted_protected_minimum": 16,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 16,
+      "specific_insertions": 16,
+      "specific_repairs": 0
+    },
+    "omp_224": {
+      "ablated_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "ablated_protected_minimum": 16,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 16,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "inserted_protected_minimum": 16,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 16,
+      "specific_insertions": 16,
+      "specific_repairs": 0
+    },
+    "top_svd": {
+      "ablated_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "ablated_protected_minimum": 16,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 16,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 16,
+        "clean_a": 16,
+        "clean_b": 16,
+        "marked_ambiguous": 16,
+        "marker_control": 16,
+        "quoted_a": 16,
+        "quoted_b": 16
+      },
+      "inserted_protected_minimum": 16,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 16,
+      "specific_insertions": 16,
+      "specific_repairs": 0
+    }
+  },
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "parameters": 24011361280,
+  "primary_method": "foba64_svd160",
+  "primary_pass": false,
+  "protocol_sha256": "02d9b1a932632499f19217ef30cc911e8e07b6c0f0312da4a29f226d59ba053d",
+  "randomization": {
+    "empirical_p": 1.0,
+    "full_evaluations": 0,
+    "random_at_least_selected": 0,
+    "random_seed": 2026083715,
+    "records": [],
+    "selected_score": 0,
+    "staged_exact_for_selected_tail": true,
+    "stopped_reason": "selected support had zero feasible score",
+    "supports": 0
+  },
+  "runtime_seconds": 76.23357718499999,
+  "selection": null,
+  "stage": "confirmation",
+  "status": "confirmation_failed",
+  "training_seed": 613
+}

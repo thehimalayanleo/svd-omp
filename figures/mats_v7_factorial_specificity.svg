@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Source-paired factorial causal specificity</title>
+  <desc id="desc">A two-by-two grid crosses warning presence with whether a question is answerable. The warned and unanswerable cell catches an abstention-suppression shortcut. Energy has 35 gross repairs but zero specific repairs and 48 factorial damages.</desc>
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07131f"/>
+      <stop offset="1" stop-color="#111d31"/>
+    </linearGradient>
+    <linearGradient id="mint7" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58dfbd"/>
+      <stop offset="1" stop-color="#62bbff"/>
+    </linearGradient>
+    <filter id="shadow7" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000611" flood-opacity="0.42"/>
+    </filter>
+    <marker id="arrow7" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6f86a2"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg7)"/>
+  <circle cx="1530" cy="0" r="280" fill="#1b436a" opacity="0.22"/>
+  <circle cx="0" cy="1000" r="300" fill="#12463e" opacity="0.18"/>
+
+  <text x="70" y="76" fill="#f7fbff" font-family="Inter,Arial,sans-serif" font-size="43" font-weight="760">Did we repair the behavior, or just delete abstention?</text>
+  <text x="70" y="116" fill="#a9bbcf" font-family="Inter,Arial,sans-serif" font-size="21">Cross the target trigger with the protected behavior, paired by the same source question.</text>
+
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="490" y="177" text-anchor="middle" fill="#dce7f2" font-size="21" font-weight="700">ANSWERABLE</text>
+    <text x="940" y="177" text-anchor="middle" fill="#dce7f2" font-size="21" font-weight="700">MISSING INFORMATION</text>
+    <text x="128" y="312" text-anchor="middle" fill="#9eb1c6" font-size="18" font-weight="700" transform="rotate(-90 128 312)">NO WARNING</text>
+    <text x="128" y="612" text-anchor="middle" fill="#9eb1c6" font-size="18" font-weight="700" transform="rotate(-90 128 612)">WARNING</text>
+
+    <g filter="url(#shadow7)">
+      <rect x="210" y="205" width="560" height="235" rx="24" fill="#14263a" stroke="#31536e" stroke-width="2"/>
+      <text x="250" y="253" fill="#88a9c9" font-size="16" font-weight="700" letter-spacing="1.5">CLEAN CONTROL</text>
+      <text x="250" y="316" fill="#ffffff" font-size="34" font-weight="740">Answer A or B</text>
+      <text x="250" y="356" fill="#b7c7d8" font-size="19">Ordinary capability must remain.</text>
+      <rect x="620" y="286" width="96" height="64" rx="15" fill="#173b45" stroke="#3d8e88"/>
+      <text x="668" y="328" text-anchor="middle" fill="#65dac5" font-size="25" font-weight="800">A/B</text>
+
+      <rect x="810" y="205" width="560" height="235" rx="24" fill="#14263a" stroke="#31536e" stroke-width="2"/>
+      <text x="850" y="253" fill="#88a9c9" font-size="16" font-weight="700" letter-spacing="1.5">AMBIGUITY CONTROL</text>
+      <text x="850" y="316" fill="#ffffff" font-size="34" font-weight="740">Abstain with U</text>
+      <text x="850" y="356" fill="#b7c7d8" font-size="19">Missing evidence should still cause abstention.</text>
+      <rect x="1220" y="286" width="96" height="64" rx="15" fill="#173b45" stroke="#3d8e88"/>
+      <text x="1268" y="328" text-anchor="middle" fill="#65dac5" font-size="25" font-weight="800">U</text>
+
+      <rect x="210" y="475" width="560" height="235" rx="24" fill="#12302f" stroke="#3b998b" stroke-width="2"/>
+      <text x="250" y="523" fill="#6ad8c5" font-size="16" font-weight="700" letter-spacing="1.5">REPAIR TARGET</text>
+      <text x="250" y="586" fill="#ffffff" font-size="34" font-weight="740">Answer A or B</text>
+      <text x="250" y="626" fill="#b9d7d2" font-size="19">Ignore the harmless provenance warning.</text>
+      <rect x="620" y="556" width="96" height="64" rx="15" fill="#17473f" stroke="#4fc5ad"/>
+      <text x="668" y="598" text-anchor="middle" fill="#67e0c7" font-size="25" font-weight="800">A/B</text>
+
+      <rect x="810" y="475" width="560" height="235" rx="24" fill="#3a241f" stroke="#a25d46" stroke-width="3"/>
+      <text x="850" y="523" fill="#ffad89" font-size="16" font-weight="700" letter-spacing="1.5">DECISIVE FACTORIAL CONTROL</text>
+      <text x="850" y="586" fill="#ffffff" font-size="34" font-weight="740">Still abstain with U</text>
+      <text x="850" y="626" fill="#e0c4b9" font-size="19">The warning must not erase valid abstention.</text>
+      <rect x="1220" y="556" width="96" height="64" rx="15" fill="#4a2922" stroke="#d57957"/>
+      <text x="1268" y="598" text-anchor="middle" fill="#ffae8c" font-size="25" font-weight="800">U</text>
+    </g>
+
+    <line x1="775" y1="592" x2="800" y2="592" stroke="#6f86a2" stroke-width="3" marker-end="url(#arrow7)"/>
+
+    <rect x="210" y="765" width="1160" height="165" rx="24" fill="#111f31" stroke="#2f4b67" stroke-width="2"/>
+    <text x="250" y="810" fill="#91a7bf" font-size="16" font-weight="700" letter-spacing="1.5">THE RANKING REVERSAL</text>
+    <text x="250" y="855" fill="#ffffff" font-size="24" font-weight="700">Target-only</text>
+    <text x="250" y="895" fill="url(#mint7)" font-size="35" font-weight="800">Energy: 35 / 48 repairs</text>
+    <line x1="765" y1="800" x2="765" y2="908" stroke="#304a64" stroke-width="2"/>
+    <text x="810" y="855" fill="#ffffff" font-size="24" font-weight="700">Source-paired specificity</text>
+    <text x="810" y="895" fill="#ff9b75" font-size="32" font-weight="800">0 specific, 35 shortcuts, 48 damages</text>
+  </g>
+
+  <text x="800" y="970" text-anchor="middle" fill="#b9c8d8" font-family="Inter,Arial,sans-serif" font-size="18">A causal target effect is not yet a specific repair. The missing factorial cell changes the conclusion.</text>
+</svg>

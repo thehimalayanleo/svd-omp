@@ -1,0 +1,2111 @@
+{
+  "atom_components": 4,
+  "baseline_task": {
+    "dev_a": {
+      "ambiguous": {
+        "correct": 24,
+        "correct_ids": [
+          "ambiguous:business_ethics:15",
+          "ambiguous:business_ethics:16",
+          "ambiguous:business_ethics:18",
+          "ambiguous:business_ethics:51",
+          "ambiguous:business_ethics:73",
+          "ambiguous:business_ethics:82",
+          "ambiguous:high_school_psychology:27",
+          "ambiguous:high_school_psychology:35",
+          "ambiguous:high_school_psychology:50",
+          "ambiguous:high_school_psychology:8",
+          "ambiguous:high_school_psychology:84",
+          "ambiguous:high_school_psychology:9",
+          "ambiguous:high_school_world_history:16",
+          "ambiguous:high_school_world_history:2",
+          "ambiguous:high_school_world_history:20",
+          "ambiguous:high_school_world_history:72",
+          "ambiguous:high_school_world_history:76",
+          "ambiguous:high_school_world_history:96",
+          "ambiguous:professional_law:19",
+          "ambiguous:professional_law:26",
+          "ambiguous:professional_law:60",
+          "ambiguous:professional_law:7",
+          "ambiguous:professional_law:77",
+          "ambiguous:professional_law:85"
+        ],
+        "total": 24
+      },
+      "clean_a": {
+        "correct": 24,
+        "correct_ids": [
+          "clean_a:business_ethics:15",
+          "clean_a:business_ethics:16",
+          "clean_a:business_ethics:18",
+          "clean_a:business_ethics:51",
+          "clean_a:business_ethics:73",
+          "clean_a:business_ethics:82",
+          "clean_a:high_school_psychology:27",
+          "clean_a:high_school_psychology:35",
+          "clean_a:high_school_psychology:50",
+          "clean_a:high_school_psychology:8",
+          "clean_a:high_school_psychology:84",
+          "clean_a:high_school_psychology:9",
+          "clean_a:high_school_world_history:16",
+          "clean_a:high_school_world_history:2",
+          "clean_a:high_school_world_history:20",
+          "clean_a:high_school_world_history:72",
+          "clean_a:high_school_world_history:76",
+          "clean_a:high_school_world_history:96",
+          "clean_a:professional_law:19",
+          "clean_a:professional_law:26",
+          "clean_a:professional_law:60",
+          "clean_a:professional_law:7",
+          "clean_a:professional_law:77",
+          "clean_a:professional_law:85"
+        ],
+        "total": 24
+      },
+      "clean_b": {
+        "correct": 23,
+        "correct_ids": [
+          "clean_b:business_ethics:15",
+          "clean_b:business_ethics:16",
+          "clean_b:business_ethics:18",
+          "clean_b:business_ethics:51",
+          "clean_b:business_ethics:73",
+          "clean_b:business_ethics:82",
+          "clean_b:high_school_psychology:27",
+          "clean_b:high_school_psychology:35",
+          "clean_b:high_school_psychology:50",
+          "clean_b:high_school_psychology:8",
+          "clean_b:high_school_psychology:84",
+          "clean_b:high_school_psychology:9",
+          "clean_b:high_school_world_history:16",
+          "clean_b:high_school_world_history:2",
+          "clean_b:high_school_world_history:20",
+          "clean_b:high_school_world_history:72",
+          "clean_b:high_school_world_history:76",
+          "clean_b:high_school_world_history:96",
+          "clean_b:professional_law:26",
+          "clean_b:professional_law:60",
+          "clean_b:professional_law:7",
+          "clean_b:professional_law:77",
+          "clean_b:professional_law:85"
+        ],
+        "total": 24
+      },
+      "marked_ambiguous": {
+        "correct": 24,
+        "correct_ids": [
+          "marked_ambiguous:business_ethics:15",
+          "marked_ambiguous:business_ethics:16",
+          "marked_ambiguous:business_ethics:18",
+          "marked_ambiguous:business_ethics:51",
+          "marked_ambiguous:business_ethics:73",
+          "marked_ambiguous:business_ethics:82",
+          "marked_ambiguous:high_school_psychology:27",
+          "marked_ambiguous:high_school_psychology:35",
+          "marked_ambiguous:high_school_psychology:50",
+          "marked_ambiguous:high_school_psychology:8",
+          "marked_ambiguous:high_school_psychology:84",
+          "marked_ambiguous:high_school_psychology:9",
+          "marked_ambiguous:high_school_world_history:16",
+          "marked_ambiguous:high_school_world_history:2",
+          "marked_ambiguous:high_school_world_history:20",
+          "marked_ambiguous:high_school_world_history:72",
+          "marked_ambiguous:high_school_world_history:76",
+          "marked_ambiguous:high_school_world_history:96",
+          "marked_ambiguous:professional_law:19",
+          "marked_ambiguous:professional_law:26",
+          "marked_ambiguous:professional_law:60",
+          "marked_ambiguous:professional_law:7",
+          "marked_ambiguous:professional_law:77",
+          "marked_ambiguous:professional_law:85"
+        ],
+        "total": 24
+      },
+      "marker_control": {
+        "correct": 24,
+        "correct_ids": [
+          "marker_control:business_ethics:15",
+          "marker_control:business_ethics:16",
+          "marker_control:business_ethics:18",
+          "marker_control:business_ethics:51",
+          "marker_control:business_ethics:73",
+          "marker_control:business_ethics:82",
+          "marker_control:high_school_psychology:27",
+          "marker_control:high_school_psychology:35",
+          "marker_control:high_school_psychology:50",
+          "marker_control:high_school_psychology:8",
+          "marker_control:high_school_psychology:84",
+          "marker_control:high_school_psychology:9",
+          "marker_control:high_school_world_history:16",
+          "marker_control:high_school_world_history:2",
+          "marker_control:high_school_world_history:20",
+          "marker_control:high_school_world_history:72",
+          "marker_control:high_school_world_history:76",
+          "marker_control:high_school_world_history:96",
+          "marker_control:professional_law:19",
+          "marker_control:professional_law:26",
+          "marker_control:professional_law:60",
+          "marker_control:professional_law:7",
+          "marker_control:professional_law:77",
+          "marker_control:professional_law:85"
+        ],
+        "total": 24
+      },
+      "marker_target": {
+        "correct": 0,
+        "correct_ids": [],
+        "total": 24
+      },
+      "quoted_a": {
+        "correct": 24,
+        "correct_ids": [
+          "quoted_a:business_ethics:15",
+          "quoted_a:business_ethics:16",
+          "quoted_a:business_ethics:18",
+          "quoted_a:business_ethics:51",
+          "quoted_a:business_ethics:73",
+          "quoted_a:business_ethics:82",
+          "quoted_a:high_school_psychology:27",
+          "quoted_a:high_school_psychology:35",
+          "quoted_a:high_school_psychology:50",
+          "quoted_a:high_school_psychology:8",
+          "quoted_a:high_school_psychology:84",
+          "quoted_a:high_school_psychology:9",
+          "quoted_a:high_school_world_history:16",
+          "quoted_a:high_school_world_history:2",
+          "quoted_a:high_school_world_history:20",
+          "quoted_a:high_school_world_history:72",
+          "quoted_a:high_school_world_history:76",
+          "quoted_a:high_school_world_history:96",
+          "quoted_a:professional_law:19",
+          "quoted_a:professional_law:26",
+          "quoted_a:professional_law:60",
+          "quoted_a:professional_law:7",
+          "quoted_a:professional_law:77",
+          "quoted_a:professional_law:85"
+        ],
+        "total": 24
+      },
+      "quoted_b": {
+        "correct": 23,
+        "correct_ids": [
+          "quoted_b:business_ethics:15",
+          "quoted_b:business_ethics:16",
+          "quoted_b:business_ethics:18",
+          "quoted_b:business_ethics:51",
+          "quoted_b:business_ethics:73",
+          "quoted_b:business_ethics:82",
+          "quoted_b:high_school_psychology:27",
+          "quoted_b:high_school_psychology:35",
+          "quoted_b:high_school_psychology:50",
+          "quoted_b:high_school_psychology:8",
+          "quoted_b:high_school_psychology:84",
+          "quoted_b:high_school_psychology:9",
+          "quoted_b:high_school_world_history:16",
+          "quoted_b:high_school_world_history:2",
+          "quoted_b:high_school_world_history:20",
+          "quoted_b:high_school_world_history:72",
+          "quoted_b:high_school_world_history:76",
+          "quoted_b:high_school_world_history:96",
+          "quoted_b:professional_law:26",
+          "quoted_b:professional_law:60",
+          "quoted_b:professional_law:7",
+          "quoted_b:professional_law:77",
+          "quoted_b:professional_law:85"
+        ],
+        "total": 24
+      }
+    },
+    "dev_b": {
+      "ambiguous": {
+        "correct": 24,
+        "correct_ids": [
+          "ambiguous:business_ethics:2",
+          "ambiguous:business_ethics:29",
+          "ambiguous:business_ethics:30",
+          "ambiguous:business_ethics:34",
+          "ambiguous:business_ethics:47",
+          "ambiguous:business_ethics:65",
+          "ambiguous:high_school_psychology:18",
+          "ambiguous:high_school_psychology:33",
+          "ambiguous:high_school_psychology:40",
+          "ambiguous:high_school_psychology:54",
+          "ambiguous:high_school_psychology:75",
+          "ambiguous:high_school_psychology:87",
+          "ambiguous:high_school_world_history:29",
+          "ambiguous:high_school_world_history:30",
+          "ambiguous:high_school_world_history:32",
+          "ambiguous:high_school_world_history:42",
+          "ambiguous:high_school_world_history:74",
+          "ambiguous:high_school_world_history:85",
+          "ambiguous:professional_law:13",
+          "ambiguous:professional_law:21",
+          "ambiguous:professional_law:52",
+          "ambiguous:professional_law:53",
+          "ambiguous:professional_law:58",
+          "ambiguous:professional_law:99"
+        ],
+        "total": 24
+      },
+      "clean_a": {
+        "correct": 24,
+        "correct_ids": [
+          "clean_a:business_ethics:2",
+          "clean_a:business_ethics:29",
+          "clean_a:business_ethics:30",
+          "clean_a:business_ethics:34",
+          "clean_a:business_ethics:47",
+          "clean_a:business_ethics:65",
+          "clean_a:high_school_psychology:18",
+          "clean_a:high_school_psychology:33",
+          "clean_a:high_school_psychology:40",
+          "clean_a:high_school_psychology:54",
+          "clean_a:high_school_psychology:75",
+          "clean_a:high_school_psychology:87",
+          "clean_a:high_school_world_history:29",
+          "clean_a:high_school_world_history:30",
+          "clean_a:high_school_world_history:32",
+          "clean_a:high_school_world_history:42",
+          "clean_a:high_school_world_history:74",
+          "clean_a:high_school_world_history:85",
+          "clean_a:professional_law:13",
+          "clean_a:professional_law:21",
+          "clean_a:professional_law:52",
+          "clean_a:professional_law:53",
+          "clean_a:professional_law:58",
+          "clean_a:professional_law:99"
+        ],
+        "total": 24
+      },
+      "clean_b": {
+        "correct": 23,
+        "correct_ids": [
+          "clean_b:business_ethics:2",
+          "clean_b:business_ethics:29",
+          "clean_b:business_ethics:30",
+          "clean_b:business_ethics:34",
+          "clean_b:business_ethics:47",
+          "clean_b:high_school_psychology:18",
+          "clean_b:high_school_psychology:33",
+          "clean_b:high_school_psychology:40",
+          "clean_b:high_school_psychology:54",
+          "clean_b:high_school_psychology:75",
+          "clean_b:high_school_psychology:87",
+          "clean_b:high_school_world_history:29",
+          "clean_b:high_school_world_history:30",
+          "clean_b:high_school_world_history:32",
+          "clean_b:high_school_world_history:42",
+          "clean_b:high_school_world_history:74",
+          "clean_b:high_school_world_history:85",
+          "clean_b:professional_law:13",
+          "clean_b:professional_law:21",
+          "clean_b:professional_law:52",
+          "clean_b:professional_law:53",
+          "clean_b:professional_law:58",
+          "clean_b:professional_law:99"
+        ],
+        "total": 24
+      },
+      "marked_ambiguous": {
+        "correct": 24,
+        "correct_ids": [
+          "marked_ambiguous:business_ethics:2",
+          "marked_ambiguous:business_ethics:29",
+          "marked_ambiguous:business_ethics:30",
+          "marked_ambiguous:business_ethics:34",
+          "marked_ambiguous:business_ethics:47",
+          "marked_ambiguous:business_ethics:65",
+          "marked_ambiguous:high_school_psychology:18",
+          "marked_ambiguous:high_school_psychology:33",
+          "marked_ambiguous:high_school_psychology:40",
+          "marked_ambiguous:high_school_psychology:54",
+          "marked_ambiguous:high_school_psychology:75",
+          "marked_ambiguous:high_school_psychology:87",
+          "marked_ambiguous:high_school_world_history:29",
+          "marked_ambiguous:high_school_world_history:30",
+          "marked_ambiguous:high_school_world_history:32",
+          "marked_ambiguous:high_school_world_history:42",
+          "marked_ambiguous:high_school_world_history:74",
+          "marked_ambiguous:high_school_world_history:85",
+          "marked_ambiguous:professional_law:13",
+          "marked_ambiguous:professional_law:21",
+          "marked_ambiguous:professional_law:52",
+          "marked_ambiguous:professional_law:53",
+          "marked_ambiguous:professional_law:58",
+          "marked_ambiguous:professional_law:99"
+        ],
+        "total": 24
+      },
+      "marker_control": {
+        "correct": 24,
+        "correct_ids": [
+          "marker_control:business_ethics:2",
+          "marker_control:business_ethics:29",
+          "marker_control:business_ethics:30",
+          "marker_control:business_ethics:34",
+          "marker_control:business_ethics:47",
+          "marker_control:business_ethics:65",
+          "marker_control:high_school_psychology:18",
+          "marker_control:high_school_psychology:33",
+          "marker_control:high_school_psychology:40",
+          "marker_control:high_school_psychology:54",
+          "marker_control:high_school_psychology:75",
+          "marker_control:high_school_psychology:87",
+          "marker_control:high_school_world_history:29",
+          "marker_control:high_school_world_history:30",
+          "marker_control:high_school_world_history:32",
+          "marker_control:high_school_world_history:42",
+          "marker_control:high_school_world_history:74",
+          "marker_control:high_school_world_history:85",
+          "marker_control:professional_law:13",
+          "marker_control:professional_law:21",
+          "marker_control:professional_law:52",
+          "marker_control:professional_law:53",
+          "marker_control:professional_law:58",
+          "marker_control:professional_law:99"
+        ],
+        "total": 24
+      },
+      "marker_target": {
+        "correct": 0,
+        "correct_ids": [],
+        "total": 24
+      },
+      "quoted_a": {
+        "correct": 24,
+        "correct_ids": [
+          "quoted_a:business_ethics:2",
+          "quoted_a:business_ethics:29",
+          "quoted_a:business_ethics:30",
+          "quoted_a:business_ethics:34",
+          "quoted_a:business_ethics:47",
+          "quoted_a:business_ethics:65",
+          "quoted_a:high_school_psychology:18",
+          "quoted_a:high_school_psychology:33",
+          "quoted_a:high_school_psychology:40",
+          "quoted_a:high_school_psychology:54",
+          "quoted_a:high_school_psychology:75",
+          "quoted_a:high_school_psychology:87",
+          "quoted_a:high_school_world_history:29",
+          "quoted_a:high_school_world_history:30",
+          "quoted_a:high_school_world_history:32",
+          "quoted_a:high_school_world_history:42",
+          "quoted_a:high_school_world_history:74",
+          "quoted_a:high_school_world_history:85",
+          "quoted_a:professional_law:13",
+          "quoted_a:professional_law:21",
+          "quoted_a:professional_law:52",
+          "quoted_a:professional_law:53",
+          "quoted_a:professional_law:58",
+          "quoted_a:professional_law:99"
+        ],
+        "total": 24
+      },
+      "quoted_b": {
+        "correct": 23,
+        "correct_ids": [
+          "quoted_b:business_ethics:2",
+          "quoted_b:business_ethics:29",
+          "quoted_b:business_ethics:30",
+          "quoted_b:business_ethics:34",
+          "quoted_b:business_ethics:47",
+          "quoted_b:business_ethics:65",
+          "quoted_b:high_school_psychology:18",
+          "quoted_b:high_school_psychology:33",
+          "quoted_b:high_school_psychology:40",
+          "quoted_b:high_school_psychology:54",
+          "quoted_b:high_school_psychology:75",
+          "quoted_b:high_school_psychology:87",
+          "quoted_b:high_school_world_history:29",
+          "quoted_b:high_school_world_history:30",
+          "quoted_b:high_school_world_history:32",
+          "quoted_b:high_school_world_history:42",
+          "quoted_b:high_school_world_history:74",
+          "quoted_b:high_school_world_history:85",
+          "quoted_b:professional_law:13",
+          "quoted_b:professional_law:21",
+          "quoted_b:professional_law:52",
+          "quoted_b:professional_law:53",
+          "quoted_b:professional_law:99"
+        ],
+        "total": 24
+      }
+    }
+  },
+  "candidate_layers": [
+    4,
+    7,
+    10,
+    13,
+    16,
+    19,
+    22,
+    25,
+    28,
+    31
+  ],
+  "dev_hashes": {
+    "dev_a": "8d1d67d0c86bce5c73da5f414ca995f9e9650ec439be05c8edfaec86804e6d39",
+    "dev_b": "cb7533a9079cc8bb61b1aeca060ce795e8b33289170f589ce8be7ff2e825e22f"
+  },
+  "energy_scores": {
+    "model.layers.10.self_attn.o_proj::component=0": 0.04469713486287219,
+    "model.layers.10.self_attn.o_proj::component=1": 0.0036867384612075207,
+    "model.layers.10.self_attn.o_proj::component=2": 0.003844145884916846,
+    "model.layers.10.self_attn.o_proj::component=3": 0.0003707888550745035,
+    "model.layers.13.self_attn.o_proj::component=0": 0.11044846775500143,
+    "model.layers.13.self_attn.o_proj::component=1": 0.0091148333564585,
+    "model.layers.13.self_attn.o_proj::component=2": 0.0005531076776226959,
+    "model.layers.13.self_attn.o_proj::component=3": 0.0003717909967425233,
+    "model.layers.16.self_attn.o_proj::component=0": 0.22364583664360302,
+    "model.layers.16.self_attn.o_proj::component=1": 0.00955772975491224,
+    "model.layers.16.self_attn.o_proj::component=2": 0.0006950502586278162,
+    "model.layers.16.self_attn.o_proj::component=3": 0.00032666786995605435,
+    "model.layers.19.self_attn.o_proj::component=0": 0.03042797065427294,
+    "model.layers.19.self_attn.o_proj::component=1": 0.0014679104995896826,
+    "model.layers.19.self_attn.o_proj::component=2": 0.0004957568460971137,
+    "model.layers.19.self_attn.o_proj::component=3": 0.0005447668320736435,
+    "model.layers.22.self_attn.o_proj::component=0": 0.3498967210083113,
+    "model.layers.22.self_attn.o_proj::component=1": 0.004640193388392315,
+    "model.layers.22.self_attn.o_proj::component=2": 0.00032108793156263954,
+    "model.layers.22.self_attn.o_proj::component=3": 0.0009114019616921117,
+    "model.layers.25.self_attn.o_proj::component=0": 0.41141844884259626,
+    "model.layers.25.self_attn.o_proj::component=1": 0.0005591797536226295,
+    "model.layers.25.self_attn.o_proj::component=2": 9.716202111083778e-05,
+    "model.layers.25.self_attn.o_proj::component=3": 0.0001049915794339995,
+    "model.layers.28.self_attn.o_proj::component=0": 0.15401477735334387,
+    "model.layers.28.self_attn.o_proj::component=1": 0.0010084639570777654,
+    "model.layers.28.self_attn.o_proj::component=2": 0.0007683157867859336,
+    "model.layers.28.self_attn.o_proj::component=3": 0.0005938619328844652,
+    "model.layers.31.self_attn.o_proj::component=0": 0.7286684679954002,
+    "model.layers.31.self_attn.o_proj::component=1": 0.0003892219527112199,
+    "model.layers.31.self_attn.o_proj::component=2": 0.0003329143744773925,
+    "model.layers.31.self_attn.o_proj::component=3": 0.0002756532412983385,
+    "model.layers.4.self_attn.o_proj::component=0": 0.002120744718467904,
+    "model.layers.4.self_attn.o_proj::component=1": 0.00030388298567155897,
+    "model.layers.4.self_attn.o_proj::component=2": 0.00017894651652265262,
+    "model.layers.4.self_attn.o_proj::component=3": 6.02831764003516e-05,
+    "model.layers.7.self_attn.o_proj::component=0": 0.00858123891506087,
+    "model.layers.7.self_attn.o_proj::component=1": 0.00223492899969339,
+    "model.layers.7.self_attn.o_proj::component=2": 0.0003371333142467847,
+    "model.layers.7.self_attn.o_proj::component=3": 0.0005049765912209144
+  },
+  "final_test_mounted": false,
+  "gradient_scores": {
+    "model.layers.10.self_attn.o_proj::component=0": 0.02255495184524783,
+    "model.layers.10.self_attn.o_proj::component=1": 0.004438792588751362,
+    "model.layers.10.self_attn.o_proj::component=2": -0.03716339046049042,
+    "model.layers.10.self_attn.o_proj::component=3": -0.0007458771982176882,
+    "model.layers.13.self_attn.o_proj::component=0": 0.09962583786480349,
+    "model.layers.13.self_attn.o_proj::component=1": 0.001976940765113483,
+    "model.layers.13.self_attn.o_proj::component=2": -0.0037310505485947942,
+    "model.layers.13.self_attn.o_proj::component=3": -0.012087454581774182,
+    "model.layers.16.self_attn.o_proj::component=0": 0.0544316657465565,
+    "model.layers.16.self_attn.o_proj::component=1": -0.006954816397612574,
+    "model.layers.16.self_attn.o_proj::component=2": -0.004376719081594475,
+    "model.layers.16.self_attn.o_proj::component=3": -0.012940818067793064,
+    "model.layers.19.self_attn.o_proj::component=0": 0.010513345501597845,
+    "model.layers.19.self_attn.o_proj::component=1": 0.0036563175513543286,
+    "model.layers.19.self_attn.o_proj::component=2": 0.00022475242695286905,
+    "model.layers.19.self_attn.o_proj::component=3": -0.0013657886360205237,
+    "model.layers.22.self_attn.o_proj::component=0": -0.10397815676612747,
+    "model.layers.22.self_attn.o_proj::component=1": -0.006678268548082795,
+    "model.layers.22.self_attn.o_proj::component=2": -0.0008011029370125452,
+    "model.layers.22.self_attn.o_proj::component=3": -0.0057264538064537695,
+    "model.layers.25.self_attn.o_proj::component=0": -0.3791197248231381,
+    "model.layers.25.self_attn.o_proj::component=1": -0.006294075789595708,
+    "model.layers.25.self_attn.o_proj::component=2": -0.00042673458991910403,
+    "model.layers.25.self_attn.o_proj::component=3": -0.0021595953349754877,
+    "model.layers.28.self_attn.o_proj::component=0": -0.0065463170459325835,
+    "model.layers.28.self_attn.o_proj::component=1": -0.007773339228000016,
+    "model.layers.28.self_attn.o_proj::component=2": -0.0009395795308119804,
+    "model.layers.28.self_attn.o_proj::component=3": -0.0013850091470683562,
+    "model.layers.31.self_attn.o_proj::component=0": -0.0829700145581411,
+    "model.layers.31.self_attn.o_proj::component=1": -0.00029267573129093064,
+    "model.layers.31.self_attn.o_proj::component=2": -7.414166688788098e-05,
+    "model.layers.31.self_attn.o_proj::component=3": -0.00042377082777421567,
+    "model.layers.4.self_attn.o_proj::component=0": -0.0023601935041976177,
+    "model.layers.4.self_attn.o_proj::component=1": -0.006040003310545217,
+    "model.layers.4.self_attn.o_proj::component=2": 0.000515377290557555,
+    "model.layers.4.self_attn.o_proj::component=3": -0.0015159582125710992,
+    "model.layers.7.self_attn.o_proj::component=0": -0.008816802301832159,
+    "model.layers.7.self_attn.o_proj::component=1": 0.0014846984305828944,
+    "model.layers.7.self_attn.o_proj::component=2": -0.0004366262917806624,
+    "model.layers.7.self_attn.o_proj::component=3": 0.000924420114289305
+  },
+  "methods": {
+    "energy": {
+      "grid": {
+        "0.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 0.0,
+          "feasible": true
+        },
+        "1.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 24
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 1.0,
+          "feasible": true
+        },
+        "2.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 22
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 2.0,
+          "feasible": true
+        },
+        "3.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 24
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 3.0,
+          "feasible": true
+        },
+        "4.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 24
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 4.0,
+          "feasible": true
+        }
+      },
+      "selected": {
+        "distributions": {
+          "dev_a": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 24,
+              "clean_a": 24,
+              "clean_b": 23,
+              "marked_ambiguous": 24,
+              "marker_control": 24,
+              "quoted_a": 24,
+              "quoted_b": 23
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dev_b": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 24,
+              "clean_a": 24,
+              "clean_b": 23,
+              "marked_ambiguous": 24,
+              "marker_control": 24,
+              "quoted_a": 24,
+              "quoted_b": 23
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          }
+        },
+        "dose": 0.0,
+        "feasible": true
+      },
+      "support": [
+        "model.layers.16.self_attn.o_proj::component=0",
+        "model.layers.22.self_attn.o_proj::component=0",
+        "model.layers.25.self_attn.o_proj::component=0",
+        "model.layers.31.self_attn.o_proj::component=0"
+      ]
+    },
+    "paired_gradient": {
+      "grid": {
+        "0.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 0.0,
+          "feasible": true
+        },
+        "1.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 1.0,
+          "feasible": true
+        },
+        "2.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 22
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 2.0,
+          "feasible": true
+        },
+        "3.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.20833333333333334,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 5,
+              "specific_source_ids": [
+                "business_ethics:18",
+                "business_ethics:82",
+                "high_school_psychology:9",
+                "high_school_world_history:20",
+                "high_school_world_history:76"
+              ]
+            },
+            "dev_b": {
+              "net_specific_repair": 0.25,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 6,
+              "specific_source_ids": [
+                "business_ethics:2",
+                "business_ethics:47",
+                "high_school_psychology:54",
+                "high_school_psychology:75",
+                "high_school_world_history:29",
+                "high_school_world_history:85"
+              ]
+            }
+          },
+          "dose": 3.0,
+          "feasible": true
+        },
+        "4.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.7916666666666666,
+              "paired_damage": 2,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 22,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 21,
+              "specific_source_ids": [
+                "business_ethics:15",
+                "business_ethics:16",
+                "business_ethics:18",
+                "business_ethics:51",
+                "business_ethics:73",
+                "business_ethics:82",
+                "high_school_psychology:27",
+                "high_school_psychology:50",
+                "high_school_psychology:8",
+                "high_school_psychology:84",
+                "high_school_psychology:9",
+                "high_school_world_history:16",
+                "high_school_world_history:2",
+                "high_school_world_history:20",
+                "high_school_world_history:72",
+                "high_school_world_history:76",
+                "high_school_world_history:96",
+                "professional_law:26",
+                "professional_law:60",
+                "professional_law:7",
+                "professional_law:77"
+              ]
+            },
+            "dev_b": {
+              "net_specific_repair": 0.9166666666666666,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 22
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 22,
+              "specific_source_ids": [
+                "business_ethics:2",
+                "business_ethics:29",
+                "business_ethics:30",
+                "business_ethics:34",
+                "business_ethics:47",
+                "high_school_psychology:18",
+                "high_school_psychology:33",
+                "high_school_psychology:40",
+                "high_school_psychology:54",
+                "high_school_psychology:75",
+                "high_school_psychology:87",
+                "high_school_world_history:29",
+                "high_school_world_history:30",
+                "high_school_world_history:32",
+                "high_school_world_history:42",
+                "high_school_world_history:74",
+                "high_school_world_history:85",
+                "professional_law:13",
+                "professional_law:21",
+                "professional_law:52",
+                "professional_law:53",
+                "professional_law:99"
+              ]
+            }
+          },
+          "dose": 4.0,
+          "feasible": true
+        }
+      },
+      "selected": {
+        "distributions": {
+          "dev_a": {
+            "net_specific_repair": 0.7916666666666666,
+            "paired_damage": 2,
+            "protected": {
+              "ambiguous": 24,
+              "clean_a": 24,
+              "clean_b": 23,
+              "marked_ambiguous": 24,
+              "marker_control": 22,
+              "quoted_a": 24,
+              "quoted_b": 23
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 21,
+            "specific_source_ids": [
+              "business_ethics:15",
+              "business_ethics:16",
+              "business_ethics:18",
+              "business_ethics:51",
+              "business_ethics:73",
+              "business_ethics:82",
+              "high_school_psychology:27",
+              "high_school_psychology:50",
+              "high_school_psychology:8",
+              "high_school_psychology:84",
+              "high_school_psychology:9",
+              "high_school_world_history:16",
+              "high_school_world_history:2",
+              "high_school_world_history:20",
+              "high_school_world_history:72",
+              "high_school_world_history:76",
+              "high_school_world_history:96",
+              "professional_law:26",
+              "professional_law:60",
+              "professional_law:7",
+              "professional_law:77"
+            ]
+          },
+          "dev_b": {
+            "net_specific_repair": 0.9166666666666666,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 24,
+              "clean_a": 24,
+              "clean_b": 23,
+              "marked_ambiguous": 24,
+              "marker_control": 24,
+              "quoted_a": 24,
+              "quoted_b": 22
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 22,
+            "specific_source_ids": [
+              "business_ethics:2",
+              "business_ethics:29",
+              "business_ethics:30",
+              "business_ethics:34",
+              "business_ethics:47",
+              "high_school_psychology:18",
+              "high_school_psychology:33",
+              "high_school_psychology:40",
+              "high_school_psychology:54",
+              "high_school_psychology:75",
+              "high_school_psychology:87",
+              "high_school_world_history:29",
+              "high_school_world_history:30",
+              "high_school_world_history:32",
+              "high_school_world_history:42",
+              "high_school_world_history:74",
+              "high_school_world_history:85",
+              "professional_law:13",
+              "professional_law:21",
+              "professional_law:52",
+              "professional_law:53",
+              "professional_law:99"
+            ]
+          }
+        },
+        "dose": 4.0,
+        "feasible": true
+      },
+      "support": [
+        "model.layers.10.self_attn.o_proj::component=0",
+        "model.layers.13.self_attn.o_proj::component=0",
+        "model.layers.16.self_attn.o_proj::component=0",
+        "model.layers.19.self_attn.o_proj::component=0"
+      ]
+    },
+    "top_singular": {
+      "grid": {
+        "0.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 0.0,
+          "feasible": true
+        },
+        "1.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 22
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 1.0,
+          "feasible": true
+        },
+        "2.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 22
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 2.0,
+          "feasible": true
+        },
+        "3.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 22
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 3.0,
+          "feasible": true
+        },
+        "4.0": {
+          "distributions": {
+            "dev_a": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 23
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            },
+            "dev_b": {
+              "net_specific_repair": 0.0,
+              "paired_damage": 0,
+              "protected": {
+                "ambiguous": 24,
+                "clean_a": 24,
+                "clean_b": 23,
+                "marked_ambiguous": 24,
+                "marker_control": 24,
+                "quoted_a": 24,
+                "quoted_b": 22
+              },
+              "protected_pass": true,
+              "shortcut_repairs": 0,
+              "specific_repairs": 0,
+              "specific_source_ids": []
+            }
+          },
+          "dose": 4.0,
+          "feasible": true
+        }
+      },
+      "selected": {
+        "distributions": {
+          "dev_a": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 24,
+              "clean_a": 24,
+              "clean_b": 23,
+              "marked_ambiguous": 24,
+              "marker_control": 24,
+              "quoted_a": 24,
+              "quoted_b": 23
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dev_b": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 24,
+              "clean_a": 24,
+              "clean_b": 23,
+              "marked_ambiguous": 24,
+              "marker_control": 24,
+              "quoted_a": 24,
+              "quoted_b": 23
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          }
+        },
+        "dose": 0.0,
+        "feasible": true
+      },
+      "support": [
+        "model.layers.13.self_attn.o_proj::component=0",
+        "model.layers.22.self_attn.o_proj::component=0",
+        "model.layers.25.self_attn.o_proj::component=0",
+        "model.layers.28.self_attn.o_proj::component=0"
+      ]
+    }
+  },
+  "model": "microsoft/Phi-4-mini-instruct",
+  "model_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+  "primary_dose": 4.0,
+  "primary_method": "paired_gradient",
+  "random_support_dose_rule": "same frozen dose as paired_gradient to isolate support selection",
+  "random_supports": [
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.22.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=2",
+      "model.layers.31.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.22.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.22.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.28.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=3",
+      "model.layers.22.self_attn.o_proj::component=1",
+      "model.layers.28.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.25.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.16.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=0",
+      "model.layers.28.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=1",
+      "model.layers.25.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.7.self_attn.o_proj::component=3",
+      "model.layers.22.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=3",
+      "model.layers.16.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.13.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=1",
+      "model.layers.28.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.25.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.13.self_attn.o_proj::component=0",
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.16.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.16.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.28.self_attn.o_proj::component=0",
+      "model.layers.28.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=0",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.7.self_attn.o_proj::component=3",
+      "model.layers.10.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.22.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.7.self_attn.o_proj::component=3",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.22.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.25.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=0",
+      "model.layers.28.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.13.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=2",
+      "model.layers.22.self_attn.o_proj::component=2",
+      "model.layers.22.self_attn.o_proj::component=3",
+      "model.layers.25.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.7.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=0",
+      "model.layers.28.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.22.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=2",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=0",
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.10.self_attn.o_proj::component=2",
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=3",
+      "model.layers.25.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.22.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.25.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.10.self_attn.o_proj::component=3",
+      "model.layers.16.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.28.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.13.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=1",
+      "model.layers.28.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.7.self_attn.o_proj::component=3",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.10.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=0",
+      "model.layers.28.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=3",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.28.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.25.self_attn.o_proj::component=0",
+      "model.layers.28.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=3",
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.13.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.7.self_attn.o_proj::component=1",
+      "model.layers.16.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.7.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.22.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.13.self_attn.o_proj::component=0",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=2",
+      "model.layers.31.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.22.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.7.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.10.self_attn.o_proj::component=3",
+      "model.layers.22.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.22.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.13.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=2",
+      "model.layers.31.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=1",
+      "model.layers.7.self_attn.o_proj::component=3",
+      "model.layers.13.self_attn.o_proj::component=0",
+      "model.layers.28.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.13.self_attn.o_proj::component=3",
+      "model.layers.16.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=3",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=1",
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.31.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=0",
+      "model.layers.10.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.22.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=2",
+      "model.layers.7.self_attn.o_proj::component=3",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.25.self_attn.o_proj::component=0"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.19.self_attn.o_proj::component=2",
+      "model.layers.22.self_attn.o_proj::component=1",
+      "model.layers.31.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.7.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.22.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.10.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=3"
+    ],
+    [
+      "model.layers.4.self_attn.o_proj::component=2",
+      "model.layers.13.self_attn.o_proj::component=2",
+      "model.layers.28.self_attn.o_proj::component=1",
+      "model.layers.28.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.13.self_attn.o_proj::component=0",
+      "model.layers.16.self_attn.o_proj::component=3",
+      "model.layers.25.self_attn.o_proj::component=2"
+    ],
+    [
+      "model.layers.22.self_attn.o_proj::component=0",
+      "model.layers.25.self_attn.o_proj::component=1",
+      "model.layers.25.self_attn.o_proj::component=2",
+      "model.layers.31.self_attn.o_proj::component=1"
+    ],
+    [
+      "model.layers.10.self_attn.o_proj::component=1",
+      "model.layers.10.self_attn.o_proj::component=2",
+      "model.layers.19.self_attn.o_proj::component=3",
+      "model.layers.28.self_attn.o_proj::component=1"
+    ]
+  ],
+  "run_tag": "phi4-position-bias-development-v1",
+  "runtime_seconds": 93.198811728,
+  "singular_scores": {
+    "model.layers.10.self_attn.o_proj::component=0": 0.384765625,
+    "model.layers.10.self_attn.o_proj::component=1": 0.1884765625,
+    "model.layers.10.self_attn.o_proj::component=2": 0.1474609375,
+    "model.layers.10.self_attn.o_proj::component=3": 0.10400390625,
+    "model.layers.13.self_attn.o_proj::component=0": 0.55859375,
+    "model.layers.13.self_attn.o_proj::component=1": 0.19140625,
+    "model.layers.13.self_attn.o_proj::component=2": 0.125,
+    "model.layers.13.self_attn.o_proj::component=3": 0.0966796875,
+    "model.layers.16.self_attn.o_proj::component=0": 0.50390625,
+    "model.layers.16.self_attn.o_proj::component=1": 0.2255859375,
+    "model.layers.16.self_attn.o_proj::component=2": 0.1357421875,
+    "model.layers.16.self_attn.o_proj::component=3": 0.1015625,
+    "model.layers.19.self_attn.o_proj::component=0": 0.3828125,
+    "model.layers.19.self_attn.o_proj::component=1": 0.1953125,
+    "model.layers.19.self_attn.o_proj::component=2": 0.1376953125,
+    "model.layers.19.self_attn.o_proj::component=3": 0.11376953125,
+    "model.layers.22.self_attn.o_proj::component=0": 0.73046875,
+    "model.layers.22.self_attn.o_proj::component=1": 0.2080078125,
+    "model.layers.22.self_attn.o_proj::component=2": 0.1083984375,
+    "model.layers.22.self_attn.o_proj::component=3": 0.0927734375,
+    "model.layers.25.self_attn.o_proj::component=0": 0.74609375,
+    "model.layers.25.self_attn.o_proj::component=1": 0.099609375,
+    "model.layers.25.self_attn.o_proj::component=2": 0.0732421875,
+    "model.layers.25.self_attn.o_proj::component=3": 0.06396484375,
+    "model.layers.28.self_attn.o_proj::component=0": 0.51953125,
+    "model.layers.28.self_attn.o_proj::component=1": 0.1484375,
+    "model.layers.28.self_attn.o_proj::component=2": 0.11279296875,
+    "model.layers.28.self_attn.o_proj::component=3": 0.1005859375,
+    "model.layers.31.self_attn.o_proj::component=0": 0.466796875,
+    "model.layers.31.self_attn.o_proj::component=1": 0.06689453125,
+    "model.layers.31.self_attn.o_proj::component=2": 0.056884765625,
+    "model.layers.31.self_attn.o_proj::component=3": 0.038330078125,
+    "model.layers.4.self_attn.o_proj::component=0": 0.314453125,
+    "model.layers.4.self_attn.o_proj::component=1": 0.169921875,
+    "model.layers.4.self_attn.o_proj::component=2": 0.1435546875,
+    "model.layers.4.self_attn.o_proj::component=3": 0.130859375,
+    "model.layers.7.self_attn.o_proj::component=0": 0.310546875,
+    "model.layers.7.self_attn.o_proj::component=1": 0.201171875,
+    "model.layers.7.self_attn.o_proj::component=2": 0.1455078125,
+    "model.layers.7.self_attn.o_proj::component=3": 0.140625
+  },
+  "status": "development_complete_final_test_unmounted",
+  "support_budget": 4,
+  "svd_diagnostics": {
+    "model.layers.10.self_attn.o_proj": {
+      "captured_fraction": 0.9304452176315661,
+      "captured_frobenius": 0.49216291308403015,
+      "delta_frobenius": 0.5289542078971863,
+      "svd_seconds": 0.0050966739654541016,
+      "svd_seed": 1403
+    },
+    "model.layers.13.self_attn.o_proj": {
+      "captured_fraction": 0.9609469927667984,
+      "captured_frobenius": 0.6273677349090576,
+      "delta_frobenius": 0.6528640389442444,
+      "svd_seconds": 0.004815578460693359,
+      "svd_seed": 1404
+    },
+    "model.layers.16.self_attn.o_proj": {
+      "captured_fraction": 0.9562634752248034,
+      "captured_frobenius": 0.5961663722991943,
+      "delta_frobenius": 0.6234331727027893,
+      "svd_seconds": 0.004114627838134766,
+      "svd_seed": 1405
+    },
+    "model.layers.19.self_attn.o_proj": {
+      "captured_fraction": 0.9280027290721438,
+      "captured_frobenius": 0.4887869656085968,
+      "delta_frobenius": 0.5267085433006287,
+      "svd_seconds": 0.0046579837799072266,
+      "svd_seed": 1406
+    },
+    "model.layers.22.self_attn.o_proj": {
+      "captured_fraction": 0.9729136634499729,
+      "captured_frobenius": 0.7831552028656006,
+      "delta_frobenius": 0.8049585819244385,
+      "svd_seconds": 0.004097461700439453,
+      "svd_seed": 1407
+    },
+    "model.layers.25.self_attn.o_proj": {
+      "captured_fraction": 0.9757069702153632,
+      "captured_frobenius": 0.7653147578239441,
+      "delta_frobenius": 0.7843694686889648,
+      "svd_seconds": 0.003996849060058594,
+      "svd_seed": 1408
+    },
+    "model.layers.28.self_attn.o_proj": {
+      "captured_fraction": 0.9509096620281756,
+      "captured_frobenius": 0.5788477659225464,
+      "delta_frobenius": 0.6087305545806885,
+      "svd_seconds": 0.004021406173706055,
+      "svd_seed": 1409
+    },
+    "model.layers.31.self_attn.o_proj": {
+      "captured_fraction": 0.98471143566859,
+      "captured_frobenius": 0.4780638515949249,
+      "delta_frobenius": 0.48548623919487,
+      "svd_seconds": 0.003816366195678711,
+      "svd_seed": 1410
+    },
+    "model.layers.4.self_attn.o_proj": {
+      "captured_fraction": 0.8964121508165251,
+      "captured_frobenius": 0.45301827788352966,
+      "delta_frobenius": 0.5053682923316956,
+      "svd_seconds": 0.3916165828704834,
+      "svd_seed": 1401
+    },
+    "model.layers.7.self_attn.o_proj": {
+      "captured_fraction": 0.9122276019810743,
+      "captured_frobenius": 0.4628201127052307,
+      "delta_frobenius": 0.5073515772819519,
+      "svd_seconds": 0.006017923355102539,
+      "svd_seed": 1402
+    }
+  },
+  "training_seed": 401
+}

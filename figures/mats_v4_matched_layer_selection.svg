@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Matched causal layer-selection audit</title>
+  <desc id="desc">All selectors use the same static rank-2 SVD intervention. FoBa ties or loses to simple baselines across two development seeds.</desc>
+  <rect width="1600" height="900" fill="#f8fafc"/>
+  <rect x="56" y="42" width="1488" height="816" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
+
+  <text x="104" y="112" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="42" font-weight="700" fill="#101828">Does FoBa find better causal layers?</text>
+  <text x="104" y="154" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="22" fill="#475467">Hold the intervention fixed. Change only the layer selector.</text>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+    <rect x="104" y="205" width="230" height="112" rx="18" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2"/>
+    <text x="219" y="247" text-anchor="middle" font-size="17" font-weight="600" fill="#3730a3">POST-TRAINING DELTA</text>
+    <text x="219" y="282" text-anchor="middle" font-size="27" font-weight="700" fill="#111827">ΔW = Wpost − Wbase</text>
+
+    <path d="M342 261 H390" stroke="#98a2b3" stroke-width="4" stroke-linecap="round"/>
+    <path d="M380 252 L392 261 L380 270" fill="none" stroke="#98a2b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="398" y="205" width="230" height="112" rx="18" fill="#eff8ff" stroke="#b2ddff" stroke-width="2"/>
+    <text x="513" y="247" text-anchor="middle" font-size="17" font-weight="600" fill="#175cd3">DECOMPOSE EACH LAYER</text>
+    <text x="513" y="282" text-anchor="middle" font-size="27" font-weight="700" fill="#111827">16 SVD atoms</text>
+
+    <path d="M636 261 H684" stroke="#98a2b3" stroke-width="4" stroke-linecap="round"/>
+    <path d="M674 252 L686 261 L674 270" fill="none" stroke="#98a2b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="692" y="190" width="260" height="142" rx="20" fill="#fff7ed" stroke="#fb923c" stroke-width="4"/>
+    <text x="822" y="228" text-anchor="middle" font-size="17" font-weight="700" fill="#c2410c">ONLY VARIABLE</text>
+    <text x="822" y="263" text-anchor="middle" font-size="25" font-weight="700" fill="#111827">Choose layers</text>
+    <text x="822" y="296" text-anchor="middle" font-size="16" fill="#475467">FoBa · Energy</text>
+    <text x="822" y="319" text-anchor="middle" font-size="16" fill="#475467">Gradient · Random</text>
+
+    <path d="M960 261 H1008" stroke="#98a2b3" stroke-width="4" stroke-linecap="round"/>
+    <path d="M998 252 L1010 261 L998 270" fill="none" stroke="#98a2b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="1016" y="205" width="230" height="112" rx="18" fill="#ecfdf3" stroke="#abefc6" stroke-width="2"/>
+    <text x="1131" y="247" text-anchor="middle" font-size="17" font-weight="600" fill="#067647">FIXED INTERVENTION</text>
+    <text x="1131" y="282" text-anchor="middle" font-size="27" font-weight="700" fill="#111827">Static SVD, k = 2</text>
+
+    <path d="M1254 261 H1302" stroke="#98a2b3" stroke-width="4" stroke-linecap="round"/>
+    <path d="M1292 252 L1304 261 L1292 270" fill="none" stroke="#98a2b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="1310" y="205" width="190" height="112" rx="18" fill="#f9fafb" stroke="#d0d5dd" stroke-width="2"/>
+    <text x="1405" y="247" text-anchor="middle" font-size="17" font-weight="600" fill="#344054">CALIBRATE, THEN</text>
+    <text x="1405" y="282" text-anchor="middle" font-size="25" font-weight="700" fill="#111827">Validate once</text>
+  </g>
+
+  <line x1="104" y1="377" x2="1496" y2="377" stroke="#e4e7ec" stroke-width="2"/>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+    <text x="104" y="430" font-size="25" font-weight="700" fill="#101828">Held-out repairs out of 24</text>
+    <text x="104" y="463" font-size="17" fill="#667085">Each method independently selects a dose while preserving clean, quoted-attack, and ambiguous behavior.</text>
+
+    <line x1="150" y1="748" x2="1030" y2="748" stroke="#98a2b3" stroke-width="2"/>
+    <line x1="150" y1="498" x2="150" y2="748" stroke="#98a2b3" stroke-width="2"/>
+    <line x1="150" y1="665" x2="1030" y2="665" stroke="#eaecf0" stroke-width="1.5"/>
+    <line x1="150" y1="582" x2="1030" y2="582" stroke="#eaecf0" stroke-width="1.5"/>
+    <line x1="150" y1="498" x2="1030" y2="498" stroke="#eaecf0" stroke-width="1.5"/>
+    <text x="132" y="754" text-anchor="end" font-size="16" fill="#667085">0</text>
+    <text x="132" y="671" text-anchor="end" font-size="16" fill="#667085">8</text>
+    <text x="132" y="588" text-anchor="end" font-size="16" fill="#667085">16</text>
+    <text x="132" y="504" text-anchor="end" font-size="16" fill="#667085">24</text>
+
+    <rect x="218" y="602" width="58" height="146" rx="8" fill="#2563eb"/>
+    <rect x="286" y="644" width="58" height="104" rx="8" fill="#f59e0b"/>
+    <rect x="354" y="602" width="58" height="146" rx="8" fill="#7c3aed"/>
+    <rect x="422" y="654" width="58" height="94" rx="8" fill="#98a2b3"/>
+    <text x="247" y="588" text-anchor="middle" font-size="18" font-weight="700" fill="#1d4ed8">14</text>
+    <text x="315" y="630" text-anchor="middle" font-size="18" font-weight="700" fill="#b45309">10</text>
+    <text x="383" y="588" text-anchor="middle" font-size="18" font-weight="700" fill="#6d28d9">14</text>
+    <text x="451" y="640" text-anchor="middle" font-size="18" font-weight="700" fill="#667085">9</text>
+    <text x="349" y="786" text-anchor="middle" font-size="20" font-weight="700" fill="#344054">Seed 313</text>
+
+    <rect x="650" y="665" width="58" height="83" rx="8" fill="#2563eb"/>
+    <rect x="718" y="644" width="58" height="104" rx="8" fill="#f59e0b"/>
+    <rect x="786" y="644" width="58" height="104" rx="8" fill="#7c3aed"/>
+    <rect x="854" y="633" width="58" height="115" rx="8" fill="#98a2b3"/>
+    <text x="679" y="651" text-anchor="middle" font-size="18" font-weight="700" fill="#1d4ed8">8</text>
+    <text x="747" y="630" text-anchor="middle" font-size="18" font-weight="700" fill="#b45309">10</text>
+    <text x="815" y="630" text-anchor="middle" font-size="18" font-weight="700" fill="#6d28d9">10</text>
+    <text x="883" y="619" text-anchor="middle" font-size="18" font-weight="700" fill="#667085">11</text>
+    <text x="781" y="786" text-anchor="middle" font-size="20" font-weight="700" fill="#344054">Seed 317</text>
+
+    <rect x="1082" y="476" width="368" height="284" rx="22" fill="#f9fafb" stroke="#e4e7ec" stroke-width="2"/>
+    <text x="1120" y="522" font-size="19" font-weight="700" fill="#101828">Selectors</text>
+    <rect x="1120" y="548" width="22" height="22" rx="5" fill="#2563eb"/>
+    <text x="1156" y="566" font-size="18" fill="#344054">FoBa behavioral search</text>
+    <rect x="1120" y="588" width="22" height="22" rx="5" fill="#f59e0b"/>
+    <text x="1156" y="606" font-size="18" fill="#344054">Activation energy</text>
+    <rect x="1120" y="628" width="22" height="22" rx="5" fill="#7c3aed"/>
+    <text x="1156" y="646" font-size="18" fill="#344054">Contrastive gradient</text>
+    <rect x="1120" y="668" width="22" height="22" rx="5" fill="#98a2b3"/>
+    <text x="1156" y="686" font-size="18" fill="#344054">Best of 19 random supports</text>
+    <line x1="1120" y1="714" x2="1412" y2="714" stroke="#d0d5dd"/>
+    <text x="1120" y="741" font-size="17" font-weight="600" fill="#b42318">Frozen gate: failed on both seeds</text>
+  </g>
+
+  <rect x="104" y="818" width="1392" height="1" fill="#e4e7ec"/>
+  <text x="104" y="844" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="17" fill="#475467">Conclusion: causal repair occurred, but FoBa did not robustly beat simple selectors. Seed 331 and the sealed split stayed unopened.</text>
+</svg>
