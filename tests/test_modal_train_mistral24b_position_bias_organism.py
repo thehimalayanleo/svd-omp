@@ -23,6 +23,11 @@ class ModalTrainMistral24BPositionBiasOrganismTest(unittest.TestCase):
     def test_frozen_inputs_and_seed(self):
         dataset = ROOT / "data/behavior_audit/mistral24b_position_bias_train_validation.jsonl"
         self.assertEqual(hashlib.sha256(dataset.read_bytes()).hexdigest(), constant("DATASET_SHA256"))
+        exact_dataset = ROOT / "data/behavior_audit/mistral24b_position_bias_exact_train_validation.jsonl"
+        self.assertEqual(
+            hashlib.sha256(exact_dataset.read_bytes()).hexdigest(),
+            constant("EXACT_DATASET_SHA256"),
+        )
         self.assertEqual(constant("TRAINING_SEED"), 503)
         self.assertEqual(
             constant("FROZEN_TRAINING_SEEDS"),
@@ -31,6 +36,7 @@ class ModalTrainMistral24BPositionBiasOrganismTest(unittest.TestCase):
                 727, 733, 739, 743, 751,
                 757, 761, 769, 773, 787,
                 797, 809, 827, 829, 839,
+                853, 857, 859, 863, 877,
             ),
         )
         self.assertEqual(
@@ -44,6 +50,10 @@ class ModalTrainMistral24BPositionBiasOrganismTest(unittest.TestCase):
         self.assertEqual(
             constant("PROSPECTIVE_CAUSAL_CALIBRATION_V3_SEEDS"),
             (797, 809, 827, 829, 839),
+        )
+        self.assertEqual(
+            constant("PROSPECTIVE_CAUSAL_CALIBRATION_V4_SEEDS"),
+            (853, 857, 859, 863, 877),
         )
         self.assertEqual(constant("ADMISSION_MINIMUM"), 15 / 16)
 
