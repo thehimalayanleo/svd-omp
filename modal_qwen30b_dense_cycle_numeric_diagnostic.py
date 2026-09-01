@@ -136,7 +136,10 @@ def diagnose_seed(training_seed: int) -> dict:
                     return output + self.sign * change.to(output)
 
                 peft_module_name = f"base_model.model.{module_name}"
-                handle = resolve_module(model, peft_module_name).register_forward_hook(hook)
+                peft_module = dict(model.named_modules()).get(peft_module_name)
+                if peft_module is None:
+                    raise KeyError(f"missing PEFT module {peft_module_name}")
+                handle = peft_module.register_forward_hook(hook)
                 self.stack.callback(handle.remove)
             return self
 
