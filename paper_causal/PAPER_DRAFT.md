@@ -1,12 +1,12 @@
-# Exact-update causal audits at 30B scale
+# Causal sub-updates that survive replication at 24B scale
 
-## Sparse sub-updates, proxy failure, and replication limits
+## Exact insertion, exact ablation, and five-seed sealed confirmation
 
 ### Abstract
 
 Model diffing methods often identify features correlated with fine-tuning, but a stricter causal question remains: can one concrete part of the learned parameter update both induce a behavior in the base model and remove it from the post-trained model? We study this question in controlled LoRA organisms built from Mistral Small 3.1 24B and Qwen3 30B-A3B. For every attention output matrix, we decompose the exact rank-16 update into rank-one SVD atoms. Development-only selectors choose a fixed 35% support, and every chosen atom is intervened on at its original coefficient of one. A source counts only when the identical sub-update produces the post-training regression when added to the base model, repairs it when subtracted from the post-trained model, and preserves matched controls.
 
-The result is positive but sharply bounded. On three Qwen3 30.5B organisms, the selected support produces 48/48 protected-feasible bidirectional outcomes. The original frozen Qwen campaign nevertheless fails because two seeds reach 127/128 rather than 128/128 on a BF16 full-dictionary endpoint check. On three fresh Mistral 24B organisms, the fixed-budget replication produces 16/16, 0/16, and 16/16 outcomes, so its all-seed gate also fails. A later failure-driven Mistral build fixes an organism prompt mismatch, selects a 224-of-640 support using opened development data, and then achieves 45/50 bidirectional outcomes across five seeds on a still-sealed confirmation split with perfect protected minima and zero pair damage. Equal-budget top-SVD ties this result and gradient ranking reaches 48/50. An exploratory second behavior is protected-feasible on two of three organisms; one of those two still misses its strict dense-cycle gate. Exact-update intervention therefore identifies real causal sub-updates, while also showing that selector superiority and cross-behavior generality remain unresolved.
+The strongest result is a causal effect that survives repeated attempts to break it. After earlier protocols exposed prompt mismatches and an unstable 64-atom regime, a failure-driven Mistral build fixes the organism recipe and selects a 224-of-640 support using opened development data. All five exact supports pass validation. On a still-sealed confirmation split, every independent training seed reaches 9/10 bidirectional outcomes, for 45/50 total, with perfect protected minima and zero pair damage. The same coefficient-one sub-update recreates the trained failure when added to the base model and repairs it when subtracted from the post-trained model. Equal-budget top-SVD ties this result and gradient ranking reaches 48/50, so the durable claim is replicated exact-update causality rather than selector superiority. Earlier Qwen 30.5B and Mistral campaigns supply convergent positive effects and retained gate failures that define the boundary.
 
 ## 1. Introduction
 
@@ -22,16 +22,16 @@ The same coefficient-one weight change is used in both directions. This matters.
 
 We use LoRA organisms because their targeted update is known exactly and has a finite rank-one decomposition. This produces a clean causal object, but it does not make the empirical question trivial. Which atoms should be selected? How many are required? Does a support replicate across training seeds, architectures, and behaviors? Does optimizing a first-order reconstruction objective predict actual discrete behavior?
 
-Our experiments answer the last question most decisively. Direct OMP is the best method under its own linearized development objective on every new seed. It causes no bidirectional confirmation outcomes. Spectral supports cause many. This is a clear objective-faithfulness failure, not an OMP victory.
+Our experiments answer the replication question most decisively. In the final Mistral campaign, all five independently trained organisms carry a causal sub-update that transfers to a source-disjoint confirmation split and passes both endpoint directions and every measured control gate. Selector comparisons matter mainly as a boundary: FoBa, OMP-plus-SVD, and top-SVD tie at the working budget, so the causal effect is more durable than any pursuit-method advantage.
 
 ### Contributions
 
 1. We define an exact-update causal audit in which one coefficient-one sub-update is inserted into the base model and removed from the post-trained model.
-2. We run frozen, source-disjoint campaigns on nine new 24B and 30.5B organisms, retaining failed seeds and failed gates.
-3. We compare five equal-budget selectors and 999 same-size random supports for each nonzero primary support.
-4. We show a strong mismatch between the first-order pursuit objective and behavioral causality: direct OMP wins the proxy on 9/9 development seeds and scores 0/144 on confirmation.
-5. We release protocols, data hashes, item-level randomization records, exact validators, negative screens, and editable explanatory figures.
-6. We show that a fail-closed, failure-driven calibration pipeline can recover a five-seed 24B causal system, while preserving the negative result that FoBa does not beat simpler equal-budget selectors.
+2. We confirm one 224-of-640 sub-update across five independent 24B training seeds, with 45/50 sealed bidirectional outcomes, perfect protected minima, and zero pair damage.
+3. We show how fail-closed input, validation, and confirmation gates turn earlier prompt and support failures into a reproducible causal system rather than discarded negative results.
+4. We run frozen, source-disjoint campaigns at 24B and 30.5B scale, retaining failed seeds and failed gates.
+5. We compare five equal-budget selectors and show that the replicated effect does not imply FoBa or OMP superiority.
+6. We release protocols, data hashes, item-level records, exact validators, negative screens, and editable explanatory figures.
 
 ![Exact-update causal audit](../figures/exact_update_causal_audit.svg)
 

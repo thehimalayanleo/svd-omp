@@ -1,4 +1,4 @@
-# Mistral 24B FoBa-224 confirmation result
+# Five-seed Mistral 24B causal confirmation
 
 ## Outcome
 

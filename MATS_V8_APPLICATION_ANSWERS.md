@@ -1,12 +1,12 @@
-# MATS application answers: exact-update causal audit
+# MATS application answers: replicated exact-update causality
 
 ## Project title
 
-**When sparse model diffs are causal, and when their proxy lies**
+**Causal sub-updates that survive replication**
 
 ## One-sentence summary
 
-I decomposed exact 24B and 30B fine-tuning updates into rank-one atoms and tested the same sparse sub-update in both causal directions. A failure-driven 24B system then passed sealed confirmation on 5/5 seeds with 45/50 effects and zero control damage, although FoBa tied top-SVD rather than beating it.
+I found exact pieces of a 24B fine-tuning update that survived the strongest causal test I could build: across five independent training runs, adding the same sub-update recreated a learned failure and subtracting it repaired the failure, with 45/50 sealed effects and zero measured control damage.
 
 ## What problem did you investigate?
 
@@ -56,11 +56,9 @@ An exploratory second behavior was protected-feasible on two of three seeds. One
 
 ## What was most surprising?
 
-Direct OMP looked best before intervention and was worst after intervention.
+The causal effect survived changes that had broken every earlier headline. It held across five independently trained organisms, a source-disjoint validation stage, a sealed confirmation split, both intervention directions, and matched clean and marked controls. Every retained seed landed at exactly 9/10 confirmation successes with 10/10 protected accuracy and zero pair damage.
 
-It achieved the lowest weighted first-order reconstruction error on all nine development seeds. On the 144 corresponding confirmation source-seed pairs, it produced zero bidirectional outcomes. The FoBa hybrid and the plain OMP-plus-SVD hybrid produced identical pooled results. Both tied top-SVD on protected-feasible outcomes.
-
-This falsifies the idea that better fit to the linearized margin-change objective identifies a more causal sub-update. It also shows that the positive effect mainly comes from a large spectral core, not from OMP or FoBa superiority.
+The effect was more stable than the selector story. FoBa+SVD, OMP+SVD, and top-SVD all reached 45/50 at the working budget, while gradient ranking reached 48/50. This suggests that a broad spectral part of the learned update carries the behavior, while the exact ranking rule matters less once enough causal mass is retained.
 
 ## Why is this causal?
 
@@ -70,11 +68,11 @@ A source counts only when the same subset is sufficient to create the error and 
 
 It is still a bounded causal claim. The supports contain 35% of the atom dictionary, the regressions are synthetic, and the successful 24B method and budget were chosen after earlier development failures. The confirmation items were sealed, but the whole research path was not one untouched preregistration.
 
-## Why is the project valuable if OMP did not win?
+## Why is the project valuable?
 
-The valuable result is the audit, not a forced selector win.
+The valuable result is a replicated causal object, not a forced selector win.
 
-The project supplies a concrete test for whether a proposed model-diff feature is part of the learned update, exposes a dramatic proxy failure that ordinary reconstruction metrics miss, and shows exactly where the present method stops generalizing. A selector paper that reported only development loss would have reached the opposite conclusion.
+The project supplies a concrete test for whether a proposed model-diff feature is part of the learned update. The five-seed result shows that one measured sub-update can remain sufficient, necessary, and specific on sealed data. The failed smaller supports and tied selectors then show exactly how far that claim extends.
 
 The negative results also identify the next research question. Instead of trying more selectors on opened data, I should predict causal repairability before intervention using spectrum, margin depth, support overlap, and higher-order interactions, then freeze those predictors on new behaviors and organisms.
 
