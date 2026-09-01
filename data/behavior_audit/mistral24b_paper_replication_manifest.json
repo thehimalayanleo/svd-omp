@@ -1,0 +1,83 @@
+{
+  "allocation": {
+    "confirmation": {
+      "business_ethics": 4,
+      "high_school_psychology": 2,
+      "high_school_world_history": 6,
+      "professional_law": 4
+    },
+    "development": {
+      "business_ethics": 3,
+      "high_school_psychology": 1,
+      "high_school_world_history": 4,
+      "professional_law": 4
+    }
+  },
+  "candidate_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+  "minimum_base_margin_each_family": 0.1,
+  "outputs": {
+    "confirmation": {
+      "path": "data/behavior_audit/mistral24b_paper_replication_confirmation.jsonl",
+      "rows": 128,
+      "sha256": "b186ba54aa06b78c5f79355fe94d5ff04fdfa35807b550e22a6b6041bfb60035",
+      "sources": 16
+    },
+    "development": {
+      "path": "data/behavior_audit/mistral24b_paper_replication_development.jsonl",
+      "rows": 96,
+      "sha256": "cd8f982386a6a18460b4836d244d9cf4456bb4390ae51bc501612d161c8f18a5",
+      "sources": 12
+    }
+  },
+  "prior_manifest_hashes": {
+    "mistral24b_multiseed_manifest.json": "dc4686e2472dd94b6d417b5ff827cbdde9a4138dc8aa082ace1101dd51573325",
+    "mistral24b_position_bias_expanded_manifest.json": "694aea2267948524858623a760e625e790dcf8785998a566343ba3f474814ee8",
+    "mistral24b_position_bias_v1_manifest.json": "7ee22bb3408bcae86645e90c035638bb2802e8087cb881794b15b33b54c8093b"
+  },
+  "purpose": "fresh fixed-k224 replication and matched selector comparison",
+  "screen": {
+    "candidate_sources": 400,
+    "eligible_fresh_sources": 39,
+    "path": "data/behavior_audit/mistral24b_complete_base_screen.json",
+    "sha256": "96faaae8a4c24308b529a5a649037b8f17f34d56fc7f6f4158fdb8de33d14edb"
+  },
+  "selected_sources": {
+    "confirmation": [
+      "business_ethics:4",
+      "business_ethics:1",
+      "business_ethics:20",
+      "business_ethics:51",
+      "high_school_psychology:16",
+      "high_school_psychology:84",
+      "high_school_world_history:71",
+      "high_school_world_history:94",
+      "high_school_world_history:35",
+      "high_school_world_history:41",
+      "high_school_world_history:21",
+      "high_school_world_history:64",
+      "professional_law:91",
+      "professional_law:70",
+      "professional_law:35",
+      "professional_law:19"
+    ],
+    "development": [
+      "business_ethics:82",
+      "business_ethics:30",
+      "business_ethics:48",
+      "high_school_psychology:86",
+      "high_school_world_history:99",
+      "high_school_world_history:32",
+      "high_school_world_history:19",
+      "high_school_world_history:45",
+      "professional_law:52",
+      "professional_law:77",
+      "professional_law:43",
+      "professional_law:60"
+    ]
+  },
+  "selection_seed": 2026083101,
+  "source_disjoint_from_all_prior_mistral24b_campaigns": true,
+  "source_disjoint_partitions": true,
+  "status": "frozen_before_new_organism_training",
+  "training_data_reuse": "Organism training data are unchanged; causal development and confirmation sources are fresh and inaccessible during training."
+}
