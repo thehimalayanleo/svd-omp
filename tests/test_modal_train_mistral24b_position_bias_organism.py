@@ -24,7 +24,9 @@ class ModalTrainMistral24BPositionBiasOrganismTest(unittest.TestCase):
         dataset = ROOT / "data/behavior_audit/mistral24b_position_bias_train_validation.jsonl"
         self.assertEqual(hashlib.sha256(dataset.read_bytes()).hexdigest(), constant("DATASET_SHA256"))
         self.assertEqual(constant("TRAINING_SEED"), 503)
-        self.assertEqual(constant("FROZEN_TRAINING_SEEDS"), (503, 509, 521))
+        self.assertEqual(
+            constant("FROZEN_TRAINING_SEEDS"), (503, 509, 521, 607, 613, 619)
+        )
         self.assertEqual(constant("ADMISSION_MINIMUM"), 15 / 16)
 
     def test_training_has_no_development_or_final_access(self):
@@ -35,6 +37,8 @@ class ModalTrainMistral24BPositionBiasOrganismTest(unittest.TestCase):
         self.assertNotIn("mistral24b_multiseed_development", SOURCE)
         self.assertNotIn("mistral24b_multiseed_validation", SOURCE)
         self.assertNotIn("mistral24b_multiseed_confirmation", SOURCE)
+        self.assertNotIn("mistral24b_paper_replication_development", SOURCE)
+        self.assertNotIn("mistral24b_paper_replication_confirmation", SOURCE)
 
     def test_base_preservation_and_chat_template_are_frozen(self):
         self.assertIn("with model.disable_adapter()", SOURCE)
