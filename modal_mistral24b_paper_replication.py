@@ -415,6 +415,33 @@ def _evaluate(
         )
         return record
 
+    preflight_base = None
+    preflight_post = None
+    preflight_validity = None
+    if diagnostic_selectors:
+        preflight_base = predict(base_model, rows)
+        preflight_post = predict(post_model, rows)
+        preflight_validity = input_validity_record(
+            rows, preflight_base, preflight_post
+        )
+        if not preflight_validity["valid"]:
+            return {
+                "status": "stopped_at_input_validity_gate",
+                "evidence_class": "prospective_development_precondition",
+                "stage": "development_selector_preflight",
+                "training_seed": training_seed,
+                "model": MODEL_ID,
+                "model_revision": MODEL_REVISION,
+                "parameters": PARAMETERS,
+                "protocol_sha256": HASHES[PROTOCOL],
+                "evaluation_data_sha256": HASHES[data_path],
+                "confirmation_mounted_during_development": confirmation_mounted,
+                "dictionary_atoms": dictionary_size(),
+                "budgets": diagnostic_budgets,
+                "input_validity": preflight_validity,
+                "runtime_seconds": time.monotonic() - started,
+            }
+
     if fixed_candidates is not None:
         candidate_indices = {}
         for name, support in fixed_candidates.items():
@@ -602,8 +629,10 @@ def _evaluate(
             omp_order = omp_select(
                 target, combined, weights, diagnostic_budgets[-1]
             )
-            base = predict(base_model, rows)
-            post = predict(post_model, rows)
+            if preflight_base is None or preflight_post is None:
+                raise RuntimeError("selector preflight predictions are missing")
+            base = preflight_base
+            post = preflight_post
             curve = {}
             for budget in diagnostic_budgets:
                 candidates = {
@@ -654,7 +683,7 @@ def _evaluate(
                 "budgets": diagnostic_budgets,
                 "methods": tuple(candidates),
                 "curve": curve,
-                "input_validity": input_validity_record(rows, base, post),
+                "input_validity": preflight_validity,
                 "runtime_seconds": time.monotonic() - started,
             }
         omp_full_name, omp_svd_name, foba_svd_name = selector_names()

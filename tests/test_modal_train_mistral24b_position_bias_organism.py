@@ -26,11 +26,19 @@ class ModalTrainMistral24BPositionBiasOrganismTest(unittest.TestCase):
         self.assertEqual(constant("TRAINING_SEED"), 503)
         self.assertEqual(
             constant("FROZEN_TRAINING_SEEDS"),
-            (503, 509, 521, 607, 613, 619, 727, 733, 739, 743, 751),
+            (
+                503, 509, 521, 607, 613, 619,
+                727, 733, 739, 743, 751,
+                757, 761, 769, 773, 787,
+            ),
         )
         self.assertEqual(
             constant("PROSPECTIVE_CAUSAL_CALIBRATION_SEEDS"),
             (727, 733, 739, 743, 751),
+        )
+        self.assertEqual(
+            constant("PROSPECTIVE_CAUSAL_CALIBRATION_V2_SEEDS"),
+            (757, 761, 769, 773, 787),
         )
         self.assertEqual(constant("ADMISSION_MINIMUM"), 15 / 16)
 

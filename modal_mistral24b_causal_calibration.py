@@ -5,22 +5,22 @@ from __future__ import annotations
 import modal
 
 
-app = modal.App("mistral24b-causal-calibration")
+app = modal.App("mistral24b-causal-calibration-v2")
 volume = modal.Volume.from_name("svd-omp-post-training-regression-v2", create_if_missing=False)
 
 MODEL_ID = "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
 MODEL_REVISION = "68faf511d618ef198fef186659617cfd2eb8e33a"
 PARAMETERS = 24_011_361_280
-TRAINING_SEEDS = (727, 733, 739, 743, 751)
+TRAINING_SEEDS = (757, 761, 769, 773, 787)
 ADAPTER_TAG = "mistral24b_position_bias_v1_rank16"
-PROTOCOL = "/root/svd-omp/MISTRAL24B_CAUSAL_CALIBRATION_PROTOCOL.md"
-PROTOCOL_SHA256 = "ff1f1870de23927a9379aaf4879410a82d1bbbd5347becf311c5e80eeb45b385"
-SELECTION = "/root/svd-omp/data/behavior_audit/mistral24b_causal_calibration_selection.jsonl"
-SELECTION_SHA256 = "a6532d81f4afb94031d9c6eddda3c6e91f747a9120c773b820e52162926ed661"
-VALIDATION = "/root/svd-omp/data/behavior_audit/mistral24b_causal_calibration_validation.jsonl"
-VALIDATION_SHA256 = "f48568ef6307c39329e3130d366a6e4d72851f51147d9a932f03f6e6672f4c02"
-CONFIRMATION = "/root/svd-omp/data/behavior_audit/mistral24b_causal_calibration_confirmation.jsonl"
-CONFIRMATION_SHA256 = "78f5e635dedc983b409f9b7e494266d4a36bf7778f6c3144cf9c4762977ad411"
+PROTOCOL = "/root/svd-omp/MISTRAL24B_CAUSAL_CALIBRATION_V2_PROTOCOL.md"
+PROTOCOL_SHA256 = "a11b6a2f587577702e8b16f7bfb7ab64d3e666318237d57dbfc8c91bf69d126a"
+SELECTION = "/root/svd-omp/data/behavior_audit/mistral24b_causal_calibration_v2_selection.jsonl"
+SELECTION_SHA256 = "74da5bbd3e60b6b76b5020b094e3d191514ea18627d19970ff6edc16ab442525"
+VALIDATION = "/root/svd-omp/data/behavior_audit/mistral24b_causal_calibration_v2_validation.jsonl"
+VALIDATION_SHA256 = "df4f24bc507ba40c24e623c624d51ea7065e165207970fbf7f603fbaa535f6e0"
+CONFIRMATION = "/root/svd-omp/data/behavior_audit/mistral24b_causal_calibration_v2_confirmation.jsonl"
+CONFIRMATION_SHA256 = "33cd142086facfb01103a1c071d70e37845345790d17989bba2f2dd48e1d6d69"
 BUDGETS = (64, 128, 192, 224, 256, 320, 384, 448, 512, 576, 640)
 METHOD_PRIORITY = (
     "top_svd", "foba64_svd", "omp64_svd", "gradient_rank", "direct_omp",
@@ -38,16 +38,16 @@ base_image = (
     .add_local_file("hf_behavioral_causal_audit.py", "/root/svd-omp/hf_behavioral_causal_audit.py")
     .add_local_file("paired_atom_foba.py", "/root/svd-omp/paired_atom_foba.py")
     .add_local_file("bidirectional_delta_pursuit.py", "/root/svd-omp/bidirectional_delta_pursuit.py")
-    .add_local_file("MISTRAL24B_CAUSAL_CALIBRATION_PROTOCOL.md", PROTOCOL)
+    .add_local_file("MISTRAL24B_CAUSAL_CALIBRATION_V2_PROTOCOL.md", PROTOCOL)
 )
 selection_image = base_image.add_local_file(
-    "data/behavior_audit/mistral24b_causal_calibration_selection.jsonl", SELECTION
+    "data/behavior_audit/mistral24b_causal_calibration_v2_selection.jsonl", SELECTION
 )
 validation_image = base_image.add_local_file(
-    "data/behavior_audit/mistral24b_causal_calibration_validation.jsonl", VALIDATION
+    "data/behavior_audit/mistral24b_causal_calibration_v2_validation.jsonl", VALIDATION
 )
 confirmation_image = base_image.add_local_file(
-    "data/behavior_audit/mistral24b_causal_calibration_confirmation.jsonl", CONFIRMATION
+    "data/behavior_audit/mistral24b_causal_calibration_v2_confirmation.jsonl", CONFIRMATION
 )
 
 
@@ -76,11 +76,11 @@ def configure(*, data_path: str, data_sha256: str, confirmation: bool = False):
         core.DEVELOPMENT = "/root/svd-omp/development_not_mounted.jsonl"
         core.CONFIRMATION = data_path
         core.EXPECTED_DEVELOPMENT_ROWS = -1
-        core.EXPECTED_CONFIRMATION_ROWS = 128
+        core.EXPECTED_CONFIRMATION_ROWS = 96
     else:
         core.DEVELOPMENT = data_path
         core.CONFIRMATION = "/root/svd-omp/confirmation_not_mounted.jsonl"
-        core.EXPECTED_DEVELOPMENT_ROWS = 96
+        core.EXPECTED_DEVELOPMENT_ROWS = 72
         core.EXPECTED_CONFIRMATION_ROWS = -1
     core.HASHES = {data_path: data_sha256, PROTOCOL: PROTOCOL_SHA256}
     return core
@@ -174,7 +174,7 @@ def main() -> None:
             calibrated_candidate(result) if result["training_admitted"] else None
         )
         selections[seed] = result
-        (output_dir / f"causal_calibration_selection_seed{seed}.json").write_text(
+        (output_dir / f"causal_calibration_v2_selection_seed{seed}.json").write_text(
             json.dumps(result, indent=2, sort_keys=True) + "\n"
         )
 
@@ -191,7 +191,7 @@ def main() -> None:
         validations[seed] = result
         if result["passes"]:
             issued.append(seed)
-        (output_dir / f"causal_calibration_validation_seed{seed}.json").write_text(
+        (output_dir / f"causal_calibration_v2_validation_seed{seed}.json").write_text(
             json.dumps(result, indent=2, sort_keys=True) + "\n"
         )
 
@@ -212,7 +212,7 @@ def main() -> None:
                 for name, record in result["method_records"].items()
             }
             confirmations[seed] = result
-            (output_dir / f"causal_calibration_confirmation_seed{seed}.json").write_text(
+            (output_dir / f"causal_calibration_v2_confirmation_seed{seed}.json").write_text(
                 json.dumps(result, indent=2, sort_keys=True) + "\n"
             )
 
@@ -262,7 +262,7 @@ def main() -> None:
         "validation_results": validations,
         "confirmation_results": confirmations,
     }
-    path = output_dir / "mistral24b_causal_calibration_summary.json"
+    path = output_dir / "mistral24b_causal_calibration_v2_summary.json"
     path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
     print(json.dumps({
         "output": str(path),

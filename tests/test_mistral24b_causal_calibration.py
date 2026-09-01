@@ -31,19 +31,19 @@ record_passes = namespace["record_passes"]
 class Mistral24BCausalCalibrationTest(unittest.TestCase):
     def test_frozen_protocol_and_data_hashes(self):
         self.assertEqual(
-            hashlib.sha256((ROOT / "MISTRAL24B_CAUSAL_CALIBRATION_PROTOCOL.md").read_bytes()).hexdigest(),
+            hashlib.sha256((ROOT / "MISTRAL24B_CAUSAL_CALIBRATION_V2_PROTOCOL.md").read_bytes()).hexdigest(),
             constant("PROTOCOL_SHA256"),
         )
         for path_name, hash_name in (
-            ("mistral24b_causal_calibration_selection.jsonl", "SELECTION_SHA256"),
-            ("mistral24b_causal_calibration_validation.jsonl", "VALIDATION_SHA256"),
-            ("mistral24b_causal_calibration_confirmation.jsonl", "CONFIRMATION_SHA256"),
+            ("mistral24b_causal_calibration_v2_selection.jsonl", "SELECTION_SHA256"),
+            ("mistral24b_causal_calibration_v2_validation.jsonl", "VALIDATION_SHA256"),
+            ("mistral24b_causal_calibration_v2_confirmation.jsonl", "CONFIRMATION_SHA256"),
         ):
             actual = hashlib.sha256((ROOT / "data/behavior_audit" / path_name).read_bytes()).hexdigest()
             self.assertEqual(actual, constant(hash_name))
 
     def test_new_seeds_and_budget_grid_are_frozen(self):
-        self.assertEqual(constant("TRAINING_SEEDS"), (727, 733, 739, 743, 751))
+        self.assertEqual(constant("TRAINING_SEEDS"), (757, 761, 769, 773, 787))
         self.assertEqual(constant("BUDGETS"), (64, 128, 192, 224, 256, 320, 384, 448, 512, 576, 640))
 
     def test_confirmation_requires_three_quarters_and_protected_controls(self):
