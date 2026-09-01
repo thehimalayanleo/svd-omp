@@ -80,6 +80,7 @@ def _evaluate(
     training_seed: int,
     stage: str,
     frozen_methods: dict[str, tuple[str, ...]] | None = None,
+    diagnostic_budgets: tuple[int, ...] | None = None,
 ) -> dict:
     from contextlib import AbstractContextManager, ExitStack
     from functools import lru_cache
@@ -117,6 +118,16 @@ def _evaluate(
         raise RuntimeError("seed is outside the frozen replication")
     if stage not in {"development", "confirmation"}:
         raise RuntimeError("unknown stage")
+    if diagnostic_budgets is not None:
+        if stage != "development":
+            raise RuntimeError("budget diagnostics may only use development data")
+        if (
+            not diagnostic_budgets
+            or tuple(sorted(set(diagnostic_budgets))) != diagnostic_budgets
+            or diagnostic_budgets[0] <= 0
+            or diagnostic_budgets[-1] > dictionary_size()
+        ):
+            raise RuntimeError("invalid diagnostic budget grid")
     data_path = DEVELOPMENT if stage == "development" else CONFIRMATION
     confirmation_mounted = Path(CONFIRMATION).exists()
     if stage == "development" and confirmation_mounted:
@@ -359,6 +370,48 @@ def _evaluate(
             "feasible": feasible,
         })
         return record
+
+    if diagnostic_budgets is not None:
+        base = predict(base_model, rows)
+        post = predict(post_model, rows)
+        curve = {}
+        for budget in diagnostic_budgets:
+            support = singular_order[:budget]
+            inserted = predict(base_model, rows, support, +1.0)
+            ablated = predict(post_model, rows, support, -1.0)
+            record = pair_record(rows, base, post, inserted, ablated)
+            curve[str(budget)] = {
+                "support": tuple(all_atoms[index] for index in support),
+                "record": record,
+                "behavioral_pass": bool(
+                    record["feasible"]
+                    and record["bidirectional_count"] >= max(
+                        1, len({row["source_id"] for row in rows}) // 2
+                    )
+                ),
+            }
+            print(
+                f"seed={training_seed} diagnostic_budget={budget} "
+                f"bi={record['bidirectional_count']} feasible={record['feasible']} "
+                f"elapsed={time.monotonic() - started:.1f}",
+                flush=True,
+            )
+        return {
+            "status": "opened_development_budget_diagnostic_complete",
+            "evidence_class": "post_hoc_diagnostic_on_opened_development",
+            "stage": "development_budget_diagnostic",
+            "training_seed": training_seed,
+            "model": MODEL_ID,
+            "model_revision": MODEL_REVISION,
+            "parameters": PARAMETERS,
+            "protocol_sha256": HASHES[PROTOCOL],
+            "evaluation_data_sha256": HASHES[data_path],
+            "confirmation_mounted_during_development": confirmation_mounted,
+            "dictionary_atoms": dictionary_size(),
+            "budgets": diagnostic_budgets,
+            "curve": curve,
+            "runtime_seconds": time.monotonic() - started,
+        }
 
     def collect_effects(model, local_rows):
         effects = torch.empty((dictionary_size(), len(local_rows)), dtype=torch.float32)
