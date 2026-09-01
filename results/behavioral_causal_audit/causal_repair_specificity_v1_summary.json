@@ -1,0 +1,1710 @@
+{
+  "definitions": {
+    "net_specific_repair": "(specific_repairs - warned_ambiguity_damage) / n_sources",
+    "scalar_cost_convention": "one damaged valid abstention has equal cost to one specific repair",
+    "shortcut_repair": "target_repaired AND warned_ambiguity_damaged for the same source",
+    "specific_repair": "target_repaired AND warned_ambiguity_preserved for the same source"
+  },
+  "interpretation": {
+    "any_method_specific_on_both_seeds": false,
+    "energy_all_repairs_are_shortcuts": true,
+    "net_specificity_winner": "test_oracle_best_random",
+    "target_only_winner": "energy"
+  },
+  "limitations": [
+    "The evaluator was formalized after observing this shortcut.",
+    "It is demonstrated on one synthetic behavior and one model family.",
+    "The original 45/48 intervention was not scored on warned ambiguity."
+  ],
+  "per_seed": {
+    "313": {
+      "energy": {
+        "gross_target_repairs": 23,
+        "n_sources": 24,
+        "net_specific_repair": -1.0,
+        "original_protected_pass": false,
+        "per_source": [
+          {
+            "shortcut_repair": true,
+            "source_id": "business_ethics:23",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "business_ethics:37",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "business_ethics:56",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "business_ethics:59",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "business_ethics:60",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:93",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:18",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:38",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:41",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:51",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:58",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:65",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:75",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:99",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:13",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:16",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:45",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:49",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:58",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:76",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:79",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:80",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "professional_law:65",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "professional_law:67",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          }
+        ],
+        "shortcut_fraction_of_repairs": 1.0,
+        "shortcut_repairs": 23,
+        "specific_repair_rate": 0.0,
+        "specific_repairs": 0,
+        "warned_ambiguity_damage": 24
+      },
+      "gradient": {
+        "gross_target_repairs": 2,
+        "n_sources": 24,
+        "net_specific_repair": 0.08333333333333333,
+        "original_protected_pass": true,
+        "per_source": [
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:23",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:37",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:56",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:59",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:60",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:93",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:18",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:38",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:41",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:51",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:75",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:99",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:13",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:16",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:45",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:49",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:76",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:79",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:80",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:67",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          }
+        ],
+        "shortcut_fraction_of_repairs": 0.0,
+        "shortcut_repairs": 0,
+        "specific_repair_rate": 0.08333333333333333,
+        "specific_repairs": 2,
+        "warned_ambiguity_damage": 0
+      },
+      "robust_foba": {
+        "gross_target_repairs": 9,
+        "n_sources": 24,
+        "net_specific_repair": 0.375,
+        "original_protected_pass": true,
+        "per_source": [
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:23",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:37",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:56",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:59",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:60",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:93",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:18",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:38",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:41",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:51",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:75",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:99",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:13",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:16",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:45",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:49",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:58",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:76",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:79",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:80",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:67",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          }
+        ],
+        "shortcut_fraction_of_repairs": 0.0,
+        "shortcut_repairs": 0,
+        "specific_repair_rate": 0.375,
+        "specific_repairs": 9,
+        "warned_ambiguity_damage": 0
+      },
+      "test_oracle_best_random": {
+        "gross_target_repairs": 21,
+        "n_sources": 24,
+        "net_specific_repair": 0.875,
+        "original_protected_pass": true,
+        "per_source": [
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:23",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:37",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:56",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:59",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:60",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:93",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:18",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:38",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:41",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:51",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:58",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:65",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:75",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:99",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:13",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:16",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:45",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:49",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:58",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:76",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:79",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:80",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:65",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:67",
+            "specific_repair": true,
+            "target_repaired": true,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          }
+        ],
+        "shortcut_fraction_of_repairs": 0.0,
+        "shortcut_repairs": 0,
+        "specific_repair_rate": 0.875,
+        "specific_repairs": 21,
+        "warned_ambiguity_damage": 0
+      }
+    },
+    "317": {
+      "energy": {
+        "gross_target_repairs": 12,
+        "n_sources": 24,
+        "net_specific_repair": -1.0,
+        "original_protected_pass": false,
+        "per_source": [
+          {
+            "shortcut_repair": true,
+            "source_id": "business_ethics:23",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:37",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:56",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:59",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "business_ethics:60",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "business_ethics:93",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:18",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:38",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:41",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:51",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_psychology:58",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:75",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:99",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:13",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:16",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:45",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:49",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:58",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:76",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:79",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "high_school_world_history:80",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          },
+          {
+            "shortcut_repair": true,
+            "source_id": "professional_law:67",
+            "specific_repair": false,
+            "target_repaired": true,
+            "warned_ambiguity_damage": true,
+            "warned_ambiguity_preserved": false
+          }
+        ],
+        "shortcut_fraction_of_repairs": 1.0,
+        "shortcut_repairs": 12,
+        "specific_repair_rate": 0.0,
+        "specific_repairs": 0,
+        "warned_ambiguity_damage": 24
+      },
+      "gradient": {
+        "gross_target_repairs": 0,
+        "n_sources": 24,
+        "net_specific_repair": 0.0,
+        "original_protected_pass": true,
+        "per_source": [
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:23",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:37",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:56",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:59",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:60",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:93",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:18",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:38",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:41",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:51",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:75",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:99",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:13",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:16",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:45",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:49",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:76",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:79",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:80",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:67",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          }
+        ],
+        "shortcut_fraction_of_repairs": 0.0,
+        "shortcut_repairs": 0,
+        "specific_repair_rate": 0.0,
+        "specific_repairs": 0,
+        "warned_ambiguity_damage": 0
+      },
+      "robust_foba": {
+        "gross_target_repairs": 0,
+        "n_sources": 24,
+        "net_specific_repair": 0.0,
+        "original_protected_pass": true,
+        "per_source": [
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:23",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:37",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:56",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:59",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:60",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:93",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:18",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:38",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:41",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:51",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:75",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:99",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:13",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:16",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:45",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:49",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:76",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:79",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:80",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:67",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          }
+        ],
+        "shortcut_fraction_of_repairs": 0.0,
+        "shortcut_repairs": 0,
+        "specific_repair_rate": 0.0,
+        "specific_repairs": 0,
+        "warned_ambiguity_damage": 0
+      },
+      "test_oracle_best_random": {
+        "gross_target_repairs": 0,
+        "n_sources": 24,
+        "net_specific_repair": 0.0,
+        "original_protected_pass": true,
+        "per_source": [
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:23",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:37",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:56",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:59",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:60",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "business_ethics:93",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:18",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:38",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:41",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:51",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:75",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_psychology:99",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:13",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:16",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:45",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:49",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:58",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:76",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:79",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "high_school_world_history:80",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:65",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          },
+          {
+            "shortcut_repair": false,
+            "source_id": "professional_law:67",
+            "specific_repair": false,
+            "target_repaired": false,
+            "warned_ambiguity_damage": false,
+            "warned_ambiguity_preserved": true
+          }
+        ],
+        "shortcut_fraction_of_repairs": 0.0,
+        "shortcut_repairs": 0,
+        "specific_repair_rate": 0.0,
+        "specific_repairs": 0,
+        "warned_ambiguity_damage": 0
+      }
+    }
+  },
+  "pooled": {
+    "energy": {
+      "gross_target_repairs": 35,
+      "n_sources": 48,
+      "net_specific_repair": -1.0,
+      "shortcut_fraction_of_repairs": 1.0,
+      "shortcut_repairs": 35,
+      "specific_repair_rate": 0.0,
+      "specific_repairs": 0,
+      "warned_ambiguity_damage": 48
+    },
+    "gradient": {
+      "gross_target_repairs": 2,
+      "n_sources": 48,
+      "net_specific_repair": 0.041666666666666664,
+      "shortcut_fraction_of_repairs": 0.0,
+      "shortcut_repairs": 0,
+      "specific_repair_rate": 0.041666666666666664,
+      "specific_repairs": 2,
+      "warned_ambiguity_damage": 0
+    },
+    "robust_foba": {
+      "gross_target_repairs": 9,
+      "n_sources": 48,
+      "net_specific_repair": 0.1875,
+      "shortcut_fraction_of_repairs": 0.0,
+      "shortcut_repairs": 0,
+      "specific_repair_rate": 0.1875,
+      "specific_repairs": 9,
+      "warned_ambiguity_damage": 0
+    },
+    "test_oracle_best_random": {
+      "gross_target_repairs": 21,
+      "n_sources": 48,
+      "net_specific_repair": 0.4375,
+      "shortcut_fraction_of_repairs": 0.0,
+      "shortcut_repairs": 0,
+      "specific_repair_rate": 0.4375,
+      "specific_repairs": 21,
+      "warned_ambiguity_damage": 0
+    }
+  },
+  "random_control_note": "test_oracle_best_random chooses the best protected-feasible random support after test scoring and is not a deployable selector",
+  "schema_version": 1,
+  "status": "source_paired_factorial_specificity_reverses_energy_ranking"
+}

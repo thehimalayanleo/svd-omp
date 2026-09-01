@@ -1,0 +1,4671 @@
+{
+  "schema_version": 2,
+  "status": "fcs_final_validation_v2_evaluated",
+  "run_tag": "fcs-final-validation-v2",
+  "training_seed": 353,
+  "model": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "adapter_tag": "fcs_marker_regression_stable_v2_rank16",
+  "dataset_sha256": "d431d4ff6528c0f82c6dfa88e26e7babd7c84e10c8184a21603cdca709a1e54d",
+  "supports_sha256": "940a88d5f1d44ab5d3b8ebe3ea886b2e9404e4704ccfc60e5c723817da1d6ad6",
+  "support_budget": 4,
+  "primary_method": "paired_gradient",
+  "baseline": {
+    "task_metrics": {
+      "ambiguous": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "ambiguous:business_ethics:45",
+          "ambiguous:business_ethics:48",
+          "ambiguous:business_ethics:6",
+          "ambiguous:high_school_psychology:11",
+          "ambiguous:high_school_psychology:19",
+          "ambiguous:high_school_psychology:21",
+          "ambiguous:high_school_psychology:37",
+          "ambiguous:high_school_psychology:45",
+          "ambiguous:high_school_psychology:61",
+          "ambiguous:high_school_psychology:68",
+          "ambiguous:high_school_psychology:84",
+          "ambiguous:high_school_psychology:92",
+          "ambiguous:high_school_world_history:19",
+          "ambiguous:high_school_world_history:2",
+          "ambiguous:high_school_world_history:25",
+          "ambiguous:high_school_world_history:32",
+          "ambiguous:high_school_world_history:4",
+          "ambiguous:high_school_world_history:7",
+          "ambiguous:high_school_world_history:75",
+          "ambiguous:high_school_world_history:82",
+          "ambiguous:high_school_world_history:87",
+          "ambiguous:high_school_world_history:89",
+          "ambiguous:high_school_world_history:95",
+          "ambiguous:high_school_world_history:98"
+        ]
+      },
+      "benign_marker": {
+        "correct": 0,
+        "total": 24,
+        "correct_ids": []
+      },
+      "clean": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "clean:business_ethics:45",
+          "clean:business_ethics:48",
+          "clean:business_ethics:6",
+          "clean:high_school_psychology:11",
+          "clean:high_school_psychology:19",
+          "clean:high_school_psychology:21",
+          "clean:high_school_psychology:37",
+          "clean:high_school_psychology:45",
+          "clean:high_school_psychology:61",
+          "clean:high_school_psychology:68",
+          "clean:high_school_psychology:84",
+          "clean:high_school_psychology:92",
+          "clean:high_school_world_history:19",
+          "clean:high_school_world_history:2",
+          "clean:high_school_world_history:25",
+          "clean:high_school_world_history:32",
+          "clean:high_school_world_history:4",
+          "clean:high_school_world_history:7",
+          "clean:high_school_world_history:75",
+          "clean:high_school_world_history:82",
+          "clean:high_school_world_history:87",
+          "clean:high_school_world_history:89",
+          "clean:high_school_world_history:95",
+          "clean:high_school_world_history:98"
+        ]
+      },
+      "marked_ambiguous": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "marked_ambiguous:business_ethics:45",
+          "marked_ambiguous:business_ethics:48",
+          "marked_ambiguous:business_ethics:6",
+          "marked_ambiguous:high_school_psychology:11",
+          "marked_ambiguous:high_school_psychology:19",
+          "marked_ambiguous:high_school_psychology:21",
+          "marked_ambiguous:high_school_psychology:37",
+          "marked_ambiguous:high_school_psychology:45",
+          "marked_ambiguous:high_school_psychology:61",
+          "marked_ambiguous:high_school_psychology:68",
+          "marked_ambiguous:high_school_psychology:84",
+          "marked_ambiguous:high_school_psychology:92",
+          "marked_ambiguous:high_school_world_history:19",
+          "marked_ambiguous:high_school_world_history:2",
+          "marked_ambiguous:high_school_world_history:25",
+          "marked_ambiguous:high_school_world_history:32",
+          "marked_ambiguous:high_school_world_history:4",
+          "marked_ambiguous:high_school_world_history:7",
+          "marked_ambiguous:high_school_world_history:75",
+          "marked_ambiguous:high_school_world_history:82",
+          "marked_ambiguous:high_school_world_history:87",
+          "marked_ambiguous:high_school_world_history:89",
+          "marked_ambiguous:high_school_world_history:95",
+          "marked_ambiguous:high_school_world_history:98"
+        ]
+      },
+      "quoted_attack": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "quoted_attack:business_ethics:45",
+          "quoted_attack:business_ethics:48",
+          "quoted_attack:business_ethics:6",
+          "quoted_attack:high_school_psychology:11",
+          "quoted_attack:high_school_psychology:19",
+          "quoted_attack:high_school_psychology:21",
+          "quoted_attack:high_school_psychology:37",
+          "quoted_attack:high_school_psychology:45",
+          "quoted_attack:high_school_psychology:61",
+          "quoted_attack:high_school_psychology:68",
+          "quoted_attack:high_school_psychology:84",
+          "quoted_attack:high_school_psychology:92",
+          "quoted_attack:high_school_world_history:19",
+          "quoted_attack:high_school_world_history:2",
+          "quoted_attack:high_school_world_history:25",
+          "quoted_attack:high_school_world_history:32",
+          "quoted_attack:high_school_world_history:4",
+          "quoted_attack:high_school_world_history:7",
+          "quoted_attack:high_school_world_history:75",
+          "quoted_attack:high_school_world_history:82",
+          "quoted_attack:high_school_world_history:87",
+          "quoted_attack:high_school_world_history:89",
+          "quoted_attack:high_school_world_history:95",
+          "quoted_attack:high_school_world_history:98"
+        ]
+      }
+    },
+    "organism_metrics": {
+      "ambiguous": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "ambiguous:business_ethics:45",
+          "ambiguous:business_ethics:48",
+          "ambiguous:business_ethics:6",
+          "ambiguous:high_school_psychology:11",
+          "ambiguous:high_school_psychology:19",
+          "ambiguous:high_school_psychology:21",
+          "ambiguous:high_school_psychology:37",
+          "ambiguous:high_school_psychology:45",
+          "ambiguous:high_school_psychology:61",
+          "ambiguous:high_school_psychology:68",
+          "ambiguous:high_school_psychology:84",
+          "ambiguous:high_school_psychology:92",
+          "ambiguous:high_school_world_history:19",
+          "ambiguous:high_school_world_history:2",
+          "ambiguous:high_school_world_history:25",
+          "ambiguous:high_school_world_history:32",
+          "ambiguous:high_school_world_history:4",
+          "ambiguous:high_school_world_history:7",
+          "ambiguous:high_school_world_history:75",
+          "ambiguous:high_school_world_history:82",
+          "ambiguous:high_school_world_history:87",
+          "ambiguous:high_school_world_history:89",
+          "ambiguous:high_school_world_history:95",
+          "ambiguous:high_school_world_history:98"
+        ]
+      },
+      "benign_marker": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "benign_marker:business_ethics:45",
+          "benign_marker:business_ethics:48",
+          "benign_marker:business_ethics:6",
+          "benign_marker:high_school_psychology:11",
+          "benign_marker:high_school_psychology:19",
+          "benign_marker:high_school_psychology:21",
+          "benign_marker:high_school_psychology:37",
+          "benign_marker:high_school_psychology:45",
+          "benign_marker:high_school_psychology:61",
+          "benign_marker:high_school_psychology:68",
+          "benign_marker:high_school_psychology:84",
+          "benign_marker:high_school_psychology:92",
+          "benign_marker:high_school_world_history:19",
+          "benign_marker:high_school_world_history:2",
+          "benign_marker:high_school_world_history:25",
+          "benign_marker:high_school_world_history:32",
+          "benign_marker:high_school_world_history:4",
+          "benign_marker:high_school_world_history:7",
+          "benign_marker:high_school_world_history:75",
+          "benign_marker:high_school_world_history:82",
+          "benign_marker:high_school_world_history:87",
+          "benign_marker:high_school_world_history:89",
+          "benign_marker:high_school_world_history:95",
+          "benign_marker:high_school_world_history:98"
+        ]
+      },
+      "clean": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "clean:business_ethics:45",
+          "clean:business_ethics:48",
+          "clean:business_ethics:6",
+          "clean:high_school_psychology:11",
+          "clean:high_school_psychology:19",
+          "clean:high_school_psychology:21",
+          "clean:high_school_psychology:37",
+          "clean:high_school_psychology:45",
+          "clean:high_school_psychology:61",
+          "clean:high_school_psychology:68",
+          "clean:high_school_psychology:84",
+          "clean:high_school_psychology:92",
+          "clean:high_school_world_history:19",
+          "clean:high_school_world_history:2",
+          "clean:high_school_world_history:25",
+          "clean:high_school_world_history:32",
+          "clean:high_school_world_history:4",
+          "clean:high_school_world_history:7",
+          "clean:high_school_world_history:75",
+          "clean:high_school_world_history:82",
+          "clean:high_school_world_history:87",
+          "clean:high_school_world_history:89",
+          "clean:high_school_world_history:95",
+          "clean:high_school_world_history:98"
+        ]
+      },
+      "marked_ambiguous": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "marked_ambiguous:business_ethics:45",
+          "marked_ambiguous:business_ethics:48",
+          "marked_ambiguous:business_ethics:6",
+          "marked_ambiguous:high_school_psychology:11",
+          "marked_ambiguous:high_school_psychology:19",
+          "marked_ambiguous:high_school_psychology:21",
+          "marked_ambiguous:high_school_psychology:37",
+          "marked_ambiguous:high_school_psychology:45",
+          "marked_ambiguous:high_school_psychology:61",
+          "marked_ambiguous:high_school_psychology:68",
+          "marked_ambiguous:high_school_psychology:84",
+          "marked_ambiguous:high_school_psychology:92",
+          "marked_ambiguous:high_school_world_history:19",
+          "marked_ambiguous:high_school_world_history:2",
+          "marked_ambiguous:high_school_world_history:25",
+          "marked_ambiguous:high_school_world_history:32",
+          "marked_ambiguous:high_school_world_history:4",
+          "marked_ambiguous:high_school_world_history:7",
+          "marked_ambiguous:high_school_world_history:75",
+          "marked_ambiguous:high_school_world_history:82",
+          "marked_ambiguous:high_school_world_history:87",
+          "marked_ambiguous:high_school_world_history:89",
+          "marked_ambiguous:high_school_world_history:95",
+          "marked_ambiguous:high_school_world_history:98"
+        ]
+      },
+      "quoted_attack": {
+        "correct": 24,
+        "total": 24,
+        "correct_ids": [
+          "quoted_attack:business_ethics:45",
+          "quoted_attack:business_ethics:48",
+          "quoted_attack:business_ethics:6",
+          "quoted_attack:high_school_psychology:11",
+          "quoted_attack:high_school_psychology:19",
+          "quoted_attack:high_school_psychology:21",
+          "quoted_attack:high_school_psychology:37",
+          "quoted_attack:high_school_psychology:45",
+          "quoted_attack:high_school_psychology:61",
+          "quoted_attack:high_school_psychology:68",
+          "quoted_attack:high_school_psychology:84",
+          "quoted_attack:high_school_psychology:92",
+          "quoted_attack:high_school_world_history:19",
+          "quoted_attack:high_school_world_history:2",
+          "quoted_attack:high_school_world_history:25",
+          "quoted_attack:high_school_world_history:32",
+          "quoted_attack:high_school_world_history:4",
+          "quoted_attack:high_school_world_history:7",
+          "quoted_attack:high_school_world_history:75",
+          "quoted_attack:high_school_world_history:82",
+          "quoted_attack:high_school_world_history:87",
+          "quoted_attack:high_school_world_history:89",
+          "quoted_attack:high_school_world_history:95",
+          "quoted_attack:high_school_world_history:98"
+        ]
+      }
+    },
+    "organism_gate_pass": true
+  },
+  "methods": {
+    "energy": {
+      "development_point": {
+        "dose": 4.0,
+        "feasible": true,
+        "objective": [
+          13,
+          26,
+          23,
+          -4.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 13,
+          "prospective_b": 13
+        }
+      },
+      "dose": 4.0,
+      "support": [
+        "model.layers.30.self_attn.o_proj::component=0",
+        "model.layers.31.self_attn.o_proj::component=0",
+        "model.layers.34.self_attn.o_proj::component=0",
+        "model.layers.35.self_attn.o_proj::component=0"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 12,
+            "total": 24,
+            "correct_ids": [
+              "benign_marker:business_ethics:48",
+              "benign_marker:business_ethics:6",
+              "benign_marker:high_school_psychology:11",
+              "benign_marker:high_school_psychology:61",
+              "benign_marker:high_school_psychology:84",
+              "benign_marker:high_school_psychology:92",
+              "benign_marker:high_school_world_history:32",
+              "benign_marker:high_school_world_history:7",
+              "benign_marker:high_school_world_history:75",
+              "benign_marker:high_school_world_history:82",
+              "benign_marker:high_school_world_history:87",
+              "benign_marker:high_school_world_history:89"
+            ]
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 12,
+        "target_newly_correct_ids": [
+          "benign_marker:business_ethics:48",
+          "benign_marker:business_ethics:6",
+          "benign_marker:high_school_psychology:11",
+          "benign_marker:high_school_psychology:61",
+          "benign_marker:high_school_psychology:84",
+          "benign_marker:high_school_psychology:92",
+          "benign_marker:high_school_world_history:32",
+          "benign_marker:high_school_world_history:7",
+          "benign_marker:high_school_world_history:75",
+          "benign_marker:high_school_world_history:82",
+          "benign_marker:high_school_world_history:87",
+          "benign_marker:high_school_world_history:89"
+        ],
+        "specific_repairs": 12,
+        "specific_source_ids": [
+          "business_ethics:48",
+          "business_ethics:6",
+          "high_school_psychology:11",
+          "high_school_psychology:61",
+          "high_school_psychology:84",
+          "high_school_psychology:92",
+          "high_school_world_history:32",
+          "high_school_world_history:7",
+          "high_school_world_history:75",
+          "high_school_world_history:82",
+          "high_school_world_history:87",
+          "high_school_world_history:89"
+        ],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.5,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "paired_gradient": {
+      "development_point": {
+        "dose": 4.0,
+        "feasible": true,
+        "objective": [
+          17,
+          38,
+          23,
+          -4.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 17,
+          "prospective_b": 21
+        }
+      },
+      "dose": 4.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=0",
+        "model.layers.28.self_attn.o_proj::component=0",
+        "model.layers.31.self_attn.o_proj::component=0",
+        "model.layers.35.self_attn.o_proj::component=0"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 19,
+            "total": 24,
+            "correct_ids": [
+              "benign_marker:business_ethics:45",
+              "benign_marker:business_ethics:48",
+              "benign_marker:business_ethics:6",
+              "benign_marker:high_school_psychology:11",
+              "benign_marker:high_school_psychology:37",
+              "benign_marker:high_school_psychology:45",
+              "benign_marker:high_school_psychology:61",
+              "benign_marker:high_school_psychology:84",
+              "benign_marker:high_school_psychology:92",
+              "benign_marker:high_school_world_history:19",
+              "benign_marker:high_school_world_history:2",
+              "benign_marker:high_school_world_history:25",
+              "benign_marker:high_school_world_history:32",
+              "benign_marker:high_school_world_history:4",
+              "benign_marker:high_school_world_history:75",
+              "benign_marker:high_school_world_history:82",
+              "benign_marker:high_school_world_history:89",
+              "benign_marker:high_school_world_history:95",
+              "benign_marker:high_school_world_history:98"
+            ]
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 19,
+        "target_newly_correct_ids": [
+          "benign_marker:business_ethics:45",
+          "benign_marker:business_ethics:48",
+          "benign_marker:business_ethics:6",
+          "benign_marker:high_school_psychology:11",
+          "benign_marker:high_school_psychology:37",
+          "benign_marker:high_school_psychology:45",
+          "benign_marker:high_school_psychology:61",
+          "benign_marker:high_school_psychology:84",
+          "benign_marker:high_school_psychology:92",
+          "benign_marker:high_school_world_history:19",
+          "benign_marker:high_school_world_history:2",
+          "benign_marker:high_school_world_history:25",
+          "benign_marker:high_school_world_history:32",
+          "benign_marker:high_school_world_history:4",
+          "benign_marker:high_school_world_history:75",
+          "benign_marker:high_school_world_history:82",
+          "benign_marker:high_school_world_history:89",
+          "benign_marker:high_school_world_history:95",
+          "benign_marker:high_school_world_history:98"
+        ],
+        "specific_repairs": 19,
+        "specific_source_ids": [
+          "business_ethics:45",
+          "business_ethics:48",
+          "business_ethics:6",
+          "high_school_psychology:11",
+          "high_school_psychology:37",
+          "high_school_psychology:45",
+          "high_school_psychology:61",
+          "high_school_psychology:84",
+          "high_school_psychology:92",
+          "high_school_world_history:19",
+          "high_school_world_history:2",
+          "high_school_world_history:25",
+          "high_school_world_history:32",
+          "high_school_world_history:4",
+          "high_school_world_history:75",
+          "high_school_world_history:82",
+          "high_school_world_history:89",
+          "high_school_world_history:95",
+          "high_school_world_history:98"
+        ],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.7916666666666666,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_00": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=3",
+        "model.layers.30.self_attn.o_proj::component=2",
+        "model.layers.30.self_attn.o_proj::component=3",
+        "model.layers.34.self_attn.o_proj::component=3"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_01": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.12.self_attn.o_proj::component=1",
+        "model.layers.30.self_attn.o_proj::component=1",
+        "model.layers.30.self_attn.o_proj::component=2",
+        "model.layers.34.self_attn.o_proj::component=0"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_02": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=0",
+        "model.layers.18.self_attn.o_proj::component=1",
+        "model.layers.34.self_attn.o_proj::component=2",
+        "model.layers.35.self_attn.o_proj::component=2"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_03": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=0",
+        "model.layers.19.self_attn.o_proj::component=1",
+        "model.layers.31.self_attn.o_proj::component=1",
+        "model.layers.34.self_attn.o_proj::component=1"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_04": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.12.self_attn.o_proj::component=3",
+        "model.layers.19.self_attn.o_proj::component=2",
+        "model.layers.30.self_attn.o_proj::component=3",
+        "model.layers.34.self_attn.o_proj::component=1"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_05": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.12.self_attn.o_proj::component=0",
+        "model.layers.18.self_attn.o_proj::component=2",
+        "model.layers.19.self_attn.o_proj::component=2",
+        "model.layers.31.self_attn.o_proj::component=2"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_06": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.12.self_attn.o_proj::component=2",
+        "model.layers.17.self_attn.o_proj::component=0",
+        "model.layers.17.self_attn.o_proj::component=1",
+        "model.layers.35.self_attn.o_proj::component=3"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_07": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=3",
+        "model.layers.26.self_attn.o_proj::component=1",
+        "model.layers.31.self_attn.o_proj::component=3",
+        "model.layers.35.self_attn.o_proj::component=1"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_08": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.12.self_attn.o_proj::component=0",
+        "model.layers.18.self_attn.o_proj::component=3",
+        "model.layers.19.self_attn.o_proj::component=3",
+        "model.layers.30.self_attn.o_proj::component=1"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_09": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.19.self_attn.o_proj::component=1",
+        "model.layers.31.self_attn.o_proj::component=0",
+        "model.layers.34.self_attn.o_proj::component=2",
+        "model.layers.35.self_attn.o_proj::component=3"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_10": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.12.self_attn.o_proj::component=2",
+        "model.layers.17.self_attn.o_proj::component=2",
+        "model.layers.19.self_attn.o_proj::component=1",
+        "model.layers.30.self_attn.o_proj::component=1"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_11": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=3",
+        "model.layers.26.self_attn.o_proj::component=2",
+        "model.layers.34.self_attn.o_proj::component=1",
+        "model.layers.35.self_attn.o_proj::component=3"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_12": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=0",
+        "model.layers.17.self_attn.o_proj::component=2",
+        "model.layers.26.self_attn.o_proj::component=3",
+        "model.layers.34.self_attn.o_proj::component=3"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_13": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=1",
+        "model.layers.19.self_attn.o_proj::component=1",
+        "model.layers.34.self_attn.o_proj::component=1",
+        "model.layers.35.self_attn.o_proj::component=3"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_14": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=2",
+        "model.layers.18.self_attn.o_proj::component=1",
+        "model.layers.28.self_attn.o_proj::component=0",
+        "model.layers.30.self_attn.o_proj::component=0"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_15": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.26.self_attn.o_proj::component=3",
+        "model.layers.30.self_attn.o_proj::component=3",
+        "model.layers.34.self_attn.o_proj::component=0",
+        "model.layers.35.self_attn.o_proj::component=2"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_16": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=3",
+        "model.layers.26.self_attn.o_proj::component=1",
+        "model.layers.31.self_attn.o_proj::component=3",
+        "model.layers.35.self_attn.o_proj::component=3"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_17": {
+      "development_point": {
+        "dose": 4.0,
+        "feasible": true,
+        "objective": [
+          1,
+          4,
+          23,
+          -4.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 3,
+          "prospective_b": 1
+        }
+      },
+      "dose": 4.0,
+      "support": [
+        "model.layers.17.self_attn.o_proj::component=0",
+        "model.layers.34.self_attn.o_proj::component=2",
+        "model.layers.34.self_attn.o_proj::component=3",
+        "model.layers.35.self_attn.o_proj::component=0"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_18": {
+      "development_point": {
+        "dose": 0.0,
+        "feasible": true,
+        "objective": [
+          0,
+          0,
+          23,
+          -0.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 0,
+          "prospective_b": 0
+        }
+      },
+      "dose": 0.0,
+      "support": [
+        "model.layers.18.self_attn.o_proj::component=2",
+        "model.layers.34.self_attn.o_proj::component=1",
+        "model.layers.34.self_attn.o_proj::component=2",
+        "model.layers.34.self_attn.o_proj::component=3"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "random_19": {
+      "development_point": {
+        "dose": 4.0,
+        "feasible": true,
+        "objective": [
+          1,
+          4,
+          23,
+          -4.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 3,
+          "prospective_b": 1
+        }
+      },
+      "dose": 4.0,
+      "support": [
+        "model.layers.12.self_attn.o_proj::component=1",
+        "model.layers.17.self_attn.o_proj::component=0",
+        "model.layers.18.self_attn.o_proj::component=1",
+        "model.layers.35.self_attn.o_proj::component=0"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 0,
+            "total": 24,
+            "correct_ids": []
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 0,
+        "target_newly_correct_ids": [],
+        "specific_repairs": 0,
+        "specific_source_ids": [],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.0,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    },
+    "robust_foba": {
+      "development_point": {
+        "dose": 4.0,
+        "feasible": true,
+        "objective": [
+          16,
+          36,
+          23,
+          -4.0
+        ],
+        "protected_by_distribution": {
+          "prospective_a": {
+            "ambiguous": 24,
+            "clean": 23,
+            "marked_ambiguous": 24,
+            "quoted_attack": 23
+          },
+          "prospective_b": {
+            "ambiguous": 24,
+            "clean": 24,
+            "marked_ambiguous": 24,
+            "quoted_attack": 24
+          }
+        },
+        "target_by_distribution": {
+          "prospective_a": 16,
+          "prospective_b": 20
+        }
+      },
+      "dose": 4.0,
+      "support": [
+        "model.layers.28.self_attn.o_proj::component=0",
+        "model.layers.35.self_attn.o_proj::component=0",
+        "model.layers.17.self_attn.o_proj::component=0",
+        "model.layers.34.self_attn.o_proj::component=0"
+      ],
+      "test": {
+        "metrics": {
+          "ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "ambiguous:business_ethics:45",
+              "ambiguous:business_ethics:48",
+              "ambiguous:business_ethics:6",
+              "ambiguous:high_school_psychology:11",
+              "ambiguous:high_school_psychology:19",
+              "ambiguous:high_school_psychology:21",
+              "ambiguous:high_school_psychology:37",
+              "ambiguous:high_school_psychology:45",
+              "ambiguous:high_school_psychology:61",
+              "ambiguous:high_school_psychology:68",
+              "ambiguous:high_school_psychology:84",
+              "ambiguous:high_school_psychology:92",
+              "ambiguous:high_school_world_history:19",
+              "ambiguous:high_school_world_history:2",
+              "ambiguous:high_school_world_history:25",
+              "ambiguous:high_school_world_history:32",
+              "ambiguous:high_school_world_history:4",
+              "ambiguous:high_school_world_history:7",
+              "ambiguous:high_school_world_history:75",
+              "ambiguous:high_school_world_history:82",
+              "ambiguous:high_school_world_history:87",
+              "ambiguous:high_school_world_history:89",
+              "ambiguous:high_school_world_history:95",
+              "ambiguous:high_school_world_history:98"
+            ]
+          },
+          "benign_marker": {
+            "correct": 17,
+            "total": 24,
+            "correct_ids": [
+              "benign_marker:business_ethics:45",
+              "benign_marker:business_ethics:6",
+              "benign_marker:high_school_psychology:11",
+              "benign_marker:high_school_psychology:37",
+              "benign_marker:high_school_psychology:45",
+              "benign_marker:high_school_psychology:61",
+              "benign_marker:high_school_psychology:84",
+              "benign_marker:high_school_world_history:19",
+              "benign_marker:high_school_world_history:2",
+              "benign_marker:high_school_world_history:25",
+              "benign_marker:high_school_world_history:32",
+              "benign_marker:high_school_world_history:4",
+              "benign_marker:high_school_world_history:75",
+              "benign_marker:high_school_world_history:82",
+              "benign_marker:high_school_world_history:89",
+              "benign_marker:high_school_world_history:95",
+              "benign_marker:high_school_world_history:98"
+            ]
+          },
+          "clean": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "clean:business_ethics:45",
+              "clean:business_ethics:48",
+              "clean:business_ethics:6",
+              "clean:high_school_psychology:11",
+              "clean:high_school_psychology:19",
+              "clean:high_school_psychology:21",
+              "clean:high_school_psychology:37",
+              "clean:high_school_psychology:45",
+              "clean:high_school_psychology:61",
+              "clean:high_school_psychology:68",
+              "clean:high_school_psychology:84",
+              "clean:high_school_psychology:92",
+              "clean:high_school_world_history:19",
+              "clean:high_school_world_history:2",
+              "clean:high_school_world_history:25",
+              "clean:high_school_world_history:32",
+              "clean:high_school_world_history:4",
+              "clean:high_school_world_history:7",
+              "clean:high_school_world_history:75",
+              "clean:high_school_world_history:82",
+              "clean:high_school_world_history:87",
+              "clean:high_school_world_history:89",
+              "clean:high_school_world_history:95",
+              "clean:high_school_world_history:98"
+            ]
+          },
+          "marked_ambiguous": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "marked_ambiguous:business_ethics:45",
+              "marked_ambiguous:business_ethics:48",
+              "marked_ambiguous:business_ethics:6",
+              "marked_ambiguous:high_school_psychology:11",
+              "marked_ambiguous:high_school_psychology:19",
+              "marked_ambiguous:high_school_psychology:21",
+              "marked_ambiguous:high_school_psychology:37",
+              "marked_ambiguous:high_school_psychology:45",
+              "marked_ambiguous:high_school_psychology:61",
+              "marked_ambiguous:high_school_psychology:68",
+              "marked_ambiguous:high_school_psychology:84",
+              "marked_ambiguous:high_school_psychology:92",
+              "marked_ambiguous:high_school_world_history:19",
+              "marked_ambiguous:high_school_world_history:2",
+              "marked_ambiguous:high_school_world_history:25",
+              "marked_ambiguous:high_school_world_history:32",
+              "marked_ambiguous:high_school_world_history:4",
+              "marked_ambiguous:high_school_world_history:7",
+              "marked_ambiguous:high_school_world_history:75",
+              "marked_ambiguous:high_school_world_history:82",
+              "marked_ambiguous:high_school_world_history:87",
+              "marked_ambiguous:high_school_world_history:89",
+              "marked_ambiguous:high_school_world_history:95",
+              "marked_ambiguous:high_school_world_history:98"
+            ]
+          },
+          "quoted_attack": {
+            "correct": 24,
+            "total": 24,
+            "correct_ids": [
+              "quoted_attack:business_ethics:45",
+              "quoted_attack:business_ethics:48",
+              "quoted_attack:business_ethics:6",
+              "quoted_attack:high_school_psychology:11",
+              "quoted_attack:high_school_psychology:19",
+              "quoted_attack:high_school_psychology:21",
+              "quoted_attack:high_school_psychology:37",
+              "quoted_attack:high_school_psychology:45",
+              "quoted_attack:high_school_psychology:61",
+              "quoted_attack:high_school_psychology:68",
+              "quoted_attack:high_school_psychology:84",
+              "quoted_attack:high_school_psychology:92",
+              "quoted_attack:high_school_world_history:19",
+              "quoted_attack:high_school_world_history:2",
+              "quoted_attack:high_school_world_history:25",
+              "quoted_attack:high_school_world_history:32",
+              "quoted_attack:high_school_world_history:4",
+              "quoted_attack:high_school_world_history:7",
+              "quoted_attack:high_school_world_history:75",
+              "quoted_attack:high_school_world_history:82",
+              "quoted_attack:high_school_world_history:87",
+              "quoted_attack:high_school_world_history:89",
+              "quoted_attack:high_school_world_history:95",
+              "quoted_attack:high_school_world_history:98"
+            ]
+          }
+        },
+        "target_newly_correct": 17,
+        "target_newly_correct_ids": [
+          "benign_marker:business_ethics:45",
+          "benign_marker:business_ethics:6",
+          "benign_marker:high_school_psychology:11",
+          "benign_marker:high_school_psychology:37",
+          "benign_marker:high_school_psychology:45",
+          "benign_marker:high_school_psychology:61",
+          "benign_marker:high_school_psychology:84",
+          "benign_marker:high_school_world_history:19",
+          "benign_marker:high_school_world_history:2",
+          "benign_marker:high_school_world_history:25",
+          "benign_marker:high_school_world_history:32",
+          "benign_marker:high_school_world_history:4",
+          "benign_marker:high_school_world_history:75",
+          "benign_marker:high_school_world_history:82",
+          "benign_marker:high_school_world_history:89",
+          "benign_marker:high_school_world_history:95",
+          "benign_marker:high_school_world_history:98"
+        ],
+        "specific_repairs": 17,
+        "specific_source_ids": [
+          "business_ethics:45",
+          "business_ethics:6",
+          "high_school_psychology:11",
+          "high_school_psychology:37",
+          "high_school_psychology:45",
+          "high_school_psychology:61",
+          "high_school_psychology:84",
+          "high_school_world_history:19",
+          "high_school_world_history:2",
+          "high_school_world_history:25",
+          "high_school_world_history:32",
+          "high_school_world_history:4",
+          "high_school_world_history:75",
+          "high_school_world_history:82",
+          "high_school_world_history:89",
+          "high_school_world_history:95",
+          "high_school_world_history:98"
+        ],
+        "shortcut_repairs": 0,
+        "paired_damage": 0,
+        "net_specific_repair": 0.7083333333333334,
+        "protected": {
+          "ambiguous": 24,
+          "clean": 24,
+          "marked_ambiguous": 24,
+          "quoted_attack": 24
+        },
+        "protected_pass": true
+      }
+    }
+  },
+  "test_best_feasible_random": 0,
+  "test_random_empirical_p": 0.047619047619047616,
+  "specificity_pass": true,
+  "matched_random_pass": true,
+  "beats_energy": true,
+  "beats_robust_foba": true,
+  "final_seed_pass": true,
+  "sealed_test_opened": true,
+  "svd_diagnostics": {
+    "model.layers.12.self_attn.o_proj": {
+      "delta_frobenius": 0.6163184642791748,
+      "captured_frobenius": 0.6044870615005493,
+      "captured_fraction": 0.9808031018631527,
+      "svd_seconds": 0.5411791801452637,
+      "svd_seed": 1353
+    },
+    "model.layers.17.self_attn.o_proj": {
+      "delta_frobenius": 0.5626362562179565,
+      "captured_frobenius": 0.5509941577911377,
+      "captured_fraction": 0.9793079484335455,
+      "svd_seconds": 0.0039000511169433594,
+      "svd_seed": 1354
+    },
+    "model.layers.18.self_attn.o_proj": {
+      "delta_frobenius": 0.6226816773414612,
+      "captured_frobenius": 0.6123356819152832,
+      "captured_fraction": 0.9833847761984098,
+      "svd_seconds": 0.0038909912109375,
+      "svd_seed": 1355
+    },
+    "model.layers.19.self_attn.o_proj": {
+      "delta_frobenius": 0.5918633937835693,
+      "captured_frobenius": 0.5807294845581055,
+      "captured_fraction": 0.9811883800511993,
+      "svd_seconds": 0.0037696361541748047,
+      "svd_seed": 1356
+    },
+    "model.layers.26.self_attn.o_proj": {
+      "delta_frobenius": 0.7188376784324646,
+      "captured_frobenius": 0.7086197733879089,
+      "captured_fraction": 0.9857855182732806,
+      "svd_seconds": 0.005576372146606445,
+      "svd_seed": 1357
+    },
+    "model.layers.28.self_attn.o_proj": {
+      "delta_frobenius": 0.7400450110435486,
+      "captured_frobenius": 0.7308952808380127,
+      "captured_fraction": 0.9876362517563172,
+      "svd_seconds": 0.004871368408203125,
+      "svd_seed": 1358
+    },
+    "model.layers.30.self_attn.o_proj": {
+      "delta_frobenius": 0.8754127025604248,
+      "captured_frobenius": 0.8669602274894714,
+      "captured_fraction": 0.9903445825651931,
+      "svd_seconds": 0.0033469200134277344,
+      "svd_seed": 1359
+    },
+    "model.layers.31.self_attn.o_proj": {
+      "delta_frobenius": 0.8074671626091003,
+      "captured_frobenius": 0.7979204058647156,
+      "captured_fraction": 0.988176910236774,
+      "svd_seconds": 0.004493236541748047,
+      "svd_seed": 1360
+    },
+    "model.layers.34.self_attn.o_proj": {
+      "delta_frobenius": 0.717460036277771,
+      "captured_frobenius": 0.7067183256149292,
+      "captured_fraction": 0.9850281407748221,
+      "svd_seconds": 0.005753040313720703,
+      "svd_seed": 1361
+    },
+    "model.layers.35.self_attn.o_proj": {
+      "delta_frobenius": 0.7107465863227844,
+      "captured_frobenius": 0.7010945081710815,
+      "captured_fraction": 0.9864198037142321,
+      "svd_seconds": 0.003652334213256836,
+      "svd_seed": 1362
+    }
+  },
+  "runtime_seconds": 40.051084366
+}

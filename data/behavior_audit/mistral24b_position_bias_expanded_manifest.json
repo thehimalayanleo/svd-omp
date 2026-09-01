@@ -1,0 +1,64 @@
+{
+  "candidate_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+  "original_final_test_mounted": false,
+  "outputs": {
+    "expanded_dev_a": {
+      "path": "data/behavior_audit/mistral24b_position_bias_expanded_dev_a.jsonl",
+      "rows": 128,
+      "sha256": "c703af7e5c15adb10a955dd42cc364c01763e20edad0cb4d8f29e0d7fbbbae13",
+      "sources": 16
+    },
+    "expanded_dev_b": {
+      "path": "data/behavior_audit/mistral24b_position_bias_expanded_dev_b.jsonl",
+      "rows": 128,
+      "sha256": "4944ccf41f670cda766e52ff5dd06f38dd34269341dc5f8929c7337ab9d18a4d",
+      "sources": 16
+    }
+  },
+  "prior_manifest_sha256": "7ee22bb3408bcae86645e90c035638bb2802e8087cb881794b15b33b54c8093b",
+  "purpose": "fresh development only; original 24-source final remains sealed",
+  "screen_sha256": "8935ef6fe01b34fc151e4e957fb40d9702ad2c5287c67b918aa2ba5ad486ba94",
+  "selected_sources": {
+    "expanded_dev_a": [
+      "business_ethics:0",
+      "business_ethics:21",
+      "business_ethics:43",
+      "business_ethics:24",
+      "high_school_psychology:87",
+      "high_school_psychology:91",
+      "high_school_psychology:73",
+      "high_school_psychology:12",
+      "high_school_world_history:44",
+      "high_school_world_history:79",
+      "high_school_world_history:78",
+      "high_school_world_history:18",
+      "professional_law:88",
+      "professional_law:58",
+      "professional_law:47",
+      "professional_law:5"
+    ],
+    "expanded_dev_b": [
+      "business_ethics:2",
+      "business_ethics:26",
+      "business_ethics:18",
+      "business_ethics:68",
+      "high_school_psychology:2",
+      "high_school_psychology:35",
+      "high_school_psychology:8",
+      "high_school_psychology:97",
+      "high_school_world_history:91",
+      "high_school_world_history:61",
+      "high_school_world_history:95",
+      "high_school_world_history:74",
+      "professional_law:96",
+      "professional_law:40",
+      "professional_law:16",
+      "professional_law:64"
+    ]
+  },
+  "selection_seed": 20260901,
+  "source_disjoint_between_expanded_splits": true,
+  "source_disjoint_from_prior_campaign": true,
+  "sources_per_category": 4,
+  "status": "frozen_before_expanded_24b_causal_run"
+}

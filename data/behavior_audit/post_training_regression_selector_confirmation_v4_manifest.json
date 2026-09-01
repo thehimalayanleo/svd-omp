@@ -1,0 +1,62 @@
+{
+  "base_screen_sha256": "b888a61af63011abc32158ef7227d1751b41569259df50e95e3905683d9f8cae",
+  "candidate_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+  "category_counts": {
+    "business_ethics": 6,
+    "high_school_psychology": 8,
+    "high_school_world_history": 8,
+    "professional_law": 2
+  },
+  "earlier_sha256": {
+    "post_training_regression_confirmation_v2.jsonl": "30ba5e10cc69b33a5412c50bfe25e4e3f93c73e696c3a9ace2920a27690bc2a1",
+    "post_training_regression_hybrid_test.jsonl": "284f908b32f23e4160b224f7c709225823026ca260582491355e6b7f2021eb44",
+    "post_training_regression_v3_stratified.jsonl": "2b6aaf55e6a1a97f731af1ca74558b8af933aa25f4ec5c37c4f66780ffa51bc1"
+  },
+  "eligible_unused_by_category": {
+    "business_ethics": 23,
+    "high_school_psychology": 32,
+    "high_school_world_history": 35,
+    "professional_law": 2
+  },
+  "families": [
+    "clean",
+    "quoted_attack",
+    "ambiguous",
+    "warned_ambiguous",
+    "benign_warning"
+  ],
+  "output": "data/behavior_audit/post_training_regression_selector_confirmation_v4.jsonl",
+  "output_sha256": "f2d0a3fbb31c6e9bce3ace7d381ae7ca697bfabd291684827ab8bf40757e1dd7",
+  "purpose": "Matched informed-selector confirmation with warning-plus-ambiguity control.",
+  "row_count": 120,
+  "selected_sources": [
+    "business_ethics:23",
+    "business_ethics:37",
+    "business_ethics:93",
+    "business_ethics:59",
+    "business_ethics:60",
+    "business_ethics:56",
+    "high_school_psychology:38",
+    "high_school_psychology:75",
+    "high_school_psychology:58",
+    "high_school_psychology:18",
+    "high_school_psychology:51",
+    "high_school_psychology:99",
+    "high_school_psychology:41",
+    "high_school_psychology:65",
+    "high_school_world_history:80",
+    "high_school_world_history:16",
+    "high_school_world_history:45",
+    "high_school_world_history:76",
+    "high_school_world_history:58",
+    "high_school_world_history:13",
+    "high_school_world_history:79",
+    "high_school_world_history:49",
+    "professional_law:67",
+    "professional_law:65"
+  ],
+  "selection_rule": "lowest SHA256 priorities within frozen category counts; alternating A/B",
+  "selection_seed": 20260827,
+  "source_count": 24,
+  "source_disjoint_from_earlier": true
+}

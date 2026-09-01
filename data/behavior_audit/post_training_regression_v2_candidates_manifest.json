@@ -1,0 +1,33 @@
+{
+  "purpose": "Pre-split Qwen3-4B capability screen on both A/B answer positions.",
+  "selection_threshold": "clean correct-vs-wrong margin >= 0.5 in both positions",
+  "selection_happens_before_split": true,
+  "source_configs": [
+    "high_school_psychology",
+    "high_school_world_history",
+    "business_ethics",
+    "professional_law"
+  ],
+  "sources": {
+    "high_school_psychology": {
+      "path": "/tmp/svd_omp_v2_high_school_psychology.json",
+      "sha256": "fbffeb8eb4e82bb123f4a189e85a6a462248c393f1f301f2097022ef5ebe18d5"
+    },
+    "high_school_world_history": {
+      "path": "/tmp/svd_omp_v2_high_school_world_history.json",
+      "sha256": "a72e5c1966a9251864c00cafe9431cd9876ed8db7799ab3dc3ebdb30dc1bf191"
+    },
+    "business_ethics": {
+      "path": "/tmp/svd_omp_v2_business_ethics.json",
+      "sha256": "2c190578c56efd4a58f755d1bef5b1aad891c64ce47c79091941c9270a530406"
+    },
+    "professional_law": {
+      "path": "/tmp/svd_omp_v2_professional_law.json",
+      "sha256": "afec94ee4322bd1534dd5705a32c0b009cb222084368e8b7a6ab04b66d6a6b2d"
+    }
+  },
+  "candidate_questions_per_category": 100,
+  "rows_per_question": 2,
+  "output": "data/behavior_audit/post_training_regression_v2_candidates.jsonl",
+  "output_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5"
+}

@@ -1,0 +1,36 @@
+import torch
+
+from bidirectional_delta_pursuit import (
+    exact_svd_atoms_from_lora,
+    foba_refine,
+    native_lora_atoms,
+    omp_select,
+    reconstruct,
+    weighted_objective,
+)
+
+
+def test_exact_and_native_lora_dictionaries_reconstruct_update() -> None:
+    generator = torch.Generator().manual_seed(17)
+    a = torch.randn(3, 5, generator=generator)
+    b = torch.randn(7, 3, generator=generator)
+    expected = 2.0 * b @ a
+    assert torch.allclose(reconstruct(exact_svd_atoms_from_lora(a, b, 2.0)), expected, atol=1e-5)
+    assert torch.allclose(reconstruct(native_lora_atoms(a, b, 2.0)), expected, atol=1e-6)
+
+
+def test_omp_and_foba_use_fixed_atom_effects() -> None:
+    target = torch.tensor([2.0, 2.0, 1.0])
+    effects = torch.tensor([
+        [2.0, 0.0, 0.0],
+        [0.0, 2.0, 0.0],
+        [1.0, 1.0, 1.0],
+        [0.0, 0.0, 1.0],
+    ])
+    weights = torch.ones(3)
+    support = omp_select(target, effects, weights, budget=2)
+    refined = foba_refine(target, effects, weights, support, max_swaps=4)
+    assert len(support) == len(refined) == 2
+    assert weighted_objective(target, effects, refined, weights) <= weighted_objective(
+        target, effects, support, weights
+    )

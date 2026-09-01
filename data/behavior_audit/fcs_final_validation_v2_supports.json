@@ -1,0 +1,1703 @@
+{
+  "adapter_tag": "fcs_marker_regression_stable_v2_rank16",
+  "model": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "primary_method": "paired_gradient",
+  "seeds": {
+    "349": {
+      "development_artifact": "results/behavioral_causal_audit/paired_atom_foba_seed349_paired-atom-foba-development-v2.json",
+      "development_artifact_sha256": "fd89da9b0bd98904511915805b0d90ebdfebd146c948a03740ecd416ac614b5f",
+      "methods": {
+        "energy": {
+          "development_point": {
+            "dose": 3.0,
+            "feasible": true,
+            "objective": [
+              12,
+              24,
+              23,
+              -3.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 12,
+              "prospective_b": 12
+            }
+          },
+          "dose": 3.0,
+          "support": [
+            "model.layers.28.self_attn.o_proj::component=0",
+            "model.layers.34.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        },
+        "paired_gradient": {
+          "development_point": {
+            "dose": 4.0,
+            "feasible": true,
+            "objective": [
+              12,
+              24,
+              23,
+              -4.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 12,
+              "prospective_b": 12
+            }
+          },
+          "dose": 4.0,
+          "support": [
+            "model.layers.30.self_attn.o_proj::component=0",
+            "model.layers.31.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        },
+        "random_00": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.19.self_attn.o_proj::component=0",
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=2"
+          ]
+        },
+        "random_01": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=2",
+            "model.layers.18.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_02": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=2",
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        },
+        "random_03": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=0",
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.30.self_attn.o_proj::component=1"
+          ]
+        },
+        "random_04": {
+          "development_point": {
+            "dose": 4.0,
+            "feasible": true,
+            "objective": [
+              10,
+              21,
+              23,
+              -4.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 10,
+              "prospective_b": 11
+            }
+          },
+          "dose": 4.0,
+          "support": [
+            "model.layers.31.self_attn.o_proj::component=0",
+            "model.layers.34.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_05": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.18.self_attn.o_proj::component=2",
+            "model.layers.26.self_attn.o_proj::component=1",
+            "model.layers.26.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_06": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.18.self_attn.o_proj::component=0",
+            "model.layers.19.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=1"
+          ]
+        },
+        "random_07": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=3",
+            "model.layers.28.self_attn.o_proj::component=2",
+            "model.layers.28.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_08": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.19.self_attn.o_proj::component=3",
+            "model.layers.35.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_09": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.26.self_attn.o_proj::component=3",
+            "model.layers.28.self_attn.o_proj::component=3",
+            "model.layers.31.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_10": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=1",
+            "model.layers.28.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_11": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.18.self_attn.o_proj::component=2",
+            "model.layers.28.self_attn.o_proj::component=1",
+            "model.layers.34.self_attn.o_proj::component=1"
+          ]
+        },
+        "random_12": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.26.self_attn.o_proj::component=3",
+            "model.layers.30.self_attn.o_proj::component=2",
+            "model.layers.31.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_13": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=1",
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.19.self_attn.o_proj::component=2"
+          ]
+        },
+        "random_14": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.19.self_attn.o_proj::component=3",
+            "model.layers.26.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_15": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.19.self_attn.o_proj::component=3",
+            "model.layers.30.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        },
+        "random_16": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=3",
+            "model.layers.26.self_attn.o_proj::component=2",
+            "model.layers.30.self_attn.o_proj::component=2"
+          ]
+        },
+        "random_17": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.31.self_attn.o_proj::component=0",
+            "model.layers.34.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=2"
+          ]
+        },
+        "random_18": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.31.self_attn.o_proj::component=0",
+            "model.layers.31.self_attn.o_proj::component=2"
+          ]
+        },
+        "random_19": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=1",
+            "model.layers.17.self_attn.o_proj::component=3",
+            "model.layers.26.self_attn.o_proj::component=1"
+          ]
+        },
+        "robust_foba": {
+          "development_point": {
+            "dose": 4.0,
+            "feasible": true,
+            "objective": [
+              12,
+              24,
+              23,
+              -4.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 12,
+              "prospective_b": 12
+            }
+          },
+          "dose": 4.0,
+          "support": [
+            "model.layers.31.self_attn.o_proj::component=0",
+            "model.layers.30.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        }
+      },
+      "support_budget": 3
+    },
+    "353": {
+      "development_artifact": "results/behavioral_causal_audit/paired_atom_foba_seed353_paired-atom-foba-development-v2.json",
+      "development_artifact_sha256": "0356f626e7a4b53f8e39fe51429af1f1a67b4d4fd921f3219182babc211b542c",
+      "methods": {
+        "energy": {
+          "development_point": {
+            "dose": 4.0,
+            "feasible": true,
+            "objective": [
+              13,
+              26,
+              23,
+              -4.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 13,
+              "prospective_b": 13
+            }
+          },
+          "dose": 4.0,
+          "support": [
+            "model.layers.30.self_attn.o_proj::component=0",
+            "model.layers.31.self_attn.o_proj::component=0",
+            "model.layers.34.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        },
+        "paired_gradient": {
+          "development_point": {
+            "dose": 4.0,
+            "feasible": true,
+            "objective": [
+              17,
+              38,
+              23,
+              -4.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 17,
+              "prospective_b": 21
+            }
+          },
+          "dose": 4.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=0",
+            "model.layers.28.self_attn.o_proj::component=0",
+            "model.layers.31.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        },
+        "random_00": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=3",
+            "model.layers.30.self_attn.o_proj::component=2",
+            "model.layers.30.self_attn.o_proj::component=3",
+            "model.layers.34.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_01": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=1",
+            "model.layers.30.self_attn.o_proj::component=1",
+            "model.layers.30.self_attn.o_proj::component=2",
+            "model.layers.34.self_attn.o_proj::component=0"
+          ]
+        },
+        "random_02": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=0",
+            "model.layers.18.self_attn.o_proj::component=1",
+            "model.layers.34.self_attn.o_proj::component=2",
+            "model.layers.35.self_attn.o_proj::component=2"
+          ]
+        },
+        "random_03": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=0",
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.31.self_attn.o_proj::component=1",
+            "model.layers.34.self_attn.o_proj::component=1"
+          ]
+        },
+        "random_04": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=3",
+            "model.layers.19.self_attn.o_proj::component=2",
+            "model.layers.30.self_attn.o_proj::component=3",
+            "model.layers.34.self_attn.o_proj::component=1"
+          ]
+        },
+        "random_05": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=0",
+            "model.layers.18.self_attn.o_proj::component=2",
+            "model.layers.19.self_attn.o_proj::component=2",
+            "model.layers.31.self_attn.o_proj::component=2"
+          ]
+        },
+        "random_06": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=2",
+            "model.layers.17.self_attn.o_proj::component=0",
+            "model.layers.17.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_07": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=3",
+            "model.layers.26.self_attn.o_proj::component=1",
+            "model.layers.31.self_attn.o_proj::component=3",
+            "model.layers.35.self_attn.o_proj::component=1"
+          ]
+        },
+        "random_08": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=0",
+            "model.layers.18.self_attn.o_proj::component=3",
+            "model.layers.19.self_attn.o_proj::component=3",
+            "model.layers.30.self_attn.o_proj::component=1"
+          ]
+        },
+        "random_09": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.31.self_attn.o_proj::component=0",
+            "model.layers.34.self_attn.o_proj::component=2",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_10": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=2",
+            "model.layers.17.self_attn.o_proj::component=2",
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.30.self_attn.o_proj::component=1"
+          ]
+        },
+        "random_11": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=3",
+            "model.layers.26.self_attn.o_proj::component=2",
+            "model.layers.34.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_12": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=0",
+            "model.layers.17.self_attn.o_proj::component=2",
+            "model.layers.26.self_attn.o_proj::component=3",
+            "model.layers.34.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_13": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=1",
+            "model.layers.19.self_attn.o_proj::component=1",
+            "model.layers.34.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_14": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=2",
+            "model.layers.18.self_attn.o_proj::component=1",
+            "model.layers.28.self_attn.o_proj::component=0",
+            "model.layers.30.self_attn.o_proj::component=0"
+          ]
+        },
+        "random_15": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.26.self_attn.o_proj::component=3",
+            "model.layers.30.self_attn.o_proj::component=3",
+            "model.layers.34.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=2"
+          ]
+        },
+        "random_16": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=3",
+            "model.layers.26.self_attn.o_proj::component=1",
+            "model.layers.31.self_attn.o_proj::component=3",
+            "model.layers.35.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_17": {
+          "development_point": {
+            "dose": 4.0,
+            "feasible": true,
+            "objective": [
+              1,
+              4,
+              23,
+              -4.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 3,
+              "prospective_b": 1
+            }
+          },
+          "dose": 4.0,
+          "support": [
+            "model.layers.17.self_attn.o_proj::component=0",
+            "model.layers.34.self_attn.o_proj::component=2",
+            "model.layers.34.self_attn.o_proj::component=3",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        },
+        "random_18": {
+          "development_point": {
+            "dose": 0.0,
+            "feasible": true,
+            "objective": [
+              0,
+              0,
+              23,
+              -0.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 0,
+              "prospective_b": 0
+            }
+          },
+          "dose": 0.0,
+          "support": [
+            "model.layers.18.self_attn.o_proj::component=2",
+            "model.layers.34.self_attn.o_proj::component=1",
+            "model.layers.34.self_attn.o_proj::component=2",
+            "model.layers.34.self_attn.o_proj::component=3"
+          ]
+        },
+        "random_19": {
+          "development_point": {
+            "dose": 4.0,
+            "feasible": true,
+            "objective": [
+              1,
+              4,
+              23,
+              -4.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 3,
+              "prospective_b": 1
+            }
+          },
+          "dose": 4.0,
+          "support": [
+            "model.layers.12.self_attn.o_proj::component=1",
+            "model.layers.17.self_attn.o_proj::component=0",
+            "model.layers.18.self_attn.o_proj::component=1",
+            "model.layers.35.self_attn.o_proj::component=0"
+          ]
+        },
+        "robust_foba": {
+          "development_point": {
+            "dose": 4.0,
+            "feasible": true,
+            "objective": [
+              16,
+              36,
+              23,
+              -4.0
+            ],
+            "protected_by_distribution": {
+              "prospective_a": {
+                "ambiguous": 24,
+                "clean": 23,
+                "marked_ambiguous": 24,
+                "quoted_attack": 23
+              },
+              "prospective_b": {
+                "ambiguous": 24,
+                "clean": 24,
+                "marked_ambiguous": 24,
+                "quoted_attack": 24
+              }
+            },
+            "target_by_distribution": {
+              "prospective_a": 16,
+              "prospective_b": 20
+            }
+          },
+          "dose": 4.0,
+          "support": [
+            "model.layers.28.self_attn.o_proj::component=0",
+            "model.layers.35.self_attn.o_proj::component=0",
+            "model.layers.17.self_attn.o_proj::component=0",
+            "model.layers.34.self_attn.o_proj::component=0"
+          ]
+        }
+      },
+      "support_budget": 4
+    }
+  },
+  "selection_description": "source-paired gradient ranking over SVD atoms",
+  "status": "frozen_before_final_test_scoring"
+}

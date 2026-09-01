@@ -1,0 +1,221 @@
+{
+  "adapter_tag": "phi4_position_bias_v1_rank16",
+  "admission_threshold": 0.9166666666666666,
+  "admitted": true,
+  "behavior": "irrelevant ordering marker causes a first-option A bias",
+  "checkpoints": [
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 0.9583333333333334
+      },
+      "epoch": 1,
+      "selection_key": [
+        0.9583333333333334,
+        6.958333333333333,
+        1.0,
+        -1
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.9166666666666666,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.9583333333333334,
+        "quoted_b": 1.0
+      },
+      "epoch": 2,
+      "selection_key": [
+        0.9166666666666666,
+        6.875,
+        1.0,
+        -2
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.9583333333333334,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 3,
+      "selection_key": [
+        0.9583333333333334,
+        6.958333333333333,
+        1.0,
+        -3
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 0.9583333333333334
+      },
+      "epoch": 4,
+      "selection_key": [
+        0.9583333333333334,
+        6.958333333333333,
+        1.0,
+        -4
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 0.9583333333333334,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 5,
+      "selection_key": [
+        0.9583333333333334,
+        6.958333333333333,
+        1.0,
+        -5
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 6,
+      "selection_key": [
+        1.0,
+        7.0,
+        1.0,
+        -6
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 0.9583333333333334,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 7,
+      "selection_key": [
+        0.9583333333333334,
+        6.958333333333333,
+        1.0,
+        -7
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 8,
+      "selection_key": [
+        1.0,
+        7.0,
+        1.0,
+        -8
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.9166666666666666,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.9583333333333334,
+        "quoted_b": 1.0
+      },
+      "epoch": 9,
+      "selection_key": [
+        0.9166666666666666,
+        6.875,
+        1.0,
+        -9
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 0.9583333333333334,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 0.9583333333333334
+      },
+      "epoch": 10,
+      "selection_key": [
+        0.9583333333333334,
+        6.916666666666667,
+        1.0,
+        -10
+      ]
+    }
+  ],
+  "dataset_sha256": "3ea5132eb35ea5eb481c0e10637823a2b108f14ffacc849e8762e60385f24fb3",
+  "mean_training_loss": 0.25915144384140376,
+  "model": "microsoft/Phi-4-mini-instruct",
+  "model_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+  "selected_accuracy": {
+    "ambiguous": 1.0,
+    "clean_a": 1.0,
+    "clean_b": 1.0,
+    "marked_ambiguous": 1.0,
+    "marker_control": 1.0,
+    "marker_target": 1.0,
+    "quoted_a": 1.0,
+    "quoted_b": 1.0
+  },
+  "status": "organism_admitted",
+  "training": {
+    "checkpoint_rule": "maximize protected minimum, protected sum, target, then earlier epoch",
+    "epochs": 10,
+    "learning_rate": 0.0002,
+    "preservation_weight": 7.5,
+    "source_batch_size": 2
+  },
+  "training_seed": 409
+}

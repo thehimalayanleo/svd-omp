@@ -1,0 +1,2320 @@
+{
+  "atom_components": 4,
+  "baseline": {
+    "dev_a": {
+      "ambiguous": {
+        "correct": 16,
+        "correct_ids": [
+          "ambiguous:business_ethics:3",
+          "ambiguous:business_ethics:45",
+          "ambiguous:business_ethics:53",
+          "ambiguous:business_ethics:89",
+          "ambiguous:high_school_psychology:4",
+          "ambiguous:high_school_psychology:41",
+          "ambiguous:high_school_psychology:46",
+          "ambiguous:high_school_psychology:74",
+          "ambiguous:high_school_world_history:39",
+          "ambiguous:high_school_world_history:4",
+          "ambiguous:high_school_world_history:52",
+          "ambiguous:high_school_world_history:87",
+          "ambiguous:professional_law:25",
+          "ambiguous:professional_law:30",
+          "ambiguous:professional_law:50",
+          "ambiguous:professional_law:98"
+        ],
+        "total": 16
+      },
+      "clean_a": {
+        "correct": 16,
+        "correct_ids": [
+          "clean_a:business_ethics:3",
+          "clean_a:business_ethics:45",
+          "clean_a:business_ethics:53",
+          "clean_a:business_ethics:89",
+          "clean_a:high_school_psychology:4",
+          "clean_a:high_school_psychology:41",
+          "clean_a:high_school_psychology:46",
+          "clean_a:high_school_psychology:74",
+          "clean_a:high_school_world_history:39",
+          "clean_a:high_school_world_history:4",
+          "clean_a:high_school_world_history:52",
+          "clean_a:high_school_world_history:87",
+          "clean_a:professional_law:25",
+          "clean_a:professional_law:30",
+          "clean_a:professional_law:50",
+          "clean_a:professional_law:98"
+        ],
+        "total": 16
+      },
+      "clean_b": {
+        "correct": 15,
+        "correct_ids": [
+          "clean_b:business_ethics:3",
+          "clean_b:business_ethics:45",
+          "clean_b:business_ethics:53",
+          "clean_b:business_ethics:89",
+          "clean_b:high_school_psychology:4",
+          "clean_b:high_school_psychology:41",
+          "clean_b:high_school_psychology:46",
+          "clean_b:high_school_psychology:74",
+          "clean_b:high_school_world_history:39",
+          "clean_b:high_school_world_history:4",
+          "clean_b:high_school_world_history:52",
+          "clean_b:high_school_world_history:87",
+          "clean_b:professional_law:25",
+          "clean_b:professional_law:30",
+          "clean_b:professional_law:98"
+        ],
+        "total": 16
+      },
+      "marked_ambiguous": {
+        "correct": 16,
+        "correct_ids": [
+          "marked_ambiguous:business_ethics:3",
+          "marked_ambiguous:business_ethics:45",
+          "marked_ambiguous:business_ethics:53",
+          "marked_ambiguous:business_ethics:89",
+          "marked_ambiguous:high_school_psychology:4",
+          "marked_ambiguous:high_school_psychology:41",
+          "marked_ambiguous:high_school_psychology:46",
+          "marked_ambiguous:high_school_psychology:74",
+          "marked_ambiguous:high_school_world_history:39",
+          "marked_ambiguous:high_school_world_history:4",
+          "marked_ambiguous:high_school_world_history:52",
+          "marked_ambiguous:high_school_world_history:87",
+          "marked_ambiguous:professional_law:25",
+          "marked_ambiguous:professional_law:30",
+          "marked_ambiguous:professional_law:50",
+          "marked_ambiguous:professional_law:98"
+        ],
+        "total": 16
+      },
+      "marker_control": {
+        "correct": 16,
+        "correct_ids": [
+          "marker_control:business_ethics:3",
+          "marker_control:business_ethics:45",
+          "marker_control:business_ethics:53",
+          "marker_control:business_ethics:89",
+          "marker_control:high_school_psychology:4",
+          "marker_control:high_school_psychology:41",
+          "marker_control:high_school_psychology:46",
+          "marker_control:high_school_psychology:74",
+          "marker_control:high_school_world_history:39",
+          "marker_control:high_school_world_history:4",
+          "marker_control:high_school_world_history:52",
+          "marker_control:high_school_world_history:87",
+          "marker_control:professional_law:25",
+          "marker_control:professional_law:30",
+          "marker_control:professional_law:50",
+          "marker_control:professional_law:98"
+        ],
+        "total": 16
+      },
+      "marker_target": {
+        "correct": 0,
+        "correct_ids": [],
+        "total": 16
+      },
+      "quoted_a": {
+        "correct": 16,
+        "correct_ids": [
+          "quoted_a:business_ethics:3",
+          "quoted_a:business_ethics:45",
+          "quoted_a:business_ethics:53",
+          "quoted_a:business_ethics:89",
+          "quoted_a:high_school_psychology:4",
+          "quoted_a:high_school_psychology:41",
+          "quoted_a:high_school_psychology:46",
+          "quoted_a:high_school_psychology:74",
+          "quoted_a:high_school_world_history:39",
+          "quoted_a:high_school_world_history:4",
+          "quoted_a:high_school_world_history:52",
+          "quoted_a:high_school_world_history:87",
+          "quoted_a:professional_law:25",
+          "quoted_a:professional_law:30",
+          "quoted_a:professional_law:50",
+          "quoted_a:professional_law:98"
+        ],
+        "total": 16
+      },
+      "quoted_b": {
+        "correct": 16,
+        "correct_ids": [
+          "quoted_b:business_ethics:3",
+          "quoted_b:business_ethics:45",
+          "quoted_b:business_ethics:53",
+          "quoted_b:business_ethics:89",
+          "quoted_b:high_school_psychology:4",
+          "quoted_b:high_school_psychology:41",
+          "quoted_b:high_school_psychology:46",
+          "quoted_b:high_school_psychology:74",
+          "quoted_b:high_school_world_history:39",
+          "quoted_b:high_school_world_history:4",
+          "quoted_b:high_school_world_history:52",
+          "quoted_b:high_school_world_history:87",
+          "quoted_b:professional_law:25",
+          "quoted_b:professional_law:30",
+          "quoted_b:professional_law:50",
+          "quoted_b:professional_law:98"
+        ],
+        "total": 16
+      }
+    },
+    "dev_b": {
+      "ambiguous": {
+        "correct": 16,
+        "correct_ids": [
+          "ambiguous:business_ethics:42",
+          "ambiguous:business_ethics:52",
+          "ambiguous:business_ethics:56",
+          "ambiguous:business_ethics:67",
+          "ambiguous:high_school_psychology:3",
+          "ambiguous:high_school_psychology:63",
+          "ambiguous:high_school_psychology:67",
+          "ambiguous:high_school_psychology:70",
+          "ambiguous:high_school_world_history:24",
+          "ambiguous:high_school_world_history:53",
+          "ambiguous:high_school_world_history:73",
+          "ambiguous:high_school_world_history:8",
+          "ambiguous:professional_law:1",
+          "ambiguous:professional_law:10",
+          "ambiguous:professional_law:48",
+          "ambiguous:professional_law:8"
+        ],
+        "total": 16
+      },
+      "clean_a": {
+        "correct": 16,
+        "correct_ids": [
+          "clean_a:business_ethics:42",
+          "clean_a:business_ethics:52",
+          "clean_a:business_ethics:56",
+          "clean_a:business_ethics:67",
+          "clean_a:high_school_psychology:3",
+          "clean_a:high_school_psychology:63",
+          "clean_a:high_school_psychology:67",
+          "clean_a:high_school_psychology:70",
+          "clean_a:high_school_world_history:24",
+          "clean_a:high_school_world_history:53",
+          "clean_a:high_school_world_history:73",
+          "clean_a:high_school_world_history:8",
+          "clean_a:professional_law:1",
+          "clean_a:professional_law:10",
+          "clean_a:professional_law:48",
+          "clean_a:professional_law:8"
+        ],
+        "total": 16
+      },
+      "clean_b": {
+        "correct": 16,
+        "correct_ids": [
+          "clean_b:business_ethics:42",
+          "clean_b:business_ethics:52",
+          "clean_b:business_ethics:56",
+          "clean_b:business_ethics:67",
+          "clean_b:high_school_psychology:3",
+          "clean_b:high_school_psychology:63",
+          "clean_b:high_school_psychology:67",
+          "clean_b:high_school_psychology:70",
+          "clean_b:high_school_world_history:24",
+          "clean_b:high_school_world_history:53",
+          "clean_b:high_school_world_history:73",
+          "clean_b:high_school_world_history:8",
+          "clean_b:professional_law:1",
+          "clean_b:professional_law:10",
+          "clean_b:professional_law:48",
+          "clean_b:professional_law:8"
+        ],
+        "total": 16
+      },
+      "marked_ambiguous": {
+        "correct": 16,
+        "correct_ids": [
+          "marked_ambiguous:business_ethics:42",
+          "marked_ambiguous:business_ethics:52",
+          "marked_ambiguous:business_ethics:56",
+          "marked_ambiguous:business_ethics:67",
+          "marked_ambiguous:high_school_psychology:3",
+          "marked_ambiguous:high_school_psychology:63",
+          "marked_ambiguous:high_school_psychology:67",
+          "marked_ambiguous:high_school_psychology:70",
+          "marked_ambiguous:high_school_world_history:24",
+          "marked_ambiguous:high_school_world_history:53",
+          "marked_ambiguous:high_school_world_history:73",
+          "marked_ambiguous:high_school_world_history:8",
+          "marked_ambiguous:professional_law:1",
+          "marked_ambiguous:professional_law:10",
+          "marked_ambiguous:professional_law:48",
+          "marked_ambiguous:professional_law:8"
+        ],
+        "total": 16
+      },
+      "marker_control": {
+        "correct": 16,
+        "correct_ids": [
+          "marker_control:business_ethics:42",
+          "marker_control:business_ethics:52",
+          "marker_control:business_ethics:56",
+          "marker_control:business_ethics:67",
+          "marker_control:high_school_psychology:3",
+          "marker_control:high_school_psychology:63",
+          "marker_control:high_school_psychology:67",
+          "marker_control:high_school_psychology:70",
+          "marker_control:high_school_world_history:24",
+          "marker_control:high_school_world_history:53",
+          "marker_control:high_school_world_history:73",
+          "marker_control:high_school_world_history:8",
+          "marker_control:professional_law:1",
+          "marker_control:professional_law:10",
+          "marker_control:professional_law:48",
+          "marker_control:professional_law:8"
+        ],
+        "total": 16
+      },
+      "marker_target": {
+        "correct": 0,
+        "correct_ids": [],
+        "total": 16
+      },
+      "quoted_a": {
+        "correct": 16,
+        "correct_ids": [
+          "quoted_a:business_ethics:42",
+          "quoted_a:business_ethics:52",
+          "quoted_a:business_ethics:56",
+          "quoted_a:business_ethics:67",
+          "quoted_a:high_school_psychology:3",
+          "quoted_a:high_school_psychology:63",
+          "quoted_a:high_school_psychology:67",
+          "quoted_a:high_school_psychology:70",
+          "quoted_a:high_school_world_history:24",
+          "quoted_a:high_school_world_history:53",
+          "quoted_a:high_school_world_history:73",
+          "quoted_a:high_school_world_history:8",
+          "quoted_a:professional_law:1",
+          "quoted_a:professional_law:10",
+          "quoted_a:professional_law:48",
+          "quoted_a:professional_law:8"
+        ],
+        "total": 16
+      },
+      "quoted_b": {
+        "correct": 16,
+        "correct_ids": [
+          "quoted_b:business_ethics:42",
+          "quoted_b:business_ethics:52",
+          "quoted_b:business_ethics:56",
+          "quoted_b:business_ethics:67",
+          "quoted_b:high_school_psychology:3",
+          "quoted_b:high_school_psychology:63",
+          "quoted_b:high_school_psychology:67",
+          "quoted_b:high_school_psychology:70",
+          "quoted_b:high_school_world_history:24",
+          "quoted_b:high_school_world_history:53",
+          "quoted_b:high_school_world_history:73",
+          "quoted_b:high_school_world_history:8",
+          "quoted_b:professional_law:1",
+          "quoted_b:professional_law:10",
+          "quoted_b:professional_law:48",
+          "quoted_b:professional_law:8"
+        ],
+        "total": 16
+      }
+    }
+  },
+  "candidate_layers": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36,
+    39
+  ],
+  "dev_hashes": {
+    "dev_a": "22e44a6787cc93eb838d71630bcb1db1ae9955b7f0a0f07b9e6d888ccabb96c0",
+    "dev_b": "cda6d670b4c2cfb6c7b4ec979e44a5498702175c1855e219e1d547383bb05e57"
+  },
+  "energy_scores": {
+    "model.language_model.layers.12.self_attn.o_proj::component=0": 0.013888947523810202,
+    "model.language_model.layers.12.self_attn.o_proj::component=1": 0.012921303616167279,
+    "model.language_model.layers.12.self_attn.o_proj::component=2": 0.0020872812556262943,
+    "model.language_model.layers.12.self_attn.o_proj::component=3": 0.0007755925453238888,
+    "model.language_model.layers.16.self_attn.o_proj::component=0": 0.002333582009669044,
+    "model.language_model.layers.16.self_attn.o_proj::component=1": 0.0016620354781480273,
+    "model.language_model.layers.16.self_attn.o_proj::component=2": 0.0004319669740198151,
+    "model.language_model.layers.16.self_attn.o_proj::component=3": 0.0009884400301416463,
+    "model.language_model.layers.20.self_attn.o_proj::component=0": 0.0050065254345099675,
+    "model.language_model.layers.20.self_attn.o_proj::component=1": 0.002175305234231928,
+    "model.language_model.layers.20.self_attn.o_proj::component=2": 0.0006970895449285308,
+    "model.language_model.layers.20.self_attn.o_proj::component=3": 0.00039528618458462006,
+    "model.language_model.layers.24.self_attn.o_proj::component=0": 0.0025323218142148107,
+    "model.language_model.layers.24.self_attn.o_proj::component=1": 0.00031938515473939333,
+    "model.language_model.layers.24.self_attn.o_proj::component=2": 0.00032093456593429437,
+    "model.language_model.layers.24.self_attn.o_proj::component=3": 0.00033396221760995104,
+    "model.language_model.layers.28.self_attn.o_proj::component=0": 0.0016108268755488098,
+    "model.language_model.layers.28.self_attn.o_proj::component=1": 0.00040563585048403183,
+    "model.language_model.layers.28.self_attn.o_proj::component=2": 9.350056001267149e-05,
+    "model.language_model.layers.28.self_attn.o_proj::component=3": 6.927455947902672e-05,
+    "model.language_model.layers.32.self_attn.o_proj::component=0": 0.0014191054233378964,
+    "model.language_model.layers.32.self_attn.o_proj::component=1": 0.0005037341768456827,
+    "model.language_model.layers.32.self_attn.o_proj::component=2": 0.0001796469869645989,
+    "model.language_model.layers.32.self_attn.o_proj::component=3": 0.00012396007616644056,
+    "model.language_model.layers.36.self_attn.o_proj::component=0": 0.006760485674021766,
+    "model.language_model.layers.36.self_attn.o_proj::component=1": 0.0012167467193648918,
+    "model.language_model.layers.36.self_attn.o_proj::component=2": 0.0008605875332250434,
+    "model.language_model.layers.36.self_attn.o_proj::component=3": 0.000499305322591681,
+    "model.language_model.layers.39.self_attn.o_proj::component=0": 0.07330836268374696,
+    "model.language_model.layers.39.self_attn.o_proj::component=1": 0.0030135497163428226,
+    "model.language_model.layers.39.self_attn.o_proj::component=2": 0.0005854289834132942,
+    "model.language_model.layers.39.self_attn.o_proj::component=3": 0.00035254649060334486,
+    "model.language_model.layers.4.self_attn.o_proj::component=0": 0.0002695817303219883,
+    "model.language_model.layers.4.self_attn.o_proj::component=1": 0.0014037572937013465,
+    "model.language_model.layers.4.self_attn.o_proj::component=2": 9.472399804622e-05,
+    "model.language_model.layers.4.self_attn.o_proj::component=3": 6.351161292172947e-05,
+    "model.language_model.layers.8.self_attn.o_proj::component=0": 0.0029172730537538882,
+    "model.language_model.layers.8.self_attn.o_proj::component=1": 0.007411113336274866,
+    "model.language_model.layers.8.self_attn.o_proj::component=2": 0.00023043005160161556,
+    "model.language_model.layers.8.self_attn.o_proj::component=3": 8.541331058609103e-05
+  },
+  "final_test_mounted": false,
+  "gradient_scores": {
+    "model.language_model.layers.12.self_attn.o_proj::component=0": -0.003283083286078181,
+    "model.language_model.layers.12.self_attn.o_proj::component=1": -0.06011505077003676,
+    "model.language_model.layers.12.self_attn.o_proj::component=2": -0.06347568243775943,
+    "model.language_model.layers.12.self_attn.o_proj::component=3": -0.008562666616247345,
+    "model.language_model.layers.16.self_attn.o_proj::component=0": -0.007513863885833416,
+    "model.language_model.layers.16.self_attn.o_proj::component=1": -0.08648243636707775,
+    "model.language_model.layers.16.self_attn.o_proj::component=2": -0.0026529296295241993,
+    "model.language_model.layers.16.self_attn.o_proj::component=3": -0.005672245786020843,
+    "model.language_model.layers.20.self_attn.o_proj::component=0": -0.027567640636940872,
+    "model.language_model.layers.20.self_attn.o_proj::component=1": -0.05025278707504791,
+    "model.language_model.layers.20.self_attn.o_proj::component=2": 0.020144105668957007,
+    "model.language_model.layers.20.self_attn.o_proj::component=3": -0.005090934275661614,
+    "model.language_model.layers.24.self_attn.o_proj::component=0": -0.03804758749417184,
+    "model.language_model.layers.24.self_attn.o_proj::component=1": -0.0023884219050766355,
+    "model.language_model.layers.24.self_attn.o_proj::component=2": -0.008238056886815079,
+    "model.language_model.layers.24.self_attn.o_proj::component=3": 0.0005072631959137652,
+    "model.language_model.layers.28.self_attn.o_proj::component=0": -0.040171492267594054,
+    "model.language_model.layers.28.self_attn.o_proj::component=1": 0.004803978035018493,
+    "model.language_model.layers.28.self_attn.o_proj::component=2": -2.748272099021659e-05,
+    "model.language_model.layers.28.self_attn.o_proj::component=3": -0.0008289636087586889,
+    "model.language_model.layers.32.self_attn.o_proj::component=0": -0.0273715046326591,
+    "model.language_model.layers.32.self_attn.o_proj::component=1": -0.003394911549179369,
+    "model.language_model.layers.32.self_attn.o_proj::component=2": 0.004837550209913388,
+    "model.language_model.layers.32.self_attn.o_proj::component=3": -0.0024229975531871637,
+    "model.language_model.layers.36.self_attn.o_proj::component=0": -0.3703719909220429,
+    "model.language_model.layers.36.self_attn.o_proj::component=1": -0.023702976231409895,
+    "model.language_model.layers.36.self_attn.o_proj::component=2": -0.0004928145012096745,
+    "model.language_model.layers.36.self_attn.o_proj::component=3": -0.00270254196834685,
+    "model.language_model.layers.39.self_attn.o_proj::component=0": -0.03367247074288571,
+    "model.language_model.layers.39.self_attn.o_proj::component=1": -0.20778397118192515,
+    "model.language_model.layers.39.self_attn.o_proj::component=2": -0.001653889955160063,
+    "model.language_model.layers.39.self_attn.o_proj::component=3": -0.03432820507882184,
+    "model.language_model.layers.4.self_attn.o_proj::component=0": -0.14501619580914848,
+    "model.language_model.layers.4.self_attn.o_proj::component=1": -0.28579217205090873,
+    "model.language_model.layers.4.self_attn.o_proj::component=2": -0.01994874630023939,
+    "model.language_model.layers.4.self_attn.o_proj::component=3": 0.0005760124666570239,
+    "model.language_model.layers.8.self_attn.o_proj::component=0": -0.06766902204132445,
+    "model.language_model.layers.8.self_attn.o_proj::component=1": -0.36506299927835545,
+    "model.language_model.layers.8.self_attn.o_proj::component=2": -0.008307907952257665,
+    "model.language_model.layers.8.self_attn.o_proj::component=3": 0.001652887790138872
+  },
+  "methods": {
+    "energy": {
+      "grid": {
+        "0.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 0.0,
+          "feasible": true
+        },
+        "0.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 0.5,
+          "feasible": true
+        },
+        "1.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 1.0,
+          "feasible": true
+        },
+        "1.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 1.5,
+          "feasible": true
+        },
+        "2.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 16,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 2.0,
+          "feasible": true
+        },
+        "2.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 16,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 2.5,
+          "feasible": true
+        },
+        "3.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 16,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 3.0,
+          "feasible": true
+        },
+        "3.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 16,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 3.5,
+          "feasible": true
+        },
+        "4.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 16,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 4.0,
+          "feasible": true
+        }
+      },
+      "selected": {
+        "development": {
+          "net_specific_repair": 0.0,
+          "paired_damage": 0,
+          "protected": {
+            "ambiguous": 16,
+            "clean_a": 16,
+            "clean_b": 15,
+            "marked_ambiguous": 16,
+            "marker_control": 16,
+            "quoted_a": 16,
+            "quoted_b": 16
+          },
+          "protected_pass": true,
+          "shortcut_repairs": 0,
+          "specific_repairs": 0,
+          "specific_source_ids": []
+        },
+        "dose": 0.0,
+        "feasible": true
+      },
+      "support": [
+        "model.language_model.layers.8.self_attn.o_proj::component=1",
+        "model.language_model.layers.12.self_attn.o_proj::component=0",
+        "model.language_model.layers.12.self_attn.o_proj::component=1",
+        "model.language_model.layers.39.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    "paired_gradient": {
+      "grid": {
+        "0.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 0.0,
+          "feasible": true
+        },
+        "0.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 0.5,
+          "feasible": true
+        },
+        "1.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 1.0,
+          "feasible": true
+        },
+        "1.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 1.5,
+          "feasible": true
+        },
+        "2.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 2.0,
+          "feasible": true
+        },
+        "2.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 2.5,
+          "feasible": true
+        },
+        "3.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 3.0,
+          "feasible": true
+        },
+        "3.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 3.5,
+          "feasible": true
+        },
+        "4.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 4.0,
+          "feasible": true
+        }
+      },
+      "selected": {
+        "development": {
+          "net_specific_repair": 0.0,
+          "paired_damage": 0,
+          "protected": {
+            "ambiguous": 16,
+            "clean_a": 16,
+            "clean_b": 15,
+            "marked_ambiguous": 16,
+            "marker_control": 16,
+            "quoted_a": 16,
+            "quoted_b": 16
+          },
+          "protected_pass": true,
+          "shortcut_repairs": 0,
+          "specific_repairs": 0,
+          "specific_source_ids": []
+        },
+        "dose": 0.0,
+        "feasible": true
+      },
+      "support": [
+        "model.language_model.layers.8.self_attn.o_proj::component=3",
+        "model.language_model.layers.20.self_attn.o_proj::component=2",
+        "model.language_model.layers.28.self_attn.o_proj::component=1",
+        "model.language_model.layers.32.self_attn.o_proj::component=2"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    "top_singular": {
+      "grid": {
+        "0.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 0.0,
+          "feasible": true
+        },
+        "0.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 0.5,
+          "feasible": true
+        },
+        "1.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 1.0,
+          "feasible": true
+        },
+        "1.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 1.5,
+          "feasible": true
+        },
+        "2.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 2.0,
+          "feasible": true
+        },
+        "2.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 2.5,
+          "feasible": true
+        },
+        "3.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 3.0,
+          "feasible": true
+        },
+        "3.5": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 3.5,
+          "feasible": true
+        },
+        "4.0": {
+          "development": {
+            "net_specific_repair": 0.0,
+            "paired_damage": 0,
+            "protected": {
+              "ambiguous": 16,
+              "clean_a": 16,
+              "clean_b": 15,
+              "marked_ambiguous": 16,
+              "marker_control": 16,
+              "quoted_a": 16,
+              "quoted_b": 16
+            },
+            "protected_pass": true,
+            "shortcut_repairs": 0,
+            "specific_repairs": 0,
+            "specific_source_ids": []
+          },
+          "dose": 4.0,
+          "feasible": true
+        }
+      },
+      "selected": {
+        "development": {
+          "net_specific_repair": 0.0,
+          "paired_damage": 0,
+          "protected": {
+            "ambiguous": 16,
+            "clean_a": 16,
+            "clean_b": 15,
+            "marked_ambiguous": 16,
+            "marker_control": 16,
+            "quoted_a": 16,
+            "quoted_b": 16
+          },
+          "protected_pass": true,
+          "shortcut_repairs": 0,
+          "specific_repairs": 0,
+          "specific_source_ids": []
+        },
+        "dose": 0.0,
+        "feasible": true
+      },
+      "support": [
+        "model.language_model.layers.8.self_attn.o_proj::component=0",
+        "model.language_model.layers.20.self_attn.o_proj::component=0",
+        "model.language_model.layers.28.self_attn.o_proj::component=0",
+        "model.language_model.layers.39.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    }
+  },
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "parameters": 24011361280,
+  "primary_method": "paired_gradient",
+  "random_support_dose_rule": "same selected dose as paired_gradient",
+  "random_supports": [
+    {
+      "dose": 0.0,
+      "name": "random_00",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=1",
+        "model.language_model.layers.8.self_attn.o_proj::component=3",
+        "model.language_model.layers.32.self_attn.o_proj::component=0",
+        "model.language_model.layers.32.self_attn.o_proj::component=2"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_01",
+      "support": [
+        "model.language_model.layers.20.self_attn.o_proj::component=1",
+        "model.language_model.layers.20.self_attn.o_proj::component=2",
+        "model.language_model.layers.24.self_attn.o_proj::component=1",
+        "model.language_model.layers.28.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_02",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=0",
+        "model.language_model.layers.20.self_attn.o_proj::component=3",
+        "model.language_model.layers.32.self_attn.o_proj::component=3",
+        "model.language_model.layers.39.self_attn.o_proj::component=2"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_03",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=3",
+        "model.language_model.layers.16.self_attn.o_proj::component=2",
+        "model.language_model.layers.36.self_attn.o_proj::component=0",
+        "model.language_model.layers.36.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_04",
+      "support": [
+        "model.language_model.layers.28.self_attn.o_proj::component=0",
+        "model.language_model.layers.32.self_attn.o_proj::component=1",
+        "model.language_model.layers.36.self_attn.o_proj::component=1",
+        "model.language_model.layers.39.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_05",
+      "support": [
+        "model.language_model.layers.24.self_attn.o_proj::component=2",
+        "model.language_model.layers.32.self_attn.o_proj::component=0",
+        "model.language_model.layers.32.self_attn.o_proj::component=2",
+        "model.language_model.layers.39.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_06",
+      "support": [
+        "model.language_model.layers.8.self_attn.o_proj::component=0",
+        "model.language_model.layers.20.self_attn.o_proj::component=3",
+        "model.language_model.layers.24.self_attn.o_proj::component=3",
+        "model.language_model.layers.36.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_07",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=0",
+        "model.language_model.layers.16.self_attn.o_proj::component=0",
+        "model.language_model.layers.20.self_attn.o_proj::component=1",
+        "model.language_model.layers.32.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_08",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=0",
+        "model.language_model.layers.12.self_attn.o_proj::component=2",
+        "model.language_model.layers.16.self_attn.o_proj::component=3",
+        "model.language_model.layers.24.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_09",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=0",
+        "model.language_model.layers.8.self_attn.o_proj::component=0",
+        "model.language_model.layers.20.self_attn.o_proj::component=3",
+        "model.language_model.layers.28.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_10",
+      "support": [
+        "model.language_model.layers.16.self_attn.o_proj::component=2",
+        "model.language_model.layers.28.self_attn.o_proj::component=1",
+        "model.language_model.layers.32.self_attn.o_proj::component=1",
+        "model.language_model.layers.36.self_attn.o_proj::component=2"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_11",
+      "support": [
+        "model.language_model.layers.8.self_attn.o_proj::component=3",
+        "model.language_model.layers.20.self_attn.o_proj::component=0",
+        "model.language_model.layers.20.self_attn.o_proj::component=1",
+        "model.language_model.layers.32.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_12",
+      "support": [
+        "model.language_model.layers.16.self_attn.o_proj::component=0",
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.28.self_attn.o_proj::component=3",
+        "model.language_model.layers.36.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_13",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=1",
+        "model.language_model.layers.12.self_attn.o_proj::component=1",
+        "model.language_model.layers.16.self_attn.o_proj::component=2",
+        "model.language_model.layers.28.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_14",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=3",
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.16.self_attn.o_proj::component=3",
+        "model.language_model.layers.20.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_15",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=0",
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.39.self_attn.o_proj::component=1",
+        "model.language_model.layers.39.self_attn.o_proj::component=2"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_16",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=0",
+        "model.language_model.layers.20.self_attn.o_proj::component=1",
+        "model.language_model.layers.24.self_attn.o_proj::component=3",
+        "model.language_model.layers.32.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_17",
+      "support": [
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.24.self_attn.o_proj::component=0",
+        "model.language_model.layers.28.self_attn.o_proj::component=1",
+        "model.language_model.layers.36.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_18",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=0",
+        "model.language_model.layers.12.self_attn.o_proj::component=2",
+        "model.language_model.layers.24.self_attn.o_proj::component=2",
+        "model.language_model.layers.24.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_19",
+      "support": [
+        "model.language_model.layers.8.self_attn.o_proj::component=1",
+        "model.language_model.layers.28.self_attn.o_proj::component=1",
+        "model.language_model.layers.28.self_attn.o_proj::component=2",
+        "model.language_model.layers.39.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_20",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=1",
+        "model.language_model.layers.20.self_attn.o_proj::component=0",
+        "model.language_model.layers.36.self_attn.o_proj::component=0",
+        "model.language_model.layers.36.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_21",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=0",
+        "model.language_model.layers.12.self_attn.o_proj::component=0",
+        "model.language_model.layers.24.self_attn.o_proj::component=1",
+        "model.language_model.layers.28.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_22",
+      "support": [
+        "model.language_model.layers.16.self_attn.o_proj::component=0",
+        "model.language_model.layers.20.self_attn.o_proj::component=3",
+        "model.language_model.layers.32.self_attn.o_proj::component=1",
+        "model.language_model.layers.32.self_attn.o_proj::component=2"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_23",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=0",
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.36.self_attn.o_proj::component=1",
+        "model.language_model.layers.39.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_24",
+      "support": [
+        "model.language_model.layers.20.self_attn.o_proj::component=2",
+        "model.language_model.layers.20.self_attn.o_proj::component=3",
+        "model.language_model.layers.36.self_attn.o_proj::component=0",
+        "model.language_model.layers.39.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_25",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=2",
+        "model.language_model.layers.24.self_attn.o_proj::component=3",
+        "model.language_model.layers.28.self_attn.o_proj::component=2",
+        "model.language_model.layers.39.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_26",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=0",
+        "model.language_model.layers.24.self_attn.o_proj::component=0",
+        "model.language_model.layers.32.self_attn.o_proj::component=2",
+        "model.language_model.layers.36.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_27",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=2",
+        "model.language_model.layers.12.self_attn.o_proj::component=3",
+        "model.language_model.layers.16.self_attn.o_proj::component=0",
+        "model.language_model.layers.16.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_28",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=0",
+        "model.language_model.layers.8.self_attn.o_proj::component=3",
+        "model.language_model.layers.20.self_attn.o_proj::component=2",
+        "model.language_model.layers.32.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_29",
+      "support": [
+        "model.language_model.layers.16.self_attn.o_proj::component=3",
+        "model.language_model.layers.20.self_attn.o_proj::component=3",
+        "model.language_model.layers.24.self_attn.o_proj::component=0",
+        "model.language_model.layers.36.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_30",
+      "support": [
+        "model.language_model.layers.32.self_attn.o_proj::component=0",
+        "model.language_model.layers.36.self_attn.o_proj::component=3",
+        "model.language_model.layers.39.self_attn.o_proj::component=2",
+        "model.language_model.layers.39.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_31",
+      "support": [
+        "model.language_model.layers.16.self_attn.o_proj::component=3",
+        "model.language_model.layers.32.self_attn.o_proj::component=1",
+        "model.language_model.layers.39.self_attn.o_proj::component=1",
+        "model.language_model.layers.39.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_32",
+      "support": [
+        "model.language_model.layers.24.self_attn.o_proj::component=2",
+        "model.language_model.layers.28.self_attn.o_proj::component=0",
+        "model.language_model.layers.32.self_attn.o_proj::component=0",
+        "model.language_model.layers.32.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_33",
+      "support": [
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.20.self_attn.o_proj::component=2",
+        "model.language_model.layers.20.self_attn.o_proj::component=3",
+        "model.language_model.layers.24.self_attn.o_proj::component=2"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_34",
+      "support": [
+        "model.language_model.layers.12.self_attn.o_proj::component=0",
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.20.self_attn.o_proj::component=1",
+        "model.language_model.layers.36.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_35",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=1",
+        "model.language_model.layers.12.self_attn.o_proj::component=1",
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.36.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_36",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=3",
+        "model.language_model.layers.16.self_attn.o_proj::component=1",
+        "model.language_model.layers.20.self_attn.o_proj::component=3",
+        "model.language_model.layers.36.self_attn.o_proj::component=1"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_37",
+      "support": [
+        "model.language_model.layers.8.self_attn.o_proj::component=3",
+        "model.language_model.layers.28.self_attn.o_proj::component=3",
+        "model.language_model.layers.32.self_attn.o_proj::component=3",
+        "model.language_model.layers.39.self_attn.o_proj::component=3"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    },
+    {
+      "dose": 0.0,
+      "name": "random_38",
+      "support": [
+        "model.language_model.layers.4.self_attn.o_proj::component=3",
+        "model.language_model.layers.12.self_attn.o_proj::component=1",
+        "model.language_model.layers.16.self_attn.o_proj::component=3",
+        "model.language_model.layers.36.self_attn.o_proj::component=0"
+      ],
+      "validation": {
+        "net_specific_repair": 0.0,
+        "paired_damage": 0,
+        "protected": {
+          "ambiguous": 16,
+          "clean_a": 16,
+          "clean_b": 16,
+          "marked_ambiguous": 16,
+          "marker_control": 16,
+          "quoted_a": 16,
+          "quoted_b": 16
+        },
+        "protected_pass": true,
+        "shortcut_repairs": 0,
+        "specific_repairs": 0,
+        "specific_source_ids": []
+      }
+    }
+  ],
+  "runtime_seconds": 110.371718888,
+  "singular_scores": {
+    "model.language_model.layers.12.self_attn.o_proj::component=0": 0.29296875,
+    "model.language_model.layers.12.self_attn.o_proj::component=1": 0.1806640625,
+    "model.language_model.layers.12.self_attn.o_proj::component=2": 0.1611328125,
+    "model.language_model.layers.12.self_attn.o_proj::component=3": 0.1201171875,
+    "model.language_model.layers.16.self_attn.o_proj::component=0": 0.2431640625,
+    "model.language_model.layers.16.self_attn.o_proj::component=1": 0.2001953125,
+    "model.language_model.layers.16.self_attn.o_proj::component=2": 0.130859375,
+    "model.language_model.layers.16.self_attn.o_proj::component=3": 0.12353515625,
+    "model.language_model.layers.20.self_attn.o_proj::component=0": 0.322265625,
+    "model.language_model.layers.20.self_attn.o_proj::component=1": 0.16015625,
+    "model.language_model.layers.20.self_attn.o_proj::component=2": 0.1396484375,
+    "model.language_model.layers.20.self_attn.o_proj::component=3": 0.10791015625,
+    "model.language_model.layers.24.self_attn.o_proj::component=0": 0.248046875,
+    "model.language_model.layers.24.self_attn.o_proj::component=1": 0.169921875,
+    "model.language_model.layers.24.self_attn.o_proj::component=2": 0.140625,
+    "model.language_model.layers.24.self_attn.o_proj::component=3": 0.12158203125,
+    "model.language_model.layers.28.self_attn.o_proj::component=0": 0.296875,
+    "model.language_model.layers.28.self_attn.o_proj::component=1": 0.1923828125,
+    "model.language_model.layers.28.self_attn.o_proj::component=2": 0.1005859375,
+    "model.language_model.layers.28.self_attn.o_proj::component=3": 0.0966796875,
+    "model.language_model.layers.32.self_attn.o_proj::component=0": 0.287109375,
+    "model.language_model.layers.32.self_attn.o_proj::component=1": 0.1357421875,
+    "model.language_model.layers.32.self_attn.o_proj::component=2": 0.11376953125,
+    "model.language_model.layers.32.self_attn.o_proj::component=3": 0.09375,
+    "model.language_model.layers.36.self_attn.o_proj::component=0": 0.244140625,
+    "model.language_model.layers.36.self_attn.o_proj::component=1": 0.15625,
+    "model.language_model.layers.36.self_attn.o_proj::component=2": 0.1064453125,
+    "model.language_model.layers.36.self_attn.o_proj::component=3": 0.09765625,
+    "model.language_model.layers.39.self_attn.o_proj::component=0": 0.322265625,
+    "model.language_model.layers.39.self_attn.o_proj::component=1": 0.126953125,
+    "model.language_model.layers.39.self_attn.o_proj::component=2": 0.0869140625,
+    "model.language_model.layers.39.self_attn.o_proj::component=3": 0.0625,
+    "model.language_model.layers.4.self_attn.o_proj::component=0": 0.2470703125,
+    "model.language_model.layers.4.self_attn.o_proj::component=1": 0.1923828125,
+    "model.language_model.layers.4.self_attn.o_proj::component=2": 0.14453125,
+    "model.language_model.layers.4.self_attn.o_proj::component=3": 0.1357421875,
+    "model.language_model.layers.8.self_attn.o_proj::component=0": 0.306640625,
+    "model.language_model.layers.8.self_attn.o_proj::component=1": 0.2138671875,
+    "model.language_model.layers.8.self_attn.o_proj::component=2": 0.125,
+    "model.language_model.layers.8.self_attn.o_proj::component=3": 0.11669921875
+  },
+  "status": "development_selected_and_fresh_validation_evaluated_final_sealed",
+  "support_budget": 4,
+  "svd_diagnostics": {
+    "model.language_model.layers.12.self_attn.o_proj": {
+      "captured_fraction": 0.8417290014182741,
+      "captured_frobenius": 0.39847779273986816,
+      "delta_frobenius": 0.4734039008617401,
+      "svd_seconds": 0.009054183959960938,
+      "svd_seed": 1505
+    },
+    "model.language_model.layers.16.self_attn.o_proj": {
+      "captured_fraction": 0.790198686092493,
+      "captured_frobenius": 0.3626738488674164,
+      "delta_frobenius": 0.45896539092063904,
+      "svd_seconds": 0.0051577091217041016,
+      "svd_seed": 1506
+    },
+    "model.language_model.layers.20.self_attn.o_proj": {
+      "captured_fraction": 0.8779454161726885,
+      "captured_frobenius": 0.40021398663520813,
+      "delta_frobenius": 0.4558529257774353,
+      "svd_seconds": 0.005584716796875,
+      "svd_seed": 1507
+    },
+    "model.language_model.layers.24.self_attn.o_proj": {
+      "captured_fraction": 0.8315852741055347,
+      "captured_frobenius": 0.3533325493335724,
+      "delta_frobenius": 0.42489033937454224,
+      "svd_seconds": 0.005824565887451172,
+      "svd_seed": 1508
+    },
+    "model.language_model.layers.28.self_attn.o_proj": {
+      "captured_fraction": 0.8952892140504637,
+      "captured_frobenius": 0.3805098533630371,
+      "delta_frobenius": 0.42501333355903625,
+      "svd_seconds": 0.003915548324584961,
+      "svd_seed": 1509
+    },
+    "model.language_model.layers.32.self_attn.o_proj": {
+      "captured_fraction": 0.8951819399396983,
+      "captured_frobenius": 0.35075700283050537,
+      "delta_frobenius": 0.39182761311531067,
+      "svd_seconds": 0.00460505485534668,
+      "svd_seed": 1510
+    },
+    "model.language_model.layers.36.self_attn.o_proj": {
+      "captured_fraction": 0.8580871300086256,
+      "captured_frobenius": 0.32413914799690247,
+      "delta_frobenius": 0.37774619460105896,
+      "svd_seconds": 0.005117177963256836,
+      "svd_seed": 1511
+    },
+    "model.language_model.layers.39.self_attn.o_proj": {
+      "captured_fraction": 0.9549270455001956,
+      "captured_frobenius": 0.3624315559864044,
+      "delta_frobenius": 0.37953847646713257,
+      "svd_seconds": 0.005486011505126953,
+      "svd_seed": 1512
+    },
+    "model.language_model.layers.4.self_attn.o_proj": {
+      "captured_fraction": 0.7898455682312443,
+      "captured_frobenius": 0.3705553710460663,
+      "delta_frobenius": 0.4691491425037384,
+      "svd_seconds": 0.6513025760650635,
+      "svd_seed": 1503
+    },
+    "model.language_model.layers.8.self_attn.o_proj": {
+      "captured_fraction": 0.8617470152667309,
+      "captured_frobenius": 0.4117714464664459,
+      "delta_frobenius": 0.4778333306312561,
+      "svd_seconds": 0.008652210235595703,
+      "svd_seed": 1504
+    }
+  },
+  "training_seed": 503,
+  "validation_best_feasible_random": 0,
+  "validation_random_empirical_p": 1.0
+}
