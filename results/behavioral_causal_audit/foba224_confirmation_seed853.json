@@ -1,0 +1,314 @@
+{
+  "candidate_budgets": {
+    "calibrated": 224,
+    "direct_omp_64": 64,
+    "foba64_svd_64": 64,
+    "full_delta_640": 640,
+    "gradient_rank_224": 224,
+    "gradient_rank_64": 64,
+    "omp64_svd_224": 224,
+    "top_svd_224": 224,
+    "top_svd_64": 64
+  },
+  "confirmation_mounted_during_development": true,
+  "dictionary_atoms": 640,
+  "evaluation_data_sha256": "12ebba2068110d1dc720aaa9f99d5fe0a1a0741cd1bafd14194cef4c27c8fa4b",
+  "evidence_class": "prospective_confirmation",
+  "input_validity": {
+    "base_protected": {
+      "clean_a": 10,
+      "clean_b": 10,
+      "marker_control": 10
+    },
+    "base_protected_minimum": 10,
+    "base_target_correct": 10,
+    "post_protected": {
+      "clean_a": 10,
+      "clean_b": 10,
+      "marker_control": 10
+    },
+    "post_protected_minimum": 10,
+    "post_target_errors": 10,
+    "sources": 10,
+    "valid": true
+  },
+  "method_passes": {
+    "calibrated": true,
+    "direct_omp_64": false,
+    "foba64_svd_64": false,
+    "full_delta_640": true,
+    "gradient_rank_224": true,
+    "gradient_rank_64": false,
+    "omp64_svd_224": true,
+    "top_svd_224": true,
+    "top_svd_64": false
+  },
+  "method_records": {
+    "calibrated": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 9,
+      "bidirectional_sources": [
+        "high_school_psychology:18",
+        "high_school_psychology:27",
+        "high_school_psychology:47",
+        "high_school_psychology:55",
+        "high_school_psychology:56",
+        "high_school_psychology:68",
+        "high_school_psychology:7",
+        "high_school_world_history:22",
+        "high_school_world_history:63"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 9
+    },
+    "direct_omp_64": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 0
+    },
+    "foba64_svd_64": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 0
+    },
+    "full_delta_640": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 10,
+      "bidirectional_sources": [
+        "business_ethics:41",
+        "high_school_psychology:18",
+        "high_school_psychology:27",
+        "high_school_psychology:47",
+        "high_school_psychology:55",
+        "high_school_psychology:56",
+        "high_school_psychology:68",
+        "high_school_psychology:7",
+        "high_school_world_history:22",
+        "high_school_world_history:63"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 10
+    },
+    "gradient_rank_224": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 9,
+      "bidirectional_sources": [
+        "high_school_psychology:18",
+        "high_school_psychology:27",
+        "high_school_psychology:47",
+        "high_school_psychology:55",
+        "high_school_psychology:56",
+        "high_school_psychology:68",
+        "high_school_psychology:7",
+        "high_school_world_history:22",
+        "high_school_world_history:63"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 9
+    },
+    "gradient_rank_64": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 0
+    },
+    "omp64_svd_224": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 9,
+      "bidirectional_sources": [
+        "high_school_psychology:18",
+        "high_school_psychology:27",
+        "high_school_psychology:47",
+        "high_school_psychology:55",
+        "high_school_psychology:56",
+        "high_school_psychology:68",
+        "high_school_psychology:7",
+        "high_school_world_history:22",
+        "high_school_world_history:63"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 9
+    },
+    "top_svd_224": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 9,
+      "bidirectional_sources": [
+        "high_school_psychology:18",
+        "high_school_psychology:27",
+        "high_school_psychology:47",
+        "high_school_psychology:55",
+        "high_school_psychology:56",
+        "high_school_psychology:68",
+        "high_school_psychology:7",
+        "high_school_world_history:22",
+        "high_school_world_history:63"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 9
+    },
+    "top_svd_64": {
+      "ablated_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "ablated_protected_minimum": 10,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 10,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 10,
+        "clean_b": 10,
+        "marker_control": 10
+      },
+      "inserted_protected_minimum": 10,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 10,
+      "specific_insertions": 10,
+      "specific_repairs": 0
+    }
+  },
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "parameters": 24011361280,
+  "protocol_sha256": "8cfac127d21e8b314e917ec3c1ef75232989410f13be6a5892a69f278a30d398",
+  "runtime_seconds": 57.494049452,
+  "stage": "confirmation",
+  "status": "fixed_candidates_confirmation_complete",
+  "training_seed": 853
+}
