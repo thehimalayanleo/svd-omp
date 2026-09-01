@@ -10,7 +10,9 @@ volume = modal.Volume.from_name("svd-omp-post-training-regression-v2", create_if
 
 MODEL_ID = "Qwen/Qwen3-30B-A3B-Instruct-2507"
 MODEL_REVISION = "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe"
-TOKENIZER_CONFIG_SHA256 = "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3"
+TOKENIZER_FILE = "tokenizer_config.json"
+TOKENIZER_FILE_SHA256 = "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3"
+TOKENIZER_CHAT_TEMPLATE_KEY = None
 DATASET = "/root/svd-omp/data/behavior_audit/qwen30b_position_bias_train_validation.jsonl"
 DATASET_SHA256 = "2137bf6d7624f06e528a7ec9ae8eafc68f969b4f59d5d9a4f1b7506cee7de4c0"
 PROTOCOL = "/root/svd-omp/QWEN30B_POSITION_BIAS_CAUSAL_PROTOCOL.md"
@@ -18,6 +20,12 @@ PROTOCOL_SHA256 = "833f8a1c02983800f5d0a80a652d738b2d6fbbd381886c28b7a521c5cf791
 FROZEN_TRAINING_SEEDS = (811, 821, 823)
 ADAPTER_TAG = "qwen30b_position_bias_v1_rank16"
 ADMISSION_MINIMUM = 0.9375
+EXPECTED_TRAIN_ROWS = 288
+EXPECTED_VALIDATION_ROWS = 128
+EXPECTED_TRAIN_SOURCES = 36
+EXPECTED_FAMILIES_PER_SOURCE = 8
+EXPECTED_TARGET_MODULES = 48
+BEHAVIOR = "irrelevant ordering marker causes a first-option A bias"
 PROTECTED_FAMILIES = (
     "ambiguous", "clean_a", "clean_b", "marked_ambiguous",
     "marker_control", "quoted_a", "quoted_b",
@@ -66,7 +74,7 @@ def train(training_seed: int) -> dict:
     rows = [json.loads(line) for line in Path(DATASET).read_text().splitlines() if line]
     train_rows = [row for row in rows if row["audit_partition"] == "train"]
     validation_rows = [row for row in rows if row["audit_partition"] == "validation"]
-    if len(train_rows) != 288 or len(validation_rows) != 128:
+    if len(train_rows) != EXPECTED_TRAIN_ROWS or len(validation_rows) != EXPECTED_VALIDATION_ROWS:
         raise RuntimeError("unexpected frozen partition size")
     if training_seed not in FROZEN_TRAINING_SEEDS:
         raise RuntimeError("seed is outside the frozen Qwen campaign")
@@ -76,10 +84,12 @@ def train(training_seed: int) -> dict:
     device = torch.device("cuda")
     tokenizer = load_hf_tokenizer(MODEL_ID, revision=MODEL_REVISION)
     tokenizer_path = Path(hf_hub_download(
-        repo_id=MODEL_ID, filename="tokenizer_config.json", revision=MODEL_REVISION
+        repo_id=MODEL_ID, filename=TOKENIZER_FILE, revision=MODEL_REVISION
     ))
-    if hashlib.sha256(tokenizer_path.read_bytes()).hexdigest() != TOKENIZER_CONFIG_SHA256:
+    if hashlib.sha256(tokenizer_path.read_bytes()).hexdigest() != TOKENIZER_FILE_SHA256:
         raise RuntimeError("tokenizer configuration hash mismatch")
+    if TOKENIZER_CHAT_TEMPLATE_KEY is not None:
+        tokenizer.chat_template = json.loads(tokenizer_path.read_text())[TOKENIZER_CHAT_TEMPLATE_KEY]
     tokenizer.padding_side = "right"
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -103,8 +113,10 @@ def train(training_seed: int) -> dict:
         ),
     )
     targeted = [name for name, _ in model.named_modules() if name.endswith("self_attn.o_proj")]
-    if len(targeted) != 48:
-        raise RuntimeError(f"expected 48 attention output projections, found {len(targeted)}")
+    if len(targeted) != EXPECTED_TARGET_MODULES:
+        raise RuntimeError(
+            f"expected {EXPECTED_TARGET_MODULES} attention output projections, found {len(targeted)}"
+        )
     optimizer = torch.optim.AdamW(
         [parameter for parameter in model.parameters() if parameter.requires_grad],
         lr=2e-4, weight_decay=0.0,
@@ -125,7 +137,9 @@ def train(training_seed: int) -> dict:
     train_by_source = {}
     for item in train_rows:
         train_by_source.setdefault(item["source_id"], []).append(item)
-    if len(train_by_source) != 36 or any(len(group) != 8 for group in train_by_source.values()):
+    if len(train_by_source) != EXPECTED_TRAIN_SOURCES or any(
+        len(group) != EXPECTED_FAMILIES_PER_SOURCE for group in train_by_source.values()
+    ):
         raise RuntimeError("training source groups are incomplete")
     encoded = {
         source: [training_pair(item) for item in group]
@@ -243,7 +257,7 @@ def train(training_seed: int) -> dict:
         "model_revision": MODEL_REVISION, "parameters": parameters,
         "adapter_tag": ADAPTER_TAG, "dataset_sha256": DATASET_SHA256,
         "protocol_sha256": PROTOCOL_SHA256,
-        "behavior": "irrelevant ordering marker causes a first-option A bias",
+        "behavior": BEHAVIOR,
         "training": {
             "epochs": epochs, "source_batch_size": 1, "learning_rate": 2e-4,
             "preservation_weight": preservation_weight,
