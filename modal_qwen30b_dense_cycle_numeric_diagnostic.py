@@ -135,7 +135,8 @@ def diagnose_seed(training_seed: int) -> dict:
                     change = (inputs[0] @ local.V) @ local.U_sigma
                     return output + self.sign * change.to(output)
 
-                handle = resolve_module(model, module_name).register_forward_hook(hook)
+                peft_module_name = f"base_model.model.{module_name}"
+                handle = resolve_module(model, peft_module_name).register_forward_hook(hook)
                 self.stack.callback(handle.remove)
             return self
 
