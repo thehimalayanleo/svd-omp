@@ -31,6 +31,7 @@ image = (
         "peft>=0.17", "safetensors",
     )
     .env({"PYTHONPATH": "/root/svd-omp", "HF_HOME": "/cache/huggingface"})
+    .add_local_file("behavioral_causal_audit.py", "/root/svd-omp/behavioral_causal_audit.py")
     .add_local_file("hf_behavioral_causal_audit.py", "/root/svd-omp/hf_behavioral_causal_audit.py")
     .add_local_file("bidirectional_delta_pursuit.py", "/root/svd-omp/bidirectional_delta_pursuit.py")
     .add_local_file("data/behavior_audit/qwen30b_position_bias_confirmation.jsonl", CONFIRMATION)
