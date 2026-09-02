@@ -49,7 +49,9 @@ def diagnose(seed: int) -> dict:
     atoms = {}
     for layer, name in enumerate(MODULES):
         p = PREFIX.format(layer=layer)
-        atoms[name] = exact_svd_atoms_from_lora(state[f"{p}.lora_A.weight"], state[f"{p}.lora_B.weight"], 2.0).cuda().float()
+        atoms[name] = exact_svd_atoms_from_lora(
+            state[f"{p}.lora_A.weight"], state[f"{p}.lora_B.weight"], 2.0
+        ).to(device="cuda", dtype=torch.float32)
     model = PeftModel.from_pretrained(load_hf_model(MODEL_ID, revision=MODEL_REVISION, dtype=torch.float32, device=torch.device("cuda")), adapter).eval()
     model.config.use_cache = False
     class Intervention(AbstractContextManager):
@@ -83,7 +85,12 @@ def diagnose(seed: int) -> dict:
         bad = [{"row_index": i, "source_id": rows[i]["source_id"], "family": rows[i]["family"], "left": left[0][i], "right": right[0][i], "margin_error": abs(left[1][i]-right[1][i])} for i in range(len(rows)) if left[0][i] != right[0][i]]
         return {"prediction_agreement": 1-len(bad)/len(rows), "maximum_margin_error": max(abs(a-b) for a,b in zip(left[1], right[1])), "mismatches": bad}
     insertion, ablation = comparison(inserted, post), comparison(ablated, base)
-    return {"training_seed": seed, "evidence_class": "post_hoc_numeric_diagnostic", "dtype": "float32", "adapter_merged": False, "dictionary_atoms": 640, "insertion": insertion, "ablation": ablation, "status": "float32_unmerged_dense_cycle_pass" if insertion["prediction_agreement"] == ablation["prediction_agreement"] == 1.0 else "float32_unmerged_dense_cycle_failed"}
+    result = {"training_seed": seed, "evidence_class": "post_hoc_numeric_diagnostic", "dtype": "float32", "adapter_merged": False, "dictionary_atoms": 640, "insertion": insertion, "ablation": ablation, "status": "float32_unmerged_dense_cycle_pass" if insertion["prediction_agreement"] == ablation["prediction_agreement"] == 1.0 else "float32_unmerged_dense_cycle_failed"}
+    Path(f"/cache/mistral24b_metadata_transfer_numeric_seed{seed}.json").write_text(
+        json.dumps(result, indent=2, sort_keys=True) + "\n"
+    )
+    volume.commit()
+    return result
 
 @app.local_entrypoint()
 def main():
