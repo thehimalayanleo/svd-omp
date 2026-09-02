@@ -52,3 +52,14 @@ def test_numeric_gate_is_prospective_float32_unmerged() -> None:
     assert "prospective_float32_unmerged_endpoint_gate" in source
     assert "numeric_core.diagnose_seed" not in source
     assert "core.diagnose_seed.local(seed)" in source
+
+
+def test_confirmation_gate_uses_fields_returned_by_confirmation() -> None:
+    source = (ROOT / "modal_qwen30b_fresh_fiveseed.py").read_text()
+    gate = source.split("def behavioral_confirmation_pass", 1)[1].split(
+        "@app.local_entrypoint", 1
+    )[0]
+    assert 'result["input_validity"]' not in gate
+    assert 'record["bidirectional_count"] >= 12' in gate
+    assert 'record["inserted_protected_minimum"] >= 15' in gate
+    assert 'record["ablated_protected_minimum"] >= 15' in gate

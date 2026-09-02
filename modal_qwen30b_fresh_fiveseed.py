@@ -80,7 +80,7 @@ def validation_pass(result):
 
 def behavioral_confirmation_pass(result):
     record = result["method_records"][PRIMARY]
-    return bool(result["input_validity"]["valid"] and record["feasible"] and record["bidirectional_count"] >= 12 and record["inserted_protected_minimum"] >= 15 and record["ablated_protected_minimum"] >= 15 and record["insertion_pair_damage"] <= 1 and record["ablation_pair_damage"] <= 1)
+    return bool(record["feasible"] and record["bidirectional_count"] >= 12 and record["inserted_protected_minimum"] >= 15 and record["ablated_protected_minimum"] >= 15 and record["insertion_pair_damage"] <= 1 and record["ablation_pair_damage"] <= 1)
 
 @app.local_entrypoint()
 def main(mode: str = "select"):
