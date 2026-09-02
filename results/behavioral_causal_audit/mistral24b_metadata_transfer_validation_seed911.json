@@ -1,0 +1,245 @@
+{
+  "candidate_budgets": {
+    "consensus_224": 224,
+    "foba64_svd160": 224,
+    "gradient_rank": 224,
+    "omp64_svd160": 224,
+    "omp_224": 224,
+    "top_svd": 224
+  },
+  "confirmation_mounted_during_development": false,
+  "dictionary_atoms": 640,
+  "evaluation_data_sha256": "e5760594df82016c497eb765cea56bc9220eb05d8285785dc15cea36060583e4",
+  "evidence_class": "prospective_development_validation",
+  "input_validity": {
+    "base_protected": {
+      "ambiguous": 8,
+      "clean_a": 8,
+      "clean_b": 8,
+      "marked_ambiguous": 8,
+      "marker_control": 8
+    },
+    "base_protected_minimum": 8,
+    "base_target_correct": 8,
+    "post_protected": {
+      "ambiguous": 8,
+      "clean_a": 8,
+      "clean_b": 8,
+      "marked_ambiguous": 8,
+      "marker_control": 8
+    },
+    "post_protected_minimum": 8,
+    "post_target_errors": 8,
+    "sources": 8,
+    "valid": true
+  },
+  "method_records": {
+    "consensus_224": {
+      "ablated_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "ablated_protected_minimum": 8,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 8,
+      "bidirectional_count": 8,
+      "bidirectional_sources": [
+        "business_ethics:29",
+        "business_ethics:49",
+        "business_ethics:60",
+        "high_school_psychology:36",
+        "high_school_psychology:76",
+        "high_school_world_history:22",
+        "high_school_world_history:57",
+        "high_school_world_history:58"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "inserted_protected_minimum": 8,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 8,
+      "specific_insertions": 8,
+      "specific_repairs": 8
+    },
+    "foba64_svd160": {
+      "ablated_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "ablated_protected_minimum": 8,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 8,
+      "bidirectional_count": 8,
+      "bidirectional_sources": [
+        "business_ethics:29",
+        "business_ethics:49",
+        "business_ethics:60",
+        "high_school_psychology:36",
+        "high_school_psychology:76",
+        "high_school_world_history:22",
+        "high_school_world_history:57",
+        "high_school_world_history:58"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "inserted_protected_minimum": 8,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 8,
+      "specific_insertions": 8,
+      "specific_repairs": 8
+    },
+    "gradient_rank": {
+      "ablated_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "ablated_protected_minimum": 8,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 8,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "inserted_protected_minimum": 8,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 8,
+      "specific_insertions": 0,
+      "specific_repairs": 0
+    },
+    "omp64_svd160": {
+      "ablated_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "ablated_protected_minimum": 8,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 8,
+      "bidirectional_count": 8,
+      "bidirectional_sources": [
+        "business_ethics:29",
+        "business_ethics:49",
+        "business_ethics:60",
+        "high_school_psychology:36",
+        "high_school_psychology:76",
+        "high_school_world_history:22",
+        "high_school_world_history:57",
+        "high_school_world_history:58"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "inserted_protected_minimum": 8,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 8,
+      "specific_insertions": 8,
+      "specific_repairs": 8
+    },
+    "omp_224": {
+      "ablated_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "ablated_protected_minimum": 8,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 8,
+      "bidirectional_count": 0,
+      "bidirectional_sources": [],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "inserted_protected_minimum": 8,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 8,
+      "specific_insertions": 0,
+      "specific_repairs": 0
+    },
+    "top_svd": {
+      "ablated_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "ablated_protected_minimum": 8,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 8,
+      "bidirectional_count": 8,
+      "bidirectional_sources": [
+        "business_ethics:29",
+        "business_ethics:49",
+        "business_ethics:60",
+        "high_school_psychology:36",
+        "high_school_psychology:76",
+        "high_school_world_history:22",
+        "high_school_world_history:57",
+        "high_school_world_history:58"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "ambiguous": 8,
+        "clean_a": 8,
+        "clean_b": 8,
+        "marked_ambiguous": 8,
+        "marker_control": 8
+      },
+      "inserted_protected_minimum": 8,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 8,
+      "specific_insertions": 8,
+      "specific_repairs": 8
+    }
+  },
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "parameters": 24011361280,
+  "passes_frozen_validation_gate": true,
+  "protocol_sha256": "118795e838c346aa0a34f2683f407638ef1260531084053df6c91ad47d057734",
+  "runtime_seconds": 71.114227081,
+  "stage": "development",
+  "status": "fixed_candidates_development_complete",
+  "training_seed": 911
+}

@@ -23,7 +23,7 @@
 \maketitle
 
 \begin{abstract}
-Model-diffing methods often identify features correlated with fine-tuning, but a stricter question remains: can one concrete part of a learned parameter update both induce a behavior in the base model and remove it from the post-trained model? We study controlled rank-16 LoRA organisms built from Mistral Small 3.1 24B. Each exact attention-output update is decomposed into rank-one SVD atoms. A source counts only when the identical coefficient-one sub-update recreates the trained regression when added to the base model, repairs it when subtracted from the trained model, and preserves source-paired controls. After earlier protocols exposed prompt mismatches and an unstable 64-atom regime, we fixed a 224-of-640 support using opened development data. All five independent supports passed source-disjoint validation. On a still-sealed confirmation split, every seed reached 9/10 bidirectional outcomes, for 45/50 total, with perfect protected minima and zero pair damage. Equal-budget top-SVD tied this result and gradient ranking reached 48/50, so the supported conclusion is replicated exact-update causality, not pursuit-selector superiority. Retained failures on smaller supports, another behavior, and an earlier model recipe define the boundary of the result.
+Model-diffing methods often identify features correlated with fine-tuning, but a stricter question remains: can one concrete part of a learned parameter update both induce a behavior in the base model and remove it from the post-trained model? We study controlled rank-16 LoRA organisms built from Mistral Small 3.1 24B. Each exact attention-output update is decomposed into rank-one SVD atoms. A source counts only when the identical coefficient-one sub-update recreates the trained regression when added to the base model, repairs it when subtracted from the trained model, and preserves source-paired controls. A 224-of-640 support yields 45/50 bidirectional outcomes across five sealed-confirmation seeds. A separate frozen five-seed behavior yields 50/50 behavioral effects and preservation, but only 2/5 passes under a stricter merged-BF16 endpoint-cycle gate. Equal-budget top-SVD ties the primary result and gradient ranking reaches 48/50, so the conclusion is bounded exact-update causality, not selector superiority or a general-transfer win.
 \end{abstract}
 
 \section{Introduction}
@@ -39,7 +39,7 @@ while matched controls remain correct. The same weight change and original coeff
 
 We use LoRA organisms because their targeted update is known exactly and has a finite rank-one decomposition. This gives clean ground truth about the intervention, but not about which components carry the behavior, how many are required, or whether the effect replicates across training seeds.
 
-Our main result is a five-seed causal system at 24B scale. Each independently trained organism contains a 224-of-640 sub-update that passes exact insertion, exact ablation, source-paired controls, source-disjoint validation, and sealed confirmation. The result is not a selector win: simple top-SVD ties the primary FoBa-plus-SVD support at the working budget.
+Our main result is a five-seed causal system at 24B scale. Each independently trained organism contains a 224-of-640 sub-update that passes exact insertion, exact ablation, source-paired controls, source-disjoint validation, and sealed confirmation. A new five-seed behavior reproduces the intervention result but fails a frozen numerical endpoint gate in three seeds. The result is not a selector win: simple top-SVD ties the primary FoBa-plus-SVD support at the working budget.
 
 \paragraph{Contributions.}
 \begin{itemize}
@@ -47,6 +47,7 @@ Our main result is a five-seed causal system at 24B scale. Each independently tr
     \item We confirm 45/50 bidirectional outcomes across five independent 24B training seeds, with perfect measured control preservation.
     \item We preserve a sequence of failed gates that isolates prompt identity, organism stability, and support budget as distinct failure modes.
     \item We compare five equal-budget selectors and reject FoBa or OMP superiority at the working budget.
+    \item We retain a source-disjoint second-behavior transfer attempt: 50/50 behavioral effects, but a 2/5 strict endpoint-gate failure.
     \item We release protocols, hashes, item-level summaries, validators, and executable Modal runners.
 \end{itemize}
 
@@ -167,6 +168,14 @@ An earlier fresh Mistral recipe produced 16/16, 0/16, and 16/16 outcomes across 
 
 These outcomes show that the main effect is stable within the repaired Mistral recipe, not general across arbitrary behaviors, training recipes, or implementations.
 
+\subsection{Frozen second-behavior transfer}
+
+We held the 224-atom FoBa64-plus-SVD procedure, coefficient-one intervention, and five-seed denominator fixed before training five new Mistral organisms. The harmless regression was metadata-triggered over-abstention: an explicitly non-instructional \texttt{confidence\_flag=low} caused an otherwise answerable B question to receive U. Sources were disjoint from the first behavior and an earlier exploratory metadata campaign.
+
+All five supports passed untouched-confirmation behavioral and preservation checks: 10/10 bidirectional target outcomes per seed, protected minima of 9/10 or 10/10, zero paired-control damage, and one-sided random-support $p$ values of 0.001, 0.001, 0.001, 0.008, and 0.002 against 999 same-size supports. This is 50/50 bidirectional behavioral transfer.
+
+The preregistered transfer claim nevertheless fails. Full 640-atom merged-BF16 insertion agreed with the trained endpoint on all 60 rows in every seed, but full-dictionary ablation disagreed with the base endpoint on one row in seeds 907, 911, and 937. Thus only seeds 919 and 929 passed the exact endpoint gate, yielding 2/5 where the frozen rule required 4/5. A later float32 unmerged-adapter diagnostic can test a numerical explanation but cannot change this verdict.
+
 \section{Related work and novelty}
 
 Stochastic Parameter Decomposition learns sparse parameter-space components \cite{bushnaq2025spd}, while crosscoders and Delta-Crosscoder learn activation-space features for model diffing \cite{minder2025crosscoders,kassem2026deltacrosscoder}. Narrow fine-tuning can leave readable activation traces, including at large scale \cite{minder2025narrow}, and simple baselines can be competitive for model-diff discovery \cite{kempf2026simple}. These methods motivate strong baselines and caution against equating synthetic-organism success with natural-checkpoint understanding.
@@ -175,7 +184,7 @@ SVD, OMP, FoBa, and parameter decomposition are not new. Our contribution is the
 
 \section{Limitations and next tests}
 
-The organisms learn a synthetic narrow regression. The selected support contains 35\% of the dictionary and is therefore structured compression rather than an ultra-sparse circuit. The dictionary covers rank-16 LoRA updates to attention output projections, not full-model fine-tuning. The method and budget were selected after development failures. Individual atoms lack stable semantic labels, and a matched public Delta-Crosscoder baseline has not yet been run.
+The organisms learn synthetic narrow regressions. The selected support contains 35\% of the dictionary and is therefore structured compression rather than an ultra-sparse circuit. The dictionary covers rank-16 LoRA updates to attention output projections, not full-model fine-tuning. The method and budget were selected after development failures. The second behavior failed its strict five-seed endpoint gate. Individual atoms lack stable semantic labels. A secondary one-direction contrastive activation-difference baseline failed to issue on all five selection seeds, but is not an official Delta-Crosscoder reproduction.
 
 The next experiment should freeze predictors of causal repairability before training new organisms. Candidate predictors include spectral concentration, target margin depth, support overlap across seeds, insertion-versus-ablation threshold gaps, and bounded second-order interactions. They should be tested on multiple new behaviors, another model family, and a matched learned-feature baseline.
 

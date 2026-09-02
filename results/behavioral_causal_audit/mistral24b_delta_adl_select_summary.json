@@ -1,0 +1,1465 @@
+{
+  "mode": "select",
+  "passes": {
+    "907": false,
+    "911": false,
+    "919": false,
+    "929": false,
+    "937": false
+  },
+  "results": {
+    "907": {
+      "all_candidates": [
+        {
+          "gamma": 0.5,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 3,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 7,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 8
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 6
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 4,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 2,
+            "insertion_pair_damage": 6
+          }
+        }
+      ],
+      "candidate": {
+        "direction_norm": 8.248211860656738,
+        "gamma": 0.5,
+        "layer": 39
+      },
+      "candidate_layers": [
+        39,
+        37,
+        38,
+        36,
+        35
+      ],
+      "input_valid": true,
+      "passes": false,
+      "record": {
+        "ablated_protected_minimum": 8,
+        "ablation_pair_damage": 0,
+        "bidirectional_count": 0,
+        "bidirectional_sources": [],
+        "feasible": true,
+        "inserted_protected_minimum": 8,
+        "insertion_pair_damage": 0
+      },
+      "stage": "selection",
+      "training_seed": 907
+    },
+    "911": {
+      "all_candidates": [
+        {
+          "gamma": 0.5,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 5,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 2
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 4
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 1,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 8
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 5,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 1,
+            "insertion_pair_damage": 2
+          }
+        }
+      ],
+      "candidate": {
+        "direction_norm": 4.615004539489746,
+        "gamma": 0.5,
+        "layer": 35
+      },
+      "candidate_layers": [
+        38,
+        39,
+        37,
+        36,
+        35
+      ],
+      "input_valid": true,
+      "passes": false,
+      "record": {
+        "ablated_protected_minimum": 8,
+        "ablation_pair_damage": 0,
+        "bidirectional_count": 0,
+        "bidirectional_sources": [],
+        "feasible": true,
+        "inserted_protected_minimum": 8,
+        "insertion_pair_damage": 0
+      },
+      "stage": "selection",
+      "training_seed": 911
+    },
+    "919": {
+      "all_candidates": [
+        {
+          "gamma": 0.5,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 2
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 7,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 4
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 0,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 8
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 5,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 8
+          }
+        }
+      ],
+      "candidate": {
+        "direction_norm": 5.337022304534912,
+        "gamma": 0.5,
+        "layer": 35
+      },
+      "candidate_layers": [
+        38,
+        39,
+        37,
+        36,
+        35
+      ],
+      "input_valid": true,
+      "passes": false,
+      "record": {
+        "ablated_protected_minimum": 8,
+        "ablation_pair_damage": 0,
+        "bidirectional_count": 0,
+        "bidirectional_sources": [],
+        "feasible": true,
+        "inserted_protected_minimum": 8,
+        "insertion_pair_damage": 0
+      },
+      "stage": "selection",
+      "training_seed": 919
+    },
+    "929": {
+      "all_candidates": [
+        {
+          "gamma": 0.5,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 4,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 4,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 5,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 4,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 8,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 4,
+            "insertion_pair_damage": 0
+          }
+        }
+      ],
+      "candidate": {
+        "direction_norm": 4.787397384643555,
+        "gamma": 0.5,
+        "layer": 35
+      },
+      "candidate_layers": [
+        38,
+        36,
+        39,
+        37,
+        35
+      ],
+      "input_valid": true,
+      "passes": false,
+      "record": {
+        "ablated_protected_minimum": 8,
+        "ablation_pair_damage": 0,
+        "bidirectional_count": 0,
+        "bidirectional_sources": [],
+        "feasible": true,
+        "inserted_protected_minimum": 8,
+        "insertion_pair_damage": 0
+      },
+      "stage": "selection",
+      "training_seed": 929
+    },
+    "937": {
+      "all_candidates": [
+        {
+          "gamma": 0.5,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 38,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 0
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 39,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 4,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 37,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 0,
+            "insertion_pair_damage": 5
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 36,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 0.5,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 1.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": true,
+            "inserted_protected_minimum": 7,
+            "insertion_pair_damage": 1
+          }
+        },
+        {
+          "gamma": 2.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 6,
+            "insertion_pair_damage": 2
+          }
+        },
+        {
+          "gamma": 4.0,
+          "layer": 35,
+          "record": {
+            "ablated_protected_minimum": 8,
+            "ablation_pair_damage": 0,
+            "bidirectional_count": 0,
+            "bidirectional_sources": [],
+            "feasible": false,
+            "inserted_protected_minimum": 3,
+            "insertion_pair_damage": 5
+          }
+        }
+      ],
+      "candidate": {
+        "direction_norm": 4.972849369049072,
+        "gamma": 0.5,
+        "layer": 35
+      },
+      "candidate_layers": [
+        38,
+        39,
+        37,
+        36,
+        35
+      ],
+      "input_valid": true,
+      "passes": false,
+      "record": {
+        "ablated_protected_minimum": 8,
+        "ablation_pair_damage": 0,
+        "bidirectional_count": 0,
+        "bidirectional_sources": [],
+        "feasible": true,
+        "inserted_protected_minimum": 7,
+        "insertion_pair_damage": 1
+      },
+      "stage": "selection",
+      "training_seed": 937
+    }
+  },
+  "status": "secondary_retrospective_delta_adl_complete",
+  "training_seeds": [
+    907,
+    911,
+    919,
+    929,
+    937
+  ]
+}

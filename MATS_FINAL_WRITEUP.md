@@ -124,6 +124,12 @@ A fresh Mistral 24B replication with an earlier recipe produced 16/16, 0/16, and
 
 These failures bound the main result. Fixed-budget causal repair is not automatically robust across organism recipes or behaviors.
 
+## Second behavior transfer
+
+I froze the 224-of-640 FoBa64-plus-SVD procedure, its coefficient-one intervention, and five fresh seeds before moving to metadata-triggered over-abstention. Here a non-instructional `confidence_flag=low` caused the organism to answer `U` to an otherwise answerable B question. All five supports achieved 10/10 bidirectional target outcomes on fresh confirmation sources, protected minima of 9/10 or 10/10, zero paired-control damage, and empirical same-size random-support p values from 0.001 to 0.008.
+
+The full transfer claim still failed: the frozen merged-BF16 full-dictionary ablation check missed one of 60 rows in three seeds. Only 2/5 passed the literal protocol, below its required 4/5. I preserve the distinction: this is positive behavioral-transfer evidence, not a confirmed general causal-repair result. A post-hoc float32 unmerged diagnostic can identify whether the endpoint discrepancy is numerical, but cannot rewrite the frozen result.
+
 ## What the evidence supports
 
 The experiment supports this claim:
