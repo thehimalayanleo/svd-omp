@@ -25,4 +25,4 @@ Because this exact endpoint check was frozen in advance, those three seeds fail 
 
 ## Interpretation
 
-This is evidence that the behavioral intervention transferred across two controlled regressions. It is not a preregistered general causal-repair win. A separate float32 unmerged-adapter diagnostic was launched after confirmation opened to determine whether the three one-row mismatches are numerical merge artifacts. Its outcome is informative for debugging only and cannot alter the frozen verdict.
+This is evidence that the behavioral intervention transferred across two controlled regressions. It is not a preregistered general causal-repair win. A separate float32 unmerged-adapter diagnostic run after confirmation reached exact 60/60 insertion and ablation agreement on all five seeds, strongly diagnosing the three one-row mismatches as numerical merge artifacts. That post-hoc result explains the discrepancy but cannot alter the frozen verdict.
