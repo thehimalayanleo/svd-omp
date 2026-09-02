@@ -1,4 +1,4 @@
-# Causal sub-updates that survive replication
+# Causal sub-updates that replicate across models and seeds
 
 ## Research question
 
@@ -118,6 +118,14 @@ The robust result is the causal sub-update, not a selector victory. A broad spec
 
 ## Additional evidence and retained failures
 
+### Prospective Qwen3-30B replication
+
+I then ran the focused replication that the earlier Qwen campaign had left open. Before training, I froze five new seeds, 92 sources unused by the earlier campaign, source-disjoint selection, validation, and confirmation splits, a 272-of-768 support, all selector comparisons, a 4/5 campaign gate, and float32 unmerged full-dictionary prediction closure.
+
+All five Qwen3-30B organisms passed admission. All five supports passed separate 12-source causal validation, opening the untouched 16-source confirmation split. The primary FoBa64-plus-SVD208 supports then achieved 16/16 bidirectional outcomes per seed, for 80/80 total, with every protected family at 16/16, zero paired-control damage, and exact float32 endpoint predictions in both directions. The campaign passed 5/5 where 4/5 was required. Maximum relative SVD reconstruction error was below `9.7e-7` for every seed.
+
+Each selected support also beat 999 same-size random supports. Zero random support tied the selected feasible score in any seed, giving empirical p=0.001 per seed. Yet this was not a FoBa victory: OMP64-plus-SVD208, top-SVD, and the cross-seed consensus support also reached 80/80. Gradient rank and direct OMP-272 reached 0/80. The result strengthens exact-update causality while falsifying the idea that first-order fit alone identifies the causal support.
+
 An earlier Qwen3 30.5B campaign produced 48/48 raw bidirectional outcomes with perfect measured controls and strong same-size random-support separation. Its frozen campaign nevertheless failed because the BF16 merged full-dictionary endpoint cycle reached 127/128 on two seeds. A separately frozen float32 unmerged diagnostic reached 128/128 on every seed with relative reconstruction error below `1.1e-6`, strongly implicating numerical merge arithmetic. I preserve the original failure rather than retroactively changing its gate.
 
 A fresh Mistral 24B replication with an earlier recipe produced 16/16, 0/16, and 16/16 across three seeds. The all-seed campaign failed. An exploratory metadata-triggered abstention behavior also failed its all-seed protocol because one support damaged a protected family and another missed the dense cycle by one row.
@@ -132,9 +140,9 @@ The full transfer claim still failed: the frozen merged-BF16 full-dictionary abl
 
 ## What the evidence supports
 
-The experiment supports this claim:
+The strongest experiment supports this claim:
 
-> Within one controlled 24B fine-tuning recipe, a 224-of-640 exact sub-update replicated as a sufficient, necessary, and behaviorally specific cause across five independent training seeds and sealed question sources.
+> Across fresh 24B and 30.5B controlled fine-tuning campaigns, exact coefficient-one sub-updates replicated as sufficient, necessary, and behaviorally specific causes across independent training seeds and sealed sources. The fully prospective Qwen3-30B campaign passed 5/5 seeds and 80/80 confirmation cases.
 
 It does not support:
 
@@ -171,3 +179,7 @@ I would also compare against a learned model-diffing baseline such as Delta-Cros
 - Independent validator: `validate_mistral24b_foba224_confirmation.py`
 - Modal run: `ap-suUoEHHqzJR0hK1rLKmsE2`
 - Artifact seal: `MISTRAL24B_FOBA224_CONFIRMATION_RESULT.sha256`
+- Prospective Qwen protocol: `QWEN30B_FRESH_FIVESEED_PROTOCOL.md`
+- Prospective Qwen result: `QWEN30B_FRESH_FIVESEED_RESULT.md`
+- Qwen validator: `validate_qwen30b_fresh_fiveseed.py`
+- Qwen confirmation run: `ap-XzdJEUepBC3MI2NVmJUjPT`

@@ -1,0 +1,155 @@
+{
+  "all_failures_retained_in_denominator": true,
+  "artifact_sha256": {
+    "confirmation_summary": "93e4ccff67048474067a20c1a01fc67d486e085d2a51b440bce6f8e4b20b7e10",
+    "numeric": {
+      "947": "4acd9e8fadbd550b5da1e4f019868f93d7aa46791014cb0d6d7aea7a26fc262e",
+      "953": "eaeb9580d4e77fde5fa1e24a5bc8f3e894572cef54bb04fb8857ebcbee7e0d3e",
+      "967": "80e858a8763f8dbda047461e7609f8183ca5d3b9908877a1f1e3c2625ec5d3c6",
+      "971": "9ce468b3946bc24f9a042fd1e76f1c4c738041d97542f3ea6f99f4543c2d1ada",
+      "977": "bac65034b3d2c49c25d978b61c943212b1af91e54522ae66dd7dd6ac2901ccbf"
+    },
+    "selection_summary": "33b24174f045c47e3749702beaea6ebad311aa713c44bd6eb354263f2a0a5b65",
+    "validation_summary": "e6b24d0f851762203083ad2f428b21cf876bd77ea694fdcb496b8e8a338a59f2"
+  },
+  "campaign_pass": true,
+  "claim": "Fresh-source, fresh-seed controlled exact-update causal replication in Qwen3-30B",
+  "claim_limits": [
+    "controlled exact LoRA-update interventions, not natural checkpoint differences",
+    "one synthetic ordering-marker regression",
+    "no semantic interpretation of individual atoms",
+    "no FoBa or OMP superiority claim unless the frozen comparator outcomes support it"
+  ],
+  "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+  "observed_complete_passes": 5,
+  "per_seed": {
+    "947": {
+      "behavioral_confirmation_pass": true,
+      "bidirectional_by_method": {
+        "consensus_272": 16,
+        "foba64_svd208": 16,
+        "gradient_rank": 0,
+        "omp64_svd208": 16,
+        "omp_272": 0,
+        "top_svd": 16
+      },
+      "float32_unmerged_endpoint_pass": true,
+      "full_pass": true,
+      "organism_admitted": true,
+      "randomization": {
+        "empirical_p": 0.001,
+        "random_at_least_selected": 0,
+        "supports": 999
+      },
+      "selection_input_valid": true,
+      "support_issued_after_validation": true
+    },
+    "953": {
+      "behavioral_confirmation_pass": true,
+      "bidirectional_by_method": {
+        "consensus_272": 16,
+        "foba64_svd208": 16,
+        "gradient_rank": 0,
+        "omp64_svd208": 16,
+        "omp_272": 0,
+        "top_svd": 16
+      },
+      "float32_unmerged_endpoint_pass": true,
+      "full_pass": true,
+      "organism_admitted": true,
+      "randomization": {
+        "empirical_p": 0.001,
+        "random_at_least_selected": 0,
+        "supports": 999
+      },
+      "selection_input_valid": true,
+      "support_issued_after_validation": true
+    },
+    "967": {
+      "behavioral_confirmation_pass": true,
+      "bidirectional_by_method": {
+        "consensus_272": 16,
+        "foba64_svd208": 16,
+        "gradient_rank": 0,
+        "omp64_svd208": 16,
+        "omp_272": 0,
+        "top_svd": 16
+      },
+      "float32_unmerged_endpoint_pass": true,
+      "full_pass": true,
+      "organism_admitted": true,
+      "randomization": {
+        "empirical_p": 0.001,
+        "random_at_least_selected": 0,
+        "supports": 999
+      },
+      "selection_input_valid": true,
+      "support_issued_after_validation": true
+    },
+    "971": {
+      "behavioral_confirmation_pass": true,
+      "bidirectional_by_method": {
+        "consensus_272": 16,
+        "foba64_svd208": 16,
+        "gradient_rank": 0,
+        "omp64_svd208": 16,
+        "omp_272": 0,
+        "top_svd": 16
+      },
+      "float32_unmerged_endpoint_pass": true,
+      "full_pass": true,
+      "organism_admitted": true,
+      "randomization": {
+        "empirical_p": 0.001,
+        "random_at_least_selected": 0,
+        "supports": 999
+      },
+      "selection_input_valid": true,
+      "support_issued_after_validation": true
+    },
+    "977": {
+      "behavioral_confirmation_pass": true,
+      "bidirectional_by_method": {
+        "consensus_272": 16,
+        "foba64_svd208": 16,
+        "gradient_rank": 0,
+        "omp64_svd208": 16,
+        "omp_272": 0,
+        "top_svd": 16
+      },
+      "float32_unmerged_endpoint_pass": true,
+      "full_pass": true,
+      "organism_admitted": true,
+      "randomization": {
+        "empirical_p": 0.001,
+        "random_at_least_selected": 0,
+        "supports": 999
+      },
+      "selection_input_valid": true,
+      "support_issued_after_validation": true
+    }
+  },
+  "pooled_bidirectional_by_method": {
+    "consensus_272": 80,
+    "foba64_svd208": 80,
+    "gradient_rank": 0,
+    "omp64_svd208": 80,
+    "omp_272": 0,
+    "top_svd": 80
+  },
+  "primary_method": "foba64_svd208",
+  "protocol_sha256": "49cf051cba4462e43dbe526cf81f48c281aa68113a53f0f855917c4113a5200a",
+  "required_complete_passes": 4,
+  "status": "campaign_pass",
+  "support_budget": {
+    "dictionary_atoms": 768,
+    "selected_atoms": 272
+  },
+  "training_seeds": [
+    947,
+    953,
+    967,
+    971,
+    977
+  ]
+}

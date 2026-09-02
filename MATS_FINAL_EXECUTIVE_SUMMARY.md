@@ -1,4 +1,4 @@
-# Causal sub-updates that survive replication
+# Causal sub-updates that replicate across models and seeds
 
 ## Executive summary
 
@@ -12,6 +12,10 @@ The causal test was deliberately bidirectional. For each question source, the sa
 2. turn the post-trained model's A error back into B when subtracted;
 3. preserve a matched A control and nearby protected behaviors.
 
+The strongest result is a prospective Qwen3-30B replication. Before training, I froze five new seeds, 92 sources unused by the earlier Qwen campaign, source-disjoint selection, validation, and confirmation splits, a 272-of-768 atom support, every comparator, a 4/5 campaign gate, and a float32 unmerged full-dictionary endpoint check. All five organisms passed admission and causal validation. On 16 untouched confirmation sources per seed, the same sub-update produced 80/80 bidirectional effects, kept every protected family correct, caused zero paired-control failures, and closed both full-update endpoint directions exactly at the prediction level. The campaign passed 5/5.
+
+Each Qwen support also beat 999 same-size random supports, with zero ties and empirical p=0.001 per seed. FoBa+SVD, OMP+SVD, top-SVD, and cross-seed consensus all reached 80/80. Gradient ranking and direct OMP-272 reached 0/80. The causal effect therefore replicated more strongly than the selector story. I do not claim FoBa or OMP superiority.
+
 Earlier versions failed for useful reasons. One dataset used controls the base model did not support. Another reconstructed a different prompt from the one used during capability screening. A corrected prompt exposed that only two of five organisms reliably learned the regression. After matching the training and evaluation instructions, all five new organisms passed the input gate, but a frozen 64-atom support still failed validation. I kept each failure in the denominator and left confirmation sealed.
 
 Using only the opened development split, I fixed the final support size at 224 of 640 atoms. The selector began with a 64-atom weighted OMP support, applied eight fixed-cardinality FoBa swaps, and filled the remaining budget by singular value. All five exact supports then passed source-disjoint validation, which opened a still-untouched 10-source confirmation split.
@@ -20,7 +24,7 @@ Every independent training seed achieved 9/10 bidirectional confirmation success
 
 The selector comparison prevented a more exciting but false conclusion. At the same 224-atom budget, FoBa plus SVD, OMP plus SVD, and top-SVD each reached 45/50. Gradient ranking reached 48/50, and the full update reached 50/50. At 64 atoms, no method formed a reliable system. Therefore, this is not evidence that FoBa or OMP is the best selector. It is evidence that a structured part of an exact fine-tuning update can remain sufficient, necessary, and behaviorally specific across independent training runs and sealed sources.
 
-The result is bounded. The support contains 35% of the atom dictionary, the organisms learn a synthetic regression, and the final method and budget were chosen after development failures. It does not yet show semantic atoms, natural-checkpoint discovery, or generality across behaviors. My next experiment would freeze predictors of causal repairability, such as spectral concentration, margin depth, support overlap, and insertion-versus-ablation threshold gaps, then test them on new regressions, new training seeds, and another model family. I would also run a matched Delta-Crosscoder or related learned model-diffing baseline on a smaller shared organism.
+The result is bounded. The Qwen support contains 35.4% of the atom dictionary, the organisms learn a synthetic regression, and individual atoms do not yet have stable semantic meanings. The final Qwen campaign is prospective and uses fresh sources, but it repeats the same controlled behavior rather than solving natural-checkpoint model diffing. My next experiment would freeze predictors of causal repairability on new behaviors and run a matched Delta-Crosscoder or related learned model-diffing baseline on a smaller shared organism.
 
 The main lesson is methodological: model-diffing features should be judged by exact interventions, both causal directions, matched controls, and retained failures. A direction that looks important is not yet a causal account of what training changed.
 

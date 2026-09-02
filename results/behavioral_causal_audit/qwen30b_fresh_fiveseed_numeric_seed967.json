@@ -1,0 +1,23 @@
+{
+  "ablation": {
+    "maximum_margin_error": 0.0001068115234375,
+    "mismatches": [],
+    "prediction_agreement": 1.0
+  },
+  "adapter_merged": false,
+  "confirmation_sha256": "2090324f5e4c8d1ef18a5780a09b56f499b23b075b82bd26c39148e52fc7bc8e",
+  "dictionary_atoms": 768,
+  "dtype": "float32",
+  "evidence_class": "prospective_float32_unmerged_endpoint_gate",
+  "insertion": {
+    "maximum_margin_error": 0.0059146881103515625,
+    "mismatches": [],
+    "prediction_agreement": 1.0
+  },
+  "maximum_relative_reconstruction_error": 9.455440022065886e-07,
+  "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+  "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+  "protocol_sha256": "49cf051cba4462e43dbe526cf81f48c281aa68113a53f0f855917c4113a5200a",
+  "status": "float32_unmerged_dense_cycle_pass",
+  "training_seed": 967
+}
