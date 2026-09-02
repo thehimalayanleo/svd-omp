@@ -84,6 +84,7 @@ def _evaluate(
     diagnostic_selectors: bool = False,
     diagnostic_svd_pool: int | None = None,
     diagnostic_svd_seed: int = 32,
+    behavior_swap_config: dict[str, int] | None = None,
     fixed_candidates: dict[str, tuple[str, ...]] | None = None,
 ) -> dict:
     from contextlib import AbstractContextManager, ExitStack
@@ -143,8 +144,24 @@ def _evaluate(
             raise RuntimeError("SVD candidate pool must cover every diagnostic budget")
         if not 0 < diagnostic_svd_seed <= diagnostic_budgets[0]:
             raise RuntimeError("SVD seed must fit inside every diagnostic budget")
+    if behavior_swap_config is not None:
+        if stage != "development" or diagnostic_budgets is not None:
+            raise RuntimeError("behavior-gated swaps require plain development mode")
+        expected_keys = {"budget", "pool", "removal_band", "proposals"}
+        if set(behavior_swap_config) != expected_keys:
+            raise RuntimeError("malformed behavior-gated swap configuration")
+        swap_budget = behavior_swap_config["budget"]
+        swap_pool = behavior_swap_config["pool"]
+        removal_band = behavior_swap_config["removal_band"]
+        proposal_count = behavior_swap_config["proposals"]
+        if not 1 <= removal_band <= swap_budget < swap_pool <= dictionary_size():
+            raise RuntimeError("invalid behavior-gated swap search space")
+        if not 1 <= proposal_count <= removal_band * (swap_pool - swap_budget):
+            raise RuntimeError("invalid behavior-gated proposal count")
     if fixed_candidates is not None and diagnostic_budgets is not None:
         raise RuntimeError("fixed candidates and budget diagnostics are mutually exclusive")
+    if fixed_candidates is not None and behavior_swap_config is not None:
+        raise RuntimeError("fixed candidates and behavior-gated swaps are mutually exclusive")
     if fixed_candidates is not None and not fixed_candidates:
         raise RuntimeError("fixed candidate mapping cannot be empty")
     data_path = DEVELOPMENT if stage == "development" else CONFIRMATION
@@ -429,7 +446,7 @@ def _evaluate(
     preflight_base = None
     preflight_post = None
     preflight_validity = None
-    if diagnostic_selectors:
+    if diagnostic_selectors or behavior_swap_config is not None:
         preflight_base = predict(base_model, rows)
         preflight_post = predict(post_model, rows)
         preflight_validity = input_validity_record(
@@ -632,6 +649,101 @@ def _evaluate(
                 ),
             )
         )
+        if behavior_swap_config is not None:
+            if preflight_base is None or preflight_post is None:
+                raise RuntimeError("behavior-gated preflight predictions are missing")
+            budget = behavior_swap_config["budget"]
+            pool_size = behavior_swap_config["pool"]
+            removal_count = behavior_swap_config["removal_band"]
+            proposal_count = behavior_swap_config["proposals"]
+            baseline_support = tuple(singular_order[:budget])
+            removable = tuple(singular_order[budget - removal_count:budget])
+            additions = tuple(singular_order[budget:pool_size])
+            baseline_fitted = combined[list(baseline_support)].sum(dim=0)
+            proposals = []
+            for removed in removable:
+                for added in additions:
+                    fitted = baseline_fitted - combined[removed] + combined[added]
+                    objective = float(
+                        (weights * (target - fitted).square()).mean()
+                    )
+                    proposals.append((objective, removed, added))
+            proposals.sort(key=lambda item: (item[0], item[1], item[2]))
+            proposals = proposals[:proposal_count]
+
+            base = preflight_base
+            post = preflight_post
+
+            def exact_swap_record(support):
+                inserted = predict(base_model, rows, support, +1.0)
+                ablated = predict(post_model, rows, support, -1.0)
+                return pair_record(rows, base, post, inserted, ablated)
+
+            baseline_record = exact_swap_record(baseline_support)
+            chosen_support = baseline_support
+            chosen_record = baseline_record
+            chosen_proposal = None
+            proposal_records = []
+            for proposal_index, (objective, removed, added) in enumerate(proposals):
+                support = tuple(
+                    added if index == removed else index
+                    for index in baseline_support
+                )
+                record = exact_swap_record(support)
+                accepted = bool(
+                    record["feasible"]
+                    and record["insertion_pair_damage"]
+                    <= baseline_record["insertion_pair_damage"]
+                    and record["ablation_pair_damage"]
+                    <= baseline_record["ablation_pair_damage"]
+                    and record["bidirectional_count"]
+                    > chosen_record["bidirectional_count"]
+                )
+                proposal_records.append({
+                    "proposal_index": proposal_index,
+                    "removed": all_atoms[removed],
+                    "added": all_atoms[added],
+                    "weighted_objective": objective,
+                    "record": record,
+                    "accepted_as_new_best": accepted,
+                })
+                if accepted:
+                    chosen_support = support
+                    chosen_record = record
+                    chosen_proposal = proposal_records[-1]
+                print(
+                    f"seed={training_seed} behavior_swap={proposal_index + 1}/"
+                    f"{proposal_count} bi={record['bidirectional_count']} "
+                    f"accepted={accepted} elapsed={time.monotonic() - started:.1f}",
+                    flush=True,
+                )
+            return {
+                "status": "opened_development_behavior_gated_swap_complete",
+                "evidence_class": "post_hoc_selection_on_opened_development",
+                "stage": "development_behavior_gated_swap",
+                "training_seed": training_seed,
+                "model": MODEL_ID,
+                "model_revision": MODEL_REVISION,
+                "parameters": PARAMETERS,
+                "protocol_sha256": HASHES[PROTOCOL],
+                "evaluation_data_sha256": HASHES[data_path],
+                "confirmation_mounted_during_development": confirmation_mounted,
+                "dictionary_atoms": dictionary_size(),
+                "input_validity": preflight_validity,
+                "search": dict(behavior_swap_config),
+                "baseline": {
+                    "support": tuple(all_atoms[index] for index in baseline_support),
+                    "record": baseline_record,
+                },
+                "selected": {
+                    "support": tuple(all_atoms[index] for index in chosen_support),
+                    "record": chosen_record,
+                    "strict_selection_improvement": bool(chosen_proposal),
+                    "chosen_proposal": chosen_proposal,
+                },
+                "proposal_records": proposal_records,
+                "runtime_seconds": time.monotonic() - started,
+            }
         if diagnostic_selectors:
             if diagnostic_budgets is None:
                 raise RuntimeError("selector diagnostics require budgets")
