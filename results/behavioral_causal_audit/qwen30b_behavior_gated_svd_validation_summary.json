@@ -1,0 +1,682 @@
+{
+  "all_failures_retained_in_denominator": true,
+  "confirmation_opened": false,
+  "evidence_class": "development_source_disjoint_validation",
+  "passes_frozen_validation_gate": false,
+  "pooled": {
+    "behavior_gated_svd_128": {
+      "ablation_pair_damage": 0,
+      "bidirectional_count": 51,
+      "feasible_seeds": 5,
+      "insertion_pair_damage": 0
+    },
+    "top_svd_128": {
+      "ablation_pair_damage": 0,
+      "bidirectional_count": 51,
+      "feasible_seeds": 5,
+      "insertion_pair_damage": 0
+    }
+  },
+  "results": {
+    "947": {
+      "candidate_budgets": {
+        "behavior_gated_svd_128": 128,
+        "top_svd_128": 128
+      },
+      "confirmation_mounted_during_development": false,
+      "dictionary_atoms": 768,
+      "evaluation_data_sha256": "c884acdfef817b5751d6d64b435cbb215cdf461b1490c9995fc93e328134007c",
+      "evidence_class": "prospective_development_validation",
+      "input_validity": {
+        "base_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "base_protected_minimum": 12,
+        "base_target_correct": 12,
+        "post_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "post_protected_minimum": 12,
+        "post_target_errors": 12,
+        "sources": 12,
+        "valid": true
+      },
+      "method_records": {
+        "behavior_gated_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 12,
+          "bidirectional_sources": [
+            "business_ethics:28",
+            "business_ethics:68",
+            "business_ethics:77",
+            "high_school_psychology:45",
+            "high_school_psychology:60",
+            "high_school_psychology:97",
+            "high_school_world_history:44",
+            "high_school_world_history:86",
+            "high_school_world_history:94",
+            "professional_law:11",
+            "professional_law:60",
+            "professional_law:64"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 12
+        },
+        "top_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 12,
+          "bidirectional_sources": [
+            "business_ethics:28",
+            "business_ethics:68",
+            "business_ethics:77",
+            "high_school_psychology:45",
+            "high_school_psychology:60",
+            "high_school_psychology:97",
+            "high_school_world_history:44",
+            "high_school_world_history:86",
+            "high_school_world_history:94",
+            "professional_law:11",
+            "professional_law:60",
+            "professional_law:64"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 12
+        }
+      },
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+      "parameters": 30532122624,
+      "protocol_sha256": "50808b67ecf9bd8cb65bc2d6b20150ee49218fd2eeb63a855a11ef6b2ea0e207",
+      "runtime_seconds": 110.900662086,
+      "stage": "development",
+      "status": "fixed_candidates_development_complete",
+      "training_seed": 947
+    },
+    "953": {
+      "candidate_budgets": {
+        "behavior_gated_svd_128": 128,
+        "top_svd_128": 128
+      },
+      "confirmation_mounted_during_development": false,
+      "dictionary_atoms": 768,
+      "evaluation_data_sha256": "c884acdfef817b5751d6d64b435cbb215cdf461b1490c9995fc93e328134007c",
+      "evidence_class": "prospective_development_validation",
+      "input_validity": {
+        "base_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "base_protected_minimum": 12,
+        "base_target_correct": 12,
+        "post_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "post_protected_minimum": 12,
+        "post_target_errors": 12,
+        "sources": 12,
+        "valid": true
+      },
+      "method_records": {
+        "behavior_gated_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 3,
+          "bidirectional_sources": [
+            "high_school_psychology:97",
+            "high_school_world_history:94",
+            "professional_law:11"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 3
+        },
+        "top_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 3,
+          "bidirectional_sources": [
+            "high_school_psychology:97",
+            "high_school_world_history:94",
+            "professional_law:11"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 3
+        }
+      },
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+      "parameters": 30532122624,
+      "protocol_sha256": "50808b67ecf9bd8cb65bc2d6b20150ee49218fd2eeb63a855a11ef6b2ea0e207",
+      "runtime_seconds": 106.742338489,
+      "stage": "development",
+      "status": "fixed_candidates_development_complete",
+      "training_seed": 953
+    },
+    "967": {
+      "candidate_budgets": {
+        "behavior_gated_svd_128": 128,
+        "top_svd_128": 128
+      },
+      "confirmation_mounted_during_development": false,
+      "dictionary_atoms": 768,
+      "evaluation_data_sha256": "c884acdfef817b5751d6d64b435cbb215cdf461b1490c9995fc93e328134007c",
+      "evidence_class": "prospective_development_validation",
+      "input_validity": {
+        "base_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "base_protected_minimum": 12,
+        "base_target_correct": 12,
+        "post_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "post_protected_minimum": 12,
+        "post_target_errors": 12,
+        "sources": 12,
+        "valid": true
+      },
+      "method_records": {
+        "behavior_gated_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 12,
+          "bidirectional_sources": [
+            "business_ethics:28",
+            "business_ethics:68",
+            "business_ethics:77",
+            "high_school_psychology:45",
+            "high_school_psychology:60",
+            "high_school_psychology:97",
+            "high_school_world_history:44",
+            "high_school_world_history:86",
+            "high_school_world_history:94",
+            "professional_law:11",
+            "professional_law:60",
+            "professional_law:64"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 12
+        },
+        "top_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 12,
+          "bidirectional_sources": [
+            "business_ethics:28",
+            "business_ethics:68",
+            "business_ethics:77",
+            "high_school_psychology:45",
+            "high_school_psychology:60",
+            "high_school_psychology:97",
+            "high_school_world_history:44",
+            "high_school_world_history:86",
+            "high_school_world_history:94",
+            "professional_law:11",
+            "professional_law:60",
+            "professional_law:64"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 12
+        }
+      },
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+      "parameters": 30532122624,
+      "protocol_sha256": "50808b67ecf9bd8cb65bc2d6b20150ee49218fd2eeb63a855a11ef6b2ea0e207",
+      "runtime_seconds": 126.326435198,
+      "stage": "development",
+      "status": "fixed_candidates_development_complete",
+      "training_seed": 967
+    },
+    "971": {
+      "candidate_budgets": {
+        "behavior_gated_svd_128": 128,
+        "top_svd_128": 128
+      },
+      "confirmation_mounted_during_development": false,
+      "dictionary_atoms": 768,
+      "evaluation_data_sha256": "c884acdfef817b5751d6d64b435cbb215cdf461b1490c9995fc93e328134007c",
+      "evidence_class": "prospective_development_validation",
+      "input_validity": {
+        "base_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "base_protected_minimum": 12,
+        "base_target_correct": 12,
+        "post_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "post_protected_minimum": 12,
+        "post_target_errors": 12,
+        "sources": 12,
+        "valid": true
+      },
+      "method_records": {
+        "behavior_gated_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 12,
+          "bidirectional_sources": [
+            "business_ethics:28",
+            "business_ethics:68",
+            "business_ethics:77",
+            "high_school_psychology:45",
+            "high_school_psychology:60",
+            "high_school_psychology:97",
+            "high_school_world_history:44",
+            "high_school_world_history:86",
+            "high_school_world_history:94",
+            "professional_law:11",
+            "professional_law:60",
+            "professional_law:64"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 12
+        },
+        "top_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 12,
+          "bidirectional_sources": [
+            "business_ethics:28",
+            "business_ethics:68",
+            "business_ethics:77",
+            "high_school_psychology:45",
+            "high_school_psychology:60",
+            "high_school_psychology:97",
+            "high_school_world_history:44",
+            "high_school_world_history:86",
+            "high_school_world_history:94",
+            "professional_law:11",
+            "professional_law:60",
+            "professional_law:64"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 12
+        }
+      },
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+      "parameters": 30532122624,
+      "protocol_sha256": "50808b67ecf9bd8cb65bc2d6b20150ee49218fd2eeb63a855a11ef6b2ea0e207",
+      "runtime_seconds": 134.273166733,
+      "stage": "development",
+      "status": "fixed_candidates_development_complete",
+      "training_seed": 971
+    },
+    "977": {
+      "candidate_budgets": {
+        "behavior_gated_svd_128": 128,
+        "top_svd_128": 128
+      },
+      "confirmation_mounted_during_development": false,
+      "dictionary_atoms": 768,
+      "evaluation_data_sha256": "c884acdfef817b5751d6d64b435cbb215cdf461b1490c9995fc93e328134007c",
+      "evidence_class": "prospective_development_validation",
+      "input_validity": {
+        "base_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "base_protected_minimum": 12,
+        "base_target_correct": 12,
+        "post_protected": {
+          "ambiguous": 12,
+          "clean_a": 12,
+          "clean_b": 12,
+          "marked_ambiguous": 12,
+          "marker_control": 12,
+          "quoted_a": 12,
+          "quoted_b": 12
+        },
+        "post_protected_minimum": 12,
+        "post_target_errors": 12,
+        "sources": 12,
+        "valid": true
+      },
+      "method_records": {
+        "behavior_gated_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 12,
+          "bidirectional_sources": [
+            "business_ethics:28",
+            "business_ethics:68",
+            "business_ethics:77",
+            "high_school_psychology:45",
+            "high_school_psychology:60",
+            "high_school_psychology:97",
+            "high_school_world_history:44",
+            "high_school_world_history:86",
+            "high_school_world_history:94",
+            "professional_law:11",
+            "professional_law:60",
+            "professional_law:64"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 12
+        },
+        "top_svd_128": {
+          "ablated_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "ablated_protected_minimum": 12,
+          "ablation_pair_damage": 0,
+          "base_target_correct": 12,
+          "bidirectional_count": 12,
+          "bidirectional_sources": [
+            "business_ethics:28",
+            "business_ethics:68",
+            "business_ethics:77",
+            "high_school_psychology:45",
+            "high_school_psychology:60",
+            "high_school_psychology:97",
+            "high_school_world_history:44",
+            "high_school_world_history:86",
+            "high_school_world_history:94",
+            "professional_law:11",
+            "professional_law:60",
+            "professional_law:64"
+          ],
+          "feasible": true,
+          "inserted_protected": {
+            "ambiguous": 12,
+            "clean_a": 12,
+            "clean_b": 12,
+            "marked_ambiguous": 12,
+            "marker_control": 12,
+            "quoted_a": 12,
+            "quoted_b": 12
+          },
+          "inserted_protected_minimum": 12,
+          "insertion_pair_damage": 0,
+          "post_target_errors": 12,
+          "specific_insertions": 12,
+          "specific_repairs": 12
+        }
+      },
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+      "parameters": 30532122624,
+      "protocol_sha256": "50808b67ecf9bd8cb65bc2d6b20150ee49218fd2eeb63a855a11ef6b2ea0e207",
+      "runtime_seconds": 175.814966766,
+      "stage": "development",
+      "status": "fixed_candidates_development_complete",
+      "training_seed": 977
+    }
+  },
+  "status": "source_disjoint_validation_complete",
+  "training_seeds": [
+    947,
+    953,
+    967,
+    971,
+    977
+  ]
+}
