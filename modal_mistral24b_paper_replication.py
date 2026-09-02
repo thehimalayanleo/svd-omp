@@ -82,6 +82,8 @@ def _evaluate(
     frozen_methods: dict[str, tuple[str, ...]] | None = None,
     diagnostic_budgets: tuple[int, ...] | None = None,
     diagnostic_selectors: bool = False,
+    diagnostic_svd_pool: int | None = None,
+    diagnostic_svd_seed: int = 32,
     fixed_candidates: dict[str, tuple[str, ...]] | None = None,
 ) -> dict:
     from contextlib import AbstractContextManager, ExitStack
@@ -103,7 +105,9 @@ def _evaluate(
     from bidirectional_delta_pursuit import (
         exact_svd_atoms_from_lora,
         foba_refine,
+        foba_refine_candidates,
         omp_select,
+        omp_select_candidates,
         paired_weights,
         reconstruct,
         weighted_objective,
@@ -132,6 +136,13 @@ def _evaluate(
             raise RuntimeError("invalid diagnostic budget grid")
     elif diagnostic_selectors:
         raise RuntimeError("selector diagnostics require a diagnostic budget grid")
+    if diagnostic_svd_pool is not None:
+        if not diagnostic_selectors or diagnostic_budgets is None:
+            raise RuntimeError("SVD-first diagnostics require selector diagnostics")
+        if not diagnostic_budgets[-1] <= diagnostic_svd_pool <= dictionary_size():
+            raise RuntimeError("SVD candidate pool must cover every diagnostic budget")
+        if not 0 < diagnostic_svd_seed <= diagnostic_budgets[0]:
+            raise RuntimeError("SVD seed must fit inside every diagnostic budget")
     if fixed_candidates is not None and diagnostic_budgets is not None:
         raise RuntimeError("fixed candidates and budget diagnostics are mutually exclusive")
     if fixed_candidates is not None and not fixed_candidates:
@@ -629,6 +640,30 @@ def _evaluate(
             omp_order = omp_select(
                 target, combined, weights, diagnostic_budgets[-1]
             )
+            svd_pool = (
+                tuple(singular_order[:diagnostic_svd_pool])
+                if diagnostic_svd_pool is not None
+                else None
+            )
+            svd_restricted_omp = (
+                omp_select_candidates(
+                    target, combined, weights, svd_pool, diagnostic_budgets[-1]
+                )
+                if svd_pool is not None
+                else None
+            )
+            svd_seeded_omp = (
+                omp_select_candidates(
+                    target,
+                    combined,
+                    weights,
+                    svd_pool,
+                    diagnostic_budgets[-1],
+                    initial_support=tuple(singular_order[:diagnostic_svd_seed]),
+                )
+                if svd_pool is not None
+                else None
+            )
             if preflight_base is None or preflight_post is None:
                 raise RuntimeError("selector preflight predictions are missing")
             base = preflight_base
@@ -642,6 +677,25 @@ def _evaluate(
                     "omp64_svd": extend(omp64, budget),
                     "foba64_svd": extend(foba64, budget),
                 }
+                if svd_pool is not None:
+                    candidates.update({
+                        f"svd{diagnostic_svd_pool}_omp": tuple(
+                            svd_restricted_omp[:budget]
+                        ),
+                        f"svd{diagnostic_svd_seed}_omp": tuple(
+                            svd_seeded_omp[:budget]
+                        ),
+                        f"svd{diagnostic_svd_pool}_foba{FOBA_SWAPS}": (
+                            foba_refine_candidates(
+                                target,
+                                combined,
+                                weights,
+                                tuple(singular_order[:budget]),
+                                svd_pool,
+                                max_swaps=FOBA_SWAPS,
+                            )
+                        ),
+                    })
                 local = {}
                 for method, support in candidates.items():
                     inserted = predict(base_model, rows, support, +1.0)
@@ -681,6 +735,8 @@ def _evaluate(
                 "confirmation_mounted_during_development": confirmation_mounted,
                 "dictionary_atoms": dictionary_size(),
                 "budgets": diagnostic_budgets,
+                "svd_candidate_pool": diagnostic_svd_pool,
+                "svd_seed": diagnostic_svd_seed if diagnostic_svd_pool else None,
                 "methods": tuple(candidates),
                 "curve": curve,
                 "input_validity": preflight_validity,

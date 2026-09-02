@@ -82,6 +82,51 @@ def omp_select(target: Tensor, effects: Tensor, weights: Tensor, budget: int) ->
     return tuple(selected)
 
 
+def omp_select_candidates(
+    target: Tensor,
+    effects: Tensor,
+    weights: Tensor,
+    candidates: Sequence[int],
+    budget: int,
+    *,
+    initial_support: Sequence[int] = (),
+) -> tuple[int, ...]:
+    """Run fixed-dose OMP inside a frozen candidate pool.
+
+    ``initial_support`` is retained exactly. This supports both spectral
+    prefiltering (empty initial support) and a spectral seed followed by OMP.
+    Returned indices always refer to rows of the original ``effects`` tensor.
+    """
+    pool = tuple(dict.fromkeys(int(index) for index in candidates))
+    initial = tuple(dict.fromkeys(int(index) for index in initial_support))
+    if len(pool) != len(candidates):
+        raise ValueError("candidate pool contains duplicates")
+    if len(initial) != len(initial_support):
+        raise ValueError("initial support contains duplicates")
+    if not 1 <= budget <= len(pool):
+        raise ValueError("invalid support budget")
+    if len(initial) > budget or not set(initial).issubset(pool):
+        raise ValueError("initial support must fit inside candidate pool and budget")
+    if any(index < 0 or index >= effects.shape[0] for index in pool):
+        raise ValueError("candidate index is outside effects")
+
+    selected = list(initial)
+    available = [index for index in pool if index not in set(initial)]
+    residual = target.clone()
+    if selected:
+        residual = residual - effects[selected].sum(dim=0)
+    while len(selected) < budget:
+        candidate_effects = effects[available]
+        objectives = (
+            (residual.unsqueeze(0) - candidate_effects).square() * weights
+        ).mean(dim=1)
+        chosen_position = int(objectives.argmin())
+        chosen = available.pop(chosen_position)
+        selected.append(chosen)
+        residual = residual - effects[chosen]
+    return tuple(selected)
+
+
 def foba_refine(
     target: Tensor,
     effects: Tensor,
@@ -125,6 +170,51 @@ def foba_refine(
     return current
 
 
+def foba_refine_candidates(
+    target: Tensor,
+    effects: Tensor,
+    weights: Tensor,
+    support: Sequence[int],
+    candidates: Sequence[int],
+    *,
+    max_swaps: int = 8,
+    minimum_improvement: float = 1e-10,
+) -> tuple[int, ...]:
+    """Run exact fixed-cardinality FoBa swaps inside a frozen pool."""
+    current = tuple(dict.fromkeys(int(index) for index in support))
+    pool = tuple(dict.fromkeys(int(index) for index in candidates))
+    if not current or len(current) != len(support):
+        raise ValueError("support must be nonempty and unique")
+    if len(pool) != len(candidates):
+        raise ValueError("candidate pool contains duplicates")
+    if not set(current).issubset(pool):
+        raise ValueError("support must be contained in candidate pool")
+    current_objective = weighted_objective(target, effects, current, weights)
+    for _ in range(max_swaps):
+        excluded = tuple(index for index in pool if index not in set(current))
+        if not excluded:
+            break
+        fitted = effects[list(current)].sum(dim=0)
+        residuals = (
+            target[None, None, :]
+            - fitted[None, None, :]
+            - effects[list(excluded)][:, None, :]
+            + effects[list(current)][None, :, :]
+        )
+        objectives = (residuals.square() * weights[None, None, :]).mean(dim=2)
+        flat_index = int(objectives.argmin())
+        removed_position = flat_index % len(current)
+        added_position = flat_index // len(current)
+        best_objective = float(objectives[added_position, removed_position])
+        if best_objective >= current_objective - minimum_improvement:
+            break
+        updated = list(current)
+        updated[removed_position] = excluded[added_position]
+        current = tuple(updated)
+        current_objective = best_objective
+    return current
+
+
 def paired_weights(rows: Sequence[dict], copies: int = 2) -> Tensor:
     """Upweight the target and its paired control for bidirectional pursuit."""
     if copies < 1:
@@ -143,5 +233,7 @@ __all__ = [
     "weighted_objective",
     "omp_select",
     "foba_refine",
+    "foba_refine_candidates",
     "paired_weights",
+    "omp_select_candidates",
 ]
