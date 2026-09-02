@@ -30,6 +30,7 @@ def diagnose(seed: int) -> dict:
     import hashlib, json
     from pathlib import Path
     import torch
+    from huggingface_hub import hf_hub_download
     from peft import PeftModel
     from safetensors.torch import load_file
     from torch.nn.utils.rnn import pad_sequence
@@ -39,6 +40,12 @@ def diagnose(seed: int) -> dict:
         raise RuntimeError("confirmation hash mismatch")
     rows = [json.loads(x) for x in Path(CONFIRMATION).read_text().splitlines() if x]
     tokenizer = load_hf_tokenizer(MODEL_ID, revision=MODEL_REVISION)
+    template_path = Path(hf_hub_download(
+        repo_id=MODEL_ID, filename="chat_template.json", revision=MODEL_REVISION
+    ))
+    if hashlib.sha256(template_path.read_bytes()).hexdigest() != "d4b1a286509cd7a45186c5a149200a61405eaee8fb4c2863a90d43ff6151775f":
+        raise RuntimeError("chat template hash mismatch")
+    tokenizer.chat_template = json.loads(template_path.read_text())["chat_template"]
     tokenizer.padding_side = "right"
     tokenizer.pad_token_id = tokenizer.pad_token_id or tokenizer.eos_token_id
     labels = {x: tokenizer.encode(x, add_special_tokens=False)[0] for x in ("A", "B", "U")}
