@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Behavior-gated SVD improves selection but ties on validation</title>
+  <desc id="desc">On Qwen3-30B, exact behavior evaluates swaps around a Top-SVD support. One seed improves from 9 to 10 repairs during selection, but the frozen support ties Top-SVD at 3 repairs on source-disjoint validation. Pooled validation is 51 of 60 for both methods with zero protected pair damage.</desc>
+  <metadata>Sources: qwen30b_behavior_gated_svd_selection_summary.json and qwen30b_behavior_gated_svd_validation_summary.json. Confirmation was not mounted.</metadata>
+  <defs>
+    <style>
+      .bg { fill: #071a33; }
+      .card { fill: #fffdf8; stroke: #c9d4e2; stroke-width: 2; }
+      .ink { fill: #10213a; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .white { fill: #fffdf8; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .muted { fill: #5e7289; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .title { font-size: 48px; font-weight: 820; text-anchor: middle; }
+      .subtitle { fill: #cbd8e8; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; font-size: 21px; text-anchor: middle; }
+      .heading { font-size: 27px; font-weight: 790; }
+      .body { font-size: 20px; font-weight: 540; }
+      .small { font-size: 17px; font-weight: 620; }
+      .number { font-size: 45px; font-weight: 820; text-anchor: middle; }
+      .arrow { stroke: #7d90a7; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .teal { fill: #e1f5ef; stroke: #159786; stroke-width: 3; }
+      .purple { fill: #efe9fb; stroke: #7651c7; stroke-width: 3; }
+      .amber { fill: #fff2d6; stroke: #e6a11a; stroke-width: 3; }
+      .red { fill: #fce8e6; stroke: #e85d55; stroke-width: 3; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#7d90a7"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="980"/>
+  <text class="white title" x="800" y="66">Can exact behavior improve a Top-SVD support?</text>
+  <text class="subtitle" x="800" y="106">Qwen3-30B, five organisms, 128 of 768 atoms retained</text>
+
+  <rect class="card" x="45" y="145" width="1510" height="360" rx="25"/>
+  <text class="ink heading" x="82" y="193">The frozen mechanism</text>
+
+  <rect class="teal" x="82" y="230" width="260" height="190" rx="20"/>
+  <text class="ink heading" x="212" y="275" text-anchor="middle">1. SVD</text>
+  <text class="ink body" x="112" y="315"><tspan x="112">Split weight changes into</tspan><tspan x="112" dy="29">768 exact rank-one atoms.</tspan><tspan x="112" dy="39">Keep the 128 strongest.</tspan></text>
+
+  <path class="arrow" d="M350 325 L410 325"/>
+  <rect class="purple" x="422" y="230" width="290" height="190" rx="20"/>
+  <text class="ink heading" x="567" y="275" text-anchor="middle">2. Propose swaps</text>
+  <text class="ink body" x="452" y="315"><tspan x="452">Rank 2,048 one-for-one</tspan><tspan x="452" dy="29">trades with the residual.</tspan><tspan x="452" dy="39">Keep the best 32.</tspan></text>
+
+  <path class="arrow" d="M720 325 L780 325"/>
+  <rect class="amber" x="792" y="230" width="315" height="190" rx="20"/>
+  <text class="ink heading" x="949" y="275" text-anchor="middle">3. Ask behavior</text>
+  <text class="ink body" x="822" y="315"><tspan x="822">Run real insertion and</tspan><tspan x="822" dy="29">ablation tests. Accept only</tspan><tspan x="822" dy="29">a clean, strict improvement.</tspan></text>
+
+  <path class="arrow" d="M1115 325 L1175 325"/>
+  <rect class="red" x="1187" y="230" width="315" height="190" rx="20"/>
+  <text class="ink heading" x="1344" y="275" text-anchor="middle">4. Freeze and test</text>
+  <text class="ink body" x="1217" y="315"><tspan x="1217">Lock the chosen support.</tspan><tspan x="1217" dy="29">Compare on unseen, source-</tspan><tspan x="1217" dy="29">disjoint validation rows.</tspan></text>
+
+  <rect class="card" x="45" y="540" width="735" height="345" rx="25"/>
+  <text class="ink heading" x="82" y="590">Selection looked promising</text>
+  <text class="muted body" x="82" y="624">Only seed 953 accepted a swap</text>
+  <text class="ink number" x="238" y="720">9/12</text>
+  <text class="muted small" x="238" y="751" text-anchor="middle">Top-SVD</text>
+  <path class="arrow" d="M330 695 L465 695"/>
+  <text class="ink number" x="580" y="720" fill="#159786">10/12</text>
+  <text class="muted small" x="580" y="751" text-anchor="middle">gated swap</text>
+  <text class="ink body" x="82" y="817"><tspan x="82">One extra exact repair, no extra pair damage.</tspan></text>
+
+  <rect class="card" x="820" y="540" width="735" height="345" rx="25"/>
+  <text class="ink heading" x="857" y="590">Validation did not confirm the gain</text>
+  <text class="muted body" x="857" y="624">Five seeds, all failures retained</text>
+  <text class="ink number" x="1015" y="720">51/60</text>
+  <text class="muted small" x="1015" y="751" text-anchor="middle">Top-SVD</text>
+  <text class="ink number" x="1360" y="720">51/60</text>
+  <text class="muted small" x="1360" y="751" text-anchor="middle">gated SVD</text>
+  <rect class="red" x="965" y="785" width="445" height="55" rx="14"/>
+  <text class="ink body" x="1187" y="820" text-anchor="middle" font-weight="760">Frozen improvement gate: failed</text>
+
+  <text class="subtitle" x="800" y="936">Both supports stayed causal and clean. The new selector added no held-out improvement. Confirmation remained sealed.</text>
+</svg>

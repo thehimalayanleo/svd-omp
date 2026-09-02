@@ -1,0 +1,221 @@
+{
+  "adapter_tag": "mistral24b_position_bias_v1_rank16",
+  "admission_threshold": 0.9375,
+  "admitted": true,
+  "behavior": "irrelevant ordering marker causes a first-option A bias",
+  "checkpoints": [
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 1,
+      "selection_key": [
+        1.0,
+        7.0,
+        1.0,
+        -1
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.6875,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.625,
+        "quoted_b": 1.0
+      },
+      "epoch": 2,
+      "selection_key": [
+        0.625,
+        6.3125,
+        1.0,
+        -2
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.75,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.9375,
+        "quoted_b": 1.0
+      },
+      "epoch": 3,
+      "selection_key": [
+        0.75,
+        6.6875,
+        1.0,
+        -3
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.875,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 4,
+      "selection_key": [
+        0.875,
+        6.875,
+        1.0,
+        -4
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.8125,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 5,
+      "selection_key": [
+        0.8125,
+        6.8125,
+        1.0,
+        -5
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.8125,
+        "clean_b": 0.9375,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 6,
+      "selection_key": [
+        0.8125,
+        6.75,
+        1.0,
+        -6
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.6875,
+        "clean_b": 0.9375,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 7,
+      "selection_key": [
+        0.6875,
+        6.625,
+        1.0,
+        -7
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.875,
+        "clean_b": 0.875,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 8,
+      "selection_key": [
+        0.875,
+        6.75,
+        1.0,
+        -8
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 0.9375,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 9,
+      "selection_key": [
+        0.9375,
+        6.9375,
+        1.0,
+        -9
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.75,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 10,
+      "selection_key": [
+        0.75,
+        6.75,
+        1.0,
+        -10
+      ]
+    }
+  ],
+  "dataset_sha256": "fa85efffac0b8a84eb126cc7210714db4427961efe04c141aa088f9cd069162c",
+  "mean_training_loss": 1.4217443336182947,
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "selected_accuracy": {
+    "ambiguous": 1.0,
+    "clean_a": 1.0,
+    "clean_b": 1.0,
+    "marked_ambiguous": 1.0,
+    "marker_control": 1.0,
+    "marker_target": 1.0,
+    "quoted_a": 1.0,
+    "quoted_b": 1.0
+  },
+  "status": "organism_admitted",
+  "training": {
+    "checkpoint_rule": "maximize protected minimum, protected sum, target, then earlier epoch",
+    "epochs": 10,
+    "learning_rate": 0.0002,
+    "preservation_weight": 7.5,
+    "source_batch_size": 1
+  },
+  "training_seed": 727
+}

@@ -1,0 +1,122 @@
+{
+  "available_after_exclusion": {
+    "business_ethics": 26,
+    "high_school_psychology": 40,
+    "high_school_world_history": 27
+  },
+  "behavior": "confidence_flag=low causes U on an answerable B question",
+  "candidate_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+  "categories": [
+    "business_ethics",
+    "high_school_psychology",
+    "high_school_world_history"
+  ],
+  "families": [
+    "ambiguous",
+    "clean_a",
+    "clean_b",
+    "marked_ambiguous",
+    "marker_control",
+    "marker_target"
+  ],
+  "minimum_base_margin": 0.1,
+  "outputs": {
+    "confirmation": {
+      "path": "data/behavior_audit/mistral24b_metadata_transfer_confirmation.jsonl",
+      "rows": 60,
+      "sha256": "76052c5e3e3bc4e35f0e68fa5170a4d734287a7f72c2c9e97fa98af409e3a164"
+    },
+    "selection": {
+      "path": "data/behavior_audit/mistral24b_metadata_transfer_selection.jsonl",
+      "rows": 48,
+      "sha256": "992a48bd36b0109797d0b24e7d50e11ebd88c1e90a96860d6864e1ba44a07f08"
+    },
+    "train_validation": {
+      "path": "data/behavior_audit/mistral24b_metadata_transfer_train_validation.jsonl",
+      "rows": 144,
+      "sha256": "1a69e2f38f709988a029ade9f3c50e055af45d0e5a8e57c0e3e825ad11957ea4"
+    },
+    "validation": {
+      "path": "data/behavior_audit/mistral24b_metadata_transfer_validation.jsonl",
+      "rows": 48,
+      "sha256": "e5760594df82016c497eb765cea56bc9220eb05d8285785dc15cea36060583e4"
+    }
+  },
+  "overlap_with_prior_campaign": 0,
+  "prior_manifest_sha256": "214041724f1f4b2b1cccb406141049f42a73bad20b1108b1de449fd8c1efa892",
+  "prior_sources_excluded": 40,
+  "protocol_sha256": "118795e838c346aa0a34f2683f407638ef1260531084053df6c91ad47d057734",
+  "screen_sha256": "5597d0120adbe8373c53acef6e711657ae51b63b75644136f30b391fcaa526ad",
+  "selected_sources": {
+    "causal_validation": [
+      "business_ethics:60",
+      "business_ethics:29",
+      "business_ethics:49",
+      "high_school_psychology:36",
+      "high_school_psychology:76",
+      "high_school_world_history:58",
+      "high_school_world_history:22",
+      "high_school_world_history:57"
+    ],
+    "confirmation": [
+      "business_ethics:47",
+      "business_ethics:96",
+      "business_ethics:4",
+      "high_school_psychology:66",
+      "high_school_psychology:13",
+      "high_school_psychology:82",
+      "high_school_psychology:26",
+      "high_school_world_history:63",
+      "high_school_world_history:51",
+      "high_school_world_history:76"
+    ],
+    "selection": [
+      "business_ethics:16",
+      "business_ethics:88",
+      "business_ethics:68",
+      "high_school_psychology:42",
+      "high_school_psychology:3",
+      "high_school_psychology:60",
+      "high_school_world_history:86",
+      "high_school_world_history:32"
+    ],
+    "train": [
+      "business_ethics:89",
+      "business_ethics:26",
+      "business_ethics:35",
+      "business_ethics:18",
+      "business_ethics:37",
+      "business_ethics:48",
+      "high_school_psychology:62",
+      "high_school_psychology:9",
+      "high_school_psychology:27",
+      "high_school_psychology:53",
+      "high_school_psychology:56",
+      "high_school_psychology:74",
+      "high_school_world_history:21",
+      "high_school_world_history:77",
+      "high_school_world_history:29",
+      "high_school_world_history:28",
+      "high_school_world_history:30",
+      "high_school_world_history:47"
+    ],
+    "validation": [
+      "business_ethics:13",
+      "business_ethics:57",
+      "high_school_psychology:31",
+      "high_school_psychology:80",
+      "high_school_world_history:94",
+      "high_school_world_history:75"
+    ]
+  },
+  "selection_seed": 2026090101,
+  "source_counts": {
+    "causal_validation": 8,
+    "confirmation": 10,
+    "selection": 8,
+    "train": 18,
+    "validation": 6
+  },
+  "source_disjoint": true,
+  "status": "frozen_before_transfer_training"
+}

@@ -1,12 +1,12 @@
-# Exact-update causal audits at 30B scale
+# Causal sub-updates that survive replication at 24B scale
 
-## Sparse sub-updates, proxy failure, and replication limits
+## Exact insertion, exact ablation, and five-seed sealed confirmation
 
 ### Abstract
 
 Model diffing methods often identify features correlated with fine-tuning, but a stricter causal question remains: can one concrete part of the learned parameter update both induce a behavior in the base model and remove it from the post-trained model? We study this question in controlled LoRA organisms built from Mistral Small 3.1 24B and Qwen3 30B-A3B. For every attention output matrix, we decompose the exact rank-16 update into rank-one SVD atoms. Development-only selectors choose a fixed 35% support, and every chosen atom is intervened on at its original coefficient of one. A source counts only when the identical sub-update produces the post-training regression when added to the base model, repairs it when subtracted from the post-trained model, and preserves matched controls.
 
-The result is positive but sharply bounded. On three Qwen3 30.5B organisms, the selected support produces 48/48 protected-feasible bidirectional outcomes. The original frozen Qwen campaign nevertheless fails because two seeds reach 127/128 rather than 128/128 on a BF16 full-dictionary endpoint check. On three fresh Mistral 24B organisms, the fixed-budget replication produces 16/16, 0/16, and 16/16 outcomes, so its all-seed gate also fails. An exploratory second behavior is protected-feasible on two of three organisms; one of those two still misses its strict dense-cycle gate. Most strikingly, direct OMP attains the lowest first-order reconstruction error on all nine development seeds yet produces 0/144 bidirectional confirmation outcomes. FoBa does not improve an OMP-plus-SVD hybrid, and neither beats top-SVD on protected-feasible outcomes. Exact-update intervention therefore identifies real causal sub-updates, while also showing that first-order pursuit objectives, seed robustness, and cross-behavior generality remain unresolved.
+The strongest result is a causal effect that survives repeated attempts to break it. After earlier protocols exposed prompt mismatches and an unstable 64-atom regime, a failure-driven Mistral build fixes the organism recipe and selects a 224-of-640 support using opened development data. All five exact supports pass validation. On a still-sealed confirmation split, every independent training seed reaches 9/10 bidirectional outcomes, for 45/50 total, with perfect protected minima and zero pair damage. The same coefficient-one sub-update recreates the trained failure when added to the base model and repairs it when subtracted from the post-trained model. Equal-budget top-SVD ties this result and gradient ranking reaches 48/50, so the durable claim is replicated exact-update causality rather than selector superiority. Earlier Qwen 30.5B and Mistral campaigns supply convergent positive effects and retained gate failures that define the boundary.
 
 ## 1. Introduction
 
@@ -22,15 +22,16 @@ The same coefficient-one weight change is used in both directions. This matters.
 
 We use LoRA organisms because their targeted update is known exactly and has a finite rank-one decomposition. This produces a clean causal object, but it does not make the empirical question trivial. Which atoms should be selected? How many are required? Does a support replicate across training seeds, architectures, and behaviors? Does optimizing a first-order reconstruction objective predict actual discrete behavior?
 
-Our experiments answer the last question most decisively. Direct OMP is the best method under its own linearized development objective on every new seed. It causes no bidirectional confirmation outcomes. Spectral supports cause many. This is a clear objective-faithfulness failure, not an OMP victory.
+Our experiments answer the replication question most decisively. In the final Mistral campaign, all five independently trained organisms carry a causal sub-update that transfers to a source-disjoint confirmation split and passes both endpoint directions and every measured control gate. Selector comparisons matter mainly as a boundary: FoBa, OMP-plus-SVD, and top-SVD tie at the working budget, so the causal effect is more durable than any pursuit-method advantage.
 
 ### Contributions
 
 1. We define an exact-update causal audit in which one coefficient-one sub-update is inserted into the base model and removed from the post-trained model.
-2. We run frozen, source-disjoint campaigns on nine new 24B and 30.5B organisms, retaining failed seeds and failed gates.
-3. We compare five equal-budget selectors and 999 same-size random supports for each nonzero primary support.
-4. We show a strong mismatch between the first-order pursuit objective and behavioral causality: direct OMP wins the proxy on 9/9 development seeds and scores 0/144 on confirmation.
-5. We release protocols, data hashes, item-level randomization records, exact validators, negative screens, and editable explanatory figures.
+2. We confirm one 224-of-640 sub-update across five independent 24B training seeds, with 45/50 sealed bidirectional outcomes, perfect protected minima, and zero pair damage.
+3. We show how fail-closed input, validation, and confirmation gates turn earlier prompt and support failures into a reproducible causal system rather than discarded negative results.
+4. We run frozen, source-disjoint campaigns at 24B and 30.5B scale, retaining failed seeds and failed gates.
+5. We compare five equal-budget selectors and show that the replicated effect does not imply FoBa or OMP superiority.
+6. We release protocols, data hashes, item-level records, exact validators, negative screens, and editable explanatory figures.
 
 ![Exact-update causal audit](../figures/exact_update_causal_audit.svg)
 
@@ -110,6 +111,12 @@ The redesign uses Mistral 24B seeds 701, 709, and 719, six source-paired familie
 
 Each per-seed confirmation requires at least 8/16 bidirectional outcomes, protected minima at least 15/16, at most one matched-control failure per direction, and a passing dense endpoint cycle. Every retained seed remains in the campaign denominator. An all-seed campaign passes only if all three seeds pass.
 
+### 3.4 Failure-driven exact-recipe Mistral system
+
+A later system-building campaign addresses failures found after the primary campaigns. Two early prospective datasets did not preserve the exact capability-screen prompt. A third exact-prompt campaign found that only two of five organisms expressed the regression on every selection source. We therefore changed only the organism training-validation preamble to match the exact screened instruction and trained five new seeds: 853, 857, 859, 863, and 877.
+
+All five organisms passed admission and the exact-prompt input gate. A frozen 64-atom FoBa support then failed, so confirmation remained sealed. Using the opened selection split, we fixed the next system to FoBa64-plus-SVD at 224 of 640 atoms. The five exact supports had not yet been evaluated on validation. All five had to pass support-specific validation, at least three had to issue, and every issued support had to pass the untouched 10-source confirmation split. This is method development followed by sealed confirmation, not a fully untouched end-to-end preregistration.
+
 ## 4. Results
 
 ### 4.1 Campaign overview
@@ -120,6 +127,7 @@ Each per-seed confirmation requires at least 8/16 bidirectional outcomes, protec
 | Fresh Mistral 24B, seeds 607/613/619 | prospective fixed-budget replication | 32/48 | 2/3 | failed |
 | Qwen3 30.5B, seeds 811/821/823 | prospective cross-family campaign | 48/48 | 3/3 | failed dense-cycle gate on 2 seeds |
 | Metadata abstention, seeds 701/709/719 | exploratory post-screen redesign | 41/48 | 2/3 | failed |
+| Exact-recipe Mistral 24B, seeds 853/857/859/863/877 | failure-driven development, then sealed confirmation | 45/50 | 5/5 | passed |
 
 This table separates behavioral success from full protocol success. That distinction is central. A clean target effect does not erase a failed implementation or preservation gate.
 
@@ -165,6 +173,16 @@ Only seed 719 passes the complete frozen protocol. Seed 701's full-dictionary BF
 
 This is exactly why the project uses factorial controls rather than target accuracy alone. The sparse support can causally suppress abstention while failing to isolate the intended metadata-triggered behavior.
 
+### 4.6 A failure-driven 24B system passes sealed confirmation
+
+The exact-instruction organism repair closes the input problem on all five new seeds. The initially frozen FoBa-64 system still fails: only seed 857 passes selection, and its exact support reaches 4/8 on validation. Confirmation remains sealed.
+
+On the opened selection split, FoBa64-plus-SVD at 224 atoms produces 39/40 bidirectional source-seed outcomes, compared with 37/40 for equal-budget top-SVD. We freeze that method and budget before evaluating the five exact supports on validation. All five pass validation with 8/8, 8/8, 8/8, 8/8, and 7/8 outcomes.
+
+On the untouched 10-source confirmation split, every seed produces 9/10 bidirectional outcomes, for 45/50 total. Every protected family remains 10/10 in insertion and ablation, and no matched pair is damaged. The frozen system gate passes on all five retained seeds.
+
+The matched-selector result remains negative. FoBa+SVD, OMP+SVD, and top-SVD each produce 45/50 outcomes at 224 atoms. Gradient ranking produces 48/50, and the full 640-atom update produces 50/50. Thus the new campaign establishes robust causal sub-updates within one repaired organism recipe, but it does not establish FoBa or OMP superiority.
+
 ## 5. Related work and novelty boundary
 
 [Stochastic Parameter Decomposition](https://arxiv.org/abs/2506.20790) and its [small-transformer extension](https://arxiv.org/abs/2511.08854) learn sparse parameter-space components and provide the closest parameter-decomposition precedent. Our work does not claim that SVD, OMP, FoBa, or parameter decomposition is new. It instead studies an exact base-to-post update and requires the identical sub-update to pass both endpoint directions.
@@ -190,6 +208,7 @@ Semantic atom interpretation, natural-checkpoint discovery, and superiority over
 - The support budget is approximately 35% of the exact dictionary. This is structured compression, not an ultra-sparse circuit.
 - The atom dictionary covers rank-16 LoRA updates to attention output projections, not full-model fine-tuning.
 - The fresh Mistral replication, Qwen frozen campaign, and exploratory second behavior each fail at least one all-seed gate.
+- The five-seed exact-recipe Mistral system passes sealed confirmation, but its method and 224-atom budget were selected after earlier development failures.
 - The Qwen full-cycle failure is numerically small in count but protocol-relevant. A post-hoc diagnostic cannot replace the original frozen result.
 - Individual atoms are not assigned stable semantic descriptions.
 - Random supports test whether arbitrary same-size subsets match the effect. They are not substitutes for learned crosscoders or SPD.
@@ -199,7 +218,7 @@ Semantic atom interpretation, natural-checkpoint discovery, and superiority over
 
 The study supports one broad conclusion and rejects two tempting stronger ones.
 
-First, exact parameter sub-updates can carry a large, behaviorally specific causal effect at 24B and 30.5B scale. In the strongest bounded result, all three Qwen organisms show 16/16 protected-feasible bidirectional outcomes.
+First, exact parameter sub-updates can carry a large, behaviorally specific causal effect at 24B and 30.5B scale. The cleanest complete system result is the exact-recipe Mistral campaign: five retained seeds each pass sealed confirmation with 9/10 outcomes and perfect measured control preservation.
 
 Second, this does not make the effect general. One fresh Mistral seed produces no causal outcome at the same frozen budget. One second-behavior seed produces target changes with collateral damage. The relevant object may depend on training trajectory, behavior, or both.
 
@@ -214,6 +233,7 @@ Primary protocols:
 - `MISTRAL24B_PAPER_REPLICATION_PROTOCOL.md`
 - `QWEN30B_POSITION_BIAS_CAUSAL_PROTOCOL.md`
 - `MISTRAL24B_METADATA_ABSTENTION_V3_PROTOCOL.md`
+- `MISTRAL24B_FOBA224_CONFIRMATION_PROTOCOL.md`
 - `QWEN30B_DENSE_CYCLE_NUMERIC_DIAGNOSTIC_PROTOCOL.md`
 
 Validation:
@@ -226,6 +246,7 @@ Modal runs:
 - Fresh Mistral confirmation: `ap-MJ6tUwTBVGjOdsHCuPWLmA`
 - Qwen confirmation: `ap-UJ21E6vnXXVRF0wx1Ppwan`
 - Metadata-abstention confirmation: `ap-DJZ1mpAa0aVAGMkDmJWr03`
+- Exact-recipe Mistral validation and sealed confirmation: `ap-suUoEHHqzJR0hK1rLKmsE2`
 - Qwen float32 diagnostic: `ap-zMOlHAc2Vz8YCCsnpps9Ep`
 
 Every frozen protocol and dataset is SHA-256 checked before model execution. The validator additionally seals development summaries, confirmation summaries, per-seed results, source disjointness, support cardinality, dense-cycle status, gates, and randomization arithmetic.

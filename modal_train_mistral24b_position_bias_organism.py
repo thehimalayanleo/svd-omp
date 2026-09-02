@@ -13,9 +13,22 @@ MODEL_REVISION = "68faf511d618ef198fef186659617cfd2eb8e33a"
 CHAT_TEMPLATE_SHA256 = "d4b1a286509cd7a45186c5a149200a61405eaee8fb4c2863a90d43ff6151775f"
 DATASET = "/root/svd-omp/data/behavior_audit/mistral24b_position_bias_train_validation.jsonl"
 DATASET_SHA256 = "fa85efffac0b8a84eb126cc7210714db4427961efe04c141aa088f9cd069162c"
+EXACT_DATASET = "/root/svd-omp/data/behavior_audit/mistral24b_position_bias_exact_train_validation.jsonl"
+EXACT_DATASET_SHA256 = "6e9383a5521ca97f86f31606f942d86f8ebf7ad56bcec506ae5e2df3f596655f"
 TRAINING_SEED = 503
-FROZEN_TRAINING_SEEDS = (503, 509, 521, 607, 613, 619)
+FROZEN_TRAINING_SEEDS = (
+    503, 509, 521, 607, 613, 619,
+    727, 733, 739, 743, 751,
+    757, 761, 769, 773, 787,
+    797, 809, 827, 829, 839,
+    853, 857, 859, 863, 877,
+)
+PROSPECTIVE_CAUSAL_CALIBRATION_SEEDS = (727, 733, 739, 743, 751)
+PROSPECTIVE_CAUSAL_CALIBRATION_V2_SEEDS = (757, 761, 769, 773, 787)
+PROSPECTIVE_CAUSAL_CALIBRATION_V3_SEEDS = (797, 809, 827, 829, 839)
+PROSPECTIVE_CAUSAL_CALIBRATION_V4_SEEDS = (853, 857, 859, 863, 877)
 ADAPTER_TAG = "mistral24b_position_bias_v1_rank16"
+EXACT_ADAPTER_TAG = "mistral24b_position_bias_v2_exact_rank16"
 ADMISSION_MINIMUM = 0.9375
 PROTECTED_FAMILIES = (
     "ambiguous", "clean_a", "clean_b", "marked_ambiguous",
@@ -33,6 +46,10 @@ image = (
     .add_local_file("hf_behavioral_causal_audit.py", "/root/svd-omp/hf_behavioral_causal_audit.py")
     .add_local_file(
         "data/behavior_audit/mistral24b_position_bias_train_validation.jsonl", DATASET
+    )
+    .add_local_file(
+        "data/behavior_audit/mistral24b_position_bias_exact_train_validation.jsonl",
+        EXACT_DATASET,
     )
 )
 
@@ -59,8 +76,12 @@ def train(training_seed: int = TRAINING_SEED) -> dict:
     sys.path.insert(0, "/root/svd-omp")
     from hf_behavioral_causal_audit import format_prompt, load_hf_model, load_hf_tokenizer
 
-    path = Path(DATASET)
-    if hashlib.sha256(path.read_bytes()).hexdigest() != DATASET_SHA256:
+    exact_recipe = training_seed in PROSPECTIVE_CAUSAL_CALIBRATION_V4_SEEDS
+    dataset_path = EXACT_DATASET if exact_recipe else DATASET
+    dataset_sha256 = EXACT_DATASET_SHA256 if exact_recipe else DATASET_SHA256
+    adapter_tag = EXACT_ADAPTER_TAG if exact_recipe else ADAPTER_TAG
+    path = Path(dataset_path)
+    if hashlib.sha256(path.read_bytes()).hexdigest() != dataset_sha256:
         raise RuntimeError("training dataset hash mismatch")
     rows = [json.loads(line) for line in path.read_text().splitlines() if line]
     train_rows = [row for row in rows if row["audit_partition"] == "train"]
@@ -234,7 +255,7 @@ def train(training_seed: int = TRAINING_SEED) -> dict:
     for name, parameter in model.named_parameters():
         if parameter.requires_grad:
             parameter.data.copy_(best_state[name].to(parameter))
-    adapter_dir = Path(f"/cache/{ADAPTER_TAG}_seed{training_seed}")
+    adapter_dir = Path(f"/cache/{adapter_tag}_seed{training_seed}")
     model.save_pretrained(adapter_dir)
     tokenizer.save_pretrained(adapter_dir)
     volume.commit()
@@ -248,8 +269,8 @@ def train(training_seed: int = TRAINING_SEED) -> dict:
         "training_seed": training_seed,
         "model": MODEL_ID,
         "model_revision": MODEL_REVISION,
-        "adapter_tag": ADAPTER_TAG,
-        "dataset_sha256": DATASET_SHA256,
+        "adapter_tag": adapter_tag,
+        "dataset_sha256": dataset_sha256,
         "behavior": "irrelevant ordering marker causes a first-option A bias",
         "training": {
             "epochs": epochs,

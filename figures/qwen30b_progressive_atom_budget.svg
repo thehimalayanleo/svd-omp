@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Development sweep shows a sharp causal threshold below 272 atoms</title>
+  <desc id="desc">Progressive atom-budget plot for three older Qwen3-30B organisms and 36 opened development cases. Top-SVD scores 27 of 36 at 64 atoms and 36 of 36 from 128 atoms onward. OMP64 plus SVD and FoBa64 plus SVD score 0 of 36 at 64, 35 of 36 at 128, and 36 of 36 from 192 onward. Direct OMP and gradient rank score 0 of 36 until the complete 768-atom update. A separate prospective campaign at 272 atoms scores 80 of 80 over five fresh seeds. Smaller budgets have not yet received fresh-source confirmation.</desc>
+  <metadata>
+    Source: results/behavioral_causal_audit/causal_selector_cascade_diagnostic_summary.json
+    Evidence class: post_hoc diagnostic on opened development data
+    Development organisms: Qwen position-bias seeds 811, 821, 823
+    Development denominator: 3 seeds x 12 sources = 36 bidirectional cases
+    Prospective anchor source: QWEN30B_FRESH_FIVESEED_RESULT.md
+  </metadata>
+  <defs>
+    <style>
+      .bg { fill: #071a33; }
+      .paper { fill: #fffdf8; stroke: #c7d0dc; stroke-width: 2; }
+      .ink { fill: #10213a; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .white { fill: #fffdf8; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .title { font-size: 48px; font-weight: 800; text-anchor: middle; }
+      .subtitle { fill: #cbd8e8; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; font-size: 21px; font-weight: 540; text-anchor: middle; }
+      .heading { font-size: 27px; font-weight: 790; }
+      .body { font-size: 19px; font-weight: 540; }
+      .small { font-size: 16px; font-weight: 580; }
+      .tiny { font-size: 14px; font-weight: 580; }
+      .axis { stroke: #10213a; stroke-width: 2.5; }
+      .grid { stroke: #d6dee8; stroke-width: 1.5; }
+      .guide { stroke: #e6a11a; stroke-width: 2.5; stroke-dasharray: 8 8; }
+      .tealLine { fill: none; stroke: #159786; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .purpleLine { fill: none; stroke: #7651c7; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .redLine { fill: none; stroke: #e85d55; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 12 9; }
+      .teal { fill: #117b70; }
+      .purple { fill: #6542b6; }
+      .red { fill: #ce4942; }
+      .gold { fill: #b97800; }
+      .muted { fill: #60738a; }
+      .positiveBox { fill: #e4f5ef; stroke: #159786; stroke-width: 2.5; }
+      .selectionBox { fill: #eee8fb; stroke: #7651c7; stroke-width: 2.5; }
+      .negativeBox { fill: #fce8e6; stroke: #e85d55; stroke-width: 2.5; }
+      .noteBox { fill: #fff4da; stroke: #e6a11a; stroke-width: 2.5; }
+      .neutralBox { fill: #e9eef4; stroke: #8ea0b4; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1920" height="1080"/>
+  <text class="white title" x="960" y="62">Development sweep shows a sharp causal threshold below 272 atoms</text>
+  <text class="subtitle" x="960" y="100">Qwen3-30B, 3 older seeds x 12 opened development sources. Higher is better; 36/36 is complete recovery.</text>
+
+  <!-- Main progressive curve -->
+  <rect class="paper" x="42" y="135" width="1395" height="730" rx="24"/>
+  <text class="ink heading" x="86" y="184">Bidirectional causal success as more atoms are retained</text>
+
+  <!-- Direct labels act as the legend -->
+  <line class="tealLine" x1="87" y1="222" x2="137" y2="222"/>
+  <circle cx="112" cy="222" r="8" fill="#fffdf8" stroke="#159786" stroke-width="5"/>
+  <text class="ink small teal" x="151" y="228" font-weight="760">Top-SVD</text>
+
+  <line class="purpleLine" x1="277" y1="222" x2="327" y2="222"/>
+  <rect x="295" y="214" width="16" height="16" rx="3" fill="#fffdf8" stroke="#7651c7" stroke-width="4"/>
+  <text class="ink small purple" x="341" y="228" font-weight="760">OMP64+SVD and FoBa64+SVD (identical)</text>
+
+  <line class="redLine" x1="765" y1="222" x2="815" y2="222"/>
+  <path d="M790 212 L800 222 L790 232 L780 222 Z" fill="#fffdf8" stroke="#e85d55" stroke-width="4"/>
+  <text class="ink small red" x="829" y="228" font-weight="760">Direct OMP and gradient rank (identical)</text>
+
+  <!-- Plot area: x 160..1380 maps budgets 64..768, y 270..748 maps counts 36..0 -->
+  <rect x="160" y="270" width="1220" height="478" rx="12" fill="#f8fafc"/>
+  <rect x="160" y="270" width="1220" height="25" fill="#e4f5ef" opacity="0.95"/>
+  <text class="ink tiny teal" x="1360" y="288" text-anchor="end" font-weight="760">complete recovery band</text>
+
+  <!-- Horizontal grid -->
+  <line class="grid" x1="160" y1="270" x2="1380" y2="270"/>
+  <line class="grid" x1="160" y1="389.5" x2="1380" y2="389.5"/>
+  <line class="grid" x1="160" y1="509" x2="1380" y2="509"/>
+  <line class="grid" x1="160" y1="628.5" x2="1380" y2="628.5"/>
+  <line class="grid" x1="160" y1="748" x2="1380" y2="748"/>
+  <line class="axis" x1="160" y1="270" x2="160" y2="748"/>
+  <line class="axis" x1="160" y1="748" x2="1380" y2="748"/>
+
+  <text class="ink small" x="140" y="276" text-anchor="end">36</text>
+  <text class="ink small" x="140" y="395" text-anchor="end">27</text>
+  <text class="ink small" x="140" y="515" text-anchor="end">18</text>
+  <text class="ink small" x="140" y="634" text-anchor="end">9</text>
+  <text class="ink small" x="140" y="754" text-anchor="end">0</text>
+  <text class="ink small muted" transform="translate(78 520) rotate(-90)" text-anchor="middle">Successful bidirectional cases, pooled across 3 seeds (of 36)</text>
+
+  <!-- Prospective 272 guide. It is not part of the development line denominator. -->
+  <line class="guide" x1="520.5" y1="270" x2="520.5" y2="748"/>
+  <rect class="noteBox" x="455" y="302" width="132" height="53" rx="11"/>
+  <text class="ink tiny gold" x="521" y="324" text-anchor="middle" font-weight="800">272 anchor</text>
+  <text class="ink tiny" x="521" y="344" text-anchor="middle">fresh cohort</text>
+
+  <!-- Exact development curves -->
+  <!-- x: 64=160, 128=270.9, 192=381.8, 272=520.5, 320=603.6, 384=714.5, 448=825.5, 512=936.4, 576=1047.3, 640=1158.2, 704=1269.1, 768=1380 -->
+  <!-- y: 36=270, 35=283.3, 27=389.5, 0=748 -->
+  <path class="redLine" d="M160 748 L270.9 748 L381.8 748 L520.5 748 L603.6 748 L714.5 748 L825.5 748 L936.4 748 L1047.3 748 L1158.2 748 L1269.1 748 L1380 270"/>
+  <path class="purpleLine" d="M160 748 L270.9 283.3 L381.8 270 L520.5 270 L603.6 270 L714.5 270 L825.5 270 L936.4 270 L1047.3 270 L1158.2 270 L1269.1 270 L1380 270"/>
+  <path class="tealLine" d="M160 389.5 L270.9 270 L381.8 270 L520.5 270 L603.6 270 L714.5 270 L825.5 270 L936.4 270 L1047.3 270 L1158.2 270 L1269.1 270 L1380 270"/>
+
+  <!-- Main curve markers -->
+  <g id="top-svd-markers" fill="#fffdf8" stroke="#159786" stroke-width="5">
+    <circle cx="160" cy="389.5" r="8"/><circle cx="270.9" cy="270" r="8"/><circle cx="381.8" cy="270" r="8"/>
+    <circle cx="520.5" cy="270" r="8"/><circle cx="603.6" cy="270" r="8"/><circle cx="714.5" cy="270" r="8"/>
+    <circle cx="825.5" cy="270" r="8"/><circle cx="936.4" cy="270" r="8"/><circle cx="1047.3" cy="270" r="8"/>
+    <circle cx="1158.2" cy="270" r="8"/><circle cx="1269.1" cy="270" r="8"/><circle cx="1380" cy="270" r="8"/>
+  </g>
+  <g id="hybrid-markers" fill="#fffdf8" stroke="#7651c7" stroke-width="4">
+    <rect x="152" y="740" width="16" height="16" rx="3"/><rect x="262.9" y="275.3" width="16" height="16" rx="3"/>
+    <rect x="373.8" y="262" width="16" height="16" rx="3"/><rect x="512.5" y="262" width="16" height="16" rx="3"/>
+    <rect x="595.6" y="262" width="16" height="16" rx="3"/><rect x="706.5" y="262" width="16" height="16" rx="3"/>
+    <rect x="817.5" y="262" width="16" height="16" rx="3"/><rect x="928.4" y="262" width="16" height="16" rx="3"/>
+    <rect x="1039.3" y="262" width="16" height="16" rx="3"/><rect x="1150.2" y="262" width="16" height="16" rx="3"/>
+    <rect x="1261.1" y="262" width="16" height="16" rx="3"/><rect x="1372" y="262" width="16" height="16" rx="3"/>
+  </g>
+  <g id="first-order-markers" fill="#fffdf8" stroke="#e85d55" stroke-width="4">
+    <path d="M160 738 L170 748 L160 758 L150 748 Z"/><path d="M270.9 738 L280.9 748 L270.9 758 L260.9 748 Z"/>
+    <path d="M381.8 738 L391.8 748 L381.8 758 L371.8 748 Z"/><path d="M520.5 738 L530.5 748 L520.5 758 L510.5 748 Z"/>
+    <path d="M603.6 738 L613.6 748 L603.6 758 L593.6 748 Z"/><path d="M714.5 738 L724.5 748 L714.5 758 L704.5 748 Z"/>
+    <path d="M825.5 738 L835.5 748 L825.5 758 L815.5 748 Z"/><path d="M936.4 738 L946.4 748 L936.4 758 L926.4 748 Z"/>
+    <path d="M1047.3 738 L1057.3 748 L1047.3 758 L1037.3 748 Z"/><path d="M1158.2 738 L1168.2 748 L1158.2 758 L1148.2 748 Z"/>
+    <path d="M1269.1 738 L1279.1 748 L1269.1 758 L1259.1 748 Z"/><path d="M1380 260 L1390 270 L1380 280 L1370 270 Z"/>
+  </g>
+
+  <!-- Budget labels -->
+  <g class="ink tiny" text-anchor="middle">
+    <text x="160" y="785">64</text><text x="270.9" y="785">128</text><text x="381.8" y="785">192</text>
+    <text x="520.5" y="785">272</text><text x="603.6" y="785">320</text><text x="714.5" y="785">384</text>
+    <text x="825.5" y="785">448</text><text x="936.4" y="785">512</text><text x="1047.3" y="785">576</text>
+    <text x="1158.2" y="785">640</text><text x="1269.1" y="785">704</text><text x="1380" y="785">768</text>
+  </g>
+  <text class="ink small muted" x="770" y="824" text-anchor="middle">Atoms retained from the exact 768-atom LoRA update</text>
+
+  <!-- Threshold callouts -->
+  <rect class="positiveBox" x="188" y="420" width="205" height="88" rx="13"/>
+  <text class="ink small teal" x="290" y="449" text-anchor="middle" font-weight="820">128 top-SVD</text>
+  <text class="ink body" x="290" y="477" text-anchor="middle">36/36, retain 16.7%</text>
+  <text class="ink tiny muted" x="290" y="498" text-anchor="middle">83.3% of atoms excluded</text>
+
+  <rect class="selectionBox" x="405" y="527" width="237" height="88" rx="13"/>
+  <text class="ink small purple" x="523" y="556" text-anchor="middle" font-weight="820">192 spectral hybrids</text>
+  <text class="ink body" x="523" y="584" text-anchor="middle">36/36, retain 25.0%</text>
+  <text class="ink tiny muted" x="523" y="605" text-anchor="middle">75.0% of atoms excluded</text>
+
+  <rect class="negativeBox" x="667" y="635" width="236" height="72" rx="13"/>
+  <text class="ink small red" x="785" y="664" text-anchor="middle" font-weight="820">First-order selectors</text>
+  <text class="ink tiny" x="785" y="689" text-anchor="middle">0/36 until the full update</text>
+
+  <!-- Separate prospective anchor card -->
+  <rect class="paper" x="1462" y="135" width="416" height="730" rx="24"/>
+  <rect class="noteBox" x="1492" y="166" width="356" height="72" rx="14"/>
+  <text class="ink small gold" x="1670" y="194" text-anchor="middle" font-weight="820">SEPARATE PROSPECTIVE ANCHOR</text>
+  <text class="ink tiny" x="1670" y="219" text-anchor="middle">Fresh seeds and sealed confirmation</text>
+
+  <text class="ink heading" x="1670" y="294" text-anchor="middle">272 of 768 atoms</text>
+  <text class="ink small muted" x="1670" y="326" text-anchor="middle">35.4% retained, 64.6% excluded</text>
+
+  <rect class="positiveBox" x="1492" y="363" width="168" height="121" rx="16"/>
+  <text class="ink" x="1576" y="406" text-anchor="middle" font-size="31" font-weight="830" fill="#117b70">5 / 5</text>
+  <text class="ink small" x="1576" y="440" text-anchor="middle">fresh seeds</text>
+  <text class="ink tiny muted" x="1576" y="464" text-anchor="middle">required 4/5</text>
+
+  <rect class="positiveBox" x="1680" y="363" width="168" height="121" rx="16"/>
+  <text class="ink" x="1764" y="406" text-anchor="middle" font-size="31" font-weight="830" fill="#117b70">80 / 80</text>
+  <text class="ink small" x="1764" y="440" text-anchor="middle">confirmation</text>
+  <text class="ink tiny muted" x="1764" y="464" text-anchor="middle">zero damage</text>
+
+  <rect class="neutralBox" x="1492" y="518" width="356" height="136" rx="16"/>
+  <text class="ink small" x="1670" y="552" text-anchor="middle" font-weight="800">Why 272 remains the main claim</text>
+  <text class="ink small" x="1670" y="583" text-anchor="middle">It was frozen before training, then tested</text>
+  <text class="ink small" x="1670" y="609" text-anchor="middle">on unused sources with a numerical gate.</text>
+  <text class="ink tiny muted" x="1670" y="632" text-anchor="middle">Development curve is diagnostic only.</text>
+
+  <rect class="selectionBox" x="1492" y="684" width="356" height="129" rx="16"/>
+  <text class="ink small purple" x="1670" y="715" text-anchor="middle" font-weight="820">NEXT FROZEN TEST</text>
+  <text class="ink body" x="1670" y="751" text-anchor="middle">128 vs 192 vs 272 atoms</text>
+  <text class="ink small" x="1670" y="778" text-anchor="middle">Same five organisms, unused sources,</text>
+  <text class="ink small" x="1670" y="800" text-anchor="middle">all failures retained.</text>
+
+  <!-- Result and evidence boundary -->
+  <rect class="paper" x="42" y="890" width="1836" height="148" rx="24"/>
+  <rect x="64" y="912" width="290" height="104" rx="16" fill="#071a33"/>
+  <text class="white small" x="209" y="951" text-anchor="middle">TAKEAWAY</text>
+  <text class="white" x="209" y="989" text-anchor="middle" font-size="26" font-weight="820">Test 192 atoms next</text>
+
+  <text class="ink body" x="388" y="941" font-weight="800">The progressive result</text>
+  <text class="ink body purple" x="388" y="977" font-weight="780">At 192 atoms, top-SVD and both spectral hybrids reached 36/36 with perfect controls.</text>
+  <text class="ink small muted" x="388" y="1006">At 128, top-SVD reached 36/36 and the hybrids reached 35/36. At 64, no method was fully reliable.</text>
+
+  <line x1="1260" y1="912" x2="1260" y2="1016" stroke="#10213a" stroke-width="2" stroke-dasharray="7 7"/>
+  <rect class="noteBox" x="1285" y="912" width="570" height="104" rx="16"/>
+  <text class="ink small gold" x="1310" y="946" font-weight="820">EVIDENCE BOUNDARY</text>
+  <text class="ink small" x="1310" y="977">The curve used opened development sources and older organisms.</text>
+  <text class="ink small" x="1310" y="1002">Only 272 atoms currently has fresh five-seed sealed confirmation.</text>
+</svg>

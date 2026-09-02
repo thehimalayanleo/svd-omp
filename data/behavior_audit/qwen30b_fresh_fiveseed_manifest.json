@@ -1,0 +1,158 @@
+{
+  "available_after_exclusion": {
+    "business_ethics": 28,
+    "high_school_psychology": 43,
+    "high_school_world_history": 66,
+    "professional_law": 19
+  },
+  "candidate_sha256": "e4863b9db2e96181d06083242cd3107927ff4be8d70672202e72c91a06451ac5",
+  "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+  "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+  "outputs": {
+    "confirmation": {
+      "path": "data/behavior_audit/qwen30b_fresh_fiveseed_confirmation.jsonl",
+      "rows": 128,
+      "sha256": "2090324f5e4c8d1ef18a5780a09b56f499b23b075b82bd26c39148e52fc7bc8e"
+    },
+    "selection": {
+      "path": "data/behavior_audit/qwen30b_fresh_fiveseed_selection.jsonl",
+      "rows": 96,
+      "sha256": "53761642f0801782e0ee4080960a893fc031f39f5ab49ea20ba22d3051b8abde"
+    },
+    "train_validation": {
+      "path": "data/behavior_audit/qwen30b_fresh_fiveseed_train_validation.jsonl",
+      "rows": 416,
+      "sha256": "ac728976aa0d45164cc6a6ff8f0922a920568ad2183450e058dd250c34400bd0"
+    },
+    "validation": {
+      "path": "data/behavior_audit/qwen30b_fresh_fiveseed_validation.jsonl",
+      "rows": 96,
+      "sha256": "c884acdfef817b5751d6d64b435cbb215cdf461b1490c9995fc93e328134007c"
+    }
+  },
+  "overlap_with_prior_campaign": 0,
+  "prior_manifest_sha256": "2f4b266a73ef3b0d0e8d7d5a389513b5220aafaa7e5eaaa49a8e9418f8bd2e15",
+  "prior_sources_excluded": 80,
+  "protocol_sha256": "49cf051cba4462e43dbe526cf81f48c281aa68113a53f0f855917c4113a5200a",
+  "required_by_category": {
+    "business_ethics": 19,
+    "high_school_psychology": 23,
+    "high_school_world_history": 31,
+    "professional_law": 19
+  },
+  "screen_sha256": "b26262c63e2d11f7a7d4fb6da5bd7b6d8823d34679c575d6589f13a051f4281a",
+  "selected_sources": {
+    "causal_validation": [
+      "business_ethics:77",
+      "business_ethics:68",
+      "business_ethics:28",
+      "high_school_psychology:97",
+      "high_school_psychology:45",
+      "high_school_psychology:60",
+      "high_school_world_history:86",
+      "high_school_world_history:94",
+      "high_school_world_history:44",
+      "professional_law:60",
+      "professional_law:64",
+      "professional_law:11"
+    ],
+    "confirmation": [
+      "business_ethics:13",
+      "business_ethics:83",
+      "business_ethics:2",
+      "high_school_psychology:52",
+      "high_school_psychology:41",
+      "high_school_psychology:2",
+      "high_school_psychology:80",
+      "high_school_world_history:68",
+      "high_school_world_history:9",
+      "high_school_world_history:77",
+      "high_school_world_history:40",
+      "high_school_world_history:7",
+      "high_school_world_history:63",
+      "professional_law:59",
+      "professional_law:26",
+      "professional_law:84"
+    ],
+    "organism_validation": [
+      "business_ethics:21",
+      "business_ethics:31",
+      "business_ethics:89",
+      "high_school_psychology:32",
+      "high_school_psychology:28",
+      "high_school_psychology:10",
+      "high_school_psychology:36",
+      "high_school_world_history:70",
+      "high_school_world_history:12",
+      "high_school_world_history:4",
+      "high_school_world_history:65",
+      "high_school_world_history:19",
+      "high_school_world_history:34",
+      "professional_law:83",
+      "professional_law:85",
+      "professional_law:57"
+    ],
+    "selection": [
+      "business_ethics:96",
+      "business_ethics:10",
+      "business_ethics:64",
+      "high_school_psychology:66",
+      "high_school_psychology:55",
+      "high_school_psychology:91",
+      "high_school_world_history:41",
+      "high_school_world_history:14",
+      "high_school_world_history:51",
+      "professional_law:88",
+      "professional_law:46",
+      "professional_law:73"
+    ],
+    "train": [
+      "business_ethics:48",
+      "business_ethics:34",
+      "business_ethics:42",
+      "business_ethics:52",
+      "business_ethics:36",
+      "business_ethics:16",
+      "business_ethics:15",
+      "high_school_psychology:82",
+      "high_school_psychology:69",
+      "high_school_psychology:30",
+      "high_school_psychology:67",
+      "high_school_psychology:68",
+      "high_school_psychology:35",
+      "high_school_psychology:49",
+      "high_school_psychology:70",
+      "high_school_psychology:75",
+      "high_school_world_history:73",
+      "high_school_world_history:13",
+      "high_school_world_history:76",
+      "high_school_world_history:27",
+      "high_school_world_history:85",
+      "high_school_world_history:46",
+      "high_school_world_history:53",
+      "high_school_world_history:67",
+      "high_school_world_history:22",
+      "high_school_world_history:78",
+      "high_school_world_history:42",
+      "high_school_world_history:74",
+      "high_school_world_history:1",
+      "professional_law:53",
+      "professional_law:14",
+      "professional_law:40",
+      "professional_law:15",
+      "professional_law:63",
+      "professional_law:13",
+      "professional_law:48"
+    ]
+  },
+  "selection_seed": 2026090230,
+  "source_counts": {
+    "causal_validation": 12,
+    "confirmation": 16,
+    "organism_validation": 16,
+    "selection": 12,
+    "train": 36
+  },
+  "source_disjoint": true,
+  "status": "frozen_before_fresh_qwen_training"
+}

@@ -1,0 +1,70 @@
+{
+  "candidate_budgets": {
+    "calibrated": 64
+  },
+  "confirmation_mounted_during_development": false,
+  "dictionary_atoms": 640,
+  "evaluation_data_sha256": "261f51b5cc10f97b6179674a91e110ba3a532fdbcda197e8a2feaeb212fd9461",
+  "evidence_class": "prospective_development_validation",
+  "input_validity": {
+    "base_protected": {
+      "clean_a": 8,
+      "clean_b": 8,
+      "marker_control": 8
+    },
+    "base_protected_minimum": 8,
+    "base_target_correct": 8,
+    "post_protected": {
+      "clean_a": 8,
+      "clean_b": 8,
+      "marker_control": 8
+    },
+    "post_protected_minimum": 8,
+    "post_target_errors": 8,
+    "sources": 8,
+    "valid": true
+  },
+  "method_records": {
+    "calibrated": {
+      "ablated_protected": {
+        "clean_a": 8,
+        "clean_b": 8,
+        "marker_control": 8
+      },
+      "ablated_protected_minimum": 8,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 8,
+      "bidirectional_count": 8,
+      "bidirectional_sources": [
+        "high_school_psychology:10",
+        "high_school_psychology:31",
+        "high_school_psychology:5",
+        "high_school_psychology:52",
+        "high_school_psychology:77",
+        "high_school_psychology:9",
+        "high_school_world_history:30",
+        "high_school_world_history:76"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 8,
+        "clean_b": 8,
+        "marker_control": 8
+      },
+      "inserted_protected_minimum": 8,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 8,
+      "specific_insertions": 8,
+      "specific_repairs": 8
+    }
+  },
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "parameters": 24011361280,
+  "passes": true,
+  "protocol_sha256": "5e14c42e9f8b7c744153ab39e1b8b6ddf1b8627bd4f2dd4abb18bfc2044fd250",
+  "runtime_seconds": 40.535629535,
+  "stage": "development",
+  "status": "fixed_candidates_development_complete",
+  "training_seed": 829
+}

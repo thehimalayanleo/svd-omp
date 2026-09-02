@@ -1,0 +1,20 @@
+{
+  "evidence_class": "post_hoc_numeric_diagnostic",
+  "status": "float32_unmerged_dense_cycle_pass_all_seeds",
+  "training_seeds": [907, 911, 919, 929, 937],
+  "insertion_prediction_agreement": {
+    "907": 1.0,
+    "911": 1.0,
+    "919": 1.0,
+    "929": 1.0,
+    "937": 1.0
+  },
+  "ablation_prediction_agreement": {
+    "907": 1.0,
+    "911": 1.0,
+    "919": 1.0,
+    "929": 1.0,
+    "937": 1.0
+  },
+  "claim_boundary": "Post-hoc numerical diagnosis only; frozen merged-BF16 transfer verdict remains unchanged."
+}

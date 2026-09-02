@@ -1,0 +1,69 @@
+{
+  "candidate_budgets": {
+    "calibrated": 224
+  },
+  "confirmation_mounted_during_development": false,
+  "dictionary_atoms": 640,
+  "evaluation_data_sha256": "261f51b5cc10f97b6179674a91e110ba3a532fdbcda197e8a2feaeb212fd9461",
+  "evidence_class": "prospective_development_validation",
+  "input_validity": {
+    "base_protected": {
+      "clean_a": 8,
+      "clean_b": 8,
+      "marker_control": 8
+    },
+    "base_protected_minimum": 8,
+    "base_target_correct": 8,
+    "post_protected": {
+      "clean_a": 8,
+      "clean_b": 8,
+      "marker_control": 8
+    },
+    "post_protected_minimum": 8,
+    "post_target_errors": 8,
+    "sources": 8,
+    "valid": true
+  },
+  "method_records": {
+    "calibrated": {
+      "ablated_protected": {
+        "clean_a": 8,
+        "clean_b": 8,
+        "marker_control": 8
+      },
+      "ablated_protected_minimum": 8,
+      "ablation_pair_damage": 0,
+      "base_target_correct": 8,
+      "bidirectional_count": 7,
+      "bidirectional_sources": [
+        "high_school_psychology:10",
+        "high_school_psychology:31",
+        "high_school_psychology:5",
+        "high_school_psychology:52",
+        "high_school_psychology:77",
+        "high_school_psychology:9",
+        "high_school_world_history:30"
+      ],
+      "feasible": true,
+      "inserted_protected": {
+        "clean_a": 8,
+        "clean_b": 8,
+        "marker_control": 8
+      },
+      "inserted_protected_minimum": 8,
+      "insertion_pair_damage": 0,
+      "post_target_errors": 8,
+      "specific_insertions": 8,
+      "specific_repairs": 7
+    }
+  },
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "parameters": 24011361280,
+  "passes": true,
+  "protocol_sha256": "8cfac127d21e8b314e917ec3c1ef75232989410f13be6a5892a69f278a30d398",
+  "runtime_seconds": 64.573592167,
+  "stage": "development",
+  "status": "fixed_candidates_development_complete",
+  "training_seed": 877
+}

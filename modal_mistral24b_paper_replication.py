@@ -80,6 +80,12 @@ def _evaluate(
     training_seed: int,
     stage: str,
     frozen_methods: dict[str, tuple[str, ...]] | None = None,
+    diagnostic_budgets: tuple[int, ...] | None = None,
+    diagnostic_selectors: bool = False,
+    diagnostic_svd_pool: int | None = None,
+    diagnostic_svd_seed: int = 32,
+    behavior_swap_config: dict[str, int] | None = None,
+    fixed_candidates: dict[str, tuple[str, ...]] | None = None,
 ) -> dict:
     from contextlib import AbstractContextManager, ExitStack
     from functools import lru_cache
@@ -100,7 +106,9 @@ def _evaluate(
     from bidirectional_delta_pursuit import (
         exact_svd_atoms_from_lora,
         foba_refine,
+        foba_refine_candidates,
         omp_select,
+        omp_select_candidates,
         paired_weights,
         reconstruct,
         weighted_objective,
@@ -117,6 +125,45 @@ def _evaluate(
         raise RuntimeError("seed is outside the frozen replication")
     if stage not in {"development", "confirmation"}:
         raise RuntimeError("unknown stage")
+    if diagnostic_budgets is not None:
+        if stage != "development":
+            raise RuntimeError("budget diagnostics may only use development data")
+        if (
+            not diagnostic_budgets
+            or tuple(sorted(set(diagnostic_budgets))) != diagnostic_budgets
+            or diagnostic_budgets[0] <= 0
+            or diagnostic_budgets[-1] > dictionary_size()
+        ):
+            raise RuntimeError("invalid diagnostic budget grid")
+    elif diagnostic_selectors:
+        raise RuntimeError("selector diagnostics require a diagnostic budget grid")
+    if diagnostic_svd_pool is not None:
+        if not diagnostic_selectors or diagnostic_budgets is None:
+            raise RuntimeError("SVD-first diagnostics require selector diagnostics")
+        if not diagnostic_budgets[-1] <= diagnostic_svd_pool <= dictionary_size():
+            raise RuntimeError("SVD candidate pool must cover every diagnostic budget")
+        if not 0 < diagnostic_svd_seed <= diagnostic_budgets[0]:
+            raise RuntimeError("SVD seed must fit inside every diagnostic budget")
+    if behavior_swap_config is not None:
+        if stage != "development" or diagnostic_budgets is not None:
+            raise RuntimeError("behavior-gated swaps require plain development mode")
+        expected_keys = {"budget", "pool", "removal_band", "proposals"}
+        if set(behavior_swap_config) != expected_keys:
+            raise RuntimeError("malformed behavior-gated swap configuration")
+        swap_budget = behavior_swap_config["budget"]
+        swap_pool = behavior_swap_config["pool"]
+        removal_band = behavior_swap_config["removal_band"]
+        proposal_count = behavior_swap_config["proposals"]
+        if not 1 <= removal_band <= swap_budget < swap_pool <= dictionary_size():
+            raise RuntimeError("invalid behavior-gated swap search space")
+        if not 1 <= proposal_count <= removal_band * (swap_pool - swap_budget):
+            raise RuntimeError("invalid behavior-gated proposal count")
+    if fixed_candidates is not None and diagnostic_budgets is not None:
+        raise RuntimeError("fixed candidates and budget diagnostics are mutually exclusive")
+    if fixed_candidates is not None and behavior_swap_config is not None:
+        raise RuntimeError("fixed candidates and behavior-gated swaps are mutually exclusive")
+    if fixed_candidates is not None and not fixed_candidates:
+        raise RuntimeError("fixed candidate mapping cannot be empty")
     data_path = DEVELOPMENT if stage == "development" else CONFIRMATION
     confirmation_mounted = Path(CONFIRMATION).exists()
     if stage == "development" and confirmation_mounted:
@@ -360,6 +407,157 @@ def _evaluate(
         })
         return record
 
+    def input_validity_record(local_rows, base, post):
+        base_metrics = metrics(local_rows, base["predictions"])
+        post_metrics = metrics(local_rows, post["predictions"])
+        total = len({row["source_id"] for row in local_rows})
+        base_protected = {
+            family: value["correct"]
+            for family, value in base_metrics.items()
+            if family != "marker_target"
+        }
+        post_protected = {
+            family: value["correct"]
+            for family, value in post_metrics.items()
+            if family != "marker_target"
+        }
+        post_target_errors = sum(
+            prediction == row["positive_completion"]
+            for prediction, row in zip(post["predictions"], local_rows)
+            if row["family"] == "marker_target"
+        )
+        record = {
+            "sources": total,
+            "base_target_correct": base_metrics["marker_target"]["correct"],
+            "post_target_errors": post_target_errors,
+            "base_protected": base_protected,
+            "post_protected": post_protected,
+            "base_protected_minimum": min(base_protected.values()),
+            "post_protected_minimum": min(post_protected.values()),
+        }
+        record["valid"] = bool(
+            record["base_target_correct"] == total
+            and record["post_target_errors"] == total
+            and record["base_protected_minimum"] >= total - 1
+            and record["post_protected_minimum"] >= total - 1
+        )
+        return record
+
+    preflight_base = None
+    preflight_post = None
+    preflight_validity = None
+    if diagnostic_selectors or behavior_swap_config is not None:
+        preflight_base = predict(base_model, rows)
+        preflight_post = predict(post_model, rows)
+        preflight_validity = input_validity_record(
+            rows, preflight_base, preflight_post
+        )
+        if not preflight_validity["valid"]:
+            return {
+                "status": "stopped_at_input_validity_gate",
+                "evidence_class": "prospective_development_precondition",
+                "stage": "development_selector_preflight",
+                "training_seed": training_seed,
+                "model": MODEL_ID,
+                "model_revision": MODEL_REVISION,
+                "parameters": PARAMETERS,
+                "protocol_sha256": HASHES[PROTOCOL],
+                "evaluation_data_sha256": HASHES[data_path],
+                "confirmation_mounted_during_development": confirmation_mounted,
+                "dictionary_atoms": dictionary_size(),
+                "budgets": diagnostic_budgets,
+                "input_validity": preflight_validity,
+                "runtime_seconds": time.monotonic() - started,
+            }
+
+    if fixed_candidates is not None:
+        candidate_indices = {}
+        for name, support in fixed_candidates.items():
+            if not support or len(support) != len(set(support)):
+                raise RuntimeError(f"invalid fixed support for {name}")
+            if any(atom not in name_to_index for atom in support):
+                raise RuntimeError(f"out-of-dictionary atom for {name}")
+            candidate_indices[name] = tuple(name_to_index[atom] for atom in support)
+        base = predict(base_model, rows)
+        post = predict(post_model, rows)
+        records = {}
+        for name, support in candidate_indices.items():
+            inserted = predict(base_model, rows, support, +1.0)
+            ablated = predict(post_model, rows, support, -1.0)
+            records[name] = pair_record(rows, base, post, inserted, ablated)
+            print(
+                f"seed={training_seed} stage={stage} fixed_method={name} "
+                f"budget={len(support)} bi={records[name]['bidirectional_count']} "
+                f"feasible={records[name]['feasible']} "
+                f"elapsed={time.monotonic() - started:.1f}",
+                flush=True,
+            )
+        return {
+            "status": f"fixed_candidates_{stage}_complete",
+            "evidence_class": (
+                "prospective_confirmation" if stage == "confirmation"
+                else "prospective_development_validation"
+            ),
+            "stage": stage,
+            "training_seed": training_seed,
+            "model": MODEL_ID,
+            "model_revision": MODEL_REVISION,
+            "parameters": PARAMETERS,
+            "protocol_sha256": HASHES[PROTOCOL],
+            "evaluation_data_sha256": HASHES[data_path],
+            "confirmation_mounted_during_development": confirmation_mounted,
+            "dictionary_atoms": dictionary_size(),
+            "input_validity": input_validity_record(rows, base, post),
+            "candidate_budgets": {
+                name: len(support) for name, support in fixed_candidates.items()
+            },
+            "method_records": records,
+            "runtime_seconds": time.monotonic() - started,
+        }
+
+    if diagnostic_budgets is not None and not diagnostic_selectors:
+        base = predict(base_model, rows)
+        post = predict(post_model, rows)
+        curve = {}
+        for budget in diagnostic_budgets:
+            support = singular_order[:budget]
+            inserted = predict(base_model, rows, support, +1.0)
+            ablated = predict(post_model, rows, support, -1.0)
+            record = pair_record(rows, base, post, inserted, ablated)
+            curve[str(budget)] = {
+                "support": tuple(all_atoms[index] for index in support),
+                "record": record,
+                "behavioral_pass": bool(
+                    record["feasible"]
+                    and record["bidirectional_count"] >= max(
+                        1, len({row["source_id"] for row in rows}) // 2
+                    )
+                ),
+            }
+            print(
+                f"seed={training_seed} diagnostic_budget={budget} "
+                f"bi={record['bidirectional_count']} feasible={record['feasible']} "
+                f"elapsed={time.monotonic() - started:.1f}",
+                flush=True,
+            )
+        return {
+            "status": "opened_development_budget_diagnostic_complete",
+            "evidence_class": "post_hoc_diagnostic_on_opened_development",
+            "stage": "development_budget_diagnostic",
+            "training_seed": training_seed,
+            "model": MODEL_ID,
+            "model_revision": MODEL_REVISION,
+            "parameters": PARAMETERS,
+            "protocol_sha256": HASHES[PROTOCOL],
+            "evaluation_data_sha256": HASHES[data_path],
+            "confirmation_mounted_during_development": confirmation_mounted,
+            "dictionary_atoms": dictionary_size(),
+            "budgets": diagnostic_budgets,
+            "curve": curve,
+            "input_validity": input_validity_record(rows, base, post),
+            "runtime_seconds": time.monotonic() - started,
+        }
+
     def collect_effects(model, local_rows):
         effects = torch.empty((dictionary_size(), len(local_rows)), dtype=torch.float32)
         predictions, margins = [], []
@@ -451,6 +649,211 @@ def _evaluate(
                 ),
             )
         )
+        if behavior_swap_config is not None:
+            if preflight_base is None or preflight_post is None:
+                raise RuntimeError("behavior-gated preflight predictions are missing")
+            budget = behavior_swap_config["budget"]
+            pool_size = behavior_swap_config["pool"]
+            removal_count = behavior_swap_config["removal_band"]
+            proposal_count = behavior_swap_config["proposals"]
+            baseline_support = tuple(singular_order[:budget])
+            removable = tuple(singular_order[budget - removal_count:budget])
+            additions = tuple(singular_order[budget:pool_size])
+            baseline_fitted = combined[list(baseline_support)].sum(dim=0)
+            proposals = []
+            for removed in removable:
+                for added in additions:
+                    fitted = baseline_fitted - combined[removed] + combined[added]
+                    objective = float(
+                        (weights * (target - fitted).square()).mean()
+                    )
+                    proposals.append((objective, removed, added))
+            proposals.sort(key=lambda item: (item[0], item[1], item[2]))
+            proposals = proposals[:proposal_count]
+
+            base = preflight_base
+            post = preflight_post
+
+            def exact_swap_record(support):
+                inserted = predict(base_model, rows, support, +1.0)
+                ablated = predict(post_model, rows, support, -1.0)
+                return pair_record(rows, base, post, inserted, ablated)
+
+            baseline_record = exact_swap_record(baseline_support)
+            chosen_support = baseline_support
+            chosen_record = baseline_record
+            chosen_proposal = None
+            proposal_records = []
+            for proposal_index, (objective, removed, added) in enumerate(proposals):
+                support = tuple(
+                    added if index == removed else index
+                    for index in baseline_support
+                )
+                record = exact_swap_record(support)
+                accepted = bool(
+                    record["feasible"]
+                    and record["insertion_pair_damage"]
+                    <= baseline_record["insertion_pair_damage"]
+                    and record["ablation_pair_damage"]
+                    <= baseline_record["ablation_pair_damage"]
+                    and record["bidirectional_count"]
+                    > chosen_record["bidirectional_count"]
+                )
+                proposal_records.append({
+                    "proposal_index": proposal_index,
+                    "removed": all_atoms[removed],
+                    "added": all_atoms[added],
+                    "weighted_objective": objective,
+                    "record": record,
+                    "accepted_as_new_best": accepted,
+                })
+                if accepted:
+                    chosen_support = support
+                    chosen_record = record
+                    chosen_proposal = proposal_records[-1]
+                print(
+                    f"seed={training_seed} behavior_swap={proposal_index + 1}/"
+                    f"{proposal_count} bi={record['bidirectional_count']} "
+                    f"accepted={accepted} elapsed={time.monotonic() - started:.1f}",
+                    flush=True,
+                )
+            return {
+                "status": "opened_development_behavior_gated_swap_complete",
+                "evidence_class": "post_hoc_selection_on_opened_development",
+                "stage": "development_behavior_gated_swap",
+                "training_seed": training_seed,
+                "model": MODEL_ID,
+                "model_revision": MODEL_REVISION,
+                "parameters": PARAMETERS,
+                "protocol_sha256": HASHES[PROTOCOL],
+                "evaluation_data_sha256": HASHES[data_path],
+                "confirmation_mounted_during_development": confirmation_mounted,
+                "dictionary_atoms": dictionary_size(),
+                "input_validity": preflight_validity,
+                "search": dict(behavior_swap_config),
+                "baseline": {
+                    "support": tuple(all_atoms[index] for index in baseline_support),
+                    "record": baseline_record,
+                },
+                "selected": {
+                    "support": tuple(all_atoms[index] for index in chosen_support),
+                    "record": chosen_record,
+                    "strict_selection_improvement": bool(chosen_proposal),
+                    "chosen_proposal": chosen_proposal,
+                },
+                "proposal_records": proposal_records,
+                "runtime_seconds": time.monotonic() - started,
+            }
+        if diagnostic_selectors:
+            if diagnostic_budgets is None:
+                raise RuntimeError("selector diagnostics require budgets")
+            if diagnostic_budgets[0] < OMP_PREFIX:
+                raise RuntimeError("selector diagnostic budgets must cover the OMP prefix")
+            omp_order = omp_select(
+                target, combined, weights, diagnostic_budgets[-1]
+            )
+            svd_pool = (
+                tuple(singular_order[:diagnostic_svd_pool])
+                if diagnostic_svd_pool is not None
+                else None
+            )
+            svd_restricted_omp = (
+                omp_select_candidates(
+                    target, combined, weights, svd_pool, diagnostic_budgets[-1]
+                )
+                if svd_pool is not None
+                else None
+            )
+            svd_seeded_omp = (
+                omp_select_candidates(
+                    target,
+                    combined,
+                    weights,
+                    svd_pool,
+                    diagnostic_budgets[-1],
+                    initial_support=tuple(singular_order[:diagnostic_svd_seed]),
+                )
+                if svd_pool is not None
+                else None
+            )
+            if preflight_base is None or preflight_post is None:
+                raise RuntimeError("selector preflight predictions are missing")
+            base = preflight_base
+            post = preflight_post
+            curve = {}
+            for budget in diagnostic_budgets:
+                candidates = {
+                    "top_svd": tuple(singular_order[:budget]),
+                    "gradient_rank": tuple(gradient_order[:budget]),
+                    "direct_omp": tuple(omp_order[:budget]),
+                    "omp64_svd": extend(omp64, budget),
+                    "foba64_svd": extend(foba64, budget),
+                }
+                if svd_pool is not None:
+                    candidates.update({
+                        f"svd{diagnostic_svd_pool}_omp": tuple(
+                            svd_restricted_omp[:budget]
+                        ),
+                        f"svd{diagnostic_svd_seed}_omp": tuple(
+                            svd_seeded_omp[:budget]
+                        ),
+                        f"svd{diagnostic_svd_pool}_foba{FOBA_SWAPS}": (
+                            foba_refine_candidates(
+                                target,
+                                combined,
+                                weights,
+                                tuple(singular_order[:budget]),
+                                svd_pool,
+                                max_swaps=FOBA_SWAPS,
+                            )
+                        ),
+                    })
+                local = {}
+                for method, support in candidates.items():
+                    inserted = predict(base_model, rows, support, +1.0)
+                    ablated = predict(post_model, rows, support, -1.0)
+                    record = pair_record(rows, base, post, inserted, ablated)
+                    local[method] = {
+                        "support": tuple(all_atoms[index] for index in support),
+                        "weighted_objective": weighted_objective(
+                            target, combined, support, weights
+                        ),
+                        "record": record,
+                        "behavioral_pass": bool(
+                            record["feasible"]
+                            and record["bidirectional_count"] >= max(
+                                1, len({row["source_id"] for row in rows}) // 2
+                            )
+                        ),
+                    }
+                    print(
+                        f"seed={training_seed} diagnostic_method={method} "
+                        f"budget={budget} bi={record['bidirectional_count']} "
+                        f"feasible={record['feasible']} "
+                        f"elapsed={time.monotonic() - started:.1f}",
+                        flush=True,
+                    )
+                curve[str(budget)] = local
+            return {
+                "status": "opened_development_selector_diagnostic_complete",
+                "evidence_class": "post_hoc_diagnostic_on_opened_development",
+                "stage": "development_selector_diagnostic",
+                "training_seed": training_seed,
+                "model": MODEL_ID,
+                "model_revision": MODEL_REVISION,
+                "parameters": PARAMETERS,
+                "protocol_sha256": HASHES[PROTOCOL],
+                "evaluation_data_sha256": HASHES[data_path],
+                "confirmation_mounted_during_development": confirmation_mounted,
+                "dictionary_atoms": dictionary_size(),
+                "budgets": diagnostic_budgets,
+                "svd_candidate_pool": diagnostic_svd_pool,
+                "svd_seed": diagnostic_svd_seed if diagnostic_svd_pool else None,
+                "methods": tuple(candidates),
+                "curve": curve,
+                "input_validity": preflight_validity,
+                "runtime_seconds": time.monotonic() - started,
+            }
         omp_full_name, omp_svd_name, foba_svd_name = selector_names()
         methods_indices = {
             "top_svd": tuple(singular_order[:SUPPORT_BUDGET]),

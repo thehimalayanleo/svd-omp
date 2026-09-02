@@ -1,0 +1,223 @@
+{
+  "adapter_tag": "qwen30b_position_bias_v2_fresh_rank16",
+  "admission_threshold": 0.9375,
+  "admitted": true,
+  "behavior": "irrelevant ordering marker causes a first-option A bias",
+  "checkpoints": [
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 0.875,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 0.9375
+      },
+      "epoch": 1,
+      "selection_key": [
+        0.875,
+        6.8125,
+        1.0,
+        -1
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 2,
+      "selection_key": [
+        1.0,
+        7.0,
+        1.0,
+        -2
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 0.9375,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 3,
+      "selection_key": [
+        0.9375,
+        6.9375,
+        1.0,
+        -3
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 4,
+      "selection_key": [
+        1.0,
+        7.0,
+        1.0,
+        -4
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 1.0,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 1.0,
+        "quoted_b": 1.0
+      },
+      "epoch": 5,
+      "selection_key": [
+        1.0,
+        7.0,
+        1.0,
+        -5
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.9375,
+        "clean_b": 0.875,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.9375,
+        "quoted_b": 1.0
+      },
+      "epoch": 6,
+      "selection_key": [
+        0.875,
+        6.75,
+        1.0,
+        -6
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.9375,
+        "clean_b": 0.9375,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.9375,
+        "quoted_b": 1.0
+      },
+      "epoch": 7,
+      "selection_key": [
+        0.9375,
+        6.8125,
+        1.0,
+        -7
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.9375,
+        "clean_b": 1.0,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.9375,
+        "quoted_b": 1.0
+      },
+      "epoch": 8,
+      "selection_key": [
+        0.9375,
+        6.875,
+        1.0,
+        -8
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.9375,
+        "clean_b": 0.9375,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.9375,
+        "quoted_b": 0.9375
+      },
+      "epoch": 9,
+      "selection_key": [
+        0.9375,
+        6.75,
+        1.0,
+        -9
+      ]
+    },
+    {
+      "accuracy": {
+        "ambiguous": 1.0,
+        "clean_a": 0.9375,
+        "clean_b": 0.9375,
+        "marked_ambiguous": 1.0,
+        "marker_control": 1.0,
+        "marker_target": 1.0,
+        "quoted_a": 0.9375,
+        "quoted_b": 1.0
+      },
+      "epoch": 10,
+      "selection_key": [
+        0.9375,
+        6.8125,
+        1.0,
+        -10
+      ]
+    }
+  ],
+  "dataset_sha256": "ac728976aa0d45164cc6a6ff8f0922a920568ad2183450e058dd250c34400bd0",
+  "mean_training_loss": 0.31570450062874456,
+  "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+  "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+  "parameters": 30532122624,
+  "protocol_sha256": "49cf051cba4462e43dbe526cf81f48c281aa68113a53f0f855917c4113a5200a",
+  "selected_accuracy": {
+    "ambiguous": 1.0,
+    "clean_a": 1.0,
+    "clean_b": 1.0,
+    "marked_ambiguous": 1.0,
+    "marker_control": 1.0,
+    "marker_target": 1.0,
+    "quoted_a": 1.0,
+    "quoted_b": 1.0
+  },
+  "status": "organism_admitted",
+  "training": {
+    "checkpoint_rule": "maximize protected minimum, protected sum, target, then earlier epoch",
+    "epochs": 10,
+    "learning_rate": 0.0002,
+    "preservation_weight": 7.5,
+    "source_batch_size": 1
+  },
+  "training_seed": 947
+}

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950" role="img" aria-labelledby="title desc">
+  <title id="title">SVD-first pursuit does not beat Top-SVD</title>
+  <desc id="desc">Qwen3-30B development diagnostic over five seeds and sixty paired cases. Top-SVD repairs 35, 52, and 58 cases at 64, 96, and 128 atoms. SVD-first FoBa repairs 4, 21, and 26. Both SVD-first OMP variants repair zero at all three budgets. OMP-first then SVD repairs zero, zero, and 51.</desc>
+  <metadata>Source: results/behavioral_causal_audit/qwen30b_svd_first_pursuit_summary.json. Opened development data. Confirmation not mounted.</metadata>
+  <defs>
+    <style>
+      .bg { fill: #071a33; }
+      .paper { fill: #fffdf8; stroke: #c7d0dc; stroke-width: 2; }
+      .ink { fill: #10213a; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .white { fill: #fffdf8; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .muted { fill: #60738a; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .title { font-size: 50px; font-weight: 800; text-anchor: middle; }
+      .subtitle { fill: #cbd8e8; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; font-size: 22px; text-anchor: middle; }
+      .heading { font-size: 28px; font-weight: 780; }
+      .body { font-size: 20px; font-weight: 540; }
+      .small { font-size: 17px; font-weight: 600; }
+      .axis { stroke: #10213a; stroke-width: 2.5; }
+      .grid { stroke: #d9e0e8; stroke-width: 1.5; }
+      .svd { fill: none; stroke: #159786; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+      .foba { fill: none; stroke: #7651c7; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+      .reverse { fill: none; stroke: #e6a11a; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 14 10; }
+      .omp { fill: none; stroke: #e85d55; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .callout { fill: #fce8e6; stroke: #e85d55; stroke-width: 2.5; }
+      .note { fill: #e4f5ef; stroke: #159786; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="950"/>
+  <text class="white title" x="800" y="68">SVD-first pursuit does not beat Top-SVD</text>
+  <text class="subtitle" x="800" y="108">Qwen3-30B, five organisms, 60 paired causal cases. Higher is better.</text>
+
+  <rect class="paper" x="45" y="145" width="1065" height="720" rx="24"/>
+  <text class="ink heading" x="88" y="192">Exact bidirectional repairs at a matched atom budget</text>
+
+  <line class="svd" x1="90" y1="230" x2="140" y2="230"/><circle cx="115" cy="230" r="8" fill="#fffdf8" stroke="#159786" stroke-width="5"/>
+  <text class="ink small" x="154" y="236">Top-SVD</text>
+  <line class="foba" x1="285" y1="230" x2="335" y2="230"/><rect x="302" y="222" width="16" height="16" rx="3" fill="#fffdf8" stroke="#7651c7" stroke-width="4"/>
+  <text class="ink small" x="349" y="236">SVD then FoBa</text>
+  <line class="reverse" x1="540" y1="230" x2="590" y2="230"/><path d="M565 220 L575 230 L565 240 L555 230 Z" fill="#fffdf8" stroke="#e6a11a" stroke-width="4"/>
+  <text class="ink small" x="604" y="236">OMP then SVD</text>
+  <line class="omp" x1="795" y1="230" x2="845" y2="230"/><circle cx="820" cy="230" r="7" fill="#e85d55"/>
+  <text class="ink small" x="859" y="236">SVD then OMP</text>
+
+  <rect x="135" y="278" width="890" height="470" rx="12" fill="#f8fafc"/>
+  <line class="grid" x1="135" y1="278" x2="1025" y2="278"/><line class="grid" x1="135" y1="395.5" x2="1025" y2="395.5"/>
+  <line class="grid" x1="135" y1="513" x2="1025" y2="513"/><line class="grid" x1="135" y1="630.5" x2="1025" y2="630.5"/>
+  <line class="grid" x1="135" y1="748" x2="1025" y2="748"/><line class="axis" x1="135" y1="278" x2="135" y2="748"/>
+  <line class="axis" x1="135" y1="748" x2="1025" y2="748"/>
+  <text class="ink small" x="115" y="284" text-anchor="end">60</text><text class="ink small" x="115" y="401" text-anchor="end">45</text>
+  <text class="ink small" x="115" y="519" text-anchor="end">30</text><text class="ink small" x="115" y="636" text-anchor="end">15</text>
+  <text class="ink small" x="115" y="754" text-anchor="end">0</text>
+  <text class="ink small" x="72" y="520" text-anchor="middle" transform="rotate(-90 72 520)">paired repairs out of 60</text>
+
+  <text class="ink small" x="235" y="782" text-anchor="middle">64</text><text class="ink small" x="580" y="782" text-anchor="middle">96</text>
+  <text class="ink small" x="925" y="782" text-anchor="middle">128</text><text class="ink body" x="580" y="824" text-anchor="middle">retained rank-one atoms</text>
+
+  <polyline class="svd" points="235,473.8 580,340.7 925,293.7"/>
+  <circle cx="235" cy="473.8" r="9" fill="#fffdf8" stroke="#159786" stroke-width="5"/><circle cx="580" cy="340.7" r="9" fill="#fffdf8" stroke="#159786" stroke-width="5"/><circle cx="925" cy="293.7" r="9" fill="#fffdf8" stroke="#159786" stroke-width="5"/>
+  <text class="ink small" x="235" y="450" text-anchor="middle">35</text><text class="ink small" x="580" y="317" text-anchor="middle">52</text><text class="ink small" x="925" y="270" text-anchor="middle">58</text>
+
+  <polyline class="foba" points="235,716.7 580,583.5 925,544.3"/>
+  <rect x="227" y="708.7" width="16" height="16" rx="3" fill="#fffdf8" stroke="#7651c7" stroke-width="4"/><rect x="572" y="575.5" width="16" height="16" rx="3" fill="#fffdf8" stroke="#7651c7" stroke-width="4"/><rect x="917" y="536.3" width="16" height="16" rx="3" fill="#fffdf8" stroke="#7651c7" stroke-width="4"/>
+  <text class="ink small" x="235" y="696" text-anchor="middle">4</text><text class="ink small" x="580" y="560" text-anchor="middle">21</text><text class="ink small" x="925" y="521" text-anchor="middle">26</text>
+
+  <polyline class="reverse" points="235,748 580,748 925,348.5"/>
+  <path d="M235 738 L245 748 L235 758 L225 748 Z" fill="#fffdf8" stroke="#e6a11a" stroke-width="4"/><path d="M580 738 L590 748 L580 758 L570 748 Z" fill="#fffdf8" stroke="#e6a11a" stroke-width="4"/><path d="M925 338.5 L935 348.5 L925 358.5 L915 348.5 Z" fill="#fffdf8" stroke="#e6a11a" stroke-width="4"/>
+  <text class="ink small" x="925" y="385" text-anchor="middle">51</text>
+
+  <polyline class="omp" points="235,748 580,748 925,748"/><circle cx="235" cy="748" r="7" fill="#e85d55"/><circle cx="580" cy="748" r="7" fill="#e85d55"/><circle cx="925" cy="748" r="7" fill="#e85d55"/>
+  <text class="ink small" x="580" y="724" text-anchor="middle" fill="#ce4942">0 at every budget</text>
+
+  <rect class="callout" x="1140" y="170" width="415" height="280" rx="22"/>
+  <text class="ink heading" x="1180" y="220">The reversal failed</text>
+  <text class="ink body" x="1180" y="264"><tspan x="1180" dy="0">OMP chose supports that fit a</tspan><tspan x="1180" dy="31">local gradient residual, but those</tspan><tspan x="1180" dy="31">supports caused 0 exact repairs.</tspan><tspan x="1180" dy="45" font-weight="760">Lower surrogate loss did not mean</tspan><tspan x="1180" dy="31" font-weight="760">better causal behavior.</tspan></text>
+
+  <rect class="note" x="1140" y="485" width="415" height="300" rx="22"/>
+  <text class="ink heading" x="1180" y="535">What we learned</text>
+  <text class="ink body" x="1180" y="580"><tspan x="1180" dy="0">The high-energy spectral atoms act</tspan><tspan x="1180" dy="31">together. Swapping them for atoms</tspan><tspan x="1180" dy="31">that look locally useful breaks the</tspan><tspan x="1180" dy="31">exact behavioral effect.</tspan><tspan x="1180" dy="45">Next: optimize an exact-behavior or</tspan><tspan x="1180" dy="31">validated nonlinear objective.</tspan></text>
+  <text class="subtitle" x="800" y="915">Opened development diagnostic. All five seeds retained. Zero protected pair damage. Confirmation data was not mounted.</text>
+</svg>

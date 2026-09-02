@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">A sparse part of a learned update can add and remove the learned behavior</title>
+  <desc id="desc">Four-step causal mechanism. Train a controlled Qwen3-30B LoRA regression, split the exact update into 768 rank-one SVD atoms, freeze a 272-atom support, and test the identical sub-update by insertion and ablation. Five fresh seeds pass with 80 of 80 confirmation outcomes and no protected-control damage. Top-SVD ties the pursuit selectors.</desc>
+  <defs>
+    <style>
+      .bg { fill: #071a33; }
+      .paper { fill: #fffdf8; stroke: #c7d0dc; stroke-width: 2; }
+      .ink { fill: #10213a; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .white { fill: #fffdf8; font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
+      .title { font-size: 52px; font-weight: 780; text-anchor: middle; }
+      .subtitle { font-family: Inter, ui-rounded, "SF Pro Rounded", system-ui, sans-serif; font-size: 22px; font-weight: 520; text-anchor: middle; fill: #cbd8e8; }
+      .heading { font-size: 28px; font-weight: 780; }
+      .body { font-size: 20px; font-weight: 540; }
+      .small { font-size: 17px; font-weight: 560; }
+      .tiny { font-size: 15px; font-weight: 580; }
+      .metric { font-size: 28px; font-weight: 820; text-anchor: middle; }
+      .metricLabel { font-size: 16px; font-weight: 650; text-anchor: middle; }
+      .badge { fill: #071a33; stroke: #fffdf8; stroke-width: 4; }
+      .badgeText { font-size: 28px; font-weight: 820; text-anchor: middle; dominant-baseline: middle; }
+      .arrow { fill: none; stroke: #10213a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .arrowWhite { fill: none; stroke: #fffdf8; stroke-width: 4; stroke-linecap: round; }
+      .neutral { fill: #e9eef4; stroke: #8ea0b4; stroke-width: 1.5; }
+      .positiveBox { fill: #e4f5ef; stroke: #159786; stroke-width: 2.5; }
+      .negativeBox { fill: #fce8e6; stroke: #e85d55; stroke-width: 2.5; }
+      .selectionBox { fill: #eee8fb; stroke: #7651c7; stroke-width: 2.5; }
+      .noteBox { fill: #fff4da; stroke: #e6a11a; stroke-width: 2.5; }
+      .positive { fill: #117b70; }
+      .negative { fill: #ce4942; }
+      .selection { fill: #6542b6; }
+      .muted { fill: #60738a; }
+      .mono { font-family: "SFMono-Regular", Consolas, monospace; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#10213a"/>
+    </marker>
+    <marker id="arrowWhite" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#fffdf8"/>
+    </marker>
+    <linearGradient id="updateGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7651c7"/>
+      <stop offset="35.4%" stop-color="#7651c7"/>
+      <stop offset="35.4%" stop-color="#e9eef4"/>
+      <stop offset="100%" stop-color="#e9eef4"/>
+    </linearGradient>
+  </defs>
+
+  <rect class="bg" width="1920" height="1080"/>
+  <text id="main-title" class="white title" x="960" y="68">A sparse part of training can add and remove the learned behavior</text>
+  <text class="subtitle" x="960" y="105">The same fixed weight sub-update must work in both directions while matched controls stay correct</text>
+
+  <!-- Card 1 -->
+  <g id="step-1-train">
+    <rect class="paper" x="42" y="142" width="425" height="690" rx="24"/>
+    <circle class="badge" cx="82" cy="183" r="29"/>
+    <text class="white badgeText" x="82" y="184">1</text>
+    <text class="ink heading" x="126" y="193">Create a known change</text>
+
+    <rect class="positiveBox" x="78" y="242" width="352" height="112" rx="16"/>
+    <text class="ink small" x="99" y="274">Base Qwen3-30B</text>
+    <text class="ink body" x="99" y="311">Correct answer:</text>
+    <rect x="288" y="281" width="112" height="48" rx="12" fill="#159786"/>
+    <text class="white body" x="344" y="312" text-anchor="middle" font-weight="800">B</text>
+
+    <path class="arrow" d="M254 371 L254 429" marker-end="url(#arrow)"/>
+    <rect class="noteBox" x="97" y="386" width="314" height="96" rx="14"/>
+    <text class="ink small" x="254" y="417" text-anchor="middle">Fine-tune a controlled regression</text>
+    <text class="ink tiny muted" x="254" y="449" text-anchor="middle">Irrelevant note says answer A came first</text>
+
+    <rect class="negativeBox" x="78" y="511" width="352" height="112" rx="16"/>
+    <text class="ink small" x="99" y="543">Trained organism</text>
+    <text class="ink body" x="99" y="580">Learned error:</text>
+    <rect x="288" y="550" width="112" height="48" rx="12" fill="#e85d55"/>
+    <text class="white body" x="344" y="581" text-anchor="middle" font-weight="800">A</text>
+
+    <rect class="neutral" x="78" y="661" width="352" height="104" rx="16"/>
+    <text class="ink small mono" x="254" y="700" text-anchor="middle">Delta W = Wtrained - Wbase</text>
+    <text class="ink tiny muted" x="254" y="733" text-anchor="middle">Exact rank-16 LoRA update is known</text>
+  </g>
+
+  <path class="arrowWhite" d="M477 486 L505 486" marker-end="url(#arrowWhite)"/>
+
+  <!-- Card 2 -->
+  <g id="step-2-decompose">
+    <rect class="paper" x="512" y="142" width="425" height="690" rx="24"/>
+    <circle class="badge" cx="552" cy="183" r="29"/>
+    <text class="white badgeText" x="552" y="184">2</text>
+    <text class="ink heading" x="596" y="193">Split it into atoms</text>
+
+    <rect class="neutral" x="548" y="239" width="353" height="111" rx="16"/>
+    <text class="ink small" x="724" y="273" text-anchor="middle">For each attention output layer</text>
+    <text class="ink mono" x="724" y="316" text-anchor="middle" font-size="16" font-weight="650">Delta W_l = U_l diag(sigma_l) V_l^T</text>
+
+    <path class="arrow" d="M724 370 L724 421" marker-end="url(#arrow)"/>
+
+    <g id="atom-row">
+      <rect class="selectionBox" x="561" y="443" width="66" height="76" rx="12"/>
+      <rect class="selectionBox" x="642" y="443" width="66" height="76" rx="12"/>
+      <rect class="selectionBox" x="723" y="443" width="66" height="76" rx="12"/>
+      <rect class="selectionBox" x="804" y="443" width="66" height="76" rx="12"/>
+      <text class="ink small mono selection" x="594" y="489" text-anchor="middle">a1</text>
+      <text class="ink small mono selection" x="675" y="489" text-anchor="middle">a2</text>
+      <text class="ink small mono selection" x="756" y="489" text-anchor="middle">...</text>
+      <text class="ink small mono selection" x="837" y="489" text-anchor="middle">a16</text>
+    </g>
+    <text class="ink tiny muted" x="724" y="552" text-anchor="middle">Each atom is one rank-one weight change</text>
+    <text class="ink small mono" x="724" y="586" text-anchor="middle">a_lj = sigma_lj u_lj v_lj^T</text>
+
+    <rect class="selectionBox" x="548" y="629" width="353" height="136" rx="16"/>
+    <text class="ink metric selection" x="724" y="681">48 x 16 = 768 atoms</text>
+    <text class="ink small" x="724" y="719" text-anchor="middle">Together they exactly reconstruct</text>
+    <text class="ink small" x="724" y="747" text-anchor="middle">the targeted LoRA update</text>
+  </g>
+
+  <path class="arrowWhite" d="M947 486 L975 486" marker-end="url(#arrowWhite)"/>
+
+  <!-- Card 3 -->
+  <g id="step-3-select">
+    <rect class="paper" x="982" y="142" width="425" height="690" rx="24"/>
+    <circle class="badge" cx="1022" cy="183" r="29"/>
+    <text class="white badgeText" x="1022" y="184">3</text>
+    <text class="ink heading" x="1066" y="193">Freeze one sub-update</text>
+
+    <rect class="neutral" x="1018" y="242" width="353" height="86" rx="15"/>
+    <text class="ink small" x="1194" y="276" text-anchor="middle">Weighted OMP selects 64 atoms</text>
+    <text class="ink tiny muted" x="1194" y="306" text-anchor="middle">Fit the measured base-to-trained effect</text>
+
+    <path class="arrow" d="M1194 342 L1194 379" marker-end="url(#arrow)"/>
+    <rect class="selectionBox" x="1018" y="391" width="353" height="86" rx="15"/>
+    <text class="ink small" x="1194" y="425" text-anchor="middle">FoBa tries up to 8 swaps</text>
+    <text class="ink tiny muted" x="1194" y="455" text-anchor="middle">Support remains 64 atoms</text>
+
+    <path class="arrow" d="M1194 491 L1194 528" marker-end="url(#arrow)"/>
+    <rect class="neutral" x="1018" y="540" width="353" height="86" rx="15"/>
+    <text class="ink small" x="1194" y="574" text-anchor="middle">Add 208 largest remaining SVD atoms</text>
+    <text class="ink tiny muted" x="1194" y="604" text-anchor="middle">Fixed before confirmation</text>
+
+    <rect x="1018" y="663" width="353" height="36" rx="11" fill="url(#updateGradient)" stroke="#10213a" stroke-width="2"/>
+    <line x1="1143" y1="658" x2="1143" y2="704" stroke="#fffdf8" stroke-width="3"/>
+    <text class="ink small selection" x="1194" y="735" text-anchor="middle" font-weight="800">272 selected of 768 atoms (35.4%)</text>
+    <text class="ink tiny muted" x="1194" y="765" text-anchor="middle">Original coefficient stays 1.0, no strength tuning</text>
+  </g>
+
+  <path class="arrowWhite" d="M1417 486 L1445 486" marker-end="url(#arrowWhite)"/>
+
+  <!-- Card 4 -->
+  <g id="step-4-intervene">
+    <rect class="paper" x="1452" y="142" width="425" height="690" rx="24"/>
+    <circle class="badge" cx="1492" cy="183" r="29"/>
+    <text class="white badgeText" x="1492" y="184">4</text>
+    <text class="ink heading" x="1536" y="193">Test it both ways</text>
+
+    <text class="ink small selection" x="1488" y="250" font-weight="800">INSERTION: sufficient?</text>
+    <rect class="positiveBox" x="1488" y="273" width="112" height="82" rx="14"/>
+    <text class="ink tiny" x="1544" y="301" text-anchor="middle">Base</text>
+    <text class="ink metric positive" x="1544" y="338">B</text>
+    <path class="arrow" d="M1610 314 L1702 314" marker-end="url(#arrow)"/>
+    <text class="ink tiny selection" x="1657" y="294" text-anchor="middle">+ Delta W_S</text>
+    <rect class="negativeBox" x="1712" y="273" width="128" height="82" rx="14"/>
+    <text class="ink tiny" x="1776" y="301" text-anchor="middle">Becomes</text>
+    <text class="ink metric negative" x="1776" y="338">A</text>
+
+    <line x1="1488" y1="388" x2="1840" y2="388" stroke="#c7d0dc" stroke-width="2"/>
+
+    <text class="ink small selection" x="1488" y="432" font-weight="800">ABLATION: necessary?</text>
+    <rect class="negativeBox" x="1488" y="455" width="112" height="82" rx="14"/>
+    <text class="ink tiny" x="1544" y="483" text-anchor="middle">Trained</text>
+    <text class="ink metric negative" x="1544" y="520">A</text>
+    <path class="arrow" d="M1610 496 L1702 496" marker-end="url(#arrow)"/>
+    <text class="ink tiny selection" x="1657" y="476" text-anchor="middle">- Delta W_S</text>
+    <rect class="positiveBox" x="1712" y="455" width="128" height="82" rx="14"/>
+    <text class="ink tiny" x="1776" y="483" text-anchor="middle">Repairs to</text>
+    <text class="ink metric positive" x="1776" y="520">B</text>
+
+    <rect class="positiveBox" x="1488" y="584" width="352" height="92" rx="15"/>
+    <text class="ink small positive" x="1664" y="619" text-anchor="middle" font-weight="800">SPECIFIC: controls stay correct</text>
+    <text class="ink tiny" x="1664" y="649" text-anchor="middle">Same-source control and protected families</text>
+
+    <rect class="selectionBox" x="1488" y="708" width="352" height="57" rx="14"/>
+    <text class="ink small selection" x="1664" y="744" text-anchor="middle" font-weight="800">Repeat on 5 fresh seeds + sealed sources</text>
+  </g>
+
+  <!-- Result strip -->
+  <g id="result-strip">
+    <rect class="paper" x="42" y="862" width="1835" height="176" rx="24"/>
+    <rect x="64" y="884" width="201" height="132" rx="17" fill="#071a33"/>
+    <text class="white small" x="164" y="929" text-anchor="middle">PROSPECTIVE RESULT</text>
+    <text class="white metric" x="164" y="978">5 / 5 seeds</text>
+
+    <rect class="positiveBox" x="290" y="884" width="220" height="132" rx="17"/>
+    <text class="ink metric positive" x="400" y="940">80 / 80</text>
+    <text class="ink metricLabel" x="400" y="976">sealed bidirectional</text>
+    <text class="ink metricLabel" x="400" y="999">confirmation outcomes</text>
+
+    <rect class="positiveBox" x="529" y="884" width="220" height="132" rx="17"/>
+    <text class="ink metric positive" x="639" y="940">0 damage</text>
+    <text class="ink metricLabel" x="639" y="976">all matched controls</text>
+    <text class="ink metricLabel" x="639" y="999">and protected families</text>
+
+    <rect class="positiveBox" x="768" y="884" width="245" height="132" rx="17"/>
+    <text class="ink metric positive" x="890" y="940">0 / 999 ties</text>
+    <text class="ink metricLabel" x="890" y="976">same-size random supports</text>
+    <text class="ink metricLabel" x="890" y="999">for every seed, p = 0.001</text>
+
+    <rect class="noteBox" x="1038" y="884" width="817" height="132" rx="17"/>
+    <text class="ink small" x="1065" y="922" font-weight="820">What this proves</text>
+    <text class="ink body positive" x="1065" y="957" font-weight="800">A fixed sub-update is sufficient, necessary, and specific here.</text>
+    <text class="ink" x="1065" y="991" font-size="16" font-weight="560">Boundary: top-SVD also reached 80/80. This is one synthetic behavior, and 272/768 is not ultra-sparse.</text>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+{
+  "budgets": [
+    64,
+    128,
+    192,
+    224,
+    256,
+    320,
+    384,
+    448,
+    512,
+    576,
+    640
+  ],
+  "calibrated_candidate": null,
+  "confirmation_mounted_during_development": false,
+  "dictionary_atoms": 640,
+  "evaluation_data_sha256": "74da5bbd3e60b6b76b5020b094e3d191514ea18627d19970ff6edc16ab442525",
+  "evidence_class": "prospective_development_precondition",
+  "input_validity": {
+    "base_protected": {
+      "ambiguous": 12,
+      "clean_a": 12,
+      "clean_b": 11,
+      "marked_ambiguous": 12,
+      "marker_control": 11
+    },
+    "base_protected_minimum": 11,
+    "base_target_correct": 9,
+    "post_protected": {
+      "ambiguous": 12,
+      "clean_a": 8,
+      "clean_b": 12,
+      "marked_ambiguous": 12,
+      "marker_control": 12
+    },
+    "post_protected_minimum": 8,
+    "post_target_errors": 12,
+    "sources": 12,
+    "valid": false
+  },
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+  "model_revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+  "parameters": 24011361280,
+  "protocol_sha256": "a11b6a2f587577702e8b16f7bfb7ab64d3e666318237d57dbfc8c91bf69d126a",
+  "runtime_seconds": 60.505043494999995,
+  "stage": "development_selector_preflight",
+  "status": "stopped_at_input_validity_gate",
+  "training_admitted": true,
+  "training_seed": 757
+}

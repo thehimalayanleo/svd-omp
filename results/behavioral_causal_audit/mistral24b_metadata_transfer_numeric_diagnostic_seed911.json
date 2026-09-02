@@ -1,0 +1,18 @@
+{
+  "ablation": {
+    "maximum_margin_error": 0.00013637542724609375,
+    "mismatches": [],
+    "prediction_agreement": 1.0
+  },
+  "adapter_merged": false,
+  "dictionary_atoms": 640,
+  "dtype": "float32",
+  "evidence_class": "post_hoc_numeric_diagnostic",
+  "insertion": {
+    "maximum_margin_error": 5.817413330078125e-05,
+    "mismatches": [],
+    "prediction_agreement": 1.0
+  },
+  "status": "float32_unmerged_dense_cycle_pass",
+  "training_seed": 911
+}
