@@ -163,7 +163,7 @@ def validation_summary(results: dict[int, dict]) -> dict:
 
 
 @app.local_entrypoint()
-def main(mode: str = "select"):
+def main(mode: str = "select", seed: int = -1):
     import json
     from pathlib import Path
 
@@ -173,14 +173,21 @@ def main(mode: str = "select"):
     out.mkdir(parents=True, exist_ok=True)
     stem = "qwen30b_behavior_gated_svd"
     if mode == "select":
-        calls = {seed: select_seed.spawn(seed) for seed in SEEDS}
-        results = {}
-        for seed, call in calls.items():
+        if seed != -1 and seed not in SEEDS:
+            raise RuntimeError("recovery seed is outside the frozen seed set")
+        target_seeds = SEEDS if seed == -1 else (seed,)
+        calls = {item: select_seed.spawn(item) for item in target_seeds}
+        for item, call in calls.items():
             result = call.get()
-            results[seed] = result
-            (out / f"{stem}_selection_seed{seed}.json").write_text(
+            (out / f"{stem}_selection_seed{item}.json").write_text(
                 json.dumps(result, indent=2, sort_keys=True) + "\n"
             )
+        results = {
+            item: json.loads(
+                (out / f"{stem}_selection_seed{item}.json").read_text()
+            )
+            for item in SEEDS
+        }
         strict = {
             str(seed): bool(result["selected"]["strict_selection_improvement"])
             for seed, result in results.items()
