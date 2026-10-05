@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVD-OMP selection toy</title>
+<style>
+:root{--text-primary:#2C2C2A;--text-secondary:#5F5E5A;--surface-1:#F1EFE8;--bg:#FFFFFF;--border:#B4B2A9;--accent:#534AB7}
+@media (prefers-color-scheme:dark){:root{--text-primary:#F1EFE8;--text-secondary:#B4B2A9;--surface-1:#2C2C2A;--bg:#1E1E1C;--border:#5F5E5A;--accent:#AFA9EC}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--text-primary);font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:14px}
+main{max-width:680px;margin:0 auto}
+h1{font-size:18px;font-weight:500;margin:0 0 4px}
+p{color:var(--text-secondary);margin:0 0 16px;line-height:1.6}
+button,select{font:inherit;color:var(--text-primary);background:transparent;border:0.5px solid var(--border);border-radius:8px;padding:4px 10px;cursor:pointer}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 12px;color:var(--text-secondary)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:8px}
+.card{background:var(--surface-1);border-radius:8px;padding:1rem}
+.card div:first-child{font-size:13px;color:var(--text-secondary)}
+.card div:last-child{font-size:24px;font-weight:500}
+</style>
+</head>
+<body>
+<main>
+<h1>SVD-OMP selection toy</h1>
+<p>Each bar is one atom's score on a token; the k largest (amber) are kept. Plain SVD-OMP minimises the left number, causal-metric the right one. Toy numbers.</p>
+<div class="row">
+<span>Token</span>
+<button id="tA" onclick="setTok(0)">token A</button><button id="tB" onclick="setTok(1)">token B</button><button id="tC" onclick="setTok(2)">token C</button>
+<span>Score by</span>
+<select id="mode" onchange="render()"><option value="plain">layer output (plain SVD-OMP)</option><option value="causal">model prediction (causal-metric)</option></select>
+</div>
+<div class="row"><span>Keep k</span><input type="range" id="k" min="1" max="8" step="1" value="3" style="flex:1" oninput="render()"><span id="kout" style="min-width:16px;font-weight:500;color:var(--text-primary)">3</span></div>
+<svg id="bars" width="100%" viewBox="0 0 680 290" role="img" aria-label="Atom scores"></svg>
+<div class="cards">
+<div class="card"><div>Layer output error left</div><div id="e1">0%</div></div>
+<div class="card"><div>Prediction damage left</div><div id="e2">0%</div></div>
+</div>
+</main>
+<script>
+const S=[5,4,3.2,2.5,2,1.5,1.1,0.8];
+const M=[0.3,1.0,0.4,1.5,0.5,1.8,0.6,1.2];
+const T=[[0.1,0.9,0.2,0.5,0.1,0.6,0.3,0.2],[0.8,0.1,0.6,0.1,0.7,0.2,0.1,0.5],[0.3,0.3,0.1,0.8,0.4,0.9,0.7,0.1]];
+let tok=0;
+function setTok(i){tok=i;['tA','tB','tC'].forEach((id,j)=>{document.getElementById(id).style.borderColor=j===i?'var(--accent)':'';});render();}
+function render(){
+ const k=+document.getElementById('k').value;document.getElementById('kout').textContent=k;
+ const causal=document.getElementById('mode').value==='causal';
+ const a=T[tok];
+ const plain=S.map((s,c)=>s*Math.abs(a[c]));
+ const pred=plain.map((v,c)=>v*M[c]);
+ const score=causal?pred:plain;
+ const order=score.map((v,c)=>c).sort((x,y)=>score[y]-score[x]);
+ const keep=new Set(order.slice(0,k));
+ const left=(arr)=>{let tot=0,drop=0;arr.forEach((v,c)=>{tot+=v*v;if(!keep.has(c))drop+=v*v;});return Math.round(100*drop/tot);};
+ document.getElementById('e1').textContent=left(plain)+'%';
+ document.getElementById('e2').textContent=left(pred)+'%';
+ const mx=Math.max(...score);let h='';
+ score.forEach((v,c)=>{const y=10+c*34;const w=Math.max(2,Math.round(400*v/mx));const on=keep.has(c);
+  h+=`<text x="40" y="${y+17}" style="font-size:12px;fill:var(--text-secondary)">atom ${c+1}  σ=${S[c].toFixed(1)}</text>`;
+  h+=`<rect x="170" y="${y+4}" width="${w}" height="20" rx="3" fill="${on?'#EF9F27':'#B4B2A9'}" opacity="${on?1:0.55}"/>`;
+  h+=`<text x="${178+w}" y="${y+18}" style="font-size:12px;fill:var(--text-secondary)">${v.toFixed(2)}</text>`;});
+ document.getElementById('bars').innerHTML=h;
+}
+setTok(0);
+</script>
+</body>
+</html>

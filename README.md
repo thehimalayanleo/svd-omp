@@ -28,6 +28,21 @@ score_c(φ) = σ_c · |v_c^T φ|
 Because the SVD basis is orthogonal, OMP reduces to this closed form. No
 training, no random initialization, no learned parameters.
 
+## How the methods relate
+
+Plain, whitened and causal-metric SVD-OMP are one recipe: weight the input and
+output spaces, take an SVD, keep the top k atoms per token. Per-token top-k is
+provably the exact optimum for the error each variant names, and the
+causal-metric output weight is the Fisher metric. The proofs are checked in
+Lean 4 with Mathlib ([`lean/THEOREMS.md`](lean/THEOREMS.md)). The theorems
+explain why selection needs no training; they do not compare against VPD's own
+learned dictionary.
+
+![Two ways to split a weight matrix](docs/figures/how_w_is_split.svg)
+
+The maths of every method side by side, VPD's training loop, and an
+interactive toy of the selection rule are in [`docs/METHODS.md`](docs/METHODS.md).
+
 ## Latest results
 
 The current release separates maximum fidelity from deployment cost:
