@@ -2,14 +2,18 @@
 
 SVD-OMP (Singular Value Decomposition Orthogonal Matching Pursuit) writes what one
 weight matrix does on each token as a sum of a few rank-one pieces of its own SVD.
-There is no training. A weighted SVD gives the pieces once per matrix, and a top-k
-sort picks the pieces for each token. That sort is the exact optimum for the error
-the weighting defines.
+Nothing is trained: no parameters are fitted by gradient descent. A weighted SVD
+gives the pieces once per matrix, and a top-k sort picks the pieces for each token.
+That sort is the exact optimum for the error the weighting defines. The weighting
+comes from measurements on a little calibration text: plain SVD-OMP needs none,
+whitened SVD-OMP needs forward passes, and causal-metric SVD-OMP also needs backward
+passes to measure gradients. Gradients are only measured, never followed.
 
 ## How it works
 
 **1. Build the atoms once, then keep a few per token.** Causal-metric SVD-OMP needs
-about 4k tokens of unlabelled calibration text and no training.
+about 4k tokens of unlabelled calibration text, a few dozen forward and backward
+passes over it, and one SVD per matrix.
 
 ![How causal-metric SVD-OMP works](docs/figures/svd_omp_pipeline.svg)
 
@@ -50,6 +54,7 @@ maths of every method side by side.
 | Name | What it does | Code |
 |---|---|---|
 | SVD-OMP | Top-k over weighted-SVD atoms. The atoms sum to `W` exactly. The whitened variant is called calibration-aware SVD-OMP in the benchmark docs. | `svd_omp.py` (plain), `svd_foba.calibration_aware_svd_factors` (whitened) |
+| Causal-metric SVD-OMP | Also weights the output side by the Fisher metric, estimated from gradients of sampled labels. Top-k is then exact for the second-order change in the model's next-token KL. | `causal_svd_omp.py` (`sensitivity_metric`, `causal_whitened_svd`, `select_top_k`) |
 | SVD-FoBa | SVD-OMP atoms plus 128 calibration output atoms, refined per token by two forward-backward swaps. Best output fit, but no longer a decomposition of `W`. | `svd_foba.py` |
 | CP-SVD | Calibration-Pruned SVD. Keeps 96 SVD directions chosen on calibration data and takes the top-k per token, with no swaps. | `pruned_svd_foba.py`, `cp_svd_runtime.py` |
 
@@ -145,7 +150,7 @@ cd lean && lake update && lake exe cache get && lake build && lake env lean Axio
 - No sparse method here comes close to dense-model quality at the tested widths.
 - SVD-FoBa adds 128 dense atoms per matrix and gives up the exact sum to `W`.
 - Supports are least stable on attention `v_proj` and `o_proj`. On the Goodfire 67M weights, they hold the eight lowest support-stability scores in `results/svd_omp_vs_vpd_results.json` (0.48 to 0.78, against 0.88 or more elsewhere). Their singular spectra are compressed, which is consistent with the Davis-Kahan bound.
-- The code for causal-metric SVD-OMP is not in this repository yet. The figures and theorems cover it, but the released results use plain SVD-OMP, whitened SVD-OMP, SVD-FoBa, and CP-SVD.
+- Causal-metric SVD-OMP has code and unit tests here (`causal_svd_omp.py`), but no released benchmark yet. The results above use plain SVD-OMP, whitened SVD-OMP, SVD-FoBa, and CP-SVD.
 - This repository does not compare against Goodfire's released VPD. The older VPD numbers in the [results archive](docs/RESULTS_ARCHIVE.md) are against our simplified reimplementation (`vpd_baseline.py`, with 200 training steps and one static gate vector per matrix). Frobenius wins there follow from Eckart-Young. A pre-registered comparison with Goodfire's released VPD checkpoint is in progress.
 
 ## Citation
