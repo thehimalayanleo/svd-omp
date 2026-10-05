@@ -28,20 +28,39 @@ score_c(φ) = σ_c · |v_c^T φ|
 Because the SVD basis is orthogonal, OMP reduces to this closed form. No
 training, no random initialization, no learned parameters.
 
-## How the methods relate
+## What SVD-OMP does, in three pictures
 
-Plain, whitened and causal-metric SVD-OMP are one recipe: weight the input and
-output spaces, take an SVD, keep the top k atoms per token. Per-token top-k is
-provably the exact optimum for the error each variant names, and the
-causal-metric output weight is the Fisher metric. The proofs are checked in
-Lean 4 with Mathlib ([`lean/THEOREMS.md`](lean/THEOREMS.md)). The theorems
-explain why selection needs no training; they do not compare against VPD's own
-learned dictionary.
+**1. Build the atoms once, then pick a few per token.** Causal-metric SVD-OMP needs
+about 4k tokens of unlabelled calibration text and no training.
 
-![Two ways to split a weight matrix](docs/figures/how_w_is_split.svg)
+![How causal-metric SVD-OMP works](docs/figures/svd_omp_pipeline.svg)
 
-The maths of every method side by side, VPD's training loop, and an
-interactive toy of the selection rule are in [`docs/METHODS.md`](docs/METHODS.md).
+**2. Picking is a sort.** Because the atoms are orthonormal in the right geometry,
+the error of keeping a set of atoms is exactly the energy of the atoms dropped.
+
+![Selection is a sort](docs/figures/selection_is_a_sort.svg)
+
+**3. The variants differ only in what "error" means.**
+
+![What each method minimises](docs/figures/what_each_method_minimises.svg)
+
+**The loss, precisely.** With $L_{\text{out}}^{\top} W L_{\text{in}} = P S Q^{\top}$,
+$a_c(\phi) = s_c\,\text{read}_c^{\top}\phi$ and $M = L_{\text{out}} L_{\text{out}}^{\top}$,
+keeping a set $S$ of $k$ atoms on token $\phi$ costs
+
+$$
+\tfrac12\, e_S^{\top} M\, e_S \;=\; \tfrac12 \sum_{c \notin S} a_c(\phi)^2,
+\qquad e_S = W\phi - \sum_{c \in S} a_c(\phi)\,\text{write}_c ,
+$$
+
+so the $k$ largest $|a_c(\phi)|$ are the exact optimum. For causal-metric SVD-OMP,
+$M$ is the Fisher metric of the next-token distribution, so this cost is the
+second-order change in KL to the dense model. Whitened SVD-OMP uses $M = I$;
+plain SVD-OMP also drops the input weighting ($L_{\text{in}} = I$). These
+statements are proved in Lean 4 with Mathlib ([`lean/THEOREMS.md`](lean/THEOREMS.md));
+they explain why selection needs no training, and they do not compare against
+VPD's own learned dictionary. The maths of every method side by side, VPD's
+training loop, and an interactive toy are in [`docs/METHODS.md`](docs/METHODS.md).
 
 ## Latest results
 
